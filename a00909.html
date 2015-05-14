@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/errorcounter.h File Reference</title>
+<title>Tesseract: classify/intfeaturespace.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,62 +107,85 @@ $(document).ready(function(){initNavTree('a00909.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">errorcounter.h File Reference</div>  </div>
+<div class="title">intfeaturespace.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00849_source.html">genericvector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00778_source.html">matrix.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00821_source.html">statistc.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00915_source.html">intproto.h</a>&quot;</code><br />
 </div>
 <p><a href="a00909_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">singleton &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00662.html">UnicityTable&lt; T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00383.html">tesseract::ErrorCounter</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00434.html">tesseract::IntFeatureSpace</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:acb0bc20d78b75745c9aa3832a619f4fd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fd">tesseract::CountTypes</a> { <br />
-&#160;&#160;<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda4cd30609e7f407ef5c27c46426d43ae7">tesseract::CT_UNICHAR_TOP_OK</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda4fbb2b48a2fae3c2a8be73d82702d9ca">tesseract::CT_UNICHAR_TOP1_ERR</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda695227fd1cabdbcf6421beaee60e7e3c">tesseract::CT_UNICHAR_TOP2_ERR</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda4649b3e172660074d3255fd5f1f5c850">tesseract::CT_UNICHAR_TOPN_ERR</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda935156e7dc8245e295f843cad20b6529">tesseract::CT_UNICHAR_TOPTOP_ERR</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fdaab5d38d92964a3603dd577180571243b">tesseract::CT_OK_MULTI_UNICHAR</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda76f794141618a9653b968ecfa4cb2533">tesseract::CT_OK_JOINED</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fdaad4be874d81f4a34324f4a9b5714a390">tesseract::CT_OK_BROKEN</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda89ab4937a98054f1c525755ce6ae36c8">tesseract::CT_REJECT</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fdaa1c74855ce10eb780dabadbf54eb7b8a">tesseract::CT_FONT_ATTR_ERR</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda6eb2e47e1b22e65e71950db585efd624">tesseract::CT_OK_MULTI_FONT</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fdafe639ee6eab2f5503df027e13dc3d776">tesseract::CT_NUM_RESULTS</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fdacf1cf7811b8c6938a7097cc30f56d991">tesseract::CT_RANK</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fda8b7c62ce93360d39e8a8204c0cd77f45">tesseract::CT_REJECTED_JUNK</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fdaa3bba775583d2acab58b3543043ab591">tesseract::CT_ACCEPTED_JUNK</a>, 
-<a class="el" href="a01279.html#acb0bc20d78b75745c9aa3832a619f4fdabb745ecf0c26d7e73f8c4e29e5988100">tesseract::CT_SIZE</a>
-<br />
- }</td></tr>
-<tr class="separator:acb0bc20d78b75745c9aa3832a619f4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a1ae640c2b25581cd33a392a5b614b1cd"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00909.html#a1ae640c2b25581cd33a392a5b614b1cd">kIntFeatureExtent</a> = 256</td></tr>
+<tr class="separator:a1ae640c2b25581cd33a392a5b614b1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550dc4140b4554a9486c01d053542b07"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00909.html#a550dc4140b4554a9486c01d053542b07">kBoostXYBuckets</a> = 16</td></tr>
+<tr class="separator:a550dc4140b4554a9486c01d053542b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ebc24f4eb671e8121fb54d9b6b5208"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00909.html#a72ebc24f4eb671e8121fb54d9b6b5208">kBoostDirBuckets</a> = 16</td></tr>
+<tr class="separator:a72ebc24f4eb671e8121fb54d9b6b5208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a72ebc24f4eb671e8121fb54d9b6b5208"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kBoostDirBuckets = 16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00909_source.html#l00030">30</a> of file <a class="el" href="a00909_source.html">intfeaturespace.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a550dc4140b4554a9486c01d053542b07"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kBoostXYBuckets = 16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00909_source.html#l00029">29</a> of file <a class="el" href="a00909_source.html">intfeaturespace.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ae640c2b25581cd33a392a5b614b1cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kIntFeatureExtent = 256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00909_source.html#l00027">27</a> of file <a class="el" href="a00909_source.html">intfeaturespace.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00909.html">errorcounter.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:35 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00909.html">intfeaturespace.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:09 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

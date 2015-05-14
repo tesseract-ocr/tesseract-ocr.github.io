@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00567.html','');});
+$(document).ready(function(){initNavTree('a00630.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,22 +106,62 @@ $(document).ready(function(){initNavTree('a00567.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::SimpleClusterer Member List</div>  </div>
+<div class="title">tesseract::TrainingSample Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00567.html">tesseract::SimpleClusterer</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00630.html">tesseract::TrainingSample</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00567.html#ae36fdd8d4995529380462e7f9ce58caa">Add</a>(int value)</td><td class="entry"><a class="el" href="a00567.html">tesseract::SimpleClusterer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00567.html#afc17914736fbde1378a9bf9358100491">GetClusters</a>(GenericVector&lt; Cluster &gt; *clusters)</td><td class="entry"><a class="el" href="a00567.html">tesseract::SimpleClusterer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00567.html#afc5f3dd986096b36f59d2cc09972d1ea">SimpleClusterer</a>(int max_cluster_width)</td><td class="entry"><a class="el" href="a00567.html">tesseract::SimpleClusterer</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00567.html#adc5a7f3cac5009aa69f2831b98a6e189">size</a>() const </td><td class="entry"><a class="el" href="a00567.html">tesseract::SimpleClusterer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a42ab271533aecad834d5cac080bf436f">bounding_box</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#aa00151c48156e85a61bc11a2b7b2fe02">class_id</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#afc65601f115f84c17b064c84a61c10c6">cn_feature</a>(int index) const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a722dac43b2ec92fa0524a6b836fe2b3f">Copy</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a019742290eba1aa3c2674366240fc3bd">CopyFromFeatures</a>(const INT_FX_RESULT_STRUCT &amp;fx_info, const TBOX &amp;bounding_box, const INT_FEATURE_STRUCT *features, int num_features)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a00b6f4d287ceab08ffc32b4153ef13ba">DeSerialize</a>(bool swap, FILE *fp)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#ac1ddd7b77bf29d31b2b36135d6ffd75d">DeSerializeCreate</a>(bool swap, FILE *fp)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a840b1b4a7c19a1447d543ddc858c974f">DisplayFeatures</a>(ScrollView::Color color, ScrollView *window) const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00371.html#ab3cdce5789339d12de62e18fdfb52974">ELIST_LINK</a>()</td><td class="entry"><a class="el" href="a00371.html">ELIST_LINK</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00371.html#a30be968896fac3d1c88d127213aa03f7">ELIST_LINK</a>(const ELIST_LINK &amp;)</td><td class="entry"><a class="el" href="a00371.html">ELIST_LINK</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#af79e693db88d9ef0320a6a2185eabb41">ExtractCharDesc</a>(int feature_type, int micro_type, int cn_type, int geo_type, CHAR_DESC_STRUCT *char_desc)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a49c3df6faa918fc29a058e6bc434a7c9">features</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a8d8f5ab27344a5f901b671b82d75eba2">features_are_mapped</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a7484179f49037aa4ad296eee68022480">font_id</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#ace21638d002459e1be6486f876f2f097">geo_feature</a>(int index) const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#ae483c1da6c4a4cadb7b349458d32ca2d">GetCNFeature</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a31baec2560471f8a8dfa51a373275160">GetSamplePix</a>(int padding, Pix *page_pix) const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#ab64d562e5c1e963288698f6299f0ae3c">indexed_features</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a7d0162a0f3e054408b21cff893b0d6bf">IndexFeatures</a>(const IntFeatureSpace &amp;feature_space)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#ae7a80094837b6989fae733275f99ef71">is_error</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a4cd7b66eb1934688b8fdf2e8a20ac06e">MapFeatures</a>(const IntFeatureMap &amp;feature_map)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#aa45f61d6553712990456c95303e56088">mapped_features</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a5696fbd8b6cd8bb64a748df0a34687ae">max_dist</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a7c73dab6b6b2d3557f86fc4fac781bb5">micro_features</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#af3afdc90346e10f5f4497ea7a89882aa">num_features</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a4df5318e6847ef10410705f26c51de66">num_micro_features</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00371.html#a949f5dfcc3c145a19f2d61ee3461701e">operator=</a>(const ELIST_LINK &amp;)</td><td class="entry"><a class="el" href="a00371.html">ELIST_LINK</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a0acf2cfe3443a8128f1902fd849b9bae">outline_length</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#af26c8bc49fb28b3020f94e31e82730e8">page_num</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a164de38223d7efe36a6e9deaecdd2a37">RandomizedCopy</a>(int index) const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a5d26db1b434530f2d73639c5e32989d4">RenderToPix</a>(const UNICHARSET *unicharset) const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a27a97084c67306b4d327ef332fb4f9bc">sample_index</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#acbc5d9b5d935f7ea2eeaed0163855e8a">Serialize</a>(FILE *fp) const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#ac0c0e309ecce8fdbc6c05cb586587907">set_bounding_box</a>(const TBOX &amp;box)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a7ee7b72a1f7cc9b7255cadadd22dcb40">set_class_id</a>(int id)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a430ac509aa468c0eda381da30cd2044f">set_font_id</a>(int id)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#aa7fd3f7f0341bc78b7cf91c496fc692a">set_is_error</a>(bool value)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a0f0d0090d049f96774bd8b14869abc08">set_max_dist</a>(double value)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a78b2b5006dfd244d94e05a907f248b2a">set_page_num</a>(int page)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#afcf8f6411404ac680958c718c71837dc">set_sample_index</a>(int value)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a8b80a2463dec89385e2faa6f961b0f56">set_weight</a>(double value)</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a16644d35b7054101e7255b8564c0aabc">TrainingSample</a>()</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00630.html#a8d7a88cad1df0ad922a25a0fdfc7f40b">weight</a>() const </td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00630.html#a746ed1e28ceac5a69411c451ac2882f0">~TrainingSample</a>()</td><td class="entry"><a class="el" href="a00630.html">tesseract::TrainingSample</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:54 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:31 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

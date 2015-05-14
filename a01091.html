@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: neural_networks/runtime/neuron.h File Reference</title>
+<title>Tesseract: textord/bbgrid.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,34 +105,39 @@ $(document).ready(function(){initNavTree('a01091.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">neuron.h File Reference</div>  </div>
+<div class="title">bbgrid.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01092_source.html">bbgrid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00834_source.html">helpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00765_source.html">ocrblock.h</a>&quot;</code><br />
 </div>
 <p><a href="a01091_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00488.html">tesseract::Neuron</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4b8ee8e8f4bb2a493ce4128db3bd9bd9"><td class="memItemLeft" align="right" valign="top">Pix *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a4b8ee8e8f4bb2a493ce4128db3bd9bd9">tesseract::GridReducedPix</a> (const <a class="el" href="a00591.html">TBOX</a> &amp;box, int gridsize, <a class="el" href="a00412.html">ICOORD</a> bleft, int *left, int *bottom)</td></tr>
+<tr class="separator:a4b8ee8e8f4bb2a493ce4128db3bd9bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904ab4d9c9e49e83c5d3800d57d433cb"><td class="memItemLeft" align="right" valign="top">Pix *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a904ab4d9c9e49e83c5d3800d57d433cb">tesseract::TraceOutlineOnReducedPix</a> (<a class="el" href="a00290.html">C_OUTLINE</a> *outline, int gridsize, <a class="el" href="a00412.html">ICOORD</a> bleft, int *left, int *bottom)</td></tr>
+<tr class="separator:a904ab4d9c9e49e83c5d3800d57d433cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cee1dea0a3fdece76728ad65ab48563"><td class="memItemLeft" align="right" valign="top">Pix *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a6cee1dea0a3fdece76728ad65ab48563">tesseract::TraceBlockOnReducedPix</a> (<a class="el" href="a00280.html">BLOCK</a> *block, int gridsize, <a class="el" href="a00412.html">ICOORD</a> bleft, int *left, int *bottom)</td></tr>
+<tr class="separator:a6cee1dea0a3fdece76728ad65ab48563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_120c1c515d3fc0bafd36c83047b8615a.html">neural_networks</a></li><li class="navelem"><a class="el" href="dir_df8063111811a0146a85315f27a6abd6.html">runtime</a></li><li class="navelem"><a class="el" href="a01091.html">neuron.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01091.html">bbgrid.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

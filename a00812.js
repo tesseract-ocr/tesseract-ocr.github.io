@@ -1,5 +1,4 @@
 var a00812 =
 [
-    [ "operator&=", "a00812.html#a69ceee25c39affef0a40dc555caa6293", null ],
-    [ "operator+=", "a00812.html#a636aff83f8329ad23c61b5481ea6413f", null ]
+    [ "truncate_path", "a00812.html#a98c50826f82a92d70cfd56e74b43d95f", null ]
 ];

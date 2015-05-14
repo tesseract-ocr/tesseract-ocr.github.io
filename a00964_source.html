@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: contrib/tesseract-c_api-demo.py Source File</title>
+<title>Tesseract: cube/char_altlist.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,90 +105,103 @@ $(document).ready(function(){initNavTree('a00964_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract-c_api-demo.py</div>  </div>
+<div class="title">char_altlist.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00964.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="a01280.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># Copyright 2012 Zdenko Podobný</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># Author: Zdenko Podobný</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"># you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"># You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">#      http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"># Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"># limitations under the License.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">Simple python demo script of tesseract-ocr 3.02 c-api</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">&quot;&quot;&quot;</span></div>
+<a href="a00964.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        char_altlist.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of a Character Alternate List Class</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2007</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2008, Google Inc.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef CHAR_ALT_LIST_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define CHAR_ALT_LIST_H</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> os</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> sys</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> ctypes</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># Demo variables</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01280.html#a5f5eb917f55d9d6ccaa95131ae5d171c">   28</a></span>&#160;lang = <span class="stringliteral">&quot;eng&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">   29</a></span>&#160;filename = <span class="stringliteral">&quot;../phototest.tif&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01280.html#aa485f116d533fb52e09aa29173fd49e8">   30</a></span>&#160;libpath = <span class="stringliteral">&quot;/usr/local/lib64/&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01280.html#a272cde45b57bc10f07423c90314a8d6f">   31</a></span>&#160;libpath_w = <span class="stringliteral">&quot;../vs2008/DLL_Release/&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01280.html#ad996f1de63e09495e1e16ff2cc3968b4">   32</a></span>&#160;TESSDATA_PREFIX = os.environ.get(<span class="stringliteral">&#39;TESSDATA_PREFIX&#39;</span>)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordflow">if</span> <span class="keywordflow">not</span> TESSDATA_PREFIX:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    TESSDATA_PREFIX = <span class="stringliteral">&quot;../&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordflow">if</span> sys.platform == <span class="stringliteral">&quot;win32&quot;</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a01280.html#a53c9be5a0d9126a325a74b487f376757">   37</a></span>&#160;        libname = libpath_w + <span class="stringliteral">&quot;libtesseract302.dll&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01280.html#a37456fd41f35af627eb300fd35ae96dc">   38</a></span>&#160;        libname_alt = <span class="stringliteral">&quot;libtesseract302.dll&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        os.environ[<span class="stringliteral">&quot;PATH&quot;</span>] += os.pathsep + libpath_w</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        libname = libpath + <span class="stringliteral">&quot;libtesseract.so.3.0.2&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        libname_alt = <span class="stringliteral">&quot;libtesseract.so.3&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01280.html#afed58feacb84df2de88bdd613cfdba6d">   45</a></span>&#160;        tesseract = ctypes.cdll.LoadLibrary(libname)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordflow">except</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                tesseract = ctypes.cdll.LoadLibrary(libname_alt)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">except</span> WindowsError, err:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                print(<span class="stringliteral">&quot;Trying to load &#39;%s&#39;...&quot;</span> % libname)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                print(<span class="stringliteral">&quot;Trying to load &#39;%s&#39;...&quot;</span> % libname_alt)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                print(err)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                exit(1)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;tesseract.TessVersion.restype = ctypes.c_char_p</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01280.html#aa233f8e14c9299074631437627198abc">   56</a></span>&#160;tesseract_version = tesseract.TessVersion()[:4]</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// The CharAltList class holds the list of class alternates returned from</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// a character classifier. Each alternate represents a class ID.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// It inherits from the AltList class.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// The CharAltList owns a CharSet object that maps a class-id to a string.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00956.html">altlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00974.html">char_set.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00300.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00300.html">CharAltList</a> : <span class="keyword">public</span> <a class="code" href="a00259.html">AltList</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="a00300.html#ac847f4bd3a8c41c599a06f40c70007cc">CharAltList</a>(<span class="keyword">const</span> <a class="code" href="a00309.html">CharSet</a> *char_set, <span class="keywordtype">int</span> max_alt = kMaxCharAlt);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="a00300.html#a88b6320e462f8736e318ff1494fe5cab">~CharAltList</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// Sort the alternate list based on cost</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00300.html#af47ca880bcc216d6ef3bab87389d35bf">Sort</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// insert a new alternate with the specified class-id, cost and tag</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00300.html#a036e64559c3b141441ef2a003bcb23db">Insert</a>(<span class="keywordtype">int</span> class_id, <span class="keywordtype">int</span> cost, <span class="keywordtype">void</span> *tag = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// returns the cost of a specific class ID</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00300.html#a48c3c2b5cd6857634f691c61df7c0791">   42</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="a00300.html#a48c3c2b5cd6857634f691c61df7c0791">ClassCost</a>(<span class="keywordtype">int</span> class_id)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (class_id_cost_ == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> ||</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        class_id &lt; 0 ||</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        class_id &gt;= char_set_-&gt;<a class="code" href="a00309.html#abfcdf381a241c375ad4c0f77747afb6c">ClassCount</a>()) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00982.html#ab15bac3baa4fd3e56ba19eefebe4065f">WORST_COST</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> class_id_cost_[class_id];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// returns the alternate class-id corresponding to an alternate index</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00300.html#ab2f1a8dd1d1cf62c3869eb2ea6c67de3">   51</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="a00300.html#ab2f1a8dd1d1cf62c3869eb2ea6c67de3">Alt</a>(<span class="keywordtype">int</span> alt_idx)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> class_id_alt_[alt_idx]; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// set the cost of a certain alternate</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00300.html#ad3df933e21bec61c8200350751beb5a3">   53</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00300.html#ad3df933e21bec61c8200350751beb5a3">SetAltCost</a>(<span class="keywordtype">int</span> alt_idx, <span class="keywordtype">int</span> cost) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx] = cost;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    class_id_cost_[class_id_alt_[alt_idx]] = cost;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"># We need to check library version because libtesseract.so.3 is symlink</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"># and can point to other version than 3.02</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordflow">if</span> float(tesseract_version) &lt; 3.02:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        print(<span class="stringliteral">&quot;Found tesseract-ocr library version %s.&quot;</span> % tesseract_version)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        print(<span class="stringliteral">&quot;C-API is present only in version 3.02!&quot;</span>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        exit(2)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a01280.html#a6e5e62fdd18584223572e5cbaa9a1d1d">   65</a></span>&#160;api = tesseract.TessBaseAPICreate()</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="a01280.html#a42e422a84ae8cc850bac5f48b7b6c5ef">   66</a></span>&#160;rc = tesseract.TessBaseAPIInit3(api, TESSDATA_PREFIX, lang);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordflow">if</span> (rc):</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        tesseract.TessBaseAPIDelete(api)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        print(<span class="stringliteral">&quot;Could not initialize tesseract.\n&quot;</span>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        exit(3)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="a01280.html#a4cb5504e991035002a887059676c8d14">   72</a></span>&#160;text_out = tesseract.TessBaseAPIProcessPages(api, filename, <span class="keywordtype">None</span> , 0);</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a01280.html#a7ae978a98f04b752036f5f6ffc959bce">   73</a></span>&#160;result_text = ctypes.string_at(text_out)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordflow">print</span> result_text</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// character set object. Passed at construction time</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00309.html">CharSet</a> *char_set_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// array of alternate class-ids</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">int</span> *class_id_alt_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// array of alternate costs</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">int</span> *class_id_cost_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// default max count of alternates</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kMaxCharAlt = 256;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif  // CHAR_ALT_LIST_H</span></div>
+<div class="ttc" id="a00300_html_ab2f1a8dd1d1cf62c3869eb2ea6c67de3"><div class="ttname"><a href="a00300.html#ab2f1a8dd1d1cf62c3869eb2ea6c67de3">tesseract::CharAltList::Alt</a></div><div class="ttdeci">int Alt(int alt_idx) const </div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00051">char_altlist.h:51</a></div></div>
+<div class="ttc" id="a00956_html"><div class="ttname"><a href="a00956.html">altlist.h</a></div></div>
+<div class="ttc" id="a00259_html"><div class="ttname"><a href="a00259.html">tesseract::AltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00030">altlist.h:30</a></div></div>
+<div class="ttc" id="a00300_html_ad3df933e21bec61c8200350751beb5a3"><div class="ttname"><a href="a00300.html#ad3df933e21bec61c8200350751beb5a3">tesseract::CharAltList::SetAltCost</a></div><div class="ttdeci">void SetAltCost(int alt_idx, int cost)</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00053">char_altlist.h:53</a></div></div>
+<div class="ttc" id="a00300_html_a036e64559c3b141441ef2a003bcb23db"><div class="ttname"><a href="a00300.html#a036e64559c3b141441ef2a003bcb23db">tesseract::CharAltList::Insert</a></div><div class="ttdeci">bool Insert(int class_id, int cost, void *tag=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="a00963_source.html#l00047">char_altlist.cpp:47</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00309_html"><div class="ttname"><a href="a00309.html">tesseract::CharSet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00974_source.html#l00042">char_set.h:42</a></div></div>
+<div class="ttc" id="a00300_html"><div class="ttname"><a href="a00300.html">tesseract::CharAltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00032">char_altlist.h:32</a></div></div>
+<div class="ttc" id="a00259_html_afad648f9ceb847661f71cab87c00e208"><div class="ttname"><a href="a00259.html#afad648f9ceb847661f71cab87c00e208">tesseract::AltList::alt_cost_</a></div><div class="ttdeci">int * alt_cost_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00055">altlist.h:55</a></div></div>
+<div class="ttc" id="a00300_html_a88b6320e462f8736e318ff1494fe5cab"><div class="ttname"><a href="a00300.html#a88b6320e462f8736e318ff1494fe5cab">tesseract::CharAltList::~CharAltList</a></div><div class="ttdeci">~CharAltList()</div><div class="ttdef"><b>Definition:</b> <a href="a00963_source.html#l00034">char_altlist.cpp:34</a></div></div>
+<div class="ttc" id="a00300_html_ac847f4bd3a8c41c599a06f40c70007cc"><div class="ttname"><a href="a00300.html#ac847f4bd3a8c41c599a06f40c70007cc">tesseract::CharAltList::CharAltList</a></div><div class="ttdeci">CharAltList(const CharSet *char_set, int max_alt=kMaxCharAlt)</div><div class="ttdef"><b>Definition:</b> <a href="a00963_source.html#l00026">char_altlist.cpp:26</a></div></div>
+<div class="ttc" id="a00300_html_a48c3c2b5cd6857634f691c61df7c0791"><div class="ttname"><a href="a00300.html#a48c3c2b5cd6857634f691c61df7c0791">tesseract::CharAltList::ClassCost</a></div><div class="ttdeci">int ClassCost(int class_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00042">char_altlist.h:42</a></div></div>
+<div class="ttc" id="a00309_html_abfcdf381a241c375ad4c0f77747afb6c"><div class="ttname"><a href="a00309.html#abfcdf381a241c375ad4c0f77747afb6c">tesseract::CharSet::ClassCount</a></div><div class="ttdeci">int ClassCount() const </div><div class="ttdef"><b>Definition:</b> <a href="a00974_source.html#l00111">char_set.h:111</a></div></div>
+<div class="ttc" id="a00974_html"><div class="ttname"><a href="a00974.html">char_set.h</a></div></div>
+<div class="ttc" id="a00300_html_af47ca880bcc216d6ef3bab87389d35bf"><div class="ttname"><a href="a00300.html#af47ca880bcc216d6ef3bab87389d35bf">tesseract::CharAltList::Sort</a></div><div class="ttdeci">void Sort()</div><div class="ttdef"><b>Definition:</b> <a href="a00963_source.html#l00096">char_altlist.cpp:96</a></div></div>
+<div class="ttc" id="a00982_html_ab15bac3baa4fd3e56ba19eefebe4065f"><div class="ttname"><a href="a00982.html#ab15bac3baa4fd3e56ba19eefebe4065f">WORST_COST</a></div><div class="ttdeci">#define WORST_COST</div><div class="ttdef"><b>Definition:</b> <a href="a00982_source.html#l00030">cube_const.h:30</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3847941dc22744d30c1d316a1f1a60e2.html">contrib</a></li><li class="navelem"><a class="el" href="a00964.html">tesseract-c_api-demo.py</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:26 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00964.html">char_altlist.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:00 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

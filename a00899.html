@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/blobclass.h File Reference</title>
+<title>Tesseract: classify/float2int.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,106 +105,49 @@ $(document).ready(function(){initNavTree('a00899.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">blobclass.h File Reference</div>  </div>
+<div class="title">float2int.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00878_source.html">strngs.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00913_source.html">intmatcher.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00933_source.html">ocrfeatures.h</a>&quot;</code><br />
 </div>
 <p><a href="a00899_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aaba4f6185ffd4b4398726794b565d114"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00899.html#aaba4f6185ffd4b4398726794b565d114">EnableCharDisplay</a>()&#160;&#160;&#160;(DisplayCharacters = <a class="el" href="a01041.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</td></tr>
-<tr class="separator:aaba4f6185ffd4b4398726794b565d114"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0886f5a1957fafc7b4c94b960fffd4dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00899.html#a0886f5a1957fafc7b4c94b960fffd4dd">DisableCharDisplay</a>()&#160;&#160;&#160;(DisplayCharacters = <a class="el" href="a01041.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>)</td></tr>
-<tr class="separator:a0886f5a1957fafc7b4c94b960fffd4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ba242098083608d939e1d8ee365efc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00899.html#a7ba242098083608d939e1d8ee365efc4">EnableMatchDisplay</a>()&#160;&#160;&#160;(DisplayMatchList = <a class="el" href="a01041.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</td></tr>
-<tr class="separator:a7ba242098083608d939e1d8ee365efc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3153d73346f50f6c901137134968f633"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00899.html#a3153d73346f50f6c901137134968f633">DisableMatchDisplay</a>()&#160;&#160;&#160;(DisplayMatchList = <a class="el" href="a01041.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>)</td></tr>
-<tr class="separator:a3153d73346f50f6c901137134968f633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:aa011b40b5e90b4087d0e42ea5fcce12c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aa011b40b5e90b4087d0e42ea5fcce12c">tesseract::ExtractFontName</a> (const <a class="el" href="a00578.html">STRING</a> &amp;filename, <a class="el" href="a00578.html">STRING</a> *fontname)</td></tr>
-<tr class="separator:aa011b40b5e90b4087d0e42ea5fcce12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30a299d1150890d3f3606094fbf1169"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00899.html#ae30a299d1150890d3f3606094fbf1169">INT_FEAT_RANGE</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:ae30a299d1150890d3f3606094fbf1169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd5a36a70bcf28d6727fe56e419b5a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00899.html#a0cd5a36a70bcf28d6727fe56e419b5a2">BASELINE_Y_SHIFT</a>&#160;&#160;&#160;(0.25)</td></tr>
+<tr class="separator:a0cd5a36a70bcf28d6727fe56e419b5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a0886f5a1957fafc7b4c94b960fffd4dd"></a>
+<a class="anchor" id="a0cd5a36a70bcf28d6727fe56e419b5a2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DisableCharDisplay</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;(DisplayCharacters = <a class="el" href="a01041.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>)</td>
+          <td class="memname">#define BASELINE_Y_SHIFT&#160;&#160;&#160;(0.25)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00899_source.html#l00031">31</a> of file <a class="el" href="a00899_source.html">blobclass.h</a>.</p>
+<p>Definition at line <a class="el" href="a00899_source.html#l00028">28</a> of file <a class="el" href="a00899_source.html">float2int.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3153d73346f50f6c901137134968f633"></a>
+<a class="anchor" id="ae30a299d1150890d3f3606094fbf1169"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DisableMatchDisplay</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;(DisplayMatchList = <a class="el" href="a01041.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>)</td>
+          <td class="memname">#define INT_FEAT_RANGE&#160;&#160;&#160;256</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00899_source.html#l00035">35</a> of file <a class="el" href="a00899_source.html">blobclass.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aaba4f6185ffd4b4398726794b565d114"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EnableCharDisplay</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;(DisplayCharacters = <a class="el" href="a01041.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<hr/>
- <h2>Include Files and Type Defines </h2>
-
-<p>Definition at line <a class="el" href="a00899_source.html#l00030">30</a> of file <a class="el" href="a00899_source.html">blobclass.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7ba242098083608d939e1d8ee365efc4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EnableMatchDisplay</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;(DisplayMatchList = <a class="el" href="a01041.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00899_source.html#l00034">34</a> of file <a class="el" href="a00899_source.html">blobclass.h</a>.</p>
+<p>Definition at line <a class="el" href="a00899_source.html#l00027">27</a> of file <a class="el" href="a00899_source.html">float2int.h</a>.</p>
 
 </div>
 </div>
@@ -213,8 +156,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00899.html">blobclass.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:34 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00899.html">float2int.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:09 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

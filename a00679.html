@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::WorkingPartSet Class Reference</title>
+<title>Tesseract: ccmain/docqual.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,9 +70,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,311 +105,82 @@ $(document).ready(function(){initNavTree('a00679.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01967.html">List of all members</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::WorkingPartSet Class Reference</div>  </div>
+<div class="title">docqual.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a01177_source.html">workingpartset.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for tesseract::WorkingPartSet:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00679.png" usemap="#tesseract::WorkingPartSet_map" alt=""/>
-  <map id="tesseract::WorkingPartSet_map" name="tesseract::WorkingPartSet_map">
-<area href="a00379.html" alt="ELIST_LINK" shape="rect" coords="0,0,156,24"/>
-</map>
- </div></div>
+<div class="textblock"><code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00680_source.html">docqual.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00707_source.html">reject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00860_source.html">tesscallback.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00720_source.html">tessvars.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01042_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00718_source.html">tesseractclass.h</a>&quot;</code><br />
+</div>
+<p><a href="a00679_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a0aa24dd46fc273b8de872c89f7ba80f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00679.html#a0aa24dd46fc273b8de872c89f7ba80f3">WorkingPartSet</a> ()</td></tr>
-<tr class="separator:a0aa24dd46fc273b8de872c89f7ba80f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac843f6de08574fe243f2004df91dfc24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00679.html#ac843f6de08574fe243f2004df91dfc24">WorkingPartSet</a> (<a class="el" href="a00331.html">ColPartition</a> *<a class="el" href="a00679.html#ab0ea1a567feaf0f69bb350724e6a78a0">column</a>)</td></tr>
-<tr class="separator:ac843f6de08574fe243f2004df91dfc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0ea1a567feaf0f69bb350724e6a78a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00331.html">ColPartition</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00679.html#ab0ea1a567feaf0f69bb350724e6a78a0">column</a> () const </td></tr>
-<tr class="separator:ab0ea1a567feaf0f69bb350724e6a78a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29052afe85bbf3982f772536504b1e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00679.html#a29052afe85bbf3982f772536504b1e31">set_column</a> (<a class="el" href="a00331.html">ColPartition</a> *col)</td></tr>
-<tr class="separator:a29052afe85bbf3982f772536504b1e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75288f5609d5095cee47ac92e3475608"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00679.html#a75288f5609d5095cee47ac92e3475608">AddPartition</a> (<a class="el" href="a00331.html">ColPartition</a> *part)</td></tr>
-<tr class="separator:a75288f5609d5095cee47ac92e3475608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7b37ef0a112ab667c351e3a7d51436d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00679.html#aa7b37ef0a112ab667c351e3a7d51436d">ExtractCompletedBlocks</a> (const <a class="el" href="a00425.html">ICOORD</a> &amp;bleft, const <a class="el" href="a00425.html">ICOORD</a> &amp;tright, int resolution, ColPartition_LIST *used_parts, BLOCK_LIST *blocks, TO_BLOCK_LIST *to_blocks)</td></tr>
-<tr class="separator:aa7b37ef0a112ab667c351e3a7d51436d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab20df443f0ff6df6f2ba83e31454433c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00679.html#ab20df443f0ff6df6f2ba83e31454433c">InsertCompletedBlocks</a> (BLOCK_LIST *blocks, TO_BLOCK_LIST *to_blocks)</td></tr>
-<tr class="separator:ab20df443f0ff6df6f2ba83e31454433c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00379"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00379')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00379.html">ELIST_LINK</a></td></tr>
-<tr class="memitem:ab3cdce5789339d12de62e18fdfb52974 inherit pub_methods_a00379"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html#ab3cdce5789339d12de62e18fdfb52974">ELIST_LINK</a> ()</td></tr>
-<tr class="separator:ab3cdce5789339d12de62e18fdfb52974 inherit pub_methods_a00379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30be968896fac3d1c88d127213aa03f7 inherit pub_methods_a00379"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html#a30be968896fac3d1c88d127213aa03f7">ELIST_LINK</a> (const <a class="el" href="a00379.html">ELIST_LINK</a> &amp;)</td></tr>
-<tr class="separator:a30be968896fac3d1c88d127213aa03f7 inherit pub_methods_a00379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a949f5dfcc3c145a19f2d61ee3461701e inherit pub_methods_a00379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html#a949f5dfcc3c145a19f2d61ee3461701e">operator=</a> (const <a class="el" href="a00379.html">ELIST_LINK</a> &amp;)</td></tr>
-<tr class="separator:a949f5dfcc3c145a19f2d61ee3461701e inherit pub_methods_a00379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00356.html">tesseract::DocQualCallbacks</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1b9934928e2b953ee5e91abb58cf043f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00679.html#a1b9934928e2b953ee5e91abb58cf043f">reject_whole_page</a> (<a class="el" href="a00486.html">PAGE_RES_IT</a> &amp;page_res_it)</td></tr>
+<tr class="separator:a1b9934928e2b953ee5e91abb58cf043f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="a01177_source.html#l00032">32</a> of file <a class="el" href="a01177_source.html">workingpartset.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0aa24dd46fc273b8de872c89f7ba80f3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::WorkingPartSet::WorkingPartSet </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01177_source.html#l00034">34</a> of file <a class="el" href="a01177_source.html">workingpartset.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                   {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ac843f6de08574fe243f2004df91dfc24"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::WorkingPartSet::WorkingPartSet </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00331.html">ColPartition</a> *&#160;</td>
-          <td class="paramname"><em>column</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01177_source.html#l00036">36</a> of file <a class="el" href="a01177_source.html">workingpartset.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    : column_(<a class="code" href="a00679.html#ab0ea1a567feaf0f69bb350724e6a78a0">column</a>), latest_part_(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), part_it_(&amp;part_set_) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00679_html_ab0ea1a567feaf0f69bb350724e6a78a0"><div class="ttname"><a href="a00679.html#ab0ea1a567feaf0f69bb350724e6a78a0">tesseract::WorkingPartSet::column</a></div><div class="ttdeci">ColPartition * column() const </div><div class="ttdef"><b>Definition:</b> <a href="a01177_source.html#l00041">workingpartset.h:41</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a75288f5609d5095cee47ac92e3475608"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a1b9934928e2b953ee5e91abb58cf043f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tesseract::WorkingPartSet::AddPartition </td>
+          <td class="memname">void reject_whole_page </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00331.html">ColPartition</a> *&#160;</td>
-          <td class="paramname"><em>part</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00486.html">PAGE_RES_IT</a> &amp;&#160;</td>
+          <td class="paramname"><em>page_res_it</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01176_source.html#l00031">31</a> of file <a class="el" href="a01176_source.html">workingpartset.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  ColPartition* partner = part-&gt;SingletonPartner(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">if</span> (partner != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(partner-&gt;SingletonPartner(<span class="keyword">false</span>) == part);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (latest_part_ == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || partner == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// This partition goes at the end of the list</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    part_it_.move_to_last();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (latest_part_-&gt;<a class="code" href="a00331.html#abb824820c4ebf82ee1dfc9c2a30c17ce">SingletonPartner</a>(<span class="keyword">false</span>) != part) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Reposition the iterator to the correct partner, or at the end.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> (part_it_.move_to_first(); !part_it_.at_last() &amp;&amp;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         part_it_.data() != partner;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         part_it_.forward());</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  part_it_.add_after_then_move(part);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  latest_part_ = part;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00331_html_abb824820c4ebf82ee1dfc9c2a30c17ce"><div class="ttname"><a href="a00331.html#abb824820c4ebf82ee1dfc9c2a30c17ce">tesseract::ColPartition::SingletonPartner</a></div><div class="ttdeci">ColPartition * SingletonPartner(bool upper)</div><div class="ttdef"><b>Definition:</b> <a href="a01113_source.html#l00644">colpartition.cpp:644</a></div></div>
-<div class="ttc" id="a00846_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00084">errcode.h:84</a></div></div>
+<p>Definition at line <a class="el" href="a00679_source.html#l00410">410</a> of file <a class="el" href="a00679_source.html">docqual.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                                 {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  page_res_it.<a class="code" href="a00486.html#a15febd45d0904bb3c5f7d506368177f0">restart_page</a> ();</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  <span class="keywordflow">while</span> (page_res_it.<a class="code" href="a00486.html#ab84b4850200ba8802791c6197c113fd0">word</a> () != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    page_res_it.<a class="code" href="a00486.html#ab84b4850200ba8802791c6197c113fd0">word</a> ()-&gt;<a class="code" href="a00651.html#ae24eb58be06cf275aee411d947fd31ef">reject_map</a>.<a class="code" href="a00521.html#a9fb4a691f24ea06370b55650c197db8b">rej_word_doc_rej</a> ();</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    page_res_it.<a class="code" href="a00486.html#ab29005f235cc738eebafb7d9ed6fe70b">forward</a> ();</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                 <span class="comment">//whole page is rejected</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  page_res_it.<a class="code" href="a00486.html#aab221a373111c4be685444b5633e22a5">page_res</a>-&gt;<a class="code" href="a00485.html#a65ed9c199c2ef8b3dc464225ad893e7d">rejected</a> = <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+<div class="ttc" id="a00521_html_a9fb4a691f24ea06370b55650c197db8b"><div class="ttname"><a href="a00521.html#a9fb4a691f24ea06370b55650c197db8b">REJMAP::rej_word_doc_rej</a></div><div class="ttdeci">void rej_word_doc_rej()</div><div class="ttdef"><b>Definition:</b> <a href="a00795_source.html#l00497">rejctmap.cpp:497</a></div></div>
+<div class="ttc" id="a00486_html_ab29005f235cc738eebafb7d9ed6fe70b"><div class="ttname"><a href="a00486.html#ab29005f235cc738eebafb7d9ed6fe70b">PAGE_RES_IT::forward</a></div><div class="ttdeci">WERD_RES * forward()</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00710">pageres.h:710</a></div></div>
+<div class="ttc" id="a00486_html_a15febd45d0904bb3c5f7d506368177f0"><div class="ttname"><a href="a00486.html#a15febd45d0904bb3c5f7d506368177f0">PAGE_RES_IT::restart_page</a></div><div class="ttdeci">WERD_RES * restart_page()</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00681">pageres.h:681</a></div></div>
+<div class="ttc" id="a00486_html_aab221a373111c4be685444b5633e22a5"><div class="ttname"><a href="a00486.html#aab221a373111c4be685444b5633e22a5">PAGE_RES_IT::page_res</a></div><div class="ttdeci">PAGE_RES * page_res</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00659">pageres.h:659</a></div></div>
+<div class="ttc" id="a00486_html_ab84b4850200ba8802791c6197c113fd0"><div class="ttname"><a href="a00486.html#ab84b4850200ba8802791c6197c113fd0">PAGE_RES_IT::word</a></div><div class="ttdeci">WERD_RES * word() const </div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00730">pageres.h:730</a></div></div>
+<div class="ttc" id="a00651_html_ae24eb58be06cf275aee411d947fd31ef"><div class="ttname"><a href="a00651.html#ae24eb58be06cf275aee411d947fd31ef">WERD_RES::reject_map</a></div><div class="ttdeci">REJMAP reject_map</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00271">pageres.h:271</a></div></div>
+<div class="ttc" id="a00665_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00028">capi.h:28</a></div></div>
+<div class="ttc" id="a00485_html_a65ed9c199c2ef8b3dc464225ad893e7d"><div class="ttname"><a href="a00485.html#a65ed9c199c2ef8b3dc464225ad893e7d">PAGE_RES::rejected</a></div><div class="ttdeci">BOOL8 rejected</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00063">pageres.h:63</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="ab0ea1a567feaf0f69bb350724e6a78a0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00331.html">ColPartition</a>* tesseract::WorkingPartSet::column </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01177_source.html#l00041">41</a> of file <a class="el" href="a01177_source.html">workingpartset.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                               {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> column_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aa7b37ef0a112ab667c351e3a7d51436d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::WorkingPartSet::ExtractCompletedBlocks </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>bleft</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>tright</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>resolution</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ColPartition_LIST *&#160;</td>
-          <td class="paramname"><em>used_parts</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">BLOCK_LIST *&#160;</td>
-          <td class="paramname"><em>blocks</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">TO_BLOCK_LIST *&#160;</td>
-          <td class="paramname"><em>to_blocks</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01176_source.html#l00055">55</a> of file <a class="el" href="a01176_source.html">workingpartset.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                                      {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  MakeBlocks(bleft, tright, resolution, used_parts);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  BLOCK_IT block_it(blocks);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  block_it.move_to_last();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  block_it.add_list_after(&amp;completed_blocks_);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  TO_BLOCK_IT to_block_it(to_blocks);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  to_block_it.move_to_last();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  to_block_it.add_list_after(&amp;to_blocks_);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ab20df443f0ff6df6f2ba83e31454433c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::WorkingPartSet::InsertCompletedBlocks </td>
-          <td>(</td>
-          <td class="paramtype">BLOCK_LIST *&#160;</td>
-          <td class="paramname"><em>blocks</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">TO_BLOCK_LIST *&#160;</td>
-          <td class="paramname"><em>to_blocks</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01176_source.html#l00072">72</a> of file <a class="el" href="a01176_source.html">workingpartset.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                                     {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  BLOCK_IT block_it(&amp;completed_blocks_);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  block_it.add_list_before(blocks);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  TO_BLOCK_IT to_block_it(&amp;to_blocks_);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  to_block_it.add_list_before(to_blocks);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a29052afe85bbf3982f772536504b1e31"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::WorkingPartSet::set_column </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00331.html">ColPartition</a> *&#160;</td>
-          <td class="paramname"><em>col</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01177_source.html#l00044">44</a> of file <a class="el" href="a01177_source.html">workingpartset.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                     {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    column_ = col;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>textord/<a class="el" href="a01177_source.html">workingpartset.h</a></li>
-<li>textord/<a class="el" href="a01176_source.html">workingpartset.cpp</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00679.html">WorkingPartSet</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:57 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00679.html">docqual.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

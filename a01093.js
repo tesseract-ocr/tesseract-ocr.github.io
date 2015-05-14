@@ -1,5 +1,5 @@
 var a01093 =
 [
-    [ "KERNEL", "a01093.html#a0081febcd5eb81ba92dcf93359a1b0ea", null ],
-    [ "kernel_src", "a01093.html#a25b2f321f6280ca65a0c4035a42cc94e", null ]
+    [ "test_underline", "a01093.html#a1b548029a83d9ac05ecb47cb177c69fb", null ],
+    [ "textord_underline_threshold", "a01093.html#a1cb0deabd2c5a114d01553973c68301c", null ]
 ];

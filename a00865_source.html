@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/ocrclass.h Source File</title>
+<title>Tesseract: ccutil/unichar.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,203 +105,257 @@ $(document).ready(function(){initNavTree('a00865_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ocrclass.h</div>  </div>
+<div class="title">unichar.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00865.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        ocrclass.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Class definitions and constants for the OCR API.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:                                      Hewlett-Packard Co</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * (C) Copyright 1996, Hewlett-Packard Co.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * This file contains typedefs for all the structures used by</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * the HP OCR interface.</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * The code is designed to be used with either a C or C++ compiler.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * The structures are designed to allow them to be used with any</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * structure alignment upto 8.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<a href="a00865.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        unichar.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: Unicode character/ligature class.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      Ray Smith</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Wed Jun 28 17:05:01 PDT 2006</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2006, Google Inc.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00866.html">unichar.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00827.html">errcode.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00830.html">genericvector.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00864.html">tprintf.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00865.html#a98a2f50a1ca513613316ffd384dd1bfb">   25</a></span>&#160;<span class="preprocessor">#define UNI_MAX_LEGAL_UTF32 0x0010FFFF</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef            CCUTIL_OCRCLASS_H_</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define            CCUTIL_OCRCLASS_H_</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef __GNUC__</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include          &lt;windows.h&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a01229.html">gettimeofday.h</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include          &lt;sys/time.h&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include          &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00854.html">host.h</a>&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*Maximum lengths of various strings*/</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00865.html#a0b2c603b6681f87eecb49af5be20b91f">   42</a></span>&#160;<span class="preprocessor">#define MAX_FONT_NAME   34       </span><span class="comment">/*name of font */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00865.html#a4fd06493d9b1ac7ed02bb09f2dc1f5cf">   43</a></span>&#160;<span class="preprocessor">#define MAX_OCR_NAME    32       </span><span class="comment">/*name of engine */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00865.html#ade5b9ed0be8bec25704019a1c282abbc">   44</a></span>&#160;<span class="preprocessor">#define MAX_OCR_VERSION   17     </span><span class="comment">/*version code of engine */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/*pitch set definitions are identical to RTF*/</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00865.html#ac3897114422f255ea0d1021a0efd807f">   47</a></span>&#160;<span class="preprocessor">#define PITCH_DEF     0          </span><span class="comment">/*default */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00865.html#a8018d90b23ed65b65caa68817bacd512">   48</a></span>&#160;<span class="preprocessor">#define PITCH_FIXED     1        </span><span class="comment">/*fixed pitch */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a00865.html#a807aa057a46ece9ccf5f3793c6a12089">   49</a></span>&#160;<span class="preprocessor">#define PITCH_VAR     2          </span><span class="comment">/*variable pitch */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * EANYCODE_CHAR</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> * Description of a single character. The character code is defined by</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * the character set of the current font.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * Output text is sent as an array of these structures.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> * Spaces and line endings in the output are represented in the</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> * structures of the surrounding characters. They are not directly</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> * represented as characters.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * The first character in a word has a positive value of blanks.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> * Missing information should be set to the defaults in the comments.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> * If word bounds are known, but not character bounds, then the top and</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> * bottom of each character should be those of the word. The left of the</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> * first and right of the last char in each word should be set. All other</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> * lefts and rights should be set to -1.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * If set, the values of right and bottom are left+width and top+height.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> * Most of the members come directly from the parameters to ocr_append_char.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> * The formatting member uses the enhancement parameter and combines the</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> * line direction stuff into the top 3 bits.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * The coding is 0=RL char, 1=LR char, 2=DR NL, 3=UL NL, 4=DR Para,</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * 5=UL Para, 6=TB char, 7=BT char. API users do not need to know what</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * the coding is, only that it is backwards compatible with the previous</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * version.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="a00370.html">   75</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{                  <span class="comment">/*single character */</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// It should be noted that the format for char_code for version 2.0 and beyond</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// is UTF8 which means that ASCII characters will come out as one structure but</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// other characters will be returned in two or more instances of this structure</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// with a single byte of the  UTF8 code in each, but each will have the same</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// bounding box. Programs which want to handle languagues with different</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// characters sets will need to handle extended characters appropriately, but</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// *all* code needs to be prepared to receive UTF8 coded characters for</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// characters such as bullet and fancy quotes.</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="a00370.html#acc55d5fd404409694d0808608f57a447">   84</a></span>&#160;  <a class="code" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a> <a class="code" href="a00370.html#acc55d5fd404409694d0808608f57a447">char_code</a>;              <span class="comment">/*character itself */</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="a00370.html#aaaa185cb7ab5b48ce5b3545ba18e5699">   85</a></span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a00370.html#aaaa185cb7ab5b48ce5b3545ba18e5699">left</a>;                    <span class="comment">/*of char (-1) */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a00370.html#ac9e8dcf9532da66af0c09c9f014e7c02">   86</a></span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a00370.html#ac9e8dcf9532da66af0c09c9f014e7c02">right</a>;                   <span class="comment">/*of char (-1) */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="a00370.html#a80e2b9ffb809299e90281cb356369572">   87</a></span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a00370.html#a80e2b9ffb809299e90281cb356369572">top</a>;                     <span class="comment">/*of char (-1) */</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="a00370.html#a02e526b5d3fe9c2ad8209266e2d85be1">   88</a></span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a00370.html#a02e526b5d3fe9c2ad8209266e2d85be1">bottom</a>;                  <span class="comment">/*of char (-1) */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00370.html#a2da1e6fb1bf84ee640436019403c179a">   89</a></span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a00370.html#a2da1e6fb1bf84ee640436019403c179a">font_index</a>;              <span class="comment">/*what font (0) */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="a00370.html#a27c3016c738dfa457a5e368d22becf0e">   90</a></span>&#160;  <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> <a class="code" href="a00370.html#a27c3016c738dfa457a5e368d22becf0e">confidence</a>;              <span class="comment">/*0=perfect, 100=reject (0/100) */</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a00370.html#a6c38af9ac469bdf64cfc14dfa63b9f56">   91</a></span>&#160;  <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> <a class="code" href="a00370.html#a6c38af9ac469bdf64cfc14dfa63b9f56">point_size</a>;              <span class="comment">/*of char, 72=i inch, (10) */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="a00370.html#afc30d51a02438c3bc662e296d6b53029">   92</a></span>&#160;  <a class="code" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00370.html#afc30d51a02438c3bc662e296d6b53029">blanks</a>;                   <span class="comment">/*no of spaces before this char (1) */</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="a00370.html#aece3c2e18935793fb109308c77e1266b">   93</a></span>&#160;  <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> <a class="code" href="a00370.html#aece3c2e18935793fb109308c77e1266b">formatting</a>;              <span class="comment">/*char formatting (0) */</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <a class="code" href="a00370.html">EANYCODE_CHAR</a>;                 <span class="comment">/*single character */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Construct from a utf8 string. If len&lt;0 then the string is null terminated.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// If the string is too long to fit in the UNICHAR then it takes only what</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// will fit. Checks for illegal input and stops at an illegal sequence.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// The resulting UNICHAR may be empty.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00637.html#a3d21067938609802ec2284a1cfcea48f">   31</a></span>&#160;<a class="code" href="a00637.html#a7fb65b084f53bcf45ba1cefd1eb88398">UNICHAR::UNICHAR</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* utf8_str, <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">int</span> total_len = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">int</span> step = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span> (len &lt; 0) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">for</span> (len = 0; len &lt; <a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a> &amp;&amp; utf8_str[len] != 0; ++len);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">for</span> (total_len = 0; total_len &lt; len; total_len += step) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    step = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(utf8_str + total_len);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (total_len + step &gt; <a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a>)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">break</span>;  <span class="comment">// Too long.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (step == 0)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">break</span>;  <span class="comment">// Illegal first byte.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span> (i = 1; i &lt; step; ++i)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">if</span> ((utf8_str[total_len + i] &amp; 0xc0) != 0x80)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (i &lt; step)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">break</span>;  <span class="comment">// Illegal surrogate</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  memcpy(chars, utf8_str, total_len);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">if</span> (total_len &lt; <a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a>) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    chars[<a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a> - 1] = total_len;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">while</span> (total_len &lt; <a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a> - 1)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      chars[total_len++] = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// Construct from a single UCS4 character. Illegal values are ignored,</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// resulting in an empty UNICHAR.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00637.html#a6793ad5d9ed95380e92bbec2aabf9255">   60</a></span>&#160;<a class="code" href="a00637.html#a7fb65b084f53bcf45ba1cefd1eb88398">UNICHAR::UNICHAR</a>(<span class="keywordtype">int</span> unicode) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> bytemask = 0xBF;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> bytemark = 0x80;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (unicode &lt; 0x80) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    chars[<a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a> - 1] = 1;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    chars[2] = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    chars[1] = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    chars[0] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(unicode);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (unicode &lt; 0x800) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    chars[<a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a> - 1] = 2;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    chars[2] = 0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    chars[1] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>((unicode | bytemark) &amp; bytemask);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    unicode &gt;&gt;= 6;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    chars[0] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(unicode | 0xc0);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (unicode &lt; 0x10000) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    chars[<a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a> - 1] = 3;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    chars[2] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>((unicode | bytemark) &amp; bytemask);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    unicode &gt;&gt;= 6;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    chars[1] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>((unicode | bytemark) &amp; bytemask);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    unicode &gt;&gt;= 6;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    chars[0] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(unicode | 0xe0);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (unicode &lt;= <a class="code" href="a00865.html#a98a2f50a1ca513613316ffd384dd1bfb">UNI_MAX_LEGAL_UTF32</a>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    chars[<a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a> - 1] = 4;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    chars[3] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>((unicode | bytemark) &amp; bytemask);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    unicode &gt;&gt;= 6;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    chars[2] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>((unicode | bytemark) &amp; bytemask);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    unicode &gt;&gt;= 6;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    chars[1] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>((unicode | bytemark) &amp; bytemask);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    unicode &gt;&gt;= 6;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    chars[0] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(unicode | 0xf0);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    memset(chars, 0, <a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"> * ETEXT_DESC</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> * Description of the output of the OCR engine.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> * This structure is used as both a progress monitor and the final</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * output header, since it needs to be a valid progress monitor while</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * the OCR engine is storing its output to shared memory.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> * During progress, all the buffer info is -1.</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> * Progress starts at 0 and increases to 100 during OCR. No other constraint.</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> * Every progress callback, the OCR engine must set ocr_alive to 1.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * The HP side will set ocr_alive to 0. Repeated failure to reset</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * to 1 indicates that the OCR engine is dead.</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> * If the cancel function is not null then it is called with the number of</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * user words found. If it returns true then operation is cancelled.</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="a00865.html#a71842882d021cc763ba268964ef204c0">  110</a></span>&#160;<span class="keyword">typedef</span> bool (*<a class="code" href="a00865.html#a71842882d021cc763ba268964ef204c0">CANCEL_FUNC</a>)(<span class="keywordtype">void</span>* cancel_this, <span class="keywordtype">int</span> words);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="a00384.html">  112</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00384.html">ETEXT_DESC</a> {             <span class="comment">// output header</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="a00384.html#aeedd8fde98247341baf3447f55274c17">  114</a></span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a00384.html#aeedd8fde98247341baf3447f55274c17">count</a>;                 <span class="comment">// chars in this buffer(0)</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="a00384.html#ac350ee2b121c4bf1f625b1606a859d0a">  115</a></span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a00384.html#ac350ee2b121c4bf1f625b1606a859d0a">progress</a>;              <span class="comment">// percent complete increasing (0-100)</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00384.html#aad69cf50a5a4f1cc5642fe8a2a6059d8">  116</a></span>&#160;  <a class="code" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00384.html#aad69cf50a5a4f1cc5642fe8a2a6059d8">more_to_come</a>;           <span class="comment">// true if not last</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="a00384.html#a8af28870223ea9a5ae89fcbafeb1c6aa">  117</a></span>&#160;  <span class="keyword">volatile</span> <a class="code" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00384.html#a8af28870223ea9a5ae89fcbafeb1c6aa">ocr_alive</a>;     <span class="comment">// ocr sets to 1, HP 0</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="a00384.html#ae6168082c3ca3e91c9d25ea4c2d8bfe1">  118</a></span>&#160;  <a class="code" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00384.html#ae6168082c3ca3e91c9d25ea4c2d8bfe1">err_code</a>;               <span class="comment">// for errcode use</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="a00384.html#afcea4319ceed9b37f3c43eec9ec5d55a">  119</a></span>&#160;  <a class="code" href="a00865.html#a71842882d021cc763ba268964ef204c0">CANCEL_FUNC</a> <a class="code" href="a00384.html#afcea4319ceed9b37f3c43eec9ec5d55a">cancel</a>;          <span class="comment">// returns true to cancel</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="a00384.html#a4844a3e9868a0fde7ad2fcaa37f5c5f1">  120</a></span>&#160;  <span class="keywordtype">void</span>* <a class="code" href="a00384.html#a4844a3e9868a0fde7ad2fcaa37f5c5f1">cancel_this</a>;           <span class="comment">// this or other data for cancel</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">  121</a></span>&#160;  <span class="keyword">struct </span>timeval <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>;     <span class="comment">// time to stop. expected to be set only by call</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                               <span class="comment">// to set_deadline_msecs()</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="a00384.html#ac71732cab3f860ad991da9f91fb6f915">  123</a></span>&#160;  <a class="code" href="a00370.html">EANYCODE_CHAR</a> <a class="code" href="a00384.html#ac71732cab3f860ad991da9f91fb6f915">text</a>[1];       <span class="comment">// character data</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="a00384.html#a07eb91ebcbcf0ad1d22a302a12710728">  125</a></span>&#160;  <a class="code" href="a00384.html#a07eb91ebcbcf0ad1d22a302a12710728">ETEXT_DESC</a>() : count(0), progress(0), more_to_come(0), ocr_alive(0),</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                   err_code(0), cancel(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), cancel_this(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_sec = 0;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_usec = 0;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="comment">// Sets the end time to be deadline_msecs milliseconds from now.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="a00384.html#acbbc24327ecc909b78274d339c27236e">  132</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00384.html#acbbc24327ecc909b78274d339c27236e">set_deadline_msecs</a>(<a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> deadline_msecs) {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="a01228.html#adf30830f5265e55035171c301eb9c3fb">gettimeofday</a>(&amp;<a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>, <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> deadline_secs = deadline_msecs / 1000;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_sec += deadline_secs;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_usec += (deadline_msecs -  deadline_secs * 1000) * 1000;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_usec &gt; 1000000) {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_usec -= 1000000;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      ++<a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_sec;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="comment">// Returns false if we&#39;ve not passed the end_time, or have not set a deadline.</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="a00384.html#aaf3c78b74f2ef6b9e7ae2345df916a6d">  144</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00384.html#aaf3c78b74f2ef6b9e7ae2345df916a6d">deadline_exceeded</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_sec == 0 &amp;&amp; <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_usec == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">struct </span>timeval now;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="a01228.html#adf30830f5265e55035171c301eb9c3fb">gettimeofday</a>(&amp;now, <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">return</span> (now.tv_sec &gt; <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_sec || (now.tv_sec == <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_sec &amp;&amp;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                             now.tv_usec &gt; <a class="code" href="a00384.html#a0c77a9d716c5d41e18464a227876035b">end_time</a>.tv_usec));</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif  // CCUTIL_OCRCLASS_H_</span></div>
-<div class="ttc" id="a00854_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00102">host.h:102</a></div></div>
-<div class="ttc" id="a00384_html_acbbc24327ecc909b78274d339c27236e"><div class="ttname"><a href="a00384.html#acbbc24327ecc909b78274d339c27236e">ETEXT_DESC::set_deadline_msecs</a></div><div class="ttdeci">void set_deadline_msecs(inT32 deadline_msecs)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00132">ocrclass.h:132</a></div></div>
-<div class="ttc" id="a00370_html_afc30d51a02438c3bc662e296d6b53029"><div class="ttname"><a href="a00370.html#afc30d51a02438c3bc662e296d6b53029">EANYCODE_CHAR::blanks</a></div><div class="ttdeci">inT8 blanks</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00092">ocrclass.h:92</a></div></div>
-<div class="ttc" id="a01228_html_adf30830f5265e55035171c301eb9c3fb"><div class="ttname"><a href="a01228.html#adf30830f5265e55035171c301eb9c3fb">gettimeofday</a></div><div class="ttdeci">int gettimeofday(struct timeval *tp, struct timezone *tzp)</div><div class="ttdef"><b>Definition:</b> <a href="a01228_source.html#l00023">gettimeofday.cpp:23</a></div></div>
-<div class="ttc" id="a00384_html_a8af28870223ea9a5ae89fcbafeb1c6aa"><div class="ttname"><a href="a00384.html#a8af28870223ea9a5ae89fcbafeb1c6aa">ETEXT_DESC::ocr_alive</a></div><div class="ttdeci">volatile inT8 ocr_alive</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00117">ocrclass.h:117</a></div></div>
-<div class="ttc" id="a00854_html_a2ba4d271e85baf0d333318985cb3bced"><div class="ttname"><a href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a></div><div class="ttdeci">SIGNED char inT8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00098">host.h:98</a></div></div>
-<div class="ttc" id="a00384_html_a0c77a9d716c5d41e18464a227876035b"><div class="ttname"><a href="a00384.html#a0c77a9d716c5d41e18464a227876035b">ETEXT_DESC::end_time</a></div><div class="ttdeci">struct timeval end_time</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00121">ocrclass.h:121</a></div></div>
-<div class="ttc" id="a00384_html_a4844a3e9868a0fde7ad2fcaa37f5c5f1"><div class="ttname"><a href="a00384.html#a4844a3e9868a0fde7ad2fcaa37f5c5f1">ETEXT_DESC::cancel_this</a></div><div class="ttdeci">void * cancel_this</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00120">ocrclass.h:120</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00384_html_ac71732cab3f860ad991da9f91fb6f915"><div class="ttname"><a href="a00384.html#ac71732cab3f860ad991da9f91fb6f915">ETEXT_DESC::text</a></div><div class="ttdeci">EANYCODE_CHAR text[1]</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00123">ocrclass.h:123</a></div></div>
-<div class="ttc" id="a00384_html_a07eb91ebcbcf0ad1d22a302a12710728"><div class="ttname"><a href="a00384.html#a07eb91ebcbcf0ad1d22a302a12710728">ETEXT_DESC::ETEXT_DESC</a></div><div class="ttdeci">ETEXT_DESC()</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00125">ocrclass.h:125</a></div></div>
-<div class="ttc" id="a00370_html_a6c38af9ac469bdf64cfc14dfa63b9f56"><div class="ttname"><a href="a00370.html#a6c38af9ac469bdf64cfc14dfa63b9f56">EANYCODE_CHAR::point_size</a></div><div class="ttdeci">uinT8 point_size</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00091">ocrclass.h:91</a></div></div>
-<div class="ttc" id="a00384_html"><div class="ttname"><a href="a00384.html">ETEXT_DESC</a></div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00112">ocrclass.h:112</a></div></div>
-<div class="ttc" id="a00370_html_ac9e8dcf9532da66af0c09c9f014e7c02"><div class="ttname"><a href="a00370.html#ac9e8dcf9532da66af0c09c9f014e7c02">EANYCODE_CHAR::right</a></div><div class="ttdeci">inT16 right</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00086">ocrclass.h:86</a></div></div>
-<div class="ttc" id="a00370_html"><div class="ttname"><a href="a00370.html">EANYCODE_CHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00075">ocrclass.h:75</a></div></div>
-<div class="ttc" id="a00384_html_aeedd8fde98247341baf3447f55274c17"><div class="ttname"><a href="a00384.html#aeedd8fde98247341baf3447f55274c17">ETEXT_DESC::count</a></div><div class="ttdeci">inT16 count</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00114">ocrclass.h:114</a></div></div>
-<div class="ttc" id="a00384_html_afcea4319ceed9b37f3c43eec9ec5d55a"><div class="ttname"><a href="a00384.html#afcea4319ceed9b37f3c43eec9ec5d55a">ETEXT_DESC::cancel</a></div><div class="ttdeci">CANCEL_FUNC cancel</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00119">ocrclass.h:119</a></div></div>
-<div class="ttc" id="a00384_html_aaf3c78b74f2ef6b9e7ae2345df916a6d"><div class="ttname"><a href="a00384.html#aaf3c78b74f2ef6b9e7ae2345df916a6d">ETEXT_DESC::deadline_exceeded</a></div><div class="ttdeci">bool deadline_exceeded() const </div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00144">ocrclass.h:144</a></div></div>
-<div class="ttc" id="a00370_html_aaaa185cb7ab5b48ce5b3545ba18e5699"><div class="ttname"><a href="a00370.html#aaaa185cb7ab5b48ce5b3545ba18e5699">EANYCODE_CHAR::left</a></div><div class="ttdeci">inT16 left</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00085">ocrclass.h:85</a></div></div>
-<div class="ttc" id="a00370_html_a2da1e6fb1bf84ee640436019403c179a"><div class="ttname"><a href="a00370.html#a2da1e6fb1bf84ee640436019403c179a">EANYCODE_CHAR::font_index</a></div><div class="ttdeci">inT16 font_index</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00089">ocrclass.h:89</a></div></div>
-<div class="ttc" id="a00370_html_a80e2b9ffb809299e90281cb356369572"><div class="ttname"><a href="a00370.html#a80e2b9ffb809299e90281cb356369572">EANYCODE_CHAR::top</a></div><div class="ttdeci">inT16 top</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00087">ocrclass.h:87</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a00370_html_aece3c2e18935793fb109308c77e1266b"><div class="ttname"><a href="a00370.html#aece3c2e18935793fb109308c77e1266b">EANYCODE_CHAR::formatting</a></div><div class="ttdeci">uinT8 formatting</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00093">ocrclass.h:93</a></div></div>
-<div class="ttc" id="a01229_html"><div class="ttname"><a href="a01229.html">gettimeofday.h</a></div></div>
-<div class="ttc" id="a00854_html"><div class="ttname"><a href="a00854.html">host.h</a></div></div>
-<div class="ttc" id="a00854_html_acb2dfad543247740dab87d31bb49dfff"><div class="ttname"><a href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a></div><div class="ttdeci">unsigned short uinT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00101">host.h:101</a></div></div>
-<div class="ttc" id="a00865_html_a71842882d021cc763ba268964ef204c0"><div class="ttname"><a href="a00865.html#a71842882d021cc763ba268964ef204c0">CANCEL_FUNC</a></div><div class="ttdeci">bool(* CANCEL_FUNC)(void *cancel_this, int words)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00110">ocrclass.h:110</a></div></div>
-<div class="ttc" id="a00370_html_acc55d5fd404409694d0808608f57a447"><div class="ttname"><a href="a00370.html#acc55d5fd404409694d0808608f57a447">EANYCODE_CHAR::char_code</a></div><div class="ttdeci">uinT16 char_code</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00084">ocrclass.h:84</a></div></div>
-<div class="ttc" id="a00384_html_ac350ee2b121c4bf1f625b1606a859d0a"><div class="ttname"><a href="a00384.html#ac350ee2b121c4bf1f625b1606a859d0a">ETEXT_DESC::progress</a></div><div class="ttdeci">inT16 progress</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00115">ocrclass.h:115</a></div></div>
-<div class="ttc" id="a00854_html_a458fe97f82495945f8071bb3c18d1783"><div class="ttname"><a href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a></div><div class="ttdeci">unsigned char uinT8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00099">host.h:99</a></div></div>
-<div class="ttc" id="a00370_html_a27c3016c738dfa457a5e368d22becf0e"><div class="ttname"><a href="a00370.html#a27c3016c738dfa457a5e368d22becf0e">EANYCODE_CHAR::confidence</a></div><div class="ttdeci">uinT8 confidence</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00090">ocrclass.h:90</a></div></div>
-<div class="ttc" id="a00370_html_a02e526b5d3fe9c2ad8209266e2d85be1"><div class="ttname"><a href="a00370.html#a02e526b5d3fe9c2ad8209266e2d85be1">EANYCODE_CHAR::bottom</a></div><div class="ttdeci">inT16 bottom</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00088">ocrclass.h:88</a></div></div>
-<div class="ttc" id="a00384_html_ae6168082c3ca3e91c9d25ea4c2d8bfe1"><div class="ttname"><a href="a00384.html#ae6168082c3ca3e91c9d25ea4c2d8bfe1">ETEXT_DESC::err_code</a></div><div class="ttdeci">inT8 err_code</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00118">ocrclass.h:118</a></div></div>
-<div class="ttc" id="a00384_html_aad69cf50a5a4f1cc5642fe8a2a6059d8"><div class="ttname"><a href="a00384.html#aad69cf50a5a4f1cc5642fe8a2a6059d8">ETEXT_DESC::more_to_come</a></div><div class="ttdeci">inT8 more_to_come</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00116">ocrclass.h:116</a></div></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// Get the first character as UCS-4.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="a00637.html#a59ffb904d7e604da0fea3fad1c63ee64">   97</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00637.html#a59ffb904d7e604da0fea3fad1c63ee64">UNICHAR::first_uni</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> utf8_offsets[5] = {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    0, 0, 0x3080, 0xE2080, 0x3C82080</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  };</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">int</span> uni = 0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">int</span> len = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(chars);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* src = chars;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">switch</span> (len) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    uni += <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(*src++);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    uni &lt;&lt;= 6;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    uni += <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(*src++);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    uni &lt;&lt;= 6;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    uni += <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(*src++);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    uni &lt;&lt;= 6;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    uni += <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(*src++);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  uni -= utf8_offsets[len];</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">return</span> uni;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// Get a terminated UTF8 string: Must delete[] it after use.</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="a00637.html#a06c2f8824d2f49385ca8cbcf5434e918">  125</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="a00637.html#a06c2f8824d2f49385ca8cbcf5434e918">UNICHAR::utf8_str</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">int</span> len = <a class="code" href="a00637.html#a7726199d64a4f8afa0aa5c831bbcf155">utf8_len</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">char</span>* str = <span class="keyword">new</span> <span class="keywordtype">char</span>[len + 1];</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  memcpy(str, chars, len);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  str[len] = 0;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordflow">return</span> str;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">// Get the number of bytes in the first character of the given utf8 string.</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">  134</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">UNICHAR::utf8_step</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* utf8_str) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> utf8_bytes[256] = {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3, 4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  };</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordflow">return</span> utf8_bytes[<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(*utf8_str)];</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="a00330.html#a68562bd8791cff39f9c582b92ee46faa">  149</a></span>&#160;<a class="code" href="a00330.html">UNICHAR::const_iterator</a>&amp; <a class="code" href="a00330.html#a68562bd8791cff39f9c582b92ee46faa">UNICHAR::const_iterator::operator++</a>() {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordtype">int</span> step = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">if</span> (step == 0) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Illegal UTF8 encountered.\n&quot;</span>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5 &amp;&amp; it_[i] != <span class="charliteral">&#39;\0&#39;</span>; ++i) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Index %d char = 0x%x\n&quot;</span>, i, it_[i]);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    step = 1;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  it_ += step;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="a00330.html#aa0d9fefe785dbf4bd2cdd0f3f236b6ee">  163</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00330.html#aa0d9fefe785dbf4bd2cdd0f3f236b6ee">UNICHAR::const_iterator::operator*</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> len = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordflow">if</span> (len == 0) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;WARNING: Illegal UTF8 encountered\n&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="a00637.html">UNICHAR</a> uch(it_, len);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordflow">return</span> uch.<a class="code" href="a00637.html#a59ffb904d7e604da0fea3fad1c63ee64">first_uni</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="a00330.html#aaf36b10de41ea4fd8759caf356a3422c">  174</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00330.html#aaf36b10de41ea4fd8759caf356a3422c">UNICHAR::const_iterator::get_utf8</a>(<span class="keywordtype">char</span>* utf8_output)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> len = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordflow">if</span> (len == 0) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;WARNING: Illegal UTF8 encountered\n&quot;</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    utf8_output[0] = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  strncpy(utf8_output, it_, len);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">return</span> len;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="a00330.html#ac9bd20b668eee7a0eaaa53ea8b07cb74">  186</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00330.html#ac9bd20b668eee7a0eaaa53ea8b07cb74">UNICHAR::const_iterator::utf8_len</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> len = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">if</span> (len == 0) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;WARNING: Illegal UTF8 encountered\n&quot;</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">return</span> len;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="a00330.html#aba11b7c888fede9c97bb57af5c5894a7">  196</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00330.html#aba11b7c888fede9c97bb57af5c5894a7">UNICHAR::const_iterator::is_legal</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_) &gt; 0;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="a00637.html#a432bc2daca85cbd2ceaa837d0095437f">  200</a></span>&#160;<a class="code" href="a00330.html">UNICHAR::const_iterator</a> <a class="code" href="a00637.html#a432bc2daca85cbd2ceaa837d0095437f">UNICHAR::begin</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="a00637.html#a06c2f8824d2f49385ca8cbcf5434e918">utf8_str</a>, <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00330.html">UNICHAR::const_iterator</a>(utf8_str);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="a00637.html#ad7daced81827613918361a7220209ddc">  204</a></span>&#160;<a class="code" href="a00330.html">UNICHAR::const_iterator</a> <a class="code" href="a00637.html#ad7daced81827613918361a7220209ddc">UNICHAR::end</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="a00637.html#a06c2f8824d2f49385ca8cbcf5434e918">utf8_str</a>, <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00330.html">UNICHAR::const_iterator</a>(utf8_str + len);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">// Converts a utf-8 string to a vector of unicodes.</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="a00637.html#a9089fba3050dcc49a7bd45aba418aa16">  209</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00637.html#a9089fba3050dcc49a7bd45aba418aa16">UNICHAR::UTF8ToUnicode</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="a00637.html#a06c2f8824d2f49385ca8cbcf5434e918">utf8_str</a>,</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                            <a class="code" href="a00406.html">GenericVector&lt;int&gt;</a>* unicodes) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> utf8_length = strlen(utf8_str);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <a class="code" href="a00330.html">const_iterator</a> end_it(<a class="code" href="a00637.html#ad7daced81827613918361a7220209ddc">end</a>(utf8_str, utf8_length));</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="a00330.html">const_iterator</a> it(<a class="code" href="a00637.html#a432bc2daca85cbd2ceaa837d0095437f">begin</a>(utf8_str, utf8_length)); it != end_it; ++it) {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    unicodes-&gt;<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(*it);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="ttc" id="a00827_html"><div class="ttname"><a href="a00827.html">errcode.h</a></div></div>
+<div class="ttc" id="a00330_html"><div class="ttname"><a href="a00330.html">UNICHAR::const_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00102">unichar.h:102</a></div></div>
+<div class="ttc" id="a00830_html"><div class="ttname"><a href="a00830.html">genericvector.h</a></div></div>
+<div class="ttc" id="a00864_html"><div class="ttname"><a href="a00864.html">tprintf.h</a></div></div>
+<div class="ttc" id="a00330_html_aaf36b10de41ea4fd8759caf356a3422c"><div class="ttname"><a href="a00330.html#aaf36b10de41ea4fd8759caf356a3422c">UNICHAR::const_iterator::get_utf8</a></div><div class="ttdeci">int get_utf8(char *buf) const </div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00174">unichar.cpp:174</a></div></div>
+<div class="ttc" id="a00637_html_a06c2f8824d2f49385ca8cbcf5434e918"><div class="ttname"><a href="a00637.html#a06c2f8824d2f49385ca8cbcf5434e918">UNICHAR::utf8_str</a></div><div class="ttdeci">char * utf8_str() const </div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00125">unichar.cpp:125</a></div></div>
+<div class="ttc" id="a00865_html_a98a2f50a1ca513613316ffd384dd1bfb"><div class="ttname"><a href="a00865.html#a98a2f50a1ca513613316ffd384dd1bfb">UNI_MAX_LEGAL_UTF32</a></div><div class="ttdeci">#define UNI_MAX_LEGAL_UTF32</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00025">unichar.cpp:25</a></div></div>
+<div class="ttc" id="a00637_html_a9089fba3050dcc49a7bd45aba418aa16"><div class="ttname"><a href="a00637.html#a9089fba3050dcc49a7bd45aba418aa16">UNICHAR::UTF8ToUnicode</a></div><div class="ttdeci">static void UTF8ToUnicode(const char *utf8_str, GenericVector&lt; int &gt; *unicodes)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00209">unichar.cpp:209</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector&lt; int &gt;</a></div></div>
+<div class="ttc" id="a00330_html_aa0d9fefe785dbf4bd2cdd0f3f236b6ee"><div class="ttname"><a href="a00330.html#aa0d9fefe785dbf4bd2cdd0f3f236b6ee">UNICHAR::const_iterator::operator*</a></div><div class="ttdeci">int operator*() const </div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00163">unichar.cpp:163</a></div></div>
+<div class="ttc" id="a00637_html_ad7daced81827613918361a7220209ddc"><div class="ttname"><a href="a00637.html#ad7daced81827613918361a7220209ddc">UNICHAR::end</a></div><div class="ttdeci">static const_iterator end(const char *utf8_str, const int byte_length)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00204">unichar.cpp:204</a></div></div>
+<div class="ttc" id="a00637_html_a432bc2daca85cbd2ceaa837d0095437f"><div class="ttname"><a href="a00637.html#a432bc2daca85cbd2ceaa837d0095437f">UNICHAR::begin</a></div><div class="ttdeci">static const_iterator begin(const char *utf8_str, const int byte_length)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00200">unichar.cpp:200</a></div></div>
+<div class="ttc" id="a00330_html_aba11b7c888fede9c97bb57af5c5894a7"><div class="ttname"><a href="a00330.html#aba11b7c888fede9c97bb57af5c5894a7">UNICHAR::const_iterator::is_legal</a></div><div class="ttdeci">bool is_legal() const </div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00196">unichar.cpp:196</a></div></div>
+<div class="ttc" id="a00866_html"><div class="ttname"><a href="a00866.html">unichar.h</a></div></div>
+<div class="ttc" id="a00637_html"><div class="ttname"><a href="a00637.html">UNICHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00052">unichar.h:52</a></div></div>
+<div class="ttc" id="a00330_html_ac9bd20b668eee7a0eaaa53ea8b07cb74"><div class="ttname"><a href="a00330.html#ac9bd20b668eee7a0eaaa53ea8b07cb74">UNICHAR::const_iterator::utf8_len</a></div><div class="ttdeci">int utf8_len() const </div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00186">unichar.cpp:186</a></div></div>
+<div class="ttc" id="a00637_html_a8182a4663f6c1df9f097700f1009ab22"><div class="ttname"><a href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">UNICHAR::utf8_step</a></div><div class="ttdeci">static int utf8_step(const char *utf8_str)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00134">unichar.cpp:134</a></div></div>
+<div class="ttc" id="a00406_html_a0dc89fe2a365b04a61017f9d78c1a303"><div class="ttname"><a href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">GenericVector::push_back</a></div><div class="ttdeci">int push_back(T object)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00735">genericvector.h:735</a></div></div>
+<div class="ttc" id="a00866_html_a902bc40c9d89802bc063afe30ce9e708"><div class="ttname"><a href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a></div><div class="ttdeci">#define UNICHAR_LEN</div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00030">unichar.h:30</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00637_html_a7fb65b084f53bcf45ba1cefd1eb88398"><div class="ttname"><a href="a00637.html#a7fb65b084f53bcf45ba1cefd1eb88398">UNICHAR::UNICHAR</a></div><div class="ttdeci">UNICHAR()</div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00054">unichar.h:54</a></div></div>
+<div class="ttc" id="a00637_html_a59ffb904d7e604da0fea3fad1c63ee64"><div class="ttname"><a href="a00637.html#a59ffb904d7e604da0fea3fad1c63ee64">UNICHAR::first_uni</a></div><div class="ttdeci">int first_uni() const </div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00097">unichar.cpp:97</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00330_html_a68562bd8791cff39f9c582b92ee46faa"><div class="ttname"><a href="a00330.html#a68562bd8791cff39f9c582b92ee46faa">UNICHAR::const_iterator::operator++</a></div><div class="ttdeci">const_iterator &amp; operator++()</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00149">unichar.cpp:149</a></div></div>
+<div class="ttc" id="a00637_html_a7726199d64a4f8afa0aa5c831bbcf155"><div class="ttname"><a href="a00637.html#a7726199d64a4f8afa0aa5c831bbcf155">UNICHAR::utf8_len</a></div><div class="ttdeci">int utf8_len() const </div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00072">unichar.h:72</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00865.html">ocrclass.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:22 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00865.html">unichar.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:57 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

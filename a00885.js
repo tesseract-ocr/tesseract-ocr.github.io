@@ -1,14 +1,15 @@
 var a00885 =
 [
-    [ "GenericVector", "a00416.html", "a00416" ],
-    [ "UNICHAR", "a00655.html", "a00655" ],
-    [ "const_iterator", "a00338.html", "a00338" ],
-    [ "UNICHAR_LEN", "a00885.html#a902bc40c9d89802bc063afe30ce9e708", null ],
-    [ "UNICHAR_ID", "a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e", null ],
-    [ "StrongScriptDirection", "a00885.html#abc3119a959ecd5cffc1d9b9d57479dba", [
-      [ "DIR_NEUTRAL", "a00885.html#abc3119a959ecd5cffc1d9b9d57479dbaaacc5ec7fd402a8806e78fba831045aae", null ],
-      [ "DIR_LEFT_TO_RIGHT", "a00885.html#abc3119a959ecd5cffc1d9b9d57479dbaa5978cd698552a6106db1bf6528617317", null ],
-      [ "DIR_RIGHT_TO_LEFT", "a00885.html#abc3119a959ecd5cffc1d9b9d57479dbaa3c6da23f98ab8ac48598c21583d9297e", null ],
-      [ "DIR_MIX", "a00885.html#abc3119a959ecd5cffc1d9b9d57479dbaa252615b6d7ebef9293183f6e94488cc1", null ]
-    ] ]
+    [ "MAXSAMPLESIZE", "a00885.html#a6265459411ad3caa42ad4d1d54616034", null ],
+    [ "TOKENSIZE", "a00885.html#ae17edeefd22ae590b356bd24f8f61d11", null ],
+    [ "ReadNFloats", "a00885.html#ac8403bb0db7b53dcd96435b6ff2ececb", null ],
+    [ "ReadParamDesc", "a00885.html#ae37f86e537cc934a27b5cb8c3dfd3173", null ],
+    [ "ReadProtoStyle", "a00885.html#a8e0a4d7e3f0a938673a40b82a5199b2b", null ],
+    [ "ReadPrototype", "a00885.html#ae695f7912de20580483721573348f10d", null ],
+    [ "ReadSampleSize", "a00885.html#aa72cb3d213dfc2a7e49bc0e4df860388", null ],
+    [ "WriteNFloats", "a00885.html#a6278f5ccf09694335d536197004cac67", null ],
+    [ "WriteParamDesc", "a00885.html#a889ad8a8f7e5c6652ba059206b5a0aa8", null ],
+    [ "WriteProtoList", "a00885.html#ab5a847b7c77a8c9f3fb3c70caa82c5df", null ],
+    [ "WriteProtoStyle", "a00885.html#aad4580f7f59adb203f83ca78259b90e9", null ],
+    [ "WritePrototype", "a00885.html#a6f0ccfd7c117c2006796af1d3b19f110", null ]
 ];

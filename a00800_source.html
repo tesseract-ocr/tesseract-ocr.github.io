@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/polyaprx.h Source File</title>
+<title>Tesseract: ccstruct/split.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,71 +105,119 @@ $(document).ready(function(){initNavTree('a00800_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">polyaprx.h</div>  </div>
+<div class="title">split.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00800.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        polyaprx.h  (Formerly polygon.h)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Code for polygonal approximation from old edgeprog.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:              Ray Smith</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:             Thu Nov 25 11:42:04 GMT 1993</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1993, Hewlett-Packard Ltd.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           POLYAPRX_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           POLYAPRX_H</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00751.html">blobs.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00761.html">coutln.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// convert a chain-coded input to the old OUTLINE approximation</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="a00631.html">TESSLINE</a>* <a class="code" href="a00800.html#a95836c79b09910877bd1b39a59c7d5a0">ApproximateOutline</a>(<span class="keywordtype">bool</span> allow_detailed_fx, <a class="code" href="a00295.html">C_OUTLINE</a> *c_outline);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="a00372.html">EDGEPT</a> *<a class="code" href="a00800.html#aa63082dea164750c7abb7944becd6f5e">edgesteps_to_edgepts</a> (   <span class="comment">//convert outline</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="a00295.html">C_OUTLINE</a> * c_outline,           <span class="comment">//input</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="a00372.html">EDGEPT</a> edgepts[]                 <span class="comment">//output is array</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00800.html#a90ebde0147c2a36a0b1a216645a4eed8">fix2</a>(                <span class="comment">//polygonal approx</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;          <a class="code" href="a00372.html">EDGEPT</a> *start,  <span class="comment">/*loop to approimate */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          <span class="keywordtype">int</span> area);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="a00372.html">EDGEPT</a> *<a class="code" href="a00800.html#ab1a151f8dbd379f2ecf2d59f9ce2bc23">poly2</a>(                  <span class="comment">//second poly</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;              <a class="code" href="a00372.html">EDGEPT</a> *startpt,  <span class="comment">/*start of loop */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;              <span class="keywordtype">int</span> area          <span class="comment">/*area of blob box */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;             );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00800.html#aa0f03bd75099af8feca58259b9f3f48d">cutline</a>(                <span class="comment">//recursive refine</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;             <a class="code" href="a00372.html">EDGEPT</a> *first,  <span class="comment">/*ends of line */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;             <a class="code" href="a00372.html">EDGEPT</a> *<a class="code" href="a01055.html#ad9ec1d10cbd07fc3376ef300df603418">last</a>,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;             <span class="keywordtype">int</span> area        <span class="comment">/*area of object */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00800_html_a90ebde0147c2a36a0b1a216645a4eed8"><div class="ttname"><a href="a00800.html#a90ebde0147c2a36a0b1a216645a4eed8">fix2</a></div><div class="ttdeci">void fix2(EDGEPT *start, int area)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00214">polyaprx.cpp:214</a></div></div>
-<div class="ttc" id="a00761_html"><div class="ttname"><a href="a00761.html">coutln.h</a></div></div>
-<div class="ttc" id="a00295_html"><div class="ttname"><a href="a00295.html">C_OUTLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00069">coutln.h:69</a></div></div>
-<div class="ttc" id="a00800_html_ab1a151f8dbd379f2ecf2d59f9ce2bc23"><div class="ttname"><a href="a00800.html#ab1a151f8dbd379f2ecf2d59f9ce2bc23">poly2</a></div><div class="ttdeci">EDGEPT * poly2(EDGEPT *startpt, int area)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00399">polyaprx.cpp:399</a></div></div>
-<div class="ttc" id="a00800_html_a95836c79b09910877bd1b39a59c7d5a0"><div class="ttname"><a href="a00800.html#a95836c79b09910877bd1b39a59c7d5a0">ApproximateOutline</a></div><div class="ttdeci">TESSLINE * ApproximateOutline(bool allow_detailed_fx, C_OUTLINE *c_outline)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00060">polyaprx.cpp:60</a></div></div>
-<div class="ttc" id="a00372_html"><div class="ttname"><a href="a00372.html">EDGEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00076">blobs.h:76</a></div></div>
-<div class="ttc" id="a00631_html"><div class="ttname"><a href="a00631.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00180">blobs.h:180</a></div></div>
-<div class="ttc" id="a01055_html_ad9ec1d10cbd07fc3376ef300df603418"><div class="ttname"><a href="a01055.html#ad9ec1d10cbd07fc3376ef300df603418">last</a></div><div class="ttdeci">LIST last(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01055_source.html#l00277">oldlist.cpp:277</a></div></div>
-<div class="ttc" id="a00751_html"><div class="ttname"><a href="a00751.html">blobs.h</a></div></div>
-<div class="ttc" id="a00800_html_aa0f03bd75099af8feca58259b9f3f48d"><div class="ttname"><a href="a00800.html#aa0f03bd75099af8feca58259b9f3f48d">cutline</a></div><div class="ttdeci">void cutline(EDGEPT *first, EDGEPT *last, int area)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00497">polyaprx.cpp:497</a></div></div>
-<div class="ttc" id="a00800_html_aa63082dea164750c7abb7944becd6f5e"><div class="ttname"><a href="a00800.html#aa63082dea164750c7abb7944becd6f5e">edgesteps_to_edgepts</a></div><div class="ttdeci">EDGEPT * edgesteps_to_edgepts(C_OUTLINE *c_outline, EDGEPT edgepts[])</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00115">polyaprx.cpp:115</a></div></div>
+<a href="a00800.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* -*-C-*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> ********************************************************************************</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * File:        split.h  (Formerly split.h)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description:</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:       Mark Seaman, SW Productivity</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:      Fri Oct 16 14:37:00 1987</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Modified:     Mon May 13 10:49:23 1991 (Mark Seaman) marks@hpgrlt</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Language:     C</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Package:      N/A</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Status:       Reusable Software Component</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * (c) Copyright 1987, Hewlett-Packard Company.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef SPLIT_H</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define SPLIT_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">              I n c l u d e s</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00732.html">blobs.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01046.html">oldlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">              T y p e s</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00557.html">   37</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="a00557.html">split_record</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{                                <span class="comment">/*  SPLIT  */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">   39</a></span>&#160;  <a class="code" href="a00364.html">EDGEPT</a> *<a class="code" href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">point1</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00557.html#adb5ec4152eddde15c1996133177a9a58">   40</a></span>&#160;  <a class="code" href="a00364.html">EDGEPT</a> *<a class="code" href="a00557.html#adb5ec4152eddde15c1996133177a9a58">point2</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;} <a class="code" href="a00800.html#a8caa4994d858ff69cd340ac6f89731cb">SPLIT</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00800.html#a5cdeb646e4adefafd594eb710e1df827">   43</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00457.html">LIST</a> <a class="code" href="a00800.html#a5cdeb646e4adefafd594eb710e1df827">SPLITS</a>;             <span class="comment">/*  SPLITS  */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">              V a r i a b l e s</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> <a class="code" href="a00848.html#a2d4425c5a3f3c3eeeed987128d4cd419">BOOL_VAR_H</a>(<a class="code" href="a00800.html#ac251ee3f4ff4145a52a8ba54a1b26743">wordrec_display_splits</a>, 0, <span class="stringliteral">&quot;Display splits&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">              M a c r o s</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * clone_split</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> * Create a new split record and set the contents equal to the contents</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> * of this record.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a00800.html#aaee626bb9bf410a6c1c8d21cc479c149">   61</a></span>&#160;<span class="preprocessor">#define clone_split(dest,source)                               \</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">if (source)                                                  \</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">        (dest) = new_split ((source)-&gt;point1, (source)-&gt;point2);  \</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">else                                                         \</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">        (dest) = (SPLIT*) NULL                                    \</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">              F u n c t i o n s</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00800.html#a6462aa6ed767d7f46c4a72506cceaeeb">delete_split</a>(<a class="code" href="a00557.html">SPLIT</a> *split);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="a00364.html">EDGEPT</a> *<a class="code" href="a00800.html#abe45460790758fd43e35acbad4eed1c5">make_edgept</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code" href="a00364.html">EDGEPT</a> *next, <a class="code" href="a00364.html">EDGEPT</a> *prev);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00800.html#ada6ba0f2954768ab4b7d9d2cf165dee0">remove_edgept</a>(<a class="code" href="a00364.html">EDGEPT</a> *point);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<a class="code" href="a00557.html">SPLIT</a> *<a class="code" href="a00800.html#a1a2a3ae46393d911b723c12107dc0183">new_split</a>(<a class="code" href="a00364.html">EDGEPT</a> *point1, <a class="code" href="a00364.html">EDGEPT</a> *point2);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00800.html#a24210aac50f8b01c1c50b94262865269">print_split</a>(<a class="code" href="a00557.html">SPLIT</a> *split);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00800.html#ac76a475de30b432aa78727bd6b93a729">split_outline</a>(<a class="code" href="a00364.html">EDGEPT</a> *join_point1, <a class="code" href="a00364.html">EDGEPT</a> *join_point2);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00800.html#a3c66a2f04c0878b8982e04d5a3d29e04">unsplit_outlines</a>(<a class="code" href="a00364.html">EDGEPT</a> *p1, <a class="code" href="a00364.html">EDGEPT</a> *p2);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00800_html_a24210aac50f8b01c1c50b94262865269"><div class="ttname"><a href="a00800.html#a24210aac50f8b01c1c50b94262865269">print_split</a></div><div class="ttdeci">void print_split(SPLIT *split)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00157">split.cpp:157</a></div></div>
+<div class="ttc" id="a00364_html"><div class="ttname"><a href="a00364.html">EDGEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00069">blobs.h:69</a></div></div>
+<div class="ttc" id="a00800_html_a8caa4994d858ff69cd340ac6f89731cb"><div class="ttname"><a href="a00800.html#a8caa4994d858ff69cd340ac6f89731cb">SPLIT</a></div><div class="ttdeci">struct split_record SPLIT</div></div>
+<div class="ttc" id="a00800_html_abe45460790758fd43e35acbad4eed1c5"><div class="ttname"><a href="a00800.html#abe45460790758fd43e35acbad4eed1c5">make_edgept</a></div><div class="ttdeci">EDGEPT * make_edgept(int x, int y, EDGEPT *next, EDGEPT *prev)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00062">split.cpp:62</a></div></div>
+<div class="ttc" id="a00848_html_a2d4425c5a3f3c3eeeed987128d4cd419"><div class="ttname"><a href="a00848.html#a2d4425c5a3f3c3eeeed987128d4cd419">BOOL_VAR_H</a></div><div class="ttdeci">#define BOOL_VAR_H(name, val, comment)</div><div class="ttdef"><b>Definition:</b> <a href="a00848_source.html#l00268">params.h:268</a></div></div>
+<div class="ttc" id="a00800_html_ada6ba0f2954768ab4b7d9d2cf165dee0"><div class="ttname"><a href="a00800.html#ada6ba0f2954768ab4b7d9d2cf165dee0">remove_edgept</a></div><div class="ttdeci">void remove_edgept(EDGEPT *point)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00123">split.cpp:123</a></div></div>
+<div class="ttc" id="a00557_html_a2451170e7785bb495c0dd3d96fc71167"><div class="ttname"><a href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">split_record::point1</a></div><div class="ttdeci">EDGEPT * point1</div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00039">split.h:39</a></div></div>
+<div class="ttc" id="a00732_html"><div class="ttname"><a href="a00732.html">blobs.h</a></div></div>
+<div class="ttc" id="a00800_html_a1a2a3ae46393d911b723c12107dc0183"><div class="ttname"><a href="a00800.html#a1a2a3ae46393d911b723c12107dc0183">new_split</a></div><div class="ttdeci">SPLIT * new_split(EDGEPT *point1, EDGEPT *point2)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00143">split.cpp:143</a></div></div>
+<div class="ttc" id="a01046_html"><div class="ttname"><a href="a01046.html">oldlist.h</a></div></div>
+<div class="ttc" id="a00457_html"><div class="ttname"><a href="a00457.html">list_rec</a></div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00127">oldlist.h:127</a></div></div>
+<div class="ttc" id="a00557_html"><div class="ttname"><a href="a00557.html">split_record</a></div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00037">split.h:37</a></div></div>
+<div class="ttc" id="a00800_html_ac76a475de30b432aa78727bd6b93a729"><div class="ttname"><a href="a00800.html#ac76a475de30b432aa78727bd6b93a729">split_outline</a></div><div class="ttdeci">void split_outline(EDGEPT *join_point1, EDGEPT *join_point2)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00171">split.cpp:171</a></div></div>
+<div class="ttc" id="a00800_html_ac251ee3f4ff4145a52a8ba54a1b26743"><div class="ttname"><a href="a00800.html#ac251ee3f4ff4145a52a8ba54a1b26743">wordrec_display_splits</a></div><div class="ttdeci">bool wordrec_display_splits</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00039">split.cpp:39</a></div></div>
+<div class="ttc" id="a00800_html_a6462aa6ed767d7f46c4a72506cceaeeb"><div class="ttname"><a href="a00800.html#a6462aa6ed767d7f46c4a72506cceaeeb">delete_split</a></div><div class="ttdeci">void delete_split(SPLIT *split)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00050">split.cpp:50</a></div></div>
+<div class="ttc" id="a00557_html_adb5ec4152eddde15c1996133177a9a58"><div class="ttname"><a href="a00557.html#adb5ec4152eddde15c1996133177a9a58">split_record::point2</a></div><div class="ttdeci">EDGEPT * point2</div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00040">split.h:40</a></div></div>
+<div class="ttc" id="a00800_html_a3c66a2f04c0878b8982e04d5a3d29e04"><div class="ttname"><a href="a00800.html#a3c66a2f04c0878b8982e04d5a3d29e04">unsplit_outlines</a></div><div class="ttdeci">void unsplit_outlines(EDGEPT *p1, EDGEPT *p2)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00206">split.cpp:206</a></div></div>
+<div class="ttc" id="a00800_html_a5cdeb646e4adefafd594eb710e1df827"><div class="ttname"><a href="a00800.html#a5cdeb646e4adefafd594eb710e1df827">SPLITS</a></div><div class="ttdeci">LIST SPLITS</div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00043">split.h:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00800.html">polyaprx.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:21 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00800.html">split.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:54 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

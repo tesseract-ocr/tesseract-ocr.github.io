@@ -1,6 +1,6 @@
 var a00301 =
 [
-    [ "CCUtilMutex", "a00301.html#aa63f782c48ef478f9f3dd80381056888", null ],
-    [ "Lock", "a00301.html#a9b593dd73dc2510c71739841e37ee17c", null ],
-    [ "Unlock", "a00301.html#a0cc750edb4d5b9baca124ebee032c09b", null ]
+    [ "bigram", "a00301.html#acf18b9398a62f9f184fdd18b8d91bdd8", null ],
+    [ "max_char", "a00301.html#a2e2bd3dc796213605662064c8c2bebc9", null ],
+    [ "total_cnt", "a00301.html#a5fcb5e2bd655dcf9185f8059af6ae392", null ]
 ];

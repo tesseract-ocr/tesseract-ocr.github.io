@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/thresholder.h File Reference</title>
+<title>Tesseract: ccstruct/coutln.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,33 +106,121 @@ $(document).ready(function(){initNavTree('a00742.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">thresholder.h File Reference</div>  </div>
+<div class="title">coutln.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00868_source.html">platform.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00804_source.html">publictypes.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00743_source.html">crakedge.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00761_source.html">mod128.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00814_source.html">bits16.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00794_source.html">rect.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00728_source.html">blckerr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01206_source.html">scrollview.h</a>&quot;</code><br />
 </div>
 <p><a href="a00742_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00431.html">tesseract::ImageThresholder</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00363.html">EdgeOffset</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00290.html">C_OUTLINE</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a19d14ec91d9d1960d7c43d6b7df9afca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00742.html#a19d14ec91d9d1960d7c43d6b7df9afca">INTERSECTING</a>&#160;&#160;&#160;<a class="el" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></td></tr>
+<tr class="separator:a19d14ec91d9d1960d7c43d6b7df9afca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb00979f787f2ee951889ea9ab8c772"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00742.html#a1eb00979f787f2ee951889ea9ab8c772">STEP_MASK</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a1eb00979f787f2ee951889ea9ab8c772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2eecf9690392754a783bc842b1f45fd2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00742.html#a2eecf9690392754a783bc842b1f45fd2">C_OUTLINE_FLAGS</a> { <a class="el" href="a00742.html#a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a">COUT_INVERSE</a>
+ }</td></tr>
+<tr class="separator:a2eecf9690392754a783bc842b1f45fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a33c25172cfe8e7ec617eb16413b61294"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00742.html#a33c25172cfe8e7ec617eb16413b61294">C_OUTLINE</a></td></tr>
+<tr class="separator:a33c25172cfe8e7ec617eb16413b61294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a19d14ec91d9d1960d7c43d6b7df9afca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERSECTING&#160;&#160;&#160;<a class="el" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00742_source.html#l00032">32</a> of file <a class="el" href="a00742_source.html">coutln.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1eb00979f787f2ee951889ea9ab8c772"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STEP_MASK&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00742_source.html#l00035">35</a> of file <a class="el" href="a00742_source.html">coutln.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a2eecf9690392754a783bc842b1f45fd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00742.html#a2eecf9690392754a783bc842b1f45fd2">C_OUTLINE_FLAGS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a"></a>COUT_INVERSE&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00742_source.html#l00037">37</a> of file <a class="el" href="a00742_source.html">coutln.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="a00742.html#a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a">COUT_INVERSE</a>                   <span class="comment">//White on black blob</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="ttc" id="a00742_html_a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a"><div class="ttname"><a href="a00742.html#a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a">COUT_INVERSE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00039">coutln.h:39</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a33c25172cfe8e7ec617eb16413b61294"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">class <a class="el" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <a class="el" href="a00290.html">C_OUTLINE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00742_source.html#l00065">65</a> of file <a class="el" href="a00742_source.html">coutln.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00742.html">thresholder.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00742.html">coutln.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

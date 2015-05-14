@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/findseam.cpp File Reference</title>
+<title>Tesseract: wordrec/olutil.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,109 +105,246 @@ $(document).ready(function(){initNavTree('a01245.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">findseam.cpp File Reference</div>  </div>
+<div class="title">olutil.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01246_source.html">findseam.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01248_source.html">gradechop.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01264_source.html">plotedges.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01259_source.html">outlines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01051_source.html">freelist.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00817_source.html">seam.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01271_source.html">wordrec.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
 </div>
 <p><a href="a01245_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a137ecd53cc1a098b2943e48aff99c6b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#a137ecd53cc1a098b2943e48aff99c6b6">SPLIT_CLOSENESS</a>&#160;&#160;&#160;20/* Difference in x value */</td></tr>
-<tr class="separator:a137ecd53cc1a098b2943e48aff99c6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec46796fda71456341a9591d1b42b5f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#aec46796fda71456341a9591d1b42b5f8">MAX_NUM_SEAMS</a>&#160;&#160;&#160;150</td></tr>
-<tr class="separator:aec46796fda71456341a9591d1b42b5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ea8c0b3acc90ffdddd848229167cc01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#a5ea8c0b3acc90ffdddd848229167cc01">MAX_OLD_SEAMS</a>&#160;&#160;&#160;150</td></tr>
-<tr class="separator:a5ea8c0b3acc90ffdddd848229167cc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a149d8b9e54f546955de3fa68bf5bf521"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#a149d8b9e54f546955de3fa68bf5bf521">NO_FULL_PRIORITY</a>&#160;&#160;&#160;-1/* Special marker for pri. */</td></tr>
-<tr class="separator:a149d8b9e54f546955de3fa68bf5bf521"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fd320d93290a64ff24687ec596f1f61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#a3fd320d93290a64ff24687ec596f1f61">BAD_PRIORITY</a>&#160;&#160;&#160;9999.0</td></tr>
-<tr class="separator:a3fd320d93290a64ff24687ec596f1f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed4acccf540054febe7403a827ebbac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#a2ed4acccf540054febe7403a827ebbac">is_inside_angle</a>(pt)&#160;&#160;&#160;(angle_change ((pt)-&gt;prev, (pt), (pt)-&gt;next) &lt; chop_inside_angle)</td></tr>
+<tr class="separator:a2ed4acccf540054febe7403a827ebbac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc2f1c0c8896eb6273a1e213280a446"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#a4bc2f1c0c8896eb6273a1e213280a446">same_outline_bounds</a>(outline, other_outline)</td></tr>
+<tr class="separator:a4bc2f1c0c8896eb6273a1e213280a446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df928397c7bcfee5373a86d6f2f46da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#a4df928397c7bcfee5373a86d6f2f46da">weighted_edgept_dist</a>(p1, p2, chop_x_y_weight)</td></tr>
+<tr class="separator:a4df928397c7bcfee5373a86d6f2f46da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ac29e40d2a6a1a8a7a1eb317324262d86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#ac29e40d2a6a1a8a7a1eb317324262d86">correct_blob_order</a> (<a class="el" href="a00590.html">TBLOB</a> *blob1, <a class="el" href="a00590.html">TBLOB</a> *blob2)</td></tr>
+<tr class="separator:ac29e40d2a6a1a8a7a1eb317324262d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d3c90a38ea91d7baf73af2c77b03d7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#a1d3c90a38ea91d7baf73af2c77b03d7f">eliminate_duplicate_outlines</a> (<a class="el" href="a00590.html">TBLOB</a> *blob)</td></tr>
+<tr class="separator:a1d3c90a38ea91d7baf73af2c77b03d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f4e346c4650affddae46c8df8299ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01245.html#ad4f4e346c4650affddae46c8df8299ce">setup_blob_outlines</a> (<a class="el" href="a00590.html">TBLOB</a> *blob)</td></tr>
+<tr class="separator:ad4f4e346c4650affddae46c8df8299ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a3fd320d93290a64ff24687ec596f1f61"></a>
+<a class="anchor" id="a2ed4acccf540054febe7403a827ebbac"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BAD_PRIORITY&#160;&#160;&#160;9999.0</td>
+          <td class="memname">#define is_inside_angle</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pt</td><td>)</td>
+          <td>&#160;&#160;&#160;(angle_change ((pt)-&gt;prev, (pt), (pt)-&gt;next) &lt; chop_inside_angle)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01245_source.html#l00051">51</a> of file <a class="el" href="a01245_source.html">findseam.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a01245_source.html#l00045">45</a> of file <a class="el" href="a01245_source.html">olutil.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aec46796fda71456341a9591d1b42b5f8"></a>
+<a class="anchor" id="a4bc2f1c0c8896eb6273a1e213280a446"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_NUM_SEAMS&#160;&#160;&#160;150</td>
+          <td class="memname">#define same_outline_bounds</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">outline, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">other_outline&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01245_source.html#l00046">46</a> of file <a class="el" href="a01245_source.html">findseam.cpp</a>.</p>
+<b>Value:</b><div class="fragment"><div class="line">(outline-&gt;topleft.x  == other_outline-&gt;topleft.x  &amp;&amp; \</div>
+<div class="line">        outline-&gt;topleft.y  == other_outline-&gt;topleft.y  &amp;&amp; \</div>
+<div class="line">        outline-&gt;botright.x == other_outline-&gt;botright.x &amp;&amp; \</div>
+<div class="line">        outline-&gt;botright.y == other_outline-&gt;botright.y)   \</div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a01245_source.html#l00054">54</a> of file <a class="el" href="a01245_source.html">olutil.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5ea8c0b3acc90ffdddd848229167cc01"></a>
+<a class="anchor" id="a4df928397c7bcfee5373a86d6f2f46da"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_OLD_SEAMS&#160;&#160;&#160;150</td>
+          <td class="memname">#define weighted_edgept_dist</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">chop_x_y_weight&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01245_source.html#l00048">48</a> of file <a class="el" href="a01245_source.html">findseam.cpp</a>.</p>
+<b>Value:</b><div class="fragment"><div class="line">(((p1)-&gt;pos.x - (p2)-&gt;pos.x) *                \</div>
+<div class="line">        ((p1)-&gt;pos.x - (p2)-&gt;pos.x) * chop_x_y_weight +  \</div>
+<div class="line">        ((p1)-&gt;pos.y - (p2)-&gt;pos.y) *               \</div>
+<div class="line">        ((p1)-&gt;pos.y - (p2)-&gt;pos.y))</div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a01245_source.html#l00067">67</a> of file <a class="el" href="a01245_source.html">olutil.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a149d8b9e54f546955de3fa68bf5bf521"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ac29e40d2a6a1a8a7a1eb317324262d86"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NO_FULL_PRIORITY&#160;&#160;&#160;-1/* Special marker for pri. */</td>
+          <td class="memname">void correct_blob_order </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01245_source.html#l00049">49</a> of file <a class="el" href="a01245_source.html">findseam.cpp</a>.</p>
-
+<p>Definition at line <a class="el" href="a01244_source.html#l00046">46</a> of file <a class="el" href="a01244_source.html">olutil.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                    { </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="a00629.html">TPOINT</a> origin1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="a00629.html">TPOINT</a> origin2;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *temp;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="a00731.html#a0464f690c04a9aeb7710a6df1c0ba1fb">blob_origin</a>(blob1, &amp;origin1); </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a00731.html#a0464f690c04a9aeb7710a6df1c0ba1fb">blob_origin</a>(blob2, &amp;origin2); </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (origin1.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt; origin2.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    temp = blob2-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    blob2-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = blob1-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    blob1-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = temp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="ttc" id="a00629_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00064">blobs.h:64</a></div></div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a00731_html_a0464f690c04a9aeb7710a6df1c0ba1fb"><div class="ttname"><a href="a00731.html#a0464f690c04a9aeb7710a6df1c0ba1fb">blob_origin</a></div><div class="ttdeci">void blob_origin(TBLOB *blob, TPOINT *origin)</div><div class="ttdef"><b>Definition:</b> <a href="a00731_source.html#l00867">blobs.cpp:867</a></div></div>
+<div class="ttc" id="a00629_html"><div class="ttname"><a href="a00629.html">TPOINT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00050">blobs.h:50</a></div></div>
+<div class="ttc" id="a00613_html"><div class="ttname"><a href="a00613.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00127">blobs.h:127</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a137ecd53cc1a098b2943e48aff99c6b6"></a>
+<a class="anchor" id="a1d3c90a38ea91d7baf73af2c77b03d7f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SPLIT_CLOSENESS&#160;&#160;&#160;20/* Difference in x value */</td>
+          <td class="memname">void eliminate_duplicate_outlines </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01245_source.html#l00044">44</a> of file <a class="el" href="a01245_source.html">findseam.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a01244_source.html#l00067">67</a> of file <a class="el" href="a01244_source.html">olutil.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                               { </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *outline;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *other_outline;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *last_outline;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">for</span> (outline = blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>; outline; outline = outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (last_outline = outline, other_outline = outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      other_outline;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    last_outline = other_outline, other_outline = other_outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a01245.html#a4bc2f1c0c8896eb6273a1e213280a446">same_outline_bounds</a> (outline, other_outline)) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        last_outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> = other_outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// This doesn&#39;t leak - the outlines share the EDGEPTs.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        other_outline-&gt;<a class="code" href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">delete</span> other_outline;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        other_outline = last_outline;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// If it is part of a cut, then it can&#39;t be a hole any more.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        outline-&gt;<a class="code" href="a00613.html#a8af6c63b0dca8a993397d2f5f0bc5723">is_hole</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a00613_html_a0ab1e26b1dae548f0bd3c096c6183b18"><div class="ttname"><a href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">TESSLINE::loop</a></div><div class="ttdeci">EDGEPT * loop</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00189">blobs.h:189</a></div></div>
+<div class="ttc" id="a01245_html_a4bc2f1c0c8896eb6273a1e213280a446"><div class="ttname"><a href="a01245.html#a4bc2f1c0c8896eb6273a1e213280a446">same_outline_bounds</a></div><div class="ttdeci">#define same_outline_bounds(outline, other_outline)</div><div class="ttdef"><b>Definition:</b> <a href="a01245_source.html#l00054">olutil.h:54</a></div></div>
+<div class="ttc" id="a00613_html_a8af6c63b0dca8a993397d2f5f0bc5723"><div class="ttname"><a href="a00613.html#a8af6c63b0dca8a993397d2f5f0bc5723">TESSLINE::is_hole</a></div><div class="ttdeci">bool is_hole</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00188">blobs.h:188</a></div></div>
+<div class="ttc" id="a00613_html"><div class="ttname"><a href="a00613.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00127">blobs.h:127</a></div></div>
+<div class="ttc" id="a00613_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00190">blobs.h:190</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad4f4e346c4650affddae46c8df8299ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup_blob_outlines </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="a01244_source.html#l00096">96</a> of file <a class="el" href="a01244_source.html">olutil.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                      { </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *outline;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">for</span> (outline = blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>; outline; outline = outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    outline-&gt;<a class="code" href="a00613.html#aacf6d56a8b92228f875e06d09c78eca5">ComputeBoundingBox</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="ttc" id="a00613_html_aacf6d56a8b92228f875e06d09c78eca5"><div class="ttname"><a href="a00613.html#aacf6d56a8b92228f875e06d09c78eca5">TESSLINE::ComputeBoundingBox</a></div><div class="ttdeci">void ComputeBoundingBox()</div><div class="ttdef"><b>Definition:</b> <a href="a00731_source.html#l00189">blobs.cpp:189</a></div></div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a00613_html"><div class="ttname"><a href="a00613.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00127">blobs.h:127</a></div></div>
+<div class="ttc" id="a00613_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00190">blobs.h:190</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -215,8 +352,8 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01245.html">findseam.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01245.html">olutil.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

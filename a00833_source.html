@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/bits16.h Source File</title>
+<title>Tesseract: ccutil/hashfn.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,16 +105,16 @@ $(document).ready(function(){initNavTree('a00833_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">bits16.h</div>  </div>
+<div class="title">hashfn.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00833.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        bits16.h  (Formerly bits8.h)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Code for 8 bit field class.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:                                      Phil Cheatle</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:                                     Thu Oct 17 10:10:05 BST 1991</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        hashfn.h  (Formerly hash.h)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Portability hacks for hash_map, hash_set and unique_ptr.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:      Ray Smith</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:     Wed Jan 08 14:08:25 PST 2014</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1991, Hewlett-Packard Ltd.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2014, Google Inc.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
@@ -127,67 +127,89 @@ $(document).ready(function(){initNavTree('a00833_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           BITS16_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           BITS16_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           HASHFN_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           HASHFN_H</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00854.html">host.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00275.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <a class="code" href="a00275.html">BITS16</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00275.html#a7d262d8e7cc027b2faa748dee3c8c575">   28</a></span>&#160;    <a class="code" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a> <a class="code" href="a00275.html#a7d262d8e7cc027b2faa748dee3c8c575">val</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00275.html#a82000c01cdaf560b80ed1e831bcdf303">   30</a></span>&#160;    <a class="code" href="a00275.html#a82000c01cdaf560b80ed1e831bcdf303">BITS16</a>() {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      val = 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }                            <span class="comment">// constructor</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="a00275.html">BITS16</a>(               <span class="comment">// constructor</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;           <a class="code" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a> init);  <span class="comment">// initial val</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00275.html#a27b6763e650c847e1405d4c577e41099">   37</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00275.html#a27b6763e650c847e1405d4c577e41099">turn_on_bit</a>(                  <span class="comment">// flip specified bit</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                     <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> bit_num) {  <span class="comment">// bit to flip 0..7</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      val = val | 01 &lt;&lt; bit_num;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    };</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00275.html#aa8e724dcb0c4f3ead1323302f388dd09">   42</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00275.html#aa8e724dcb0c4f3ead1323302f388dd09">turn_off_bit</a>(                  <span class="comment">// flip specified bit</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                      <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> bit_num) {  <span class="comment">// bit to flip 0..7</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      val = val &amp; ~(01 &lt;&lt; bit_num);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00275.html#a4ddf1ce50aaa629cfc6f36af545e23ea">   47</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00275.html#a4ddf1ce50aaa629cfc6f36af545e23ea">set_bit</a>(                <span class="comment">// flip specified bit</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                 <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> bit_num,  <span class="comment">// bit to flip 0..7</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                 <a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> value) {  <span class="comment">// value to flip to</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">if</span> (value)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        val = val | 01 &lt;&lt; bit_num;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        val = val &amp; ~(01 &lt;&lt; bit_num);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a00275.html#ac27859e65a8bc01c7881cbb6888e73ac">   56</a></span>&#160;    <a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> <a class="code" href="a00275.html#ac27859e65a8bc01c7881cbb6888e73ac">bit</a>(                        <span class="comment">// access bit</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;              <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> bit_num)<span class="keyword"> const </span>{  <span class="comment">// bit to access</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> (val &gt;&gt; bit_num) &amp; 01;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00275_html_a82000c01cdaf560b80ed1e831bcdf303"><div class="ttname"><a href="a00275.html#a82000c01cdaf560b80ed1e831bcdf303">BITS16::BITS16</a></div><div class="ttdeci">BITS16()</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00030">bits16.h:30</a></div></div>
-<div class="ttc" id="a00275_html_a27b6763e650c847e1405d4c577e41099"><div class="ttname"><a href="a00275.html#a27b6763e650c847e1405d4c577e41099">BITS16::turn_on_bit</a></div><div class="ttdeci">void turn_on_bit(uinT8 bit_num)</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00037">bits16.h:37</a></div></div>
-<div class="ttc" id="a00275_html_ac27859e65a8bc01c7881cbb6888e73ac"><div class="ttname"><a href="a00275.html#ac27859e65a8bc01c7881cbb6888e73ac">BITS16::bit</a></div><div class="ttdeci">BOOL8 bit(uinT8 bit_num) const </div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00056">bits16.h:56</a></div></div>
-<div class="ttc" id="a00275_html"><div class="ttname"><a href="a00275.html">BITS16</a></div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00025">bits16.h:25</a></div></div>
-<div class="ttc" id="a00275_html_a7d262d8e7cc027b2faa748dee3c8c575"><div class="ttname"><a href="a00275.html#a7d262d8e7cc027b2faa748dee3c8c575">BITS16::val</a></div><div class="ttdeci">uinT16 val</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00028">bits16.h:28</a></div></div>
-<div class="ttc" id="a00854_html"><div class="ttname"><a href="a00854.html">host.h</a></div></div>
-<div class="ttc" id="a00854_html_acb2dfad543247740dab87d31bb49dfff"><div class="ttname"><a href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a></div><div class="ttdeci">unsigned short uinT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00101">host.h:101</a></div></div>
-<div class="ttc" id="a00854_html_a7712a7e28433d0ade59219a129549b6f"><div class="ttname"><a href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a></div><div class="ttdeci">unsigned char BOOL8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00113">host.h:113</a></div></div>
-<div class="ttc" id="a00275_html_a4ddf1ce50aaa629cfc6f36af545e23ea"><div class="ttname"><a href="a00275.html#a4ddf1ce50aaa629cfc6f36af545e23ea">BITS16::set_bit</a></div><div class="ttdeci">void set_bit(uinT8 bit_num, BOOL8 value)</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00047">bits16.h:47</a></div></div>
-<div class="ttc" id="a00868_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00868_source.html#l00025">platform.h:25</a></div></div>
-<div class="ttc" id="a00854_html_a458fe97f82495945f8071bb3c18d1783"><div class="ttname"><a href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a></div><div class="ttdeci">unsigned char uinT8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00099">host.h:99</a></div></div>
-<div class="ttc" id="a00275_html_aa8e724dcb0c4f3ead1323302f388dd09"><div class="ttname"><a href="a00275.html#aa8e724dcb0c4f3ead1323302f388dd09">BITS16::turn_off_bit</a></div><div class="ttdeci">void turn_off_bit(uinT8 bit_num)</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00042">bits16.h:42</a></div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifdef USE_STD_NAMESPACE</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#if (__cplusplus &gt;= 201103L) || defined(_MSC_VER)  // Visual Studio</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define hash_map std::unordered_map</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#if (_MSC_VER &gt;= 1500 &amp;&amp; _MSC_VER &lt; 1600)  // Visual Studio 2008</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span>std::tr1;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#else  // _MSC_VER</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using</span> <a class="code" href="a00833.html#ad96e771600f96c946d7af67015765444">std::unordered_map</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using</span> <a class="code" href="a00833.html#a29712c9a8a48f7ca2973414457fc627a">std::unordered_set</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define SmartPtr std::unique_ptr</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define HAVE_UNIQUE_PTR</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif  // _MSC_VER</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#elif (defined(__GNUC__) &amp;&amp; (((__GNUC__ == 3) &amp;&amp; (__GNUC_MINOR__ &gt; 0)) || \</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">  __GNUC__ &gt;= 4))  // gcc</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// hash_set is deprecated in gcc</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;ext/hash_map&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;ext/hash_set&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">using</span> __gnu_cxx::hash_map;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> __gnu_cxx::hash_set;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define unordered_map hash_map</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define unordered_set hash_set</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;hash_map&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;hash_set&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif  // gcc</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#else  // USE_STD_NAMESPACE</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;hash_map&gt;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &lt;hash_set&gt;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00833.html#ad96e771600f96c946d7af67015765444">   53</a></span>&#160;<span class="preprocessor">#define unordered_map hash_map</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a00833.html#a29712c9a8a48f7ca2973414457fc627a">   54</a></span>&#160;<span class="preprocessor">#define unordered_set hash_set</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif  // USE_STD_NAMESPACE</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifndef HAVE_UNIQUE_PTR</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// Trivial smart ptr. Expand to add features of std::unique_ptr as required.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00551.html">   59</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="a00551.html">SmartPtr</a> {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a00551.html#a83a29d4bb9aefcd16fe390a0a920a658">   61</a></span>&#160;  <a class="code" href="a00551.html#a83a29d4bb9aefcd16fe390a0a920a658">SmartPtr</a>() : ptr_(<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {}</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a00551.html#a6395420fedc2e28ba620e11eb1378229">   62</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00551.html#a6395420fedc2e28ba620e11eb1378229">SmartPtr</a>(T* ptr) : ptr_(ptr) {}</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00551.html#a894b8bfc8026d8837a43224eb3054fa9">   63</a></span>&#160;  <a class="code" href="a00551.html#a894b8bfc8026d8837a43224eb3054fa9">~SmartPtr</a>() {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">delete</span> ptr_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00551.html#ace2df4082c7e947afc7ecb7766e2ba3b">   67</a></span>&#160;  T* <span class="keyword">get</span>() <span class="keyword">const</span> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> ptr_;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a00551.html#ac5928fa81129301d6e1e2e02ec33eff0">   70</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00551.html#ac5928fa81129301d6e1e2e02ec33eff0">reset</a>(T* ptr) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (ptr_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) <span class="keyword">delete</span> ptr_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ptr_ = ptr;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="a00551.html#ac98792b9c8420f7df04492758c865ff0">   74</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00551.html#ac98792b9c8420f7df04492758c865ff0">operator==</a>(<span class="keyword">const</span> T* ptr)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> ptr_ == ptr;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="a00551.html#a5bf4740c9838918cf4a9dd303d4c8973">   77</a></span>&#160;  T* <a class="code" href="a00551.html#a5bf4740c9838918cf4a9dd303d4c8973">operator-&gt;</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> ptr_;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  T* ptr_;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif  // HAVE_UNIQUE_PTR</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif  // HASHFN_H</span></div>
+<div class="ttc" id="a00551_html_a83a29d4bb9aefcd16fe390a0a920a658"><div class="ttname"><a href="a00551.html#a83a29d4bb9aefcd16fe390a0a920a658">SmartPtr::SmartPtr</a></div><div class="ttdeci">SmartPtr()</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00061">hashfn.h:61</a></div></div>
+<div class="ttc" id="a00551_html_ac5928fa81129301d6e1e2e02ec33eff0"><div class="ttname"><a href="a00551.html#ac5928fa81129301d6e1e2e02ec33eff0">SmartPtr::reset</a></div><div class="ttdeci">void reset(T *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00070">hashfn.h:70</a></div></div>
+<div class="ttc" id="a00833_html_a29712c9a8a48f7ca2973414457fc627a"><div class="ttname"><a href="a00833.html#a29712c9a8a48f7ca2973414457fc627a">unordered_set</a></div><div class="ttdeci">#define unordered_set</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00054">hashfn.h:54</a></div></div>
+<div class="ttc" id="a00551_html_ac98792b9c8420f7df04492758c865ff0"><div class="ttname"><a href="a00551.html#ac98792b9c8420f7df04492758c865ff0">SmartPtr::operator==</a></div><div class="ttdeci">bool operator==(const T *ptr) const </div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00074">hashfn.h:74</a></div></div>
+<div class="ttc" id="a00551_html_a894b8bfc8026d8837a43224eb3054fa9"><div class="ttname"><a href="a00551.html#a894b8bfc8026d8837a43224eb3054fa9">SmartPtr::~SmartPtr</a></div><div class="ttdeci">~SmartPtr()</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00063">hashfn.h:63</a></div></div>
+<div class="ttc" id="a00551_html_a5bf4740c9838918cf4a9dd303d4c8973"><div class="ttname"><a href="a00551.html#a5bf4740c9838918cf4a9dd303d4c8973">SmartPtr::operator-&gt;</a></div><div class="ttdeci">T * operator-&gt;() const </div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00077">hashfn.h:77</a></div></div>
+<div class="ttc" id="a00833_html_ad96e771600f96c946d7af67015765444"><div class="ttname"><a href="a00833.html#ad96e771600f96c946d7af67015765444">unordered_map</a></div><div class="ttdeci">#define unordered_map</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00053">hashfn.h:53</a></div></div>
+<div class="ttc" id="a00551_html_a6395420fedc2e28ba620e11eb1378229"><div class="ttname"><a href="a00551.html#a6395420fedc2e28ba620e11eb1378229">SmartPtr::SmartPtr</a></div><div class="ttdeci">SmartPtr(T *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00062">hashfn.h:62</a></div></div>
+<div class="ttc" id="a00551_html"><div class="ttname"><a href="a00551.html">SmartPtr</a></div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00059">hashfn.h:59</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00833.html">bits16.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:21 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00833.html">hashfn.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:55 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

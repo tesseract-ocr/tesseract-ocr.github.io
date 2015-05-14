@@ -1,7 +1,9 @@
 var a00254 =
 [
-    [ "base", "a00254.html#ad899a18dd522854bf74953278ba2377e", null ],
-    [ "MemberSignature", "a00254.html#a74a7da3d36bdec4b8269f01ab4b3c0b7", null ],
-    [ "_TessMemberResultCallback_6_5", "a00254.html#a215fbfde5f5a2f2ee7f75a72ca5f9ee7", null ],
-    [ "Run", "a00254.html#abb37fb41a5fd1681234775f61c0ad74d", null ]
+    [ "Initialize", "a00254.html#a450c3b1b225dfa0771edd50732e5d288", null ],
+    [ "best_match", "a00254.html#a7cfeae71a3b1fddd0e2dd1b369c6d15b", null ],
+    [ "BlobLength", "a00254.html#a96c25b6f847b7f8ebc3817ee73f73236", null ],
+    [ "CPResults", "a00254.html#a51675e06d0ccbe1c649000a01445cbec", null ],
+    [ "HasNonfragment", "a00254.html#ab6a520c3c59a1f1a3f4d1c27bf5d3000", null ],
+    [ "match", "a00254.html#aba3ddf391f4a6e17170987f385e6ace5", null ]
 ];

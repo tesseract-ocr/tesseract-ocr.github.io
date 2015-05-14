@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/quadlsq.cpp File Reference</title>
+<title>Tesseract: ccstruct/vecfuncs.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,36 +105,65 @@ $(document).ready(function(){initNavTree('a00805.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">quadlsq.cpp File Reference</div>  </div>
+<div class="title">vecfuncs.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00806_source.html">quadlsq.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00883_source.html">tprintf.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00806_source.html">vecfuncs.h</a>&quot;</code><br />
 </div>
 <p><a href="a00805_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a3be7b02f8eb9bd112c3c72c25a11015e"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00805.html#a3be7b02f8eb9bd112c3c72c25a11015e">kMinVariance</a> = 1.0 / 1024</td></tr>
-<tr class="separator:a3be7b02f8eb9bd112c3c72c25a11015e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a57d4a186a22b01e2110793bc22a5d8f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00805.html#a57d4a186a22b01e2110793bc22a5d8f0">direction</a> (<a class="el" href="a00364.html">EDGEPT</a> *point)</td></tr>
+<tr class="separator:a57d4a186a22b01e2110793bc22a5d8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a3be7b02f8eb9bd112c3c72c25a11015e"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a57d4a186a22b01e2110793bc22a5d8f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const double kMinVariance = 1.0 / 1024</td>
+          <td class="memname">int direction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00364.html">EDGEPT</a> *&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>direction to return</p>
+<p>prev point</p>
+<p>next point </p>
 
-<p>Definition at line <a class="el" href="a00805_source.html#l00026">26</a> of file <a class="el" href="a00805_source.html">quadlsq.cpp</a>.</p>
-
+<p>Definition at line <a class="el" href="a00805_source.html#l00042">42</a> of file <a class="el" href="a00805_source.html">vecfuncs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                             {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">int</span> dir;                       </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a00364.html">EDGEPT</a> *prev;                  </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="a00364.html">EDGEPT</a> *next;                  </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  dir = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  prev = point-&gt;<a class="code" href="a00364.html#a8326da8daf597bcdc5a05064a37cbbb1">prev</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  next = point-&gt;<a class="code" href="a00364.html#a196f7786194752f89e364a586d24884d">next</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">if</span> (((prev-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &lt;= point-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) &amp;&amp;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    (point-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &lt; next-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>)) ||</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    ((prev-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &lt; point-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) &amp;&amp; (point-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &lt;= next-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>)))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    dir = 1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">if</span> (((prev-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt;= point-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) &amp;&amp;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    (point-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt; next-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>)) ||</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ((prev-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt; point-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) &amp;&amp; (point-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt;= next-&gt;<a class="code" href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>)))</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    dir = -1;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> dir;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="a00629_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00064">blobs.h:64</a></div></div>
+<div class="ttc" id="a00364_html"><div class="ttname"><a href="a00364.html">EDGEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00069">blobs.h:69</a></div></div>
+<div class="ttc" id="a00364_html_a8326da8daf597bcdc5a05064a37cbbb1"><div class="ttname"><a href="a00364.html#a8326da8daf597bcdc5a05064a37cbbb1">EDGEPT::prev</a></div><div class="ttdeci">EDGEPT * prev</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00117">blobs.h:117</a></div></div>
+<div class="ttc" id="a00364_html_a196f7786194752f89e364a586d24884d"><div class="ttname"><a href="a00364.html#a196f7786194752f89e364a586d24884d">EDGEPT::next</a></div><div class="ttdeci">EDGEPT * next</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00116">blobs.h:116</a></div></div>
+<div class="ttc" id="a00364_html_adee462d390e637a8393ba373c8d2a1bb"><div class="ttname"><a href="a00364.html#adee462d390e637a8393ba373c8d2a1bb">EDGEPT::pos</a></div><div class="ttdeci">TPOINT pos</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00110">blobs.h:110</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -142,8 +171,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00805.html">quadlsq.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00805.html">vecfuncs.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

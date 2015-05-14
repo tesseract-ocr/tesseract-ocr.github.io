@@ -1,12 +1,23 @@
 var a00588 =
 [
-    [ "SVET_CLICK", "a00588.html#ac3e0d2c401b640288c63b5670d1bf21f", null ],
-    [ "SVET_DESTROY", "a00588.html#ac5f6843331c24507b3d8dd6e2cb37d8e", null ],
-    [ "SVET_EXIT", "a00588.html#a4d60ed89f72fd8103a04e7dd4652334e", null ],
-    [ "SVET_HOVER", "a00588.html#a35fb43480deca21bab915141ce977961", null ],
-    [ "SVET_INPUT", "a00588.html#a2eca708979b21c9ceadace51242c1802", null ],
-    [ "SVET_MOTION", "a00588.html#a668cdd791ad9dbcc13341f3d128232fd", null ],
-    [ "SVET_MOUSE", "a00588.html#a357896cf69f10ee77eaba41445a09e51", null ],
-    [ "SVET_POPUP", "a00588.html#a3b4e95cfba6c081a1a78fda75c2676b5", null ],
-    [ "SVET_SELECTION", "a00588.html#a145589fcfc800530e6d57c69f7e7f18d", null ]
+    [ "TableRecognizer", "a00588.html#af82ad8abb0e3f94edb554594b9e41b55", null ],
+    [ "~TableRecognizer", "a00588.html#a5a661cb9168813a34fe23af441958bb2", null ],
+    [ "FindLinesBoundingBox", "a00588.html#a1976dd404a086faf445085759cc3024c", null ],
+    [ "FindLinesBoundingBoxIteration", "a00588.html#a0e3b073b746ba18778b10413fe16f4e0", null ],
+    [ "HasSignificantLines", "a00588.html#a9d994f1b39135c0a95e558e8bc0489ec", null ],
+    [ "Init", "a00588.html#aca159b4dcd53ac99591aff44ce50a015", null ],
+    [ "NextHorizontalSplit", "a00588.html#a6852b6aaf9df0c7085a644b7696ff881", null ],
+    [ "RecognizeLinedTable", "a00588.html#a09c44b26f6ef2bf6308b669031cc00f1", null ],
+    [ "RecognizeTable", "a00588.html#adc08877ea279ece9d88e2e69cd00b2b4", null ],
+    [ "RecognizeWhitespacedTable", "a00588.html#ad40e89784fedeaa63f2b8e6088e9b270", null ],
+    [ "set_line_grid", "a00588.html#a969a85b74ae52c0fc72da54e66ed93a6", null ],
+    [ "set_max_text_height", "a00588.html#a5c4fca3ea6f9452c7ec5a76f2e085a0c", null ],
+    [ "set_min_height", "a00588.html#ad24b027f3a4261cf7cb25f03646e58de", null ],
+    [ "set_min_width", "a00588.html#a394e60c5a4a61f8572ae33d2fade3ee3", null ],
+    [ "set_text_grid", "a00588.html#abdb2fec4ac7970b190ceaaf4bfb4368f", null ],
+    [ "line_grid_", "a00588.html#acef775b055806466bf907b9008a9f705", null ],
+    [ "max_text_height_", "a00588.html#a2d6b6326270fc127b50a497e4d0c6c7c", null ],
+    [ "min_height_", "a00588.html#a4a0cb917deb38c9cd761390e2e89967b", null ],
+    [ "min_width_", "a00588.html#a99ef7bab6b09c69357a69f440235d83c", null ],
+    [ "text_grid_", "a00588.html#a1ec03b4d8e7b7cd1361d23be47d5d81a", null ]
 ];

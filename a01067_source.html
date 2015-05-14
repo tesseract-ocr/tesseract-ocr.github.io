@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: dict/matchdefs.h Source File</title>
+<title>Tesseract: java/com/google/scrollview/ui/SVAbstractMenuItem.java Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,121 +105,59 @@ $(document).ready(function(){initNavTree('a01067_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">matchdefs.h</div>  </div>
+<div class="title">SVAbstractMenuItem.java</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01067.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:    matchdefs.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:     Generic interface definitions for feature matchers.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:      Dan Johnson</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:     Fri Jan 19 09:21:25 1990, DSJ, Created.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **     (c) Copyright Hewlett-Packard Company, 1988.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef   MATCHDEFS_H</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define   MATCHDEFS_H</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00854.html">host.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00885.html">unichar.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/* define the maximum number of classes defined for any matcher</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">  and the maximum class id for any matcher. This must be changed</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">  if more different classes need to be classified */</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01067.html#adcc52d7d059a8ca452172df64faa231c">   31</a></span>&#160;<span class="preprocessor">#define MAX_NUM_CLASSES   MAX_INT16</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01067.html#abeed7f9ea594424952e1aff62c92785f">   32</a></span>&#160;<span class="preprocessor">#define MAX_CLASS_ID    (MAX_NUM_CLASSES - 1)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01067.html#afdabe64d68192a21409dd58c119709f8">   35</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> <a class="code" href="a01067.html#afdabe64d68192a21409dd58c119709f8">CLASS_ID</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a01067.html#a6ce548e51895ce0226ee145753a9c815">   36</a></span>&#160;<span class="preprocessor">#define NO_CLASS      (0)</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01067.html#ac80a5d84c2805bfd10ac129d949f8b80">   41</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a01067.html#ac80a5d84c2805bfd10ac129d949f8b80">PROTO_ID</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a01067.html#a4d2ae3978d57e3b05f984a0fedc51812">   42</a></span>&#160;<span class="preprocessor">#define NO_PROTO  (-1)</span></div>
+<a href="a01067.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright 2007 Google Inc. All Rights Reserved.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); You may not</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// use this file except in compliance with the License. You may obtain a copy of</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// applicable law or agreed to in writing, software distributed under the</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// OF ANY KIND, either express or implied. See the License for the specific</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// language governing permissions and limitations under the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="a01265.html">   11</a></span>&#160;<span class="keyword">package </span>com.google.scrollview.ui;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> <a class="code" href="a01261.html">com</a>.<a class="code" href="a01262.html">google</a>.<a class="code" href="a01263.html">scrollview</a>.<a class="code" href="a01264.html">events</a>.<a class="code" href="a00571.html">SVEventType</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> javax.swing.JMenu;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">import</span> javax.swing.JMenuItem;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">abstract</span> <span class="keyword">class </span>SVAbstractMenuItem {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  JMenuItem mi;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">public</span> String name;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span> <span class="keywordtype">int</span> id;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  SVAbstractMenuItem(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, String name, JMenuItem jmi) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    this.mi = jmi;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    this.name = name;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    this.<span class="keywordtype">id</span> = id;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span> String getValue() { <span class="keywordflow">return</span> null; }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a01067.html#a2223404e7ad809dd36193cc195377f56">   47</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> <a class="code" href="a01067.html#a2223404e7ad809dd36193cc195377f56">FEATURE_ID</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a01067.html#a1e14273afc10cd1678ce7e4647c63ea3">   48</a></span>&#160;<span class="preprocessor">#define NO_FEATURE      255</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a01067.html#ac29bfc3ef5ffbe1783010d97ba8ce8ca">   49</a></span>&#160;<span class="preprocessor">#define NOISE_FEATURE   254</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01067.html#a19edd80fad2a9f92f9612768580296c3">   50</a></span>&#160;<span class="preprocessor">#define MISSING_PROTO   254</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a01067.html#a27ed53dd35ec0e83f258b44e5f1e47b9">   51</a></span>&#160;<span class="preprocessor">#define MAX_NUM_FEAT    40</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a01067.html#a6c2c61828f696b97a0baeeb686e32391">   52</a></span>&#160;<span class="preprocessor">#define MAX_FEATURE_ID    250</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01067.html#a909658b0609ea401112d3091d6137e92">   56</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> <a class="code" href="a01067.html#a909658b0609ea401112d3091d6137e92">RATING</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a01067.html#a2fbe3ff3e1feb2e3cbb9f2523249e125">   62</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> <a class="code" href="a01067.html#a2fbe3ff3e1feb2e3cbb9f2523249e125">CERTAINTY</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00476.html">   65</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00476.html#a7aa5c9ef9a49b692365774df8bb5cb6c">   67</a></span>&#160;  <a class="code" href="a01067.html#afdabe64d68192a21409dd58c119709f8">CLASS_ID</a> <a class="code" href="a00476.html#a7aa5c9ef9a49b692365774df8bb5cb6c">Class</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a00476.html#a4272e62f3832de3d0c6acd3247adab1a">   68</a></span>&#160;  <a class="code" href="a01067.html#a909658b0609ea401112d3091d6137e92">RATING</a> <a class="code" href="a00476.html#a4272e62f3832de3d0c6acd3247adab1a">Rating</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="a00476.html#ade88fda5e873204de82a59c95bd2dcf7">   69</a></span>&#160;  <a class="code" href="a01067.html#a2fbe3ff3e1feb2e3cbb9f2523249e125">CERTAINTY</a> <a class="code" href="a00476.html#ade88fda5e873204de82a59c95bd2dcf7">Certainty</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="a00476.html">MATCH_RESULT</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="a01067.html#a4472d64885d04ade2d47273d677123f4">   76</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00476.html">MATCH_RESULT</a> <a class="code" href="a01067.html#a4472d64885d04ade2d47273d677123f4">SORTED_CLASSES</a>[<a class="code" href="a01067.html#abeed7f9ea594424952e1aff62c92785f">MAX_CLASS_ID</a> + 1];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/*----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">          Public Function Prototypes</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/* misc test functions for proto id&#39;s and feature id&#39;s */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="a01067.html#a06a82dd2546f48366a5f71bf0b674796">   90</a></span>&#160;<span class="preprocessor">#define IsValidFeature(Fid) ((Fid) &lt; MAX_FEATURE_ID)</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a01067.html#a7eaf755e09d4823be796e6182de9f91f">   91</a></span>&#160;<span class="preprocessor">#define IsValidProto(Pid) ((Pid) &gt;= 0)</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#if defined(__STDC__) || defined(__cplusplus)</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor"># define _ARGS(s) s</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="a01067.html#a70aff9e178598a98a6e55ddea8afaf7f">   96</a></span>&#160;<span class="preprocessor"># define _ARGS(s) ()</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/* matchdefs.c */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">int</span> CompareMatchResults</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<a class="code" href="a01067.html#a70aff9e178598a98a6e55ddea8afaf7f">_ARGS</a> ((<a class="code" href="a00476.html">MATCH_RESULT</a> * Result1, <a class="code" href="a00476.html">MATCH_RESULT</a> * Result2));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> PrintMatchResult <a class="code" href="a01067.html#a70aff9e178598a98a6e55ddea8afaf7f">_ARGS</a> ((FILE * File, <a class="code" href="a00476.html">MATCH_RESULT</a> * MatchResult));</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> PrintMatchResults</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<a class="code" href="a01067.html#a70aff9e178598a98a6e55ddea8afaf7f">_ARGS</a> ((FILE * File, <span class="keywordtype">int</span> N, <a class="code" href="a00476.html">MATCH_RESULT</a> MatchResults[]));</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#undef _ARGS</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">/*----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">        Global Data Definitions and Declarations</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00476_html"><div class="ttname"><a href="a00476.html">MATCH_RESULT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00065">matchdefs.h:65</a></div></div>
-<div class="ttc" id="a01067_html_afdabe64d68192a21409dd58c119709f8"><div class="ttname"><a href="a01067.html#afdabe64d68192a21409dd58c119709f8">CLASS_ID</a></div><div class="ttdeci">UNICHAR_ID CLASS_ID</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00035">matchdefs.h:35</a></div></div>
-<div class="ttc" id="a01067_html_a2223404e7ad809dd36193cc195377f56"><div class="ttname"><a href="a01067.html#a2223404e7ad809dd36193cc195377f56">FEATURE_ID</a></div><div class="ttdeci">uinT8 FEATURE_ID</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00047">matchdefs.h:47</a></div></div>
-<div class="ttc" id="a00476_html_a7aa5c9ef9a49b692365774df8bb5cb6c"><div class="ttname"><a href="a00476.html#a7aa5c9ef9a49b692365774df8bb5cb6c">MATCH_RESULT::Class</a></div><div class="ttdeci">CLASS_ID Class</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00067">matchdefs.h:67</a></div></div>
-<div class="ttc" id="a00885_html_a8578b19fa1ff5ca75080db1a18ecc32e"><div class="ttname"><a href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a></div><div class="ttdeci">int UNICHAR_ID</div><div class="ttdef"><b>Definition:</b> <a href="a00885_source.html#l00033">unichar.h:33</a></div></div>
-<div class="ttc" id="a01067_html_a909658b0609ea401112d3091d6137e92"><div class="ttname"><a href="a01067.html#a909658b0609ea401112d3091d6137e92">RATING</a></div><div class="ttdeci">FLOAT32 RATING</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00056">matchdefs.h:56</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a01067_html_a70aff9e178598a98a6e55ddea8afaf7f"><div class="ttname"><a href="a01067.html#a70aff9e178598a98a6e55ddea8afaf7f">_ARGS</a></div><div class="ttdeci">#define _ARGS(s)</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00096">matchdefs.h:96</a></div></div>
-<div class="ttc" id="a00476_html_ade88fda5e873204de82a59c95bd2dcf7"><div class="ttname"><a href="a00476.html#ade88fda5e873204de82a59c95bd2dcf7">MATCH_RESULT::Certainty</a></div><div class="ttdeci">CERTAINTY Certainty</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00069">matchdefs.h:69</a></div></div>
-<div class="ttc" id="a00854_html"><div class="ttname"><a href="a00854.html">host.h</a></div></div>
-<div class="ttc" id="a01067_html_a2fbe3ff3e1feb2e3cbb9f2523249e125"><div class="ttname"><a href="a01067.html#a2fbe3ff3e1feb2e3cbb9f2523249e125">CERTAINTY</a></div><div class="ttdeci">FLOAT32 CERTAINTY</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00062">matchdefs.h:62</a></div></div>
-<div class="ttc" id="a00476_html_a4272e62f3832de3d0c6acd3247adab1a"><div class="ttname"><a href="a00476.html#a4272e62f3832de3d0c6acd3247adab1a">MATCH_RESULT::Rating</a></div><div class="ttdeci">RATING Rating</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00068">matchdefs.h:68</a></div></div>
-<div class="ttc" id="a00854_html_a458fe97f82495945f8071bb3c18d1783"><div class="ttname"><a href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a></div><div class="ttdeci">unsigned char uinT8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00099">host.h:99</a></div></div>
-<div class="ttc" id="a01067_html_ac80a5d84c2805bfd10ac129d949f8b80"><div class="ttname"><a href="a01067.html#ac80a5d84c2805bfd10ac129d949f8b80">PROTO_ID</a></div><div class="ttdeci">inT16 PROTO_ID</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00041">matchdefs.h:41</a></div></div>
-<div class="ttc" id="a00854_html_a6a3da5f1db8d485c0d2f5a7ba526c4a0"><div class="ttname"><a href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a></div><div class="ttdeci">float FLOAT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00111">host.h:111</a></div></div>
-<div class="ttc" id="a01067_html_abeed7f9ea594424952e1aff62c92785f"><div class="ttname"><a href="a01067.html#abeed7f9ea594424952e1aff62c92785f">MAX_CLASS_ID</a></div><div class="ttdeci">#define MAX_CLASS_ID</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00032">matchdefs.h:32</a></div></div>
-<div class="ttc" id="a01067_html_a4472d64885d04ade2d47273d677123f4"><div class="ttname"><a href="a01067.html#a4472d64885d04ade2d47273d677123f4">SORTED_CLASSES</a></div><div class="ttdeci">MATCH_RESULT SORTED_CLASSES[MAX_CLASS_ID+1]</div><div class="ttdef"><b>Definition:</b> <a href="a01067_source.html#l00076">matchdefs.h:76</a></div></div>
-<div class="ttc" id="a00885_html"><div class="ttname"><a href="a00885.html">unichar.h</a></div></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">public</span> <span class="keywordtype">void</span> add(SVAbstractMenuItem mli) { }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">public</span> <span class="keywordtype">void</span> add(JMenu jli) { }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">public</span> <span class="keywordtype">void</span> performAction(<a class="code" href="a00582.html">SVWindow</a> window, <a class="code" href="a00571.html">SVEventType</a> eventType) {}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="ttc" id="a00582_html"><div class="ttname"><a href="a00582.html">com.google.scrollview.ui.SVWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="a01075_source.html#l00052">SVWindow.java:52</a></div></div>
+<div class="ttc" id="a01264_html"><div class="ttname"><a href="a01264.html">com.google.scrollview.events</a></div><div class="ttdef"><b>Definition:</b> <a href="a01063_source.html#l00011">SVEvent.java:11</a></div></div>
+<div class="ttc" id="a01262_html"><div class="ttname"><a href="a01262.html">com.google</a></div></div>
+<div class="ttc" id="a01263_html"><div class="ttname"><a href="a01263.html">com.google.scrollview</a></div></div>
+<div class="ttc" id="a01261_html"><div class="ttname"><a href="a01261.html">com</a></div></div>
+<div class="ttc" id="a00571_html"><div class="ttname"><a href="a00571.html">com.google.scrollview.events.SVEventType</a></div><div class="ttdef"><b>Definition:</b> <a href="a01065_source.html#l00020">SVEventType.java:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7da809630a0bf7f0b43a9c245bff7d16.html">dict</a></li><li class="navelem"><a class="el" href="a01067.html">matchdefs.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_93c6ba7fb77bae0709fae89c9c13b44a.html">java</a></li><li class="navelem"><a class="el" href="dir_8a22873406ddef3ffbbc0bacea2033ba.html">com</a></li><li class="navelem"><a class="el" href="dir_6f01889fa69585f5458dd2f93b8129fa.html">google</a></li><li class="navelem"><a class="el" href="dir_9dab79eb97c3c83eca86025a2e1a5568.html">scrollview</a></li><li class="navelem"><a class="el" href="dir_b26288421775315edf6b4822e50b3102.html">ui</a></li><li class="navelem"><a class="el" href="a01067.html">SVAbstractMenuItem.java</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:01 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

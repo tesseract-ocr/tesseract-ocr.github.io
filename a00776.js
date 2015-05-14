@@ -1,5 +1,4 @@
 var a00776 =
 [
-    [ "LLSQ", "a00470.html", "a00470" ],
-    [ "MedianOfCircularValues", "a00776.html#abde6267e843aeeea5089d458c465dee2", null ]
+    [ "BLOCK_LABEL_HEIGHT", "a00776.html#ad0e3ca9368f7687b1a72cf083cad3033", null ]
 ];

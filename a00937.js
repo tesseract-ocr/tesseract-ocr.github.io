@@ -1,53 +1,25 @@
 var a00937 =
 [
-    [ "MFEDGEPT", "a00482.html", "a00482" ],
-    [ "OUTLINE_STATS", "a00499.html", "a00499" ],
-    [ "AverageOf", "a00937.html#a3bebacc8131f75b46dc7a107d22fcae2", null ],
-    [ "ClearMark", "a00937.html#a1960e4d5f6a5ee3649830432ab38937b", null ],
-    [ "DegenerateOutline", "a00937.html#ac8e258367e719e5a22e83af1c2b33e53", null ],
-    [ "MakeOutlineCircular", "a00937.html#a72b744e3e7220468dad3d2c67ef65bbf", null ],
-    [ "MarkPoint", "a00937.html#ae5174bb3e6e300b198551b13834c1a62", null ],
-    [ "MF_SCALE_FACTOR", "a00937.html#a91645597f620e8307a65e8ab35d963b8", null ],
-    [ "NextPointAfter", "a00937.html#ad2dfef920e57366bab3231610ab39f4d", null ],
-    [ "NORMAL_BASELINE", "a00937.html#ac5d2acf8cce6a604ff52887a9be290ed", null ],
-    [ "NORMAL_X_HEIGHT", "a00937.html#ac2f24132ffdd44f1b1ac9f861003ef55", null ],
-    [ "PointAt", "a00937.html#aabb22902a8c1b9a830cb6347a474feea", null ],
-    [ "MFOUTLINE", "a00937.html#a7ccab0cdf14413921e017ad0af14e1de", null ],
-    [ "DIRECTION", "a00937.html#aa268a41a13430b18e933ed40207178d0", [
-      [ "north", "a00937.html#aa268a41a13430b18e933ed40207178d0a257e6b7fcd6ccb860083f20eb9bd660d", null ],
-      [ "south", "a00937.html#aa268a41a13430b18e933ed40207178d0a035a454a75284b5dc261bd500ab311ed", null ],
-      [ "east", "a00937.html#aa268a41a13430b18e933ed40207178d0a1be79cd4775c5384e197f1031580b10a", null ],
-      [ "west", "a00937.html#aa268a41a13430b18e933ed40207178d0a9f771a3f89930d6b7e164e32a951dcb6", null ],
-      [ "northeast", "a00937.html#aa268a41a13430b18e933ed40207178d0ae3b4c14104592166f37bd10677137b23", null ],
-      [ "northwest", "a00937.html#aa268a41a13430b18e933ed40207178d0a612166623e6f200d052d3d8dc4c075c0", null ],
-      [ "southeast", "a00937.html#aa268a41a13430b18e933ed40207178d0ae1fe6949267a85f8ffd113c0eb67116a", null ],
-      [ "southwest", "a00937.html#aa268a41a13430b18e933ed40207178d0a0a8b39b36c98d2346b9a5453838f3aea", null ]
+    [ "GetPicoFeatureLength", "a00937.html#a35f5a174efc9c6197837aaf5544c78f2", null ],
+    [ "MAX_PICO_FEATURES", "a00937.html#a547a9b8f4afa51bb6c9066d5848c068d", null ],
+    [ "GeoParams", "a00937.html#a41a4b5a66040b8b2deb004bd33909009", [
+      [ "GeoBottom", "a00937.html#a41a4b5a66040b8b2deb004bd33909009a45ab6326da25c47511791071ad13f62a", null ],
+      [ "GeoTop", "a00937.html#a41a4b5a66040b8b2deb004bd33909009af270e2a7660aa4121f6693faa62de67c", null ],
+      [ "GeoWidth", "a00937.html#a41a4b5a66040b8b2deb004bd33909009a1840e5fe9bffa7db328236bd0ad20bd7", null ],
+      [ "GeoCount", "a00937.html#a41a4b5a66040b8b2deb004bd33909009af5bbc18811bb7a574c082e4a6f654db7", null ]
     ] ],
-    [ "NORM_METHOD", "a00937.html#a2a4b69f9a2827dc98bc4cbc233118865", [
-      [ "baseline", "a00937.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23", null ],
-      [ "character", "a00937.html#a2a4b69f9a2827dc98bc4cbc233118865afa40ef3af4fea0001b535318130960b2", null ]
+    [ "IntParams", "a00937.html#a25c105f6b5ef77e1565388f318056f8c", [
+      [ "IntX", "a00937.html#a25c105f6b5ef77e1565388f318056f8ca52fc06c8638074204be3a7f9a35d65b1", null ],
+      [ "IntY", "a00937.html#a25c105f6b5ef77e1565388f318056f8ca87c5652cf1b4b1a9a7f7b91a9bc48808", null ],
+      [ "IntDir", "a00937.html#a25c105f6b5ef77e1565388f318056f8ca37a015c1bac0b61d97b95193172240ed", null ]
     ] ],
-    [ "OUTLINETYPE", "a00937.html#abace9421f1a42147c8af40a950bc7203", [
-      [ "outer", "a00937.html#abace9421f1a42147c8af40a950bc7203a281b97b7e8b9c87a09e7fc5b5fe95da8", null ],
-      [ "hole", "a00937.html#abace9421f1a42147c8af40a950bc7203a35dab49845fd740fff6be6c2702e49a4", null ]
+    [ "PICO_FEAT_PARAM_NAME", "a00937.html#ac00e1c5d2ac3096e0928e2186aee1aac", [
+      [ "PicoFeatY", "a00937.html#ac00e1c5d2ac3096e0928e2186aee1aaca43884de5e2e87be26f9642b50135f98a", null ],
+      [ "PicoFeatDir", "a00937.html#ac00e1c5d2ac3096e0928e2186aee1aaca9895f2baa648985ab8ee5586c1563511", null ],
+      [ "PicoFeatX", "a00937.html#ac00e1c5d2ac3096e0928e2186aee1aacaf28d56154a908256d7b3beb62977e2fc", null ]
     ] ],
-    [ "ChangeDirection", "a00937.html#abd95d6d2be6406aea26fbf0f0bf157ae", null ],
-    [ "CharNormalizeOutline", "a00937.html#af5936ef194bb508756e2b1b891c31ece", null ],
-    [ "ComputeBlobCenter", "a00937.html#ac9f4e1c384c1d17dfa37ebd63096d232", null ],
-    [ "ComputeDirection", "a00937.html#a97334eef13fe16a7e0ce178f905d2c39", null ],
-    [ "ConvertBlob", "a00937.html#a36feb3bd4df38dbd78e7153278a08b10", null ],
-    [ "ConvertOutline", "a00937.html#a55eac211652384977ec812120a44e757", null ],
-    [ "ConvertOutlines", "a00937.html#a8e6bfe5c4f9d8f25a36647bc079d7e49", null ],
-    [ "FilterEdgeNoise", "a00937.html#a6a0f0accb0239e9d76cd8ff4ff147350", null ],
-    [ "FindDirectionChanges", "a00937.html#ac2b870343576dd24d1c4871f5988d556", null ],
-    [ "FinishOutlineStats", "a00937.html#a8983618bd7c7c05ff69355b0aa4185fe", null ],
-    [ "FreeMFOutline", "a00937.html#a717586ca196e0c54bd0c99792acde58d", null ],
-    [ "FreeOutlines", "a00937.html#a553352ad44661adad2a80a24ac78aeaf", null ],
-    [ "InitOutlineStats", "a00937.html#ab1a3167a695b3448b64ee38f6da9a264", null ],
-    [ "MarkDirectionChanges", "a00937.html#afa2531f8656ba496465bc23ff1a2f99c", null ],
-    [ "NewEdgePoint", "a00937.html#a917b406f8854b822d8cf2eb2480e6684", null ],
-    [ "NextDirectionChange", "a00937.html#a224d838335416038dcb0348f665f5a05", null ],
-    [ "NextExtremity", "a00937.html#af520bd5bba313216d0b6fb9e58041266", null ],
-    [ "NormalizeOutline", "a00937.html#a30b1492f0756c31499da0157ecba50ff", null ],
-    [ "UpdateOutlineStats", "a00937.html#a943167d00e171b3cbc68252f32a45196", null ]
+    [ "ExtractIntCNFeatures", "a00937.html#ae3bb75821d8e888f76b0fb646c2be7e5", null ],
+    [ "ExtractIntGeoFeatures", "a00937.html#a2df1ec0f330f5ec74fba0f91ffbb52e4", null ],
+    [ "classify_pico_feature_length", "a00937.html#ade0cbc6650cd99b83ecc2c1a828a4bee", null ],
+    [ "PicoFeatureLength", "a00937.html#af494eeed1e7b08eba0c73678dde32e31", null ]
 ];

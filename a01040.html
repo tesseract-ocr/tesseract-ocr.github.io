@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cutil/cutil.cpp File Reference</title>
+<title>Tesseract: cutil/freelist.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,131 +105,89 @@ $(document).ready(function(){initNavTree('a01040.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">cutil.cpp File Reference</div>  </div>
+<div class="title">freelist.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01041_source.html">cutil.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00883_source.html">tprintf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01038_source.html">callcpp.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01041_source.html">freelist.h</a>&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 </div>
 <p><a href="a01040_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a6f918b4c4fd78a6a98a73d38d327f160"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01040.html#a6f918b4c4fd78a6a98a73d38d327f160">RESET_COUNT</a>&#160;&#160;&#160;2000</td></tr>
-<tr class="separator:a6f918b4c4fd78a6a98a73d38d327f160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a33d2b2e66e43c48ac087a3e89f783f85"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01040.html#a33d2b2e66e43c48ac087a3e89f783f85">long_rand</a> (long limit)</td></tr>
-<tr class="separator:a33d2b2e66e43c48ac087a3e89f783f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3226f9d05617de0b7174bc7b7fce5b6"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01040.html#ae3226f9d05617de0b7174bc7b7fce5b6">open_file</a> (const char *filename, const char *<a class="el" href="a00722.html#afc03cf3e39248c2e339fee4d31f5f750">mode</a>)</td></tr>
-<tr class="separator:ae3226f9d05617de0b7174bc7b7fce5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae742eac688a0941097b28b88dd0f201b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01040.html#ae742eac688a0941097b28b88dd0f201b">exists_file</a> (const char *filename)</td></tr>
-<tr class="memdesc:ae742eac688a0941097b28b88dd0f201b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the file exists.  <a href="#ae742eac688a0941097b28b88dd0f201b">More...</a><br /></td></tr>
-<tr class="separator:ae742eac688a0941097b28b88dd0f201b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5898fbe61f6ffe4c1be71a107193cdfd"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01040.html#a5898fbe61f6ffe4c1be71a107193cdfd">memalloc</a> (int size)</td></tr>
+<tr class="separator:a5898fbe61f6ffe4c1be71a107193cdfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2467b686d61689eb29f3779ee878753f"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01040.html#a2467b686d61689eb29f3779ee878753f">memrealloc</a> (void *ptr, int size, int oldsize)</td></tr>
+<tr class="separator:a2467b686d61689eb29f3779ee878753f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab462a857e5edf360ae4881bcc92a0bcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01040.html#ab462a857e5edf360ae4881bcc92a0bcf">memfree</a> (void *element)</td></tr>
+<tr class="separator:ab462a857e5edf360ae4881bcc92a0bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a6f918b4c4fd78a6a98a73d38d327f160"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RESET_COUNT&#160;&#160;&#160;2000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01040_source.html#l00047">47</a> of file <a class="el" href="a01040_source.html">cutil.cpp</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ae742eac688a0941097b28b88dd0f201b"></a>
+<a class="anchor" id="a5898fbe61f6ffe4c1be71a107193cdfd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool exists_file </td>
+          <td class="memname">int* memalloc </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check whether the file exists. </p>
-
-<p>Definition at line <a class="el" href="a01040_source.html#l00092">92</a> of file <a class="el" href="a01040_source.html">cutil.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                       {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">bool</span> exists = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  FILE *f = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> ((f = fopen(<a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <span class="stringliteral">&quot;rb&quot;</span>)) != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    fclose(f);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    exists = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> exists;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a01280_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
+<p>Definition at line <a class="el" href="a01040_source.html#l00022">22</a> of file <a class="el" href="a01040_source.html">freelist.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(malloc(static_cast&lt;size_t&gt;(size)));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a33d2b2e66e43c48ac087a3e89f783f85"></a>
+<a class="anchor" id="ab462a857e5edf360ae4881bcc92a0bcf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long long_rand </td>
+          <td class="memname">void memfree </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>limit</em></td><td>)</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01040_source.html#l00056">56</a> of file <a class="el" href="a01040_source.html">cutil.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                           {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#if RAND_MAX &lt; 0x1000000</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">long</span> seed;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">long</span> num;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  num = (long) rand () &lt;&lt; 16;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  num |= rand () &amp; 0xffff;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  seed ^= num;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">long</span> result = num % limit;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">while</span> (result &lt; 0) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    result += limit;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">return</span> (<span class="keywordtype">long</span>)((double)limit * rand()/(RAND_MAX + 1.0));</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a01040_source.html#l00030">30</a> of file <a class="el" href="a01040_source.html">freelist.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                            {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  free(element);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="ae3226f9d05617de0b7174bc7b7fce5b6"></a>
+<a class="anchor" id="a2467b686d61689eb29f3779ee878753f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FILE* open_file </td>
+          <td class="memname">int* memrealloc </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>, </td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>oldsize</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -239,19 +197,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01040_source.html#l00082">82</a> of file <a class="el" href="a01040_source.html">cutil.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                        {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  FILE *thisfile = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span> ((thisfile = fopen (<a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <a class="code" href="a00722.html#afc03cf3e39248c2e339fee4d31f5f750">mode</a>)) == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a> (<span class="stringliteral">&quot;Could not open file, %s\n&quot;</span>, <a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    exit (1);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> (thisfile);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a01280_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
-<div class="ttc" id="a00722_html_afc03cf3e39248c2e339fee4d31f5f750"><div class="ttname"><a href="a00722.html#afc03cf3e39248c2e339fee4d31f5f750">mode</a></div><div class="ttdeci">CMD_EVENTS mode</div><div class="ttdef"><b>Definition:</b> <a href="a00722_source.html#l00116">pgedit.cpp:116</a></div></div>
+<p>Definition at line <a class="el" href="a01040_source.html#l00026">26</a> of file <a class="el" href="a01040_source.html">freelist.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                  {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(realloc(ptr, static_cast&lt;size_t&gt;(size)));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,8 +209,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01040.html">cutil.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01040.html">freelist.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

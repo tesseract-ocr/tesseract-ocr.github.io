@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/tesseractclass.h File Reference</title>
+<title>Tesseract: ccstruct/boxword.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,51 +105,37 @@ $(document).ready(function(){initNavTree('a00737.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tesseractclass.h File Reference</div>  </div>
+<div class="title">boxword.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;allheaders.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00692_source.html">control.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00699_source.html">docqual.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01120_source.html">devanagari_processing.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00849_source.html">genericvector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00865_source.html">ocrclass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01164_source.html">textord.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01271_source.html">wordrec.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00738_source.html">boxword.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00763_source.html">normalis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00765_source.html">ocrblock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00773_source.html">pageres.h</a>&quot;</code><br />
 </div>
 <p><a href="a00737_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00627.html">tesseract::TesseractStats</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html">tesseract::WordData</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00625.html">tesseract::Tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a6e1934a98737c40606cfc506c5c4e22a"><td class="memItemLeft" align="right" valign="top">typedef void(Tesseract::*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a6e1934a98737c40606cfc506c5c4e22a">tesseract::WordRecognizer</a> )(const WordData &amp;word_data, <a class="el" href="a00669.html">WERD_RES</a> **in_word, PointerVector&lt; <a class="el" href="a00669.html">WERD_RES</a> &gt; *out_words)</td></tr>
-<tr class="separator:a6e1934a98737c40606cfc506c5c4e22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a03af8c63d879bb74722a52f7bee8c5de"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a03af8c63d879bb74722a52f7bee8c5de">tesseract::kBoxClipTolerance</a> = 2</td></tr>
+<tr class="separator:a03af8c63d879bb74722a52f7bee8c5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00737.html">tesseractclass.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00737.html">boxword.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

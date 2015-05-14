@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cmap_table Struct Reference</title>
+<title>Tesseract: UNICHAR::const_iterator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,96 +106,332 @@ $(document).ready(function(){initNavTree('a00330.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="a01577.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="a01705.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">cmap_table Struct Reference</div>  </div>
+<div class="title">UNICHAR::const_iterator Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a01194_source.html">GlyphLessFont.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00866_source.html">unichar.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ac1f06e55e59d79486260ededacd4fe82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00328.html">cmap_header</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#ac1f06e55e59d79486260ededacd4fe82">header</a></td></tr>
-<tr class="separator:ac1f06e55e59d79486260ededacd4fe82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af469613753c23a8c9f79ecd65434ba08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00329.html">cmap_record</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#af469613753c23a8c9f79ecd65434ba08">records</a> [2]</td></tr>
-<tr class="separator:af469613753c23a8c9f79ecd65434ba08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a825a8c3fc5bd42193c403c86a2f73b82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00407.html">format6_cmap_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#a825a8c3fc5bd42193c403c86a2f73b82">AppleTable</a></td></tr>
-<tr class="separator:a825a8c3fc5bd42193c403c86a2f73b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0d6ef7c58be1d79b35f7ac147578613"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00407.html">format6_cmap_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#ae0d6ef7c58be1d79b35f7ac147578613">MSTable</a></td></tr>
-<tr class="separator:ae0d6ef7c58be1d79b35f7ac147578613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a68562bd8791cff39f9c582b92ee46faa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00330.html">const_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#a68562bd8791cff39f9c582b92ee46faa">operator++</a> ()</td></tr>
+<tr class="separator:a68562bd8791cff39f9c582b92ee46faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d9fefe785dbf4bd2cdd0f3f236b6ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#aa0d9fefe785dbf4bd2cdd0f3f236b6ee">operator*</a> () const </td></tr>
+<tr class="separator:aa0d9fefe785dbf4bd2cdd0f3f236b6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf36b10de41ea4fd8759caf356a3422c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#aaf36b10de41ea4fd8759caf356a3422c">get_utf8</a> (char *buf) const </td></tr>
+<tr class="separator:aaf36b10de41ea4fd8759caf356a3422c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9bd20b668eee7a0eaaa53ea8b07cb74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#ac9bd20b668eee7a0eaaa53ea8b07cb74">utf8_len</a> () const </td></tr>
+<tr class="separator:ac9bd20b668eee7a0eaaa53ea8b07cb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba11b7c888fede9c97bb57af5c5894a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#aba11b7c888fede9c97bb57af5c5894a7">is_legal</a> () const </td></tr>
+<tr class="separator:aba11b7c888fede9c97bb57af5c5894a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3a14e5a20e5dc90f71a49ab6a47ece"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#a4b3a14e5a20e5dc90f71a49ab6a47ece">utf8_data</a> () const </td></tr>
+<tr class="separator:a4b3a14e5a20e5dc90f71a49ab6a47ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aea7b9130961fcd26705a742a11634606"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#aea7b9130961fcd26705a742a11634606">UNICHAR</a></td></tr>
+<tr class="separator:aea7b9130961fcd26705a742a11634606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b1615999d88d4ce7a36de6f84ed51c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#af6b1615999d88d4ce7a36de6f84ed51c">operator==</a> (const <a class="el" href="a00330.html">CI</a> &amp;lhs, const <a class="el" href="a00330.html">CI</a> &amp;rhs)</td></tr>
+<tr class="separator:af6b1615999d88d4ce7a36de6f84ed51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9378c0da555cd681c15943b2aa4e10a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html#ae9378c0da555cd681c15943b2aa4e10a">operator!=</a> (const <a class="el" href="a00330.html">CI</a> &amp;lhs, const <a class="el" href="a00330.html">CI</a> &amp;rhs)</td></tr>
+<tr class="separator:ae9378c0da555cd681c15943b2aa4e10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a01194_source.html#l00092">92</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a825a8c3fc5bd42193c403c86a2f73b82"></a>
+<p>Definition at line <a class="el" href="a00866_source.html#l00102">102</a> of file <a class="el" href="a00866_source.html">unichar.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aaf36b10de41ea4fd8759caf356a3422c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00407.html">format6_cmap_table</a> cmap_table::AppleTable</td>
+          <td class="memname">int UNICHAR::const_iterator::get_utf8 </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01194_source.html#l00095">95</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00865_source.html#l00174">174</a> of file <a class="el" href="a00865_source.html">unichar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                                                           {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> len = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordflow">if</span> (len == 0) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;WARNING: Illegal UTF8 encountered\n&quot;</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    utf8_output[0] = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  strncpy(utf8_output, it_, len);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">return</span> len;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
+<div class="ttc" id="a00637_html_a8182a4663f6c1df9f097700f1009ab22"><div class="ttname"><a href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">UNICHAR::utf8_step</a></div><div class="ttdeci">static int utf8_step(const char *utf8_str)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00134">unichar.cpp:134</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="ac1f06e55e59d79486260ededacd4fe82"></a>
+<a class="anchor" id="aba11b7c888fede9c97bb57af5c5894a7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00328.html">cmap_header</a> cmap_table::header</td>
+          <td class="memname">bool UNICHAR::const_iterator::is_legal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01194_source.html#l00093">93</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00865_source.html#l00196">196</a> of file <a class="el" href="a00865_source.html">unichar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                                           {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_) &gt; 0;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="ttc" id="a00637_html_a8182a4663f6c1df9f097700f1009ab22"><div class="ttname"><a href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">UNICHAR::utf8_step</a></div><div class="ttdeci">static int utf8_step(const char *utf8_str)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00134">unichar.cpp:134</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="ae0d6ef7c58be1d79b35f7ac147578613"></a>
+<a class="anchor" id="aa0d9fefe785dbf4bd2cdd0f3f236b6ee"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00407.html">format6_cmap_table</a> cmap_table::MSTable</td>
+          <td class="memname">int UNICHAR::const_iterator::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01194_source.html#l00096">96</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00865_source.html#l00163">163</a> of file <a class="el" href="a00865_source.html">unichar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                           {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> len = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordflow">if</span> (len == 0) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;WARNING: Illegal UTF8 encountered\n&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="a00637.html">UNICHAR</a> uch(it_, len);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordflow">return</span> uch.first_uni();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="ttc" id="a00637_html"><div class="ttname"><a href="a00637.html">UNICHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00052">unichar.h:52</a></div></div>
+<div class="ttc" id="a00637_html_a8182a4663f6c1df9f097700f1009ab22"><div class="ttname"><a href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">UNICHAR::utf8_step</a></div><div class="ttdeci">static int utf8_step(const char *utf8_str)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00134">unichar.cpp:134</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="af469613753c23a8c9f79ecd65434ba08"></a>
+<a class="anchor" id="a68562bd8791cff39f9c582b92ee46faa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00329.html">cmap_record</a> cmap_table::records[2]</td>
+          <td class="memname"><a class="el" href="a00330.html">UNICHAR::const_iterator</a> &amp; UNICHAR::const_iterator::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01194_source.html#l00094">94</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
+<p>Definition at line <a class="el" href="a00865_source.html#l00149">149</a> of file <a class="el" href="a00865_source.html">unichar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                         {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordtype">int</span> step = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordflow">if</span> (step == 0) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Illegal UTF8 encountered.\n&quot;</span>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5 &amp;&amp; it_[i] != <span class="charliteral">&#39;\0&#39;</span>; ++i) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Index %d char = 0x%x\n&quot;</span>, i, it_[i]);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    step = 1;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  it_ += step;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
+<div class="ttc" id="a00637_html_a8182a4663f6c1df9f097700f1009ab22"><div class="ttname"><a href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">UNICHAR::utf8_step</a></div><div class="ttdeci">static int utf8_step(const char *utf8_str)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00134">unichar.cpp:134</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4b3a14e5a20e5dc90f71a49ab6a47ece"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* UNICHAR::const_iterator::utf8_data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00866_source.html#l00130">130</a> of file <a class="el" href="a00866_source.html">unichar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{ <span class="keywordflow">return</span> it_; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac9bd20b668eee7a0eaaa53ea8b07cb74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UNICHAR::const_iterator::utf8_len </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00865_source.html#l00186">186</a> of file <a class="el" href="a00865_source.html">unichar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                          {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> len = <a class="code" href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">utf8_step</a>(it_);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">if</span> (len == 0) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;WARNING: Illegal UTF8 encountered\n&quot;</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">return</span> len;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="ttc" id="a00637_html_a8182a4663f6c1df9f097700f1009ab22"><div class="ttname"><a href="a00637.html#a8182a4663f6c1df9f097700f1009ab22">UNICHAR::utf8_step</a></div><div class="ttdeci">static int utf8_step(const char *utf8_str)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00134">unichar.cpp:134</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="ae9378c0da555cd681c15943b2aa4e10a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="a00755.html#aa7c6e3433850394bff1cde53f51b70f3">operator!</a>= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00330.html">CI</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00330.html">CI</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00866_source.html#l00136">136</a> of file <a class="el" href="a00866_source.html">unichar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                                         {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="keywordflow">return</span> !(lhs == rhs);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af6b1615999d88d4ce7a36de6f84ed51c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00330.html">CI</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00330.html">CI</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00866_source.html#l00133">133</a> of file <a class="el" href="a00866_source.html">unichar.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                                         {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="keywordflow">return</span> lhs.it_ == rhs.it_;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aea7b9130961fcd26705a742a11634606"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="a00637.html">UNICHAR</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00866_source.html#l00141">141</a> of file <a class="el" href="a00866_source.html">unichar.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>training/<a class="el" href="a01194_source.html">GlyphLessFont.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ccutil/<a class="el" href="a00866_source.html">unichar.h</a></li>
+<li>ccutil/<a class="el" href="a00865_source.html">unichar.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00330.html">cmap_table</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:44 for Tesseract by
+    <li class="navelem"><a class="el" href="a00637.html">UNICHAR</a></li><li class="navelem"><a class="el" href="a00330.html">const_iterator</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:22 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

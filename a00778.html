@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/matrix.h File Reference</title>
+<title>Tesseract: ccstruct/points.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,68 +105,51 @@ $(document).ready(function(){initNavTree('a00778.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">matrix.h File Reference</div>  </div>
+<div class="title">points.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00857_source.html">kdpair.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00889_source.html">unicharset.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00834_source.html">helpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00843_source.html">ndminx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00855_source.html">serialis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00779_source.html">points.h</a>&quot;</code><br />
 </div>
 <p><a href="a00778_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html">GENERIC_2D_ARRAY&lt; T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00267.html">BandTriMatrix&lt; T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00477.html">MATRIX</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00478.html">MATRIX_COORD</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a5c21a86b19e78482e6c7384c47c2457d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00778.html#a5c21a86b19e78482e6c7384c47c2457d">NOT_CLASSIFIED</a>&#160;&#160;&#160;reinterpret_cast&lt;BLOB_CHOICE_LIST*&gt;(<a class="el" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</td></tr>
-<tr class="separator:a5c21a86b19e78482e6c7384c47c2457d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ab367f917ba6bf928cb3ed9fd46c98739"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00452.html">tesseract::KDPairInc</a><br class="typebreak" />
-&lt; float, <a class="el" href="a00478.html">MATRIX_COORD</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00778.html#ab367f917ba6bf928cb3ed9fd46c98739">MatrixCoordPair</a></td></tr>
-<tr class="separator:ab367f917ba6bf928cb3ed9fd46c98739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a53f643f86d802fc4b65b8cbb73f21622"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00778.html#a53f643f86d802fc4b65b8cbb73f21622">ELISTIZE</a> (<a class="el" href="a00413.html">ICOORDELT</a>) bool <a class="el" href="a00377.html">FCOORD</a></td></tr>
+<tr class="separator:a53f643f86d802fc4b65b8cbb73f21622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a5c21a86b19e78482e6c7384c47c2457d"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a53f643f86d802fc4b65b8cbb73f21622"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NOT_CLASSIFIED&#160;&#160;&#160;reinterpret_cast&lt;BLOB_CHOICE_LIST*&gt;(<a class="el" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</td>
+          <td class="memname">ELISTIZE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00413.html">ICOORDELT</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00778_source.html#l00033">33</a> of file <a class="el" href="a00778_source.html">matrix.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ab367f917ba6bf928cb3ed9fd46c98739"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="a00452.html">tesseract::KDPairInc</a>&lt;float, <a class="el" href="a00478.html">MATRIX_COORD</a>&gt; <a class="el" href="a00778.html#ab367f917ba6bf928cb3ed9fd46c98739">MatrixCoordPair</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00778_source.html#l00350">350</a> of file <a class="el" href="a00778_source.html">matrix.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00778_source.html#l00030">30</a> of file <a class="el" href="a00778_source.html">points.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                       {  <span class="comment">//Convert to unit vec</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">float</span> len = length ();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span> (len &lt; 0.0000000001) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  xcoord /= len;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  ycoord /= len;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -174,8 +157,8 @@ Typedefs</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00778.html">matrix.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00778.html">points.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

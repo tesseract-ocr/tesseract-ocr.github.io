@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00366.html','');});
+$(document).ready(function(){initNavTree('a00420.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,29 +106,38 @@ $(document).ready(function(){initNavTree('a00366.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::DocumentData Member List</div>  </div>
+<div class="title">tesseract::IndexMapBiDi Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00366.html">tesseract::DocumentData</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00420.html">tesseract::IndexMapBiDi</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00366.html#ada76a50aea1ae1ed649feb8800a329d4">AddPageToDocument</a>(ImageData *page)</td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00366.html#a7597e9c4f5392c10107393f3eb122676">document_name</a>() const </td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00366.html#ae638d1d532fd4ee3f8b7dbe5bc8ea237">DocumentData</a>(const STRING &amp;name)</td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00366.html#ac3dc8258624a6ce236575bb88de75691">GetPage</a>(int index)</td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00366.html#a3a8ca21ffe1f92f9842254c3bb77d8f6">LoadDocument</a>(const char *filename, const char *lang, int start_page, inT64 max_memory, FileReader reader)</td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00366.html#ae42401618602081c5211a85c030cb34e">memory_used</a>() const </td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00366.html#aebcd8657595d7080dfb16e7fae30fb28">NumPages</a>() const </td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00366.html#a452b71108949a0b6051dce51a344e8fc">SaveDocument</a>(const char *filename, FileWriter writer)</td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00366.html#a2e19b480154814320f94d22bc04ec293">SaveToBuffer</a>(GenericVector&lt; char &gt; *buffer)</td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00366.html#a7912827934547587ba1a38c9c02afc1e">TakePage</a>(int index)</td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00366.html#ad7437d2923827a0de2cad3b8deecf165">~DocumentData</a>()</td><td class="entry"><a class="el" href="a00366.html">tesseract::DocumentData</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a></td><td class="entry"><a class="el" href="a00419.html">tesseract::IndexMap</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00419.html#ab2904b1640580ad7ba6b2c14522dc3e8">CompactSize</a>() const </td><td class="entry"><a class="el" href="a00419.html">tesseract::IndexMap</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00419.html#ad9e50b500bcbadf8f3be98cd672f0c4a">CompactToSparse</a>(int compact_index) const </td><td class="entry"><a class="el" href="a00419.html">tesseract::IndexMap</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00420.html#ab809f6fe92e0f3a7bce25eeb183ab120">CompleteMerges</a>()</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00420.html#a2b5e065b41a3a58f83b28b8d6df05185">CopyFrom</a>(const IndexMapBiDi &amp;src)</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00419.html#a838d73d3bb8c7e8a1b43761cf99f337d">tesseract::IndexMap::CopyFrom</a>(const IndexMap &amp;src)</td><td class="entry"><a class="el" href="a00419.html">tesseract::IndexMap</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00420.html#ad54cf4a1295408ec26e87ce377a8747d">DeSerialize</a>(bool swap, FILE *fp)</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00420.html#a165b8de5eeba0557d206f76b556793d9">Init</a>(int size, bool all_mapped)</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00420.html#aa33022e109d31768150283cfd9530f6c">InitAndSetupRange</a>(int sparse_size, int start, int end)</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00420.html#a8df00cfcea90afefcb1cdf0e6738546d">IsCompactDeleted</a>(int index) const </td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00420.html#a3114a55998f2e854a406d79650d83747">MapFeatures</a>(const GenericVector&lt; int &gt; &amp;sparse, GenericVector&lt; int &gt; *compact) const </td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00420.html#a2065aea120b8bbad4afc135bc3473044">Merge</a>(int compact_index1, int compact_index2)</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00420.html#aa92b1c868939853b0e20c6842ece0f1a">Serialize</a>(FILE *fp) const </td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00420.html#a3b4579cc4934a996ea688de031e758f2">SetMap</a>(int sparse_index, bool mapped)</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00420.html#a909e48dddc1488311f4d7083544eca56">Setup</a>()</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">sparse_size_</a></td><td class="entry"><a class="el" href="a00419.html">tesseract::IndexMap</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00420.html#ae108e47d0f0049137072ad2bc1f6705d">SparseSize</a>() const </td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00420.html#a2c0f96f5d5fad6c9973e1b074fac5a03">SparseToCompact</a>(int sparse_index) const </td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00419.html#a0ed244a46cf41eaee538f917605a9c8c">~IndexMap</a>()</td><td class="entry"><a class="el" href="a00419.html">tesseract::IndexMap</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00420.html#a2f27556fa2b387b3b640a186a3e86144">~IndexMapBiDi</a>()</td><td class="entry"><a class="el" href="a00420.html">tesseract::IndexMapBiDi</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:51 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:27 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

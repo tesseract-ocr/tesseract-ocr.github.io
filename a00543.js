@@ -1,11 +1,21 @@
 var a00543 =
 [
-    [ "ROW_RES", "a00543.html#a4fa646b9b1990df9e2760517d7ed0c29", null ],
-    [ "ROW_RES", "a00543.html#a6b8337098d399e437ab7e250a3400703", null ],
-    [ "~ROW_RES", "a00543.html#aed15ed5418a2caeb50aee536a6faa0bc", null ],
-    [ "char_count", "a00543.html#aad86ecebb53eb63c4038c5a95d932eea", null ],
-    [ "rej_count", "a00543.html#afe7c692eeef6f934ef1c3bd208dd115c", null ],
-    [ "row", "a00543.html#ad3a856f3e9217c47b8f2f54cd3908721", null ],
-    [ "whole_word_rej_count", "a00543.html#aee04e075058db382613b9fd2d6302d1a", null ],
-    [ "word_res_list", "a00543.html#aa3e74f91f38b1f242a6d4904212aa94b", null ]
+    [ "Shape", "a00543.html#a68d9b4600cf7683fcc0dd4452ddd6e44", null ],
+    [ "AddShape", "a00543.html#ab958a107a2f7c2a665c54a749b8ff0f4", null ],
+    [ "AddToShape", "a00543.html#a8ba6275e93ed4704cf486e911f42f420", null ],
+    [ "ContainsFont", "a00543.html#a826ee7935903995239b27f1b4e68e1ba", null ],
+    [ "ContainsFontProperties", "a00543.html#a252cc425aee6d11e6e08cdce7fc174fa", null ],
+    [ "ContainsMultipleFontProperties", "a00543.html#ab516db4033ad106fc9e21f4a48f84b8c", null ],
+    [ "ContainsUnichar", "a00543.html#a736c652adf59c9e1bdc68756f7e1e7e6", null ],
+    [ "ContainsUnicharAndFont", "a00543.html#aa6d5091ec6842cfa5c0622bc772ca26c", null ],
+    [ "DeSerialize", "a00543.html#a19655bb2ebbd46892099346c9902feec", null ],
+    [ "destination_index", "a00543.html#a425abfc0fed0d7c7096365b8d9b26c02", null ],
+    [ "IsEqualUnichars", "a00543.html#ac6bd7e4be5dc4755ad66b62ecb5f86e6", null ],
+    [ "IsSubsetOf", "a00543.html#a797653eeb0584320326b599f5653e2df", null ],
+    [ "operator==", "a00543.html#a36f503e0febd5563d28a8a890922e22b", null ],
+    [ "operator[]", "a00543.html#a332db4b9b4f9a698df9300f667f7b51d", null ],
+    [ "Serialize", "a00543.html#ae8e294fc321170b61d73ad989244b16a", null ],
+    [ "set_destination_index", "a00543.html#a230e3a68e297afe566f40a1da932454f", null ],
+    [ "SetUnicharId", "a00543.html#a73c8ca273994a42c4c79151ae5a0187f", null ],
+    [ "size", "a00543.html#a0fca7f64992c74492787d00240a22913", null ]
 ];

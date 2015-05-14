@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::LMConsistencyInfo Struct Reference</title>
+<title>Tesseract: MinK&lt; Key, Value &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,306 +106,58 @@ $(document).ready(function(){initNavTree('a00471.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="a01874.html">List of all members</a>  </div>
+<a href="a01618.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::LMConsistencyInfo Struct Reference</div>  </div>
+<div class="title">MinK&lt; Key, Value &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a01252_source.html">lm_consistency.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a556f599ec0a249b6ce9917595cce038d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a556f599ec0a249b6ce9917595cce038d">ChartypeEnum</a> { <a class="el" href="a00471.html#a556f599ec0a249b6ce9917595cce038daf134b3436de4d5987d7e73a52430a3ac">CT_NONE</a>, 
-<a class="el" href="a00471.html#a556f599ec0a249b6ce9917595cce038da92732c6683fd95e8176dfb511aaef75d">CT_ALPHA</a>, 
-<a class="el" href="a00471.html#a556f599ec0a249b6ce9917595cce038da5fc452e0f7dbd619add4ec2eba872905">CT_DIGIT</a>, 
-<a class="el" href="a00471.html#a556f599ec0a249b6ce9917595cce038daa674ad2e3baef58bdad63ce8978b7715">CT_OTHER</a>
- }</td></tr>
-<tr class="separator:a556f599ec0a249b6ce9917595cce038d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00365.html">Element</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a23c904e03ccf9efe3528ec35537d1ae3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a23c904e03ccf9efe3528ec35537d1ae3">LMConsistencyInfo</a> (const <a class="el" href="a00471.html">LMConsistencyInfo</a> *parent_info)</td></tr>
-<tr class="separator:a23c904e03ccf9efe3528ec35537d1ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f58a15f9b947c631bede5f8719849ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a4f58a15f9b947c631bede5f8719849ad">NumInconsistentPunc</a> () const </td></tr>
-<tr class="separator:a4f58a15f9b947c631bede5f8719849ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada2cd5c7c23546baa48b289f636c27d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#ada2cd5c7c23546baa48b289f636c27d4">NumInconsistentCase</a> () const </td></tr>
-<tr class="separator:ada2cd5c7c23546baa48b289f636c27d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a030cabe7efc5331c4f37a4b169df9c74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a030cabe7efc5331c4f37a4b169df9c74">NumInconsistentChartype</a> () const </td></tr>
-<tr class="separator:a030cabe7efc5331c4f37a4b169df9c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2459bf592ac03767121045a92ebd8c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#ad2459bf592ac03767121045a92ebd8c1">Consistent</a> () const </td></tr>
-<tr class="separator:ad2459bf592ac03767121045a92ebd8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8745498b655695d945a9b18b7bee9d92"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a8745498b655695d945a9b18b7bee9d92">NumInconsistentSpaces</a> () const </td></tr>
-<tr class="separator:a8745498b655695d945a9b18b7bee9d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a5daecc6c57f799e41f4e537cdf6a9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a6a5daecc6c57f799e41f4e537cdf6a9c">InconsistentXHeight</a> () const </td></tr>
-<tr class="separator:a6a5daecc6c57f799e41f4e537cdf6a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e0e1a17eb16ea587f01c739a180dd20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a3e0e1a17eb16ea587f01c739a180dd20">ComputeXheightConsistency</a> (const <a class="el" href="a00279.html">BLOB_CHOICE</a> *b, bool is_punc)</td></tr>
-<tr class="separator:a3e0e1a17eb16ea587f01c739a180dd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bea828764bafa193539f4c79cdda4ae"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a1bea828764bafa193539f4c79cdda4ae">BodyMinXHeight</a> () const </td></tr>
-<tr class="separator:a1bea828764bafa193539f4c79cdda4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b5f011c163956aa1c138bf5148b7872"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a0b5f011c163956aa1c138bf5148b7872">BodyMaxXHeight</a> () const </td></tr>
-<tr class="separator:a0b5f011c163956aa1c138bf5148b7872"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a2ef5baa48b7617b916340f99c567159b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a2ef5baa48b7617b916340f99c567159b">num_alphas</a></td></tr>
-<tr class="separator:a2ef5baa48b7617b916340f99c567159b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adace2b7fef0427bdd788fd0d6589f54e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#adace2b7fef0427bdd788fd0d6589f54e">num_digits</a></td></tr>
-<tr class="separator:adace2b7fef0427bdd788fd0d6589f54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bd5bc5cd5d170f0cd3c59005df940fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a8bd5bc5cd5d170f0cd3c59005df940fd">num_punc</a></td></tr>
-<tr class="separator:a8bd5bc5cd5d170f0cd3c59005df940fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11101ced552347c9d4f1f283db63b5d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a11101ced552347c9d4f1f283db63b5d2">num_other</a></td></tr>
-<tr class="separator:a11101ced552347c9d4f1f283db63b5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc7495e6eee0ee3fdafba729512e49ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00471.html#a556f599ec0a249b6ce9917595cce038d">ChartypeEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#afc7495e6eee0ee3fdafba729512e49ae">chartype</a></td></tr>
-<tr class="separator:afc7495e6eee0ee3fdafba729512e49ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b7d40586e8a2d83687ea6c4171ca190"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a1b7d40586e8a2d83687ea6c4171ca190">punc_ref</a></td></tr>
-<tr class="separator:a1b7d40586e8a2d83687ea6c4171ca190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e72c3d771d043bdbfdc7fc2f519bc5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a5e72c3d771d043bdbfdc7fc2f519bc5e">invalid_punc</a></td></tr>
-<tr class="separator:a5e72c3d771d043bdbfdc7fc2f519bc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0669b40b7df67c78282449120ddd269"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#ab0669b40b7df67c78282449120ddd269">num_non_first_upper</a></td></tr>
-<tr class="separator:ab0669b40b7df67c78282449120ddd269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f06b06070d36a6c46f043cebe0dfe48"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a9f06b06070d36a6c46f043cebe0dfe48">num_lower</a></td></tr>
-<tr class="separator:a9f06b06070d36a6c46f043cebe0dfe48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f5df6285567c2959c3b8303792ac2f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a6f5df6285567c2959c3b8303792ac2f0">script_id</a></td></tr>
-<tr class="separator:a6f5df6285567c2959c3b8303792ac2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65b33a42a81c0de9e0c04b58f525182a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a65b33a42a81c0de9e0c04b58f525182a">inconsistent_script</a></td></tr>
-<tr class="separator:a65b33a42a81c0de9e0c04b58f525182a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03a9ec1added82ebf68aa1e71df4a2c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a03a9ec1added82ebf68aa1e71df4a2c0">num_inconsistent_spaces</a></td></tr>
-<tr class="separator:a03a9ec1added82ebf68aa1e71df4a2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5c25550b9795cb6fcefb81599ff78e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#ac5c25550b9795cb6fcefb81599ff78e4">inconsistent_font</a></td></tr>
-<tr class="separator:ac5c25550b9795cb6fcefb81599ff78e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecabe4e838638bed7842f2bd1d4b4695"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">xht_lo</a> [<a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>]</td></tr>
-<tr class="separator:aecabe4e838638bed7842f2bd1d4b4695"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c1da51acff1f27277ee44665cdf5450"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">xht_hi</a> [<a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>]</td></tr>
-<tr class="separator:a9c1da51acff1f27277ee44665cdf5450"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a9a40117825f49afcaf7fb717549545"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a5a9a40117825f49afcaf7fb717549545">xht_count</a> [<a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>]</td></tr>
-<tr class="separator:a5a9a40117825f49afcaf7fb717549545"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd695cfe62158d4c69a07927911704f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#abd695cfe62158d4c69a07927911704f7">xht_count_punc</a> [<a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>]</td></tr>
-<tr class="separator:abd695cfe62158d4c69a07927911704f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a233472d0e92a1e8c469f77e5545736d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a></td></tr>
-<tr class="separator:a233472d0e92a1e8c469f77e5545736d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c2393172447d9658669f433ec5d362e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a9c2393172447d9658669f433ec5d362e">xpos_entropy</a></td></tr>
-<tr class="separator:a9c2393172447d9658669f433ec5d362e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae5b3815cc9b21adfc1a902a435c53f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64">XHeightConsistencyEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a></td></tr>
-<tr class="separator:aae5b3815cc9b21adfc1a902a435c53f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a69b74c519ab72914de9673e596353efb"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a69b74c519ab72914de9673e596353efb">kShiftThresh</a> = 1</td></tr>
-<tr class="separator:a69b74c519ab72914de9673e596353efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1a0b6b7c8e061a26680c16065edeaf1"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#af1a0b6b7c8e061a26680c16065edeaf1">kMaxEntropy</a> = 1</td></tr>
-<tr class="separator:af1a0b6b7c8e061a26680c16065edeaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a6eab37bbdd0ee0b66674d4f11909aa"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a9a6eab37bbdd0ee0b66674d4f11909aa">kSUB</a> = 0</td></tr>
-<tr class="separator:a9a6eab37bbdd0ee0b66674d4f11909aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae749705205fdeee91be4ec7b513ca81a"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">kNORM</a> = 1</td></tr>
-<tr class="separator:ae749705205fdeee91be4ec7b513ca81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e6d0ca178c0b06ed5475b686779e62d"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a3e6d0ca178c0b06ed5475b686779e62d">kSUP</a> = 2</td></tr>
-<tr class="separator:a3e6d0ca178c0b06ed5475b686779e62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa90ee9732226d28e2d228142da38d57b"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a> = 3</td></tr>
-<tr class="separator:aa90ee9732226d28e2d228142da38d57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8f58e958aa7f55998ce1283da2ec7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#aed8f58e958aa7f55998ce1283da2ec7c">MinK</a> (Key max_key, int k)</td></tr>
+<tr class="separator:aed8f58e958aa7f55998ce1283da2ec7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a791208da213b31a4f1058481eac6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a62a791208da213b31a4f1058481eac6f">~MinK</a> ()</td></tr>
+<tr class="separator:a62a791208da213b31a4f1058481eac6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885e251124b47ef6d2ae3388572305f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a885e251124b47ef6d2ae3388572305f8">insert</a> (Key k, Value v)</td></tr>
+<tr class="separator:a885e251124b47ef6d2ae3388572305f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ae0a6c821b62d98c6bde038e2b80a2"><td class="memItemLeft" align="right" valign="top">const Key &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a62ae0a6c821b62d98c6bde038e2b80a2">max_insertable_key</a> ()</td></tr>
+<tr class="separator:a62ae0a6c821b62d98c6bde038e2b80a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09234dac642fad372ea6fefe360f1e85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#a09234dac642fad372ea6fefe360f1e85">elements_count</a> ()</td></tr>
+<tr class="separator:a09234dac642fad372ea6fefe360f1e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45bba01f3e5ea642f99b462b345f976"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00365.html">Element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00471.html#ac45bba01f3e5ea642f99b462b345f976">elements</a> ()</td></tr>
+<tr class="separator:ac45bba01f3e5ea642f99b462b345f976"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="a01252_source.html#l00038">38</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="a556f599ec0a249b6ce9917595cce038d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00471.html#a556f599ec0a249b6ce9917595cce038d">tesseract::LMConsistencyInfo::ChartypeEnum</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a556f599ec0a249b6ce9917595cce038daf134b3436de4d5987d7e73a52430a3ac"></a>CT_NONE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a556f599ec0a249b6ce9917595cce038da92732c6683fd95e8176dfb511aaef75d"></a>CT_ALPHA&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a556f599ec0a249b6ce9917595cce038da5fc452e0f7dbd619add4ec2eba872905"></a>CT_DIGIT&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a556f599ec0a249b6ce9917595cce038daa674ad2e3baef58bdad63ce8978b7715"></a>CT_OTHER&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
+<div class="textblock"><h3>template&lt;typename Key, typename Value&gt;<br />
+class MinK&lt; Key, Value &gt;</h3>
 
-<p>Definition at line <a class="el" href="a01252_source.html#l00039">39</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{ <a class="code" href="a00471.html#a556f599ec0a249b6ce9917595cce038daf134b3436de4d5987d7e73a52430a3ac">CT_NONE</a>, <a class="code" href="a00471.html#a556f599ec0a249b6ce9917595cce038da92732c6683fd95e8176dfb511aaef75d">CT_ALPHA</a>, <a class="code" href="a00471.html#a556f599ec0a249b6ce9917595cce038da5fc452e0f7dbd619add4ec2eba872905">CT_DIGIT</a>, <a class="code" href="a00471.html#a556f599ec0a249b6ce9917595cce038daa674ad2e3baef58bdad63ce8978b7715">CT_OTHER</a>};</div>
-<div class="ttc" id="a00471_html_a556f599ec0a249b6ce9917595cce038da92732c6683fd95e8176dfb511aaef75d"><div class="ttname"><a href="a00471.html#a556f599ec0a249b6ce9917595cce038da92732c6683fd95e8176dfb511aaef75d">tesseract::LMConsistencyInfo::CT_ALPHA</a></div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00039">lm_consistency.h:39</a></div></div>
-<div class="ttc" id="a00471_html_a556f599ec0a249b6ce9917595cce038da5fc452e0f7dbd619add4ec2eba872905"><div class="ttname"><a href="a00471.html#a556f599ec0a249b6ce9917595cce038da5fc452e0f7dbd619add4ec2eba872905">tesseract::LMConsistencyInfo::CT_DIGIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00039">lm_consistency.h:39</a></div></div>
-<div class="ttc" id="a00471_html_a556f599ec0a249b6ce9917595cce038daa674ad2e3baef58bdad63ce8978b7715"><div class="ttname"><a href="a00471.html#a556f599ec0a249b6ce9917595cce038daa674ad2e3baef58bdad63ce8978b7715">tesseract::LMConsistencyInfo::CT_OTHER</a></div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00039">lm_consistency.h:39</a></div></div>
-<div class="ttc" id="a00471_html_a556f599ec0a249b6ce9917595cce038daf134b3436de4d5987d7e73a52430a3ac"><div class="ttname"><a href="a00471.html#a556f599ec0a249b6ce9917595cce038daf134b3436de4d5987d7e73a52430a3ac">tesseract::LMConsistencyInfo::CT_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00039">lm_consistency.h:39</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a23c904e03ccf9efe3528ec35537d1ae3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::LMConsistencyInfo::LMConsistencyInfo </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00471.html">LMConsistencyInfo</a> *&#160;</td>
-          <td class="paramname"><em>parent_info</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01252_source.html#l00053">53</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                   {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (parent_info == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="comment">// Initialize from scratch.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <a class="code" href="a00471.html#a2ef5baa48b7617b916340f99c567159b">num_alphas</a> = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <a class="code" href="a00471.html#adace2b7fef0427bdd788fd0d6589f54e">num_digits</a> = 0;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <a class="code" href="a00471.html#a8bd5bc5cd5d170f0cd3c59005df940fd">num_punc</a> = 0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <a class="code" href="a00471.html#a11101ced552347c9d4f1f283db63b5d2">num_other</a> = 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <a class="code" href="a00471.html#afc7495e6eee0ee3fdafba729512e49ae">chartype</a> = <a class="code" href="a00471.html#a556f599ec0a249b6ce9917595cce038daf134b3436de4d5987d7e73a52430a3ac">CT_NONE</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <a class="code" href="a00471.html#a1b7d40586e8a2d83687ea6c4171ca190">punc_ref</a> = NO_EDGE;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <a class="code" href="a00471.html#a5e72c3d771d043bdbfdc7fc2f519bc5e">invalid_punc</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <a class="code" href="a00471.html#ab0669b40b7df67c78282449120ddd269">num_non_first_upper</a> = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="a00471.html#a9f06b06070d36a6c46f043cebe0dfe48">num_lower</a> = 0;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <a class="code" href="a00471.html#a6f5df6285567c2959c3b8303792ac2f0">script_id</a> = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <a class="code" href="a00471.html#a65b33a42a81c0de9e0c04b58f525182a">inconsistent_script</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <a class="code" href="a00471.html#a03a9ec1added82ebf68aa1e71df4a2c0">num_inconsistent_spaces</a> = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="a00471.html#ac5c25550b9795cb6fcefb81599ff78e4">inconsistent_font</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="comment">// Initialize XHeight stats.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>; i++) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="a00471.html#a5a9a40117825f49afcaf7fb717549545">xht_count</a>[i] = 0;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="a00471.html#abd695cfe62158d4c69a07927911704f7">xht_count_punc</a>[i] = 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">xht_lo</a>[i] = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">xht_hi</a>[i] = 256;  <span class="comment">// kBlnCellHeight</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a> = -1;  <span class="comment">// This invalid value indicates that there was no parent.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="a00471.html#a9c2393172447d9658669f433ec5d362e">xpos_entropy</a> = 0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64a634a80d9494da9f98e421d365a92de2b">XH_GOOD</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="comment">// Copy parent info</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      *<span class="keyword">this</span> = *parent_info;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-<div class="ttc" id="a00471_html_a6f5df6285567c2959c3b8303792ac2f0"><div class="ttname"><a href="a00471.html#a6f5df6285567c2959c3b8303792ac2f0">tesseract::LMConsistencyInfo::script_id</a></div><div class="ttdeci">int script_id</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00126">lm_consistency.h:126</a></div></div>
-<div class="ttc" id="a00471_html_ab0669b40b7df67c78282449120ddd269"><div class="ttname"><a href="a00471.html#ab0669b40b7df67c78282449120ddd269">tesseract::LMConsistencyInfo::num_non_first_upper</a></div><div class="ttdeci">int num_non_first_upper</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00124">lm_consistency.h:124</a></div></div>
-<div class="ttc" id="a00471_html_abd695cfe62158d4c69a07927911704f7"><div class="ttname"><a href="a00471.html#abd695cfe62158d4c69a07927911704f7">tesseract::LMConsistencyInfo::xht_count_punc</a></div><div class="ttdeci">inT16 xht_count_punc[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00134">lm_consistency.h:134</a></div></div>
-<div class="ttc" id="a00471_html_a03a9ec1added82ebf68aa1e71df4a2c0"><div class="ttname"><a href="a00471.html#a03a9ec1added82ebf68aa1e71df4a2c0">tesseract::LMConsistencyInfo::num_inconsistent_spaces</a></div><div class="ttdeci">int num_inconsistent_spaces</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00128">lm_consistency.h:128</a></div></div>
-<div class="ttc" id="a00471_html_a5a9a40117825f49afcaf7fb717549545"><div class="ttname"><a href="a00471.html#a5a9a40117825f49afcaf7fb717549545">tesseract::LMConsistencyInfo::xht_count</a></div><div class="ttdeci">inT16 xht_count[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00133">lm_consistency.h:133</a></div></div>
-<div class="ttc" id="a00471_html_a9c2393172447d9658669f433ec5d362e"><div class="ttname"><a href="a00471.html#a9c2393172447d9658669f433ec5d362e">tesseract::LMConsistencyInfo::xpos_entropy</a></div><div class="ttdeci">inT16 xpos_entropy</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00136">lm_consistency.h:136</a></div></div>
-<div class="ttc" id="a00471_html_a65b33a42a81c0de9e0c04b58f525182a"><div class="ttname"><a href="a00471.html#a65b33a42a81c0de9e0c04b58f525182a">tesseract::LMConsistencyInfo::inconsistent_script</a></div><div class="ttdeci">bool inconsistent_script</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00127">lm_consistency.h:127</a></div></div>
-<div class="ttc" id="a00471_html_a9c1da51acff1f27277ee44665cdf5450"><div class="ttname"><a href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">tesseract::LMConsistencyInfo::xht_hi</a></div><div class="ttdeci">float xht_hi[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00132">lm_consistency.h:132</a></div></div>
-<div class="ttc" id="a00471_html_a1b7d40586e8a2d83687ea6c4171ca190"><div class="ttname"><a href="a00471.html#a1b7d40586e8a2d83687ea6c4171ca190">tesseract::LMConsistencyInfo::punc_ref</a></div><div class="ttdeci">EDGE_REF punc_ref</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00122">lm_consistency.h:122</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00471_html_afc7495e6eee0ee3fdafba729512e49ae"><div class="ttname"><a href="a00471.html#afc7495e6eee0ee3fdafba729512e49ae">tesseract::LMConsistencyInfo::chartype</a></div><div class="ttdeci">ChartypeEnum chartype</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00121">lm_consistency.h:121</a></div></div>
-<div class="ttc" id="a00471_html_a5e72c3d771d043bdbfdc7fc2f519bc5e"><div class="ttname"><a href="a00471.html#a5e72c3d771d043bdbfdc7fc2f519bc5e">tesseract::LMConsistencyInfo::invalid_punc</a></div><div class="ttdeci">bool invalid_punc</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00123">lm_consistency.h:123</a></div></div>
-<div class="ttc" id="a00471_html_a11101ced552347c9d4f1f283db63b5d2"><div class="ttname"><a href="a00471.html#a11101ced552347c9d4f1f283db63b5d2">tesseract::LMConsistencyInfo::num_other</a></div><div class="ttdeci">int num_other</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00120">lm_consistency.h:120</a></div></div>
-<div class="ttc" id="a00471_html_aae5b3815cc9b21adfc1a902a435c53f1"><div class="ttname"><a href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">tesseract::LMConsistencyInfo::xht_decision</a></div><div class="ttdeci">XHeightConsistencyEnum xht_decision</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00137">lm_consistency.h:137</a></div></div>
-<div class="ttc" id="a00471_html_aa90ee9732226d28e2d228142da38d57b"><div class="ttname"><a href="a00471.html#aa90ee9732226d28e2d228142da38d57b">tesseract::LMConsistencyInfo::kNumPos</a></div><div class="ttdeci">static const int kNumPos</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00051">lm_consistency.h:51</a></div></div>
-<div class="ttc" id="a00471_html_a233472d0e92a1e8c469f77e5545736d0"><div class="ttname"><a href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">tesseract::LMConsistencyInfo::xht_sp</a></div><div class="ttdeci">inT16 xht_sp</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00135">lm_consistency.h:135</a></div></div>
-<div class="ttc" id="a00471_html_a9f06b06070d36a6c46f043cebe0dfe48"><div class="ttname"><a href="a00471.html#a9f06b06070d36a6c46f043cebe0dfe48">tesseract::LMConsistencyInfo::num_lower</a></div><div class="ttdeci">int num_lower</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00125">lm_consistency.h:125</a></div></div>
-<div class="ttc" id="a00471_html_aecabe4e838638bed7842f2bd1d4b4695"><div class="ttname"><a href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">tesseract::LMConsistencyInfo::xht_lo</a></div><div class="ttdeci">float xht_lo[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00131">lm_consistency.h:131</a></div></div>
-<div class="ttc" id="a00471_html_a8bd5bc5cd5d170f0cd3c59005df940fd"><div class="ttname"><a href="a00471.html#a8bd5bc5cd5d170f0cd3c59005df940fd">tesseract::LMConsistencyInfo::num_punc</a></div><div class="ttdeci">int num_punc</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00119">lm_consistency.h:119</a></div></div>
-<div class="ttc" id="a00471_html_a2ef5baa48b7617b916340f99c567159b"><div class="ttname"><a href="a00471.html#a2ef5baa48b7617b916340f99c567159b">tesseract::LMConsistencyInfo::num_alphas</a></div><div class="ttdeci">int num_alphas</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00117">lm_consistency.h:117</a></div></div>
-<div class="ttc" id="a00471_html_a556f599ec0a249b6ce9917595cce038daf134b3436de4d5987d7e73a52430a3ac"><div class="ttname"><a href="a00471.html#a556f599ec0a249b6ce9917595cce038daf134b3436de4d5987d7e73a52430a3ac">tesseract::LMConsistencyInfo::CT_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00039">lm_consistency.h:39</a></div></div>
-<div class="ttc" id="a00471_html_adace2b7fef0427bdd788fd0d6589f54e"><div class="ttname"><a href="a00471.html#adace2b7fef0427bdd788fd0d6589f54e">tesseract::LMConsistencyInfo::num_digits</a></div><div class="ttdeci">int num_digits</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00118">lm_consistency.h:118</a></div></div>
-<div class="ttc" id="a01279_html_a2e53285161b2010d0d23d1bf99261e64a634a80d9494da9f98e421d365a92de2b"><div class="ttname"><a href="a01279.html#a2e53285161b2010d0d23d1bf99261e64a634a80d9494da9f98e421d365a92de2b">tesseract::XH_GOOD</a></div><div class="ttdef"><b>Definition:</b> <a href="a01065_source.html#l00075">dict.h:75</a></div></div>
-<div class="ttc" id="a00471_html_ac5c25550b9795cb6fcefb81599ff78e4"><div class="ttname"><a href="a00471.html#ac5c25550b9795cb6fcefb81599ff78e4">tesseract::LMConsistencyInfo::inconsistent_font</a></div><div class="ttdeci">bool inconsistent_font</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00129">lm_consistency.h:129</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0b5f011c163956aa1c138bf5148b7872"></a>
+<p>Definition at line <a class="el" href="a00916_source.html#l00053">53</a> of file <a class="el" href="a00916_source.html">kdtree.cpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aed8f58e958aa7f55998ce1283da2ec7c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+<div class="memtemplate">
+template&lt;typename Key, typename Value &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">float tesseract::LMConsistencyInfo::BodyMaxXHeight </td>
+          <td class="memname"><a class="el" href="a00471.html">MinK</a>&lt; Key, Value &gt;::<a class="el" href="a00471.html">MinK</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00111">111</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                               {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00471.html#a6a5daecc6c57f799e41f4e537cdf6a9c">InconsistentXHeight</a>())</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="a00854.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">xht_hi</a>[<a class="code" href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">kNORM</a>];</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
-<div class="ttc" id="a00854_html_a3905e54374e49708219791e7d59c60fb"><div class="ttname"><a href="a00854.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></div><div class="ttdeci">#define MAX_INT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00119">host.h:119</a></div></div>
-<div class="ttc" id="a00471_html_ae749705205fdeee91be4ec7b513ca81a"><div class="ttname"><a href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">tesseract::LMConsistencyInfo::kNORM</a></div><div class="ttdeci">static const int kNORM</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00050">lm_consistency.h:50</a></div></div>
-<div class="ttc" id="a00471_html_a9c1da51acff1f27277ee44665cdf5450"><div class="ttname"><a href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">tesseract::LMConsistencyInfo::xht_hi</a></div><div class="ttdeci">float xht_hi[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00132">lm_consistency.h:132</a></div></div>
-<div class="ttc" id="a00471_html_a6a5daecc6c57f799e41f4e537cdf6a9c"><div class="ttname"><a href="a00471.html#a6a5daecc6c57f799e41f4e537cdf6a9c">tesseract::LMConsistencyInfo::InconsistentXHeight</a></div><div class="ttdeci">int InconsistentXHeight() const </div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00102">lm_consistency.h:102</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a1bea828764bafa193539f4c79cdda4ae"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float tesseract::LMConsistencyInfo::BodyMinXHeight </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00106">106</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                               {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00471.html#a6a5daecc6c57f799e41f4e537cdf6a9c">InconsistentXHeight</a>())</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="keywordflow">return</span> 0.0f;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">xht_lo</a>[<a class="code" href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">kNORM</a>];</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
-<div class="ttc" id="a00471_html_ae749705205fdeee91be4ec7b513ca81a"><div class="ttname"><a href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">tesseract::LMConsistencyInfo::kNORM</a></div><div class="ttdeci">static const int kNORM</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00050">lm_consistency.h:50</a></div></div>
-<div class="ttc" id="a00471_html_aecabe4e838638bed7842f2bd1d4b4695"><div class="ttname"><a href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">tesseract::LMConsistencyInfo::xht_lo</a></div><div class="ttdeci">float xht_lo[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00131">lm_consistency.h:131</a></div></div>
-<div class="ttc" id="a00471_html_a6a5daecc6c57f799e41f4e537cdf6a9c"><div class="ttname"><a href="a00471.html#a6a5daecc6c57f799e41f4e537cdf6a9c">tesseract::LMConsistencyInfo::InconsistentXHeight</a></div><div class="ttdeci">int InconsistentXHeight() const </div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00102">lm_consistency.h:102</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a3e0e1a17eb16ea587f01c739a180dd20"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::LMConsistencyInfo::ComputeXheightConsistency </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00279.html">BLOB_CHOICE</a> *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
+          <td class="paramtype">Key&#160;</td>
+          <td class="paramname"><em>max_key</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>is_punc</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -415,124 +167,51 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01251_source.html#l00029">29</a> of file <a class="el" href="a01251_source.html">lm_consistency.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> == <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815">XH_INCONSISTENT</a>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span>;  <span class="comment">// It isn&#39;t going to get any better.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Compute xheight consistency.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">bool</span> parent_null = <a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a> &lt; 0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">int</span> parent_sp = <a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// Debug strings.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">if</span> (b-&gt;<a class="code" href="a00279.html#a48de11e6a7c7fe505667bcc1f032f632">yshift</a>() &gt; <a class="code" href="a00471.html#a69b74c519ab72914de9673e596353efb">LMConsistencyInfo::kShiftThresh</a>) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a> = <a class="code" href="a00471.html#a3e6d0ca178c0b06ed5475b686779e62d">LMConsistencyInfo::kSUP</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (b-&gt;<a class="code" href="a00279.html#a48de11e6a7c7fe505667bcc1f032f632">yshift</a>() &lt; -<a class="code" href="a00471.html#a69b74c519ab72914de9673e596353efb">LMConsistencyInfo::kShiftThresh</a>) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a> = <a class="code" href="a00471.html#a9a6eab37bbdd0ee0b66674d4f11909aa">LMConsistencyInfo::kSUB</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a> = <a class="code" href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">LMConsistencyInfo::kNORM</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="a00471.html#a5a9a40117825f49afcaf7fb717549545">xht_count</a>[<a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a>]++;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> (is_punc) <a class="code" href="a00471.html#abd695cfe62158d4c69a07927911704f7">xht_count_punc</a>[<a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a>]++;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span> (!parent_null) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="a00471.html#a9c2393172447d9658669f433ec5d362e">xpos_entropy</a> += abs(parent_sp - <a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// TODO(eger): Figure out a better way to account for small caps.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// For the first character not y-shifted, we only care if it is too small.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// Too large is common in drop caps and small caps.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// inT16 small_xht = b-&gt;min_xheight();</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//  if (parent_vse == NULL &amp;&amp; sp == LanguageModelConsistencyInfo::kNORM) {</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">//  small_xht = 0;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// }</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="a00853.html#a6a6e013c7a0b4afa87f5e37697f7f99f">IntersectRange</a>(b-&gt;<a class="code" href="a00279.html#adb243de91aeefae6a959a9b82da2897f">min_xheight</a>(), b-&gt;<a class="code" href="a00279.html#acde597d08a8bb994c000f9b29003be0b">max_xheight</a>(),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                 &amp;(<a class="code" href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">xht_lo</a>[<a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a>]), &amp;(<a class="code" href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">xht_hi</a>[<a class="code" href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">xht_sp</a>]));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// Compute xheight inconsistency kinds.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (parent_null) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00471.html#a5a9a40117825f49afcaf7fb717549545">xht_count</a>[<a class="code" href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">kNORM</a>] == 1) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64a634a80d9494da9f98e421d365a92de2b">XH_GOOD</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64a996fdb88dd53344a2b77382b608f559b">XH_SUBNORMAL</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// When we intersect the ranges of xheights in pixels for all characters in</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// each position (subscript, normal, superscript),</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// How much range must be left?  0? [exactly one pixel height for xheight] 1?</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// TODO(eger): Extend this code to take a prior for the rest of the line.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> kMinIntersectedXHeightRange = 0;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>; i++) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">xht_lo</a>[i] &gt; <a class="code" href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">xht_hi</a>[i] - kMinIntersectedXHeightRange) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815">XH_INCONSISTENT</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// Reject as improbable anything where there&#39;s much punctuation in subscript</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// or superscript regions.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00471.html#abd695cfe62158d4c69a07927911704f7">xht_count_punc</a>[<a class="code" href="a00471.html#a9a6eab37bbdd0ee0b66674d4f11909aa">kSUB</a>] &gt; <a class="code" href="a00471.html#a5a9a40117825f49afcaf7fb717549545">xht_count</a>[<a class="code" href="a00471.html#a9a6eab37bbdd0ee0b66674d4f11909aa">kSUB</a>] * 0.4 ||</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="a00471.html#abd695cfe62158d4c69a07927911704f7">xht_count_punc</a>[<a class="code" href="a00471.html#a3e6d0ca178c0b06ed5475b686779e62d">kSUP</a>] &gt; <a class="code" href="a00471.html#a5a9a40117825f49afcaf7fb717549545">xht_count</a>[<a class="code" href="a00471.html#a3e6d0ca178c0b06ed5475b686779e62d">kSUP</a>] * 0.4) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815">XH_INCONSISTENT</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">// Now check that the subscript and superscript aren&#39;t too small relative to</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// the mainline.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">double</span> mainline_xht = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code" href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">xht_lo</a>[<a class="code" href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">kNORM</a>]);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">double</span> kMinSizeRatio = 0.4;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (mainline_xht &gt; 0.0 &amp;&amp;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      (static_cast&lt;double&gt;(<a class="code" href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">xht_hi</a>[<a class="code" href="a00471.html#a9a6eab37bbdd0ee0b66674d4f11909aa">kSUB</a>]) / mainline_xht &lt; kMinSizeRatio ||</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;       <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code" href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">xht_hi</a>[<a class="code" href="a00471.html#a3e6d0ca178c0b06ed5475b686779e62d">kSUP</a>]) / mainline_xht &lt; kMinSizeRatio)) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815">XH_INCONSISTENT</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">// TODO(eger): Check into inconsistency of super/subscript y offsets.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00471.html#a9c2393172447d9658669f433ec5d362e">xpos_entropy</a> &gt; <a class="code" href="a00471.html#af1a0b6b7c8e061a26680c16065edeaf1">kMaxEntropy</a>) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815">XH_INCONSISTENT</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00471.html#a5a9a40117825f49afcaf7fb717549545">xht_count</a>[kSUB] == 0 &amp;&amp; <a class="code" href="a00471.html#a5a9a40117825f49afcaf7fb717549545">xht_count</a>[kSUP] == 0) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64a634a80d9494da9f98e421d365a92de2b">XH_GOOD</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> = <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64a996fdb88dd53344a2b77382b608f559b">XH_SUBNORMAL</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="ttc" id="a00471_html_a9a6eab37bbdd0ee0b66674d4f11909aa"><div class="ttname"><a href="a00471.html#a9a6eab37bbdd0ee0b66674d4f11909aa">tesseract::LMConsistencyInfo::kSUB</a></div><div class="ttdeci">static const int kSUB</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00050">lm_consistency.h:50</a></div></div>
-<div class="ttc" id="a00471_html_abd695cfe62158d4c69a07927911704f7"><div class="ttname"><a href="a00471.html#abd695cfe62158d4c69a07927911704f7">tesseract::LMConsistencyInfo::xht_count_punc</a></div><div class="ttdeci">inT16 xht_count_punc[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00134">lm_consistency.h:134</a></div></div>
-<div class="ttc" id="a00471_html_a5a9a40117825f49afcaf7fb717549545"><div class="ttname"><a href="a00471.html#a5a9a40117825f49afcaf7fb717549545">tesseract::LMConsistencyInfo::xht_count</a></div><div class="ttdeci">inT16 xht_count[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00133">lm_consistency.h:133</a></div></div>
-<div class="ttc" id="a00471_html_ae749705205fdeee91be4ec7b513ca81a"><div class="ttname"><a href="a00471.html#ae749705205fdeee91be4ec7b513ca81a">tesseract::LMConsistencyInfo::kNORM</a></div><div class="ttdeci">static const int kNORM</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00050">lm_consistency.h:50</a></div></div>
-<div class="ttc" id="a00471_html_a69b74c519ab72914de9673e596353efb"><div class="ttname"><a href="a00471.html#a69b74c519ab72914de9673e596353efb">tesseract::LMConsistencyInfo::kShiftThresh</a></div><div class="ttdeci">static const int kShiftThresh</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00043">lm_consistency.h:43</a></div></div>
-<div class="ttc" id="a00471_html_a9c2393172447d9658669f433ec5d362e"><div class="ttname"><a href="a00471.html#a9c2393172447d9658669f433ec5d362e">tesseract::LMConsistencyInfo::xpos_entropy</a></div><div class="ttdeci">inT16 xpos_entropy</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00136">lm_consistency.h:136</a></div></div>
-<div class="ttc" id="a00279_html_adb243de91aeefae6a959a9b82da2897f"><div class="ttname"><a href="a00279.html#adb243de91aeefae6a959a9b82da2897f">BLOB_CHOICE::min_xheight</a></div><div class="ttdeci">float min_xheight() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00123">ratngs.h:123</a></div></div>
-<div class="ttc" id="a00471_html_a9c1da51acff1f27277ee44665cdf5450"><div class="ttname"><a href="a00471.html#a9c1da51acff1f27277ee44665cdf5450">tesseract::LMConsistencyInfo::xht_hi</a></div><div class="ttdeci">float xht_hi[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00132">lm_consistency.h:132</a></div></div>
-<div class="ttc" id="a01279_html_a2e53285161b2010d0d23d1bf99261e64a996fdb88dd53344a2b77382b608f559b"><div class="ttname"><a href="a01279.html#a2e53285161b2010d0d23d1bf99261e64a996fdb88dd53344a2b77382b608f559b">tesseract::XH_SUBNORMAL</a></div><div class="ttdef"><b>Definition:</b> <a href="a01065_source.html#l00075">dict.h:75</a></div></div>
-<div class="ttc" id="a00279_html_a48de11e6a7c7fe505667bcc1f032f632"><div class="ttname"><a href="a00279.html#a48de11e6a7c7fe505667bcc1f032f632">BLOB_CHOICE::yshift</a></div><div class="ttdeci">float yshift() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00129">ratngs.h:129</a></div></div>
-<div class="ttc" id="a00471_html_aae5b3815cc9b21adfc1a902a435c53f1"><div class="ttname"><a href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">tesseract::LMConsistencyInfo::xht_decision</a></div><div class="ttdeci">XHeightConsistencyEnum xht_decision</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00137">lm_consistency.h:137</a></div></div>
-<div class="ttc" id="a00471_html_aa90ee9732226d28e2d228142da38d57b"><div class="ttname"><a href="a00471.html#aa90ee9732226d28e2d228142da38d57b">tesseract::LMConsistencyInfo::kNumPos</a></div><div class="ttdeci">static const int kNumPos</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00051">lm_consistency.h:51</a></div></div>
-<div class="ttc" id="a00471_html_a233472d0e92a1e8c469f77e5545736d0"><div class="ttname"><a href="a00471.html#a233472d0e92a1e8c469f77e5545736d0">tesseract::LMConsistencyInfo::xht_sp</a></div><div class="ttdeci">inT16 xht_sp</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00135">lm_consistency.h:135</a></div></div>
-<div class="ttc" id="a00471_html_af1a0b6b7c8e061a26680c16065edeaf1"><div class="ttname"><a href="a00471.html#af1a0b6b7c8e061a26680c16065edeaf1">tesseract::LMConsistencyInfo::kMaxEntropy</a></div><div class="ttdeci">static const int kMaxEntropy</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00047">lm_consistency.h:47</a></div></div>
-<div class="ttc" id="a00471_html_a3e6d0ca178c0b06ed5475b686779e62d"><div class="ttname"><a href="a00471.html#a3e6d0ca178c0b06ed5475b686779e62d">tesseract::LMConsistencyInfo::kSUP</a></div><div class="ttdeci">static const int kSUP</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00050">lm_consistency.h:50</a></div></div>
-<div class="ttc" id="a00471_html_aecabe4e838638bed7842f2bd1d4b4695"><div class="ttname"><a href="a00471.html#aecabe4e838638bed7842f2bd1d4b4695">tesseract::LMConsistencyInfo::xht_lo</a></div><div class="ttdeci">float xht_lo[kNumPos]</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00131">lm_consistency.h:131</a></div></div>
-<div class="ttc" id="a01279_html_a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815"><div class="ttname"><a href="a01279.html#a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815">tesseract::XH_INCONSISTENT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01065_source.html#l00075">dict.h:75</a></div></div>
-<div class="ttc" id="a01279_html_a2e53285161b2010d0d23d1bf99261e64a634a80d9494da9f98e421d365a92de2b"><div class="ttname"><a href="a01279.html#a2e53285161b2010d0d23d1bf99261e64a634a80d9494da9f98e421d365a92de2b">tesseract::XH_GOOD</a></div><div class="ttdef"><b>Definition:</b> <a href="a01065_source.html#l00075">dict.h:75</a></div></div>
-<div class="ttc" id="a00279_html_acde597d08a8bb994c000f9b29003be0b"><div class="ttname"><a href="a00279.html#acde597d08a8bb994c000f9b29003be0b">BLOB_CHOICE::max_xheight</a></div><div class="ttdeci">float max_xheight() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00126">ratngs.h:126</a></div></div>
-<div class="ttc" id="a00853_html_a6a6e013c7a0b4afa87f5e37697f7f99f"><div class="ttname"><a href="a00853.html#a6a6e013c7a0b4afa87f5e37697f7f99f">IntersectRange</a></div><div class="ttdeci">void IntersectRange(const T &amp;lower1, const T &amp;upper1, T *lower2, T *upper2)</div><div class="ttdef"><b>Definition:</b> <a href="a00853_source.html#l00146">helpers.h:146</a></div></div>
+<p>Definition at line <a class="el" href="a00916_source.html#l00081">81</a> of file <a class="el" href="a00916_source.html">kdtree.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                         :</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  max_key_(max_key), elements_count_(0), k_(k &lt; 1 ? 1 : k), max_index_(0) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  elements_ = <span class="keyword">new</span> Element[k_];</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="ad2459bf592ac03767121045a92ebd8c1"></a>
+<a class="anchor" id="a62a791208da213b31a4f1058481eac6f"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00471.html">MinK</a>&lt; Key, Value &gt;::~<a class="el" href="a00471.html">MinK</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00916_source.html#l00087">87</a> of file <a class="el" href="a00916_source.html">kdtree.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">delete</span> []elements_;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac45bba01f3e5ea642f99b462b345f976"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key, typename Value&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::LMConsistencyInfo::Consistent </td>
+          <td class="memname">const <a class="el" href="a00365.html">Element</a>* <a class="el" href="a00471.html">MinK</a>&lt; Key, Value &gt;::elements </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -542,33 +221,25 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01252_source.html#l00094">94</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                 {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00471.html#a4f58a15f9b947c631bede5f8719849ad">NumInconsistentPunc</a>() == 0 &amp;&amp; <a class="code" href="a00471.html#ada2cd5c7c23546baa48b289f636c27d4">NumInconsistentCase</a>() == 0 &amp;&amp;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="a00471.html#a030cabe7efc5331c4f37a4b169df9c74">NumInconsistentChartype</a>() == 0 &amp;&amp; !<a class="code" href="a00471.html#a65b33a42a81c0de9e0c04b58f525182a">inconsistent_script</a> &amp;&amp;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            !<a class="code" href="a00471.html#ac5c25550b9795cb6fcefb81599ff78e4">inconsistent_font</a> &amp;&amp; !<a class="code" href="a00471.html#a6a5daecc6c57f799e41f4e537cdf6a9c">InconsistentXHeight</a>());</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
-<div class="ttc" id="a00471_html_a65b33a42a81c0de9e0c04b58f525182a"><div class="ttname"><a href="a00471.html#a65b33a42a81c0de9e0c04b58f525182a">tesseract::LMConsistencyInfo::inconsistent_script</a></div><div class="ttdeci">bool inconsistent_script</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00127">lm_consistency.h:127</a></div></div>
-<div class="ttc" id="a00471_html_a030cabe7efc5331c4f37a4b169df9c74"><div class="ttname"><a href="a00471.html#a030cabe7efc5331c4f37a4b169df9c74">tesseract::LMConsistencyInfo::NumInconsistentChartype</a></div><div class="ttdeci">int NumInconsistentChartype() const </div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00090">lm_consistency.h:90</a></div></div>
-<div class="ttc" id="a00471_html_ada2cd5c7c23546baa48b289f636c27d4"><div class="ttname"><a href="a00471.html#ada2cd5c7c23546baa48b289f636c27d4">tesseract::LMConsistencyInfo::NumInconsistentCase</a></div><div class="ttdeci">int NumInconsistentCase() const </div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00087">lm_consistency.h:87</a></div></div>
-<div class="ttc" id="a00471_html_a4f58a15f9b947c631bede5f8719849ad"><div class="ttname"><a href="a00471.html#a4f58a15f9b947c631bede5f8719849ad">tesseract::LMConsistencyInfo::NumInconsistentPunc</a></div><div class="ttdeci">int NumInconsistentPunc() const </div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00084">lm_consistency.h:84</a></div></div>
-<div class="ttc" id="a00471_html_a6a5daecc6c57f799e41f4e537cdf6a9c"><div class="ttname"><a href="a00471.html#a6a5daecc6c57f799e41f4e537cdf6a9c">tesseract::LMConsistencyInfo::InconsistentXHeight</a></div><div class="ttdeci">int InconsistentXHeight() const </div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00102">lm_consistency.h:102</a></div></div>
-<div class="ttc" id="a00471_html_ac5c25550b9795cb6fcefb81599ff78e4"><div class="ttname"><a href="a00471.html#ac5c25550b9795cb6fcefb81599ff78e4">tesseract::LMConsistencyInfo::inconsistent_font</a></div><div class="ttdeci">bool inconsistent_font</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00129">lm_consistency.h:129</a></div></div>
+<p>Definition at line <a class="el" href="a00916_source.html#l00070">70</a> of file <a class="el" href="a00916_source.html">kdtree.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keywordflow">return</span> elements_; }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a6a5daecc6c57f799e41f4e537cdf6a9c"></a>
+<a class="anchor" id="a09234dac642fad372ea6fefe360f1e85"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key, typename Value&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::InconsistentXHeight </td>
+          <td class="memname">int <a class="el" href="a00471.html">MinK</a>&lt; Key, Value &gt;::elements_count </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -578,561 +249,94 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01252_source.html#l00102">102</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                         {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a> == <a class="code" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815">XH_INCONSISTENT</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div>
-<div class="ttc" id="a00471_html_aae5b3815cc9b21adfc1a902a435c53f1"><div class="ttname"><a href="a00471.html#aae5b3815cc9b21adfc1a902a435c53f1">tesseract::LMConsistencyInfo::xht_decision</a></div><div class="ttdeci">XHeightConsistencyEnum xht_decision</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00137">lm_consistency.h:137</a></div></div>
-<div class="ttc" id="a01279_html_a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815"><div class="ttname"><a href="a01279.html#a2e53285161b2010d0d23d1bf99261e64afe8b1f418f59f88d4a1c88308b064815">tesseract::XH_INCONSISTENT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01065_source.html#l00075">dict.h:75</a></div></div>
+<p>Definition at line <a class="el" href="a00916_source.html#l00069">69</a> of file <a class="el" href="a00916_source.html">kdtree.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{ <span class="keywordflow">return</span> elements_count_; }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="ada2cd5c7c23546baa48b289f636c27d4"></a>
+<a class="anchor" id="a885e251124b47ef6d2ae3388572305f8"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+<div class="memtemplate">
+template&lt;typename Key, typename Value&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::NumInconsistentCase </td>
+          <td class="memname">bool <a class="el" href="a00471.html">MinK</a>&lt; Key, Value &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">Key&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Value&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00916_source.html#l00099">99</a> of file <a class="el" href="a00916_source.html">kdtree.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                  {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">if</span> (elements_count_ &lt; k_) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    elements_[elements_count_++] = Element(key, value);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span> (key &gt; elements_[max_index_].key)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      max_index_ = elements_count_ - 1;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key &lt; elements_[max_index_].key) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// evict the largest element.</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    elements_[max_index_] = Element(key, value);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// recompute max_index_</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; elements_count_; i++) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keywordflow">if</span> (elements_[i].key &gt; elements_[max_index_].key)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        max_index_ = i;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a62ae0a6c821b62d98c6bde038e2b80a2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Value &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const Key &amp; <a class="el" href="a00471.html">MinK</a>&lt; Key, Value &gt;::max_insertable_key </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01252_source.html#l00087">87</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                         {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00471.html#ab0669b40b7df67c78282449120ddd269">num_non_first_upper</a> &gt; <a class="code" href="a00471.html#a9f06b06070d36a6c46f043cebe0dfe48">num_lower</a>) ? <a class="code" href="a00471.html#a9f06b06070d36a6c46f043cebe0dfe48">num_lower</a> : <a class="code" href="a00471.html#ab0669b40b7df67c78282449120ddd269">num_non_first_upper</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="ttc" id="a00471_html_ab0669b40b7df67c78282449120ddd269"><div class="ttname"><a href="a00471.html#ab0669b40b7df67c78282449120ddd269">tesseract::LMConsistencyInfo::num_non_first_upper</a></div><div class="ttdeci">int num_non_first_upper</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00124">lm_consistency.h:124</a></div></div>
-<div class="ttc" id="a00471_html_a9f06b06070d36a6c46f043cebe0dfe48"><div class="ttname"><a href="a00471.html#a9f06b06070d36a6c46f043cebe0dfe48">tesseract::LMConsistencyInfo::num_lower</a></div><div class="ttdeci">int num_lower</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00125">lm_consistency.h:125</a></div></div>
+<p>Definition at line <a class="el" href="a00916_source.html#l00092">92</a> of file <a class="el" href="a00916_source.html">kdtree.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">if</span> (elements_count_ &lt; k_)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> max_key_;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">return</span> elements_[max_index_].<a class="code" href="a00365.html#a39b02be409ba976a5dc45ec311f00324">key</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="ttc" id="a00365_html_a39b02be409ba976a5dc45ec311f00324"><div class="ttname"><a href="a00365.html#a39b02be409ba976a5dc45ec311f00324">MinK::Element::key</a></div><div class="ttdeci">Key key</div><div class="ttdef"><b>Definition:</b> <a href="a00916_source.html#l00062">kdtree.cpp:62</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a030cabe7efc5331c4f37a4b169df9c74"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::NumInconsistentChartype </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00090">90</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                             {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00471.html#a4f58a15f9b947c631bede5f8719849ad">NumInconsistentPunc</a>() + <a class="code" href="a00471.html#a11101ced552347c9d4f1f283db63b5d2">num_other</a> +</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        ((<a class="code" href="a00471.html#a2ef5baa48b7617b916340f99c567159b">num_alphas</a> &gt; <a class="code" href="a00471.html#adace2b7fef0427bdd788fd0d6589f54e">num_digits</a>) ? <a class="code" href="a00471.html#adace2b7fef0427bdd788fd0d6589f54e">num_digits</a> : <a class="code" href="a00471.html#a2ef5baa48b7617b916340f99c567159b">num_alphas</a>));</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
-<div class="ttc" id="a00471_html_a11101ced552347c9d4f1f283db63b5d2"><div class="ttname"><a href="a00471.html#a11101ced552347c9d4f1f283db63b5d2">tesseract::LMConsistencyInfo::num_other</a></div><div class="ttdeci">int num_other</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00120">lm_consistency.h:120</a></div></div>
-<div class="ttc" id="a00471_html_a4f58a15f9b947c631bede5f8719849ad"><div class="ttname"><a href="a00471.html#a4f58a15f9b947c631bede5f8719849ad">tesseract::LMConsistencyInfo::NumInconsistentPunc</a></div><div class="ttdeci">int NumInconsistentPunc() const </div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00084">lm_consistency.h:84</a></div></div>
-<div class="ttc" id="a00471_html_a2ef5baa48b7617b916340f99c567159b"><div class="ttname"><a href="a00471.html#a2ef5baa48b7617b916340f99c567159b">tesseract::LMConsistencyInfo::num_alphas</a></div><div class="ttdeci">int num_alphas</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00117">lm_consistency.h:117</a></div></div>
-<div class="ttc" id="a00471_html_adace2b7fef0427bdd788fd0d6589f54e"><div class="ttname"><a href="a00471.html#adace2b7fef0427bdd788fd0d6589f54e">tesseract::LMConsistencyInfo::num_digits</a></div><div class="ttdeci">int num_digits</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00118">lm_consistency.h:118</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a4f58a15f9b947c631bede5f8719849ad"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::NumInconsistentPunc </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00084">84</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                         {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00471.html#a5e72c3d771d043bdbfdc7fc2f519bc5e">invalid_punc</a> ? <a class="code" href="a00471.html#a8bd5bc5cd5d170f0cd3c59005df940fd">num_punc</a> : 0;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
-<div class="ttc" id="a00471_html_a5e72c3d771d043bdbfdc7fc2f519bc5e"><div class="ttname"><a href="a00471.html#a5e72c3d771d043bdbfdc7fc2f519bc5e">tesseract::LMConsistencyInfo::invalid_punc</a></div><div class="ttdeci">bool invalid_punc</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00123">lm_consistency.h:123</a></div></div>
-<div class="ttc" id="a00471_html_a8bd5bc5cd5d170f0cd3c59005df940fd"><div class="ttname"><a href="a00471.html#a8bd5bc5cd5d170f0cd3c59005df940fd">tesseract::LMConsistencyInfo::num_punc</a></div><div class="ttdeci">int num_punc</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00119">lm_consistency.h:119</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a8745498b655695d945a9b18b7bee9d92"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::NumInconsistentSpaces </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00099">99</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                            {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00471.html#a03a9ec1added82ebf68aa1e71df4a2c0">num_inconsistent_spaces</a>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
-<div class="ttc" id="a00471_html_a03a9ec1added82ebf68aa1e71df4a2c0"><div class="ttname"><a href="a00471.html#a03a9ec1added82ebf68aa1e71df4a2c0">tesseract::LMConsistencyInfo::num_inconsistent_spaces</a></div><div class="ttdeci">int num_inconsistent_spaces</div><div class="ttdef"><b>Definition:</b> <a href="a01252_source.html#l00128">lm_consistency.h:128</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="afc7495e6eee0ee3fdafba729512e49ae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00471.html#a556f599ec0a249b6ce9917595cce038d">ChartypeEnum</a> tesseract::LMConsistencyInfo::chartype</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00121">121</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac5c25550b9795cb6fcefb81599ff78e4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::LMConsistencyInfo::inconsistent_font</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00129">129</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a65b33a42a81c0de9e0c04b58f525182a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::LMConsistencyInfo::inconsistent_script</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00127">127</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5e72c3d771d043bdbfdc7fc2f519bc5e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::LMConsistencyInfo::invalid_punc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00123">123</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af1a0b6b7c8e061a26680c16065edeaf1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int tesseract::LMConsistencyInfo::kMaxEntropy = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00047">47</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae749705205fdeee91be4ec7b513ca81a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int tesseract::LMConsistencyInfo::kNORM = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00050">50</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa90ee9732226d28e2d228142da38d57b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int tesseract::LMConsistencyInfo::kNumPos = 3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00051">51</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a69b74c519ab72914de9673e596353efb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int tesseract::LMConsistencyInfo::kShiftThresh = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00043">43</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9a6eab37bbdd0ee0b66674d4f11909aa"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int tesseract::LMConsistencyInfo::kSUB = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00050">50</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3e6d0ca178c0b06ed5475b686779e62d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int tesseract::LMConsistencyInfo::kSUP = 2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00050">50</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2ef5baa48b7617b916340f99c567159b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::num_alphas</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00117">117</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adace2b7fef0427bdd788fd0d6589f54e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::num_digits</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00118">118</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a03a9ec1added82ebf68aa1e71df4a2c0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::num_inconsistent_spaces</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00128">128</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9f06b06070d36a6c46f043cebe0dfe48"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::num_lower</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00125">125</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab0669b40b7df67c78282449120ddd269"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::num_non_first_upper</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00124">124</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a11101ced552347c9d4f1f283db63b5d2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::num_other</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00120">120</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8bd5bc5cd5d170f0cd3c59005df940fd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::num_punc</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00119">119</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1b7d40586e8a2d83687ea6c4171ca190"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> tesseract::LMConsistencyInfo::punc_ref</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00122">122</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6f5df6285567c2959c3b8303792ac2f0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::LMConsistencyInfo::script_id</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00126">126</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5a9a40117825f49afcaf7fb717549545"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> tesseract::LMConsistencyInfo::xht_count[<a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00133">133</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abd695cfe62158d4c69a07927911704f7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> tesseract::LMConsistencyInfo::xht_count_punc[<a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00134">134</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aae5b3815cc9b21adfc1a902a435c53f1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01279.html#a2e53285161b2010d0d23d1bf99261e64">XHeightConsistencyEnum</a> tesseract::LMConsistencyInfo::xht_decision</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00137">137</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9c1da51acff1f27277ee44665cdf5450"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float tesseract::LMConsistencyInfo::xht_hi[<a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00132">132</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aecabe4e838638bed7842f2bd1d4b4695"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float tesseract::LMConsistencyInfo::xht_lo[<a class="el" href="a00471.html#aa90ee9732226d28e2d228142da38d57b">kNumPos</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00131">131</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a233472d0e92a1e8c469f77e5545736d0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> tesseract::LMConsistencyInfo::xht_sp</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00135">135</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9c2393172447d9658669f433ec5d362e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> tesseract::LMConsistencyInfo::xpos_entropy</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01252_source.html#l00136">136</a> of file <a class="el" href="a01252_source.html">lm_consistency.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>wordrec/<a class="el" href="a01252_source.html">lm_consistency.h</a></li>
-<li>wordrec/<a class="el" href="a01251_source.html">lm_consistency.cpp</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>classify/<a class="el" href="a00916_source.html">kdtree.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00471.html">LMConsistencyInfo</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:52 for Tesseract by
+    <li class="navelem"><a class="el" href="a00471.html">MinK</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:20 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/doubleptr.h File Reference</title>
+<title>Tesseract: ccutil/mainblk.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,33 +105,92 @@ $(document).ready(function(){initNavTree('a00840.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">doubleptr.h File Reference</div>  </div>
+<div class="title">mainblk.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00846_source.html">errcode.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00828_source.html">fileerr.h</a>&quot;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00818_source.html">ccutil.h</a>&quot;</code><br />
 </div>
 <p><a href="a00840_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html">tesseract::DoublePtr</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a885bbceac3da2daacf10048f43cc015f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00840.html#a885bbceac3da2daacf10048f43cc015f">VARDIR</a>&#160;&#160;&#160;&quot;configs/&quot;</td></tr>
+<tr class="separator:a885bbceac3da2daacf10048f43cc015f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77366c1bd428629dc898e188bfd182a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00840.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a></td></tr>
+<tr class="separator:a77366c1bd428629dc898e188bfd182a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa0543e0dd21b2e52395d15ed50cb9865"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00374.html">ERRCODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00840.html#aa0543e0dd21b2e52395d15ed50cb9865">NO_PATH</a></td></tr>
+<tr class="separator:aa0543e0dd21b2e52395d15ed50cb9865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a77366c1bd428629dc898e188bfd182a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXTERN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00840_source.html#l00031">31</a> of file <a class="el" href="a00840_source.html">mainblk.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a885bbceac3da2daacf10048f43cc015f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VARDIR&#160;&#160;&#160;&quot;configs/&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>variables files </p>
+
+<p>Definition at line <a class="el" href="a00840_source.html#l00030">30</a> of file <a class="el" href="a00840_source.html">mainblk.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="aa0543e0dd21b2e52395d15ed50cb9865"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a00374.html">ERRCODE</a> NO_PATH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line"><span class="stringliteral">&quot;Warning:explicit path for executable will not be used for configs&quot;</span></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00840_source.html#l00033">33</a> of file <a class="el" href="a00840_source.html">mainblk.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00840.html">doubleptr.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00840.html">mainblk.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

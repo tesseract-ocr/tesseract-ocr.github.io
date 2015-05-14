@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: neural_networks/runtime/neural_net.cpp File Reference</title>
+<title>Tesseract: textord/alignedblob.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,30 +105,111 @@ $(document).ready(function(){initNavTree('a01088.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">neural_net.cpp File Reference</div>  </div>
+<div class="title">alignedblob.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="a01089_source.html">neural_net.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01087_source.html">input_file_buffer.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01092_source.html">bbgrid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00730_source.html">blobbox.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00859_source.html">strngs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01150_source.html">tabvector.h</a>&quot;</code><br />
 </div>
 <p><a href="a01088_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00258.html">tesseract::AlignedBlobParams</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00257.html">tesseract::AlignedBlob</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a3d35a4bb514fd5c966f5df17196bdb71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01088.html#a3d35a4bb514fd5c966f5df17196bdb71">textord_debug_bugs</a> = 0</td></tr>
+<tr class="separator:a3d35a4bb514fd5c966f5df17196bdb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace3f88c2ebef0843236018cd170eea14"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01088.html#ace3f88c2ebef0843236018cd170eea14">textord_debug_tabfind</a> = 2</td></tr>
+<tr class="separator:ace3f88c2ebef0843236018cd170eea14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41ec04738a4db16aac9b42faff5b857"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01088.html#aa41ec04738a4db16aac9b42faff5b857">textord_debug_images</a> = false</td></tr>
+<tr class="separator:aa41ec04738a4db16aac9b42faff5b857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc402f58f1dd3b0eee25a5d3e3cf2d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01088.html#acbc402f58f1dd3b0eee25a5d3e3cf2d6">textord_debug_printable</a> = false</td></tr>
+<tr class="separator:acbc402f58f1dd3b0eee25a5d3e3cf2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a3d35a4bb514fd5c966f5df17196bdb71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int textord_debug_bugs = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Turn on output related to bugs in tab finding" </p>
+
+<p>Definition at line <a class="el" href="a01087_source.html#l00028">28</a> of file <a class="el" href="a01087_source.html">alignedblob.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa41ec04738a4db16aac9b42faff5b857"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool textord_debug_images = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Use greyed image background for debug" </p>
+
+<p>Definition at line <a class="el" href="a01087_source.html#l00033">33</a> of file <a class="el" href="a01087_source.html">alignedblob.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acbc402f58f1dd3b0eee25a5d3e3cf2d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool textord_debug_printable = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Make debug windows printable" </p>
+
+<p>Definition at line <a class="el" href="a01087_source.html#l00034">34</a> of file <a class="el" href="a01087_source.html">alignedblob.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace3f88c2ebef0843236018cd170eea14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int textord_debug_tabfind = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Debug tab finding" </p>
+
+<p>Definition at line <a class="el" href="a01087_source.html#l00027">27</a> of file <a class="el" href="a01087_source.html">alignedblob.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_120c1c515d3fc0bafd36c83047b8615a.html">neural_networks</a></li><li class="navelem"><a class="el" href="dir_df8063111811a0146a85315f27a6abd6.html">runtime</a></li><li class="navelem"><a class="el" href="a01088.html">neural_net.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01088.html">alignedblob.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

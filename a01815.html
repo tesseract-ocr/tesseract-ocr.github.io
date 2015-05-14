@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00361.html','');});
+$(document).ready(function(){initNavTree('a00416.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,29 +106,41 @@ $(document).ready(function(){initNavTree('a00361.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::DetLineFit Member List</div>  </div>
+<div class="title">tesseract::ImageData Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00361.html">tesseract::DetLineFit</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00416.html">tesseract::ImageData</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00361.html#a4eba2b6e761080e5d1a48c9c797257b2">Add</a>(const ICOORD &amp;pt)</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00361.html#a973b2867010264127c143bbc171fd098">Add</a>(const ICOORD &amp;pt, int halfwidth)</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00361.html#a97c074bfc1d7106ddda618ea8cf45ff7">Clear</a>()</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00361.html#a6ef9f742eafdfaad81a30a3799800725">ConstrainedFit</a>(const FCOORD &amp;direction, double min_dist, double max_dist, bool debug, ICOORD *line_pt)</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00361.html#a58c6ff442c9ab172952eea607f83dca8">ConstrainedFit</a>(double m, float *c)</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00361.html#ab8226dd14457087c9a1445d0dc06353c">DetLineFit</a>()</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00361.html#a768ec4a8f90593d8d679981c873f7a56">Fit</a>(ICOORD *pt1, ICOORD *pt2)</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00361.html#a95bd394ff5fbd05c063aeb260bccfbe9">Fit</a>(int skip_first, int skip_last, ICOORD *pt1, ICOORD *pt2)</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00361.html#a45152c616343b9ff3ab245a6343bc794">Fit</a>(float *m, float *c)</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00361.html#a1ad6f108535f64aed513e9107a88aa28">SufficientPointsForIndependentFit</a>() const </td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00361.html#a1068df3ab255efe45ec89e19c961a99a">~DetLineFit</a>()</td><td class="entry"><a class="el" href="a00361.html">tesseract::DetLineFit</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#a387904554f2d0210737bf03bbcfd2d63">AddBoxes</a>(const GenericVector&lt; TBOX &gt; &amp;boxes, const GenericVector&lt; STRING &gt; &amp;texts, const GenericVector&lt; int &gt; &amp;box_pages)</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#a96962ee162898c9fde1d617248b0adab">box_text</a>(int index) const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#a25655e5be2a2a9165b55f186d70cfef6">box_texts</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#ae70c5356e6b45dcc1ccf0661535dce3b">boxes</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#adabf135e0209ce351c186231d7449fbe">Build</a>(const char *name, int page_number, const char *lang, const char *imagedata, int imagedatasize, const char *truth_text, const char *box_text)</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#ac58c528c8000e0cdb07250d85c7f2019">DeSerialize</a>(bool swap, TFile *fp)</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#a08f609bcc57ad9af9866618f875aebfd">Display</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#ab3946831fde2de20e58180a9fd141d9f">GetPix</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#ace4a9d6b59de01fe4b687b84ced077ea">image_data</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#ab91bcf0680077ab063a4b855ebd630fb">ImageData</a>()</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#ab8cd1665c5813054acf8881f4c08dcab">ImageData</a>(bool vertical, Pix *pix)</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#ae5b990f334988b612adf7bb22faf8765">imagefilename</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#a4303888d7060c16a666192b0e09fbe03">language</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#a1671d180caeb472d8ccab098bfa28a90">MemoryUsed</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#ac8b6e1f4330bbcc3c31257214abcf478">page_number</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#af6d4f440660bf9471a95817776edb003">PreScale</a>(int target_height, Pix **pix, int *scaled_width, int *scaled_height, GenericVector&lt; TBOX &gt; *boxes) const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#a77b6a368384b1e304402e2d87e55c86b">Serialize</a>(TFile *fp) const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#ac4443dd011c34118953247e79323df58">set_imagefilename</a>(const STRING &amp;name)</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#a3dca11055aa01f7ba5e25783471a5771">set_language</a>(const STRING &amp;lang)</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#a23bf9150f8a133df27bafac013b7da28">set_page_number</a>(int num)</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#a1da2c74bd94b54f4351f1d123b186db8">SetPix</a>(Pix *pix)</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00416.html#a42f2434be8707a651993cffd0b1850ab">transcription</a>() const </td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00416.html#a1341614f1b9190dd3321f362a9145f82">~ImageData</a>()</td><td class="entry"><a class="el" href="a00416.html">tesseract::ImageData</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:51 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:27 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: TPOINT Struct Reference</title>
+<title>Tesseract: tesseract::ViterbiStateEntry Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,46 +109,90 @@ $(document).ready(function(){initNavTree('a00647.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="a01729.html">List of all members</a>  </div>
+<a href="a01927.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">TPOINT Struct Reference</div>  </div>
+<div class="title">tesseract::ViterbiStateEntry Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00751_source.html">blobs.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a01240_source.html">lm_state.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for tesseract::ViterbiStateEntry:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00647.png" usemap="#tesseract::ViterbiStateEntry_map" alt=""/>
+  <map id="tesseract::ViterbiStateEntry_map" name="tesseract::ViterbiStateEntry_map">
+<area href="a00371.html" alt="ELIST_LINK" shape="rect" coords="0,0,164,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae904cdd453d9303892c367c8f358c028"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#ae904cdd453d9303892c367c8f358c028">TPOINT</a> ()</td></tr>
-<tr class="separator:ae904cdd453d9303892c367c8f358c028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16bd52027648e2b99bcfb2fba652c63a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a16bd52027648e2b99bcfb2fba652c63a">TPOINT</a> (<a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> vx, <a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> vy)</td></tr>
-<tr class="separator:a16bd52027648e2b99bcfb2fba652c63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac733ed1df90b1f9e1d30175ee580d039"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#ac733ed1df90b1f9e1d30175ee580d039">TPOINT</a> (const <a class="el" href="a00425.html">ICOORD</a> &amp;ic)</td></tr>
-<tr class="separator:ac733ed1df90b1f9e1d30175ee580d039"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a693993c398a5095f45776ccc41fd629b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a693993c398a5095f45776ccc41fd629b">operator+=</a> (const <a class="el" href="a00647.html">TPOINT</a> &amp;other)</td></tr>
-<tr class="separator:a693993c398a5095f45776ccc41fd629b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a627d77cda5c1a93bd9a79b089b2e1550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a627d77cda5c1a93bd9a79b089b2e1550">operator/=</a> (int divisor)</td></tr>
-<tr class="separator:a627d77cda5c1a93bd9a79b089b2e1550"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac46d1570a37cb3c23cc0336fa1182b1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#ac46d1570a37cb3c23cc0336fa1182b1a">operator==</a> (const <a class="el" href="a00647.html">TPOINT</a> &amp;other) const </td></tr>
-<tr class="separator:ac46d1570a37cb3c23cc0336fa1182b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbd3b1fe6f1f55e0f3b715c9a34a3e70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#adbd3b1fe6f1f55e0f3b715c9a34a3e70">ViterbiStateEntry</a> (<a class="el" href="a00647.html">ViterbiStateEntry</a> *<a class="el" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>, <a class="el" href="a00276.html">BLOB_CHOICE</a> *b, float c, float ol, const <a class="el" href="a00459.html">LMConsistencyInfo</a> &amp;ci, const <a class="el" href="a00261.html">AssociateStats</a> &amp;as, <a class="el" href="a01267.html#a87cc64ed462a40c9c210a8bab7cb9b87">LanguageModelFlagsType</a> tcf, <a class="el" href="a00451.html">LanguageModelDawgInfo</a> *d, <a class="el" href="a00452.html">LanguageModelNgramInfo</a> *n, const char *debug_uch)</td></tr>
+<tr class="separator:adbd3b1fe6f1f55e0f3b715c9a34a3e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907e564e8ea572abeea33616a1d52340"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a907e564e8ea572abeea33616a1d52340">~ViterbiStateEntry</a> ()</td></tr>
+<tr class="separator:a907e564e8ea572abeea33616a1d52340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4c002601b0fa40f6dcefe696f39d9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a4f4c002601b0fa40f6dcefe696f39d9b">Consistent</a> () const </td></tr>
+<tr class="separator:a4f4c002601b0fa40f6dcefe696f39d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb5bf19f689950d5395e372f260bab0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#afeb5bf19f689950d5395e372f260bab0">HasAlnumChoice</a> (const <a class="el" href="a00643.html">UNICHARSET</a> &amp;unicharset)</td></tr>
+<tr class="separator:afeb5bf19f689950d5395e372f260bab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485ba09e097664b047e2075dfee16775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a485ba09e097664b047e2075dfee16775">Print</a> (const char *msg) const </td></tr>
+<tr class="separator:a485ba09e097664b047e2075dfee16775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00371"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00371')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00371.html">ELIST_LINK</a></td></tr>
+<tr class="memitem:ab3cdce5789339d12de62e18fdfb52974 inherit pub_methods_a00371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00371.html#ab3cdce5789339d12de62e18fdfb52974">ELIST_LINK</a> ()</td></tr>
+<tr class="separator:ab3cdce5789339d12de62e18fdfb52974 inherit pub_methods_a00371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30be968896fac3d1c88d127213aa03f7 inherit pub_methods_a00371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00371.html#a30be968896fac3d1c88d127213aa03f7">ELIST_LINK</a> (const <a class="el" href="a00371.html">ELIST_LINK</a> &amp;)</td></tr>
+<tr class="separator:a30be968896fac3d1c88d127213aa03f7 inherit pub_methods_a00371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949f5dfcc3c145a19f2d61ee3461701e inherit pub_methods_a00371"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00371.html#a949f5dfcc3c145a19f2d61ee3461701e">operator=</a> (const <a class="el" href="a00371.html">ELIST_LINK</a> &amp;)</td></tr>
+<tr class="separator:a949f5dfcc3c145a19f2d61ee3461701e inherit pub_methods_a00371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adfcc5fb300e383f2646089b52dd0dfde"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#adfcc5fb300e383f2646089b52dd0dfde">IsCrossed</a> (const <a class="el" href="a00647.html">TPOINT</a> &amp;a0, const <a class="el" href="a00647.html">TPOINT</a> &amp;a1, const <a class="el" href="a00647.html">TPOINT</a> &amp;b0, const <a class="el" href="a00647.html">TPOINT</a> &amp;b1)</td></tr>
-<tr class="separator:adfcc5fb300e383f2646089b52dd0dfde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3059c34aaa3f33e488259770299d3f0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#ac3059c34aaa3f33e488259770299d3f0">Compare</a> (const void *e1, const void *e2)</td></tr>
+<tr class="separator:ac3059c34aaa3f33e488259770299d3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa9c98655c3a2a0437821e5a3d3418b0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a></td></tr>
-<tr class="separator:aa9c98655c3a2a0437821e5a3d3418b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d62f015b74612e43975e439a096039c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a></td></tr>
-<tr class="separator:a6d62f015b74612e43975e439a096039c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec1876660a123fef8540c419032db14"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a9ec1876660a123fef8540c419032db14">cost</a></td></tr>
+<tr class="separator:a9ec1876660a123fef8540c419032db14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a206d0b5c6c9294191b7a553a8109f1d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00276.html">BLOB_CHOICE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a206d0b5c6c9294191b7a553a8109f1d7">curr_b</a></td></tr>
+<tr class="memdesc:a206d0b5c6c9294191b7a553a8109f1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointers to <a class="el" href="a00276.html">BLOB_CHOICE</a> and parent <a class="el" href="a00647.html">ViterbiStateEntry</a> (not owned by this).  <a href="#a206d0b5c6c9294191b7a553a8109f1d7">More...</a><br /></td></tr>
+<tr class="separator:a206d0b5c6c9294191b7a553a8109f1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fafa528c3935768a6fe19501c619d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00647.html">ViterbiStateEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a8fafa528c3935768a6fe19501c619d5b">parent_vse</a></td></tr>
+<tr class="separator:a8fafa528c3935768a6fe19501c619d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5037e38c17257e7afe6f974b7c0c23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00647.html">ViterbiStateEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a4f5037e38c17257e7afe6f974b7c0c23">competing_vse</a></td></tr>
+<tr class="separator:a4f5037e38c17257e7afe6f974b7c0c23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6b9c11d6023860d01167a0ebfb0077"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#acd6b9c11d6023860d01167a0ebfb0077">ratings_sum</a></td></tr>
+<tr class="separator:acd6b9c11d6023860d01167a0ebfb0077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb457815350bf94c479f51a997fb8a6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#aedb457815350bf94c479f51a997fb8a6">min_certainty</a></td></tr>
+<tr class="separator:aedb457815350bf94c479f51a997fb8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabdb0666f3c6dc1019875d2351f522e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#aabdb0666f3c6dc1019875d2351f522e4">adapted</a></td></tr>
+<tr class="separator:aabdb0666f3c6dc1019875d2351f522e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773387611435ef429757052257f3cce7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a773387611435ef429757052257f3cce7">length</a></td></tr>
+<tr class="separator:a773387611435ef429757052257f3cce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d9fd89bf692438d65cf25221f428752"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a0d9fd89bf692438d65cf25221f428752">outline_length</a></td></tr>
+<tr class="separator:a0d9fd89bf692438d65cf25221f428752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada306e8bb74f660925cd12b5a2c16a03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00459.html">LMConsistencyInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a></td></tr>
+<tr class="separator:ada306e8bb74f660925cd12b5a2c16a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a617e5066e2a1655280e7b37c058090"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00261.html">AssociateStats</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a3a617e5066e2a1655280e7b37c058090">associate_stats</a></td></tr>
+<tr class="separator:a3a617e5066e2a1655280e7b37c058090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9006c7c6cfcf3097947bd5814be31ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01267.html#a87cc64ed462a40c9c210a8bab7cb9b87">LanguageModelFlagsType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#aa9006c7c6cfcf3097947bd5814be31ff">top_choice_flags</a></td></tr>
+<tr class="separator:aa9006c7c6cfcf3097947bd5814be31ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0668c82dbf9068d2ccb6d3c0b8798f89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00451.html">LanguageModelDawgInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">dawg_info</a></td></tr>
+<tr class="separator:a0668c82dbf9068d2ccb6d3c0b8798f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93bab3f11db5956ecafd2e883655e1e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00452.html">LanguageModelNgramInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">ngram_info</a></td></tr>
+<tr class="separator:a93bab3f11db5956ecafd2e883655e1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2fa280d4fe085d1b0d9fd7899a109fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#ad2fa280d4fe085d1b0d9fd7899a109fb">updated</a></td></tr>
+<tr class="separator:ad2fa280d4fe085d1b0d9fd7899a109fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe066d6c1d955fc2005cc00f4ff5736b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00561.html">STRING</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">debug_str</a></td></tr>
+<tr class="separator:abe066d6c1d955fc2005cc00f4ff5736b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="a00751_source.html#l00050">50</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
+<div class="textblock"><p>Struct for storing the information about a path in the segmentation graph explored by Viterbi search. </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00095">95</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae904cdd453d9303892c367c8f358c028"></a>
+<a class="anchor" id="adbd3b1fe6f1f55e0f3b715c9a34a3e70"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -156,7 +200,132 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TPOINT::TPOINT </td>
+          <td class="memname">tesseract::ViterbiStateEntry::ViterbiStateEntry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00647.html">ViterbiStateEntry</a> *&#160;</td>
+          <td class="paramname"><em>pe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00276.html">BLOB_CHOICE</a> *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00459.html">LMConsistencyInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>ci</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00261.html">AssociateStats</a> &amp;&#160;</td>
+          <td class="paramname"><em>as</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a01267.html#a87cc64ed462a40c9c210a8bab7cb9b87">LanguageModelFlagsType</a>&#160;</td>
+          <td class="paramname"><em>tcf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00451.html">LanguageModelDawgInfo</a> *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00452.html">LanguageModelNgramInfo</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>debug_uch</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00096">96</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    : <a class="code" href="a00647.html#a9ec1876660a123fef8540c419032db14">cost</a>(c), <a class="code" href="a00647.html#a206d0b5c6c9294191b7a553a8109f1d7">curr_b</a>(b), <a class="code" href="a00647.html#a8fafa528c3935768a6fe19501c619d5b">parent_vse</a>(<a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>), <a class="code" href="a00647.html#a4f5037e38c17257e7afe6f974b7c0c23">competing_vse</a>(<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>),</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <a class="code" href="a00647.html#acd6b9c11d6023860d01167a0ebfb0077">ratings_sum</a>(b-&gt;<a class="code" href="a00276.html#a7fbd2d505bf5b55beee424096fb1e9bc">rating</a>()),</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <a class="code" href="a00647.html#aedb457815350bf94c479f51a997fb8a6">min_certainty</a>(b-&gt;<a class="code" href="a00276.html#af53d45b718c562ea7209b583c77ac14e">certainty</a>()), <a class="code" href="a00647.html#aabdb0666f3c6dc1019875d2351f522e4">adapted</a>(b-&gt;<a class="code" href="a00276.html#a9bdfaafb7bf74ed66d4b8692ccb9d62c">IsAdapted</a>()), <a class="code" href="a00647.html#a773387611435ef429757052257f3cce7">length</a>(1),</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <a class="code" href="a00647.html#a0d9fd89bf692438d65cf25221f428752">outline_length</a>(ol), <a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>(ci), <a class="code" href="a00647.html#a3a617e5066e2a1655280e7b37c058090">associate_stats</a>(as),</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <a class="code" href="a00647.html#aa9006c7c6cfcf3097947bd5814be31ff">top_choice_flags</a>(tcf), <a class="code" href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">dawg_info</a>(d), <a class="code" href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">ngram_info</a>(n),</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <a class="code" href="a00647.html#ad2fa280d4fe085d1b0d9fd7899a109fb">updated</a>(<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">debug_str</a> = (debug_uch == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) ? <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> : <span class="keyword">new</span> <a class="code" href="a00561.html">STRING</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <a class="code" href="a00647.html#acd6b9c11d6023860d01167a0ebfb0077">ratings_sum</a> += <a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>-&gt;ratings_sum;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>-&gt;min_certainty &lt; <a class="code" href="a00647.html#aedb457815350bf94c479f51a997fb8a6">min_certainty</a>) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="a00647.html#aedb457815350bf94c479f51a997fb8a6">min_certainty</a> = <a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>-&gt;min_certainty;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <a class="code" href="a00647.html#aabdb0666f3c6dc1019875d2351f522e4">adapted</a> += <a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>-&gt;adapted;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="a00647.html#a773387611435ef429757052257f3cce7">length</a> += <a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>-&gt;length;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <a class="code" href="a00647.html#a0d9fd89bf692438d65cf25221f428752">outline_length</a> += <a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>-&gt;outline_length;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keywordflow">if</span> (debug_uch != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) *<a class="code" href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">debug_str</a> += *(<a class="code" href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a>-&gt;debug_str);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">debug_str</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; debug_uch != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) *<a class="code" href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">debug_str</a> += debug_uch;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }</div>
+<div class="ttc" id="a00647_html_a773387611435ef429757052257f3cce7"><div class="ttname"><a href="a00647.html#a773387611435ef429757052257f3cce7">tesseract::ViterbiStateEntry::length</a></div><div class="ttdeci">int length</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00171">lm_state.h:171</a></div></div>
+<div class="ttc" id="a00647_html_a0d9fd89bf692438d65cf25221f428752"><div class="ttname"><a href="a00647.html#a0d9fd89bf692438d65cf25221f428752">tesseract::ViterbiStateEntry::outline_length</a></div><div class="ttdeci">float outline_length</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00172">lm_state.h:172</a></div></div>
+<div class="ttc" id="a00647_html_aa9006c7c6cfcf3097947bd5814be31ff"><div class="ttname"><a href="a00647.html#aa9006c7c6cfcf3097947bd5814be31ff">tesseract::ViterbiStateEntry::top_choice_flags</a></div><div class="ttdeci">LanguageModelFlagsType top_choice_flags</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00178">lm_state.h:178</a></div></div>
+<div class="ttc" id="a00276_html_a9bdfaafb7bf74ed66d4b8692ccb9d62c"><div class="ttname"><a href="a00276.html#a9bdfaafb7bf74ed66d4b8692ccb9d62c">BLOB_CHOICE::IsAdapted</a></div><div class="ttdeci">bool IsAdapted() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00116">ratngs.h:116</a></div></div>
+<div class="ttc" id="a00647_html_a9ec1876660a123fef8540c419032db14"><div class="ttname"><a href="a00647.html#a9ec1876660a123fef8540c419032db14">tesseract::ViterbiStateEntry::cost</a></div><div class="ttdeci">float cost</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00157">lm_state.h:157</a></div></div>
+<div class="ttc" id="a00276_html_af53d45b718c562ea7209b583c77ac14e"><div class="ttname"><a href="a00276.html#af53d45b718c562ea7209b583c77ac14e">BLOB_CHOICE::certainty</a></div><div class="ttdeci">float certainty() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00083">ratngs.h:83</a></div></div>
+<div class="ttc" id="a00647_html_acd6b9c11d6023860d01167a0ebfb0077"><div class="ttname"><a href="a00647.html#acd6b9c11d6023860d01167a0ebfb0077">tesseract::ViterbiStateEntry::ratings_sum</a></div><div class="ttdeci">float ratings_sum</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00168">lm_state.h:168</a></div></div>
+<div class="ttc" id="a00276_html_a7fbd2d505bf5b55beee424096fb1e9bc"><div class="ttname"><a href="a00276.html#a7fbd2d505bf5b55beee424096fb1e9bc">BLOB_CHOICE::rating</a></div><div class="ttdeci">float rating() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00080">ratngs.h:80</a></div></div>
+<div class="ttc" id="a00647_html_abe066d6c1d955fc2005cc00f4ff5736b"><div class="ttname"><a href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">tesseract::ViterbiStateEntry::debug_str</a></div><div class="ttdeci">STRING * debug_str</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00191">lm_state.h:191</a></div></div>
+<div class="ttc" id="a00647_html_a4f5037e38c17257e7afe6f974b7c0c23"><div class="ttname"><a href="a00647.html#a4f5037e38c17257e7afe6f974b7c0c23">tesseract::ViterbiStateEntry::competing_vse</a></div><div class="ttdeci">ViterbiStateEntry * competing_vse</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00164">lm_state.h:164</a></div></div>
+<div class="ttc" id="a00647_html_aedb457815350bf94c479f51a997fb8a6"><div class="ttname"><a href="a00647.html#aedb457815350bf94c479f51a997fb8a6">tesseract::ViterbiStateEntry::min_certainty</a></div><div class="ttdeci">float min_certainty</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00169">lm_state.h:169</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a00647_html_a0668c82dbf9068d2ccb6d3c0b8798f89"><div class="ttname"><a href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">tesseract::ViterbiStateEntry::dawg_info</a></div><div class="ttdeci">LanguageModelDawgInfo * dawg_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00182">lm_state.h:182</a></div></div>
+<div class="ttc" id="a00647_html_ada306e8bb74f660925cd12b5a2c16a03"><div class="ttname"><a href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">tesseract::ViterbiStateEntry::consistency_info</a></div><div class="ttdeci">LMConsistencyInfo consistency_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00173">lm_state.h:173</a></div></div>
+<div class="ttc" id="a00647_html_a3a617e5066e2a1655280e7b37c058090"><div class="ttname"><a href="a00647.html#a3a617e5066e2a1655280e7b37c058090">tesseract::ViterbiStateEntry::associate_stats</a></div><div class="ttdeci">AssociateStats associate_stats</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00174">lm_state.h:174</a></div></div>
+<div class="ttc" id="a00703_html_a1c3a3486da4ecba85e27f19b85e77aec"><div class="ttname"><a href="a00703.html#a1c3a3486da4ecba85e27f19b85e77aec">pe</a></div><div class="ttdeci">ParamsEditor * pe</div><div class="ttdef"><b>Definition:</b> <a href="a00703_source.html#l00108">pgedit.cpp:108</a></div></div>
+<div class="ttc" id="a00647_html_ad2fa280d4fe085d1b0d9fd7899a109fb"><div class="ttname"><a href="a00647.html#ad2fa280d4fe085d1b0d9fd7899a109fb">tesseract::ViterbiStateEntry::updated</a></div><div class="ttdeci">bool updated</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00188">lm_state.h:188</a></div></div>
+<div class="ttc" id="a00647_html_aabdb0666f3c6dc1019875d2351f522e4"><div class="ttname"><a href="a00647.html#aabdb0666f3c6dc1019875d2351f522e4">tesseract::ViterbiStateEntry::adapted</a></div><div class="ttdeci">int adapted</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00170">lm_state.h:170</a></div></div>
+<div class="ttc" id="a00647_html_a8fafa528c3935768a6fe19501c619d5b"><div class="ttname"><a href="a00647.html#a8fafa528c3935768a6fe19501c619d5b">tesseract::ViterbiStateEntry::parent_vse</a></div><div class="ttdeci">ViterbiStateEntry * parent_vse</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00161">lm_state.h:161</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00647_html_a93bab3f11db5956ecafd2e883655e1e1"><div class="ttname"><a href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">tesseract::ViterbiStateEntry::ngram_info</a></div><div class="ttdeci">LanguageModelNgramInfo * ngram_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00186">lm_state.h:186</a></div></div>
+<div class="ttc" id="a00647_html_a206d0b5c6c9294191b7a553a8109f1d7"><div class="ttname"><a href="a00647.html#a206d0b5c6c9294191b7a553a8109f1d7">tesseract::ViterbiStateEntry::curr_b</a></div><div class="ttdeci">BLOB_CHOICE * curr_b</div><div class="ttdoc">Pointers to BLOB_CHOICE and parent ViterbiStateEntry (not owned by this). </div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00160">lm_state.h:160</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a907e564e8ea572abeea33616a1d52340"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tesseract::ViterbiStateEntry::~ViterbiStateEntry </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -169,85 +338,20 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00751_source.html#l00051">51</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;: <a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>(0), <a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>(0) {}</div>
-<div class="ttc" id="a00647_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00071">blobs.h:71</a></div></div>
-<div class="ttc" id="a00647_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00647.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00072">blobs.h:72</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a16bd52027648e2b99bcfb2fba652c63a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TPOINT::TPOINT </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
-          <td class="paramname"><em>vx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
-          <td class="paramname"><em>vy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00751_source.html#l00052">52</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;: <a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>(vx), <a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>(vy) {}</div>
-<div class="ttc" id="a00647_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00071">blobs.h:71</a></div></div>
-<div class="ttc" id="a00647_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00647.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00072">blobs.h:72</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ac733ed1df90b1f9e1d30175ee580d039"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TPOINT::TPOINT </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>ic</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00751_source.html#l00053">53</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;: <a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>(ic.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a>()), <a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>(ic.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a>()) {}</div>
-<div class="ttc" id="a00647_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00071">blobs.h:71</a></div></div>
-<div class="ttc" id="a00425_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00056">points.h:56</a></div></div>
-<div class="ttc" id="a00425_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00425.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00052">points.h:52</a></div></div>
-<div class="ttc" id="a00647_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00647.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00072">blobs.h:72</a></div></div>
+<p>Definition at line <a class="el" href="a01240_source.html#l00123">123</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                       {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">delete</span> <a class="code" href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">dawg_info</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">delete</span> <a class="code" href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">ngram_info</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">delete</span> <a class="code" href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">debug_str</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  }</div>
+<div class="ttc" id="a00647_html_abe066d6c1d955fc2005cc00f4ff5736b"><div class="ttname"><a href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">tesseract::ViterbiStateEntry::debug_str</a></div><div class="ttdeci">STRING * debug_str</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00191">lm_state.h:191</a></div></div>
+<div class="ttc" id="a00647_html_a0668c82dbf9068d2ccb6d3c0b8798f89"><div class="ttname"><a href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">tesseract::ViterbiStateEntry::dawg_info</a></div><div class="ttdeci">LanguageModelDawgInfo * dawg_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00182">lm_state.h:182</a></div></div>
+<div class="ttc" id="a00647_html_a93bab3f11db5956ecafd2e883655e1e1"><div class="ttname"><a href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">tesseract::ViterbiStateEntry::ngram_info</a></div><div class="ttdeci">LanguageModelNgramInfo * ngram_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00186">lm_state.h:186</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="adfcc5fb300e383f2646089b52dd0dfde"></a>
+<a class="anchor" id="ac3059c34aaa3f33e488259770299d3f0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -255,28 +359,16 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool TPOINT::IsCrossed </td>
+          <td class="memname">static int tesseract::ViterbiStateEntry::Compare </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00647.html">TPOINT</a> &amp;&#160;</td>
-          <td class="paramname"><em>a0</em>, </td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>e1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00647.html">TPOINT</a> &amp;&#160;</td>
-          <td class="paramname"><em>a1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00647.html">TPOINT</a> &amp;&#160;</td>
-          <td class="paramname"><em>b0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00647.html">TPOINT</a> &amp;&#160;</td>
-          <td class="paramname"><em>b1</em>&#160;</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>e2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -286,48 +378,25 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Comparator function for sorting ViterbiStateEntry_LISTs in non-increasing order of costs. </p>
 
-<p>Definition at line <a class="el" href="a00750_source.html#l00073">73</a> of file <a class="el" href="a00750_source.html">blobs.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                         {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">int</span> b0a1xb0b1, b0b1xb0a0;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">int</span> a1b1xa1a0, a1a0xa1b0;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="a00647.html">TPOINT</a> b0a1, b0a0, a1b1, b0b1, a1a0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  b0a1.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> = a1.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> - b0.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  b0a0.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> = a0.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> - b0.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  a1b1.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> = b1.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> - a1.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  b0b1.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> = b1.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> - b0.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  a1a0.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> = a0.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> - a1.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  b0a1.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> = a1.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> - b0.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  b0a0.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> = a0.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> - b0.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  a1b1.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> = b1.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> - a1.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  b0b1.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> = b1.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> - b0.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  a1a0.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> = a0.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> - a1.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  b0a1xb0b1 = <a class="code" href="a00825.html#aec4dedcf89534ed10f6107bf9c6418f3">CROSS</a>(b0a1, b0b1);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  b0b1xb0a0 = <a class="code" href="a00825.html#aec4dedcf89534ed10f6107bf9c6418f3">CROSS</a>(b0b1, b0a0);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  a1b1xa1a0 = <a class="code" href="a00825.html#aec4dedcf89534ed10f6107bf9c6418f3">CROSS</a>(a1b1, a1a0);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">// For clarity, we want CROSS(a1a0,a1b0) here but we have b0a1 instead of a1b0</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">// so use -CROSS(a1b0,b0a1) instead, which is the same.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  a1a0xa1b0 = -<a class="code" href="a00825.html#aec4dedcf89534ed10f6107bf9c6418f3">CROSS</a>(a1a0, b0a1);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> ((b0a1xb0b1 &gt; 0 &amp;&amp; b0b1xb0a0 &gt; 0) ||</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;          (b0a1xb0b1 &lt; 0 &amp;&amp; b0b1xb0a0 &lt; 0)) &amp;&amp;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;         ((a1b1xa1a0 &gt; 0 &amp;&amp; a1a0xa1b0 &gt; 0) || (a1b1xa1a0 &lt; 0 &amp;&amp; a1a0xa1b0 &lt; 0));</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-<div class="ttc" id="a00825_html_aec4dedcf89534ed10f6107bf9c6418f3"><div class="ttname"><a href="a00825.html#aec4dedcf89534ed10f6107bf9c6418f3">CROSS</a></div><div class="ttdeci">#define CROSS(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="a00825_source.html#l00052">vecfuncs.h:52</a></div></div>
-<div class="ttc" id="a00647_html"><div class="ttname"><a href="a00647.html">TPOINT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00050">blobs.h:50</a></div></div>
-<div class="ttc" id="a00647_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00071">blobs.h:71</a></div></div>
-<div class="ttc" id="a00647_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00647.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00072">blobs.h:72</a></div></div>
+<p>Definition at line <a class="el" href="a01240_source.html#l00130">130</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                                     {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00647.html#adbd3b1fe6f1f55e0f3b715c9a34a3e70">ViterbiStateEntry</a> *ve1 =</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code" href="a00647.html#adbd3b1fe6f1f55e0f3b715c9a34a3e70">ViterbiStateEntry</a> * <span class="keyword">const </span>*<span class="keyword">&gt;</span>(e1);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00647.html#adbd3b1fe6f1f55e0f3b715c9a34a3e70">ViterbiStateEntry</a> *ve2 =</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code" href="a00647.html#adbd3b1fe6f1f55e0f3b715c9a34a3e70">ViterbiStateEntry</a> * <span class="keyword">const </span>*<span class="keyword">&gt;</span>(e2);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> (ve1-&gt;cost &lt; ve2-&gt;cost) ? -1 : 1;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  }</div>
+<div class="ttc" id="a00647_html_adbd3b1fe6f1f55e0f3b715c9a34a3e70"><div class="ttname"><a href="a00647.html#adbd3b1fe6f1f55e0f3b715c9a34a3e70">tesseract::ViterbiStateEntry::ViterbiStateEntry</a></div><div class="ttdeci">ViterbiStateEntry(ViterbiStateEntry *pe, BLOB_CHOICE *b, float c, float ol, const LMConsistencyInfo &amp;ci, const AssociateStats &amp;as, LanguageModelFlagsType tcf, LanguageModelDawgInfo *d, LanguageModelNgramInfo *n, const char *debug_uch)</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00096">lm_state.h:96</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a693993c398a5095f45776ccc41fd629b"></a>
+<a class="anchor" id="a4f4c002601b0fa40f6dcefe696f39d9b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -335,74 +404,9 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void TPOINT::operator+= </td>
+          <td class="memname">bool tesseract::ViterbiStateEntry::Consistent </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00647.html">TPOINT</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00751_source.html#l00055">55</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                       {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> += other.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> += other.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
-<div class="ttc" id="a00647_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00071">blobs.h:71</a></div></div>
-<div class="ttc" id="a00647_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00647.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00072">blobs.h:72</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a627d77cda5c1a93bd9a79b089b2e1550"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TPOINT::operator/= </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>divisor</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00751_source.html#l00059">59</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                               {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> /= divisor;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> /= divisor;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
-<div class="ttc" id="a00647_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00071">blobs.h:71</a></div></div>
-<div class="ttc" id="a00647_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00647.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00072">blobs.h:72</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ac46d1570a37cb3c23cc0336fa1182b1a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TPOINT::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00647.html">TPOINT</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -413,55 +417,383 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00751_source.html#l00063">63</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                             {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> == other.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &amp;&amp; <a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a> == other.<a class="code" href="a00647.html#a6d62f015b74612e43975e439a096039c">y</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
-<div class="ttc" id="a00647_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00071">blobs.h:71</a></div></div>
-<div class="ttc" id="a00647_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00647.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00072">blobs.h:72</a></div></div>
+<p>Definition at line <a class="el" href="a01240_source.html#l00137">137</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                 {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">dawg_info</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; <a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>.<a class="code" href="a00459.html#ada2cd5c7c23546baa48b289f636c27d4">NumInconsistentCase</a>() == 0) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>.<a class="code" href="a00459.html#ad2459bf592ac03767121045a92ebd8c1">Consistent</a>();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  }</div>
+<div class="ttc" id="a00459_html_ad2459bf592ac03767121045a92ebd8c1"><div class="ttname"><a href="a00459.html#ad2459bf592ac03767121045a92ebd8c1">tesseract::LMConsistencyInfo::Consistent</a></div><div class="ttdeci">bool Consistent() const </div><div class="ttdef"><b>Definition:</b> <a href="a01236_source.html#l00094">lm_consistency.h:94</a></div></div>
+<div class="ttc" id="a00459_html_ada2cd5c7c23546baa48b289f636c27d4"><div class="ttname"><a href="a00459.html#ada2cd5c7c23546baa48b289f636c27d4">tesseract::LMConsistencyInfo::NumInconsistentCase</a></div><div class="ttdeci">int NumInconsistentCase() const </div><div class="ttdef"><b>Definition:</b> <a href="a01236_source.html#l00087">lm_consistency.h:87</a></div></div>
+<div class="ttc" id="a00647_html_a0668c82dbf9068d2ccb6d3c0b8798f89"><div class="ttname"><a href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">tesseract::ViterbiStateEntry::dawg_info</a></div><div class="ttdeci">LanguageModelDawgInfo * dawg_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00182">lm_state.h:182</a></div></div>
+<div class="ttc" id="a00647_html_ada306e8bb74f660925cd12b5a2c16a03"><div class="ttname"><a href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">tesseract::ViterbiStateEntry::consistency_info</a></div><div class="ttdeci">LMConsistencyInfo consistency_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00173">lm_state.h:173</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afeb5bf19f689950d5395e372f260bab0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tesseract::ViterbiStateEntry::HasAlnumChoice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00643.html">UNICHARSET</a> &amp;&#160;</td>
+          <td class="paramname"><em>unicharset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns true if this VSE has an alphanumeric character as its classifier result. </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00145">145</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                    {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00647.html#a206d0b5c6c9294191b7a553a8109f1d7">curr_b</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> unichar_id =  <a class="code" href="a00647.html#a206d0b5c6c9294191b7a553a8109f1d7">curr_b</a>-&gt;<a class="code" href="a00276.html#aaba6190b77c5f3dc21905fc4118afa94">unichar_id</a>();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (unicharset.<a class="code" href="a00643.html#ad1dd0929edfb0e9e4905cc2fbeff42c2">get_isalpha</a>(unichar_id) ||</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        unicharset.<a class="code" href="a00643.html#a5951dde3ab90c12c309d776570a10725">get_isdigit</a>(unichar_id))</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div>
+<div class="ttc" id="a00643_html_ad1dd0929edfb0e9e4905cc2fbeff42c2"><div class="ttname"><a href="a00643.html#ad1dd0929edfb0e9e4905cc2fbeff42c2">UNICHARSET::get_isalpha</a></div><div class="ttdeci">bool get_isalpha(UNICHAR_ID unichar_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00451">unicharset.h:451</a></div></div>
+<div class="ttc" id="a00643_html_a5951dde3ab90c12c309d776570a10725"><div class="ttname"><a href="a00643.html#a5951dde3ab90c12c309d776570a10725">UNICHARSET::get_isdigit</a></div><div class="ttdeci">bool get_isdigit(UNICHAR_ID unichar_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00472">unicharset.h:472</a></div></div>
+<div class="ttc" id="a00866_html_a8578b19fa1ff5ca75080db1a18ecc32e"><div class="ttname"><a href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a></div><div class="ttdeci">int UNICHAR_ID</div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00033">unichar.h:33</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00647_html_a206d0b5c6c9294191b7a553a8109f1d7"><div class="ttname"><a href="a00647.html#a206d0b5c6c9294191b7a553a8109f1d7">tesseract::ViterbiStateEntry::curr_b</a></div><div class="ttdeci">BLOB_CHOICE * curr_b</div><div class="ttdoc">Pointers to BLOB_CHOICE and parent ViterbiStateEntry (not owned by this). </div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00160">lm_state.h:160</a></div></div>
+<div class="ttc" id="a00276_html_aaba6190b77c5f3dc21905fc4118afa94"><div class="ttname"><a href="a00276.html#aaba6190b77c5f3dc21905fc4118afa94">BLOB_CHOICE::unichar_id</a></div><div class="ttdeci">UNICHAR_ID unichar_id() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00077">ratngs.h:77</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a485ba09e097664b047e2075dfee16775"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ViterbiStateEntry::Print </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01239_source.html#l00027">27</a> of file <a class="el" href="a01239_source.html">lm_state.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                   {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;%s ViterbiStateEntry&quot;</span>, msg);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00647.html#ad2fa280d4fe085d1b0d9fd7899a109fb">updated</a>) <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;(NEW)&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span> (this-&gt;<a class="code" href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">debug_str</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot; str=%s&quot;</span>, this-&gt;<a class="code" href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">debug_str</a>-&gt;<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot; with ratings_sum=%.4f length=%d cost=%.6f&quot;</span>,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          this-&gt;<a class="code" href="a00647.html#acd6b9c11d6023860d01167a0ebfb0077">ratings_sum</a>, this-&gt;<a class="code" href="a00647.html#a773387611435ef429757052257f3cce7">length</a>, this-&gt;<a class="code" href="a00647.html#a9ec1876660a123fef8540c419032db14">cost</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span> (this-&gt;<a class="code" href="a00647.html#aa9006c7c6cfcf3097947bd5814be31ff">top_choice_flags</a>) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot; top_choice_flags=0x%x&quot;</span>, this-&gt;<a class="code" href="a00647.html#aa9006c7c6cfcf3097947bd5814be31ff">top_choice_flags</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="a00647.html#a4f4c002601b0fa40f6dcefe696f39d9b">Consistent</a>()) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot; inconsistent=(punc %d case %d chartype %d script %d font %d)&quot;</span>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            this-&gt;<a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>.<a class="code" href="a00459.html#a4f58a15f9b947c631bede5f8719849ad">NumInconsistentPunc</a>(),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            this-&gt;<a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>.<a class="code" href="a00459.html#ada2cd5c7c23546baa48b289f636c27d4">NumInconsistentCase</a>(),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            this-&gt;<a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>.<a class="code" href="a00459.html#a030cabe7efc5331c4f37a4b169df9c74">NumInconsistentChartype</a>(),</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            this-&gt;<a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>.<a class="code" href="a00459.html#a65b33a42a81c0de9e0c04b58f525182a">inconsistent_script</a>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            this-&gt;<a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>.<a class="code" href="a00459.html#ac5c25550b9795cb6fcefb81599ff78e4">inconsistent_font</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> (this-&gt;<a class="code" href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">dawg_info</a>) <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot; permuter=%d&quot;</span>, this-&gt;<a class="code" href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">dawg_info</a>-&gt;<a class="code" href="a00451.html#a172ed1149f12df85de309b228715a002">permuter</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span> (this-&gt;<a class="code" href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">ngram_info</a>) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot; ngram_cl_cost=%g context=%s ngram pruned=%d&quot;</span>,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            this-&gt;<a class="code" href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">ngram_info</a>-&gt;<a class="code" href="a00452.html#a2cf402dba7da143b5aaf6bb4d7473027">ngram_and_classifier_cost</a>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            this-&gt;ngram_info-&gt;context.string(),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            this-&gt;<a class="code" href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">ngram_info</a>-&gt;<a class="code" href="a00452.html#a4e5c109a8e5e6a3887024615f40817d1">pruned</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">if</span> (this-&gt;<a class="code" href="a00647.html#a3a617e5066e2a1655280e7b37c058090">associate_stats</a>.<a class="code" href="a00261.html#a0185040dea9a2fadac41feb45729e444">shape_cost</a> &gt; 0.0f) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot; shape_cost=%g&quot;</span>, this-&gt;<a class="code" href="a00647.html#a3a617e5066e2a1655280e7b37c058090">associate_stats</a>.<a class="code" href="a00261.html#a0185040dea9a2fadac41feb45729e444">shape_cost</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot; %s&quot;</span>,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          XHeightConsistencyEnumName[this-&gt;<a class="code" href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">consistency_info</a>.<a class="code" href="a00459.html#aae5b3815cc9b21adfc1a902a435c53f1">xht_decision</a>]);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="ttc" id="a00647_html_a773387611435ef429757052257f3cce7"><div class="ttname"><a href="a00647.html#a773387611435ef429757052257f3cce7">tesseract::ViterbiStateEntry::length</a></div><div class="ttdeci">int length</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00171">lm_state.h:171</a></div></div>
+<div class="ttc" id="a00459_html_a65b33a42a81c0de9e0c04b58f525182a"><div class="ttname"><a href="a00459.html#a65b33a42a81c0de9e0c04b58f525182a">tesseract::LMConsistencyInfo::inconsistent_script</a></div><div class="ttdeci">bool inconsistent_script</div><div class="ttdef"><b>Definition:</b> <a href="a01236_source.html#l00127">lm_consistency.h:127</a></div></div>
+<div class="ttc" id="a00647_html_aa9006c7c6cfcf3097947bd5814be31ff"><div class="ttname"><a href="a00647.html#aa9006c7c6cfcf3097947bd5814be31ff">tesseract::ViterbiStateEntry::top_choice_flags</a></div><div class="ttdeci">LanguageModelFlagsType top_choice_flags</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00178">lm_state.h:178</a></div></div>
+<div class="ttc" id="a00561_html_a32beee43ecab1bed8bebc3466896ad6e"><div class="ttname"><a href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">STRING::string</a></div><div class="ttdeci">const char * string() const </div><div class="ttdef"><b>Definition:</b> <a href="a00858_source.html#l00193">strngs.cpp:193</a></div></div>
+<div class="ttc" id="a00647_html_a9ec1876660a123fef8540c419032db14"><div class="ttname"><a href="a00647.html#a9ec1876660a123fef8540c419032db14">tesseract::ViterbiStateEntry::cost</a></div><div class="ttdeci">float cost</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00157">lm_state.h:157</a></div></div>
+<div class="ttc" id="a00459_html_aae5b3815cc9b21adfc1a902a435c53f1"><div class="ttname"><a href="a00459.html#aae5b3815cc9b21adfc1a902a435c53f1">tesseract::LMConsistencyInfo::xht_decision</a></div><div class="ttdeci">XHeightConsistencyEnum xht_decision</div><div class="ttdef"><b>Definition:</b> <a href="a01236_source.html#l00137">lm_consistency.h:137</a></div></div>
+<div class="ttc" id="a00647_html_acd6b9c11d6023860d01167a0ebfb0077"><div class="ttname"><a href="a00647.html#acd6b9c11d6023860d01167a0ebfb0077">tesseract::ViterbiStateEntry::ratings_sum</a></div><div class="ttdeci">float ratings_sum</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00168">lm_state.h:168</a></div></div>
+<div class="ttc" id="a00647_html_abe066d6c1d955fc2005cc00f4ff5736b"><div class="ttname"><a href="a00647.html#abe066d6c1d955fc2005cc00f4ff5736b">tesseract::ViterbiStateEntry::debug_str</a></div><div class="ttdeci">STRING * debug_str</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00191">lm_state.h:191</a></div></div>
+<div class="ttc" id="a00459_html_a4f58a15f9b947c631bede5f8719849ad"><div class="ttname"><a href="a00459.html#a4f58a15f9b947c631bede5f8719849ad">tesseract::LMConsistencyInfo::NumInconsistentPunc</a></div><div class="ttdeci">int NumInconsistentPunc() const </div><div class="ttdef"><b>Definition:</b> <a href="a01236_source.html#l00084">lm_consistency.h:84</a></div></div>
+<div class="ttc" id="a00459_html_ac5c25550b9795cb6fcefb81599ff78e4"><div class="ttname"><a href="a00459.html#ac5c25550b9795cb6fcefb81599ff78e4">tesseract::LMConsistencyInfo::inconsistent_font</a></div><div class="ttdeci">bool inconsistent_font</div><div class="ttdef"><b>Definition:</b> <a href="a01236_source.html#l00129">lm_consistency.h:129</a></div></div>
+<div class="ttc" id="a00459_html_ada2cd5c7c23546baa48b289f636c27d4"><div class="ttname"><a href="a00459.html#ada2cd5c7c23546baa48b289f636c27d4">tesseract::LMConsistencyInfo::NumInconsistentCase</a></div><div class="ttdeci">int NumInconsistentCase() const </div><div class="ttdef"><b>Definition:</b> <a href="a01236_source.html#l00087">lm_consistency.h:87</a></div></div>
+<div class="ttc" id="a00647_html_a0668c82dbf9068d2ccb6d3c0b8798f89"><div class="ttname"><a href="a00647.html#a0668c82dbf9068d2ccb6d3c0b8798f89">tesseract::ViterbiStateEntry::dawg_info</a></div><div class="ttdeci">LanguageModelDawgInfo * dawg_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00182">lm_state.h:182</a></div></div>
+<div class="ttc" id="a00647_html_ada306e8bb74f660925cd12b5a2c16a03"><div class="ttname"><a href="a00647.html#ada306e8bb74f660925cd12b5a2c16a03">tesseract::ViterbiStateEntry::consistency_info</a></div><div class="ttdeci">LMConsistencyInfo consistency_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00173">lm_state.h:173</a></div></div>
+<div class="ttc" id="a00647_html_a4f4c002601b0fa40f6dcefe696f39d9b"><div class="ttname"><a href="a00647.html#a4f4c002601b0fa40f6dcefe696f39d9b">tesseract::ViterbiStateEntry::Consistent</a></div><div class="ttdeci">bool Consistent() const </div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00137">lm_state.h:137</a></div></div>
+<div class="ttc" id="a00647_html_a3a617e5066e2a1655280e7b37c058090"><div class="ttname"><a href="a00647.html#a3a617e5066e2a1655280e7b37c058090">tesseract::ViterbiStateEntry::associate_stats</a></div><div class="ttdeci">AssociateStats associate_stats</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00174">lm_state.h:174</a></div></div>
+<div class="ttc" id="a00452_html_a2cf402dba7da143b5aaf6bb4d7473027"><div class="ttname"><a href="a00452.html#a2cf402dba7da143b5aaf6bb4d7473027">tesseract::LanguageModelNgramInfo::ngram_and_classifier_cost</a></div><div class="ttdeci">float ngram_and_classifier_cost</div><div class="ttdoc">-[ ln(P_classifier(path)) + scale_factor * ln(P_ngram_model(path)) ] </div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00090">lm_state.h:90</a></div></div>
+<div class="ttc" id="a00451_html_a172ed1149f12df85de309b228715a002"><div class="ttname"><a href="a00451.html#a172ed1149f12df85de309b228715a002">tesseract::LanguageModelDawgInfo::permuter</a></div><div class="ttdeci">PermuterType permuter</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00069">lm_state.h:69</a></div></div>
+<div class="ttc" id="a00261_html_a0185040dea9a2fadac41feb45729e444"><div class="ttname"><a href="a00261.html#a0185040dea9a2fadac41feb45729e444">tesseract::AssociateStats::shape_cost</a></div><div class="ttdeci">float shape_cost</div><div class="ttdef"><b>Definition:</b> <a href="a01222_source.html#l00054">associate.h:54</a></div></div>
+<div class="ttc" id="a00459_html_a030cabe7efc5331c4f37a4b169df9c74"><div class="ttname"><a href="a00459.html#a030cabe7efc5331c4f37a4b169df9c74">tesseract::LMConsistencyInfo::NumInconsistentChartype</a></div><div class="ttdeci">int NumInconsistentChartype() const </div><div class="ttdef"><b>Definition:</b> <a href="a01236_source.html#l00090">lm_consistency.h:90</a></div></div>
+<div class="ttc" id="a00647_html_ad2fa280d4fe085d1b0d9fd7899a109fb"><div class="ttname"><a href="a00647.html#ad2fa280d4fe085d1b0d9fd7899a109fb">tesseract::ViterbiStateEntry::updated</a></div><div class="ttdeci">bool updated</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00188">lm_state.h:188</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00647_html_a93bab3f11db5956ecafd2e883655e1e1"><div class="ttname"><a href="a00647.html#a93bab3f11db5956ecafd2e883655e1e1">tesseract::ViterbiStateEntry::ngram_info</a></div><div class="ttdeci">LanguageModelNgramInfo * ngram_info</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00186">lm_state.h:186</a></div></div>
+<div class="ttc" id="a00452_html_a4e5c109a8e5e6a3887024615f40817d1"><div class="ttname"><a href="a00452.html#a4e5c109a8e5e6a3887024615f40817d1">tesseract::LanguageModelNgramInfo::pruned</a></div><div class="ttdeci">bool pruned</div><div class="ttdef"><b>Definition:</b> <a href="a01240_source.html#l00086">lm_state.h:86</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa9c98655c3a2a0437821e5a3d3418b0f"></a>
+<a class="anchor" id="aabdb0666f3c6dc1019875d2351f522e4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> TPOINT::x</td>
+          <td class="memname">int tesseract::ViterbiStateEntry::adapted</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00751_source.html#l00071">71</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
+<p>Definition at line <a class="el" href="a01240_source.html#l00170">170</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6d62f015b74612e43975e439a096039c"></a>
+<a class="anchor" id="a3a617e5066e2a1655280e7b37c058090"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> TPOINT::y</td>
+          <td class="memname"><a class="el" href="a00261.html">AssociateStats</a> tesseract::ViterbiStateEntry::associate_stats</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00751_source.html#l00072">72</a> of file <a class="el" href="a00751_source.html">blobs.h</a>.</p>
+<p>Definition at line <a class="el" href="a01240_source.html#l00174">174</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4f5037e38c17257e7afe6f974b7c0c23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00647.html">ViterbiStateEntry</a>* tesseract::ViterbiStateEntry::competing_vse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pointer to a case-competing <a class="el" href="a00647.html">ViterbiStateEntry</a> in the same list that represents a path ending in the same letter of the opposite case. </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00164">164</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada306e8bb74f660925cd12b5a2c16a03"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00459.html">LMConsistencyInfo</a> tesseract::ViterbiStateEntry::consistency_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00173">173</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ec1876660a123fef8540c419032db14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float tesseract::ViterbiStateEntry::cost</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The cost is an adjusted ratings sum, that is adjusted by all the language model components that use Viterbi search. </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00157">157</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a206d0b5c6c9294191b7a553a8109f1d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00276.html">BLOB_CHOICE</a>* tesseract::ViterbiStateEntry::curr_b</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointers to <a class="el" href="a00276.html">BLOB_CHOICE</a> and parent <a class="el" href="a00647.html">ViterbiStateEntry</a> (not owned by this). </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00160">160</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0668c82dbf9068d2ccb6d3c0b8798f89"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00451.html">LanguageModelDawgInfo</a>* tesseract::ViterbiStateEntry::dawg_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Extra information maintained by <a class="el" href="a00346.html">Dawg</a> laguage model component (owned by <a class="el" href="a00647.html">ViterbiStateEntry</a>). </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00182">182</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe066d6c1d955fc2005cc00f4ff5736b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00561.html">STRING</a>* tesseract::ViterbiStateEntry::debug_str</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>UTF8 string representing the path corresponding to this vse. Populated only in when language_model_debug_level &gt; 0. </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00191">191</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a773387611435ef429757052257f3cce7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::ViterbiStateEntry::length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00171">171</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aedb457815350bf94c479f51a997fb8a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float tesseract::ViterbiStateEntry::min_certainty</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00169">169</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93bab3f11db5956ecafd2e883655e1e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00452.html">LanguageModelNgramInfo</a>* tesseract::ViterbiStateEntry::ngram_info</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Extra information maintained by Ngram laguage model component (owned by <a class="el" href="a00647.html">ViterbiStateEntry</a>). </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00186">186</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d9fd89bf692438d65cf25221f428752"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float tesseract::ViterbiStateEntry::outline_length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00172">172</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fafa528c3935768a6fe19501c619d5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00647.html">ViterbiStateEntry</a>* tesseract::ViterbiStateEntry::parent_vse</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00161">161</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd6b9c11d6023860d01167a0ebfb0077"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float tesseract::ViterbiStateEntry::ratings_sum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Various information about the characters on the path represented by this <a class="el" href="a00647.html">ViterbiStateEntry</a>. </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00168">168</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa9006c7c6cfcf3097947bd5814be31ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01267.html#a87cc64ed462a40c9c210a8bab7cb9b87">LanguageModelFlagsType</a> tesseract::ViterbiStateEntry::top_choice_flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flags for marking the entry as a top choice path with the smallest rating or lower/upper case letters). </p>
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00178">178</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2fa280d4fe085d1b0d9fd7899a109fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tesseract::ViterbiStateEntry::updated</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01240_source.html#l00188">188</a> of file <a class="el" href="a01240_source.html">lm_state.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>ccstruct/<a class="el" href="a00751_source.html">blobs.h</a></li>
-<li>ccstruct/<a class="el" href="a00750_source.html">blobs.cpp</a></li>
+<li>wordrec/<a class="el" href="a01240_source.html">lm_state.h</a></li>
+<li>wordrec/<a class="el" href="a01239_source.html">lm_state.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00647.html">TPOINT</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:47 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00647.html">ViterbiStateEntry</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:32 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

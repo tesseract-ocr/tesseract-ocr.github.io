@@ -1,15 +1,10 @@
 var a00272 =
 [
-    [ "BeamSearch", "a00272.html#a990eb3dcc8f14f2a17639caf93f840c1", null ],
-    [ "~BeamSearch", "a00272.html#a1ad5f964a4b335929d99ab5596595428", null ],
-    [ "Alt", "a00272.html#a627bb3008dad38d1424d8af99fbe9261", null ],
-    [ "BackTrack", "a00272.html#ae3c9e6077238c37acd5ec27c6bf4fdc9", null ],
-    [ "BackTrack", "a00272.html#ad80c824db2987b972d3742fd40d664c5", null ],
-    [ "BestNode", "a00272.html#a57eea92e9a652a61a734f357104144d6", null ],
-    [ "BestPresortedNodeIndex", "a00272.html#a02c434058eeab3e63d825af28ea57dc4", null ],
-    [ "ColCnt", "a00272.html#acb55bf11ed4d685593c189f0ffac8f79", null ],
-    [ "Column", "a00272.html#aaca2dc4ddb2857ffbbb84e69f8a0f789", null ],
-    [ "Search", "a00272.html#adce6622c6d74ecae947f11aeac486ca0", null ],
-    [ "SizeCost", "a00272.html#a8db9d114117e35964e67e2dedfaae253", null ],
-    [ "WordUnigramCost", "a00272.html#a2d635a7c06465225c22392d5a2f82ffc", null ]
+    [ "BITS16", "a00272.html#a82000c01cdaf560b80ed1e831bcdf303", null ],
+    [ "BITS16", "a00272.html#a1a1df5568dbdc59c1be83f41270c77c4", null ],
+    [ "bit", "a00272.html#ac27859e65a8bc01c7881cbb6888e73ac", null ],
+    [ "set_bit", "a00272.html#a4ddf1ce50aaa629cfc6f36af545e23ea", null ],
+    [ "turn_off_bit", "a00272.html#aa8e724dcb0c4f3ead1323302f388dd09", null ],
+    [ "turn_on_bit", "a00272.html#a27b6763e650c847e1405d4c577e41099", null ],
+    [ "val", "a00272.html#a7d262d8e7cc027b2faa748dee3c8c575", null ]
 ];

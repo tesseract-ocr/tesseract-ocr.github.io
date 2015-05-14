@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/pageiterator.h File Reference</title>
+<title>Tesseract: ccmain/tessedit.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,34 +105,112 @@ $(document).ready(function(){initNavTree('a00713.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">pageiterator.h File Reference</div>  </div>
+<div class="title">tessedit.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00804_source.html">publictypes.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00868_source.html">platform.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00857_source.html">stderr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00812_source.html">basedir.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00720_source.html">tessvars.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00673_source.html">control.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00707_source.html">reject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00773_source.html">pageres.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00844_source.html">nwmain.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00704_source.html">pgedit.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00864_source.html">tprintf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00714_source.html">tessedit.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01060_source.html">stopper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00913_source.html">intmatcher.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01224_source.html">chop.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01037_source.html">efio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01035_source.html">danerror.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01042_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00718_source.html">tesseractclass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
 </div>
 <p><a href="a00713_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00503.html">tesseract::PageIterator</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a885bbceac3da2daacf10048f43cc015f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00713.html#a885bbceac3da2daacf10048f43cc015f">VARDIR</a>&#160;&#160;&#160;&quot;configs/&quot; /*variables files */</td></tr>
+<tr class="separator:a885bbceac3da2daacf10048f43cc015f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8f94588e59ba48628105c68f681a21a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00713.html#ad8f94588e59ba48628105c68f681a21a">API_CONFIG</a>&#160;&#160;&#160;&quot;configs/api_config&quot;</td></tr>
+<tr class="separator:ad8f94588e59ba48628105c68f681a21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a158666bdc32b1dce84c368c24cbc4108"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a158666bdc32b1dce84c368c24cbc4108">tesseract::CMD_EVENTS</a> { <a class="el" href="a01267.html#a158666bdc32b1dce84c368c24cbc4108ad5393026a89cc45e229dc1cceca208cd">tesseract::ACTION_1_CMD_EVENT</a>, 
+<a class="el" href="a01267.html#a158666bdc32b1dce84c368c24cbc4108a73be97af434dae7d485282b3a24e766f">tesseract::RECOG_WERDS</a>, 
+<a class="el" href="a01267.html#a158666bdc32b1dce84c368c24cbc4108a5ff116d52a6fb93880f2501ee7f7cd64">tesseract::RECOG_PSEUDO</a>, 
+<a class="el" href="a01267.html#a158666bdc32b1dce84c368c24cbc4108a5e902f0d506a3c3d51b2e5ebcc0ad603">tesseract::ACTION_2_CMD_EVENT</a>
+ }</td></tr>
+<tr class="separator:a158666bdc32b1dce84c368c24cbc4108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ace69a2060bddda087f147f5555fd400c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00376.html">ETEXT_DESC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00713.html#ace69a2060bddda087f147f5555fd400c">global_monitor</a> = <a class="el" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:ace69a2060bddda087f147f5555fd400c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ad8f94588e59ba48628105c68f681a21a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define API_CONFIG&#160;&#160;&#160;&quot;configs/api_config&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00713_source.html#l00041">41</a> of file <a class="el" href="a00713_source.html">tessedit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a885bbceac3da2daacf10048f43cc015f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VARDIR&#160;&#160;&#160;&quot;configs/&quot; /*variables files */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00713_source.html#l00039">39</a> of file <a class="el" href="a00713_source.html">tessedit.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ace69a2060bddda087f147f5555fd400c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00376.html">ETEXT_DESC</a>* global_monitor = <a class="el" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00713_source.html#l00043">43</a> of file <a class="el" href="a00713_source.html">tessedit.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00713.html">pageiterator.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00713.html">tessedit.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

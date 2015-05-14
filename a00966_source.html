@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/altlist.h Source File</title>
+<title>Tesseract: cube/char_bigrams.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,12 +105,12 @@ $(document).ready(function(){initNavTree('a00966_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">altlist.h</div>  </div>
+<div class="title">char_bigrams.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00966.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        alt_list.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Class to abstarct a list of alternate results</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        char_bigrams.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of a Character Bigrams Class</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2007</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
@@ -127,71 +127,107 @@ $(document).ready(function(){initNavTree('a00966_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The AltList class is the base class for the list of alternate recognition</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// results. Each alternate has a cost an an optional tag associated with it</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef ALT_LIST_H</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define ALT_LIST_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The CharBigram class represents the interface to the character bigram</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// table used by Cube</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// A CharBigram object can be constructed from the Char Bigrams file</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Given a sequence of characters, the &quot;Cost&quot; method returns the Char Bigram</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// cost of the string according to the table</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01004.html">cube_utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef CHAR_BIGRAMS_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define CHAR_BIGRAMS_H</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00262.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00262.html">AltList</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00262.html#a8469cc99ad3fdad109ba6df979ca9cfe">AltList</a>(<span class="keywordtype">int</span> max_alt);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00262.html#a0f9763670aea57c9b9b3e958ce0a5464">~AltList</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// sort the list of alternates based</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00262.html#a20c701f1ff8ef7397a2b3abe661aa403">Sort</a>() = 0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// return the best possible cost and index of corresponding alternate</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00262.html#aa5fa04cf2bb199215be50307d189aeea">BestCost</a> (<span class="keywordtype">int</span> *best_alt) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// return the count of alternates</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00262.html#aadb48ec686ebb9f9c2873c2153da8825">   39</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="a00262.html#aadb48ec686ebb9f9c2873c2153da8825">AltCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// returns the cost (-ve log prob) of an alternate</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00262.html#a306aeb11c4477af0309561ceb5da404e">   41</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="a00262.html#a306aeb11c4477af0309561ceb5da404e">AltCost</a>(<span class="keywordtype">int</span> alt_idx)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx]; }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// returns the prob of an alternate</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00262.html#aae2b790bbc85ca17d3c96bb67b56df80">   43</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="a00262.html#aae2b790bbc85ca17d3c96bb67b56df80">AltProb</a>(<span class="keywordtype">int</span> alt_idx)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00351.html#abe90a391bde5178077826ef3dc574d1d">CubeUtils::Cost2Prob</a>(<a class="code" href="a00262.html#a306aeb11c4477af0309561ceb5da404e">AltCost</a>(alt_idx));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// returns the alternate tag</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00262.html#a3864321e544f4cb5d2a4caeb954d8b85">   47</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> *<a class="code" href="a00262.html#a3864321e544f4cb5d2a4caeb954d8b85">AltTag</a>(<span class="keywordtype">int</span> alt_idx)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt_idx]; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// max number of alternates the list can hold</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">   51</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// actual alternate count</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">   53</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// array of alternate costs</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a00262.html#afad648f9ceb847661f71cab87c00e208">   55</a></span>&#160;  <span class="keywordtype">int</span> *<a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// array of alternate tags</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">   57</a></span>&#160;  <span class="keywordtype">void</span> **<a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif  // ALT_LIST_H</span></div>
-<div class="ttc" id="a01004_html"><div class="ttname"><a href="a01004.html">cube_utils.h</a></div></div>
-<div class="ttc" id="a00262_html_a9c30e8b6c8fd2346184b0180ff5af4d6"><div class="ttname"><a href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">tesseract::AltList::alt_tag_</a></div><div class="ttdeci">void ** alt_tag_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00057">altlist.h:57</a></div></div>
-<div class="ttc" id="a00262_html_a306aeb11c4477af0309561ceb5da404e"><div class="ttname"><a href="a00262.html#a306aeb11c4477af0309561ceb5da404e">tesseract::AltList::AltCost</a></div><div class="ttdeci">int AltCost(int alt_idx) const </div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00041">altlist.h:41</a></div></div>
-<div class="ttc" id="a00262_html"><div class="ttname"><a href="a00262.html">tesseract::AltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00030">altlist.h:30</a></div></div>
-<div class="ttc" id="a00262_html_a8469cc99ad3fdad109ba6df979ca9cfe"><div class="ttname"><a href="a00262.html#a8469cc99ad3fdad109ba6df979ca9cfe">tesseract::AltList::AltList</a></div><div class="ttdeci">AltList(int max_alt)</div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00025">altlist.cpp:25</a></div></div>
-<div class="ttc" id="a00262_html_a0f9763670aea57c9b9b3e958ce0a5464"><div class="ttname"><a href="a00262.html#a0f9763670aea57c9b9b3e958ce0a5464">tesseract::AltList::~AltList</a></div><div class="ttdeci">virtual ~AltList()</div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00032">altlist.cpp:32</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00262_html_a5a4e150fef9c9beb9cfbf6529cf8b467"><div class="ttname"><a href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">tesseract::AltList::alt_cnt_</a></div><div class="ttdeci">int alt_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00053">altlist.h:53</a></div></div>
-<div class="ttc" id="a00262_html_af2feccb6f1085ac6c1884a0440c47578"><div class="ttname"><a href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">tesseract::AltList::max_alt_</a></div><div class="ttdeci">int max_alt_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00051">altlist.h:51</a></div></div>
-<div class="ttc" id="a00262_html_aa5fa04cf2bb199215be50307d189aeea"><div class="ttname"><a href="a00262.html#aa5fa04cf2bb199215be50307d189aeea">tesseract::AltList::BestCost</a></div><div class="ttdeci">int BestCost(int *best_alt) const </div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00045">altlist.cpp:45</a></div></div>
-<div class="ttc" id="a00262_html_afad648f9ceb847661f71cab87c00e208"><div class="ttname"><a href="a00262.html#afad648f9ceb847661f71cab87c00e208">tesseract::AltList::alt_cost_</a></div><div class="ttdeci">int * alt_cost_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00055">altlist.h:55</a></div></div>
-<div class="ttc" id="a00351_html_abe90a391bde5178077826ef3dc574d1d"><div class="ttname"><a href="a00351.html#abe90a391bde5178077826ef3dc574d1d">tesseract::CubeUtils::Cost2Prob</a></div><div class="ttdeci">static double Cost2Prob(int cost)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00043">cube_utils.cpp:43</a></div></div>
-<div class="ttc" id="a00262_html_aadb48ec686ebb9f9c2873c2153da8825"><div class="ttname"><a href="a00262.html#aadb48ec686ebb9f9c2873c2153da8825">tesseract::AltList::AltCount</a></div><div class="ttdeci">int AltCount() const </div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00039">altlist.h:39</a></div></div>
-<div class="ttc" id="a00262_html_a3864321e544f4cb5d2a4caeb954d8b85"><div class="ttname"><a href="a00262.html#a3864321e544f4cb5d2a4caeb954d8b85">tesseract::AltList::AltTag</a></div><div class="ttdeci">void * AltTag(int alt_idx) const </div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00047">altlist.h:47</a></div></div>
-<div class="ttc" id="a00262_html_a20c701f1ff8ef7397a2b3abe661aa403"><div class="ttname"><a href="a00262.html#a20c701f1ff8ef7397a2b3abe661aa403">tesseract::AltList::Sort</a></div><div class="ttdeci">virtual void Sort()=0</div></div>
-<div class="ttc" id="a00262_html_aae2b790bbc85ca17d3c96bb67b56df80"><div class="ttname"><a href="a00262.html#aae2b790bbc85ca17d3c96bb67b56df80">tesseract::AltList::AltProb</a></div><div class="ttdeci">double AltProb(int alt_idx) const </div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00043">altlist.h:43</a></div></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00974.html">char_set.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// structure representing a single bigram value</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00271.html">   35</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00271.html">Bigram</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a00271.html#ab3ca0606152af62f49b3d2f69c0effcc">   36</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00271.html#ab3ca0606152af62f49b3d2f69c0effcc">cnt</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00271.html#ac82fdf747c4a7a4c5626964c635eb251">   37</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00271.html#ac82fdf747c4a7a4c5626964c635eb251">cost</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// structure representing the char bigram array of characters</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// following a specific character</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00301.html">   42</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00301.html">CharBigram</a> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00301.html#a5fcb5e2bd655dcf9185f8059af6ae392">   43</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00301.html#a5fcb5e2bd655dcf9185f8059af6ae392">total_cnt</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00301.html#a2e2bd3dc796213605662064c8c2bebc9">   44</a></span>&#160;  <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> <a class="code" href="a00301.html#a2e2bd3dc796213605662064c8c2bebc9">max_char</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00301.html#acf18b9398a62f9f184fdd18b8d91bdd8">   45</a></span>&#160;  <a class="code" href="a00271.html">Bigram</a> *<a class="code" href="a00301.html#acf18b9398a62f9f184fdd18b8d91bdd8">bigram</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// structure representing the whole bigram table</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a00303.html">   49</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00303.html">CharBigramTable</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00303.html#ae5fc0fd5c907a7d871c08bffa7a08716">   50</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00303.html#ae5fc0fd5c907a7d871c08bffa7a08716">total_cnt</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00303.html#ac0c678c3fe7bd24f65b706e3fab1957b">   51</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00303.html#ac0c678c3fe7bd24f65b706e3fab1957b">worst_cost</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00303.html#adcb5fea862baff3582bcf5223218026d">   52</a></span>&#160;  <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> <a class="code" href="a00303.html#adcb5fea862baff3582bcf5223218026d">max_char</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00303.html#aae8c431003254c08e6ec02d1309e2d65">   53</a></span>&#160;  <a class="code" href="a00301.html">CharBigram</a> *<a class="code" href="a00303.html#aae8c431003254c08e6ec02d1309e2d65">char_bigram</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a00302.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00302.html">CharBigrams</a> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="a00302.html#a17e9f5a3b5a5dc9704b89c698e5db481">CharBigrams</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="a00302.html#ae622fa52434296b70785149199b7007f">~CharBigrams</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// Construct the CharBigrams class from a file</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">static</span> <a class="code" href="a00302.html">CharBigrams</a> *<a class="code" href="a00302.html#a736a26176210da09fd5c57498de1cf77">Create</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;data_file_path,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<a class="code" href="a01268.html#a5f5eb917f55d9d6ccaa95131ae5d171c">lang</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Top-level function to return the mean character bigram cost of a</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// sequence of characters.  If char_set is not NULL, use</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// tesseract functions to return a case-invariant cost.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// This avoids unnecessarily penalizing all-one-case words or</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// capitalized words (first-letter upper-case and remaining letters</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// lower-case).</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00302.html#a2a19105bd0f09a1c124a051c6514569e">Cost</a>(<span class="keyword">const</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str, <a class="code" href="a00309.html">CharSet</a> *char_set) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// Returns the character bigram cost of two characters.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00302.html#acca74d8457ec604bc39f0f0b3a77443b">PairCost</a>(<a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch1, <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch2) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// Returns the mean character bigram cost of a sequence of</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// characters. Adds a space at the beginning and end to account for</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// cost of starting and ending characters.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00302.html#aad8d15924e4b9793972b1c7488cc8466">MeanCostWithSpaces</a>(<span class="keyword">const</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *char_32_ptr) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// Only words this length or greater qualify for case-invariant character</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// bigram cost.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kMinLengthCaseInvariant = 4;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="a00303.html">CharBigramTable</a> bigram_table_;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif  // CHAR_BIGRAMS_H</span></div>
+<div class="ttc" id="a00301_html_acf18b9398a62f9f184fdd18b8d91bdd8"><div class="ttname"><a href="a00301.html#acf18b9398a62f9f184fdd18b8d91bdd8">tesseract::CharBigram::bigram</a></div><div class="ttdeci">Bigram * bigram</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00045">char_bigrams.h:45</a></div></div>
+<div class="ttc" id="a00303_html_ac0c678c3fe7bd24f65b706e3fab1957b"><div class="ttname"><a href="a00303.html#ac0c678c3fe7bd24f65b706e3fab1957b">tesseract::CharBigramTable::worst_cost</a></div><div class="ttdeci">int worst_cost</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00051">char_bigrams.h:51</a></div></div>
+<div class="ttc" id="a00302_html_aad8d15924e4b9793972b1c7488cc8466"><div class="ttname"><a href="a00302.html#aad8d15924e4b9793972b1c7488cc8466">tesseract::CharBigrams::MeanCostWithSpaces</a></div><div class="ttdeci">int MeanCostWithSpaces(const char_32 *char_32_ptr) const </div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00194">char_bigrams.cpp:194</a></div></div>
+<div class="ttc" id="a00302_html_a17e9f5a3b5a5dc9704b89c698e5db481"><div class="ttname"><a href="a00302.html#a17e9f5a3b5a5dc9704b89c698e5db481">tesseract::CharBigrams::CharBigrams</a></div><div class="ttdeci">CharBigrams()</div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00032">char_bigrams.cpp:32</a></div></div>
+<div class="ttc" id="a00303_html"><div class="ttname"><a href="a00303.html">tesseract::CharBigramTable</a></div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00049">char_bigrams.h:49</a></div></div>
+<div class="ttc" id="a00301_html"><div class="ttname"><a href="a00301.html">tesseract::CharBigram</a></div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00042">char_bigrams.h:42</a></div></div>
+<div class="ttc" id="a00303_html_adcb5fea862baff3582bcf5223218026d"><div class="ttname"><a href="a00303.html#adcb5fea862baff3582bcf5223218026d">tesseract::CharBigramTable::max_char</a></div><div class="ttdeci">char_32 max_char</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00052">char_bigrams.h:52</a></div></div>
+<div class="ttc" id="a01268_html_a5f5eb917f55d9d6ccaa95131ae5d171c"><div class="ttname"><a href="a01268.html#a5f5eb917f55d9d6ccaa95131ae5d171c">tesseract-c_api-demo.lang</a></div><div class="ttdeci">string lang</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00028">tesseract-c_api-demo.py:28</a></div></div>
+<div class="ttc" id="a00271_html_ac82fdf747c4a7a4c5626964c635eb251"><div class="ttname"><a href="a00271.html#ac82fdf747c4a7a4c5626964c635eb251">tesseract::Bigram::cost</a></div><div class="ttdeci">int cost</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00037">char_bigrams.h:37</a></div></div>
+<div class="ttc" id="a00302_html_a2a19105bd0f09a1c124a051c6514569e"><div class="ttname"><a href="a00302.html#a2a19105bd0f09a1c124a051c6514569e">tesseract::CharBigrams::Cost</a></div><div class="ttdeci">int Cost(const char_32 *str, CharSet *char_set) const </div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00171">char_bigrams.cpp:171</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00309_html"><div class="ttname"><a href="a00309.html">tesseract::CharSet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00974_source.html#l00042">char_set.h:42</a></div></div>
+<div class="ttc" id="a00302_html_a736a26176210da09fd5c57498de1cf77"><div class="ttname"><a href="a00302.html#a736a26176210da09fd5c57498de1cf77">tesseract::CharBigrams::Create</a></div><div class="ttdeci">static CharBigrams * Create(const string &amp;data_file_path, const string &amp;lang)</div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00049">char_bigrams.cpp:49</a></div></div>
+<div class="ttc" id="a00301_html_a2e2bd3dc796213605662064c8c2bebc9"><div class="ttname"><a href="a00301.html#a2e2bd3dc796213605662064c8c2bebc9">tesseract::CharBigram::max_char</a></div><div class="ttdeci">char_32 max_char</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00044">char_bigrams.h:44</a></div></div>
+<div class="ttc" id="a00302_html_acca74d8457ec604bc39f0f0b3a77443b"><div class="ttname"><a href="a00302.html#acca74d8457ec604bc39f0f0b3a77443b">tesseract::CharBigrams::PairCost</a></div><div class="ttdeci">int PairCost(char_32 ch1, char_32 ch2) const </div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00161">char_bigrams.cpp:161</a></div></div>
+<div class="ttc" id="a00303_html_ae5fc0fd5c907a7d871c08bffa7a08716"><div class="ttname"><a href="a00303.html#ae5fc0fd5c907a7d871c08bffa7a08716">tesseract::CharBigramTable::total_cnt</a></div><div class="ttdeci">int total_cnt</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00050">char_bigrams.h:50</a></div></div>
+<div class="ttc" id="a00303_html_aae8c431003254c08e6ec02d1309e2d65"><div class="ttname"><a href="a00303.html#aae8c431003254c08e6ec02d1309e2d65">tesseract::CharBigramTable::char_bigram</a></div><div class="ttdeci">CharBigram * char_bigram</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00053">char_bigrams.h:53</a></div></div>
+<div class="ttc" id="a01267_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01267.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01011_source.html#l00040">string_32.h:40</a></div></div>
+<div class="ttc" id="a00301_html_a5fcb5e2bd655dcf9185f8059af6ae392"><div class="ttname"><a href="a00301.html#a5fcb5e2bd655dcf9185f8059af6ae392">tesseract::CharBigram::total_cnt</a></div><div class="ttdeci">int total_cnt</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00043">char_bigrams.h:43</a></div></div>
+<div class="ttc" id="a00974_html"><div class="ttname"><a href="a00974.html">char_set.h</a></div></div>
+<div class="ttc" id="a00271_html_ab3ca0606152af62f49b3d2f69c0effcc"><div class="ttname"><a href="a00271.html#ab3ca0606152af62f49b3d2f69c0effcc">tesseract::Bigram::cnt</a></div><div class="ttdeci">int cnt</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00036">char_bigrams.h:36</a></div></div>
+<div class="ttc" id="a00302_html_ae622fa52434296b70785149199b7007f"><div class="ttname"><a href="a00302.html#ae622fa52434296b70785149199b7007f">tesseract::CharBigrams::~CharBigrams</a></div><div class="ttdeci">~CharBigrams()</div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00036">char_bigrams.cpp:36</a></div></div>
+<div class="ttc" id="a00302_html"><div class="ttname"><a href="a00302.html">tesseract::CharBigrams</a></div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00056">char_bigrams.h:56</a></div></div>
+<div class="ttc" id="a00271_html"><div class="ttname"><a href="a00271.html">tesseract::Bigram</a></div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00035">char_bigrams.h:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00966.html">altlist.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:26 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00966.html">char_bigrams.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:00 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

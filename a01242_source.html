@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/chopper.h Source File</title>
+<title>Tesseract: wordrec/makechop.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,20 +105,20 @@ $(document).ready(function(){initNavTree('a01242_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">chopper.h</div>  </div>
+<div class="title">makechop.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01242.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* -*-C-*-</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> ********************************************************************************</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * File:        chopper.h  (Formerly chopper.h)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * File:        makechop.h  (Formerly makechop.h)</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description:</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:       Mark Seaman, SW Productivity</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:      Fri Oct 16 14:37:00 1987</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Modified:     Wed May 15 14:24:26 1991 (Mark Seaman) marks@hpgrlt</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Language:     C</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Package:      N/A</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Status:       Reusable Software Component</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:      Mark Seaman, SW Productivity</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:     Fri Oct 16 14:37:00 1987</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Modified:     Mon Jul 29 13:33:23 1991 (Mark Seaman) marks@hpgrlt</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Language:    C</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Package:     N/A</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Status:      Reusable Software Component</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * (c) Copyright 1987, Hewlett-Packard Company.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -132,54 +132,75 @@ $(document).ready(function(){initNavTree('a01242_source.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *********************************************************************************/</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef CHOPPER_H</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define CHOPPER_H</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01041.html">cutil.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00778.html">matrix.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00817.html">seam.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01070.html">stopper.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef MAKECHOP_H</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define MAKECHOP_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">      I n c l u d e s</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01224.html">chop.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01245.html">olutil.h</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#a0a3b9f61e193c679c40344dad4267e3d">preserve_outline</a>(<a class="code" href="a00372.html">EDGEPT</a> *start);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#af2a51913c75408354ffd6e5344c30389">preserve_outline_tree</a>(<a class="code" href="a00631.html">TESSLINE</a> *srcline);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="a00372.html">EDGEPT</a> *<a class="code" href="a01242.html#aca09efda43c5297643be6ba8706ceb83">restore_outline</a>(<a class="code" href="a00372.html">EDGEPT</a> *start);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#a426bc9c96107b36d173f86d8a74f9e8c">restore_outline_tree</a>(<a class="code" href="a00631.html">TESSLINE</a> *srcline);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">int</span> <a class="code" href="a01242.html#a9a0430f1c62268bf762a58a97c56acd7">any_shared_split_points</a>(<span class="keyword">const</span> <a class="code" href="a00416.html">GenericVector&lt;SEAM*&gt;</a>&amp; seams, <a class="code" href="a00554.html">SEAM</a> *seam);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">int</span> <a class="code" href="a01242.html#adde6889c67dfb8661a9911b56bc05c96">check_blob</a>(<a class="code" href="a00608.html">TBLOB</a> *blob);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a01242.html#a8e8e9f6cb587b621054e6ff626a46a23">total_containment</a>(<a class="code" href="a00608.html">TBLOB</a> *blob1, <a class="code" href="a00608.html">TBLOB</a> *blob2);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a01242_html_a0a3b9f61e193c679c40344dad4267e3d"><div class="ttname"><a href="a01242.html#a0a3b9f61e193c679c40344dad4267e3d">preserve_outline</a></div><div class="ttdeci">void preserve_outline(EDGEPT *start)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00067">chopper.cpp:67</a></div></div>
-<div class="ttc" id="a01242_html_af2a51913c75408354ffd6e5344c30389"><div class="ttname"><a href="a01242.html#af2a51913c75408354ffd6e5344c30389">preserve_outline_tree</a></div><div class="ttdeci">void preserve_outline_tree(TESSLINE *srcline)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00083">chopper.cpp:83</a></div></div>
-<div class="ttc" id="a01242_html_aca09efda43c5297643be6ba8706ceb83"><div class="ttname"><a href="a01242.html#aca09efda43c5297643be6ba8706ceb83">restore_outline</a></div><div class="ttdeci">EDGEPT * restore_outline(EDGEPT *start)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00097">chopper.cpp:97</a></div></div>
-<div class="ttc" id="a01242_html_a426bc9c96107b36d173f86d8a74f9e8c"><div class="ttname"><a href="a01242.html#a426bc9c96107b36d173f86d8a74f9e8c">restore_outline_tree</a></div><div class="ttdeci">void restore_outline_tree(TESSLINE *srcline)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00123">chopper.cpp:123</a></div></div>
-<div class="ttc" id="a01070_html"><div class="ttname"><a href="a01070.html">stopper.h</a></div></div>
-<div class="ttc" id="a01041_html"><div class="ttname"><a href="a01041.html">cutil.h</a></div></div>
-<div class="ttc" id="a01242_html_a9a0430f1c62268bf762a58a97c56acd7"><div class="ttname"><a href="a01242.html#a9a0430f1c62268bf762a58a97c56acd7">any_shared_split_points</a></div><div class="ttdeci">int any_shared_split_points(const GenericVector&lt; SEAM * &gt; &amp;seams, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00282">chopper.cpp:282</a></div></div>
-<div class="ttc" id="a00817_html"><div class="ttname"><a href="a00817.html">seam.h</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a00778_html"><div class="ttname"><a href="a00778.html">matrix.h</a></div></div>
-<div class="ttc" id="a00554_html"><div class="ttname"><a href="a00554.html">SEAM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00817_source.html#l00039">seam.h:39</a></div></div>
-<div class="ttc" id="a00372_html"><div class="ttname"><a href="a00372.html">EDGEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00076">blobs.h:76</a></div></div>
-<div class="ttc" id="a00608_html"><div class="ttname"><a href="a00608.html">TBLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00261">blobs.h:261</a></div></div>
-<div class="ttc" id="a00631_html"><div class="ttname"><a href="a00631.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00180">blobs.h:180</a></div></div>
-<div class="ttc" id="a01242_html_adde6889c67dfb8661a9911b56bc05c96"><div class="ttname"><a href="a01242.html#adde6889c67dfb8661a9911b56bc05c96">check_blob</a></div><div class="ttdeci">int check_blob(TBLOB *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00298">chopper.cpp:298</a></div></div>
-<div class="ttc" id="a00416_html"><div class="ttname"><a href="a00416.html">GenericVector&lt; SEAM * &gt;</a></div></div>
-<div class="ttc" id="a01242_html_a8e8e9f6cb587b621054e6ff626a46a23"><div class="ttname"><a href="a01242.html#a8e8e9f6cb587b621054e6ff626a46a23">total_containment</a></div><div class="ttdeci">inT16 total_containment(TBLOB *blob1, TBLOB *blob2)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00656">chopper.cpp:656</a></div></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">      M a c r o s</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">---------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * is_split_outline</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * Check to see if both sides of the split fall within the bounding</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * box of this outline.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a01242.html#a215ea46db3a9b6343a2186a48aaa3487">   44</a></span>&#160;<span class="preprocessor">#define is_split_outline(outline,split)          \</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">(outline-&gt;Contains(split-&gt;point1-&gt;pos) &amp;&amp;  \</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">        outline-&gt;Contains(split-&gt;point2-&gt;pos))    \</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">        Public Function Prototypes</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#a0ead1c1a4df9b2c0861e9da84f4c3079">apply_seam</a>(<a class="code" href="a00590.html">TBLOB</a> *blob, <a class="code" href="a00590.html">TBLOB</a> *other_blob, <span class="keywordtype">bool</span> italic_blob, <a class="code" href="a00537.html">SEAM</a> *seam);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a>(<a class="code" href="a00590.html">TBLOB</a> *blob, <a class="code" href="a00590.html">TBLOB</a> *other_blob, <span class="keywordtype">bool</span> italic_blob,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="keyword">const</span> <a class="code" href="a00629.html">TPOINT</a>&amp; location);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#a4ed0ab664f9d3f136e7aa438ab6c4db5">make_double_split</a>(<a class="code" href="a00590.html">TBLOB</a> *blob, <a class="code" href="a00590.html">TBLOB</a> *other_blob, <span class="keywordtype">bool</span> italic_blob,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                       <a class="code" href="a00537.html">SEAM</a> *seam);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a>(<a class="code" href="a00613.html">TESSLINE</a> *outlines, <a class="code" href="a00557.html">SPLIT</a> *split);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#a96dc4a90b556cbe0dab2eceb5ae65ffd">make_split_blobs</a>(<a class="code" href="a00590.html">TBLOB</a> *blob, <a class="code" href="a00590.html">TBLOB</a> *other_blob, <span class="keywordtype">bool</span> italic_blob,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                      <a class="code" href="a00537.html">SEAM</a> *seam);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#afd14bd93bb49f7ab009cb45665b4dc43">make_triple_split</a>(<a class="code" href="a00590.html">TBLOB</a> *blob, <a class="code" href="a00590.html">TBLOB</a> *other_blob, <span class="keywordtype">bool</span> italic_blob,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                       <a class="code" href="a00537.html">SEAM</a> *seam);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#aa6a78540c9d1b2be89f28016c2aa408f">undo_seam</a>(<a class="code" href="a00590.html">TBLOB</a> *blob, <a class="code" href="a00590.html">TBLOB</a> *other_blob, <a class="code" href="a00537.html">SEAM</a> *seam);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01242.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a>(<a class="code" href="a00590.html">TBLOB</a> *blob, <a class="code" href="a00557.html">SPLIT</a> *split);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a01242_html_a0ead1c1a4df9b2c0861e9da84f4c3079"><div class="ttname"><a href="a01242.html#a0ead1c1a4df9b2c0861e9da84f4c3079">apply_seam</a></div><div class="ttdeci">void apply_seam(TBLOB *blob, TBLOB *other_blob, bool italic_blob, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00052">makechop.cpp:52</a></div></div>
+<div class="ttc" id="a01242_html_a407d2116f0a53e5d7cb11d4dcdc489a0"><div class="ttname"><a href="a01242.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a></div><div class="ttdeci">void form_two_blobs(TBLOB *blob, TBLOB *other_blob, bool italic_blob, const TPOINT &amp;location)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00074">makechop.cpp:74</a></div></div>
+<div class="ttc" id="a01224_html"><div class="ttname"><a href="a01224.html">chop.h</a></div></div>
+<div class="ttc" id="a01242_html_aa6a78540c9d1b2be89f28016c2aa408f"><div class="ttname"><a href="a01242.html#aa6a78540c9d1b2be89f28016c2aa408f">undo_seam</a></div><div class="ttdeci">void undo_seam(TBLOB *blob, TBLOB *other_blob, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00168">makechop.cpp:168</a></div></div>
+<div class="ttc" id="a00590_html"><div class="ttname"><a href="a00590.html">TBLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00193">blobs.h:193</a></div></div>
+<div class="ttc" id="a00629_html"><div class="ttname"><a href="a00629.html">TPOINT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00050">blobs.h:50</a></div></div>
+<div class="ttc" id="a01242_html_a503883850fa5d77ae8b47baf76c541ae"><div class="ttname"><a href="a01242.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a></div><div class="ttdeci">void make_single_split(TESSLINE *outlines, SPLIT *split)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00107">makechop.cpp:107</a></div></div>
+<div class="ttc" id="a00537_html"><div class="ttname"><a href="a00537.html">SEAM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00039">seam.h:39</a></div></div>
+<div class="ttc" id="a01242_html_a4ed0ab664f9d3f136e7aa438ab6c4db5"><div class="ttname"><a href="a01242.html#a4ed0ab664f9d3f136e7aa438ab6c4db5">make_double_split</a></div><div class="ttdeci">void make_double_split(TBLOB *blob, TBLOB *other_blob, bool italic_blob, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00093">makechop.cpp:93</a></div></div>
+<div class="ttc" id="a00613_html"><div class="ttname"><a href="a00613.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00127">blobs.h:127</a></div></div>
+<div class="ttc" id="a00557_html"><div class="ttname"><a href="a00557.html">split_record</a></div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00037">split.h:37</a></div></div>
+<div class="ttc" id="a01242_html_afd14bd93bb49f7ab009cb45665b4dc43"><div class="ttname"><a href="a01242.html#afd14bd93bb49f7ab009cb45665b4dc43">make_triple_split</a></div><div class="ttdeci">void make_triple_split(TBLOB *blob, TBLOB *other_blob, bool italic_blob, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00151">makechop.cpp:151</a></div></div>
+<div class="ttc" id="a01245_html"><div class="ttname"><a href="a01245.html">olutil.h</a></div></div>
+<div class="ttc" id="a01242_html_a96dc4a90b556cbe0dab2eceb5ae65ffd"><div class="ttname"><a href="a01242.html#a96dc4a90b556cbe0dab2eceb5ae65ffd">make_split_blobs</a></div><div class="ttdeci">void make_split_blobs(TBLOB *blob, TBLOB *other_blob, bool italic_blob, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00135">makechop.cpp:135</a></div></div>
+<div class="ttc" id="a01242_html_aac5cbbe57b200218a324936bd098f948"><div class="ttname"><a href="a01242.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a></div><div class="ttdeci">void undo_single_split(TBLOB *blob, SPLIT *split)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00211">makechop.cpp:211</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01242.html">chopper.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:32 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01242.html">makechop.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:06 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

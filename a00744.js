@@ -1,4 +1,6 @@
 var a00744 =
 [
-    [ "make_pseudo_word", "a00744.html#a4033d1ec3632e2e780817fc5932f5951", null ]
+    [ "kMaxRealDistance", "a00744.html#a0ba0e3d5b910c72cb63e939e6cb426d3", null ],
+    [ "kMinPointsForErrorCount", "a00744.html#a57f300af8f4caf9869661dcb82500c27", null ],
+    [ "kNumEndPoints", "a00744.html#acd4677fe72e83fad95bf289ca8b832b6", null ]
 ];

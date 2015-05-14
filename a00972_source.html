@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/cached_file.h Source File</title>
+<title>Tesseract: cube/char_samp_set.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,12 +105,12 @@ $(document).ready(function(){initNavTree('a00972_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">cached_file.h</div>  </div>
+<div class="title">char_samp_set.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00972.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        cached_file.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of a Cached File class</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        char_samp_set.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of a Character Sample Set Class</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2007</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
@@ -127,71 +127,82 @@ $(document).ready(function(){initNavTree('a00972_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef CACHED_FILE_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define CACHED_FILE_H</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// The CachedFile class provides a large-cache read access to a file</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// It is mainly designed for loading large word dump files</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef USE_STD_NAMESPACE</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using</span> std::string;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00297.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00297.html">CachedFile</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00297.html#a42435ebacaf2a3fdf4f4f4fb3b584010">CachedFile</a>(<span class="keywordtype">string</span> file_name);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="a00297.html#a742e43f17dd01dc8882860fa38019f2f">~CachedFile</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// reads a specified number of bytes to the specified buffer and</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// returns the actual number of bytes read</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00297.html#a259121e3d90b15a0cf8dff354e353248">Read</a>(<span class="keywordtype">void</span> *read_buff, <span class="keywordtype">int</span> bytes);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// Returns the file size</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordtype">long</span> <a class="code" href="a00297.html#a871f06d637155a692276e17dced396e8">Size</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// returns the current position in the file</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">long</span> <a class="code" href="a00297.html#a0cea9e6a8465e02a70505bb7d897c66c">Tell</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// End of file flag</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00297.html#a2c09bbdf67cef3e4764cd4c0f2d91d6f">eof</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> kCacheSize = 0x8000000;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// file name</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">string</span> file_name_;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// internal file buffer</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buff_;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// file position</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">long</span> file_pos_;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// file size</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">long</span> file_size_;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// position of file within buffer</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">int</span> buff_pos_;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// buffer size</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">int</span> buff_size_;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// file handle</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  FILE *fp_;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Opens the file</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">bool</span> Open();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif  // CACHED_FILE_H</span></div>
-<div class="ttc" id="a00297_html_a742e43f17dd01dc8882860fa38019f2f"><div class="ttname"><a href="a00297.html#a742e43f17dd01dc8882860fa38019f2f">tesseract::CachedFile::~CachedFile</a></div><div class="ttdeci">~CachedFile()</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00037">cached_file.cpp:37</a></div></div>
-<div class="ttc" id="a00297_html_a2c09bbdf67cef3e4764cd4c0f2d91d6f"><div class="ttname"><a href="a00297.html#a2c09bbdf67cef3e4764cd4c0f2d91d6f">tesseract::CachedFile::eof</a></div><div class="ttdeci">bool eof()</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00142">cached_file.cpp:142</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00297_html_a871f06d637155a692276e17dced396e8"><div class="ttname"><a href="a00297.html#a871f06d637155a692276e17dced396e8">tesseract::CachedFile::Size</a></div><div class="ttdeci">long Size()</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00126">cached_file.cpp:126</a></div></div>
-<div class="ttc" id="a00297_html_a0cea9e6a8465e02a70505bb7d897c66c"><div class="ttname"><a href="a00297.html#a0cea9e6a8465e02a70505bb7d897c66c">tesseract::CachedFile::Tell</a></div><div class="ttdeci">long Tell()</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00134">cached_file.cpp:134</a></div></div>
-<div class="ttc" id="a00297_html"><div class="ttname"><a href="a00297.html">tesseract::CachedFile</a></div><div class="ttdef"><b>Definition:</b> <a href="a00972_source.html#l00033">cached_file.h:33</a></div></div>
-<div class="ttc" id="a00297_html_a259121e3d90b15a0cf8dff354e353248"><div class="ttname"><a href="a00297.html#a259121e3d90b15a0cf8dff354e353248">tesseract::CachedFile::Read</a></div><div class="ttdeci">int Read(void *read_buff, int bytes)</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00082">cached_file.cpp:82</a></div></div>
-<div class="ttc" id="a00297_html_a42435ebacaf2a3fdf4f4f4fb3b584010"><div class="ttname"><a href="a00297.html#a42435ebacaf2a3fdf4f4f4fb3b584010">tesseract::CachedFile::CachedFile</a></div><div class="ttdeci">CachedFile(string file_name)</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00027">cached_file.cpp:27</a></div></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The CharSampSet set encapsulates a set of CharSet objects typically</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// but not necessarily loaded from a file</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// It provides methods to load samples from File, Create a new file and</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Add new char samples to the set</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef CHAR_SAMP_SET_H</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define CHAR_SAMP_SET_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00968.html">char_samp.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00970.html">char_samp_enum.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00974.html">char_set.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// chunks of samp pointers to allocate</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00972.html#a7cce6aa6b8dd0efe0cef336c06b386b4">   38</a></span>&#160;<span class="preprocessor">#define SAMP_ALLOC_BLOCK 10000</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00308.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00308.html">CharSampSet</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a00308.html#a86ed83f376692acdde8eb3a80eb96d70">CharSampSet</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="a00308.html#a068ef020d9868f214c4feda160f0828d">~CharSampSet</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// return sample count</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00308.html#a462d6d9f406445d88eacf08a2564a94c">   45</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00308.html#a462d6d9f406445d88eacf08a2564a94c">SampleCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cnt_; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// returns samples buffer</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00308.html#aa63a4baf00b2ed6523ffc8c6cfc5a8ca">   47</a></span>&#160;  <a class="code" href="a00306.html">CharSamp</a> ** <a class="code" href="a00308.html#aa63a4baf00b2ed6523ffc8c6cfc5a8ca">Samples</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> samp_buff_; }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// Create a CharSampSet set object from a file</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">static</span> <a class="code" href="a00308.html">CharSampSet</a> *<a class="code" href="a00308.html#a55579e630b48a3c8258f2e2c00af1143">FromCharDumpFile</a>(<span class="keywordtype">string</span> file_name);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Enumerate the Samples in the set one-by-one calling the enumertor&#39;s</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// EnumCharSamp method for each sample</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00308.html#a5ec1cca06ffee6d552c9a622d69239ad">EnumSamples</a>(<span class="keywordtype">string</span> file_name, <a class="code" href="a00307.html">CharSampEnum</a> *enumerator);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// Create a new Char Dump file</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">static</span> FILE *<a class="code" href="a00308.html#a9f791908e4be116483130e4dcd61f784">CreateCharDumpFile</a>(<span class="keywordtype">string</span> file_name);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// Add a new sample to the set</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00308.html#ab43b1f39a5db126d4e554f43e858353d">Add</a>(<a class="code" href="a00306.html">CharSamp</a> *char_samp);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="comment">// sample count</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">int</span> cnt_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// the char samp array</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="a00306.html">CharSamp</a> **samp_buff_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Are the samples owned by the set or not.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Determines whether we should cleanup in the end</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">bool</span> own_samples_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// Cleanup</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> Cleanup();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// Load character samples from a file</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> LoadCharSamples(FILE *fp);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif  // CHAR_SAMP_SET_H</span></div>
+<div class="ttc" id="a00968_html"><div class="ttname"><a href="a00968.html">char_samp.h</a></div></div>
+<div class="ttc" id="a00308_html_a462d6d9f406445d88eacf08a2564a94c"><div class="ttname"><a href="a00308.html#a462d6d9f406445d88eacf08a2564a94c">tesseract::CharSampSet::SampleCount</a></div><div class="ttdeci">int SampleCount() const </div><div class="ttdef"><b>Definition:</b> <a href="a00972_source.html#l00045">char_samp_set.h:45</a></div></div>
+<div class="ttc" id="a00306_html"><div class="ttname"><a href="a00306.html">tesseract::CharSamp</a></div><div class="ttdef"><b>Definition:</b> <a href="a00968_source.html#l00039">char_samp.h:39</a></div></div>
+<div class="ttc" id="a00970_html"><div class="ttname"><a href="a00970.html">char_samp_enum.h</a></div></div>
+<div class="ttc" id="a00308_html_aa63a4baf00b2ed6523ffc8c6cfc5a8ca"><div class="ttname"><a href="a00308.html#aa63a4baf00b2ed6523ffc8c6cfc5a8ca">tesseract::CharSampSet::Samples</a></div><div class="ttdeci">CharSamp ** Samples() const </div><div class="ttdef"><b>Definition:</b> <a href="a00972_source.html#l00047">char_samp_set.h:47</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00308_html_a5ec1cca06ffee6d552c9a622d69239ad"><div class="ttname"><a href="a00308.html#a5ec1cca06ffee6d552c9a622d69239ad">tesseract::CharSampSet::EnumSamples</a></div><div class="ttdeci">static bool EnumSamples(string file_name, CharSampEnum *enumerator)</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00144">char_samp_set.cpp:144</a></div></div>
+<div class="ttc" id="a00308_html_a068ef020d9868f214c4feda160f0828d"><div class="ttname"><a href="a00308.html#a068ef020d9868f214c4feda160f0828d">tesseract::CharSampSet::~CharSampSet</a></div><div class="ttdeci">~CharSampSet()</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00033">char_samp_set.cpp:33</a></div></div>
+<div class="ttc" id="a00308_html_a9f791908e4be116483130e4dcd61f784"><div class="ttname"><a href="a00308.html#a9f791908e4be116483130e4dcd61f784">tesseract::CharSampSet::CreateCharDumpFile</a></div><div class="ttdeci">static FILE * CreateCharDumpFile(string file_name)</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00125">char_samp_set.cpp:125</a></div></div>
+<div class="ttc" id="a00308_html_a55579e630b48a3c8258f2e2c00af1143"><div class="ttname"><a href="a00308.html#a55579e630b48a3c8258f2e2c00af1143">tesseract::CharSampSet::FromCharDumpFile</a></div><div class="ttdeci">static CharSampSet * FromCharDumpFile(string file_name)</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00093">char_samp_set.cpp:93</a></div></div>
+<div class="ttc" id="a00308_html_a86ed83f376692acdde8eb3a80eb96d70"><div class="ttname"><a href="a00308.html#a86ed83f376692acdde8eb3a80eb96d70">tesseract::CharSampSet::CharSampSet</a></div><div class="ttdeci">CharSampSet()</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00027">char_samp_set.cpp:27</a></div></div>
+<div class="ttc" id="a00308_html_ab43b1f39a5db126d4e554f43e858353d"><div class="ttname"><a href="a00308.html#ab43b1f39a5db126d4e554f43e858353d">tesseract::CharSampSet::Add</a></div><div class="ttdeci">bool Add(CharSamp *char_samp)</div><div class="ttdef"><b>Definition:</b> <a href="a00971_source.html#l00055">char_samp_set.cpp:55</a></div></div>
+<div class="ttc" id="a00974_html"><div class="ttname"><a href="a00974.html">char_set.h</a></div></div>
+<div class="ttc" id="a00308_html"><div class="ttname"><a href="a00308.html">tesseract::CharSampSet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00972_source.html#l00040">char_samp_set.h:40</a></div></div>
+<div class="ttc" id="a00307_html"><div class="ttname"><a href="a00307.html">tesseract::CharSampEnum</a></div><div class="ttdef"><b>Definition:</b> <a href="a00970_source.html#l00030">char_samp_enum.h:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00972.html">cached_file.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:26 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00972.html">char_samp_set.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:00 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

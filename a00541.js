@@ -1,11 +1,13 @@
 var a00541 =
 [
-    [ "~ResultIterator", "a00541.html#a15c5061a86ff73f0198a102e20f0d493", null ],
-    [ "ResultIterator", "a00541.html#aa0f6c0e15c83e9ed718d80d736865c3f", null ],
-    [ "Begin", "a00541.html#a36e6fd5587628440bb19b84648645676", null ],
-    [ "GetUTF8Text", "a00541.html#a7a35dd667c73efeeaf7457df90c6199a", null ],
-    [ "IsAtBeginningOf", "a00541.html#a983b601204f2fee0428213c4fca779e1", null ],
-    [ "IsAtFinalElement", "a00541.html#a4ba47a7d01d3bc7f0fbf777605f8297d", null ],
-    [ "Next", "a00541.html#abd8987e2387f1945b53cf23f99b663e1", null ],
-    [ "ParagraphIsLtr", "a00541.html#a71525d396c6cdeea89f576adca599474", null ]
+    [ "SearchObject", "a00541.html#af3705e1c951417f2678463abf5cbe7dd", null ],
+    [ "~SearchObject", "a00541.html#aad0eff1f4e8775081e293ce022305495", null ],
+    [ "CharBox", "a00541.html#a5dab984639f6efd6fddac11f198f47dd", null ],
+    [ "CharSample", "a00541.html#a0b0c370b28194bd9f100c69b6247d43b", null ],
+    [ "NoSpaceCost", "a00541.html#a46707a2629be43da582ac20fe7a2b2ed", null ],
+    [ "NoSpaceCost", "a00541.html#a67bff0adba2ab6caedb31addc5ad856e", null ],
+    [ "RecognizeSegment", "a00541.html#a26b97832ffb768305f3529f55b1fa3bd", null ],
+    [ "SegPtCnt", "a00541.html#aeb806f349cc47c57bc0ed9dd0ff4d7be", null ],
+    [ "SpaceCost", "a00541.html#af5f84b755ef91e3d1053dd450c7d8525", null ],
+    [ "cntxt_", "a00541.html#af59efea2206aba120d36feb377fb57ae", null ]
 ];

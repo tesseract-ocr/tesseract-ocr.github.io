@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cutil/globals.h Source File</title>
+<title>Tesseract: dict/dawg_cache.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,54 +105,158 @@ $(document).ready(function(){initNavTree('a01052_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">globals.h</div>  </div>
+<div class="title">dawg_cache.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01052.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* -*-C-*-</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> ********************************************************************************</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * File:        globals.h  (Formerly globals.h)</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description:  Global Variables for Wise Owl</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:       Mark Seaman, OCR Technology</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:      Thu Dec 21 11:38:36 1989</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Modified:     Thu Jan  4 17:13:00 1990 (Mark Seaman) marks@hpgrlt</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Language:     C</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Package:      N/A</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Status:       Experimental (Do Not Distribute)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * (c) Copyright 1989, Hewlett-Packard Company.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *********************************************************************************/</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef GLOBALS_H</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define GLOBALS_H</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01039.html">const.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00889.html">unicharset.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00878.html">strngs.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a01039_html"><div class="ttname"><a href="a01039.html">const.h</a></div></div>
-<div class="ttc" id="a00878_html"><div class="ttname"><a href="a00878.html">strngs.h</a></div></div>
-<div class="ttc" id="a00889_html"><div class="ttname"><a href="a00889.html">unicharset.h</a></div></div>
+<a href="a01052.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        dawg_cache.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: A class that knows about loading and caching dawgs.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      David Eger</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Fri Jan 27 12:08:00 PST 2012</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2012, Google Inc.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01053.html">dawg_cache.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01051.html">dawg.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00845.html">object_cache.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00859.html">strngs.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00862.html">tessdatamanager.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00349.html">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00349.html">DawgLoader</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00349.html#a593f60d2a31555c1d744608ae640bb03">   30</a></span>&#160;  <a class="code" href="a00349.html#a593f60d2a31555c1d744608ae640bb03">DawgLoader</a>(<span class="keyword">const</span> <a class="code" href="a00561.html">STRING</a> &amp;<a class="code" href="a01268.html#a5f5eb917f55d9d6ccaa95131ae5d171c">lang</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;             <span class="keyword">const</span> <span class="keywordtype">char</span> *data_file_name,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;             <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899">TessdataType</a> tessdata_dawg_type,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;             <span class="keywordtype">int</span> dawg_debug_level)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      : <a class="code" href="a00349.html#adf032ee75b64291977e54e0aa9a0e207">lang_</a>(lang),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="a00349.html#a1a7f75a48a4cf837a79f6f003e43b973">data_file_name_</a>(data_file_name),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="a00349.html#a30df24a0c9027faf87d44fca4efc580e">tessdata_dawg_type_</a>(tessdata_dawg_type),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="a00349.html#abf2c9a98cba7a471c20f6d31e0c962e9">dawg_debug_level_</a>(dawg_debug_level) {}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="a00346.html">Dawg</a> *<a class="code" href="a00349.html#ab9d5a2706698c85c54efae6a450b837a">Load</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00349.html#adf032ee75b64291977e54e0aa9a0e207">   41</a></span>&#160;  <a class="code" href="a00561.html">STRING</a> <a class="code" href="a00349.html#adf032ee75b64291977e54e0aa9a0e207">lang_</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00349.html#a1a7f75a48a4cf837a79f6f003e43b973">   42</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a00349.html#a1a7f75a48a4cf837a79f6f003e43b973">data_file_name_</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00349.html#a30df24a0c9027faf87d44fca4efc580e">   43</a></span>&#160;  <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899">TessdataType</a> <a class="code" href="a00349.html#a30df24a0c9027faf87d44fca4efc580e">tessdata_dawg_type_</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00349.html#abf2c9a98cba7a471c20f6d31e0c962e9">   44</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00349.html#abf2c9a98cba7a471c20f6d31e0c962e9">dawg_debug_level_</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00348.html#affeb7f29f3662300e89a034f41ca0af2">   47</a></span>&#160;<a class="code" href="a00346.html">Dawg</a> *<a class="code" href="a00348.html#affeb7f29f3662300e89a034f41ca0af2">DawgCache::GetSquishedDawg</a>(</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00561.html">STRING</a> &amp;<a class="code" href="a01268.html#a5f5eb917f55d9d6ccaa95131ae5d171c">lang</a>,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *data_file_name,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899">TessdataType</a> tessdata_dawg_type,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> debug_level) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a00561.html">STRING</a> data_id = data_file_name;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  data_id += kTessdataFileSuffixes[tessdata_dawg_type];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="a00349.html">DawgLoader</a> loader(lang, data_file_name, tessdata_dawg_type, debug_level);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> dawgs_.Get(data_id, <a class="code" href="a00860.html#a1ebd80dfc10384ff767bff212e509783">NewTessCallback</a>(&amp;loader, &amp;<a class="code" href="a00349.html#ab9d5a2706698c85c54efae6a450b837a">DawgLoader::Load</a>));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a00349.html#ab9d5a2706698c85c54efae6a450b837a">   58</a></span>&#160;<a class="code" href="a00346.html">Dawg</a> *<a class="code" href="a00349.html#ab9d5a2706698c85c54efae6a450b837a">DawgLoader::Load</a>() {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="a00606.html">TessdataManager</a> data_loader;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (!data_loader.<a class="code" href="a00606.html#a00b72ae89511f2439887c4a48727ad75">Init</a>(<a class="code" href="a00349.html#a1a7f75a48a4cf837a79f6f003e43b973">data_file_name_</a>, <a class="code" href="a00349.html#abf2c9a98cba7a471c20f6d31e0c962e9">dawg_debug_level_</a>)) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">if</span> (!data_loader.<a class="code" href="a00606.html#a303e0f9733b2a55796b0178ba184f6b2">SeekToStart</a>(<a class="code" href="a00349.html#a30df24a0c9027faf87d44fca4efc580e">tessdata_dawg_type_</a>)) <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  FILE *fp = data_loader.<a class="code" href="a00606.html#ad5be8f7fcf884390b22f02788330d82f">GetDataFilePtr</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="a01267.html#a07c41f251f1782c60df4e626c35d2151">DawgType</a> dawg_type;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bc">PermuterType</a> perm_type;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">switch</span> (<a class="code" href="a00349.html#a30df24a0c9027faf87d44fca4efc580e">tessdata_dawg_type_</a>) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899a041eff587bbc58c4c93e76facd593b56">TESSDATA_PUNC_DAWG</a>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      dawg_type = <a class="code" href="a01267.html#a07c41f251f1782c60df4e626c35d2151aa8e8b65bf32d2884c0bab5fb8223c6eb">DAWG_TYPE_PUNCTUATION</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      perm_type = <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaa416e1922ec40e584a929afc70a90fe6">PUNC_PERM</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899af89fe7138ea14ba1a31e8ddf53f2089f">TESSDATA_SYSTEM_DAWG</a>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      dawg_type = <a class="code" href="a01267.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">DAWG_TYPE_WORD</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      perm_type = <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899a7bad9e33542e38f498f9c6672626ee04">TESSDATA_NUMBER_DAWG</a>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      dawg_type = <a class="code" href="a01267.html#a07c41f251f1782c60df4e626c35d2151a16f2414a05db0ec4b7e1b266052a966f">DAWG_TYPE_NUMBER</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      perm_type = <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca809574e2067a5304fbd2279d869e9b24">NUMBER_PERM</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899aa59c96914537bb9958be8fb3a96b2a85">TESSDATA_BIGRAM_DAWG</a>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      dawg_type = <a class="code" href="a01267.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">DAWG_TYPE_WORD</a>;  <span class="comment">// doesn&#39;t actually matter</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      perm_type = <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaea73d015098d9432d1be3c569db95bb5">COMPOUND_PERM</a>;   <span class="comment">// doesn&#39;t actually matter</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899a0f153618328153c350638138d2807d97">TESSDATA_UNAMBIG_DAWG</a>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      dawg_type = <a class="code" href="a01267.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">DAWG_TYPE_WORD</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      perm_type = <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a5f278974ef80900b460194614d4f1899a041f1b2804fb7a000090908c979739ff">TESSDATA_FREQ_DAWG</a>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      dawg_type = <a class="code" href="a01267.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">DAWG_TYPE_WORD</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      perm_type = <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca4fd9d3b025ecc5ea8f2248fea29543e4">FREQ_DAWG_PERM</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      data_loader.<a class="code" href="a00606.html#a0ae65528c20fa00ca26c1899f9edd30b">End</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="a00558.html">SquishedDawg</a> *retval =</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keyword">new</span> <a class="code" href="a00558.html">SquishedDawg</a>(fp, dawg_type, <a class="code" href="a00349.html#adf032ee75b64291977e54e0aa9a0e207">lang_</a>, perm_type, <a class="code" href="a00349.html#abf2c9a98cba7a471c20f6d31e0c962e9">dawg_debug_level_</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  data_loader.<a class="code" href="a00606.html#a0ae65528c20fa00ca26c1899f9edd30b">End</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
+<div class="ttc" id="a01051_html"><div class="ttname"><a href="a01051.html">dawg.h</a></div></div>
+<div class="ttc" id="a00606_html_a00b72ae89511f2439887c4a48727ad75"><div class="ttname"><a href="a00606.html#a00b72ae89511f2439887c4a48727ad75">tesseract::TessdataManager::Init</a></div><div class="ttdeci">bool Init(const char *data_file_name, int debug_level)</div><div class="ttdef"><b>Definition:</b> <a href="a00861_source.html#l00036">tessdatamanager.cpp:36</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bcaea73d015098d9432d1be3c569db95bb5"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaea73d015098d9432d1be3c569db95bb5">COMPOUND_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00238">ratngs.h:238</a></div></div>
+<div class="ttc" id="a01267_html_a5f278974ef80900b460194614d4f1899"><div class="ttname"><a href="a01267.html#a5f278974ef80900b460194614d4f1899">tesseract::TessdataType</a></div><div class="ttdeci">TessdataType</div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00053">tessdatamanager.h:53</a></div></div>
+<div class="ttc" id="a01267_html_a5f278974ef80900b460194614d4f1899aa59c96914537bb9958be8fb3a96b2a85"><div class="ttname"><a href="a01267.html#a5f278974ef80900b460194614d4f1899aa59c96914537bb9958be8fb3a96b2a85">tesseract::TESSDATA_BIGRAM_DAWG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00068">tessdatamanager.h:68</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca809574e2067a5304fbd2279d869e9b24"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca809574e2067a5304fbd2279d869e9b24">NUMBER_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00232">ratngs.h:232</a></div></div>
+<div class="ttc" id="a00859_html"><div class="ttname"><a href="a00859.html">strngs.h</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bcaa416e1922ec40e584a929afc70a90fe6"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaa416e1922ec40e584a929afc70a90fe6">PUNC_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00227">ratngs.h:227</a></div></div>
+<div class="ttc" id="a00862_html"><div class="ttname"><a href="a00862.html">tessdatamanager.h</a></div></div>
+<div class="ttc" id="a01268_html_a5f5eb917f55d9d6ccaa95131ae5d171c"><div class="ttname"><a href="a01268.html#a5f5eb917f55d9d6ccaa95131ae5d171c">tesseract-c_api-demo.lang</a></div><div class="ttdeci">string lang</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00028">tesseract-c_api-demo.py:28</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bc"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bc">PermuterType</a></div><div class="ttdeci">PermuterType</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00225">ratngs.h:225</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca4fd9d3b025ecc5ea8f2248fea29543e4"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca4fd9d3b025ecc5ea8f2248fea29543e4">FREQ_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00237">ratngs.h:237</a></div></div>
+<div class="ttc" id="a00349_html_adf032ee75b64291977e54e0aa9a0e207"><div class="ttname"><a href="a00349.html#adf032ee75b64291977e54e0aa9a0e207">tesseract::DawgLoader::lang_</a></div><div class="ttdeci">STRING lang_</div><div class="ttdef"><b>Definition:</b> <a href="a01052_source.html#l00041">dawg_cache.cpp:41</a></div></div>
+<div class="ttc" id="a01267_html_a07c41f251f1782c60df4e626c35d2151a16f2414a05db0ec4b7e1b266052a966f"><div class="ttname"><a href="a01267.html#a07c41f251f1782c60df4e626c35d2151a16f2414a05db0ec4b7e1b266052a966f">tesseract::DAWG_TYPE_NUMBER</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00074">dawg.h:74</a></div></div>
+<div class="ttc" id="a00606_html"><div class="ttname"><a href="a00606.html">tesseract::TessdataManager</a></div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00133">tessdatamanager.h:133</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a00558_html"><div class="ttname"><a href="a00558.html">tesseract::SquishedDawg</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00409">dawg.h:409</a></div></div>
+<div class="ttc" id="a00348_html_affeb7f29f3662300e89a034f41ca0af2"><div class="ttname"><a href="a00348.html#affeb7f29f3662300e89a034f41ca0af2">tesseract::DawgCache::GetSquishedDawg</a></div><div class="ttdeci">Dawg * GetSquishedDawg(const STRING &amp;lang, const char *data_file_name, TessdataType tessdata_dawg_type, int debug_level)</div><div class="ttdef"><b>Definition:</b> <a href="a01052_source.html#l00047">dawg_cache.cpp:47</a></div></div>
+<div class="ttc" id="a00346_html"><div class="ttname"><a href="a00346.html">tesseract::Dawg</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00118">dawg.h:118</a></div></div>
+<div class="ttc" id="a00349_html_a1a7f75a48a4cf837a79f6f003e43b973"><div class="ttname"><a href="a00349.html#a1a7f75a48a4cf837a79f6f003e43b973">tesseract::DawgLoader::data_file_name_</a></div><div class="ttdeci">const char * data_file_name_</div><div class="ttdef"><b>Definition:</b> <a href="a01052_source.html#l00042">dawg_cache.cpp:42</a></div></div>
+<div class="ttc" id="a01267_html_a5f278974ef80900b460194614d4f1899a7bad9e33542e38f498f9c6672626ee04"><div class="ttname"><a href="a01267.html#a5f278974ef80900b460194614d4f1899a7bad9e33542e38f498f9c6672626ee04">tesseract::TESSDATA_NUMBER_DAWG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00062">tessdatamanager.h:62</a></div></div>
+<div class="ttc" id="a01267_html_a5f278974ef80900b460194614d4f1899a041eff587bbc58c4c93e76facd593b56"><div class="ttname"><a href="a01267.html#a5f278974ef80900b460194614d4f1899a041eff587bbc58c4c93e76facd593b56">tesseract::TESSDATA_PUNC_DAWG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00060">tessdatamanager.h:60</a></div></div>
+<div class="ttc" id="a00349_html"><div class="ttname"><a href="a00349.html">tesseract::DawgLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="a01052_source.html#l00029">dawg_cache.cpp:29</a></div></div>
+<div class="ttc" id="a00606_html_a0ae65528c20fa00ca26c1899f9edd30b"><div class="ttname"><a href="a00606.html#a0ae65528c20fa00ca26c1899f9edd30b">tesseract::TessdataManager::End</a></div><div class="ttdeci">void End()</div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00192">tessdatamanager.h:192</a></div></div>
+<div class="ttc" id="a01267_html_a07c41f251f1782c60df4e626c35d2151"><div class="ttname"><a href="a01267.html#a07c41f251f1782c60df4e626c35d2151">tesseract::DawgType</a></div><div class="ttdeci">DawgType</div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00071">dawg.h:71</a></div></div>
+<div class="ttc" id="a00860_html_a1ebd80dfc10384ff767bff212e509783"><div class="ttname"><a href="a00860.html#a1ebd80dfc10384ff767bff212e509783">NewTessCallback</a></div><div class="ttdeci">_ConstTessMemberResultCallback_0_0&lt; true, R, T1 &gt;::base * NewTessCallback(const T1 *obj, R(T2::*member)() const)</div><div class="ttdef"><b>Definition:</b> <a href="a00860_source.html#l00106">tesscallback.h:106</a></div></div>
+<div class="ttc" id="a01267_html_a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34"><div class="ttname"><a href="a01267.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">tesseract::DAWG_TYPE_WORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00073">dawg.h:73</a></div></div>
+<div class="ttc" id="a00845_html"><div class="ttname"><a href="a00845.html">object_cache.h</a></div></div>
+<div class="ttc" id="a00349_html_ab9d5a2706698c85c54efae6a450b837a"><div class="ttname"><a href="a00349.html#ab9d5a2706698c85c54efae6a450b837a">tesseract::DawgLoader::Load</a></div><div class="ttdeci">Dawg * Load()</div><div class="ttdef"><b>Definition:</b> <a href="a01052_source.html#l00058">dawg_cache.cpp:58</a></div></div>
+<div class="ttc" id="a01267_html_a5f278974ef80900b460194614d4f1899a0f153618328153c350638138d2807d97"><div class="ttname"><a href="a01267.html#a5f278974ef80900b460194614d4f1899a0f153618328153c350638138d2807d97">tesseract::TESSDATA_UNAMBIG_DAWG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00069">tessdatamanager.h:69</a></div></div>
+<div class="ttc" id="a00349_html_abf2c9a98cba7a471c20f6d31e0c962e9"><div class="ttname"><a href="a00349.html#abf2c9a98cba7a471c20f6d31e0c962e9">tesseract::DawgLoader::dawg_debug_level_</a></div><div class="ttdeci">int dawg_debug_level_</div><div class="ttdef"><b>Definition:</b> <a href="a01052_source.html#l00044">dawg_cache.cpp:44</a></div></div>
+<div class="ttc" id="a00606_html_a303e0f9733b2a55796b0178ba184f6b2"><div class="ttname"><a href="a00606.html#a303e0f9733b2a55796b0178ba184f6b2">tesseract::TessdataManager::SeekToStart</a></div><div class="ttdeci">bool SeekToStart(TessdataType tessdata_type)</div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00162">tessdatamanager.h:162</a></div></div>
+<div class="ttc" id="a01267_html_a07c41f251f1782c60df4e626c35d2151aa8e8b65bf32d2884c0bab5fb8223c6eb"><div class="ttname"><a href="a01267.html#a07c41f251f1782c60df4e626c35d2151aa8e8b65bf32d2884c0bab5fb8223c6eb">tesseract::DAWG_TYPE_PUNCTUATION</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00072">dawg.h:72</a></div></div>
+<div class="ttc" id="a00349_html_a30df24a0c9027faf87d44fca4efc580e"><div class="ttname"><a href="a00349.html#a30df24a0c9027faf87d44fca4efc580e">tesseract::DawgLoader::tessdata_dawg_type_</a></div><div class="ttdeci">TessdataType tessdata_dawg_type_</div><div class="ttdef"><b>Definition:</b> <a href="a01052_source.html#l00043">dawg_cache.cpp:43</a></div></div>
+<div class="ttc" id="a00606_html_ad5be8f7fcf884390b22f02788330d82f"><div class="ttname"><a href="a00606.html#ad5be8f7fcf884390b22f02788330d82f">tesseract::TessdataManager::GetDataFilePtr</a></div><div class="ttdeci">FILE * GetDataFilePtr() const </div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00155">tessdatamanager.h:155</a></div></div>
+<div class="ttc" id="a01267_html_a5f278974ef80900b460194614d4f1899a041f1b2804fb7a000090908c979739ff"><div class="ttname"><a href="a01267.html#a5f278974ef80900b460194614d4f1899a041f1b2804fb7a000090908c979739ff">tesseract::TESSDATA_FREQ_DAWG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00063">tessdatamanager.h:63</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00234">ratngs.h:234</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a01267_html_a5f278974ef80900b460194614d4f1899af89fe7138ea14ba1a31e8ddf53f2089f"><div class="ttname"><a href="a01267.html#a5f278974ef80900b460194614d4f1899af89fe7138ea14ba1a31e8ddf53f2089f">tesseract::TESSDATA_SYSTEM_DAWG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00061">tessdatamanager.h:61</a></div></div>
+<div class="ttc" id="a00349_html_a593f60d2a31555c1d744608ae640bb03"><div class="ttname"><a href="a00349.html#a593f60d2a31555c1d744608ae640bb03">tesseract::DawgLoader::DawgLoader</a></div><div class="ttdeci">DawgLoader(const STRING &amp;lang, const char *data_file_name, TessdataType tessdata_dawg_type, int dawg_debug_level)</div><div class="ttdef"><b>Definition:</b> <a href="a01052_source.html#l00030">dawg_cache.cpp:30</a></div></div>
+<div class="ttc" id="a01053_html"><div class="ttname"><a href="a01053.html">dawg_cache.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01052.html">globals.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_7da809630a0bf7f0b43a9c245bff7d16.html">dict</a></li><li class="navelem"><a class="el" href="a01052.html">dawg_cache.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:01 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: training/degradeimage.h Source File</title>
+<title>Tesseract: training/normstrngs.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,15 +105,15 @@ $(document).ready(function(){initNavTree('a01190_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">degradeimage.h</div>  </div>
+<div class="title">normstrngs.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01190.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        degradeimage.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Function to degrade an image (usually of text) as if it</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *              has been printed and then scanned.</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Authors:     Ray Smith</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Created:     Tue Nov 19 2013</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        normstrngs.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Utilities to normalize and manipulate UTF-32 and</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *              UTF-8 strings.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Author:      Ranjith Unnikrishnan</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Created:     Thu July 4 2013</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * (C) Copyright 2013, Google Inc.</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -127,35 +127,96 @@ $(document).ready(function(){initNavTree('a01190_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * limitations under the License.</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TESSERACT_TRAINING_DEGRADEIMAGE_H_</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TESSERACT_TRAINING_DEGRADEIMAGE_H_</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">struct </span>Pix;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef TESSERACT_CCUTIL_NORMSTRNGS_H_</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define TESSERACT_CCUTIL_NORMSTRNGS_H_</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00830.html">genericvector.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00859.html">strngs.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span>TRand;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">   27</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">signed</span> <span class="keywordtype">int</span> <a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Degrade the pix as if by a print/copy/scan cycle with exposure &gt; 0</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// corresponding to darkening on the copier and &lt;0 lighter and 0 not copied.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// If rotation is not NULL, the clockwise rotation in radians is saved there.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// The input pix must be 8 bit grey. (Binary with values 0 and 255 is OK.)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// The input image is destroyed and a different image returned.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">struct </span>Pix* <a class="code" href="a01279.html#a5ec70b0b405809ad2ae1c11779b92b0c">DegradeImage</a>(<span class="keyword">struct</span> Pix* input, <span class="keywordtype">int</span> exposure, TRand* randomizer,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                         <span class="keywordtype">float</span>* rotation);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// UTF-8 to UTF-32 conversion function.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01267.html#a903ffe993b52191b0b18a019dd790276">UTF8ToUTF32</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* utf8_str, <a class="code" href="a00406.html">GenericVector&lt;char32&gt;</a>* str32);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// UTF-32 to UTF-8 convesion function.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01267.html#a34f64417c417283fbb3cbdd220e77ae2">UTF32ToUTF8</a>(<span class="keyword">const</span> <a class="code" href="a00406.html">GenericVector&lt;char32&gt;</a>&amp; str32, <a class="code" href="a00561.html">STRING</a>* utf8_str);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif  // TESSERACT_TRAINING_DEGRADEIMAGE_H_</span></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a01279_html_a5ec70b0b405809ad2ae1c11779b92b0c"><div class="ttname"><a href="a01279.html#a5ec70b0b405809ad2ae1c11779b92b0c">tesseract::DegradeImage</a></div><div class="ttdeci">Pix * DegradeImage(Pix *input, int exposure, TRand *randomizer, float *rotation)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00065">degradeimage.cpp:65</a></div></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// Normalize a single char32 using NFKC + OCR-specific transformations.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// NOTE that proper NFKC may require multiple characters as input. The</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// assumption of this function is that the input is already as fully composed</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// as it can be, but may require some compatibility normalizations or just</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// OCR evaluation related normalizations.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01267.html#ae799e8b7a0d86f3861d39bad9371c127">NormalizeChar32</a>(<a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch, <a class="code" href="a00406.html">GenericVector&lt;char32&gt;</a>* str);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// Normalize a UTF8 string. Same as above, but for UTF8-encoded strings, that</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// can contain multiple UTF32 code points.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<a class="code" href="a00561.html">STRING</a> <a class="code" href="a01267.html#ae901b2654181446e15ea5aca487e89f0">NormalizeUTF8String</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* str8);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// Apply just the OCR-specific normalizations and return the normalized char.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> <a class="code" href="a01267.html#a2c6f394d8641a1004a65f277e3da841e">OCRNormalize</a>(<a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// Returns true if the OCRNormalized ch1 and ch2 are the same.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a01267.html#a0beebc0e894a446f5c06d1cc0c6ba76a">IsOCREquivalent</a>(<a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch1, <a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch2);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// Returns true if the value lies in the range of valid unicodes.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a01267.html#af3a6623b10b354715444d7fd89bace38">IsValidCodepoint</a>(<span class="keyword">const</span> <a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// Returns true a code point has the White_Space Unicode property.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a01267.html#adb8dccc5b88073c6c43003c1115e5cf5">IsWhitespace</a>(<span class="keyword">const</span> <a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// Returns true if every char in the given (null-terminated) string has the</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// White_Space Unicode property.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a01267.html#a15a043d54c5b87e6e027c02cf9043790">IsUTF8Whitespace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* text);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// Returns the length of bytes of the prefix of &#39;text&#39; that have the White_Space</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// unicode property.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">int</span> <a class="code" href="a01267.html#a3f73126324c8b86c9570de3131224601">SpanUTF8Whitespace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* text);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// Returns the length of bytes of the prefix of &#39;text&#39; that DO NOT have the</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// White_Space unicode property.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">int</span> <a class="code" href="a01267.html#ae6a88d248fdf7e060f84949432676030">SpanUTF8NotWhitespace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* text);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// Returns true if the char is interchange valid i.e. no C0 or C1 control codes</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// (other than CR LF HT FF) and no non-characters.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a01267.html#aa484d8f4911001a1ee4e7e1d80538134">IsInterchangeValid</a>(<span class="keyword">const</span> <a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// Same as above but restricted to 7-bit ASCII.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a01267.html#adbfb3af5ba264b52863c017abef65c24">IsInterchangeValid7BitAscii</a>(<span class="keyword">const</span> <a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// Convert a full-width UTF-8 string to half-width.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> <a class="code" href="a01267.html#aca6a2632b0f687483f5bd456b4d9519e">FullwidthToHalfwidth</a>(<span class="keyword">const</span> <a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif  // TESSERACT_CCUTIL_NORMSTRNGS_H_</span></div>
+<div class="ttc" id="a01267_html_af3a6623b10b354715444d7fd89bace38"><div class="ttname"><a href="a01267.html#af3a6623b10b354715444d7fd89bace38">tesseract::IsValidCodepoint</a></div><div class="ttdeci">bool IsValidCodepoint(const char32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00170">normstrngs.cpp:170</a></div></div>
+<div class="ttc" id="a01267_html_ae799e8b7a0d86f3861d39bad9371c127"><div class="ttname"><a href="a01267.html#ae799e8b7a0d86f3861d39bad9371c127">tesseract::NormalizeChar32</a></div><div class="ttdeci">void NormalizeChar32(char32 ch, GenericVector&lt; char32 &gt; *str)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00131">normstrngs.cpp:131</a></div></div>
+<div class="ttc" id="a01267_html_a2c6f394d8641a1004a65f277e3da841e"><div class="ttname"><a href="a01267.html#a2c6f394d8641a1004a65f277e3da841e">tesseract::OCRNormalize</a></div><div class="ttdeci">char32 OCRNormalize(char32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00156">normstrngs.cpp:156</a></div></div>
+<div class="ttc" id="a01267_html_adbfb3af5ba264b52863c017abef65c24"><div class="ttname"><a href="a01267.html#adbfb3af5ba264b52863c017abef65c24">tesseract::IsInterchangeValid7BitAscii</a></div><div class="ttdeci">bool IsInterchangeValid7BitAscii(const char32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00232">normstrngs.cpp:232</a></div></div>
+<div class="ttc" id="a00830_html"><div class="ttname"><a href="a00830.html">genericvector.h</a></div></div>
+<div class="ttc" id="a00859_html"><div class="ttname"><a href="a00859.html">strngs.h</a></div></div>
+<div class="ttc" id="a01267_html_a15a043d54c5b87e6e027c02cf9043790"><div class="ttname"><a href="a01267.html#a15a043d54c5b87e6e027c02cf9043790">tesseract::IsUTF8Whitespace</a></div><div class="ttdeci">bool IsUTF8Whitespace(const char *text)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00182">normstrngs.cpp:182</a></div></div>
+<div class="ttc" id="a01267_html_aa484d8f4911001a1ee4e7e1d80538134"><div class="ttname"><a href="a01267.html#aa484d8f4911001a1ee4e7e1d80538134">tesseract::IsInterchangeValid</a></div><div class="ttdeci">bool IsInterchangeValid(const char32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00208">normstrngs.cpp:208</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector</a></div><div class="ttdef"><b>Definition:</b> <a href="a00663_source.html#l00041">baseapi.h:41</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a01267_html_ae901b2654181446e15ea5aca487e89f0"><div class="ttname"><a href="a01267.html#ae901b2654181446e15ea5aca487e89f0">tesseract::NormalizeUTF8String</a></div><div class="ttdeci">STRING NormalizeUTF8String(const char *str8)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00116">normstrngs.cpp:116</a></div></div>
+<div class="ttc" id="a01267_html_adb8dccc5b88073c6c43003c1115e5cf5"><div class="ttname"><a href="a01267.html#adb8dccc5b88073c6c43003c1115e5cf5">tesseract::IsWhitespace</a></div><div class="ttdeci">bool IsWhitespace(const char32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00176">normstrngs.cpp:176</a></div></div>
+<div class="ttc" id="a01267_html_ae6a88d248fdf7e060f84949432676030"><div class="ttname"><a href="a01267.html#ae6a88d248fdf7e060f84949432676030">tesseract::SpanUTF8NotWhitespace</a></div><div class="ttdeci">int SpanUTF8NotWhitespace(const char *text)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00197">normstrngs.cpp:197</a></div></div>
+<div class="ttc" id="a01190_html_a328af63b24a185a6916faebb5b85aa84"><div class="ttname"><a href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a></div><div class="ttdeci">signed int char32</div><div class="ttdef"><b>Definition:</b> <a href="a01190_source.html#l00027">normstrngs.h:27</a></div></div>
+<div class="ttc" id="a01267_html_aca6a2632b0f687483f5bd456b4d9519e"><div class="ttname"><a href="a01267.html#aca6a2632b0f687483f5bd456b4d9519e">tesseract::FullwidthToHalfwidth</a></div><div class="ttdeci">char32 FullwidthToHalfwidth(const char32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00239">normstrngs.cpp:239</a></div></div>
+<div class="ttc" id="a01267_html_a903ffe993b52191b0b18a019dd790276"><div class="ttname"><a href="a01267.html#a903ffe993b52191b0b18a019dd790276">tesseract::UTF8ToUTF32</a></div><div class="ttdeci">void UTF8ToUTF32(const char *utf8_str, GenericVector&lt; char32 &gt; *str32)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00031">normstrngs.cpp:31</a></div></div>
+<div class="ttc" id="a01267_html_a0beebc0e894a446f5c06d1cc0c6ba76a"><div class="ttname"><a href="a01267.html#a0beebc0e894a446f5c06d1cc0c6ba76a">tesseract::IsOCREquivalent</a></div><div class="ttdeci">bool IsOCREquivalent(char32 ch1, char32 ch2)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00166">normstrngs.cpp:166</a></div></div>
+<div class="ttc" id="a01267_html_a3f73126324c8b86c9570de3131224601"><div class="ttname"><a href="a01267.html#a3f73126324c8b86c9570de3131224601">tesseract::SpanUTF8Whitespace</a></div><div class="ttdeci">int SpanUTF8Whitespace(const char *text)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00186">normstrngs.cpp:186</a></div></div>
+<div class="ttc" id="a01267_html_a34f64417c417283fbb3cbdd220e77ae2"><div class="ttname"><a href="a01267.html#a34f64417c417283fbb3cbdd220e77ae2">tesseract::UTF32ToUTF8</a></div><div class="ttdeci">void UTF32ToUTF8(const GenericVector&lt; char32 &gt; &amp;str32, STRING *utf8_str)</div><div class="ttdef"><b>Definition:</b> <a href="a01189_source.html#l00045">normstrngs.cpp:45</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01190.html">degradeimage.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:31 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01190.html">normstrngs.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:06 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

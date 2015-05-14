@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: textord/textord.cpp Source File</title>
+<title>Tesseract: textord/underlin.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,470 +105,85 @@ $(document).ready(function(){initNavTree('a01163_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">textord.cpp</div>  </div>
+<div class="title">underlin.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01163.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        textord.cpp</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: The top-level text line and word finding functionality.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      Ray Smith</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Fri Mar 13 14:43:01 PDT 2009</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2009, Google Inc.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Include automatically generated configuration file if running autoconf.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifdef HAVE_CONFIG_H</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;config_auto.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="a01163.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        underlin.h  (Formerly undrline.h)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Code to chop blobs apart from underlines.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:              Ray Smith</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:             Mon Aug  8 11:14:00 BST 1994</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1994, Hewlett-Packard Ltd.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           UNDERLIN_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           UNDERLIN_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a01122.html">fpchop.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01100.html">baselinedetect.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01124.html">drawtord.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01164.html">textord.h</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01140.html">makerow.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00792.html">pageres.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01168.html">tordmain.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01175.html">wordseg.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00643.html#aefff593dc9593239325054507c5cfaa8">   35</a></span>&#160;<a class="code" href="a00643.html#aefff593dc9593239325054507c5cfaa8">Textord::Textord</a>(<a class="code" href="a00299.html">CCStruct</a>* ccstruct)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    : ccstruct_(ccstruct), use_cjk_fp_model_(false),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="comment">// makerow.cpp ///////////////////////////////////////////</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(textord_single_height_mode, false,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                  <span class="stringliteral">&quot;Script has no xheight, so use a single mode&quot;</span>,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="comment">// tospace.cpp ///////////////////////////////////////////</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_old_to_method, false, <span class="stringliteral">&quot;Space stats use prechopping?&quot;</span>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_old_to_constrain_sp_kn, false,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                  <span class="stringliteral">&quot;Constrain relative values of inter and intra-word gaps for &quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                  <span class="stringliteral">&quot;old_to_method.&quot;</span>,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_only_use_prop_rows, true,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                  <span class="stringliteral">&quot;Block stats to use fixed pitch rows?&quot;</span>,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_force_wordbreak_on_punct, false,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                  <span class="stringliteral">&quot;Force word breaks on punct to break long lines in non-space &quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                  <span class="stringliteral">&quot;delimited langs&quot;</span>,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_use_pre_chopping, false,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                  <span class="stringliteral">&quot;Space stats use prechopping?&quot;</span>,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_old_to_bug_fix, false, <span class="stringliteral">&quot;Fix suspected bug in old code&quot;</span>,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_block_use_cert_spaces, true,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                  <span class="stringliteral">&quot;Only stat OBVIOUS spaces&quot;</span>,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_row_use_cert_spaces, true, <span class="stringliteral">&quot;Only stat OBVIOUS spaces&quot;</span>,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_narrow_blobs_not_cert, true,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="stringliteral">&quot;Only stat OBVIOUS spaces&quot;</span>,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_row_use_cert_spaces1, true, <span class="stringliteral">&quot;Only stat OBVIOUS spaces&quot;</span>,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_recovery_isolated_row_stats, true,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                  <span class="stringliteral">&quot;Use row alone when inadequate cert spaces&quot;</span>,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_only_small_gaps_for_kern, false, <span class="stringliteral">&quot;Better guess&quot;</span>,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_all_flips_fuzzy, false, <span class="stringliteral">&quot;Pass ANY flip to context?&quot;</span>,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_fuzzy_limit_all, true,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                  <span class="stringliteral">&quot;Dont restrict kn-&gt;sp fuzzy limit to tables&quot;</span>,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_stats_use_xht_gaps, true,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                  <span class="stringliteral">&quot;Use within xht gap for wd breaks&quot;</span>,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_use_xht_gaps, true, <span class="stringliteral">&quot;Use within xht gap for wd breaks&quot;</span>,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_only_use_xht_gaps, false,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                  <span class="stringliteral">&quot;Only use within xht gap for wd breaks&quot;</span>,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_rule_9_test_punct, false,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                  <span class="stringliteral">&quot;Dont chng kn to space next to punct&quot;</span>,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_flip_fuzz_kn_to_sp, true, <span class="stringliteral">&quot;Default flip&quot;</span>,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_flip_fuzz_sp_to_kn, true, <span class="stringliteral">&quot;Default flip&quot;</span>,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(tosp_improve_thresh, false, <span class="stringliteral">&quot;Enable improvement heuristic&quot;</span>,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(tosp_debug_level, 0, <span class="stringliteral">&quot;Debug data&quot;</span>,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(tosp_enough_space_samples_for_median, 3,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;           <span class="stringliteral">&quot;or should we use mean&quot;</span>,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(tosp_redo_kern_limit, 10,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                 <span class="stringliteral">&quot;No.samples reqd to reestimate for row&quot;</span>,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(tosp_few_samples, 40,</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                 <span class="stringliteral">&quot;No.gaps reqd with 1 large gap to treat as a table&quot;</span>,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(tosp_short_row, 20,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                 <span class="stringliteral">&quot;No.gaps reqd with few cert spaces to use certs&quot;</span>,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(tosp_sanity_method, 1, <span class="stringliteral">&quot;How to avoid being silly&quot;</span>,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_old_sp_kn_th_factor, 2.0,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="stringliteral">&quot;Factor for defining space threshold in terms of space and &quot;</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    <span class="stringliteral">&quot;kern sizes&quot;</span>,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_threshold_bias1, 0,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    <span class="stringliteral">&quot;how far between kern and space?&quot;</span>,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_threshold_bias2, 0,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="stringliteral">&quot;how far between kern and space?&quot;</span>,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_narrow_fraction, 0.3, <span class="stringliteral">&quot;Fract of xheight for narrow&quot;</span>,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_narrow_aspect_ratio, 0.48,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    <span class="stringliteral">&quot;narrow if w/h less than this&quot;</span>,</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_wide_fraction, 0.52, <span class="stringliteral">&quot;Fract of xheight for wide&quot;</span>,</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_wide_aspect_ratio, 0.0, <span class="stringliteral">&quot;wide if w/h less than this&quot;</span>,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_fuzzy_space_factor, 0.6,</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    <span class="stringliteral">&quot;Fract of xheight for fuzz sp&quot;</span>,</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_fuzzy_space_factor1, 0.5,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    <span class="stringliteral">&quot;Fract of xheight for fuzz sp&quot;</span>,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_fuzzy_space_factor2, 0.72,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    <span class="stringliteral">&quot;Fract of xheight for fuzz sp&quot;</span>,</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_gap_factor, 0.83, <span class="stringliteral">&quot;gap ratio to flip sp-&gt;kern&quot;</span>,</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_kern_gap_factor1, 2.0, <span class="stringliteral">&quot;gap ratio to flip kern-&gt;sp&quot;</span>,</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_kern_gap_factor2, 1.3, <span class="stringliteral">&quot;gap ratio to flip kern-&gt;sp&quot;</span>,</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_kern_gap_factor3, 2.5, <span class="stringliteral">&quot;gap ratio to flip kern-&gt;sp&quot;</span>,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_ignore_big_gaps, -1, <span class="stringliteral">&quot;xht multiplier&quot;</span>,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_ignore_very_big_gaps, 3.5, <span class="stringliteral">&quot;xht multiplier&quot;</span>,</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_rep_space, 1.6, <span class="stringliteral">&quot;rep gap multiplier for space&quot;</span>,</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_enough_small_gaps, 0.65,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="stringliteral">&quot;Fract of kerns reqd for isolated row stats&quot;</span>,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_table_kn_sp_ratio, 2.25,</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <span class="stringliteral">&quot;Min difference of kn &amp; sp in table&quot;</span>,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_table_xht_sp_ratio, 0.33,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    <span class="stringliteral">&quot;Expect spaces bigger than this&quot;</span>,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_table_fuzzy_kn_sp_ratio, 3.0,</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <span class="stringliteral">&quot;Fuzzy if less than this&quot;</span>,</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_fuzzy_kn_fraction, 0.5, <span class="stringliteral">&quot;New fuzzy kn alg&quot;</span>,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_fuzzy_sp_fraction, 0.5, <span class="stringliteral">&quot;New fuzzy sp alg&quot;</span>,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_min_sane_kn_sp, 1.5,</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <span class="stringliteral">&quot;Dont trust spaces less than this time kn&quot;</span>,</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_init_guess_kn_mult, 2.2,</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                    <span class="stringliteral">&quot;Thresh guess - mult kn by this&quot;</span>,</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_init_guess_xht_mult, 0.28,</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    <span class="stringliteral">&quot;Thresh guess - mult xht by this&quot;</span>,</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_max_sane_kn_thresh, 5.0,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    <span class="stringliteral">&quot;Multiplier on kn to limit thresh&quot;</span>,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_flip_caution, 0.0,</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    <span class="stringliteral">&quot;Dont autoflip kn to sp when large separation&quot;</span>,</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_large_kerning, 0.19,</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    <span class="stringliteral">&quot;Limit use of xht gap with large kns&quot;</span>,</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_dont_fool_with_small_kerns, -1,</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="stringliteral">&quot;Limit use of xht gap with odd small kns&quot;</span>,</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_near_lh_edge, 0,</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="stringliteral">&quot;Dont reduce box if the top left is non blank&quot;</span>,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_silly_kn_sp_gap, 0.2,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <span class="stringliteral">&quot;Dont let sp minus kn get too small&quot;</span>,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(tosp_pass_wide_fuzz_sp_to_context, 0.75,</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    <span class="stringliteral">&quot;How wide fuzzies need context&quot;</span>,</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="comment">// tordmain.cpp ///////////////////////////////////////////</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(textord_no_rejects, false, <span class="stringliteral">&quot;Don&#39;t remove noise blobs&quot;</span>,</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(textord_show_blobs, false, <span class="stringliteral">&quot;Display unsorted blobs&quot;</span>,</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(textord_show_boxes, false, <span class="stringliteral">&quot;Display unsorted blobs&quot;</span>,</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(textord_max_noise_size, 7, <span class="stringliteral">&quot;Pixel size of noise&quot;</span>,</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(textord_baseline_debug, 0, <span class="stringliteral">&quot;Baseline debug level&quot;</span>,</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_blob_size_bigile, 95, <span class="stringliteral">&quot;Percentile for large blobs&quot;</span>,</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_noise_area_ratio, 0.7,</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    <span class="stringliteral">&quot;Fraction of bounding box for noise&quot;</span>,</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_blob_size_smallile, 20,</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    <span class="stringliteral">&quot;Percentile for small blobs&quot;</span>,</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_initialx_ile, 0.75,</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    <span class="stringliteral">&quot;Ile of sizes for xheight guess&quot;</span>,</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_initialasc_ile, 0.90,</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    <span class="stringliteral">&quot;Ile of sizes for xheight guess&quot;</span>,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(textord_noise_sizefraction, 10,</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                 <span class="stringliteral">&quot;Fraction of size for maxima&quot;</span>,</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_noise_sizelimit, 0.5,</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    <span class="stringliteral">&quot;Fraction of x for big t count&quot;</span>,</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(textord_noise_translimit, 16, <span class="stringliteral">&quot;Transitions for normal blob&quot;</span>,</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_noise_normratio, 2.0,</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    <span class="stringliteral">&quot;Dot to norm ratio for deletion&quot;</span>,</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(textord_noise_rejwords, true, <span class="stringliteral">&quot;Reject noise-like words&quot;</span>,</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(textord_noise_rejrows, true, <span class="stringliteral">&quot;Reject noise-like rows&quot;</span>,</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_noise_syfract, 0.2,</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    <span class="stringliteral">&quot;xh fract height error for norm blobs&quot;</span>,</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_noise_sxfract, 0.4,</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    <span class="stringliteral">&quot;xh fract width error for norm blobs&quot;</span>,</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_noise_hfract, 1.0/64,</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    <span class="stringliteral">&quot;Height fraction to discard outlines as speckle noise&quot;</span>,</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      <a class="code" href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a>(textord_noise_sncount, 1, <span class="stringliteral">&quot;super norm blobs to save row&quot;</span>,</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                 ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_noise_rowratio, 6.0,</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    <span class="stringliteral">&quot;Dot to norm ratio for deletion&quot;</span>,</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;      <a class="code" href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a>(textord_noise_debug, false, <span class="stringliteral">&quot;Debug row garbage detector&quot;</span>,</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                  ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_blshift_maxshift, 0.00, <span class="stringliteral">&quot;Max baseline shift&quot;</span>,</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    ccstruct_-&gt;params()),</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <a class="code" href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a>(textord_blshift_xfraction, 9.99,</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    <span class="stringliteral">&quot;Min size of baseline shift&quot;</span>,</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    ccstruct_-&gt;params()) {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
-<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="a00643.html#ab6aec7eec28ee2ea9083e1788064bd3e">  264</a></span>&#160;<a class="code" href="a00643.html#ab6aec7eec28ee2ea9083e1788064bd3e">Textord::~Textord</a>() {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">// Make the textlines and words inside each block.</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="a00643.html#ac03cfcb21edbd89b22977d09fa574a6c">  268</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00643.html#ac03cfcb21edbd89b22977d09fa574a6c">Textord::TextordPage</a>(<a class="code" href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66a">PageSegMode</a> pageseg_mode, <span class="keyword">const</span> <a class="code" href="a00385.html">FCOORD</a>&amp; reskew,</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                          <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, Pix* binary_pix,</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                          Pix* thresholds_pix, Pix* grey_pix,</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                          <span class="keywordtype">bool</span> use_box_bottoms, BLOBNBOX_LIST* diacritic_blobs,</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                          BLOCK_LIST* blocks, TO_BLOCK_LIST* to_blocks) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  page_tr_.<a class="code" href="a00425.html#a94c586039b3a003b35cf659b33b938f3">set_x</a>(width);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  page_tr_.<a class="code" href="a00425.html#aa9fb418d1c602c0533e426759da43d67">set_y</a>(height);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordflow">if</span> (to_blocks-&gt;empty()) {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// AutoPageSeg was not used, so we need to find_components first.</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="a00643.html#ab478029b49bf4efadd59a547565327a7">find_components</a>(binary_pix, blocks, to_blocks);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    TO_BLOCK_IT it(to_blocks);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">for</span> (it.mark_cycle_pt(); !it.cycled_list(); it.forward()) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      <a class="code" href="a00645.html">TO_BLOCK</a>* to_block = it.data();</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      <span class="comment">// Compute the edge offsets whether or not there is a grey_pix.</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <span class="comment">// We have by-passed auto page seg, so we have to run it here.</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      <span class="comment">// By page segmentation mode there is no non-text to avoid running on.</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      to_block-&gt;<a class="code" href="a00645.html#ab63a7bb496fa85b807bc5f9a33c18c74">ComputeEdgeOffsets</a>(thresholds_pix, grey_pix);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="a01279.html#a8d3049bd09022ed6dd40fa03f9fa4b48">PSM_SPARSE</a>(pageseg_mode)) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// AutoPageSeg does not need to find_components as it did that already.</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// Filter_blobs sets up the TO_BLOCKs the same as find_components does.</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="a00643.html#acaed60ac5b5ef00751e3d307347aa0e9">filter_blobs</a>(page_tr_, to_blocks, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(!to_blocks-&gt;empty());</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keywordflow">if</span> (pageseg_mode == <a class="code" href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa6d12cbb6be71dad8d3f090f214301630">PSM_SINGLE_BLOCK_VERT_TEXT</a>) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00385.html">FCOORD</a> anticlockwise90(0.0f, 1.0f);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00385.html">FCOORD</a> clockwise90(0.0f, -1.0f);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    TO_BLOCK_IT it(to_blocks);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">for</span> (it.mark_cycle_pt(); !it.cycled_list(); it.forward()) {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      <a class="code" href="a00645.html">TO_BLOCK</a>* to_block = it.data();</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      <a class="code" href="a00283.html">BLOCK</a>* block = to_block-&gt;<a class="code" href="a00645.html#a16e698664028b0d6d2193db64560c16b">block</a>;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      <span class="comment">// Create a fake poly_block in block from its bounding box.</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;      block-&gt;<a class="code" href="a00520.html#a60f8ad7b10ca32e3ece92bb04e3f2793">set_poly_block</a>(<span class="keyword">new</span> <a class="code" href="a00525.html">POLY_BLOCK</a>(block-&gt;<a class="code" href="a00520.html#a91950a96127b4a0bb9b237e1f5f889a4">bounding_box</a>(),</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                           <a class="code" href="a00684.html#a02cfd8369d5ad8c70a8b90c0f40d677fadf6b7dd3b8ca94923c3b94dfe53f230e">PT_VERTICAL_TEXT</a>));</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      <span class="comment">// Rotate the to_block along with its contained block and blobnbox lists.</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      to_block-&gt;<a class="code" href="a00645.html#ac0b7a4a071c9800f762554152dd395b2">rotate</a>(anticlockwise90);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      <span class="comment">// Set the block&#39;s rotation values to obey the convention followed in</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      <span class="comment">// layout analysis for vertical text.</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      block-&gt;<a class="code" href="a00283.html#a006129cb98cd6e780049f157066bc03e">set_re_rotation</a>(clockwise90);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      block-&gt;<a class="code" href="a00283.html#a43c63eaacdd0c10688846a03bfe31ef2">set_classify_rotation</a>(clockwise90);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  }</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  TO_BLOCK_IT to_block_it(to_blocks);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <a class="code" href="a00645.html">TO_BLOCK</a>* to_block = to_block_it.data();</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="comment">// Make the rows in the block.</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keywordtype">float</span> gradient;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  <span class="comment">// Do it the old fashioned way.</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01279.html#a4bccdd42ad4df4d7c901ec9f4241b42f">PSM_LINE_FIND_ENABLED</a>(pageseg_mode)) {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    gradient = <a class="code" href="a01139.html#ade98619ec77aab7e466a06b0940088a5">make_rows</a>(page_tr_, to_blocks);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="a01279.html#a8d3049bd09022ed6dd40fa03f9fa4b48">PSM_SPARSE</a>(pageseg_mode)) {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">// RAW_LINE, SINGLE_LINE, SINGLE_WORD and SINGLE_CHAR all need a single row.</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    gradient = <a class="code" href="a01139.html#a8aaaa024c4b9d1e61fd2c92a0b679f2b">make_single_row</a>(page_tr_, pageseg_mode != <a class="code" href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66aabea071f8e7061ba47e289e5ca9d7977d">PSM_RAW_LINE</a>,</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                               to_block, to_blocks);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  <a class="code" href="a00269.html">BaselineDetect</a> baseline_detector(<a class="code" href="a00643.html#a2812aad67d0c1f32dea80e1f447e015a">textord_baseline_debug</a>,</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                   reskew, to_blocks);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  baseline_detector.<a class="code" href="a00269.html#a9eaa0eba10b5abb2a9813f521c9dba50">ComputeStraightBaselines</a>(use_box_bottoms);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  baseline_detector.<a class="code" href="a00269.html#a62154b468dd5af9b00a158542be42b6c">ComputeBaselineSplinesAndXheights</a>(page_tr_, <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                                      <a class="code" href="a01139.html#aab5148b0f0769704bb959d0c186270de">textord_heavy_nr</a>,</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                                      <a class="code" href="a01139.html#a73aa7e6e50011cbd9114a4cd34dbcf47">textord_show_final_rows</a>,</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                                      <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="comment">// Now make the words in the lines.</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01279.html#ae352b5f90645de29b1d9d3a3d6b37946">PSM_WORD_FIND_ENABLED</a>(pageseg_mode)) {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">// SINGLE_LINE uses the old word maker on the single line.</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="a01174.html#a2a74f87b59b8f2a4e33ddac0933ab2e5">make_words</a>(<span class="keyword">this</span>, page_tr_, gradient, blocks, to_blocks);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">// SINGLE_WORD and SINGLE_CHAR cram all the blobs into a</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="comment">// single word, and in SINGLE_CHAR mode, all the outlines</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// go in a single blob.</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <a class="code" href="a00645.html">TO_BLOCK</a>* to_block = to_block_it.data();</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="a01174.html#a962516b377eedea75f32f8ba004bfb49">make_single_word</a>(pageseg_mode == <a class="code" href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa7045cff7a3ae929fb1db5dbf031a4875">PSM_SINGLE_CHAR</a>,</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                     to_block-&gt;<a class="code" href="a00645.html#a4846ebdcc832b4b0a762d87c0d83a056">get_rows</a>(), to_block-&gt;<a class="code" href="a00645.html#a16e698664028b0d6d2193db64560c16b">block</a>-&gt;<a class="code" href="a00283.html#ae9826e422b0bf17a7592dee8db3fe058">row_list</a>());</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="comment">// Remove empties.</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  cleanup_blocks(<a class="code" href="a01279.html#ae352b5f90645de29b1d9d3a3d6b37946">PSM_WORD_FIND_ENABLED</a>(pageseg_mode), blocks);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  TransferDiacriticsToBlockGroups(diacritic_blobs, blocks);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="comment">// Compute the margins for each row in the block, to be used later for</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="comment">// paragraph detection.</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  BLOCK_IT b_it(blocks);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  <span class="keywordflow">for</span> (b_it.mark_cycle_pt(); !b_it.cycled_list(); b_it.forward()) {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    b_it.data()-&gt;compute_row_margins();</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  }</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#ifndef GRAPHICS_DISABLED</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  <a class="code" href="a01123.html#ad291cb9a7dce4bf45ccdbbdfaf26777d">close_to_win</a>();</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">// If we were supposed to return only a single textline, and there is more</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">// than one, clean up and leave only the best.</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="a00643.html#a8ad2a2ff59d9dcbd82217076d4466344">  359</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00643.html#a8ad2a2ff59d9dcbd82217076d4466344">Textord::CleanupSingleRowResult</a>(<a class="code" href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66a">PageSegMode</a> pageseg_mode,</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                     <a class="code" href="a00501.html">PAGE_RES</a>* page_res) {</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01279.html#a4bccdd42ad4df4d7c901ec9f4241b42f">PSM_LINE_FIND_ENABLED</a>(pageseg_mode) || <a class="code" href="a01279.html#a8d3049bd09022ed6dd40fa03f9fa4b48">PSM_SPARSE</a>(pageseg_mode))</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">return</span>;  <span class="comment">// No cleanup required.</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <a class="code" href="a00502.html">PAGE_RES_IT</a> it(page_res);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  <span class="comment">// Find the best row, being the greatest mean word conf.</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  <span class="keywordtype">float</span> row_total_conf = 0.0f;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordtype">int</span> row_word_count = 0;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <a class="code" href="a00543.html">ROW_RES</a>* best_row = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  <span class="keywordtype">float</span> best_conf = 0.0f;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  <span class="keywordflow">for</span> (it.<a class="code" href="a00502.html#a15febd45d0904bb3c5f7d506368177f0">restart_page</a>(); it.<a class="code" href="a00502.html#ab84b4850200ba8802791c6197c113fd0">word</a>() != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; it.<a class="code" href="a00502.html#ab29005f235cc738eebafb7d9ed6fe70b">forward</a>()) {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <a class="code" href="a00669.html">WERD_RES</a>* word = it.<a class="code" href="a00502.html#ab84b4850200ba8802791c6197c113fd0">word</a>();</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    row_total_conf += word-&gt;<a class="code" href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">best_choice</a>-&gt;<a class="code" href="a00668.html#a1b25ef2b44d21a7204483a7ca804f293">certainty</a>();</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    ++row_word_count;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">if</span> (it.<a class="code" href="a00502.html#a6e27e379d33b6a842c538e3de756110c">next_row</a>() != it.<a class="code" href="a00502.html#a312f58081e9410962396160eaf5f90e4">row</a>()) {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;      row_total_conf /= row_word_count;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      <span class="keywordflow">if</span> (best_row == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || best_conf &lt; row_total_conf) {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        best_row = it.<a class="code" href="a00502.html#a312f58081e9410962396160eaf5f90e4">row</a>();</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        best_conf = row_total_conf;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;      }</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;      row_total_conf = 0.0f;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;      row_word_count = 0;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  <span class="comment">// Now eliminate any word not in the best row.</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  <span class="keywordflow">for</span> (it.<a class="code" href="a00502.html#a15febd45d0904bb3c5f7d506368177f0">restart_page</a>(); it.<a class="code" href="a00502.html#ab84b4850200ba8802791c6197c113fd0">word</a>() != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; it.<a class="code" href="a00502.html#ab29005f235cc738eebafb7d9ed6fe70b">forward</a>()) {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordflow">if</span> (it.<a class="code" href="a00502.html#a312f58081e9410962396160eaf5f90e4">row</a>() != best_row)</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;      it.<a class="code" href="a00502.html#afb987bf467ef552c49b962bf6872ad34">DeleteCurrentWord</a>();</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  }</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}  <span class="comment">// namespace tesseract.</span></div>
-<div class="ttc" id="a00425_html_a94c586039b3a003b35cf659b33b938f3"><div class="ttname"><a href="a00425.html#a94c586039b3a003b35cf659b33b938f3">ICOORD::set_x</a></div><div class="ttdeci">void set_x(inT16 xin)</div><div class="ttdoc">rewrite function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00061">points.h:61</a></div></div>
-<div class="ttc" id="a00684_html_a02cfd8369d5ad8c70a8b90c0f40d677fadf6b7dd3b8ca94923c3b94dfe53f230e"><div class="ttname"><a href="a00684.html#a02cfd8369d5ad8c70a8b90c0f40d677fadf6b7dd3b8ca94923c3b94dfe53f230e">PT_VERTICAL_TEXT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00684_source.html#l00078">capi.h:78</a></div></div>
-<div class="ttc" id="a00502_html_ab29005f235cc738eebafb7d9ed6fe70b"><div class="ttname"><a href="a00502.html#ab29005f235cc738eebafb7d9ed6fe70b">PAGE_RES_IT::forward</a></div><div class="ttdeci">WERD_RES * forward()</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00713">pageres.h:713</a></div></div>
-<div class="ttc" id="a01174_html_a2a74f87b59b8f2a4e33ddac0933ab2e5"><div class="ttname"><a href="a01174.html#a2a74f87b59b8f2a4e33ddac0933ab2e5">make_words</a></div><div class="ttdeci">void make_words(tesseract::Textord *textord, ICOORD page_tr, float gradient, BLOCK_LIST *blocks, TO_BLOCK_LIST *port_blocks)</div><div class="ttdef"><b>Definition:</b> <a href="a01174_source.html#l00104">wordseg.cpp:104</a></div></div>
-<div class="ttc" id="a01279_html_a338d4c8b5d497b5ec3e6e4269d8ac66aa7045cff7a3ae929fb1db5dbf031a4875"><div class="ttname"><a href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa7045cff7a3ae929fb1db5dbf031a4875">tesseract::PSM_SINGLE_CHAR</a></div><div class="ttdoc">Treat the image as a single character. </div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00164">publictypes.h:164</a></div></div>
-<div class="ttc" id="a00643_html_ac03cfcb21edbd89b22977d09fa574a6c"><div class="ttname"><a href="a00643.html#ac03cfcb21edbd89b22977d09fa574a6c">tesseract::Textord::TextordPage</a></div><div class="ttdeci">void TextordPage(PageSegMode pageseg_mode, const FCOORD &amp;reskew, int width, int height, Pix *binary_pix, Pix *thresholds_pix, Pix *grey_pix, bool use_box_bottoms, BLOBNBOX_LIST *diacritic_blobs, BLOCK_LIST *blocks, TO_BLOCK_LIST *to_blocks)</div><div class="ttdef"><b>Definition:</b> <a href="a01163_source.html#l00268">textord.cpp:268</a></div></div>
-<div class="ttc" id="a01139_html_aab5148b0f0769704bb959d0c186270de"><div class="ttname"><a href="a01139.html#aab5148b0f0769704bb959d0c186270de">textord_heavy_nr</a></div><div class="ttdeci">bool textord_heavy_nr</div><div class="ttdef"><b>Definition:</b> <a href="a01139_source.html#l00044">makerow.cpp:44</a></div></div>
-<div class="ttc" id="a01124_html"><div class="ttname"><a href="a01124.html">drawtord.h</a></div></div>
-<div class="ttc" id="a01123_html_ad291cb9a7dce4bf45ccdbbdfaf26777d"><div class="ttname"><a href="a01123.html#ad291cb9a7dce4bf45ccdbbdfaf26777d">close_to_win</a></div><div class="ttdeci">void close_to_win()</div><div class="ttdef"><b>Definition:</b> <a href="a01123_source.html#l00056">drawtord.cpp:56</a></div></div>
-<div class="ttc" id="a00501_html"><div class="ttname"><a href="a00501.html">PAGE_RES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00058">pageres.h:58</a></div></div>
-<div class="ttc" id="a00645_html_ac0b7a4a071c9800f762554152dd395b2"><div class="ttname"><a href="a00645.html#ac0b7a4a071c9800f762554152dd395b2">TO_BLOCK::rotate</a></div><div class="ttdeci">void rotate(const FCOORD &amp;rotation)</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00706">blobbox.h:706</a></div></div>
-<div class="ttc" id="a00643_html_ab6aec7eec28ee2ea9083e1788064bd3e"><div class="ttname"><a href="a00643.html#ab6aec7eec28ee2ea9083e1788064bd3e">tesseract::Textord::~Textord</a></div><div class="ttdeci">~Textord()</div><div class="ttdef"><b>Definition:</b> <a href="a01163_source.html#l00264">textord.cpp:264</a></div></div>
-<div class="ttc" id="a00643_html_aefff593dc9593239325054507c5cfaa8"><div class="ttname"><a href="a00643.html#aefff593dc9593239325054507c5cfaa8">tesseract::Textord::Textord</a></div><div class="ttdeci">Textord(CCStruct *ccstruct)</div><div class="ttdef"><b>Definition:</b> <a href="a01163_source.html#l00035">textord.cpp:35</a></div></div>
-<div class="ttc" id="a01168_html"><div class="ttname"><a href="a01168.html">tordmain.h</a></div></div>
-<div class="ttc" id="a00645_html_a4846ebdcc832b4b0a762d87c0d83a056"><div class="ttname"><a href="a00645.html#a4846ebdcc832b4b0a762d87c0d83a056">TO_BLOCK::get_rows</a></div><div class="ttdeci">TO_ROW_LIST * get_rows()</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00700">blobbox.h:700</a></div></div>
-<div class="ttc" id="a00867_html_afe1760253f2b6e3b14c1bf275d8531d4"><div class="ttname"><a href="a00867.html#afe1760253f2b6e3b14c1bf275d8531d4">BOOL_MEMBER</a></div><div class="ttdeci">#define BOOL_MEMBER(name, val, comment, vec)</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00304">params.h:304</a></div></div>
-<div class="ttc" id="a00502_html_a15febd45d0904bb3c5f7d506368177f0"><div class="ttname"><a href="a00502.html#a15febd45d0904bb3c5f7d506368177f0">PAGE_RES_IT::restart_page</a></div><div class="ttdeci">WERD_RES * restart_page()</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00680">pageres.h:680</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00668_html_a1b25ef2b44d21a7204483a7ca804f293"><div class="ttname"><a href="a00668.html#a1b25ef2b44d21a7204483a7ca804f293">WERD_CHOICE::certainty</a></div><div class="ttdeci">float certainty() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00327">ratngs.h:327</a></div></div>
-<div class="ttc" id="a00283_html_a006129cb98cd6e780049f157066bc03e"><div class="ttname"><a href="a00283.html#a006129cb98cd6e780049f157066bc03e">BLOCK::set_re_rotation</a></div><div class="ttdeci">void set_re_rotation(const FCOORD &amp;rotation)</div><div class="ttdef"><b>Definition:</b> <a href="a00784_source.html#l00141">ocrblock.h:141</a></div></div>
-<div class="ttc" id="a00645_html_ab63a7bb496fa85b807bc5f9a33c18c74"><div class="ttname"><a href="a00645.html#ab63a7bb496fa85b807bc5f9a33c18c74">TO_BLOCK::ComputeEdgeOffsets</a></div><div class="ttdeci">void ComputeEdgeOffsets(Pix *thresholds, Pix *grey)</div><div class="ttdef"><b>Definition:</b> <a href="a00748_source.html#l01049">blobbox.cpp:1049</a></div></div>
-<div class="ttc" id="a00502_html_a312f58081e9410962396160eaf5f90e4"><div class="ttname"><a href="a00502.html#a312f58081e9410962396160eaf5f90e4">PAGE_RES_IT::row</a></div><div class="ttdeci">ROW_RES * row() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00736">pageres.h:736</a></div></div>
-<div class="ttc" id="a01279_html_a338d4c8b5d497b5ec3e6e4269d8ac66aabea071f8e7061ba47e289e5ca9d7977d"><div class="ttname"><a href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66aabea071f8e7061ba47e289e5ca9d7977d">tesseract::PSM_RAW_LINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00167">publictypes.h:167</a></div></div>
-<div class="ttc" id="a00543_html"><div class="ttname"><a href="a00543.html">ROW_RES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00125">pageres.h:125</a></div></div>
-<div class="ttc" id="a01164_html"><div class="ttname"><a href="a01164.html">textord.h</a></div></div>
-<div class="ttc" id="a00643_html_a8ad2a2ff59d9dcbd82217076d4466344"><div class="ttname"><a href="a00643.html#a8ad2a2ff59d9dcbd82217076d4466344">tesseract::Textord::CleanupSingleRowResult</a></div><div class="ttdeci">void CleanupSingleRowResult(PageSegMode pageseg_mode, PAGE_RES *page_res)</div><div class="ttdef"><b>Definition:</b> <a href="a01163_source.html#l00359">textord.cpp:359</a></div></div>
-<div class="ttc" id="a01279_html_a4bccdd42ad4df4d7c901ec9f4241b42f"><div class="ttname"><a href="a01279.html#a4bccdd42ad4df4d7c901ec9f4241b42f">tesseract::PSM_LINE_FIND_ENABLED</a></div><div class="ttdeci">bool PSM_LINE_FIND_ENABLED(int pageseg_mode)</div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00191">publictypes.h:191</a></div></div>
-<div class="ttc" id="a00299_html"><div class="ttname"><a href="a00299.html">tesseract::CCStruct</a></div><div class="ttdef"><b>Definition:</b> <a href="a00759_source.html#l00025">ccstruct.h:25</a></div></div>
-<div class="ttc" id="a00502_html_a6e27e379d33b6a842c538e3de756110c"><div class="ttname"><a href="a00502.html#a6e27e379d33b6a842c538e3de756110c">PAGE_RES_IT::next_row</a></div><div class="ttdeci">ROW_RES * next_row() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00745">pageres.h:745</a></div></div>
-<div class="ttc" id="a01139_html_ade98619ec77aab7e466a06b0940088a5"><div class="ttname"><a href="a01139.html#ade98619ec77aab7e466a06b0940088a5">make_rows</a></div><div class="ttdeci">float make_rows(ICOORD page_tr, TO_BLOCK_LIST *port_blocks)</div><div class="ttdef"><b>Definition:</b> <a href="a01139_source.html#l00201">makerow.cpp:201</a></div></div>
-<div class="ttc" id="a00502_html_ab84b4850200ba8802791c6197c113fd0"><div class="ttname"><a href="a00502.html#ab84b4850200ba8802791c6197c113fd0">PAGE_RES_IT::word</a></div><div class="ttdeci">WERD_RES * word() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00733">pageres.h:733</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a01139_html_a8aaaa024c4b9d1e61fd2c92a0b679f2b"><div class="ttname"><a href="a01139.html#a8aaaa024c4b9d1e61fd2c92a0b679f2b">make_single_row</a></div><div class="ttdeci">float make_single_row(ICOORD page_tr, bool allow_sub_blobs, TO_BLOCK *block, TO_BLOCK_LIST *blocks)</div><div class="ttdef"><b>Definition:</b> <a href="a01139_source.html#l00164">makerow.cpp:164</a></div></div>
-<div class="ttc" id="a01174_html_a962516b377eedea75f32f8ba004bfb49"><div class="ttname"><a href="a01174.html#a962516b377eedea75f32f8ba004bfb49">make_single_word</a></div><div class="ttdeci">void make_single_word(bool one_blob, TO_ROW_LIST *rows, ROW_LIST *real_rows)</div><div class="ttdef"><b>Definition:</b> <a href="a01174_source.html#l00060">wordseg.cpp:60</a></div></div>
-<div class="ttc" id="a00643_html_acaed60ac5b5ef00751e3d307347aa0e9"><div class="ttname"><a href="a00643.html#acaed60ac5b5ef00751e3d307347aa0e9">tesseract::Textord::filter_blobs</a></div><div class="ttdeci">void filter_blobs(ICOORD page_tr, TO_BLOCK_LIST *blocks, BOOL8 testing_on)</div><div class="ttdef"><b>Definition:</b> <a href="a01167_source.html#l00239">tordmain.cpp:239</a></div></div>
-<div class="ttc" id="a00269_html_a9eaa0eba10b5abb2a9813f521c9dba50"><div class="ttname"><a href="a00269.html#a9eaa0eba10b5abb2a9813f521c9dba50">tesseract::BaselineDetect::ComputeStraightBaselines</a></div><div class="ttdeci">void ComputeStraightBaselines(bool use_box_bottoms)</div><div class="ttdef"><b>Definition:</b> <a href="a01099_source.html#l00813">baselinedetect.cpp:813</a></div></div>
-<div class="ttc" id="a01279_html_a338d4c8b5d497b5ec3e6e4269d8ac66a"><div class="ttname"><a href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66a">tesseract::PageSegMode</a></div><div class="ttdeci">PageSegMode</div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00151">publictypes.h:151</a></div></div>
-<div class="ttc" id="a00283_html"><div class="ttname"><a href="a00283.html">BLOCK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00784_source.html#l00030">ocrblock.h:30</a></div></div>
-<div class="ttc" id="a00269_html_a62154b468dd5af9b00a158542be42b6c"><div class="ttname"><a href="a00269.html#a62154b468dd5af9b00a158542be42b6c">tesseract::BaselineDetect::ComputeBaselineSplinesAndXheights</a></div><div class="ttdeci">void ComputeBaselineSplinesAndXheights(const ICOORD &amp;page_tr, bool enable_splines, bool remove_noise, bool show_final_rows, Textord *textord)</div><div class="ttdef"><b>Definition:</b> <a href="a01099_source.html#l00845">baselinedetect.cpp:845</a></div></div>
-<div class="ttc" id="a01175_html"><div class="ttname"><a href="a01175.html">wordseg.h</a></div></div>
-<div class="ttc" id="a00867_html_a05d4e03af9e317d4201155efa15d4d4a"><div class="ttname"><a href="a00867.html#a05d4e03af9e317d4201155efa15d4d4a">INT_MEMBER</a></div><div class="ttdeci">#define INT_MEMBER(name, val, comment, vec)</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00301">params.h:301</a></div></div>
-<div class="ttc" id="a00520_html_a60f8ad7b10ca32e3ece92bb04e3f2793"><div class="ttname"><a href="a00520.html#a60f8ad7b10ca32e3ece92bb04e3f2793">PDBLK::set_poly_block</a></div><div class="ttdeci">void set_poly_block(POLY_BLOCK *blk)</div><div class="ttdoc">set the poly block </div><div class="ttdef"><b>Definition:</b> <a href="a00796_source.html#l00063">pdblock.h:63</a></div></div>
-<div class="ttc" id="a01279_html_ae352b5f90645de29b1d9d3a3d6b37946"><div class="ttname"><a href="a01279.html#ae352b5f90645de29b1d9d3a3d6b37946">tesseract::PSM_WORD_FIND_ENABLED</a></div><div class="ttdeci">bool PSM_WORD_FIND_ENABLED(int pageseg_mode)</div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00194">publictypes.h:194</a></div></div>
-<div class="ttc" id="a00867_html_abc29757c0b64587fef3aa7556e2fd7b9"><div class="ttname"><a href="a00867.html#abc29757c0b64587fef3aa7556e2fd7b9">double_MEMBER</a></div><div class="ttdeci">#define double_MEMBER(name, val, comment, vec)</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00310">params.h:310</a></div></div>
-<div class="ttc" id="a00520_html_a91950a96127b4a0bb9b237e1f5f889a4"><div class="ttname"><a href="a00520.html#a91950a96127b4a0bb9b237e1f5f889a4">PDBLK::bounding_box</a></div><div class="ttdeci">void bounding_box(ICOORD &amp;bottom_left, ICOORD &amp;top_right) const </div><div class="ttdoc">get box </div><div class="ttdef"><b>Definition:</b> <a href="a00796_source.html#l00067">pdblock.h:67</a></div></div>
-<div class="ttc" id="a01100_html"><div class="ttname"><a href="a01100.html">baselinedetect.h</a></div></div>
-<div class="ttc" id="a00525_html"><div class="ttname"><a href="a00525.html">POLY_BLOCK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00802_source.html#l00028">polyblk.h:28</a></div></div>
-<div class="ttc" id="a00269_html"><div class="ttname"><a href="a00269.html">tesseract::BaselineDetect</a></div><div class="ttdef"><b>Definition:</b> <a href="a01100_source.html#l00242">baselinedetect.h:242</a></div></div>
-<div class="ttc" id="a00669_html"><div class="ttname"><a href="a00669.html">WERD_RES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00155">pageres.h:155</a></div></div>
-<div class="ttc" id="a00425_html_aa9fb418d1c602c0533e426759da43d67"><div class="ttname"><a href="a00425.html#aa9fb418d1c602c0533e426759da43d67">ICOORD::set_y</a></div><div class="ttdeci">void set_y(inT16 yin)</div><div class="ttdoc">rewrite function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00065">points.h:65</a></div></div>
-<div class="ttc" id="a00645_html"><div class="ttname"><a href="a00645.html">TO_BLOCK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00688">blobbox.h:688</a></div></div>
-<div class="ttc" id="a01140_html"><div class="ttname"><a href="a01140.html">makerow.h</a></div></div>
-<div class="ttc" id="a00792_html"><div class="ttname"><a href="a00792.html">pageres.h</a></div></div>
-<div class="ttc" id="a00645_html_a16e698664028b0d6d2193db64560c16b"><div class="ttname"><a href="a00645.html#a16e698664028b0d6d2193db64560c16b">TO_BLOCK::block</a></div><div class="ttdeci">BLOCK * block</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00773">blobbox.h:773</a></div></div>
-<div class="ttc" id="a00643_html_ab478029b49bf4efadd59a547565327a7"><div class="ttname"><a href="a00643.html#ab478029b49bf4efadd59a547565327a7">tesseract::Textord::find_components</a></div><div class="ttdeci">void find_components(Pix *pix, BLOCK_LIST *blocks, TO_BLOCK_LIST *to_blocks)</div><div class="ttdef"><b>Definition:</b> <a href="a01167_source.html#l00208">tordmain.cpp:208</a></div></div>
-<div class="ttc" id="a00283_html_ae9826e422b0bf17a7592dee8db3fe058"><div class="ttname"><a href="a00283.html#ae9826e422b0bf17a7592dee8db3fe058">BLOCK::row_list</a></div><div class="ttdeci">ROW_LIST * row_list()</div><div class="ttdoc">get rows </div><div class="ttdef"><b>Definition:</b> <a href="a00784_source.html#l00120">ocrblock.h:120</a></div></div>
-<div class="ttc" id="a01279_html_a8d3049bd09022ed6dd40fa03f9fa4b48"><div class="ttname"><a href="a01279.html#a8d3049bd09022ed6dd40fa03f9fa4b48">tesseract::PSM_SPARSE</a></div><div class="ttdeci">bool PSM_SPARSE(int pageseg_mode)</div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00185">publictypes.h:185</a></div></div>
-<div class="ttc" id="a00669_html_a3d42ac7ec121263e757c9b7160dfd50d"><div class="ttname"><a href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">WERD_RES::best_choice</a></div><div class="ttdeci">WERD_CHOICE * best_choice</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00219">pageres.h:219</a></div></div>
-<div class="ttc" id="a00502_html_afb987bf467ef552c49b962bf6872ad34"><div class="ttname"><a href="a00502.html#afb987bf467ef552c49b962bf6872ad34">PAGE_RES_IT::DeleteCurrentWord</a></div><div class="ttdeci">void DeleteCurrentWord()</div><div class="ttdef"><b>Definition:</b> <a href="a00791_source.html#l01444">pageres.cpp:1444</a></div></div>
-<div class="ttc" id="a01139_html_a73aa7e6e50011cbd9114a4cd34dbcf47"><div class="ttname"><a href="a01139.html#a73aa7e6e50011cbd9114a4cd34dbcf47">textord_show_final_rows</a></div><div class="ttdeci">bool textord_show_final_rows</div><div class="ttdef"><b>Definition:</b> <a href="a01139_source.html#l00048">makerow.cpp:48</a></div></div>
-<div class="ttc" id="a00846_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00084">errcode.h:84</a></div></div>
-<div class="ttc" id="a00502_html"><div class="ttname"><a href="a00502.html">PAGE_RES_IT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00656">pageres.h:656</a></div></div>
-<div class="ttc" id="a00385_html"><div class="ttname"><a href="a00385.html">FCOORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00189">points.h:189</a></div></div>
-<div class="ttc" id="a00283_html_a43c63eaacdd0c10688846a03bfe31ef2"><div class="ttname"><a href="a00283.html#a43c63eaacdd0c10688846a03bfe31ef2">BLOCK::set_classify_rotation</a></div><div class="ttdeci">void set_classify_rotation(const FCOORD &amp;rotation)</div><div class="ttdef"><b>Definition:</b> <a href="a00784_source.html#l00147">ocrblock.h:147</a></div></div>
-<div class="ttc" id="a01279_html_a338d4c8b5d497b5ec3e6e4269d8ac66aa6d12cbb6be71dad8d3f090f214301630"><div class="ttname"><a href="a01279.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa6d12cbb6be71dad8d3f090f214301630">tesseract::PSM_SINGLE_BLOCK_VERT_TEXT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00158">publictypes.h:158</a></div></div>
-<div class="ttc" id="a00643_html_a2812aad67d0c1f32dea80e1f447e015a"><div class="ttname"><a href="a00643.html#a2812aad67d0c1f32dea80e1f447e015a">tesseract::Textord::textord_baseline_debug</a></div><div class="ttdeci">int textord_baseline_debug</div><div class="ttdef"><b>Definition:</b> <a href="a01164_source.html#l00377">textord.h:377</a></div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <a class="code" href="a00848.html#ac9b655e8ebd14897cfc161f2f47797a0">double_VAR_H</a> (<a class="code" href="a01163.html#a40ea113170359901a8fb551767ae5cce">textord_underline_offset</a>, 0.1,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">&quot;Fraction of x to ignore&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <a class="code" href="a00848.html#a2d4425c5a3f3c3eeeed987128d4cd419">BOOL_VAR_H</a> (<a class="code" href="a01163.html#aea98ceba4501d50c96e99c9c2e950bff">textord_restore_underlines</a>, <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral">&quot;Chop underlines &amp; put back&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01163.html#a2118358b0e0f62667f62a0aaf2fb2ae8">restore_underlined_blobs</a>(                 <span class="comment">//get chop points</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                              <a class="code" href="a00627.html">TO_BLOCK</a> *block  <span class="comment">//block to do</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                             );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="a00628.html">TO_ROW</a> *<a class="code" href="a01163.html#a0dd8a5ba42169e80f12ce943084cb307">most_overlapping_row</a>(                    <span class="comment">//find best row</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                             TO_ROW_LIST *rows,  <span class="comment">//list of rows</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                             <a class="code" href="a00279.html">BLOBNBOX</a> *blob      <span class="comment">//blob to place</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                            );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01163.html#afc00f3a1057255657116acf952f3d7a4">find_underlined_blobs</a>(                            <span class="comment">//get chop points</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                           <a class="code" href="a00279.html">BLOBNBOX</a> *u_line,           <span class="comment">//underlined unit</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                           <a class="code" href="a00517.html">QSPLINE</a> *<a class="code" href="a00925.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>,          <span class="comment">//actual baseline</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                           <span class="keywordtype">float</span> xheight,              <span class="comment">//height of line</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                           <span class="keywordtype">float</span> baseline_offset,      <span class="comment">//amount to shrinke it</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                           ICOORDELT_LIST *chop_cells  <span class="comment">//places to chop</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                          );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01163.html#a8c1248a073d641cea7a9fec3e563dfc5">vertical_cunderline_projection</a>(                        <span class="comment">//project outlines</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                    <a class="code" href="a00290.html">C_OUTLINE</a> *outline,     <span class="comment">//outline to project</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                    <a class="code" href="a00517.html">QSPLINE</a> *<a class="code" href="a00925.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>,      <span class="comment">//actual baseline</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                    <span class="keywordtype">float</span> xheight,          <span class="comment">//height of line</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                    <span class="keywordtype">float</span> baseline_offset,  <span class="comment">//amount to shrinke it</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                    <a class="code" href="a00560.html">STATS</a> *lower_proj,      <span class="comment">//below baseline</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                    <a class="code" href="a00560.html">STATS</a> *middle_proj,     <span class="comment">//centre region</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                    <a class="code" href="a00560.html">STATS</a> *upper_proj       <span class="comment">//top region</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                   );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a01163_html_a8c1248a073d641cea7a9fec3e563dfc5"><div class="ttname"><a href="a01163.html#a8c1248a073d641cea7a9fec3e563dfc5">vertical_cunderline_projection</a></div><div class="ttdeci">void vertical_cunderline_projection(C_OUTLINE *outline, QSPLINE *baseline, float xheight, float baseline_offset, STATS *lower_proj, STATS *middle_proj, STATS *upper_proj)</div><div class="ttdef"><b>Definition:</b> <a href="a01162_source.html#l00218">underlin.cpp:218</a></div></div>
+<div class="ttc" id="a00627_html"><div class="ttname"><a href="a00627.html">TO_BLOCK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00679">blobbox.h:679</a></div></div>
+<div class="ttc" id="a01163_html_a40ea113170359901a8fb551767ae5cce"><div class="ttname"><a href="a01163.html#a40ea113170359901a8fb551767ae5cce">textord_underline_offset</a></div><div class="ttdeci">double textord_underline_offset</div><div class="ttdef"><b>Definition:</b> <a href="a01162_source.html#l00028">underlin.cpp:28</a></div></div>
+<div class="ttc" id="a01122_html"><div class="ttname"><a href="a01122.html">fpchop.h</a></div></div>
+<div class="ttc" id="a00925_html_a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23"><div class="ttname"><a href="a00925.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a></div><div class="ttdef"><b>Definition:</b> <a href="a00925_source.html#l00062">mfoutline.h:62</a></div></div>
+<div class="ttc" id="a01163_html_afc00f3a1057255657116acf952f3d7a4"><div class="ttname"><a href="a01163.html#afc00f3a1057255657116acf952f3d7a4">find_underlined_blobs</a></div><div class="ttdeci">void find_underlined_blobs(BLOBNBOX *u_line, QSPLINE *baseline, float xheight, float baseline_offset, ICOORDELT_LIST *chop_cells)</div><div class="ttdef"><b>Definition:</b> <a href="a01162_source.html#l00173">underlin.cpp:173</a></div></div>
+<div class="ttc" id="a00279_html"><div class="ttname"><a href="a00279.html">BLOBNBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00128">blobbox.h:128</a></div></div>
+<div class="ttc" id="a01163_html_a2118358b0e0f62667f62a0aaf2fb2ae8"><div class="ttname"><a href="a01163.html#a2118358b0e0f62667f62a0aaf2fb2ae8">restore_underlined_blobs</a></div><div class="ttdeci">void restore_underlined_blobs(TO_BLOCK *block)</div><div class="ttdef"><b>Definition:</b> <a href="a01162_source.html#l00038">underlin.cpp:38</a></div></div>
+<div class="ttc" id="a00848_html_ac9b655e8ebd14897cfc161f2f47797a0"><div class="ttname"><a href="a00848.html#ac9b655e8ebd14897cfc161f2f47797a0">double_VAR_H</a></div><div class="ttdeci">#define double_VAR_H(name, val, comment)</div><div class="ttdef"><b>Definition:</b> <a href="a00848_source.html#l00274">params.h:274</a></div></div>
+<div class="ttc" id="a00848_html_a2d4425c5a3f3c3eeeed987128d4cd419"><div class="ttname"><a href="a00848.html#a2d4425c5a3f3c3eeeed987128d4cd419">BOOL_VAR_H</a></div><div class="ttdeci">#define BOOL_VAR_H(name, val, comment)</div><div class="ttdef"><b>Definition:</b> <a href="a00848_source.html#l00268">params.h:268</a></div></div>
+<div class="ttc" id="a00290_html"><div class="ttname"><a href="a00290.html">C_OUTLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00069">coutln.h:69</a></div></div>
+<div class="ttc" id="a01163_html_aea98ceba4501d50c96e99c9c2e950bff"><div class="ttname"><a href="a01163.html#aea98ceba4501d50c96e99c9c2e950bff">textord_restore_underlines</a></div><div class="ttdeci">bool textord_restore_underlines</div><div class="ttdef"><b>Definition:</b> <a href="a01162_source.html#l00030">underlin.cpp:30</a></div></div>
+<div class="ttc" id="a00517_html"><div class="ttname"><a href="a00517.html">QSPLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00790_source.html#l00031">quspline.h:31</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00560_html"><div class="ttname"><a href="a00560.html">STATS</a></div><div class="ttdef"><b>Definition:</b> <a href="a00802_source.html#l00033">statistc.h:33</a></div></div>
+<div class="ttc" id="a01163_html_a0dd8a5ba42169e80f12ce943084cb307"><div class="ttname"><a href="a01163.html#a0dd8a5ba42169e80f12ce943084cb307">most_overlapping_row</a></div><div class="ttdeci">TO_ROW * most_overlapping_row(TO_ROW_LIST *rows, BLOBNBOX *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01162_source.html#l00116">underlin.cpp:116</a></div></div>
+<div class="ttc" id="a00628_html"><div class="ttname"><a href="a00628.html">TO_ROW</a></div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00530">blobbox.h:530</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01163.html">textord.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:31 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01163.html">underlin.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:05 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

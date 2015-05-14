@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: training/ambiguous_words.cpp Source File</title>
+<title>Tesseract: training/dawg2wordlist.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,116 +105,131 @@ $(document).ready(function(){initNavTree('a01178_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ambiguous_words.cpp</div>  </div>
+<div class="title">dawg2wordlist.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01178.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        ambiguous_words.cpp</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: A program that takes a text file with a list of words as</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//              input (one per line) and outputs a file with the words</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//              that were found in the dictionary followed by the words</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//              that are ambiguous to them.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Author:      Rika Antonova</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Created:     Fri Oct 21 11:26:43 PDT 2011</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// (C) Copyright 2011, Google Inc.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// limitations under the License.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<a href="a01178.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        dawg2wordlist.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: Program to create a word list from a DAWG and unicharset.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      David Eger</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Thu 22 Dec 2011</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2011, Google Inc.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01051.html">dawg.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00835.html">host.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00860.html">tesscallback.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01062.html">trie.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00870.html">unicharset.h</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00682.html">baseapi.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00853.html">helpers.h</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00878.html">strngs.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01065.html">dict.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00737.html">tesseractclass.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01178.html#a3c04138a5bfe5d72780bb7e82a18e627">   32</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a01178.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Parse input arguments.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span> (argc != 4 &amp;&amp; (argc != 6 || strcmp(argv[1], <span class="stringliteral">&quot;-l&quot;</span>) != 0)) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    printf(<span class="stringliteral">&quot;Usage: %s [-l lang] tessdata_dir wordlist_file&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;           <span class="stringliteral">&quot; output_ambiguious_wordlist_file\n&quot;</span>, argv[0]);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">int</span> argv_offset = 0;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="a00578.html">STRING</a> <a class="code" href="a01280.html#a5f5eb917f55d9d6ccaa95131ae5d171c">lang</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> (argc == 6) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    lang = argv[2];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    argv_offset = 2;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    lang = <span class="stringliteral">&quot;eng&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *tessdata_dir = argv[++argv_offset];</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *input_file_str = argv[++argv_offset];</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *output_file_str = argv[++argv_offset];</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// Initialize Tesseract.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00614.html">tesseract::TessBaseAPI</a> <a class="code" href="a01280.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;STRING&gt;</a> vars_vec;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;STRING&gt;</a> vars_values;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  vars_vec.<a class="code" href="a00416.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(<span class="stringliteral">&quot;output_ambig_words_file&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  vars_values.<a class="code" href="a00416.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(output_file_str);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  api.<a class="code" href="a00614.html#a96899e8e5358d96752ab1cfc3bc09f3e">Init</a>(tessdata_dir, lang.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), <a class="code" href="a01279.html#a04550a0ed1279562027bf2fc92c421aeaea8028f61e76a0f4def7cbe7905206cf">tesseract::OEM_TESSERACT_ONLY</a>,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;           <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 0, &amp;vars_vec, &amp;vars_values, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="a00362.html">tesseract::Dict</a> &amp;dict = api.<a class="code" href="a01282.html#ga7b46dfdb521a2a575ab914ece8a40e6c">tesseract</a>()-&gt;<a class="code" href="a00319.html#a83e4207353a1bb07adfaa6a82a74c9ce">getDict</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  FILE *input_file = fopen(input_file_str, <span class="stringliteral">&quot;rb&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (input_file == NULL) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Failed to open input wordlist file %s\n&quot;</span>, input_file_str);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    exit(1);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">char</span> str[<a class="code" href="a01041.html#accaf8215779c8836f3f25f722e77550e">CHARS_PER_LINE</a>];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// Read word list and call Dict::NoDangerousAmbig() for each word</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// to record ambiguities in the output file.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">while</span> (fgets(str, <a class="code" href="a01041.html#accaf8215779c8836f3f25f722e77550e">CHARS_PER_LINE</a>, input_file) != NULL) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="a00853.html#a31bec0ef73dd383e256fa462e9fa7e1f">chomp_string</a>(str);  <span class="comment">// remove newline</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="a00668.html">WERD_CHOICE</a> word(str, dict.<a class="code" href="a00362.html#a635ce00ba9aa24247563d26ae26da631">getUnicharset</a>());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    dict.<a class="code" href="a00362.html#ac34de6f71f12d51708020950ef10ef34">NoDangerousAmbig</a>(&amp;word, NULL, <span class="keyword">false</span>, NULL);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// Clean up.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  fclose(input_file);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="ttc" id="a01280_html_a6e5e62fdd18584223572e5cbaa9a1d1d"><div class="ttname"><a href="a01280.html#a6e5e62fdd18584223572e5cbaa9a1d1d">tesseract-c_api-demo.api</a></div><div class="ttdeci">tuple api</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00065">tesseract-c_api-demo.py:65</a></div></div>
-<div class="ttc" id="a00668_html"><div class="ttname"><a href="a00668.html">WERD_CHOICE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00271">ratngs.h:271</a></div></div>
-<div class="ttc" id="a01280_html_a5f5eb917f55d9d6ccaa95131ae5d171c"><div class="ttname"><a href="a01280.html#a5f5eb917f55d9d6ccaa95131ae5d171c">tesseract-c_api-demo.lang</a></div><div class="ttdeci">string lang</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00028">tesseract-c_api-demo.py:28</a></div></div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a00416_html_a0dc89fe2a365b04a61017f9d78c1a303"><div class="ttname"><a href="a00416.html#a0dc89fe2a365b04a61017f9d78c1a303">GenericVector::push_back</a></div><div class="ttdeci">int push_back(T object)</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00737">genericvector.h:737</a></div></div>
-<div class="ttc" id="a00362_html"><div class="ttname"><a href="a00362.html">tesseract::Dict</a></div><div class="ttdef"><b>Definition:</b> <a href="a01065_source.html#l00086">dict.h:86</a></div></div>
-<div class="ttc" id="a01178_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="a01178.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="a01178_source.html#l00032">ambiguous_words.cpp:32</a></div></div>
-<div class="ttc" id="a00853_html_a31bec0ef73dd383e256fa462e9fa7e1f"><div class="ttname"><a href="a00853.html#a31bec0ef73dd383e256fa462e9fa7e1f">chomp_string</a></div><div class="ttdeci">void chomp_string(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="a00853_source.html#l00075">helpers.h:75</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00682_html"><div class="ttname"><a href="a00682.html">baseapi.h</a></div></div>
-<div class="ttc" id="a00614_html"><div class="ttname"><a href="a00614.html">tesseract::TessBaseAPI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00682_source.html#l00105">baseapi.h:105</a></div></div>
-<div class="ttc" id="a00578_html_a32beee43ecab1bed8bebc3466896ad6e"><div class="ttname"><a href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">STRING::string</a></div><div class="ttdeci">const char * string() const </div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00193">strngs.cpp:193</a></div></div>
-<div class="ttc" id="a00614_html_a96899e8e5358d96752ab1cfc3bc09f3e"><div class="ttname"><a href="a00614.html#a96899e8e5358d96752ab1cfc3bc09f3e">tesseract::TessBaseAPI::Init</a></div><div class="ttdeci">int Init(const char *datapath, const char *language, OcrEngineMode mode, char **configs, int configs_size, const GenericVector&lt; STRING &gt; *vars_vec, const GenericVector&lt; STRING &gt; *vars_values, bool set_only_non_debug_params)</div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00276">baseapi.cpp:276</a></div></div>
-<div class="ttc" id="a00362_html_ac34de6f71f12d51708020950ef10ef34"><div class="ttname"><a href="a00362.html#ac34de6f71f12d51708020950ef10ef34">tesseract::Dict::NoDangerousAmbig</a></div><div class="ttdeci">bool NoDangerousAmbig(WERD_CHOICE *BestChoice, DANGERR *fixpt, bool fix_replaceable, MATRIX *ratings)</div><div class="ttdef"><b>Definition:</b> <a href="a01069_source.html#l00152">stopper.cpp:152</a></div></div>
-<div class="ttc" id="a00319_html_a83e4207353a1bb07adfaa6a82a74c9ce"><div class="ttname"><a href="a00319.html#a83e4207353a1bb07adfaa6a82a74c9ce">tesseract::Classify::getDict</a></div><div class="ttdeci">Dict &amp; getDict()</div><div class="ttdef"><b>Definition:</b> <a href="a00901_source.html#l00065">classify.h:65</a></div></div>
-<div class="ttc" id="a01041_html_accaf8215779c8836f3f25f722e77550e"><div class="ttname"><a href="a01041.html#accaf8215779c8836f3f25f722e77550e">CHARS_PER_LINE</a></div><div class="ttdeci">#define CHARS_PER_LINE</div><div class="ttdef"><b>Definition:</b> <a href="a01041_source.html#l00057">cutil.h:57</a></div></div>
-<div class="ttc" id="a00878_html"><div class="ttname"><a href="a00878.html">strngs.h</a></div></div>
-<div class="ttc" id="a00578_html"><div class="ttname"><a href="a00578.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00044">strngs.h:44</a></div></div>
-<div class="ttc" id="a00737_html"><div class="ttname"><a href="a00737.html">tesseractclass.h</a></div></div>
-<div class="ttc" id="a01279_html_a04550a0ed1279562027bf2fc92c421aeaea8028f61e76a0f4def7cbe7905206cf"><div class="ttname"><a href="a01279.html#a04550a0ed1279562027bf2fc92c421aeaea8028f61e76a0f4def7cbe7905206cf">tesseract::OEM_TESSERACT_ONLY</a></div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00254">publictypes.h:254</a></div></div>
-<div class="ttc" id="a00362_html_a635ce00ba9aa24247563d26ae26da631"><div class="ttname"><a href="a00362.html#a635ce00ba9aa24247563d26ae26da631">tesseract::Dict::getUnicharset</a></div><div class="ttdeci">const UNICHARSET &amp; getUnicharset() const </div><div class="ttdef"><b>Definition:</b> <a href="a01065_source.html#l00096">dict.h:96</a></div></div>
-<div class="ttc" id="a00853_html"><div class="ttname"><a href="a00853.html">helpers.h</a></div></div>
-<div class="ttc" id="a00416_html"><div class="ttname"><a href="a00416.html">GenericVector&lt; STRING &gt;</a></div></div>
-<div class="ttc" id="a01282_html_ga7b46dfdb521a2a575ab914ece8a40e6c"><div class="ttname"><a href="a01282.html#ga7b46dfdb521a2a575ab914ece8a40e6c">tesseract::TessBaseAPI::tesseract</a></div><div class="ttdeci">Tesseract *const tesseract() const </div><div class="ttdef"><b>Definition:</b> <a href="a00682_source.html#l00728">baseapi.h:728</a></div></div>
-<div class="ttc" id="a01065_html"><div class="ttname"><a href="a01065.html">dict.h</a></div></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01178.html#aacd4a34e871006f4c22c0a3c1a8b9baa">   26</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a01178.html#aacd4a34e871006f4c22c0a3c1a8b9baa">kDictDebugLevel</a> = 1;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01178.html#a5b4bf0033d9904ad285f6adcb0cc4d0d">   28</a></span>&#160;<a class="code" href="a00346.html">tesseract::Dawg</a> *<a class="code" href="a01178.html#a5b4bf0033d9904ad285f6adcb0cc4d0d">LoadSquishedDawg</a>(<span class="keyword">const</span> <a class="code" href="a00643.html">UNICHARSET</a> &amp;unicharset,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                  <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a01178.html#aacd4a34e871006f4c22c0a3c1a8b9baa">kDictDebugLevel</a> = 1;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  FILE *dawg_file = fopen(filename, <span class="stringliteral">&quot;rb&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">if</span> (dawg_file == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Could not open %s for reading.\n&quot;</span>, filename);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Loading word list from %s\n&quot;</span>, filename);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="a00346.html">tesseract::Dawg</a> *retval = <span class="keyword">new</span> <a class="code" href="a00558.html">tesseract::SquishedDawg</a>(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      dawg_file, <a class="code" href="a01267.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">tesseract::DAWG_TYPE_WORD</a>, <span class="stringliteral">&quot;eng&quot;</span>, <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      kDictDebugLevel);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Word list loaded.\n&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  fclose(dawg_file);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00656.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00656.html">WordOutputter</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00656.html#af81a3eb961f99c5f6470c037d078c999">   47</a></span>&#160;  <a class="code" href="a00656.html#af81a3eb961f99c5f6470c037d078c999">WordOutputter</a>(FILE *file) : file_(file) {}</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00656.html#ad573101b61c94a4f017ed574d4308762">   48</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00656.html#ad573101b61c94a4f017ed574d4308762">output_word</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *word) { fprintf(file_, <span class="stringliteral">&quot;%s\n&quot;</span>, word); }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  FILE *file_;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// returns 0 if successful.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a01178.html#a7ed4f2196ec2c0cc5e0999ad197c527c">   54</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a01178.html#a7ed4f2196ec2c0cc5e0999ad197c527c">WriteDawgAsWordlist</a>(<span class="keyword">const</span> <a class="code" href="a00643.html">UNICHARSET</a> &amp;unicharset,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <span class="keyword">const</span> <a class="code" href="a00346.html">tesseract::Dawg</a> *dawg,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">char</span> *outfile_name) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  FILE *out = fopen(outfile_name, <span class="stringliteral">&quot;wb&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (out == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Could not open %s for writing.\n&quot;</span>, outfile_name);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="a00656.html">WordOutputter</a> outputter(out);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="a00598.html">TessCallback1&lt;const char *&gt;</a> *print_word_cb =</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="a00860.html#ad000c6729bae0f97075ca10a0b5bf7d6">NewPermanentTessCallback</a>(&amp;outputter, &amp;<a class="code" href="a00656.html#ad573101b61c94a4f017ed574d4308762">WordOutputter::output_word</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  dawg-&gt;<a class="code" href="a00346.html#afeedd2d27d9d9c127806a894facf24f8">iterate_words</a>(unicharset, print_word_cb);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">delete</span> print_word_cb;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> fclose(out);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a01178.html#a0ddf1224851353fc92bfbff6f499fa97">   70</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a01178.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[]) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (argc != 4) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Print all the words in a given dawg.\n&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Usage: %s &lt;unicharset&gt; &lt;dawgfile&gt; &lt;wordlistfile&gt;\n&quot;</span>,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            argv[0]);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *unicharset_file = argv[1];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *dawg_file = argv[2];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *wordlist_file = argv[3];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="a00643.html">UNICHARSET</a> unicharset;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">if</span> (!unicharset.<a class="code" href="a00643.html#af066ba55fdc20f996eaaed05618b377e">load_from_file</a>(unicharset_file)) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Error loading unicharset from %s.\n&quot;</span>, unicharset_file);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="a00346.html">tesseract::Dawg</a> *dict = <a class="code" href="a01178.html#a5b4bf0033d9904ad285f6adcb0cc4d0d">LoadSquishedDawg</a>(unicharset, dawg_file);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">if</span> (dict == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Error loading dictionary from %s.\n&quot;</span>, dawg_file);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">int</span> retval = <a class="code" href="a01178.html#a7ed4f2196ec2c0cc5e0999ad197c527c">WriteDawgAsWordlist</a>(unicharset, dict, wordlist_file);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">delete</span> dict;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">return</span> retval;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="ttc" id="a01051_html"><div class="ttname"><a href="a01051.html">dawg.h</a></div></div>
+<div class="ttc" id="a00656_html"><div class="ttname"><a href="a00656.html">WordOutputter</a></div><div class="ttdef"><b>Definition:</b> <a href="a01178_source.html#l00045">dawg2wordlist.cpp:45</a></div></div>
+<div class="ttc" id="a00346_html_afeedd2d27d9d9c127806a894facf24f8"><div class="ttname"><a href="a00346.html#afeedd2d27d9d9c127806a894facf24f8">tesseract::Dawg::iterate_words</a></div><div class="ttdeci">void iterate_words(const UNICHARSET &amp;unicharset, TessCallback1&lt; const WERD_CHOICE * &gt; *cb) const </div><div class="ttdef"><b>Definition:</b> <a href="a01050_source.html#l00106">dawg.cpp:106</a></div></div>
+<div class="ttc" id="a00835_html"><div class="ttname"><a href="a00835.html">host.h</a></div></div>
+<div class="ttc" id="a00860_html_ad000c6729bae0f97075ca10a0b5bf7d6"><div class="ttname"><a href="a00860.html#ad000c6729bae0f97075ca10a0b5bf7d6">NewPermanentTessCallback</a></div><div class="ttdeci">_ConstTessMemberResultCallback_0_0&lt; false, R, T1 &gt;::base * NewPermanentTessCallback(const T1 *obj, R(T2::*member)() const)</div><div class="ttdef"><b>Definition:</b> <a href="a00860_source.html#l00116">tesscallback.h:116</a></div></div>
+<div class="ttc" id="a01178_html_a7ed4f2196ec2c0cc5e0999ad197c527c"><div class="ttname"><a href="a01178.html#a7ed4f2196ec2c0cc5e0999ad197c527c">WriteDawgAsWordlist</a></div><div class="ttdeci">int WriteDawgAsWordlist(const UNICHARSET &amp;unicharset, const tesseract::Dawg *dawg, const char *outfile_name)</div><div class="ttdef"><b>Definition:</b> <a href="a01178_source.html#l00054">dawg2wordlist.cpp:54</a></div></div>
+<div class="ttc" id="a00643_html"><div class="ttname"><a href="a00643.html">UNICHARSET</a></div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00139">unicharset.h:139</a></div></div>
+<div class="ttc" id="a01062_html"><div class="ttname"><a href="a01062.html">trie.h</a></div></div>
+<div class="ttc" id="a01178_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="a01178.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="a01178_source.html#l00070">dawg2wordlist.cpp:70</a></div></div>
+<div class="ttc" id="a00870_html"><div class="ttname"><a href="a00870.html">unicharset.h</a></div></div>
+<div class="ttc" id="a00656_html_ad573101b61c94a4f017ed574d4308762"><div class="ttname"><a href="a00656.html#ad573101b61c94a4f017ed574d4308762">WordOutputter::output_word</a></div><div class="ttdeci">void output_word(const char *word)</div><div class="ttdef"><b>Definition:</b> <a href="a01178_source.html#l00048">dawg2wordlist.cpp:48</a></div></div>
+<div class="ttc" id="a01268_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
+<div class="ttc" id="a00656_html_af81a3eb961f99c5f6470c037d078c999"><div class="ttname"><a href="a00656.html#af81a3eb961f99c5f6470c037d078c999">WordOutputter::WordOutputter</a></div><div class="ttdeci">WordOutputter(FILE *file)</div><div class="ttdef"><b>Definition:</b> <a href="a01178_source.html#l00047">dawg2wordlist.cpp:47</a></div></div>
+<div class="ttc" id="a00558_html"><div class="ttname"><a href="a00558.html">tesseract::SquishedDawg</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00409">dawg.h:409</a></div></div>
+<div class="ttc" id="a00346_html"><div class="ttname"><a href="a00346.html">tesseract::Dawg</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00118">dawg.h:118</a></div></div>
+<div class="ttc" id="a01178_html_aacd4a34e871006f4c22c0a3c1a8b9baa"><div class="ttname"><a href="a01178.html#aacd4a34e871006f4c22c0a3c1a8b9baa">kDictDebugLevel</a></div><div class="ttdeci">const int kDictDebugLevel</div><div class="ttdef"><b>Definition:</b> <a href="a01178_source.html#l00026">dawg2wordlist.cpp:26</a></div></div>
+<div class="ttc" id="a01267_html_a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34"><div class="ttname"><a href="a01267.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">tesseract::DAWG_TYPE_WORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00073">dawg.h:73</a></div></div>
+<div class="ttc" id="a00598_html"><div class="ttname"><a href="a00598.html">TessCallback1</a></div><div class="ttdef"><b>Definition:</b> <a href="a00860_source.html#l01666">tesscallback.h:1666</a></div></div>
+<div class="ttc" id="a00860_html"><div class="ttname"><a href="a00860.html">tesscallback.h</a></div></div>
+<div class="ttc" id="a00643_html_af066ba55fdc20f996eaaed05618b377e"><div class="ttname"><a href="a00643.html#af066ba55fdc20f996eaaed05618b377e">UNICHARSET::load_from_file</a></div><div class="ttdeci">bool load_from_file(const char *const filename, bool skip_fragments)</div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00351">unicharset.h:351</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a01178_html_a5b4bf0033d9904ad285f6adcb0cc4d0d"><div class="ttname"><a href="a01178.html#a5b4bf0033d9904ad285f6adcb0cc4d0d">LoadSquishedDawg</a></div><div class="ttdeci">tesseract::Dawg * LoadSquishedDawg(const UNICHARSET &amp;unicharset, const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="a01178_source.html#l00028">dawg2wordlist.cpp:28</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00234">ratngs.h:234</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01178.html">ambiguous_words.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:31 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01178.html">dawg2wordlist.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:06 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

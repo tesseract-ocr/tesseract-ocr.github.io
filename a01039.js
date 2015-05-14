@@ -1,6 +1,8 @@
 var a01039 =
 [
-    [ "EDGEPTFLAGS", "a01039.html#ad9af7050d913fcdd0b94253eccb4994a", null ],
-    [ "PI", "a01039.html#a598a3330b3c21701223ee0ca14316eca", null ],
-    [ "SPLINESIZE", "a01039.html#a28ed3351013f0697aa3189e7cfb669fd", null ]
+    [ "ILLEGALMALLOCREQUEST", "a01039.html#af4b3c6a2833ca7c3f531746c2937e3a8", null ],
+    [ "NOTENOUGHMEMORY", "a01039.html#a33c9be2e27c6832c275df3c2745e039b", null ],
+    [ "Efree", "a01039.html#af846576ae65dc13e49ddc616e17baa27", null ],
+    [ "Emalloc", "a01039.html#a9bdc0885c33bbb5b062c77b1d90e2305", null ],
+    [ "Erealloc", "a01039.html#a2bd9b4f7899f8798018497faa3b12eed", null ]
 ];

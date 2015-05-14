@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00561.html','');});
+$(document).ready(function(){initNavTree('a00621.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,29 +106,33 @@ $(document).ready(function(){initNavTree('a00561.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::ShapeClassifier Member List</div>  </div>
+<div class="title">tesseract::TessResultRenderer Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00561.html">tesseract::ShapeClassifier</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00621.html">tesseract::TessResultRenderer</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00561.html#a57b3d00a13eb4e73f9a5284a74e789d9">BestShapeForUnichar</a>(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id, ShapeRating *result)</td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00561.html#a0bd45d4adca11310d79afa0c0a312e5f">ClassifySample</a>(const TrainingSample &amp;sample, Pix *page_pix, int debug, UNICHAR_ID keep_this, GenericVector&lt; ShapeRating &gt; *results)</td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00561.html#a9bb8cad25572380e63fc9b51fc2c857c">DebugDisplay</a>(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id)</td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00561.html#a0687b15edcbd8fe3d3d611e1d073c3f4">DisplayClassifyAs</a>(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id, int index, PointerVector&lt; ScrollView &gt; *windows)</td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00561.html#a3d89d23ffe2b0f04f9360d75243d904e">FilterDuplicateUnichars</a>(GenericVector&lt; ShapeRating &gt; *results) const </td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00561.html#ab5e612b18003a7c0ceae685ea1fe8571">GetShapeTable</a>() const =0</td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00561.html#a327269e74451ae730d5ee6795f0ed21a">GetUnicharset</a>() const </td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00561.html#aa91458caf58bc2ff1a4837ae2761fd3a">PrintResults</a>(const char *context, const GenericVector&lt; ShapeRating &gt; &amp;results) const </td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00561.html#a7c02e74689b6591fd0d56ab2f0e92a86">UnicharClassifySample</a>(const TrainingSample &amp;sample, Pix *page_pix, int debug, UNICHAR_ID keep_this, GenericVector&lt; UnicharRating &gt; *results)</td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00561.html#a1857da78597dd078f51204097c4f3146">UnicharPrintResults</a>(const char *context, const GenericVector&lt; UnicharRating &gt; &amp;results) const </td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00561.html#a8beb57719279f6b67f426dcccb6231b7">~ShapeClassifier</a>()</td><td class="entry"><a class="el" href="a00561.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#a48121964cc38c7b33bc7e555a7b41423">AddImage</a>(TessBaseAPI *api)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#a3e49719af05d5681bfa19755a8ef4909">AddImageHandler</a>(TessBaseAPI *api)=0</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#adfd158aaf385d1410d65ec01d1a62145">AppendData</a>(const char *s, int len)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(const char *s)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#a8f910e5251ee7ebd65f69072b358b445">BeginDocument</a>(const char *title)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#a2a48aa4490470f080289215d885458d8">BeginDocumentHandler</a>()</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#a64def5e1f46676190e5af46f23adab88">EndDocument</a>()</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#adf36cb4fc4481e35e5d114e7673aff88">EndDocumentHandler</a>()</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#a1cdb745d5ebc40448f41e426c086f278">file_extension</a>() const </td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#a349cd9f8e3f298f2fb67055d39bde954">imagenum</a>() const </td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#af2af504390bed60b8b8041a978cf6962">insert</a>(TessResultRenderer *next)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#a8b986f7eee3c6892faa6f070a102b0b1">next</a>()</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#af05c5f7be48946d521660f05323417e7">TessResultRenderer</a>(const char *outputbase, const char *extension)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#abc6c2169b2c37d5963163cdd0a21df77">title</a>() const </td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#ab54195c235a6c1639253a778c6cc2944">~TessResultRenderer</a>()</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:31 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

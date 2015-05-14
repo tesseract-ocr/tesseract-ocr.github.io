@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cutil/listio.h File Reference</title>
+<title>Tesseract: dict/dict.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,79 +105,30 @@ $(document).ready(function(){initNavTree('a01054.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">listio.h File Reference</div>  </div>
+<div class="title">dict.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a01056_source.html">oldlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01055_source.html">dict.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00873_source.html">unicodes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00864_source.html">tprintf.h</a>&quot;</code><br />
 </div>
 <p><a href="a01054_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:aabd9ea571a22207154721504394c27cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01056.html#aa200acf94add0e61783bfcd5965bb645">LIST</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01054.html#aabd9ea571a22207154721504394c27cd">read_list</a> (const char *filename)</td></tr>
-<tr class="separator:aabd9ea571a22207154721504394c27cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="aabd9ea571a22207154721504394c27cd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01056.html#aa200acf94add0e61783bfcd5965bb645">LIST</a> read_list </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01053_source.html#l00045">45</a> of file <a class="el" href="a01053_source.html">listio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                     {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  FILE *infile;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">char</span> s[<a class="code" href="a01041.html#accaf8215779c8836f3f25f722e77550e">CHARS_PER_LINE</a>];</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="a00469.html">LIST</a> list;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">if</span> ((infile = <a class="code" href="a01040.html#ae3226f9d05617de0b7174bc7b7fce5b6">open_file</a> (<a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <span class="stringliteral">&quot;r&quot;</span>)) == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a01056.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  list = <a class="code" href="a01056.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">while</span> (fgets (s, <a class="code" href="a01041.html#accaf8215779c8836f3f25f722e77550e">CHARS_PER_LINE</a>, infile) != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    s[<a class="code" href="a01041.html#accaf8215779c8836f3f25f722e77550e">CHARS_PER_LINE</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (strlen (s) &gt; 0) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">if</span> (s[strlen (s) - 1] == <span class="charliteral">&#39;\n&#39;</span>)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        s[strlen (s) - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">if</span> (strlen (s) &gt; 0) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        list = <a class="code" href="a01055.html#a9c4294375af81ab4c133b6b5a3679a16">push</a> (list, (<a class="code" href="a00469.html">LIST</a>) <a class="code" href="a01041.html#a743cdc8825def697bb2b4252e3ec0db5">strsave</a> (s));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  fclose(infile);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="a01055.html#a1316854253b2d15102f4f50d2e7eee02">reverse_d</a> (list));</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="ttc" id="a01040_html_ae3226f9d05617de0b7174bc7b7fce5b6"><div class="ttname"><a href="a01040.html#ae3226f9d05617de0b7174bc7b7fce5b6">open_file</a></div><div class="ttdeci">FILE * open_file(const char *filename, const char *mode)</div><div class="ttdef"><b>Definition:</b> <a href="a01040_source.html#l00082">cutil.cpp:82</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a01280_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
-<div class="ttc" id="a01041_html_accaf8215779c8836f3f25f722e77550e"><div class="ttname"><a href="a01041.html#accaf8215779c8836f3f25f722e77550e">CHARS_PER_LINE</a></div><div class="ttdeci">#define CHARS_PER_LINE</div><div class="ttdef"><b>Definition:</b> <a href="a01041_source.html#l00057">cutil.h:57</a></div></div>
-<div class="ttc" id="a00469_html"><div class="ttname"><a href="a00469.html">list_rec</a></div><div class="ttdef"><b>Definition:</b> <a href="a01056_source.html#l00127">oldlist.h:127</a></div></div>
-<div class="ttc" id="a01056_html_ae212530ca629c67513698e988c705a5a"><div class="ttname"><a href="a01056.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a></div><div class="ttdeci">#define NIL_LIST</div><div class="ttdef"><b>Definition:</b> <a href="a01056_source.html#l00126">oldlist.h:126</a></div></div>
-<div class="ttc" id="a01041_html_a743cdc8825def697bb2b4252e3ec0db5"><div class="ttname"><a href="a01041.html#a743cdc8825def697bb2b4252e3ec0db5">strsave</a></div><div class="ttdeci">#define strsave(s)</div><div class="ttdef"><b>Definition:</b> <a href="a01041_source.html#l00111">cutil.h:111</a></div></div>
-<div class="ttc" id="a01055_html_a1316854253b2d15102f4f50d2e7eee02"><div class="ttname"><a href="a01055.html#a1316854253b2d15102f4f50d2e7eee02">reverse_d</a></div><div class="ttdeci">LIST reverse_d(LIST list)</div><div class="ttdef"><b>Definition:</b> <a href="a01055_source.html#l00371">oldlist.cpp:371</a></div></div>
-<div class="ttc" id="a01055_html_a9c4294375af81ab4c133b6b5a3679a16"><div class="ttname"><a href="a01055.html#a9c4294375af81ab4c133b6b5a3679a16">push</a></div><div class="ttdeci">LIST push(LIST list, void *element)</div><div class="ttdef"><b>Definition:</b> <a href="a01055_source.html#l00323">oldlist.cpp:323</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01054.html">listio.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_7da809630a0bf7f0b43a9c245bff7d16.html">dict</a></li><li class="navelem"><a class="el" href="a01054.html">dict.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

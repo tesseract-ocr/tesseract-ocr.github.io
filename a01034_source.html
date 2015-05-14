@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/word_unigrams.h Source File</title>
+<title>Tesseract: cutil/danerror.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,16 +105,16 @@ $(document).ready(function(){initNavTree('a01034_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">word_unigrams.h</div>  </div>
+<div class="title">danerror.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01034.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; <span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        word_unigrams.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Word Unigrams Class</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2008</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2008, Google Inc.</span></div>
+<a href="a01034.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:       danerror.c</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:        Routines for managing error trapping</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:         Dan Johnson</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:        3/17/89, DSJ, Created.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **     (c) Copyright Hewlett-Packard Company, 1988.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
@@ -124,79 +124,59 @@ $(document).ready(function(){initNavTree('a01034_source.html','');});
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The WordUnigram class holds the unigrams of the most frequent set of words</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// in a language. It is an optional component of the Cube OCR engine. If</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// present, the unigram cost of a word is aggregated with the other costs</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// (Recognition, Language Model, Size) to compute a cost for a word.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// The word list is assumed to be sorted in lexicographic order.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef WORD_UNIGRAMS_H</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define WORD_UNIGRAMS_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00835.html">host.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01035.html">danerror.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00864.html">tprintf.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00832.html">globaloc.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifdef __UNIX__</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;assert.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00984.html">char_set.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01015.html">lang_model.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00677.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00677.html">WordUnigrams</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="a00677.html#afd00490f957dd1842384c372a2949141">WordUnigrams</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="a00677.html#a60f14b6354f60c7411695103bc422601">~WordUnigrams</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// Load the word-list and unigrams from file and create an object</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// The word list is assumed to be sorted</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">static</span> <a class="code" href="a00677.html">WordUnigrams</a> *<a class="code" href="a00677.html#a7e57ac1c4afd17adaeb8abb06351dc76">Create</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;data_file_path,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                              <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<a class="code" href="a01280.html#a5f5eb917f55d9d6ccaa95131ae5d171c">lang</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// Compute the unigram cost of a UTF-32 string. Splits into</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// space-separated tokens, strips trailing punctuation from each</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// token, evaluates case properties, and calls internal Cost()</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// function on UTF-8 version. To avoid unnecessarily penalizing</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// all-one-case words or capitalized words (first-letter</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// upper-case and remaining letters lower-case) when not all</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// versions of the word appear in the &lt;lang&gt;.cube.word-freq file, a</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// case-invariant cost is computed in those cases, assuming the word</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// meets a minimum length.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00677.html#a298b0661e1327c8dcb27bfdd790d92d3">Cost</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str32, <a class="code" href="a00461.html">LangModel</a> *lang_mod,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;           <a class="code" href="a00314.html">CharSet</a> *char_set) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Compute the word unigram cost of a UTF-8 string with binary</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// search of sorted words_ array.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00677.html#a14623fdba39beee456c834cdc6a8976f">CostInternal</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// Only words this length or greater qualify for all-numeric or</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// case-invariant word unigram cost.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kMinLengthNumOrCaseInvariant = 4;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">int</span> word_cnt_;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">char</span> **words_;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">int</span> *costs_;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">int</span> not_in_list_cost_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif  // WORD_UNIGRAMS_H</span></div>
-<div class="ttc" id="a01280_html_a5f5eb917f55d9d6ccaa95131ae5d171c"><div class="ttname"><a href="a01280.html#a5f5eb917f55d9d6ccaa95131ae5d171c">tesseract-c_api-demo.lang</a></div><div class="ttdeci">string lang</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00028">tesseract-c_api-demo.py:28</a></div></div>
-<div class="ttc" id="a01015_html"><div class="ttname"><a href="a01015.html">lang_model.h</a></div></div>
-<div class="ttc" id="a00984_html"><div class="ttname"><a href="a00984.html">char_set.h</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00461_html"><div class="ttname"><a href="a00461.html">tesseract::LangModel</a></div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00034">lang_model.h:34</a></div></div>
-<div class="ttc" id="a00314_html"><div class="ttname"><a href="a00314.html">tesseract::CharSet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00984_source.html#l00042">char_set.h:42</a></div></div>
-<div class="ttc" id="a00677_html_a7e57ac1c4afd17adaeb8abb06351dc76"><div class="ttname"><a href="a00677.html#a7e57ac1c4afd17adaeb8abb06351dc76">tesseract::WordUnigrams::Create</a></div><div class="ttdeci">static WordUnigrams * Create(const string &amp;data_file_path, const string &amp;lang)</div><div class="ttdef"><b>Definition:</b> <a href="a01033_source.html#l00055">word_unigrams.cpp:55</a></div></div>
-<div class="ttc" id="a00677_html_a14623fdba39beee456c834cdc6a8976f"><div class="ttname"><a href="a00677.html#a14623fdba39beee456c834cdc6a8976f">tesseract::WordUnigrams::CostInternal</a></div><div class="ttdeci">int CostInternal(const char *str) const </div><div class="ttdef"><b>Definition:</b> <a href="a01033_source.html#l00243">word_unigrams.cpp:243</a></div></div>
-<div class="ttc" id="a00677_html_a60f14b6354f60c7411695103bc422601"><div class="ttname"><a href="a00677.html#a60f14b6354f60c7411695103bc422601">tesseract::WordUnigrams::~WordUnigrams</a></div><div class="ttdeci">~WordUnigrams()</div><div class="ttdef"><b>Definition:</b> <a href="a01033_source.html#l00038">word_unigrams.cpp:38</a></div></div>
-<div class="ttc" id="a00677_html_a298b0661e1327c8dcb27bfdd790d92d3"><div class="ttname"><a href="a00677.html#a298b0661e1327c8dcb27bfdd790d92d3">tesseract::WordUnigrams::Cost</a></div><div class="ttdeci">int Cost(const char_32 *str32, LangModel *lang_mod, CharSet *char_set) const </div><div class="ttdef"><b>Definition:</b> <a href="a01033_source.html#l00150">word_unigrams.cpp:150</a></div></div>
-<div class="ttc" id="a00677_html_afd00490f957dd1842384c372a2949141"><div class="ttname"><a href="a00677.html#afd00490f957dd1842384c372a2949141">tesseract::WordUnigrams::WordUnigrams</a></div><div class="ttdeci">WordUnigrams()</div><div class="ttdef"><b>Definition:</b> <a href="a01033_source.html#l00032">word_unigrams.cpp:32</a></div></div>
-<div class="ttc" id="a00677_html"><div class="ttname"><a href="a00677.html">tesseract::WordUnigrams</a></div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00034">word_unigrams.h:34</a></div></div>
-<div class="ttc" id="a01279_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01279.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00040">string_32.h:40</a></div></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01035.html#a480942fa88232bda23e9809e5afa9f25">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a>(<span class="keywordtype">int</span> Error, <span class="keyword">const</span> <span class="keywordtype">char</span> *Message) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **             Error   error number which is to be trapped</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **             Message pointer to a string to be printed as an error message</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **     Globals:</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **             ErrorTrapStack          stack of error traps</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **             CurrentTrapDepth        number of traps on the stack</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **     Operation:</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **             This routine prints the specified error message to stderr.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **             It then jumps to the current error trap.  If the error trap</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **             stack is empty, the calling program is terminated with a</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **             fatal error message.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **     Return:</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> **             None - this routine does not return.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **     Exceptions:</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> **             Empty error trap stack terminates the calling program.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> **     History:</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> **             4/3/89, DSJ, Created.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span> (Message != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;\nError: %s!\n&quot;</span>, Message);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="a00831.html#a7da97df8ad833cd9bbae484fa4fc4f9a">err_exit</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}                                <span class="comment">/* DoError */</span></div>
+<div class="ttc" id="a00864_html"><div class="ttname"><a href="a00864.html">tprintf.h</a></div></div>
+<div class="ttc" id="a00831_html_a7da97df8ad833cd9bbae484fa4fc4f9a"><div class="ttname"><a href="a00831.html#a7da97df8ad833cd9bbae484fa4fc4f9a">err_exit</a></div><div class="ttdeci">void err_exit()</div><div class="ttdef"><b>Definition:</b> <a href="a00831_source.html#l00074">globaloc.cpp:74</a></div></div>
+<div class="ttc" id="a00835_html"><div class="ttname"><a href="a00835.html">host.h</a></div></div>
+<div class="ttc" id="a01035_html"><div class="ttname"><a href="a01035.html">danerror.h</a></div></div>
+<div class="ttc" id="a01034_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00032">danerror.cpp:32</a></div></div>
+<div class="ttc" id="a00832_html"><div class="ttname"><a href="a00832.html">globaloc.h</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01034.html">word_unigrams.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01034.html">danerror.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:01 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

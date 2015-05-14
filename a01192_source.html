@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: training/fileio.h Source File</title>
+<title>Tesseract: training/pango_font_info.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,146 +105,238 @@ $(document).ready(function(){initNavTree('a01192_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">fileio.h</div>  </div>
+<div class="title">pango_font_info.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01192.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        fileio.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: File I/O utilities.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:      Samuel Charron</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:     Tuesday, July 9, 2013</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        pango_font_info.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Font-related objects and helper functions</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:      Ranjith Unnikrishnan</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:     Mon Nov 18 2013</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2013, Google Inc.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * use this file except in compliance with the License.  You may obtain a copy</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * by applicable law or agreed to in writing, software distributed under the</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * OF ANY KIND, either express or implied.  See the License for the specific</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * language governing permissions and limitations under the License.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef TESSERACT_TRAINING_FILEIO_H_</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define TESSERACT_TRAINING_FILEIO_H_</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef USE_STD_NAMESPACE</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using</span> std::string;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// A class to manipulate FILE*s.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00394.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00394.html">File</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// Try to open the file &#39;filename&#39; in mode &#39;mode&#39;.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Stop the program if it cannot open it.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">static</span> FILE* <a class="code" href="a00394.html#ab0ac9dd4c32b886d524e57a4994edf7d">OpenOrDie</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="a00722.html#afc03cf3e39248c2e339fee4d31f5f750">mode</a>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">static</span> FILE* <a class="code" href="a00394.html#afaf0af5b797d55ac454245e3e6a185c7">Open</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; mode);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// Try to open the file &#39;filename&#39; and to write &#39;str&#39; in it.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// Stop the program if it fails.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00394.html#a3a3daa0bc6ed91e7532ebe7a628c1445">WriteStringToFileOrDie</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// Return true if the file &#39;filename&#39; is readable.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00394.html#a877c8da1c9d2d70b7298ea0c4d944eb1">Readable</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00394.html#a18aae43ecab4deeecdfe71f911388776">ReadFileToStringOrDie</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename, <span class="keywordtype">string</span>* out);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00394.html#a44a69337282f6d090f5533e0f06ad4d7">ReadFileToString</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; filename, <span class="keywordtype">string</span>* out);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// Helper methods</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Concatenate file paths removing any extra intervening &#39;/&#39; symbols.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="a00394.html#ae9a0608ad594dc5f095e88d6cc492eb0">JoinPath</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; prefix, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; suffix);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// Delete a filename or all filenames matching a glob pattern.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00394.html#a313b653959b700449effdb187f98333f">Delete</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pathname);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00394.html#a053289c13295b1e3c0e858eb19e17d9c">DeleteMatchingFiles</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pattern);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// A class to manipulate Files for reading.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a00435.html">   58</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00435.html">InputBuffer</a> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00435.html#a14bbf8f4be142330141d33443aa3839b">InputBuffer</a>(FILE* stream);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// &#39;size&#39; is ignored.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="a00435.html#a14bbf8f4be142330141d33443aa3839b">InputBuffer</a>(FILE* stream, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TESSERACT_TRAINING_PANGO_FONT_INFO_H_</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TESSERACT_TRAINING_PANGO_FONT_INFO_H_</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00833.html">hashfn.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00835.html">host.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01203.html">util.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;pango/pango-font.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01192.html#a328af63b24a185a6916faebb5b85aa84">   32</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">signed</span> <span class="keywordtype">int</span> <a class="code" href="a01192.html#a328af63b24a185a6916faebb5b85aa84">char32</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Data holder class for a font, intented to avoid having to work with Pango or</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// FontConfig-specific objects directly.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00489.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00489.html">PangoFontInfo</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757c">   40</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757c">FontTypeEnum</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca4b65109a196c9ce3aafb2116763ee753">   41</a></span>&#160;    <a class="code" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca4b65109a196c9ce3aafb2116763ee753">UNKNOWN</a>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca926fcac3c694dffe6331763e93bf91f2">   42</a></span>&#160;    <a class="code" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca926fcac3c694dffe6331763e93bf91f2">SERIF</a>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca882ecffde5c576f799b5182460e05d06">   43</a></span>&#160;    <a class="code" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca882ecffde5c576f799b5182460e05d06">SANS_SERIF</a>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757cab49bf4795d2440181435bfd899f681d2">   44</a></span>&#160;    <a class="code" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757cab49bf4795d2440181435bfd899f681d2">DECORATIVE</a>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="a00489.html#af6bc79cf50493749fa2b572c31371eb9">PangoFontInfo</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// Initialize from parsing a font description name, defined as a string of the</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// format:</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">//   &quot;FamilyName [FaceName] [PointSize]&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// where a missing FaceName implies the default regular face.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// eg. &quot;Arial Italic 12&quot;, &quot;Verdana&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">//</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// FaceName is a combination of:</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//   [StyleName] [Variant] [Weight] [Stretch]</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// with (all optional) Pango-defined values of:</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// StyleName: Oblique, Italic</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// Variant  : Small-Caps</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// Weight   : Ultra-Light, Light, Medium, Semi-Bold, Bold, Ultra-Bold, Heavy</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// Stretch  : Ultra-Condensed, Extra-Condensed, Condensed, Semi-Condensed,</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">//            Semi-Expanded, Expanded, Extra-Expanded, Ultra-Expanded.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00489.html#af6bc79cf50493749fa2b572c31371eb9">PangoFontInfo</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00489.html#aa801d83e5f1836b4739e67978942b71f">ParseFontDescriptionName</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="a00435.html#a780708058546af7d6a19c1d7b572d951">~InputBuffer</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// Read data until end-of-file or a \n is read.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// The data is stored in &#39;*out&#39;, excluding the \n if present.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// Return false if an error occurs or at end-of-file, true otherwise.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00435.html#a84d399d89cd3c8ba685b8001242b6fea">ReadLine</a>(<span class="keywordtype">string</span>* out);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// Read data until end-of-file.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// The data is stored in &#39;*out&#39;.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// Return false if an error occurs, true otherwise.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00435.html#a4a942f7c87ff92c87ceb821dfeff4d4e">Read</a>(<span class="keywordtype">string</span>* out);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Close the FILE* used by InputBuffer.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// Return false if an error occurs, true otherwise.</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00435.html#ab2f13cd7b1a2bedcdf9faa6fc4a87d2d">CloseFile</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  FILE* stream_;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">int</span>   filesize_;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// A class to manipulate Files for writing.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a00500.html">   86</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00500.html">OutputBuffer</a> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00500.html#af3bfbb2ecc084138ddb36d8f1d781323">OutputBuffer</a>(FILE* stream);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// &#39;size&#39; is ignored.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="a00500.html#af3bfbb2ecc084138ddb36d8f1d781323">OutputBuffer</a>(FILE* stream, <span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="a00500.html#a7b0c9f9ea7c448db7711893799410988">~OutputBuffer</a>();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">// Write string &#39;str&#39; to the open FILE*.</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00500.html#a95174ff7c876620fe0dcdef61654bcf5">WriteString</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">// Close the FILE* used by InputBuffer.</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="comment">// Return false if an error occurs, true otherwise.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00500.html#a05b5465b1c270f9caa4ac2caee5aed4d">CloseFile</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  FILE* stream_;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif  // TESSERACT_TRAINING_FILEIO_H_</span></div>
-<div class="ttc" id="a00500_html_a05b5465b1c270f9caa4ac2caee5aed4d"><div class="ttname"><a href="a00500.html#a05b5465b1c270f9caa4ac2caee5aed4d">tesseract::OutputBuffer::CloseFile</a></div><div class="ttdeci">bool CloseFile()</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00197">fileio.cpp:197</a></div></div>
-<div class="ttc" id="a00394_html_a44a69337282f6d090f5533e0f06ad4d7"><div class="ttname"><a href="a00394.html#a44a69337282f6d090f5533e0f06ad4d7">tesseract::File::ReadFileToString</a></div><div class="ttdeci">static bool ReadFileToString(const string &amp;filename, string *out)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00073">fileio.cpp:73</a></div></div>
-<div class="ttc" id="a00435_html_ab2f13cd7b1a2bedcdf9faa6fc4a87d2d"><div class="ttname"><a href="a00435.html#ab2f13cd7b1a2bedcdf9faa6fc4a87d2d">tesseract::InputBuffer::CloseFile</a></div><div class="ttdeci">bool CloseFile()</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00169">fileio.cpp:169</a></div></div>
-<div class="ttc" id="a00500_html_a7b0c9f9ea7c448db7711893799410988"><div class="ttname"><a href="a00500.html#a7b0c9f9ea7c448db7711893799410988">tesseract::OutputBuffer::~OutputBuffer</a></div><div class="ttdeci">~OutputBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00187">fileio.cpp:187</a></div></div>
-<div class="ttc" id="a00394_html_a877c8da1c9d2d70b7298ea0c4d944eb1"><div class="ttname"><a href="a00394.html#a877c8da1c9d2d70b7298ea0c4d944eb1">tesseract::File::Readable</a></div><div class="ttdeci">static bool Readable(const string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00064">fileio.cpp:64</a></div></div>
-<div class="ttc" id="a00435_html"><div class="ttname"><a href="a00435.html">tesseract::InputBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00058">fileio.h:58</a></div></div>
-<div class="ttc" id="a00394_html_ae9a0608ad594dc5f095e88d6cc492eb0"><div class="ttname"><a href="a00394.html#ae9a0608ad594dc5f095e88d6cc492eb0">tesseract::File::JoinPath</a></div><div class="ttdeci">static string JoinPath(const string &amp;prefix, const string &amp;suffix)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00089">fileio.cpp:89</a></div></div>
-<div class="ttc" id="a00394_html_a313b653959b700449effdb187f98333f"><div class="ttname"><a href="a00394.html#a313b653959b700449effdb187f98333f">tesseract::File::Delete</a></div><div class="ttdeci">static bool Delete(const char *pathname)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00094">fileio.cpp:94</a></div></div>
-<div class="ttc" id="a00394_html_ab0ac9dd4c32b886d524e57a4994edf7d"><div class="ttname"><a href="a00394.html#ab0ac9dd4c32b886d524e57a4994edf7d">tesseract::File::OpenOrDie</a></div><div class="ttdeci">static FILE * OpenOrDie(const string &amp;filename, const string &amp;mode)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00043">fileio.cpp:43</a></div></div>
-<div class="ttc" id="a00394_html_a3a3daa0bc6ed91e7532ebe7a628c1445"><div class="ttname"><a href="a00394.html#a3a3daa0bc6ed91e7532ebe7a628c1445">tesseract::File::WriteStringToFileOrDie</a></div><div class="ttdeci">static void WriteStringToFileOrDie(const string &amp;str, const string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00053">fileio.cpp:53</a></div></div>
-<div class="ttc" id="a00435_html_a84d399d89cd3c8ba685b8001242b6fea"><div class="ttname"><a href="a00435.html#a84d399d89cd3c8ba685b8001242b6fea">tesseract::InputBuffer::ReadLine</a></div><div class="ttdeci">bool ReadLine(string *out)</div></div>
-<div class="ttc" id="a00394_html_a053289c13295b1e3c0e858eb19e17d9c"><div class="ttname"><a href="a00394.html#a053289c13295b1e3c0e858eb19e17d9c">tesseract::File::DeleteMatchingFiles</a></div><div class="ttdeci">static bool DeleteMatchingFiles(const char *pattern)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00118">fileio.cpp:118</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00500_html"><div class="ttname"><a href="a00500.html">tesseract::OutputBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00086">fileio.h:86</a></div></div>
-<div class="ttc" id="a00394_html_afaf0af5b797d55ac454245e3e6a185c7"><div class="ttname"><a href="a00394.html#afaf0af5b797d55ac454245e3e6a185c7">tesseract::File::Open</a></div><div class="ttdeci">static FILE * Open(const string &amp;filename, const string &amp;mode)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00039">fileio.cpp:39</a></div></div>
-<div class="ttc" id="a00435_html_a780708058546af7d6a19c1d7b572d951"><div class="ttname"><a href="a00435.html#a780708058546af7d6a19c1d7b572d951">tesseract::InputBuffer::~InputBuffer</a></div><div class="ttdeci">~InputBuffer()</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00149">fileio.cpp:149</a></div></div>
-<div class="ttc" id="a01280_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
-<div class="ttc" id="a00722_html_afc03cf3e39248c2e339fee4d31f5f750"><div class="ttname"><a href="a00722.html#afc03cf3e39248c2e339fee4d31f5f750">mode</a></div><div class="ttdeci">CMD_EVENTS mode</div><div class="ttdef"><b>Definition:</b> <a href="a00722_source.html#l00116">pgedit.cpp:116</a></div></div>
-<div class="ttc" id="a00435_html_a4a942f7c87ff92c87ceb821dfeff4d4e"><div class="ttname"><a href="a00435.html#a4a942f7c87ff92c87ceb821dfeff4d4e">tesseract::InputBuffer::Read</a></div><div class="ttdeci">bool Read(string *out)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00155">fileio.cpp:155</a></div></div>
-<div class="ttc" id="a00500_html_af3bfbb2ecc084138ddb36d8f1d781323"><div class="ttname"><a href="a00500.html#af3bfbb2ecc084138ddb36d8f1d781323">tesseract::OutputBuffer::OutputBuffer</a></div><div class="ttdeci">OutputBuffer(FILE *stream)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00179">fileio.cpp:179</a></div></div>
-<div class="ttc" id="a00394_html"><div class="ttname"><a href="a00394.html">tesseract::File</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00031">fileio.h:31</a></div></div>
-<div class="ttc" id="a00394_html_a18aae43ecab4deeecdfe71f911388776"><div class="ttname"><a href="a00394.html#a18aae43ecab4deeecdfe71f911388776">tesseract::File::ReadFileToStringOrDie</a></div><div class="ttdeci">static void ReadFileToStringOrDie(const string &amp;filename, string *out)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00083">fileio.cpp:83</a></div></div>
-<div class="ttc" id="a00435_html_a14bbf8f4be142330141d33443aa3839b"><div class="ttname"><a href="a00435.html#a14bbf8f4be142330141d33443aa3839b">tesseract::InputBuffer::InputBuffer</a></div><div class="ttdeci">InputBuffer(FILE *stream)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00135">fileio.cpp:135</a></div></div>
-<div class="ttc" id="a00500_html_a95174ff7c876620fe0dcdef61654bcf5"><div class="ttname"><a href="a00500.html#a95174ff7c876620fe0dcdef61654bcf5">tesseract::OutputBuffer::WriteString</a></div><div class="ttdeci">void WriteString(const string &amp;str)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00193">fileio.cpp:193</a></div></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Returns true if the font have codepoint coverage for the specified text.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00489.html#ab7e32324e9b40114dc292cb4c9034ae5">CoversUTF8Text</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* utf8_text, <span class="keywordtype">int</span> byte_length) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// Modifies string to remove unicode points that are not covered by the</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// font. Returns the number of characters dropped.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00489.html#ad8b158aedd0ad0cd910e4b91776b9de1">DropUncoveredChars</a>(<span class="keywordtype">string</span>* utf8_text) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// Returns true if the entire string can be rendered by the font with full</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// character coverage and no unknown glyph or dotted-circle glyph</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// substitutions on encountering a badly formed unicode sequence.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// If true, returns individual graphemes. Any whitespace characters in the</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// original string are also included in the list.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00489.html#aa1efbf4d25038dd781ce7bb635088f3a">CanRenderString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* utf8_word, <span class="keywordtype">int</span> len,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                       vector&lt;string&gt;* graphemes) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00489.html#aa1efbf4d25038dd781ce7bb635088f3a">CanRenderString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* utf8_word, <span class="keywordtype">int</span> len) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Retrieves the x_bearing and x_advance for the given utf8 character in the</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// font. Returns false if the glyph for the character could not be found in</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// the font.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// Ref: http://freetype.sourceforge.net/freetype2/docs/glyphs/glyphs-3.html</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00489.html#afdfe53fd19eca560e7292cc70429d6b6">GetSpacingProperties</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; utf8_char,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                            <span class="keywordtype">int</span>* x_bearing, <span class="keywordtype">int</span>* x_advance) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// Accessors</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">string</span> <a class="code" href="a00489.html#a6632920267e937c8d3d15aac83112e9a">DescriptionName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">// Font Family name eg. &quot;Arial&quot;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00489.html#a6dbf58713f28adba01807497d7fbc707">   89</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="a00489.html#a6dbf58713f28adba01807497d7fbc707">family_name</a>()<span class="keyword"> const    </span>{ <span class="keywordflow">return</span> family_name_; }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">// Size in points (1/72&quot;), rounded to the nearest integer.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a00489.html#a1f6447083350cea5d628dcf61e9da81b">   91</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a00489.html#a1f6447083350cea5d628dcf61e9da81b">font_size</a>()<span class="keyword"> const          </span>{ <span class="keywordflow">return</span> font_size_; }</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="a00489.html#a31f5926d3244799d134dc95be97a834d">   92</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="a00489.html#a31f5926d3244799d134dc95be97a834d">is_bold</a>()<span class="keyword"> const           </span>{ <span class="keywordflow">return</span> is_bold_; }</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="a00489.html#a53469e1bfdd402f36ad3b120e46d281a">   93</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="a00489.html#a53469e1bfdd402f36ad3b120e46d281a">is_italic</a>()<span class="keyword"> const         </span>{ <span class="keywordflow">return</span> is_italic_; }</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="a00489.html#a15a51021ce5d8ed88d023d3627571abb">   94</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="a00489.html#a15a51021ce5d8ed88d023d3627571abb">is_smallcaps</a>()<span class="keyword"> const      </span>{ <span class="keywordflow">return</span> is_smallcaps_; }</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="a00489.html#a831e0b23e6d15c25db40b9ab9cd6ef38">   95</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="a00489.html#a831e0b23e6d15c25db40b9ab9cd6ef38">is_monospace</a>()<span class="keyword"> const      </span>{ <span class="keywordflow">return</span> is_monospace_; }</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="a00489.html#a4f8792a077cece41b60845b9e91ecf0f">   96</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="a00489.html#a4f8792a077cece41b60845b9e91ecf0f">is_fraktur</a>()<span class="keyword"> const        </span>{ <span class="keywordflow">return</span> is_fraktur_; }</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="a00489.html#a26ff9fd1c5c73c4f5c711868624e0cac">   97</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757c">FontTypeEnum</a> <a class="code" href="a00489.html#a26ff9fd1c5c73c4f5c711868624e0cac">font_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> font_type_; }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="a00489.html#a8335c61cfb313bc1e777b95e6521adcb">   99</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a00489.html#a8335c61cfb313bc1e777b95e6521adcb">resolution</a>()<span class="keyword"> const         </span>{ <span class="keywordflow">return</span> resolution_; }</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="a00489.html#a0418d1e76be281072c01753ec4150cc0">  100</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00489.html#a0418d1e76be281072c01753ec4150cc0">set_resolution</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a00489.html#a8335c61cfb313bc1e777b95e6521adcb">resolution</a>) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    resolution_ = <a class="code" href="a00489.html#a8335c61cfb313bc1e777b95e6521adcb">resolution</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="a00489.html#add520096c0fdb9217ac2c2c004f9ed31">  105</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="a00397.html">FontUtils</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> Clear();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">bool</span> ParseFontDescription(<span class="keyword">const</span> PangoFontDescription* desc);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">// Returns the PangoFont structure corresponding to the closest available font</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">// in the font map.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  PangoFont* ToPangoFont() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="comment">// Font properties set automatically from parsing the font description name.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">string</span> family_name_;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordtype">int</span> font_size_;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">bool</span> is_bold_;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordtype">bool</span> is_italic_;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">bool</span> is_smallcaps_;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">bool</span> is_monospace_;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">bool</span> is_fraktur_;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="a00489.html#aac1d03949b7ddd949adc752c9d3c757c">FontTypeEnum</a> font_type_;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="comment">// The Pango description that was used to initialize the instance.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  PangoFontDescription* desc_;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">// Default output resolution to assume for GetSpacingProperties() and any</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">// other methods that returns pixel values.</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">int</span> resolution_;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="a00489.html#af6bc79cf50493749fa2b572c31371eb9">PangoFontInfo</a>(<span class="keyword">const</span> <a class="code" href="a00489.html">PangoFontInfo</a>&amp;);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> <a class="code" href="a00489.html">PangoFontInfo</a>&amp;);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">// Static utility methods for querying font availability and font-selection</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">// based on codepoint coverage.</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="a00397.html">  134</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00397.html">FontUtils</a> {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="comment">// Returns true if the font of the given description name is available in the</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="comment">// target directory specified by --fonts_dir</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00397.html#ad2c7fbf2858ab9f6eb5a6a7ee71dafa7">IsAvailableFont</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* font_desc);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="comment">// Outputs description names of available fonts.</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> vector&lt;string&gt;&amp; <a class="code" href="a00397.html#a57687a23c5f37d5b8d757d897955e777">ListAvailableFonts</a>();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="comment">// Picks font among available fonts that covers and can render the given word,</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="comment">// and returns the font description name and the decomposition of the word to</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="comment">// graphemes. Returns false if no suitable font was found.</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00397.html#a77ffbf7de80afeec04fb02a11eb3f416">SelectFont</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* utf8_word, <span class="keyword">const</span> <span class="keywordtype">int</span> utf8_len,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                         <span class="keywordtype">string</span>* font_name, vector&lt;string&gt;* graphemes);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="comment">// Picks font among all_fonts that covers and can render the given word,</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="comment">// and returns the font description name and the decomposition of the word to</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="comment">// graphemes. Returns false if no suitable font was found.</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00397.html#a77ffbf7de80afeec04fb02a11eb3f416">SelectFont</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* utf8_word, <span class="keyword">const</span> <span class="keywordtype">int</span> utf8_len,</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                         <span class="keyword">const</span> vector&lt;string&gt;&amp; all_fonts,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                         <span class="keywordtype">string</span>* font_name, vector&lt;string&gt;* graphemes);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">// Returns a bitmask where the value of true at index &#39;n&#39; implies that unicode</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="comment">// value &#39;n&#39; is renderable by at least one available font.</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00397.html#a59e0c5a0d56dc7c99f38fe09712ced88">GetAllRenderableCharacters</a>(vector&lt;bool&gt;* unichar_bitmap);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="comment">// Variant of the above function that inspects only the provided font names.</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00397.html#a59e0c5a0d56dc7c99f38fe09712ced88">GetAllRenderableCharacters</a>(<span class="keyword">const</span> vector&lt;string&gt;&amp; font_names,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                         vector&lt;bool&gt;* unichar_bitmap);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00397.html#a59e0c5a0d56dc7c99f38fe09712ced88">GetAllRenderableCharacters</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; font_name,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                         vector&lt;bool&gt;* unichar_bitmap);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="comment">// NOTE: The following utilities were written to be backward compatible with</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="comment">// StringRender.</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="comment">// BestFonts returns a font name and a bit vector of the characters it</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="comment">// can render for the fonts that score within some fraction of the best</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="comment">// font on the characters in the given hash map.</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="comment">// In the flags vector, each flag is set according to whether the</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="comment">// corresponding character (in order of iterating ch_map) can be rendered.</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="comment">// The return string is a list of the acceptable fonts that were used.</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code" href="a00397.html#a5dbbf54f1f279829c09fc0caca829f9a">BestFonts</a>(<span class="keyword">const</span> unordered_map&lt;char32, inT64&gt;&amp; ch_map,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      vector&lt;std::pair&lt;<span class="keyword">const</span> <span class="keywordtype">char</span>*, vector&lt;bool&gt; &gt; &gt;* font_flag);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="comment">// FontScore returns the weighted renderability score of the given</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="comment">// hash map character table in the given font. The unweighted score</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="comment">// is also returned in raw_score.</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="comment">// The values in the bool vector ch_flags correspond to whether the</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="comment">// corresponding character (in order of iterating ch_map) can be rendered.</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="a00397.html#abb8ac1b9964a38be0ad21983625e9487">FontScore</a>(<span class="keyword">const</span> unordered_map&lt;char32, inT64&gt;&amp; ch_map,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fontname, <span class="keywordtype">int</span>* raw_score,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                       vector&lt;bool&gt;* ch_flags);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;};</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#endif  // TESSERACT_TRAINING_PANGO_FONT_INFO_H_</span></div>
+<div class="ttc" id="a00489_html_aa1efbf4d25038dd781ce7bb635088f3a"><div class="ttname"><a href="a00489.html#aa1efbf4d25038dd781ce7bb635088f3a">tesseract::PangoFontInfo::CanRenderString</a></div><div class="ttdeci">bool CanRenderString(const char *utf8_word, int len, vector&lt; string &gt; *graphemes) const </div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00333">pango_font_info.cpp:333</a></div></div>
+<div class="ttc" id="a00489_html_aac1d03949b7ddd949adc752c9d3c757ca882ecffde5c576f799b5182460e05d06"><div class="ttname"><a href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca882ecffde5c576f799b5182460e05d06">tesseract::PangoFontInfo::SANS_SERIF</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00043">pango_font_info.h:43</a></div></div>
+<div class="ttc" id="a00489_html_a26ff9fd1c5c73c4f5c711868624e0cac"><div class="ttname"><a href="a00489.html#a26ff9fd1c5c73c4f5c711868624e0cac">tesseract::PangoFontInfo::font_type</a></div><div class="ttdeci">const FontTypeEnum font_type() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00097">pango_font_info.h:97</a></div></div>
+<div class="ttc" id="a00489_html_aa801d83e5f1836b4739e67978942b71f"><div class="ttname"><a href="a00489.html#aa801d83e5f1836b4739e67978942b71f">tesseract::PangoFontInfo::ParseFontDescriptionName</a></div><div class="ttdeci">bool ParseFontDescriptionName(const string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00212">pango_font_info.cpp:212</a></div></div>
+<div class="ttc" id="a00489_html_a6dbf58713f28adba01807497d7fbc707"><div class="ttname"><a href="a00489.html#a6dbf58713f28adba01807497d7fbc707">tesseract::PangoFontInfo::family_name</a></div><div class="ttdeci">const string &amp; family_name() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00089">pango_font_info.h:89</a></div></div>
+<div class="ttc" id="a00489_html_a1f6447083350cea5d628dcf61e9da81b"><div class="ttname"><a href="a00489.html#a1f6447083350cea5d628dcf61e9da81b">tesseract::PangoFontInfo::font_size</a></div><div class="ttdeci">const int font_size() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00091">pango_font_info.h:91</a></div></div>
+<div class="ttc" id="a00835_html"><div class="ttname"><a href="a00835.html">host.h</a></div></div>
+<div class="ttc" id="a00489_html_a6632920267e937c8d3d15aac83112e9a"><div class="ttname"><a href="a00489.html#a6632920267e937c8d3d15aac83112e9a">tesseract::PangoFontInfo::DescriptionName</a></div><div class="ttdeci">string DescriptionName() const </div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00096">pango_font_info.cpp:96</a></div></div>
+<div class="ttc" id="a01203_html"><div class="ttname"><a href="a01203.html">util.h</a></div></div>
+<div class="ttc" id="a01192_html_a328af63b24a185a6916faebb5b85aa84"><div class="ttname"><a href="a01192.html#a328af63b24a185a6916faebb5b85aa84">char32</a></div><div class="ttdeci">signed int char32</div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00032">pango_font_info.h:32</a></div></div>
+<div class="ttc" id="a00489_html_af6bc79cf50493749fa2b572c31371eb9"><div class="ttname"><a href="a00489.html#af6bc79cf50493749fa2b572c31371eb9">tesseract::PangoFontInfo::PangoFontInfo</a></div><div class="ttdeci">PangoFontInfo()</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00070">pango_font_info.cpp:70</a></div></div>
+<div class="ttc" id="a00397_html_a59e0c5a0d56dc7c99f38fe09712ced88"><div class="ttname"><a href="a00397.html#a59e0c5a0d56dc7c99f38fe09712ced88">tesseract::FontUtils::GetAllRenderableCharacters</a></div><div class="ttdeci">static void GetAllRenderableCharacters(vector&lt; bool &gt; *unichar_bitmap)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00577">pango_font_info.cpp:577</a></div></div>
+<div class="ttc" id="a00489_html_a15a51021ce5d8ed88d023d3627571abb"><div class="ttname"><a href="a00489.html#a15a51021ce5d8ed88d023d3627571abb">tesseract::PangoFontInfo::is_smallcaps</a></div><div class="ttdeci">const bool is_smallcaps() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00094">pango_font_info.h:94</a></div></div>
+<div class="ttc" id="a00489_html_aac1d03949b7ddd949adc752c9d3c757ca926fcac3c694dffe6331763e93bf91f2"><div class="ttname"><a href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca926fcac3c694dffe6331763e93bf91f2">tesseract::PangoFontInfo::SERIF</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00042">pango_font_info.h:42</a></div></div>
+<div class="ttc" id="a00397_html_abb8ac1b9964a38be0ad21983625e9487"><div class="ttname"><a href="a00397.html#abb8ac1b9964a38be0ad21983625e9487">tesseract::FontUtils::FontScore</a></div><div class="ttdeci">static int FontScore(const unordered_map&lt; char32, inT64 &gt; &amp;ch_map, const string &amp;fontname, int *raw_score, vector&lt; bool &gt; *ch_flags)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00612">pango_font_info.cpp:612</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00489_html_a831e0b23e6d15c25db40b9ab9cd6ef38"><div class="ttname"><a href="a00489.html#a831e0b23e6d15c25db40b9ab9cd6ef38">tesseract::PangoFontInfo::is_monospace</a></div><div class="ttdeci">const bool is_monospace() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00095">pango_font_info.h:95</a></div></div>
+<div class="ttc" id="a00489_html_a53469e1bfdd402f36ad3b120e46d281a"><div class="ttname"><a href="a00489.html#a53469e1bfdd402f36ad3b120e46d281a">tesseract::PangoFontInfo::is_italic</a></div><div class="ttdeci">const bool is_italic() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00093">pango_font_info.h:93</a></div></div>
+<div class="ttc" id="a00489_html_a31f5926d3244799d134dc95be97a834d"><div class="ttname"><a href="a00489.html#a31f5926d3244799d134dc95be97a834d">tesseract::PangoFontInfo::is_bold</a></div><div class="ttdeci">const bool is_bold() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00092">pango_font_info.h:92</a></div></div>
+<div class="ttc" id="a00489_html_afdfe53fd19eca560e7292cc70429d6b6"><div class="ttname"><a href="a00489.html#afdfe53fd19eca560e7292cc70429d6b6">tesseract::PangoFontInfo::GetSpacingProperties</a></div><div class="ttdeci">bool GetSpacingProperties(const string &amp;utf8_char, int *x_bearing, int *x_advance) const </div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00290">pango_font_info.cpp:290</a></div></div>
+<div class="ttc" id="a00489_html_a0418d1e76be281072c01753ec4150cc0"><div class="ttname"><a href="a00489.html#a0418d1e76be281072c01753ec4150cc0">tesseract::PangoFontInfo::set_resolution</a></div><div class="ttdeci">void set_resolution(const int resolution)</div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00100">pango_font_info.h:100</a></div></div>
+<div class="ttc" id="a00489_html_ab7e32324e9b40114dc292cb4c9034ae5"><div class="ttname"><a href="a00489.html#ab7e32324e9b40114dc292cb4c9034ae5">tesseract::PangoFontInfo::CoversUTF8Text</a></div><div class="ttdeci">bool CoversUTF8Text(const char *utf8_text, int byte_length) const </div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00237">pango_font_info.cpp:237</a></div></div>
+<div class="ttc" id="a00397_html_a77ffbf7de80afeec04fb02a11eb3f416"><div class="ttname"><a href="a00397.html#a77ffbf7de80afeec04fb02a11eb3f416">tesseract::FontUtils::SelectFont</a></div><div class="ttdeci">static bool SelectFont(const char *utf8_word, const int utf8_len, string *font_name, vector&lt; string &gt; *graphemes)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00709">pango_font_info.cpp:709</a></div></div>
+<div class="ttc" id="a00489_html_ad8b158aedd0ad0cd910e4b91776b9de1"><div class="ttname"><a href="a00489.html#ad8b158aedd0ad0cd910e4b91776b9de1">tesseract::PangoFontInfo::DropUncoveredChars</a></div><div class="ttdeci">int DropUncoveredChars(string *utf8_text) const </div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00256">pango_font_info.cpp:256</a></div></div>
+<div class="ttc" id="a00489_html_a8335c61cfb313bc1e777b95e6521adcb"><div class="ttname"><a href="a00489.html#a8335c61cfb313bc1e777b95e6521adcb">tesseract::PangoFontInfo::resolution</a></div><div class="ttdeci">const int resolution() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00099">pango_font_info.h:99</a></div></div>
+<div class="ttc" id="a00489_html_aac1d03949b7ddd949adc752c9d3c757ca4b65109a196c9ce3aafb2116763ee753"><div class="ttname"><a href="a00489.html#aac1d03949b7ddd949adc752c9d3c757ca4b65109a196c9ce3aafb2116763ee753">tesseract::PangoFontInfo::UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00041">pango_font_info.h:41</a></div></div>
+<div class="ttc" id="a00489_html_aac1d03949b7ddd949adc752c9d3c757cab49bf4795d2440181435bfd899f681d2"><div class="ttname"><a href="a00489.html#aac1d03949b7ddd949adc752c9d3c757cab49bf4795d2440181435bfd899f681d2">tesseract::PangoFontInfo::DECORATIVE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00044">pango_font_info.h:44</a></div></div>
+<div class="ttc" id="a00833_html"><div class="ttname"><a href="a00833.html">hashfn.h</a></div></div>
+<div class="ttc" id="a00489_html"><div class="ttname"><a href="a00489.html">tesseract::PangoFontInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00038">pango_font_info.h:38</a></div></div>
+<div class="ttc" id="a00397_html_a57687a23c5f37d5b8d757d897955e777"><div class="ttname"><a href="a00397.html#a57687a23c5f37d5b8d757d897955e777">tesseract::FontUtils::ListAvailableFonts</a></div><div class="ttdeci">static const vector&lt; string &gt; &amp; ListAvailableFonts()</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00514">pango_font_info.cpp:514</a></div></div>
+<div class="ttc" id="a00489_html_a4f8792a077cece41b60845b9e91ecf0f"><div class="ttname"><a href="a00489.html#a4f8792a077cece41b60845b9e91ecf0f">tesseract::PangoFontInfo::is_fraktur</a></div><div class="ttdeci">const bool is_fraktur() const </div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00096">pango_font_info.h:96</a></div></div>
+<div class="ttc" id="a00397_html_ad2c7fbf2858ab9f6eb5a6a7ee71dafa7"><div class="ttname"><a href="a00397.html#ad2c7fbf2858ab9f6eb5a6a7ee71dafa7">tesseract::FontUtils::IsAvailableFont</a></div><div class="ttdeci">static bool IsAvailableFont(const char *font_desc)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00452">pango_font_info.cpp:452</a></div></div>
+<div class="ttc" id="a00489_html_aac1d03949b7ddd949adc752c9d3c757c"><div class="ttname"><a href="a00489.html#aac1d03949b7ddd949adc752c9d3c757c">tesseract::PangoFontInfo::FontTypeEnum</a></div><div class="ttdeci">FontTypeEnum</div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00040">pango_font_info.h:40</a></div></div>
+<div class="ttc" id="a00397_html"><div class="ttname"><a href="a00397.html">tesseract::FontUtils</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00134">pango_font_info.h:134</a></div></div>
+<div class="ttc" id="a00397_html_a5dbbf54f1f279829c09fc0caca829f9a"><div class="ttname"><a href="a00397.html#a5dbbf54f1f279829c09fc0caca829f9a">tesseract::FontUtils::BestFonts</a></div><div class="ttdeci">static string BestFonts(const unordered_map&lt; char32, inT64 &gt; &amp;ch_map, vector&lt; std::pair&lt; const char *, vector&lt; bool &gt; &gt; &gt; *font_flag)</div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00647">pango_font_info.cpp:647</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01192.html">fileio.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:31 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01192.html">pango_font_info.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:06 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

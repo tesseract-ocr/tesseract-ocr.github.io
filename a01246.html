@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/findseam.h File Reference</title>
+<title>Tesseract: wordrec/outlines.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,99 +105,28 @@ $(document).ready(function(){initNavTree('a01246.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">findseam.h File Reference</div>  </div>
+<div class="title">outlines.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00817_source.html">seam.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00848_source.html">genericheap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00857_source.html">kdpair.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01240_source.html">chop.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01247_source.html">outlines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01259_source.html">wordrec.h</a>&quot;</code><br />
 </div>
 <p><a href="a01246_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ad968f53798533f756579c5cd1fc1a980"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak" />
-<a class="el" href="a00455.html">tesseract::KDPtrPairInc</a>&lt; float, <br class="typebreak" />
-<a class="el" href="a00554.html">SEAM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01246.html#ad968f53798533f756579c5cd1fc1a980">SeamPair</a></td></tr>
-<tr class="separator:ad968f53798533f756579c5cd1fc1a980"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad75f559fa2ad0d090f83138d36e057cc"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00415.html">tesseract::GenericHeap</a><br class="typebreak" />
-&lt; <a class="el" href="a01246.html#ad968f53798533f756579c5cd1fc1a980">SeamPair</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01246.html#ad75f559fa2ad0d090f83138d36e057cc">SeamQueue</a></td></tr>
-<tr class="separator:ad75f559fa2ad0d090f83138d36e057cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5294a4d0e0796a8ad92fa3bf63a3561a"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak" />
-<a class="el" href="a00454.html">tesseract::KDPtrPairDec</a>&lt; float, <br class="typebreak" />
-<a class="el" href="a00554.html">SEAM</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01246.html#a5294a4d0e0796a8ad92fa3bf63a3561a">SeamDecPair</a></td></tr>
-<tr class="separator:a5294a4d0e0796a8ad92fa3bf63a3561a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaa99d84dea709fbf9c90de4c65e23f1"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00415.html">tesseract::GenericHeap</a><br class="typebreak" />
-&lt; <a class="el" href="a01246.html#a5294a4d0e0796a8ad92fa3bf63a3561a">SeamDecPair</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01246.html#adaa99d84dea709fbf9c90de4c65e23f1">SeamPile</a></td></tr>
-<tr class="separator:adaa99d84dea709fbf9c90de4c65e23f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a5294a4d0e0796a8ad92fa3bf63a3561a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="a00454.html">tesseract::KDPtrPairDec</a>&lt;float, <a class="el" href="a00554.html">SEAM</a>&gt; <a class="el" href="a01246.html#a5294a4d0e0796a8ad92fa3bf63a3561a">SeamDecPair</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01246_source.html#l00041">41</a> of file <a class="el" href="a01246_source.html">findseam.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad968f53798533f756579c5cd1fc1a980"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="a00455.html">tesseract::KDPtrPairInc</a>&lt;float, <a class="el" href="a00554.html">SEAM</a>&gt; <a class="el" href="a01246.html#ad968f53798533f756579c5cd1fc1a980">SeamPair</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01246_source.html#l00038">38</a> of file <a class="el" href="a01246_source.html">findseam.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adaa99d84dea709fbf9c90de4c65e23f1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="a00415.html">tesseract::GenericHeap</a>&lt;<a class="el" href="a01246.html#a5294a4d0e0796a8ad92fa3bf63a3561a">SeamDecPair</a>&gt; <a class="el" href="a01246.html#adaa99d84dea709fbf9c90de4c65e23f1">SeamPile</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01246_source.html#l00042">42</a> of file <a class="el" href="a01246_source.html">findseam.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad75f559fa2ad0d090f83138d36e057cc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="a00415.html">tesseract::GenericHeap</a>&lt;<a class="el" href="a01246.html#ad968f53798533f756579c5cd1fc1a980">SeamPair</a>&gt; <a class="el" href="a01246.html#ad75f559fa2ad0d090f83138d36e057cc">SeamQueue</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01246_source.html#l00039">39</a> of file <a class="el" href="a01246_source.html">findseam.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01246.html">findseam.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01246.html">outlines.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

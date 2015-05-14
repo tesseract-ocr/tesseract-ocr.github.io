@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::AlignedBlob Class Reference</title>
+<title>Tesseract: tesseract::AmbigSpec Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,170 +108,91 @@ $(document).ready(function(){initNavTree('a00260.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a01750.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="a01725.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::AlignedBlob Class Reference</div>  </div>
+<div class="title">tesseract::AmbigSpec Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a01098_source.html">alignedblob.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00810_source.html">ambigs.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for tesseract::AlignedBlob:</div>
+Inheritance diagram for tesseract::AmbigSpec:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00260.png" usemap="#tesseract::AlignedBlob_map" alt=""/>
-  <map id="tesseract::AlignedBlob_map" name="tesseract::AlignedBlob_map">
-<area href="a00281.html" alt="tesseract::BlobGrid" shape="rect" coords="0,112,432,136"/>
-<area href="a00271.html" alt="tesseract::BBGrid&lt; BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT &gt;" shape="rect" coords="0,56,432,80"/>
-<area href="a00419.html" alt="tesseract::GridBase" shape="rect" coords="0,0,432,24"/>
-<area href="a00602.html" alt="tesseract::TabFind" shape="rect" coords="0,224,432,248"/>
-<area href="a00335.html" alt="tesseract::ColumnFinder" shape="rect" coords="0,280,432,304"/>
+  <img src="a00260.png" usemap="#tesseract::AmbigSpec_map" alt=""/>
+  <map id="tesseract::AmbigSpec_map" name="tesseract::AmbigSpec_map">
+<area href="a00371.html" alt="ELIST_LINK" shape="rect" coords="0,0,133,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a055f4537191b2fbbd69c8f1629237372"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#a055f4537191b2fbbd69c8f1629237372">AlignedBlob</a> (int <a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
-<tr class="separator:a055f4537191b2fbbd69c8f1629237372"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa695efbfce803437711ca69c165588c9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#aa695efbfce803437711ca69c165588c9">~AlignedBlob</a> ()</td></tr>
-<tr class="separator:aa695efbfce803437711ca69c165588c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e6c33de7a8a40bbb66c312ab9cc899"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00553.html">ScrollView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#ae8e6c33de7a8a40bbb66c312ab9cc899">DisplayTabs</a> (const char *window_name, <a class="el" href="a00553.html">ScrollView</a> *tab_win)</td></tr>
-<tr class="separator:ae8e6c33de7a8a40bbb66c312ab9cc899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8acdd97fe77a8af9b71a9078e324e3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00607.html">TabVector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#ae8acdd97fe77a8af9b71a9078e324e3c">FindVerticalAlignment</a> (<a class="el" href="a00261.html">AlignedBlobParams</a> align_params, <a class="el" href="a00282.html">BLOBNBOX</a> *bbox, int *vertical_x, int *vertical_y)</td></tr>
-<tr class="separator:ae8acdd97fe77a8af9b71a9078e324e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00281"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00281')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00281.html">tesseract::BlobGrid</a></td></tr>
-<tr class="memitem:a86754acb30620ac8308d7e178f7618bd inherit pub_methods_a00281"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00281.html#a86754acb30620ac8308d7e178f7618bd">BlobGrid</a> (int <a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
-<tr class="separator:a86754acb30620ac8308d7e178f7618bd inherit pub_methods_a00281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70262f671ac05a8b72c71ba75d9a51de inherit pub_methods_a00281"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00281.html#a70262f671ac05a8b72c71ba75d9a51de">~BlobGrid</a> ()</td></tr>
-<tr class="separator:a70262f671ac05a8b72c71ba75d9a51de inherit pub_methods_a00281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3e2254b403947fc9628221aa3cb5b26 inherit pub_methods_a00281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00281.html#ae3e2254b403947fc9628221aa3cb5b26">InsertBlobList</a> (BLOBNBOX_LIST *blobs)</td></tr>
-<tr class="separator:ae3e2254b403947fc9628221aa3cb5b26 inherit pub_methods_a00281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00271"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00271')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00271.html">tesseract::BBGrid&lt; BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT &gt;</a></td></tr>
-<tr class="memitem:a433d978224467a5842ab3126dd0ba903 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a433d978224467a5842ab3126dd0ba903">BBGrid</a> ()</td></tr>
-<tr class="separator:a433d978224467a5842ab3126dd0ba903 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed2c82e5d0aa5c92137aae623a79f5ec inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#aed2c82e5d0aa5c92137aae623a79f5ec">BBGrid</a> (int <a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
-<tr class="separator:aed2c82e5d0aa5c92137aae623a79f5ec inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70d6e4e5938d390162572615e0a9036a inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a70d6e4e5938d390162572615e0a9036a">~BBGrid</a> ()</td></tr>
-<tr class="separator:a70d6e4e5938d390162572615e0a9036a inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d2990adf323d7910fbf87b6fc3a7415 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a1d2990adf323d7910fbf87b6fc3a7415">Init</a> (int <a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
-<tr class="separator:a1d2990adf323d7910fbf87b6fc3a7415 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b373075bdfda41719d6fb9a64bcfee0 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a0b373075bdfda41719d6fb9a64bcfee0">Clear</a> ()</td></tr>
-<tr class="separator:a0b373075bdfda41719d6fb9a64bcfee0 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3f84b8f684c71394335a5a4f17c90be inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#aa3f84b8f684c71394335a5a4f17c90be">ClearGridData</a> (void(*free_method)(<a class="el" href="a00282.html">BLOBNBOX</a> *))</td></tr>
-<tr class="separator:aa3f84b8f684c71394335a5a4f17c90be inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b379525e3d60c68e583352ae4b8a750 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a7b379525e3d60c68e583352ae4b8a750">InsertBBox</a> (bool h_spread, bool v_spread, <a class="el" href="a00282.html">BLOBNBOX</a> *bbox)</td></tr>
-<tr class="separator:a7b379525e3d60c68e583352ae4b8a750 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70a2666a2f5db0cf64dea637953b1412 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a70a2666a2f5db0cf64dea637953b1412">InsertPixPtBBox</a> (int left, int bottom, Pix *pix, <a class="el" href="a00282.html">BLOBNBOX</a> *bbox)</td></tr>
-<tr class="separator:a70a2666a2f5db0cf64dea637953b1412 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc713153c1282d8727f85ee6d38d7d31 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#adc713153c1282d8727f85ee6d38d7d31">RemoveBBox</a> (<a class="el" href="a00282.html">BLOBNBOX</a> *bbox)</td></tr>
-<tr class="separator:adc713153c1282d8727f85ee6d38d7d31 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5924a2ebc0760856cbafde9df32fcd6 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#ab5924a2ebc0760856cbafde9df32fcd6">RectangleEmpty</a> (const <a class="el" href="a00609.html">TBOX</a> &amp;rect)</td></tr>
-<tr class="separator:ab5924a2ebc0760856cbafde9df32fcd6 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48e846646c932192133cdcdac274c94d inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00447.html">IntGrid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a48e846646c932192133cdcdac274c94d">CountCellElements</a> ()</td></tr>
-<tr class="separator:a48e846646c932192133cdcdac274c94d inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa716f76c7f04f7112abfc10a3f8c63e0 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00553.html">ScrollView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#aa716f76c7f04f7112abfc10a3f8c63e0">MakeWindow</a> (int x, int y, const char *window_name)</td></tr>
-<tr class="separator:aa716f76c7f04f7112abfc10a3f8c63e0 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01e56b692125ef3220a23695e2c4821f inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a01e56b692125ef3220a23695e2c4821f">DisplayBoxes</a> (<a class="el" href="a00553.html">ScrollView</a> *window)</td></tr>
-<tr class="separator:a01e56b692125ef3220a23695e2c4821f inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19df7a0ef4d8204b5d6fa36765011114 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#a19df7a0ef4d8204b5d6fa36765011114">AssertNoDuplicates</a> ()</td></tr>
-<tr class="separator:a19df7a0ef4d8204b5d6fa36765011114 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3c72e54651cbf20ee185f8623a60335 inherit pub_methods_a00271"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#aa3c72e54651cbf20ee185f8623a60335">HandleClick</a> (int x, int y)</td></tr>
-<tr class="separator:aa3c72e54651cbf20ee185f8623a60335 inherit pub_methods_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00419"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00419')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00419.html">tesseract::GridBase</a></td></tr>
-<tr class="memitem:ac1ea91a905041f0fa896bec740903a77 inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ac1ea91a905041f0fa896bec740903a77">GridBase</a> ()</td></tr>
-<tr class="separator:ac1ea91a905041f0fa896bec740903a77 inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52bfcebedaa848425b8e2d228df559b6 inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a52bfcebedaa848425b8e2d228df559b6">GridBase</a> (int <a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
-<tr class="separator:a52bfcebedaa848425b8e2d228df559b6 inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee16480a8ca444d7847850ac0115813 inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a7ee16480a8ca444d7847850ac0115813">~GridBase</a> ()</td></tr>
-<tr class="separator:a7ee16480a8ca444d7847850ac0115813 inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e23ba0f9d310510c9a2b3a38f11e683 inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a9e23ba0f9d310510c9a2b3a38f11e683">Init</a> (int <a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
-<tr class="separator:a9e23ba0f9d310510c9a2b3a38f11e683 inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afff2cee730084711205977b5fcb4901e inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a> () const </td></tr>
-<tr class="separator:afff2cee730084711205977b5fcb4901e inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a38ea995b9d65f8b67d66d5501a5b80 inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a> () const </td></tr>
-<tr class="separator:a0a38ea995b9d65f8b67d66d5501a5b80 inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07e6b230c150180d009ef1f317e642f2 inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a07e6b230c150180d009ef1f317e642f2">gridheight</a> () const </td></tr>
-<tr class="separator:a07e6b230c150180d009ef1f317e642f2 inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20b2cb8eb2bf52871d5260c04949cce inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a> () const </td></tr>
-<tr class="separator:ad20b2cb8eb2bf52871d5260c04949cce inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa94e147841b6a4fae0b28e7e872685a5 inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a> () const </td></tr>
-<tr class="separator:aa94e147841b6a4fae0b28e7e872685a5 inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cb158bba184d657c51257b98eea9f8f inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a> (int x, int y, int *grid_x, int *grid_y) const </td></tr>
-<tr class="separator:a9cb158bba184d657c51257b98eea9f8f inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6349387c9d98fae34cf247b12cdc5a00 inherit pub_methods_a00419"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a6349387c9d98fae34cf247b12cdc5a00">ClipGridCoords</a> (int *x, int *y) const </td></tr>
-<tr class="separator:a6349387c9d98fae34cf247b12cdc5a00 inherit pub_methods_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3a04113f5db03951771afa6423e7f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#aaa3a04113f5db03951771afa6423e7f4">AmbigSpec</a> ()</td></tr>
+<tr class="separator:aaa3a04113f5db03951771afa6423e7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5283933a9e7267b3505f5f18cf289f3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#a5283933a9e7267b3505f5f18cf289f3e">~AmbigSpec</a> ()</td></tr>
+<tr class="separator:a5283933a9e7267b3505f5f18cf289f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00371"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00371')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00371.html">ELIST_LINK</a></td></tr>
+<tr class="memitem:ab3cdce5789339d12de62e18fdfb52974 inherit pub_methods_a00371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00371.html#ab3cdce5789339d12de62e18fdfb52974">ELIST_LINK</a> ()</td></tr>
+<tr class="separator:ab3cdce5789339d12de62e18fdfb52974 inherit pub_methods_a00371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30be968896fac3d1c88d127213aa03f7 inherit pub_methods_a00371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00371.html#a30be968896fac3d1c88d127213aa03f7">ELIST_LINK</a> (const <a class="el" href="a00371.html">ELIST_LINK</a> &amp;)</td></tr>
+<tr class="separator:a30be968896fac3d1c88d127213aa03f7 inherit pub_methods_a00371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949f5dfcc3c145a19f2d61ee3461701e inherit pub_methods_a00371"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00371.html#a949f5dfcc3c145a19f2d61ee3461701e">operator=</a> (const <a class="el" href="a00371.html">ELIST_LINK</a> &amp;)</td></tr>
+<tr class="separator:a949f5dfcc3c145a19f2d61ee3461701e inherit pub_methods_a00371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a357ff9e1d9bac2b1d88fb0d335fa7f3e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#a357ff9e1d9bac2b1d88fb0d335fa7f3e">WithinTestRegion</a> (int detail_level, int x, int y)</td></tr>
-<tr class="separator:a357ff9e1d9bac2b1d88fb0d335fa7f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08f8b8760c2809ce385cfded3d9cabb6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#a08f8b8760c2809ce385cfded3d9cabb6">IncrementDebugPix</a> ()</td></tr>
-<tr class="separator:a08f8b8760c2809ce385cfded3d9cabb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03ba43124d00badef61e1da6b06ffc2a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="a00578.html">STRING</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#a03ba43124d00badef61e1da6b06ffc2a">textord_debug_pix</a> ()</td></tr>
-<tr class="separator:a03ba43124d00badef61e1da6b06ffc2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70fcbcafa3d2df7d876d6a06d21fbee"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#ac70fcbcafa3d2df7d876d6a06d21fbee">compare_ambig_specs</a> (const void *spec1, const void *spec2)</td></tr>
+<tr class="separator:ac70fcbcafa3d2df7d876d6a06d21fbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_a00271"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00271')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a00271.html">tesseract::BBGrid&lt; BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT &gt;</a></td></tr>
-<tr class="memitem:ae58f8b18fce79b681e5f480dd2ea00e4 inherit pro_attribs_a00271"><td class="memItemLeft" align="right" valign="top">BLOBNBOX_CLIST *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00271.html#ae58f8b18fce79b681e5f480dd2ea00e4">grid_</a></td></tr>
-<tr class="separator:ae58f8b18fce79b681e5f480dd2ea00e4 inherit pro_attribs_a00271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_a00419"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00419')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a00419.html">tesseract::GridBase</a></td></tr>
-<tr class="memitem:a0758dd90d5ce47e504a4148f4cda33f3 inherit pro_attribs_a00419"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a></td></tr>
-<tr class="separator:a0758dd90d5ce47e504a4148f4cda33f3 inherit pro_attribs_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a429c00f7b3ea66cfd63a75cfa2c1b43d inherit pro_attribs_a00419"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a></td></tr>
-<tr class="separator:a429c00f7b3ea66cfd63a75cfa2c1b43d inherit pro_attribs_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae70ca33c0676a296720fea5ddc0aa5cc inherit pro_attribs_a00419"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">gridheight_</a></td></tr>
-<tr class="separator:ae70ca33c0676a296720fea5ddc0aa5cc inherit pro_attribs_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcda3a0efeed2a95fc777fc7127898a6 inherit pro_attribs_a00419"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#adcda3a0efeed2a95fc777fc7127898a6">gridbuckets_</a></td></tr>
-<tr class="separator:adcda3a0efeed2a95fc777fc7127898a6 inherit pro_attribs_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f09e93ec22c3f7a245eb6611309d8d6 inherit pro_attribs_a00419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00425.html">ICOORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">bleft_</a></td></tr>
-<tr class="separator:a5f09e93ec22c3f7a245eb6611309d8d6 inherit pro_attribs_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac348165d112922b3d956f924405012cd inherit pro_attribs_a00419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00425.html">ICOORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ac348165d112922b3d956f924405012cd">tright_</a></td></tr>
-<tr class="separator:ac348165d112922b3d956f924405012cd inherit pro_attribs_a00419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a9d7f07e5b038c6d61acc9bb75ba7ef1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#a9d7f07e5b038c6d61acc9bb75ba7ef1b">wrong_ngram</a> [<a class="el" href="a00810.html#a66b35d22667233a1566433c6dd864463">MAX_AMBIG_SIZE</a>+1]</td></tr>
+<tr class="separator:a9d7f07e5b038c6d61acc9bb75ba7ef1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a4b121b26cf829422700494aed91e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#ad3a4b121b26cf829422700494aed91e4">correct_fragments</a> [<a class="el" href="a00810.html#a66b35d22667233a1566433c6dd864463">MAX_AMBIG_SIZE</a>+1]</td></tr>
+<tr class="separator:ad3a4b121b26cf829422700494aed91e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a879c6167dbfc54980bfeb5a15b32bf73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#a879c6167dbfc54980bfeb5a15b32bf73">correct_ngram_id</a></td></tr>
+<tr class="separator:a879c6167dbfc54980bfeb5a15b32bf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29644f82c6feac4df14b22368fa0873"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01267.html#aa13017f5f891a1f9f95074bf26a5b222">AmbigType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#ae29644f82c6feac4df14b22368fa0873">type</a></td></tr>
+<tr class="separator:ae29644f82c6feac4df14b22368fa0873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cfb10d18b7c636f3afa5f223afa445e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00260.html#a4cfb10d18b7c636f3afa5f223afa445e">wrong_ngram_size</a></td></tr>
+<tr class="separator:a4cfb10d18b7c636f3afa5f223afa445e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a01098_source.html#l00083">83</a> of file <a class="el" href="a01098_source.html">alignedblob.h</a>.</p>
+<p>Definition at line <a class="el" href="a00810_source.html#l00113">113</a> of file <a class="el" href="a00810_source.html">ambigs.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a055f4537191b2fbbd69c8f1629237372"></a>
+<a class="anchor" id="aaa3a04113f5db03951771afa6423e7f4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::AlignedBlob::AlignedBlob </td>
+          <td class="memname">tesseract::AmbigSpec::AmbigSpec </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>gridsize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>bleft</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>tright</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01097_source.html#l00163">163</a> of file <a class="el" href="a01097_source.html">alignedblob.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  : <a class="code" href="a00281.html#a86754acb30620ac8308d7e178f7618bd">BlobGrid</a>(<a class="code" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, bleft, tright) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
-<div class="ttc" id="a00419_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00419.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00063">bbgrid.h:63</a></div></div>
-<div class="ttc" id="a00281_html_a86754acb30620ac8308d7e178f7618bd"><div class="ttname"><a href="a00281.html#a86754acb30620ac8308d7e178f7618bd">tesseract::BlobGrid::BlobGrid</a></div><div class="ttdeci">BlobGrid(int gridsize, const ICOORD &amp;bleft, const ICOORD &amp;tright)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00024">blobgrid.cpp:24</a></div></div>
+<p>Definition at line <a class="el" href="a00809_source.html#l00042">42</a> of file <a class="el" href="a00809_source.html">ambigs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                     {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="a00260.html#a9d7f07e5b038c6d61acc9bb75ba7ef1b">wrong_ngram</a>[0] = INVALID_UNICHAR_ID;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a00260.html#ad3a4b121b26cf829422700494aed91e4">correct_fragments</a>[0] = INVALID_UNICHAR_ID;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="a00260.html#a879c6167dbfc54980bfeb5a15b32bf73">correct_ngram_id</a> = INVALID_UNICHAR_ID;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="a00260.html#ae29644f82c6feac4df14b22368fa0873">type</a> = <a class="code" href="a01267.html#aa13017f5f891a1f9f95074bf26a5b222af40a6c3f3fbd83ba09a6607f534349dc">NOT_AMBIG</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="a00260.html#a4cfb10d18b7c636f3afa5f223afa445e">wrong_ngram_size</a> = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="ttc" id="a00260_html_a9d7f07e5b038c6d61acc9bb75ba7ef1b"><div class="ttname"><a href="a00260.html#a9d7f07e5b038c6d61acc9bb75ba7ef1b">tesseract::AmbigSpec::wrong_ngram</a></div><div class="ttdeci">UNICHAR_ID wrong_ngram[MAX_AMBIG_SIZE+1]</div><div class="ttdef"><b>Definition:</b> <a href="a00810_source.html#l00132">ambigs.h:132</a></div></div>
+<div class="ttc" id="a00260_html_ad3a4b121b26cf829422700494aed91e4"><div class="ttname"><a href="a00260.html#ad3a4b121b26cf829422700494aed91e4">tesseract::AmbigSpec::correct_fragments</a></div><div class="ttdeci">UNICHAR_ID correct_fragments[MAX_AMBIG_SIZE+1]</div><div class="ttdef"><b>Definition:</b> <a href="a00810_source.html#l00133">ambigs.h:133</a></div></div>
+<div class="ttc" id="a00260_html_a879c6167dbfc54980bfeb5a15b32bf73"><div class="ttname"><a href="a00260.html#a879c6167dbfc54980bfeb5a15b32bf73">tesseract::AmbigSpec::correct_ngram_id</a></div><div class="ttdeci">UNICHAR_ID correct_ngram_id</div><div class="ttdef"><b>Definition:</b> <a href="a00810_source.html#l00134">ambigs.h:134</a></div></div>
+<div class="ttc" id="a00260_html_a4cfb10d18b7c636f3afa5f223afa445e"><div class="ttname"><a href="a00260.html#a4cfb10d18b7c636f3afa5f223afa445e">tesseract::AmbigSpec::wrong_ngram_size</a></div><div class="ttdeci">int wrong_ngram_size</div><div class="ttdef"><b>Definition:</b> <a href="a00810_source.html#l00136">ambigs.h:136</a></div></div>
+<div class="ttc" id="a01267_html_aa13017f5f891a1f9f95074bf26a5b222af40a6c3f3fbd83ba09a6607f534349dc"><div class="ttname"><a href="a01267.html#aa13017f5f891a1f9f95074bf26a5b222af40a6c3f3fbd83ba09a6607f534349dc">tesseract::NOT_AMBIG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00810_source.html#l00045">ambigs.h:45</a></div></div>
+<div class="ttc" id="a00260_html_ae29644f82c6feac4df14b22368fa0873"><div class="ttname"><a href="a00260.html#ae29644f82c6feac4df14b22368fa0873">tesseract::AmbigSpec::type</a></div><div class="ttdeci">AmbigType type</div><div class="ttdef"><b>Definition:</b> <a href="a00810_source.html#l00135">ambigs.h:135</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="aa695efbfce803437711ca69c165588c9"></a>
+<a class="anchor" id="a5283933a9e7267b3505f5f18cf289f3e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -279,7 +200,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::AlignedBlob::~AlignedBlob </td>
+          <td class="memname">tesseract::AmbigSpec::~AmbigSpec </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -287,256 +208,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01097_source.html#l00168">168</a> of file <a class="el" href="a01097_source.html">alignedblob.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                          {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a00810_source.html#l00116">116</a> of file <a class="el" href="a00810_source.html">ambigs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae8e6c33de7a8a40bbb66c312ab9cc899"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00553.html">ScrollView</a> * tesseract::AlignedBlob::DisplayTabs </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>window_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00553.html">ScrollView</a> *&#160;</td>
-          <td class="paramname"><em>tab_win</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01097_source.html#l00181">181</a> of file <a class="el" href="a01097_source.html">alignedblob.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                                          {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#ifndef GRAPHICS_DISABLED</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="keywordflow">if</span> (tab_win == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    tab_win = <a class="code" href="a00271.html#aa716f76c7f04f7112abfc10a3f8c63e0">MakeWindow</a>(0, 50, window_name);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="comment">// For every tab in the grid, display it.</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  GridSearch&lt;BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT&gt; gsearch(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  gsearch.StartFullSearch();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="a00282.html">BLOBNBOX</a>* bbox;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">while</span> ((bbox = gsearch.NextFullSearch()) != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="a00609.html">TBOX</a> box = bbox-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a>();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">int</span> left_x = box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a>();</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> right_x = box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">int</span> top_y = box.<a class="code" href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a>();</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">int</span> bottom_y = box.<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a>();</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12cc">TabType</a> tabtype = bbox-&gt;<a class="code" href="a00282.html#a8b16d77deb75ed8aa2ff9d6be9462ec1">left_tab_type</a>();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">if</span> (tabtype != <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12ccaddba1c39549497adfc655e5e9a817dec">TT_NONE</a>) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      <span class="keywordflow">if</span> (tabtype == <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12ccad0945333210420da84a7617b5788f246">TT_MAYBE_ALIGNED</a>)</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        tab_win-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a66e5117e4930fdd9a43bdb674d57a719">ScrollView::BLUE</a>);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabtype == <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12cca0d571d70d55bfdb99070e2ee2d6e1c7f">TT_MAYBE_RAGGED</a>)</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        tab_win-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a61dec9bc0aaf1d527a731b2a6ce055c8">ScrollView::YELLOW</a>);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabtype == <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12cca9f2414540c7d6e051206f486a70f5d2e">TT_CONFIRMED</a>)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        tab_win-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a9d8c87be486dead41d198d6b97a22174">ScrollView::GREEN</a>);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        tab_win-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a7bba33cbbab6aaa71dce1aad46ecc3a5">ScrollView::GREY</a>);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      tab_win-&gt;<a class="code" href="a00553.html#a2ba16f17fc401bb28be1a08160207e45">Line</a>(left_x, top_y, left_x, bottom_y);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    tabtype = bbox-&gt;<a class="code" href="a00282.html#a13607f52743a9ef3ec1f9d452aca0df5">right_tab_type</a>();</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">if</span> (tabtype != <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12ccaddba1c39549497adfc655e5e9a817dec">TT_NONE</a>) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keywordflow">if</span> (tabtype == <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12ccad0945333210420da84a7617b5788f246">TT_MAYBE_ALIGNED</a>)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        tab_win-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8aebeaaeee353c6f04b4498b1fef94bbb3">ScrollView::MAGENTA</a>);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabtype == <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12cca0d571d70d55bfdb99070e2ee2d6e1c7f">TT_MAYBE_RAGGED</a>)</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        tab_win-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a0691e22f5da865103a497f9503269a61">ScrollView::ORANGE</a>);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tabtype == <a class="code" href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12cca9f2414540c7d6e051206f486a70f5d2e">TT_CONFIRMED</a>)</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        tab_win-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a0959f7470b08ae1a38aa7e38fba29402">ScrollView::RED</a>);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        tab_win-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a7bba33cbbab6aaa71dce1aad46ecc3a5">ScrollView::GREY</a>);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      tab_win-&gt;<a class="code" href="a00553.html#a2ba16f17fc401bb28be1a08160207e45">Line</a>(right_x, top_y, right_x, bottom_y);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  tab_win-&gt;<a class="code" href="a00553.html#a0830a51981a20c8700b5ec49137e46e9">Update</a>();</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordflow">return</span> tab_win;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
-<div class="ttc" id="a00749_html_a6d0b33e703e1291d0b60d4fe5a5e12cc"><div class="ttname"><a href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12cc">TabType</a></div><div class="ttdeci">TabType</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00044">blobbox.h:44</a></div></div>
-<div class="ttc" id="a00749_html_a6d0b33e703e1291d0b60d4fe5a5e12ccaddba1c39549497adfc655e5e9a817dec"><div class="ttname"><a href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12ccaddba1c39549497adfc655e5e9a817dec">TT_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00045">blobbox.h:45</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8a66e5117e4930fdd9a43bdb674d57a719"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8a66e5117e4930fdd9a43bdb674d57a719">ScrollView::BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00113">scrollview.h:113</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00609_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00609.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00068">rect.h:68</a></div></div>
-<div class="ttc" id="a00609_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00075">rect.h:75</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8a61dec9bc0aaf1d527a731b2a6ce055c8"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8a61dec9bc0aaf1d527a731b2a6ce055c8">ScrollView::YELLOW</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00110">scrollview.h:110</a></div></div>
-<div class="ttc" id="a00282_html"><div class="ttname"><a href="a00282.html">BLOBNBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00128">blobbox.h:128</a></div></div>
-<div class="ttc" id="a00282_html_a8b16d77deb75ed8aa2ff9d6be9462ec1"><div class="ttname"><a href="a00282.html#a8b16d77deb75ed8aa2ff9d6be9462ec1">BLOBNBOX::left_tab_type</a></div><div class="ttdeci">TabType left_tab_type() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00256">blobbox.h:256</a></div></div>
-<div class="ttc" id="a00749_html_a6d0b33e703e1291d0b60d4fe5a5e12cca9f2414540c7d6e051206f486a70f5d2e"><div class="ttname"><a href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12cca9f2414540c7d6e051206f486a70f5d2e">TT_CONFIRMED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00049">blobbox.h:49</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8a9d8c87be486dead41d198d6b97a22174"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8a9d8c87be486dead41d198d6b97a22174">ScrollView::GREEN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00111">scrollview.h:111</a></div></div>
-<div class="ttc" id="a00609_html"><div class="ttname"><a href="a00609.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00030">rect.h:30</a></div></div>
-<div class="ttc" id="a00749_html_a6d0b33e703e1291d0b60d4fe5a5e12ccad0945333210420da84a7617b5788f246"><div class="ttname"><a href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12ccad0945333210420da84a7617b5788f246">TT_MAYBE_ALIGNED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00048">blobbox.h:48</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8a0959f7470b08ae1a38aa7e38fba29402"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8a0959f7470b08ae1a38aa7e38fba29402">ScrollView::RED</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00109">scrollview.h:109</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8a0691e22f5da865103a497f9503269a61"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8a0691e22f5da865103a497f9503269a61">ScrollView::ORANGE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00141">scrollview.h:141</a></div></div>
-<div class="ttc" id="a00609_html_a4451d237f1cd18c4982d63fe36a11fc3"><div class="ttname"><a href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">TBOX::bottom</a></div><div class="ttdeci">inT16 bottom() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00061">rect.h:61</a></div></div>
-<div class="ttc" id="a00271_html_aa716f76c7f04f7112abfc10a3f8c63e0"><div class="ttname"><a href="a00271.html#aa716f76c7f04f7112abfc10a3f8c63e0">tesseract::BBGrid&lt; BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT &gt;::MakeWindow</a></div><div class="ttdeci">ScrollView * MakeWindow(int x, int y, const char *window_name)</div></div>
-<div class="ttc" id="a00553_html_a2ba16f17fc401bb28be1a08160207e45"><div class="ttname"><a href="a00553.html#a2ba16f17fc401bb28be1a08160207e45">ScrollView::Line</a></div><div class="ttdeci">void Line(int x1, int y1, int x2, int y2)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00538">scrollview.cpp:538</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8aebeaaeee353c6f04b4498b1fef94bbb3"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8aebeaaeee353c6f04b4498b1fef94bbb3">ScrollView::MAGENTA</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00114">scrollview.h:114</a></div></div>
-<div class="ttc" id="a00553_html_a79855c525ec660b452382e9813d2edb5"><div class="ttname"><a href="a00553.html#a79855c525ec660b452382e9813d2edb5">ScrollView::Pen</a></div><div class="ttdeci">void Pen(Color color)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00726">scrollview.cpp:726</a></div></div>
-<div class="ttc" id="a00282_html_a7b97b8bc16b1473a28f9c44011522f4e"><div class="ttname"><a href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">BLOBNBOX::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00215">blobbox.h:215</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8a7bba33cbbab6aaa71dce1aad46ecc3a5"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8a7bba33cbbab6aaa71dce1aad46ecc3a5">ScrollView::GREY</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00138">scrollview.h:138</a></div></div>
-<div class="ttc" id="a00282_html_a13607f52743a9ef3ec1f9d452aca0df5"><div class="ttname"><a href="a00282.html#a13607f52743a9ef3ec1f9d452aca0df5">BLOBNBOX::right_tab_type</a></div><div class="ttdeci">TabType right_tab_type() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00262">blobbox.h:262</a></div></div>
-<div class="ttc" id="a00609_html_adf92e9fdac1bdf11c10d1c4d1178791a"><div class="ttname"><a href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">TBOX::top</a></div><div class="ttdeci">inT16 top() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00054">rect.h:54</a></div></div>
-<div class="ttc" id="a00553_html_a0830a51981a20c8700b5ec49137e46e9"><div class="ttname"><a href="a00553.html#a0830a51981a20c8700b5ec49137e46e9">ScrollView::Update</a></div><div class="ttdeci">static void Update()</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00715">scrollview.cpp:715</a></div></div>
-<div class="ttc" id="a00749_html_a6d0b33e703e1291d0b60d4fe5a5e12cca0d571d70d55bfdb99070e2ee2d6e1c7f"><div class="ttname"><a href="a00749.html#a6d0b33e703e1291d0b60d4fe5a5e12cca0d571d70d55bfdb99070e2ee2d6e1c7f">TT_MAYBE_RAGGED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00047">blobbox.h:47</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ae8acdd97fe77a8af9b71a9078e324e3c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00607.html">TabVector</a> * tesseract::AlignedBlob::FindVerticalAlignment </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00261.html">AlignedBlobParams</a>&#160;</td>
-          <td class="paramname"><em>align_params</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00282.html">BLOBNBOX</a> *&#160;</td>
-          <td class="paramname"><em>bbox</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>vertical_x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>vertical_y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01097_source.html#l00243">243</a> of file <a class="el" href="a01097_source.html">alignedblob.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                                               {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordtype">int</span> ext_start_y, ext_end_y;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  BLOBNBOX_CLIST good_points;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="comment">// Search up and then down from the starting bbox.</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <a class="code" href="a00609.html">TBOX</a> box = bbox-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a>();</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordtype">bool</span> debug = <a class="code" href="a00260.html#a357ff9e1d9bac2b1d88fb0d335fa7f3e">WithinTestRegion</a>(2, box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a>(), box.<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a>());</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordtype">int</span> pt_count = AlignTabs(align_params, <span class="keyword">false</span>, bbox, &amp;good_points, &amp;ext_end_y);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  pt_count += AlignTabs(align_params, <span class="keyword">true</span>, bbox, &amp;good_points, &amp;ext_start_y);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  BLOBNBOX_C_IT it(&amp;good_points);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  it.move_to_last();</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  box = it.data()-&gt;bounding_box();</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordtype">int</span> end_y = box.<a class="code" href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a>();</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordtype">int</span> end_x = align_params.right_tab ? box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>() : box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a>();</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  it.move_to_first();</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  box = it.data()-&gt;bounding_box();</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordtype">int</span> start_x = align_params.right_tab ? box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>() : box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a>();</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keywordtype">int</span> start_y = box.<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a>();</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="comment">// Acceptable tab vectors must have a mininum number of points,</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="comment">// have a minimum acceptable length, and have a minimum gradient.</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="comment">// The gradient corresponds to the skew angle.</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="comment">// Ragged tabs don&#39;t need to satisfy the gradient condition, as they</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="comment">// will always end up parallel to the vertical direction.</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keywordtype">bool</span> at_least_2_crossings = AtLeast2LineCrossings(&amp;good_points);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keywordflow">if</span> ((pt_count &gt;= align_params.min_points &amp;&amp;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      end_y - start_y &gt;= align_params.min_length &amp;&amp;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      (align_params.ragged ||</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;          end_y - start_y &gt;= abs(end_x - start_x) * <a class="code" href="a01279.html#ad8fd17f5ba82834b8c2f95e94f5a9129">kMinTabGradient</a>)) ||</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      at_least_2_crossings) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordtype">int</span> confirmed_points = 0;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// Count existing confirmed points to see if vector is acceptable.</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">for</span> (it.mark_cycle_pt(); !it.cycled_list(); it.forward()) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      bbox = it.data();</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      <span class="keywordflow">if</span> (align_params.right_tab) {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">if</span> (bbox-&gt;<a class="code" href="a00282.html#a13607f52743a9ef3ec1f9d452aca0df5">right_tab_type</a>() == align_params.confirmed_type)</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;          ++confirmed_points;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">if</span> (bbox-&gt;<a class="code" href="a00282.html#a8b16d77deb75ed8aa2ff9d6be9462ec1">left_tab_type</a>() == align_params.confirmed_type)</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;          ++confirmed_points;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// Ragged vectors are not allowed to use too many already used points.</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">if</span> (!align_params.ragged ||</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        confirmed_points + confirmed_points &lt; pt_count) {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      <span class="keyword">const</span> <a class="code" href="a00609.html">TBOX</a>&amp; box = bbox-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a>();</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      <span class="keywordflow">if</span> (debug) {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Confirming tab vector of %d pts starting at %d,%d\n&quot;</span>,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                pt_count, box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a>(), box.<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a>());</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      <span class="comment">// Flag all the aligned neighbours as confirmed .</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      <span class="keywordflow">for</span> (it.mark_cycle_pt(); !it.cycled_list(); it.forward()) {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        bbox = it.data();</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">if</span> (align_params.right_tab) {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;          bbox-&gt;<a class="code" href="a00282.html#a2a26da567144a5131817df4a23e9ec31">set_right_tab_type</a>(align_params.confirmed_type);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;          bbox-&gt;<a class="code" href="a00282.html#a098a0c7864a31569db4c32e32f54504c">set_left_tab_type</a>(align_params.confirmed_type);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        }</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">if</span> (debug) {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;          bbox-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a>().<a class="code" href="a00609.html#a2e753aa9943276301d68e9f9cad99620">print</a>();</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        }</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      }</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      <span class="comment">// Now make the vector and return it.</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      TabVector* result = <a class="code" href="a00607.html#a66c3cdb82a3378aba8c0838d4fb64805">TabVector::FitVector</a>(align_params.alignment,</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                                               align_params.vertical,</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                               ext_start_y, ext_end_y,</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                               &amp;good_points,</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                               vertical_x, vertical_y);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      result-&gt;set_intersects_other_lines(at_least_2_crossings);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      <span class="keywordflow">if</span> (debug) {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Box was %d, %d\n&quot;</span>, box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a>(), box.<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a>());</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        result-&gt;Print(<span class="stringliteral">&quot;After fitting&quot;</span>);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      }</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (debug) {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;      <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Ragged tab used too many used points: %d out of %d\n&quot;</span>,</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;              confirmed_points, pt_count);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (debug) {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Tab vector failed basic tests: pt count %d vs min %d, &quot;</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="stringliteral">&quot;length %d vs min %d, min grad %g\n&quot;</span>,</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            pt_count, align_params.min_points, end_y - start_y,</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            align_params.min_length, abs(end_x - start_x) * kMinTabGradient);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  }</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
-<div class="ttc" id="a01279_html_ad8fd17f5ba82834b8c2f95e94f5a9129"><div class="ttname"><a href="a01279.html#ad8fd17f5ba82834b8c2f95e94f5a9129">tesseract::kMinTabGradient</a></div><div class="ttdeci">const double kMinTabGradient</div><div class="ttdef"><b>Definition:</b> <a href="a01097_source.html#l00061">alignedblob.cpp:61</a></div></div>
-<div class="ttc" id="a00260_html_a357ff9e1d9bac2b1d88fb0d335fa7f3e"><div class="ttname"><a href="a00260.html#a357ff9e1d9bac2b1d88fb0d335fa7f3e">tesseract::AlignedBlob::WithinTestRegion</a></div><div class="ttdeci">static bool WithinTestRegion(int detail_level, int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="a01097_source.html#l00173">alignedblob.cpp:173</a></div></div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a00607_html_a66c3cdb82a3378aba8c0838d4fb64805"><div class="ttname"><a href="a00607.html#a66c3cdb82a3378aba8c0838d4fb64805">tesseract::TabVector::FitVector</a></div><div class="ttdeci">static TabVector * FitVector(TabAlignment alignment, ICOORD vertical, int extended_start_y, int extended_end_y, BLOBNBOX_CLIST *good_points, int *vertical_x, int *vertical_y)</div><div class="ttdef"><b>Definition:</b> <a href="a01159_source.html#l00182">tabvector.cpp:182</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00609_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00609.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00068">rect.h:68</a></div></div>
-<div class="ttc" id="a00609_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00075">rect.h:75</a></div></div>
-<div class="ttc" id="a00282_html_a8b16d77deb75ed8aa2ff9d6be9462ec1"><div class="ttname"><a href="a00282.html#a8b16d77deb75ed8aa2ff9d6be9462ec1">BLOBNBOX::left_tab_type</a></div><div class="ttdeci">TabType left_tab_type() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00256">blobbox.h:256</a></div></div>
-<div class="ttc" id="a00609_html"><div class="ttname"><a href="a00609.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00030">rect.h:30</a></div></div>
-<div class="ttc" id="a00609_html_a4451d237f1cd18c4982d63fe36a11fc3"><div class="ttname"><a href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">TBOX::bottom</a></div><div class="ttdeci">inT16 bottom() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00061">rect.h:61</a></div></div>
-<div class="ttc" id="a00282_html_a7b97b8bc16b1473a28f9c44011522f4e"><div class="ttname"><a href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">BLOBNBOX::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00215">blobbox.h:215</a></div></div>
-<div class="ttc" id="a00282_html_a2a26da567144a5131817df4a23e9ec31"><div class="ttname"><a href="a00282.html#a2a26da567144a5131817df4a23e9ec31">BLOBNBOX::set_right_tab_type</a></div><div class="ttdeci">void set_right_tab_type(TabType new_type)</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00265">blobbox.h:265</a></div></div>
-<div class="ttc" id="a00282_html_a13607f52743a9ef3ec1f9d452aca0df5"><div class="ttname"><a href="a00282.html#a13607f52743a9ef3ec1f9d452aca0df5">BLOBNBOX::right_tab_type</a></div><div class="ttdeci">TabType right_tab_type() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00262">blobbox.h:262</a></div></div>
-<div class="ttc" id="a00609_html_adf92e9fdac1bdf11c10d1c4d1178791a"><div class="ttname"><a href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">TBOX::top</a></div><div class="ttdeci">inT16 top() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00054">rect.h:54</a></div></div>
-<div class="ttc" id="a00609_html_a2e753aa9943276301d68e9f9cad99620"><div class="ttname"><a href="a00609.html#a2e753aa9943276301d68e9f9cad99620">TBOX::print</a></div><div class="ttdeci">void print() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00270">rect.h:270</a></div></div>
-<div class="ttc" id="a00282_html_a098a0c7864a31569db4c32e32f54504c"><div class="ttname"><a href="a00282.html#a098a0c7864a31569db4c32e32f54504c">BLOBNBOX::set_left_tab_type</a></div><div class="ttdeci">void set_left_tab_type(TabType new_type)</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00259">blobbox.h:259</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a08f8b8760c2809ce385cfded3d9cabb6"></a>
+<a class="anchor" id="ac70fcbcafa3d2df7d876d6a06d21fbee"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -544,44 +227,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tesseract::AlignedBlob::IncrementDebugPix </td>
+          <td class="memname">static int tesseract::AmbigSpec::compare_ambig_specs </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>spec1</em>, </td>
         </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01097_source.html#l00077">77</a> of file <a class="el" href="a01097_source.html">alignedblob.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  ++debug_pix_index_;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  textord_debug_pix_ = <a class="code" href="a01279.html#ad3740a681ee2fe5c705d28e5cd2645ee">kTextordDebugPix</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">char</span> numbuf[32];</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  snprintf(numbuf, <span class="keyword">sizeof</span>(numbuf), <span class="stringliteral">&quot;%d&quot;</span>, debug_pix_index_);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  textord_debug_pix_ += numbuf;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  textord_debug_pix_ += <span class="stringliteral">&quot;.pix&quot;</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="ttc" id="a01279_html_ad3740a681ee2fe5c705d28e5cd2645ee"><div class="ttname"><a href="a01279.html#ad3740a681ee2fe5c705d28e5cd2645ee">tesseract::kTextordDebugPix</a></div><div class="ttdeci">const char * kTextordDebugPix</div><div class="ttdef"><b>Definition:</b> <a href="a01097_source.html#l00068">alignedblob.cpp:68</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a03ba43124d00badef61e1da6b06ffc2a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
         <tr>
-          <td class="memname">static const <a class="el" href="a00578.html">STRING</a>&amp; tesseract::AlignedBlob::textord_debug_pix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>spec2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -591,76 +251,104 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01098_source.html#l00112">112</a> of file <a class="el" href="a01098_source.html">alignedblob.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                           {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> textord_debug_pix_;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<p>Definition at line <a class="el" href="a00810_source.html#l00121">121</a> of file <a class="el" href="a00810_source.html">ambigs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00260.html#aaa3a04113f5db03951771afa6423e7f4">AmbigSpec</a> *s1 =</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code" href="a00260.html#aaa3a04113f5db03951771afa6423e7f4">AmbigSpec</a> * <span class="keyword">const </span>*<span class="keyword">&gt;</span>(spec1);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00260.html#aaa3a04113f5db03951771afa6423e7f4">AmbigSpec</a> *s2 =</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      *<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><a class="code" href="a00260.html#aaa3a04113f5db03951771afa6423e7f4">AmbigSpec</a> * <span class="keyword">const </span>*<span class="keyword">&gt;</span>(spec2);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">int</span> result = <a class="code" href="a00640.html#a2fd19f82c1c81f57dd766bded5ae8904">UnicharIdArrayUtils::compare</a>(s1-&gt;wrong_ngram, s2-&gt;wrong_ngram);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> (result != 0) <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00640.html#a2fd19f82c1c81f57dd766bded5ae8904">UnicharIdArrayUtils::compare</a>(s1-&gt;correct_fragments,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                        s2-&gt;correct_fragments);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div>
+<div class="ttc" id="a00260_html_aaa3a04113f5db03951771afa6423e7f4"><div class="ttname"><a href="a00260.html#aaa3a04113f5db03951771afa6423e7f4">tesseract::AmbigSpec::AmbigSpec</a></div><div class="ttdeci">AmbigSpec()</div><div class="ttdef"><b>Definition:</b> <a href="a00809_source.html#l00042">ambigs.cpp:42</a></div></div>
+<div class="ttc" id="a00640_html_a2fd19f82c1c81f57dd766bded5ae8904"><div class="ttname"><a href="a00640.html#a2fd19f82c1c81f57dd766bded5ae8904">tesseract::UnicharIdArrayUtils::compare</a></div><div class="ttdeci">static int compare(const UNICHAR_ID array1[], const UNICHAR_ID array2[])</div><div class="ttdef"><b>Definition:</b> <a href="a00810_source.html#l00062">ambigs.h:62</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a357ff9e1d9bac2b1d88fb0d335fa7f3e"></a>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ad3a4b121b26cf829422700494aed91e4"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::AlignedBlob::WithinTestRegion </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>detail_level</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> tesseract::AmbigSpec::correct_fragments[<a class="el" href="a00810.html#a66b35d22667233a1566433c6dd864463">MAX_AMBIG_SIZE</a>+1]</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01097_source.html#l00173">173</a> of file <a class="el" href="a01097_source.html">alignedblob.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01097.html#ace3f88c2ebef0843236018cd170eea14">textord_debug_tabfind</a> &lt; detail_level)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordflow">return</span> x &gt;= <a class="code" href="a01097.html#af5f4738c5e7585a8f7d3511ae7d9f277">textord_testregion_left</a> &amp;&amp; x &lt;= <a class="code" href="a01097.html#a09c9036932fe1fc41df347e0d16dc45d">textord_testregion_right</a> &amp;&amp;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;         y &lt;= textord_testregion_top &amp;&amp; y &gt;= <a class="code" href="a01097.html#a46b543b2d10eebfb42aa59bbb6c68ae8">textord_testregion_bottom</a>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
-<div class="ttc" id="a01097_html_a46b543b2d10eebfb42aa59bbb6c68ae8"><div class="ttname"><a href="a01097.html#a46b543b2d10eebfb42aa59bbb6c68ae8">textord_testregion_bottom</a></div><div class="ttdeci">int textord_testregion_bottom</div><div class="ttdef"><b>Definition:</b> <a href="a01097_source.html#l00032">alignedblob.cpp:32</a></div></div>
-<div class="ttc" id="a01097_html_ace3f88c2ebef0843236018cd170eea14"><div class="ttname"><a href="a01097.html#ace3f88c2ebef0843236018cd170eea14">textord_debug_tabfind</a></div><div class="ttdeci">int textord_debug_tabfind</div><div class="ttdef"><b>Definition:</b> <a href="a01097_source.html#l00027">alignedblob.cpp:27</a></div></div>
-<div class="ttc" id="a01097_html_a09c9036932fe1fc41df347e0d16dc45d"><div class="ttname"><a href="a01097.html#a09c9036932fe1fc41df347e0d16dc45d">textord_testregion_right</a></div><div class="ttdeci">int textord_testregion_right</div><div class="ttdef"><b>Definition:</b> <a href="a01097_source.html#l00031">alignedblob.cpp:31</a></div></div>
-<div class="ttc" id="a01097_html_af5f4738c5e7585a8f7d3511ae7d9f277"><div class="ttname"><a href="a01097.html#af5f4738c5e7585a8f7d3511ae7d9f277">textord_testregion_left</a></div><div class="ttdeci">int textord_testregion_left</div><div class="ttdef"><b>Definition:</b> <a href="a01097_source.html#l00029">alignedblob.cpp:29</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00810_source.html#l00133">133</a> of file <a class="el" href="a00810_source.html">ambigs.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a879c6167dbfc54980bfeb5a15b32bf73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> tesseract::AmbigSpec::correct_ngram_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00810_source.html#l00134">134</a> of file <a class="el" href="a00810_source.html">ambigs.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae29644f82c6feac4df14b22368fa0873"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01267.html#aa13017f5f891a1f9f95074bf26a5b222">AmbigType</a> tesseract::AmbigSpec::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00810_source.html#l00135">135</a> of file <a class="el" href="a00810_source.html">ambigs.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9d7f07e5b038c6d61acc9bb75ba7ef1b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> tesseract::AmbigSpec::wrong_ngram[<a class="el" href="a00810.html#a66b35d22667233a1566433c6dd864463">MAX_AMBIG_SIZE</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00810_source.html#l00132">132</a> of file <a class="el" href="a00810_source.html">ambigs.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4cfb10d18b7c636f3afa5f223afa445e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::AmbigSpec::wrong_ngram_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00810_source.html#l00136">136</a> of file <a class="el" href="a00810_source.html">ambigs.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>textord/<a class="el" href="a01098_source.html">alignedblob.h</a></li>
-<li>textord/<a class="el" href="a01097_source.html">alignedblob.cpp</a></li>
+<li>ccutil/<a class="el" href="a00810_source.html">ambigs.h</a></li>
+<li>ccutil/<a class="el" href="a00809_source.html">ambigs.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00260.html">AlignedBlob</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:49 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00260.html">AmbigSpec</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:23 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

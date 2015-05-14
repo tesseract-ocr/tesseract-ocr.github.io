@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/imagedata.h File Reference</title>
+<title>Tesseract: ccstruct/pageres.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,52 +107,119 @@ $(document).ready(function(){initNavTree('a00773.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">imagedata.h File Reference</div>  </div>
+<div class="title">pageres.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00849_source.html">genericvector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00782_source.html">normalis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00813_source.html">rect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00878_source.html">strngs.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00727_source.html">blamer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00738_source.html">boxword.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00823_source.html">elst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00763_source.html">normalis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00765_source.html">ocrblock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00769_source.html">ocrrow.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00775_source.html">params_training_featdef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00792_source.html">ratngs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00796_source.html">rejctmap.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00798_source.html">seam.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00808_source.html">werd.h</a>&quot;</code><br />
 </div>
 <p><a href="a00773_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html">tesseract::WordFeature</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00485.html">PAGE_RES</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html">tesseract::FloatWordFeature</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00283.html">BLOCK_RES</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00429.html">tesseract::ImageData</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00526.html">ROW_RES</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00366.html">tesseract::DocumentData</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00651.html">WERD_RES</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00365.html">tesseract::DocumentCache</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00486.html">PAGE_RES_IT</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a7cef4214dd641427422896b04970818a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a7cef4214dd641427422896b04970818a">tesseract::kFeaturePadding</a> = 2</td></tr>
-<tr class="separator:a7cef4214dd641427422896b04970818a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46aa5a5d605dc04f98aedca6ac9edd8f"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a46aa5a5d605dc04f98aedca6ac9edd8f">tesseract::kImagePadding</a> = 4</td></tr>
-<tr class="separator:a46aa5a5d605dc04f98aedca6ac9edd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd878b708e8f3c70977a2608c46d8cf9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#afd878b708e8f3c70977a2608c46d8cf9">tesseract::kNumPagesPerMiniBatch</a> = 100</td></tr>
-<tr class="separator:afd878b708e8f3c70977a2608c46d8cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:affc9a96d31e23e645355e534f11c40e9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00773.html#affc9a96d31e23e645355e534f11c40e9">CRUNCH_MODE</a> { <a class="el" href="a00773.html#affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9">CR_NONE</a>, 
+<a class="el" href="a00773.html#affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003">CR_KEEP_SPACE</a>, 
+<a class="el" href="a00773.html#affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387">CR_LOOSE_SPACE</a>, 
+<a class="el" href="a00773.html#affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4">CR_DELETE</a>
+ }</td></tr>
+<tr class="separator:affc9a96d31e23e645355e534f11c40e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5e04440deecb14b35c5ba5ab85b8149d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00773.html#a5e04440deecb14b35c5ba5ab85b8149d">ELISTIZEH</a> (<a class="el" href="a00283.html">BLOCK_RES</a>) <a class="el" href="a00732.html#a10cd68a8dccd74ea2389f2cda56cdc88">CLISTIZEH</a>(<a class="el" href="a00283.html">BLOCK_RES</a>) class <a class="el" href="a00526.html">ROW_RES</a></td></tr>
+<tr class="separator:a5e04440deecb14b35c5ba5ab85b8149d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="affc9a96d31e23e645355e534f11c40e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00773.html#affc9a96d31e23e645355e534f11c40e9">CRUNCH_MODE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9"></a>CR_NONE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003"></a>CR_KEEP_SPACE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387"></a>CR_LOOSE_SPACE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4"></a>CR_DELETE&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00773_source.html#l00145">145</a> of file <a class="el" href="a00773_source.html">pageres.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="a00773.html#affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9">CR_NONE</a>,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="a00773.html#affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003">CR_KEEP_SPACE</a>,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="a00773.html#affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387">CR_LOOSE_SPACE</a>,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="a00773.html#affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4">CR_DELETE</a></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
+<div class="ttc" id="a00773_html_affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387"><div class="ttname"><a href="a00773.html#affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387">CR_LOOSE_SPACE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00149">pageres.h:149</a></div></div>
+<div class="ttc" id="a00773_html_affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003"><div class="ttname"><a href="a00773.html#affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003">CR_KEEP_SPACE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00148">pageres.h:148</a></div></div>
+<div class="ttc" id="a00773_html_affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9"><div class="ttname"><a href="a00773.html#affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9">CR_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00147">pageres.h:147</a></div></div>
+<div class="ttc" id="a00773_html_affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4"><div class="ttname"><a href="a00773.html#affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4">CR_DELETE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00150">pageres.h:150</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a5e04440deecb14b35c5ba5ab85b8149d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ELISTIZEH </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00283.html">BLOCK_RES</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00773.html">imagedata.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00773.html">pageres.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

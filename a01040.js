@@ -1,7 +1,6 @@
 var a01040 =
 [
-    [ "RESET_COUNT", "a01040.html#a6f918b4c4fd78a6a98a73d38d327f160", null ],
-    [ "exists_file", "a01040.html#ae742eac688a0941097b28b88dd0f201b", null ],
-    [ "long_rand", "a01040.html#a33d2b2e66e43c48ac087a3e89f783f85", null ],
-    [ "open_file", "a01040.html#ae3226f9d05617de0b7174bc7b7fce5b6", null ]
+    [ "memalloc", "a01040.html#a5898fbe61f6ffe4c1be71a107193cdfd", null ],
+    [ "memfree", "a01040.html#ab462a857e5edf360ae4881bcc92a0bcf", null ],
+    [ "memrealloc", "a01040.html#a2467b686d61689eb29f3779ee878753f", null ]
 ];

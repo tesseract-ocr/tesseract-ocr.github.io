@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/tess_lang_model.h File Reference</title>
+<title>Tesseract: cutil/bitvec.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,48 +105,163 @@ $(document).ready(function(){initNavTree('a01025.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">tess_lang_model.h File Reference</div>  </div>
+<div class="title">bitvec.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00974_source.html">char_altlist.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00695_source.html">cube_reco_context.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01002_source.html">cube_tuning_params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01065_source.html">dict.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01015_source.html">lang_model.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00881_source.html">tessdatamanager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01026_source.html">bitvec.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a01039_source.html">emalloc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01041_source.html">freelist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00864_source.html">tprintf.h</a>&quot;</code><br />
 </div>
 <p><a href="a01025_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00630.html">tesseract::TessLangModel</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:acc744c888b291dd541ba6fb60c76b0a9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#acc744c888b291dd541ba6fb60c76b0a9">tesseract::kStateCnt</a> = 4</td></tr>
-<tr class="separator:acc744c888b291dd541ba6fb60c76b0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b4a65d34133edfd1e49af29cb711767"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a6b4a65d34133edfd1e49af29cb711767">tesseract::kNumLiteralCnt</a> = 5</td></tr>
-<tr class="separator:a6b4a65d34133edfd1e49af29cb711767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a74773bfbcc12095f8d32c11b28e2577d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01025.html#a74773bfbcc12095f8d32c11b28e2577d">ExpandBitVector</a> (<a class="el" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> Vector, int NewNumBits)</td></tr>
+<tr class="separator:a74773bfbcc12095f8d32c11b28e2577d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1a7f52bb1fce0746e1e5725ad679f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01025.html#adc1a7f52bb1fce0746e1e5725ad679f6">FreeBitVector</a> (<a class="el" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> BitVector)</td></tr>
+<tr class="separator:adc1a7f52bb1fce0746e1e5725ad679f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502314dc3ee4b178df067713b324b868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01025.html#a502314dc3ee4b178df067713b324b868">NewBitVector</a> (int NumBits)</td></tr>
+<tr class="separator:a502314dc3ee4b178df067713b324b868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a74773bfbcc12095f8d32c11b28e2577d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> ExpandBitVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>&#160;</td>
+          <td class="paramname"><em>Vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>NewNumBits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This routine uses realloc to increase the size of the specified bit vector.</p>
+<p>Globals:</p><ul>
+<li>none</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Vector</td><td>bit vector to be expanded </td></tr>
+    <tr><td class="paramname">NewNumBits</td><td>new size of bit vector</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New expanded bit vector. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Exceptions: none </dd>
+<dd>
+History: Fri Nov 16 10:11:16 1990, DSJ, Created. </dd></dl>
+
+<p>Definition at line <a class="el" href="a01025_source.html#l00048">48</a> of file <a class="el" href="a01025_source.html">bitvec.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                              {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> ((<a class="code" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>) <a class="code" href="a01038.html#a2bd9b4f7899f8798018497faa3b12eed">Erealloc</a>(Vector,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">sizeof</span>(Vector[0]) * <a class="code" href="a01026.html#a905ff9b6c51cb231dd8baf1713a3c9b8">WordsInVectorOfSize</a>(NewNumBits)));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}                                <span class="comment">/* ExpandBitVector */</span></div>
+<div class="ttc" id="a01038_html_a2bd9b4f7899f8798018497faa3b12eed"><div class="ttname"><a href="a01038.html#a2bd9b4f7899f8798018497faa3b12eed">Erealloc</a></div><div class="ttdeci">void * Erealloc(void *ptr, int size)</div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00070">emalloc.cpp:70</a></div></div>
+<div class="ttc" id="a01026_html_a584fa1e33e36d105f97bc7e7288fb259"><div class="ttname"><a href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a></div><div class="ttdeci">uinT32 * BIT_VECTOR</div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00028">bitvec.h:28</a></div></div>
+<div class="ttc" id="a01026_html_a905ff9b6c51cb231dd8baf1713a3c9b8"><div class="ttname"><a href="a01026.html#a905ff9b6c51cb231dd8baf1713a3c9b8">WordsInVectorOfSize</a></div><div class="ttdeci">#define WordsInVectorOfSize(NumBits)</div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00063">bitvec.h:63</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="adc1a7f52bb1fce0746e1e5725ad679f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FreeBitVector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>&#160;</td>
+          <td class="paramname"><em>BitVector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This routine frees a bit vector. It also decrements the global counter that keeps track of the number of bit vectors allocated. If BitVector is NULL, then the count is printed to stderr.</p>
+<p>Globals:</p><ul>
+<li>BitVectorCount count of number of bit vectors allocated</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">BitVector</td><td>bit vector to be freed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Exceptions: none </dd>
+<dd>
+History: Tue Oct 23 16:46:09 1990, DSJ, Created.</dd></dl>
+
+<p>Definition at line <a class="el" href="a01025_source.html#l00055">55</a> of file <a class="el" href="a01025_source.html">bitvec.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                         {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (BitVector) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="a01038.html#af846576ae65dc13e49ddc616e17baa27">Efree</a>(BitVector);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}                                <span class="comment">/* FreeBitVector */</span></div>
+<div class="ttc" id="a01038_html_af846576ae65dc13e49ddc616e17baa27"><div class="ttname"><a href="a01038.html#af846576ae65dc13e49ddc616e17baa27">Efree</a></div><div class="ttdeci">void Efree(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00085">emalloc.cpp:85</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a502314dc3ee4b178df067713b324b868"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> NewBitVector </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>NumBits</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allocate and return a new bit vector large enough to hold the specified number of bits.</p>
+<p>Globals:</p><ul>
+<li>BitVectorCount number of bit vectors allocated</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NumBits</td><td>number of bits in new bit vector</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New bit vector. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Exceptions: none </dd>
+<dd>
+History: Tue Oct 23 16:51:27 1990, DSJ, Created. </dd></dl>
+
+<p>Definition at line <a class="el" href="a01025_source.html#l00090">90</a> of file <a class="el" href="a01025_source.html">bitvec.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                     {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> ((<a class="code" href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>) <a class="code" href="a01038.html#a9bdc0885c33bbb5b062c77b1d90e2305">Emalloc</a>(<span class="keyword">sizeof</span>(<a class="code" href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a>) *</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="a01026.html#a905ff9b6c51cb231dd8baf1713a3c9b8">WordsInVectorOfSize</a>(NumBits)));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}                                <span class="comment">/* NewBitVector */</span></div>
+<div class="ttc" id="a01038_html_a9bdc0885c33bbb5b062c77b1d90e2305"><div class="ttname"><a href="a01038.html#a9bdc0885c33bbb5b062c77b1d90e2305">Emalloc</a></div><div class="ttdeci">void * Emalloc(int Size)</div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00035">emalloc.cpp:35</a></div></div>
+<div class="ttc" id="a01026_html_a584fa1e33e36d105f97bc7e7288fb259"><div class="ttname"><a href="a01026.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a></div><div class="ttdeci">uinT32 * BIT_VECTOR</div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00028">bitvec.h:28</a></div></div>
+<div class="ttc" id="a00835_html_afc8530b39ebe0b6df1e19159d2508d15"><div class="ttname"><a href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a></div><div class="ttdeci">unsigned int uinT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00103">host.h:103</a></div></div>
+<div class="ttc" id="a01026_html_a905ff9b6c51cb231dd8baf1713a3c9b8"><div class="ttname"><a href="a01026.html#a905ff9b6c51cb231dd8baf1713a3c9b8">WordsInVectorOfSize</a></div><div class="ttdeci">#define WordsInVectorOfSize(NumBits)</div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00063">bitvec.h:63</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01025.html">tess_lang_model.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01025.html">bitvec.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

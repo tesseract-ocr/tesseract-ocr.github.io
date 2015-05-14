@@ -1,6 +1,7 @@
 var a00718 =
 [
-    [ "RowInfo", "a00544.html", "a00544" ],
-    [ "DetectParagraphs", "a00718.html#ac3edfcbb6042dffc461c6e5737c72643", null ],
-    [ "DetectParagraphs", "a00718.html#a7fb9da5e21dab182f4ac89730a421443", null ]
+    [ "TesseractStats", "a00609.html", "a00609" ],
+    [ "WordData", "a00653.html", "a00653" ],
+    [ "Tesseract", "a00607.html", "a00607" ],
+    [ "WordRecognizer", "a00718.html#a6e1934a98737c40606cfc506c5c4e22a", null ]
 ];

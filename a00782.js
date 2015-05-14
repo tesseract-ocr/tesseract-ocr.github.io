@@ -1,12 +1,6 @@
 var a00782 =
 [
-    [ "DENORM", "a00360.html", "a00360" ],
-    [ "NormalizationMode", "a00782.html#ad3e7916f0120e26e7b4e0f830784194a", [
-      [ "NM_BASELINE", "a00782.html#ad3e7916f0120e26e7b4e0f830784194aa643bd757ce3d9647d68aae97256d0233", null ],
-      [ "NM_CHAR_ISOTROPIC", "a00782.html#ad3e7916f0120e26e7b4e0f830784194aa856806160022221f012f954a60601b74", null ],
-      [ "NM_CHAR_ANISOTROPIC", "a00782.html#ad3e7916f0120e26e7b4e0f830784194aa81bec0cd85211e03befb611fa7003180", null ]
-    ] ],
-    [ "kBlnBaselineOffset", "a00782.html#abe10ce41bf7240ae8a053dea471d6ed5", null ],
-    [ "kBlnCellHeight", "a00782.html#af0751b110da1f0bbd3068aa0d7eac955", null ],
-    [ "kBlnXHeight", "a00782.html#af974e6755e636c8bc7cbe57e3bcbdd73", null ]
+    [ "INTERSECTING", "a00782.html#a19d14ec91d9d1960d7c43d6b7df9afca", null ],
+    [ "PBLOCK_LABEL_SIZE", "a00782.html#ac7fc412ab6ad488cb3a5e37e03ab9aef", null ],
+    [ "lessthan", "a00782.html#ae2ec3e961690fb921eeb5e3c606fb7a3", null ]
 ];

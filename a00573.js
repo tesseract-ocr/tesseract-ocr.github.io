@@ -1,8 +1,7 @@
 var a00573 =
 [
-    [ "SpacingProperties", "a00573.html#a2f6032294c3de9d78acadd6b01c2679f", null ],
-    [ "SpacingProperties", "a00573.html#a5dabc5c3bb2bb88bfd2d738bee32762d", null ],
-    [ "kerned_x_gaps", "a00573.html#ab1b0b77f9f598c674e7409bedab7618e", null ],
-    [ "x_gap_after", "a00573.html#af306c57d4c86a21a2c377a506cafd548", null ],
-    [ "x_gap_before", "a00573.html#abddc3822da890db3e84d10b4432519d1", null ]
+    [ "SVMenuBar", "a00573.html#a2ba2e6826a19dfbf1ec040c0552a4bab", null ],
+    [ "actionPerformed", "a00573.html#a78fa6997aa0d3baa6b228a223ad38d60", null ],
+    [ "add", "a00573.html#a9f29f81c997dc2a252b3c68470c2ed25", null ],
+    [ "add", "a00573.html#a96ef9e56ce4896c278e894eb0ec7306c", null ]
 ];

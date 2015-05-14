@@ -1,7 +1,6 @@
 var a00567 =
 [
-    [ "SimpleClusterer", "a00567.html#afc5f3dd986096b36f59d2cc09972d1ea", null ],
-    [ "Add", "a00567.html#ae36fdd8d4995529380462e7f9ce58caa", null ],
-    [ "GetClusters", "a00567.html#afc17914736fbde1378a9bf9358100491", null ],
-    [ "size", "a00567.html#adc5a7f3cac5009aa69f2831b98a6e189", null ]
+    [ "SVEvent", "a00567.html#ab2711afde022a3e5275f451b36ab8925", null ],
+    [ "SVEvent", "a00567.html#ac2d66fde16c7dafa6de7b795725c8224", null ],
+    [ "toString", "a00567.html#ad4155059b53e7723c4aa3c57bcd94ab1", null ]
 ];

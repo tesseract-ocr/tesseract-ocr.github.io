@@ -1,5 +1,6 @@
 var a01224 =
 [
-    [ "kBufferSize", "a01224.html#a8b423a805589152d71009c594ad25ab3", null ],
-    [ "kMaxMsgSize", "a01224.html#a4a4ce82f9687ca37d149b0a62c5ed379", null ]
+    [ "MAX_NUM_POINTS", "a01224.html#acddb2ccb7be3d768d16abfd230d468eb", null ],
+    [ "PointHeap", "a01224.html#a2cc41609737c8b3fe2ee7c5cfd9aee19", null ],
+    [ "PointPair", "a01224.html#a5354bdfdcb4ce492d853ef15269e7bd8", null ]
 ];

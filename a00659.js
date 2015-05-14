@@ -1,12 +1,7 @@
 var a00659 =
 [
-    [ "UNICHARMAP", "a00659.html#a1d967e078291984427cc95d60ad61c11", null ],
-    [ "~UNICHARMAP", "a00659.html#acb69ce2363844e6082995a1c4c4832e0", null ],
-    [ "clear", "a00659.html#a03d0b5a94f3b73fb17183e4bbf6a90d4", null ],
-    [ "contains", "a00659.html#a7b62f14a3fc81145f3e4df6fe7ae64ce", null ],
-    [ "contains", "a00659.html#a2281c0e6a000baa298c8086b3b56b8b4", null ],
-    [ "insert", "a00659.html#a83ec56c382b3f94f31400ff884bbcf87", null ],
-    [ "minmatch", "a00659.html#a6295b2e22ddf302e81d81d1151ac4a8f", null ],
-    [ "unichar_to_id", "a00659.html#afda8d7b17ca0741a12edab53da366bd4", null ],
-    [ "unichar_to_id", "a00659.html#a8b6baa108da41d022550da6ac1224d47", null ]
+    [ "WordUnigrams", "a00659.html#afd00490f957dd1842384c372a2949141", null ],
+    [ "~WordUnigrams", "a00659.html#a60f14b6354f60c7411695103bc422601", null ],
+    [ "Cost", "a00659.html#a298b0661e1327c8dcb27bfdd790d92d3", null ],
+    [ "CostInternal", "a00659.html#a14623fdba39beee456c834cdc6a8976f", null ]
 ];

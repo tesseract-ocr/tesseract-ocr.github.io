@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/mastertrainer.h File Reference</title>
+<title>Tesseract: classify/normmatch.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,50 +105,68 @@ $(document).ready(function(){initNavTree('a00931.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">mastertrainer.h File Reference</div>  </div>
+<div class="title">normmatch.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00901_source.html">classify.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00903_source.html">cluster.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00923_source.html">intfx.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00842_source.html">elst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00909_source.html">errorcounter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00911_source.html">featdefs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00768_source.html">fontinfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00856_source.html">indexmapbidi.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00921_source.html">intfeaturespace.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00919_source.html">intfeaturemap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00925_source.html">intmatcher.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00957_source.html">shapetable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00961_source.html">trainingsample.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00963_source.html">trainingsampleset.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00889_source.html">unicharset.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01057_source.html">matchdefs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00933_source.html">ocrfeatures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
 </div>
 <p><a href="a00931_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00562.html">tesseract::ShapeDist</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00475.html">tesseract::MasterTrainer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5b39e06af338d5d0623762a84246e7a6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00931.html#a5b39e06af338d5d0623762a84246e7a6">classify_norm_adj_midpoint</a> = 32.0</td></tr>
+<tr class="separator:a5b39e06af338d5d0623762a84246e7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f63df566aa3f4d4405918d1b1af0b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00931.html#ae9f63df566aa3f4d4405918d1b1af0b3">classify_norm_adj_curl</a> = 2.0</td></tr>
+<tr class="separator:ae9f63df566aa3f4d4405918d1b1af0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ae9f63df566aa3f4d4405918d1b1af0b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double classify_norm_adj_curl = 2.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Norm adjust curl ..." </p>
+
+<p>Definition at line <a class="el" href="a00930_source.html#l00064">64</a> of file <a class="el" href="a00930_source.html">normmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b39e06af338d5d0623762a84246e7a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double classify_norm_adj_midpoint = 32.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<hr/>
+ <h2>Include Files and Type Defines </h2>
+<h2>Variables </h2>
+<p>"Norm adjust midpoint ..."</p>
+<hr/>
+ <h2>Variables </h2>
+<p>"Norm adjust midpoint ..." </p>
+
+<p>Definition at line <a class="el" href="a00930_source.html#l00063">63</a> of file <a class="el" href="a00930_source.html">normmatch.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00931.html">mastertrainer.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:35 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00931.html">normmatch.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -1,14 +1,32 @@
 var a01156 =
 [
-    [ "ColSegment", "a00334.html", "a00334" ],
-    [ "TableFinder", "a00604.html", "a00604" ],
-    [ "ColSegmentGrid", "a01156.html#a80cfbd9a83df02629e2afd48c16880f0", null ],
-    [ "ColSegmentGridSearch", "a01156.html#ac7f2f25bfb4914e691db80a6b523c703", null ],
-    [ "ColSegType", "a01156.html#a25254b3df45454565d58a62480d3a6cb", [
-      [ "COL_UNKNOWN", "a01156.html#a25254b3df45454565d58a62480d3a6cbaee1976dbb59fbd65d366f0424759c729", null ],
-      [ "COL_TEXT", "a01156.html#a25254b3df45454565d58a62480d3a6cba05d5fe5bf814b3e82827a3a321d5b2ec", null ],
-      [ "COL_TABLE", "a01156.html#a25254b3df45454565d58a62480d3a6cba8943a61e53229e72f0f896ec8e415316", null ],
-      [ "COL_MIXED", "a01156.html#a25254b3df45454565d58a62480d3a6cba794ff16294744099e9bab9ecf2cabc11", null ],
-      [ "COL_COUNT", "a01156.html#a25254b3df45454565d58a62480d3a6cbaf626b1b46e354d9f577495c7de9ece2a", null ]
-    ] ]
+    [ "compute_block_pitch", "a01156.html#ae0e111445e561dc551d32c13577645a5", null ],
+    [ "compute_fixed_pitch", "a01156.html#a56a3f38c5cf425f328b71195fd639b6d", null ],
+    [ "compute_pitch_sd", "a01156.html#ac7c42ba4b0591e26fceb3f3b62ab0f1a", null ],
+    [ "compute_pitch_sd2", "a01156.html#ab21845ebda5d5382ae1235cfeb7bc407", null ],
+    [ "compute_rows_pitch", "a01156.html#a1a8501aaeee62a5b24bee157b3252ab4", null ],
+    [ "count_block_votes", "a01156.html#aa2a9aa189317d235b0bef557fd444597", null ],
+    [ "count_pitch_stats", "a01156.html#ab047d7645b3489304092d769faa678e9", null ],
+    [ "find_repeated_chars", "a01156.html#a9ecb24338e9f884525d31d89c309b216", null ],
+    [ "find_row_pitch", "a01156.html#a1dce0856cd958d7e0d42692515796ea5", null ],
+    [ "fix_row_pitch", "a01156.html#a3212b3653cf4a566328c7f487530088d", null ],
+    [ "fixed_pitch_row", "a01156.html#acc2951187ff3844df6c8cb21beda7392", null ],
+    [ "plot_fp_word", "a01156.html#a39a1be499c86f5a74b371323f3c1f873", null ],
+    [ "print_block_counts", "a01156.html#acce6714c105d97a90e131223576d10cd", null ],
+    [ "print_pitch_sd", "a01156.html#a67e8310f2a88c12d2ffe6100bbd3308e", null ],
+    [ "row_pitch_stats", "a01156.html#a18e079708f8229861b9537f27732b9ff", null ],
+    [ "try_block_fixed", "a01156.html#a3e651c3ccbf6588faf0b33b2fe594e7b", null ],
+    [ "try_doc_fixed", "a01156.html#a996855b235909527729d1f091940d779", null ],
+    [ "try_rows_fixed", "a01156.html#a1735f35e27ad6d533505ed03d27b84d3", null ],
+    [ "tune_row_pitch", "a01156.html#a775b2c2aac4484a4849e1392324a5d80", null ],
+    [ "tune_row_pitch2", "a01156.html#a1960435b93c4ad588fb7d8c882a53e85", null ],
+    [ "textord_balance_factor", "a01156.html#a41cf65f836c8bdd4dd98ea282ef31815", null ],
+    [ "textord_blockndoc_fixed", "a01156.html#ac5c92bb35a083edcf1cc3be0875c9ff8", null ],
+    [ "textord_debug_pitch_metric", "a01156.html#a0e80cb6223261c2e59202b2d153c56b2", null ],
+    [ "textord_debug_pitch_test", "a01156.html#a1e4587adb2fa810c79228ddca88b6e65", null ],
+    [ "textord_fast_pitch_test", "a01156.html#a1987cbc3d188d489fd427197aca89f6d", null ],
+    [ "textord_pitch_cheat", "a01156.html#a5a8f27eb05c06eb18c634c066c99e2cb", null ],
+    [ "textord_projection_scale", "a01156.html#af6858bfbe71aa8522388bd9292511291", null ],
+    [ "textord_show_page_cuts", "a01156.html#a97a0e0341259922b9e54df257f5de0fc", null ],
+    [ "textord_show_row_cuts", "a01156.html#a16e42e88ec28fbfce9ee055356e194f5", null ]
 ];

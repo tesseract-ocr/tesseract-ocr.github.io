@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cutil/bitvec.h Source File</title>
+<title>Tesseract: cutil/efio.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,16 +105,16 @@ $(document).ready(function(){initNavTree('a01036_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">bitvec.h</div>  </div>
+<div class="title">efio.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01036.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **    Filename:    bitvec.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **    Purpose:     Routines for manipulating bit vectors</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **    Author:      Dan Johnson</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **    History:     Wed Mar  7 17:52:45 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:       efio.c</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:        Utility I/O routines</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:         Dan Johnson</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:        5/21/89, DSJ, Created.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **    (c) Copyright Hewlett-Packard Company, 1988.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **     (c) Copyright Hewlett-Packard Company, 1988.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
@@ -125,76 +125,59 @@ $(document).ready(function(){initNavTree('a01036_source.html','');});
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef   BITVEC_H</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define   BITVEC_H</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00854.html">host.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">          Include Files and Type Defines</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">-----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// TODO(rays) Rename BITSINLONG to BITSINuinT32, and use sizeof.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01036.html#a0bb2f0d77b12e8c8061c18e0edac99ca">   27</a></span>&#160;<span class="preprocessor">#define BITSINLONG      32       </span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">   28</a></span>&#160;<span class="preprocessor">typedef uinT32 *BIT_VECTOR;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/*-----------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">          Public Function Prototypes</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">-----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01036.html#a33e25946d45a1e004a961dc46cb5226a">   33</a></span>&#160;<span class="preprocessor">#define zero_all_bits(array,length) \</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">{\</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">    register int            index;                        </span><span class="comment">/*temporary index*/</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">\</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">for (index=0;index&lt;length;index++)\</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">    array[index]=0;                                        </span><span class="comment">/*zero all bits*/</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01036.html#a137dcf6c3453d2a2b5cbfa7d369c754f">   41</a></span>&#160;<span class="preprocessor">#define set_all_bits(array,length) \</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">{\</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">    register int            index;                        </span><span class="comment">/*temporary index*/</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">\</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">for (index=0;index&lt;length;index++)\</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">    array[index]= ~0;                                    </span><span class="comment">/*set all bits*/</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a01036.html#ae535f23da300bdf6ea284fc5e85ca14a">   49</a></span>&#160;<span class="preprocessor">#define copy_all_bits(source,dest,length) \</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">{\</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    register int            index;                        </span><span class="comment">/*temporary index*/</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">\</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">for (index=0;index&lt;length;index++)\</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">    dest[index]=source[index];                            </span><span class="comment">/*copy all bits*/</span><span class="preprocessor">\</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">}</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a01036.html#ab02d606cf8dca49ccadb00248bdbafe9">   57</a></span>&#160;<span class="preprocessor">#define SET_BIT(array,bit) (array[bit/BITSINLONG]|=1&lt;&lt;(bit&amp;(BITSINLONG-1)))</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a01036.html#a1209b8bb0fa7e6e7323cdb48b4165f0d">   59</a></span>&#160;<span class="preprocessor">#define reset_bit(array,bit) (array[bit/BITSINLONG]&amp;=~(1&lt;&lt;(bit&amp;(BITSINLONG-1))))</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a01036.html#a76a50c5a99dea7be5315fe76246036ce">   61</a></span>&#160;<span class="preprocessor">#define test_bit(array,bit) (array[bit/BITSINLONG] &amp; (1&lt;&lt;(bit&amp;(BITSINLONG-1))))</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a01036.html#a905ff9b6c51cb231dd8baf1713a3c9b8">   63</a></span>&#160;<span class="preprocessor">#define WordsInVectorOfSize(NumBits) \</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">(((NumBits) + BITSINLONG - 1) / BITSINLONG)</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/*--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">        Public Function Prototypes</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">--------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<a class="code" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> <a class="code" href="a01036.html#a74773bfbcc12095f8d32c11b28e2577d">ExpandBitVector</a>(<a class="code" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> Vector, <span class="keywordtype">int</span> NewNumBits);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01036.html#adc1a7f52bb1fce0746e1e5725ad679f6">FreeBitVector</a>(<a class="code" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> BitVector);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> <a class="code" href="a01036.html#a502314dc3ee4b178df067713b324b868">NewBitVector</a>(<span class="keywordtype">int</span> NumBits);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a01036_html_a502314dc3ee4b178df067713b324b868"><div class="ttname"><a href="a01036.html#a502314dc3ee4b178df067713b324b868">NewBitVector</a></div><div class="ttdeci">BIT_VECTOR NewBitVector(int NumBits)</div><div class="ttdef"><b>Definition:</b> <a href="a01035_source.html#l00090">bitvec.cpp:90</a></div></div>
-<div class="ttc" id="a01036_html_adc1a7f52bb1fce0746e1e5725ad679f6"><div class="ttname"><a href="a01036.html#adc1a7f52bb1fce0746e1e5725ad679f6">FreeBitVector</a></div><div class="ttdeci">void FreeBitVector(BIT_VECTOR BitVector)</div><div class="ttdef"><b>Definition:</b> <a href="a01035_source.html#l00055">bitvec.cpp:55</a></div></div>
-<div class="ttc" id="a01036_html_a74773bfbcc12095f8d32c11b28e2577d"><div class="ttname"><a href="a01036.html#a74773bfbcc12095f8d32c11b28e2577d">ExpandBitVector</a></div><div class="ttdeci">BIT_VECTOR ExpandBitVector(BIT_VECTOR Vector, int NewNumBits)</div><div class="ttdef"><b>Definition:</b> <a href="a01035_source.html#l00048">bitvec.cpp:48</a></div></div>
-<div class="ttc" id="a00854_html"><div class="ttname"><a href="a00854.html">host.h</a></div></div>
-<div class="ttc" id="a01036_html_a584fa1e33e36d105f97bc7e7288fb259"><div class="ttname"><a href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a></div><div class="ttdeci">uinT32 * BIT_VECTOR</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00028">bitvec.h:28</a></div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01037.html">efio.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01035.html">danerror.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01036.html#ab228b4d07c6e54586d2d8f81a2179490">   26</a></span>&#160;<span class="preprocessor">#define MAXERRORMESSAGE   256</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01037.html#a1a07e904724c29e89b04235a34ded950">   32</a></span>&#160;FILE *<a class="code" href="a01036.html#a1a07e904724c29e89b04235a34ded950">Efopen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *Name, <span class="keyword">const</span> <span class="keywordtype">char</span> *Mode) { </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **             Name    name of file to be opened</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **             Mode    mode to be used to open file</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **     Globals:</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **             None</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **     Operation:</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **             This routine attempts to open the specified file in the</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **             specified mode.  If the file can be opened, a pointer to</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **             the open file is returned.  If the file cannot be opened,</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **             an error is trapped.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **     Return:</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **             Pointer to open file.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> **     Exceptions:</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **             FOPENERROR              unable to open specified file</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> **     History:</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> **             5/21/89, DSJ, Created.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  FILE *File;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">char</span> ErrorMessage[<a class="code" href="a01036.html#ab228b4d07c6e54586d2d8f81a2179490">MAXERRORMESSAGE</a>];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  File = fopen (Name, Mode);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (File == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    sprintf (ErrorMessage, <span class="stringliteral">&quot;Unable to open %s&quot;</span>, Name);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a>(<a class="code" href="a01037.html#a57448c70d638b35c9a0c595d44d649fe">FOPENERROR</a>, ErrorMessage); </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> (File);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}                                <span class="comment">/* Efopen */</span></div>
+<div class="ttc" id="a01035_html"><div class="ttname"><a href="a01035.html">danerror.h</a></div></div>
+<div class="ttc" id="a01034_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00032">danerror.cpp:32</a></div></div>
+<div class="ttc" id="a01036_html_ab228b4d07c6e54586d2d8f81a2179490"><div class="ttname"><a href="a01036.html#ab228b4d07c6e54586d2d8f81a2179490">MAXERRORMESSAGE</a></div><div class="ttdeci">#define MAXERRORMESSAGE</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00026">efio.cpp:26</a></div></div>
+<div class="ttc" id="a01037_html_a57448c70d638b35c9a0c595d44d649fe"><div class="ttname"><a href="a01037.html#a57448c70d638b35c9a0c595d44d649fe">FOPENERROR</a></div><div class="ttdeci">#define FOPENERROR</div><div class="ttdef"><b>Definition:</b> <a href="a01037_source.html#l00026">efio.h:26</a></div></div>
+<div class="ttc" id="a01037_html"><div class="ttname"><a href="a01037.html">efio.h</a></div></div>
+<div class="ttc" id="a01036_html_a1a07e904724c29e89b04235a34ded950"><div class="ttname"><a href="a01036.html#a1a07e904724c29e89b04235a34ded950">Efopen</a></div><div class="ttdeci">FILE * Efopen(const char *Name, const char *Mode)</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00032">efio.cpp:32</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01036.html">bitvec.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01036.html">efio.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:01 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

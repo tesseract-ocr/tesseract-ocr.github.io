@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/fontinfo.cpp File Reference</title>
+<title>Tesseract: ccstruct/ocrpara.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,53 +105,31 @@ $(document).ready(function(){initNavTree('a00767.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">fontinfo.cpp File Reference</div>  </div>
+<div class="title">ocrpara.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00768_source.html">fontinfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00835_source.html">bitvector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00890_source.html">unicity_table.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00785_source.html">publictypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00823_source.html">elst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00859_source.html">strngs.h</a>&quot;</code><br />
 </div>
 <p><a href="a00767_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00490.html">PARA</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a050fbf6fe3d3cb63b62efbff771495ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a050fbf6fe3d3cb63b62efbff771495ba">tesseract::CompareFontInfo</a> (const FontInfo &amp;fi1, const FontInfo &amp;fi2)</td></tr>
-<tr class="separator:a050fbf6fe3d3cb63b62efbff771495ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d183ded4bf706476f186ff0b2d14ba1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a2d183ded4bf706476f186ff0b2d14ba1">tesseract::CompareFontSet</a> (const FontSet &amp;fs1, const FontSet &amp;fs2)</td></tr>
-<tr class="separator:a2d183ded4bf706476f186ff0b2d14ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eb40be391904d34559ee7fc06b321f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a1eb40be391904d34559ee7fc06b321f4">tesseract::FontInfoDeleteCallback</a> (FontInfo f)</td></tr>
-<tr class="separator:a1eb40be391904d34559ee7fc06b321f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0d03c86610f630327041d46a069fa94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#ab0d03c86610f630327041d46a069fa94">tesseract::FontSetDeleteCallback</a> (FontSet fs)</td></tr>
-<tr class="separator:ab0d03c86610f630327041d46a069fa94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a8355da6e96695bb003d778da05a95b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a4a8355da6e96695bb003d778da05a95b">tesseract::read_info</a> (FILE *f, FontInfo *fi, bool swap)</td></tr>
-<tr class="separator:a4a8355da6e96695bb003d778da05a95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39563e2e9bd26b96504e53ae2c9defcc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a39563e2e9bd26b96504e53ae2c9defcc">tesseract::write_info</a> (FILE *f, const FontInfo &amp;fi)</td></tr>
-<tr class="separator:a39563e2e9bd26b96504e53ae2c9defcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8643fbecc8aa5b606e53a534ad14d491"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a8643fbecc8aa5b606e53a534ad14d491">tesseract::read_spacing_info</a> (FILE *f, FontInfo *fi, bool swap)</td></tr>
-<tr class="separator:a8643fbecc8aa5b606e53a534ad14d491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48b60e911578a0285e73738e81181abf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a48b60e911578a0285e73738e81181abf">tesseract::write_spacing_info</a> (FILE *f, const FontInfo &amp;fi)</td></tr>
-<tr class="separator:a48b60e911578a0285e73738e81181abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a718a9f9121464dbaa6ef73c5f9dc6d5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a718a9f9121464dbaa6ef73c5f9dc6d5e">tesseract::read_set</a> (FILE *f, FontSet *fs, bool swap)</td></tr>
-<tr class="separator:a718a9f9121464dbaa6ef73c5f9dc6d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385582f69442d7d9588e2983c768cec1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a385582f69442d7d9588e2983c768cec1">tesseract::write_set</a> (FILE *f, const FontSet &amp;fs)</td></tr>
-<tr class="separator:a385582f69442d7d9588e2983c768cec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html">ParagraphModel</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00767.html">fontinfo.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00767.html">ocrpara.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

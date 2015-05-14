@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/trainingsampleset.cpp File Reference</title>
+<title>Tesseract: cube/cached_file.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,51 +105,34 @@ $(document).ready(function(){initNavTree('a00962.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">trainingsampleset.cpp File Reference</div>  </div>
+<div class="title">cached_file.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00963_source.html">trainingsampleset.h</a>&quot;</code><br />
-<code>#include &quot;allheaders.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00755_source.html">boxread.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00768_source.html">fontinfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00856_source.html">indexmapbidi.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00917_source.html">intfeaturedist.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00919_source.html">intfeaturemap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00921_source.html">intfeaturespace.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00957_source.html">shapetable.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00961_source.html">trainingsample.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00890_source.html">unicity_table.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div>
 <p><a href="a00962_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00292.html">tesseract::CachedFile</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aedc256912be3e2d615b8899ba661300a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aedc256912be3e2d615b8899ba661300a">tesseract::kTestChar</a> = -1</td></tr>
-<tr class="separator:aedc256912be3e2d615b8899ba661300a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaad2b6ef5a02069d1898468d26da372"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aeaad2b6ef5a02069d1898468d26da372">tesseract::kSquareLimit</a> = 25</td></tr>
-<tr class="separator:aeaad2b6ef5a02069d1898468d26da372"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab57f233601ee3f43a6bdcc4478b59547"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#ab57f233601ee3f43a6bdcc4478b59547">tesseract::kPrime1</a> = 17</td></tr>
-<tr class="separator:ab57f233601ee3f43a6bdcc4478b59547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a606492ee81ad0e6765a6b2f8dbb798df"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a606492ee81ad0e6765a6b2f8dbb798df">tesseract::kPrime2</a> = 13</td></tr>
-<tr class="separator:a606492ee81ad0e6765a6b2f8dbb798df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaac2947d8026a1e91fc20287ef90e3a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aaaac2947d8026a1e91fc20287ef90e3a">tesseract::kMinOutlierSamples</a> = 5</td></tr>
-<tr class="separator:aaaac2947d8026a1e91fc20287ef90e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00962.html">trainingsampleset.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:35 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00962.html">cached_file.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

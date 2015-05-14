@@ -1,11 +1,11 @@
 var a00754 =
 [
-    [ "BoxFileName", "a00754.html#af8465e130ce34e31d743881d41ecba78", null ],
-    [ "MakeBoxFileStr", "a00754.html#a12d56f93e661ff006a382fb8d7314898", null ],
-    [ "OpenBoxFile", "a00754.html#af8f00c0aa1951fff65cff5802879a91d", null ],
-    [ "ParseBoxFileStr", "a00754.html#acd464bb54397318c2f6fb8db9e644fd0", null ],
-    [ "ReadAllBoxes", "a00754.html#ab3161d7c887ead295045650e34d690fc", null ],
-    [ "ReadMemBoxes", "a00754.html#ae4e029cbe1a7c0f7902eae69bfc729e0", null ],
-    [ "ReadNextBox", "a00754.html#a8236e051549f8174e263196602edadc5", null ],
-    [ "ReadNextBox", "a00754.html#a566c682100d2b5f0a20f39bf99ad2d30", null ]
+    [ "WordFeature", "a00654.html", "a00654" ],
+    [ "FloatWordFeature", "a00391.html", "a00391" ],
+    [ "ImageData", "a00416.html", "a00416" ],
+    [ "DocumentData", "a00358.html", "a00358" ],
+    [ "DocumentCache", "a00357.html", "a00357" ],
+    [ "kFeaturePadding", "a00754.html#a7cef4214dd641427422896b04970818a", null ],
+    [ "kImagePadding", "a00754.html#a46aa5a5d605dc04f98aedca6ac9edd8f", null ],
+    [ "kNumPagesPerMiniBatch", "a00754.html#afd878b708e8f3c70977a2608c46d8cf9", null ]
 ];

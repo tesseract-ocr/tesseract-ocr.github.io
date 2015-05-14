@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: api/apitypes.h Source File</title>
+<title>Tesseract: ccmain/docqual.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,48 +105,63 @@ $(document).ready(function(){initNavTree('a00680_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">apitypes.h</div>  </div>
+<div class="title">docqual.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00680.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        apitypes.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: Types used in both the API and internally</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      Ray Smith</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Wed Mar 03 09:22:53 PST 2010</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2010, Google Inc.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TESSERACT_API_APITYPES_H__</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TESSERACT_API_APITYPES_H__</span></div>
+<a href="a00680.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        docqual.h  (Formerly docqual.h)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Document Quality Metrics</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:              Phil Cheatle</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:             Mon May  9 11:27:28 BST 1994</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1994, Hewlett-Packard Ltd.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           DOCQUAL_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           DOCQUAL_H</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00804.html">publictypes.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00673.html">control.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// The types used by the API and Page/ResultIterator can be found in:</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//   ccstruct/publictypes.h</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   ccmain/resultiterator.h</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   ccmain/pageiterator.h</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// API interfaces and API users should be sure to include this file, rather</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// than the lower-level one, and lower-level code should be sure to include</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// only the lower-level file.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42">   25</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42">GARBAGE_LEVEL</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751">   27</a></span>&#160;  <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751">G_NEVER_CRUNCH</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3">   28</a></span>&#160;  <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3">G_OK</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a">   29</a></span>&#160;  <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a">G_DODGY</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad">   30</a></span>&#160;  <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad">G_TERRIBLE</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif  // TESSERACT_API_APITYPES_H__</span></div>
-<div class="ttc" id="a00804_html"><div class="ttname"><a href="a00804.html">publictypes.h</a></div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> <a class="code" href="a00680.html#a12872e741b5d325f549aa9e65972bfdc">word_blob_quality</a>(<a class="code" href="a00651.html">WERD_RES</a> *word, <a class="code" href="a00525.html">ROW</a> *row);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00680.html#a1b9934928e2b953ee5e91abb58cf043f">reject_whole_page</a>(<a class="code" href="a00486.html">PAGE_RES_IT</a> &amp;page_res_it);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a">G_DODGY</a></div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00029">docqual.h:29</a></div></div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad">G_TERRIBLE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00030">docqual.h:30</a></div></div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42">GARBAGE_LEVEL</a></div><div class="ttdeci">GARBAGE_LEVEL</div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00025">docqual.h:25</a></div></div>
+<div class="ttc" id="a00680_html_a12872e741b5d325f549aa9e65972bfdc"><div class="ttname"><a href="a00680.html#a12872e741b5d325f549aa9e65972bfdc">word_blob_quality</a></div><div class="ttdeci">inT16 word_blob_quality(WERD_RES *word, ROW *row)</div></div>
+<div class="ttc" id="a00525_html"><div class="ttname"><a href="a00525.html">ROW</a></div><div class="ttdef"><b>Definition:</b> <a href="a00769_source.html#l00032">ocrrow.h:32</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00486_html"><div class="ttname"><a href="a00486.html">PAGE_RES_IT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00657">pageres.h:657</a></div></div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751">G_NEVER_CRUNCH</a></div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00027">docqual.h:27</a></div></div>
+<div class="ttc" id="a00680_html_a1b9934928e2b953ee5e91abb58cf043f"><div class="ttname"><a href="a00680.html#a1b9934928e2b953ee5e91abb58cf043f">reject_whole_page</a></div><div class="ttdeci">void reject_whole_page(PAGE_RES_IT &amp;page_res_it)</div><div class="ttdef"><b>Definition:</b> <a href="a00679_source.html#l00410">docqual.cpp:410</a></div></div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3">G_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00028">docqual.h:28</a></div></div>
+<div class="ttc" id="a00651_html"><div class="ttname"><a href="a00651.html">WERD_RES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00155">pageres.h:155</a></div></div>
+<div class="ttc" id="a00673_html"><div class="ttname"><a href="a00673.html">control.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_0188a3e6da905bc60aceb35bf790b8c9.html">api</a></li><li class="navelem"><a class="el" href="a00680.html">apitypes.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:17 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00680.html">docqual.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:51 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

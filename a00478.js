@@ -1,10 +1,8 @@
 var a00478 =
 [
-    [ "MATRIX_COORD", "a00478.html#a41ac307ed7e2c4161992af644985932f", null ],
-    [ "MATRIX_COORD", "a00478.html#a9a033ca41183457b47ef44fc31318c64", null ],
-    [ "~MATRIX_COORD", "a00478.html#a7b260f3ea2cae114b16e06a3ab9f2cc5", null ],
-    [ "MapForSplit", "a00478.html#a215ab937bc15f01ab3b141bdfbb8a0af", null ],
-    [ "Valid", "a00478.html#a45cc297774da83d0ad83ffcf4f82ccd5", null ],
-    [ "col", "a00478.html#a22a122ba151628fafb64b2957c4690fd", null ],
-    [ "row", "a00478.html#abde52ca4976ce8acc4e70215df074ff5", null ]
+    [ "ObjectCache", "a00478.html#a153b0d9a90b9aea49c81374f5128a97a", null ],
+    [ "~ObjectCache", "a00478.html#ae507d729381a4e324dbca64e27b4cb3c", null ],
+    [ "DeleteUnusedObjects", "a00478.html#a671e7f823cf9734eb93ff1eb1874bea5", null ],
+    [ "Free", "a00478.html#a31ae6031a99c62b24f1cae1c9fda8538", null ],
+    [ "Get", "a00478.html#a5f828bca3c24ea2e95a1d63df7e4e12c", null ]
 ];

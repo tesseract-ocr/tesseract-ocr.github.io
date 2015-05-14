@@ -1,12 +1,11 @@
 var a00526 =
 [
-    [ "isFixedPitch", "a00526.html#a49b8fe0d2751ea76458455ba41d20f0c", null ],
-    [ "italicAngle", "a00526.html#adb1121dc00df159eb8c389a9e299496b", null ],
-    [ "maxMemType1", "a00526.html#aea5a4e1d64b3b901ab8645873c29c313", null ],
-    [ "maxMemType42", "a00526.html#a1b85650493de165af61abcef0ba28a7e", null ],
-    [ "minMemType1", "a00526.html#ac1b6fa29cd681f4cdf5b1fadb3d90a4a", null ],
-    [ "minMemType42", "a00526.html#a0baa54b720c619b398f83c222866788a", null ],
-    [ "underlinePosition", "a00526.html#af2a80f22e5c1f3927f85dea11fcd1dea", null ],
-    [ "underlineThickness", "a00526.html#a406f5fabb104dfae9bb1d9202e768a20", null ],
-    [ "version", "a00526.html#ab928a253d78a52bce79e69b60fb31fee", null ]
+    [ "ROW_RES", "a00526.html#a4fa646b9b1990df9e2760517d7ed0c29", null ],
+    [ "ROW_RES", "a00526.html#a6b8337098d399e437ab7e250a3400703", null ],
+    [ "~ROW_RES", "a00526.html#aed15ed5418a2caeb50aee536a6faa0bc", null ],
+    [ "char_count", "a00526.html#aad86ecebb53eb63c4038c5a95d932eea", null ],
+    [ "rej_count", "a00526.html#afe7c692eeef6f934ef1c3bd208dd115c", null ],
+    [ "row", "a00526.html#ad3a856f3e9217c47b8f2f54cd3908721", null ],
+    [ "whole_word_rej_count", "a00526.html#aee04e075058db382613b9fd2d6302d1a", null ],
+    [ "word_res_list", "a00526.html#aa3e74f91f38b1f242a6d4904212aa94b", null ]
 ];

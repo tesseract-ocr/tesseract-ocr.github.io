@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/unicharmap.h Source File</title>
+<title>Tesseract: classify/cutoffs.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,106 +105,118 @@ $(document).ready(function(){initNavTree('a00887_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">unicharmap.h</div>  </div>
+<div class="title">cutoffs.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00887.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        unicharmap.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: Unicode character/ligature to integer id class.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      Thomas Kielbus</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Wed Jun 28 17:05:01 PDT 2006</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2006, Google Inc.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TESSERACT_CCUTIL_UNICHARMAP_H__</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TESSERACT_CCUTIL_UNICHARMAP_H__</span></div>
+<a href="a00887.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:    cutoffs.c</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:     Routines to manipulate an array of class cutoffs.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:      Dan Johnson</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:     Wed Feb 20 09:28:51 1991, DSJ, Created.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **     (c) Copyright Hewlett-Packard Company, 1988.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00888.html">cutoffs.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00885.html">unichar.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// A UNICHARMAP stores unique unichars. Each of them is associated with one</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// UNICHAR_ID.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00659.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00659.html">UNICHARMAP</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">// Create an empty UNICHARMAP</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="a00659.html#a1d967e078291984427cc95d60ad61c11">UNICHARMAP</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00882.html">classify.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01037.html">efio.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01042.html">globals.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00834.html">helpers.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00852.html">scanutils.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00855.html">serialis.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00866.html">unichar.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="a00659.html#acb69ce2363844e6082995a1c4c4832e0">~UNICHARMAP</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00887.html#a4eb176890e7426e710ac2670a66394d7">   33</a></span>&#160;<span class="preprocessor">#define REALLY_QUOTE_IT(x) QUOTE_IT(x)</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// Insert the given unichar represention in the UNICHARMAP and associate it</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// with the given id. The length of the representation MUST be non-zero.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00659.html#a83ec56c382b3f94f31400ff884bbcf87">insert</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> unichar_repr, <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// Return the id associated with the given unichar representation,</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// this representation MUST exist within the UNICHARMAP.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// The length of the representation MUST be non-zero.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> <a class="code" href="a00659.html#afda8d7b17ca0741a12edab53da366bd4">unichar_to_id</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> unichar_repr) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// Return the id associated with the given unichar representation,</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// this representation MUST exist within the UNICHARMAP. The first</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// length characters (maximum) from unichar_repr are used. The length</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// MUST be non-zero.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> <a class="code" href="a00659.html#afda8d7b17ca0741a12edab53da366bd4">unichar_to_id</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> unichar_repr, <span class="keywordtype">int</span> length) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Return true if the given unichar representation is already present in the</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// UNICHARMAP. The length of the representation MUST be non-zero.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00659.html#a7b62f14a3fc81145f3e4df6fe7ae64ce">contains</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> unichar_repr) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Return true if the given unichar representation is already present in the</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// UNICHARMAP. The first length characters (maximum) from unichar_repr are</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// used. The length MUST be non-zero.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00659.html#a7b62f14a3fc81145f3e4df6fe7ae64ce">contains</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> unichar_repr, <span class="keywordtype">int</span> length) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// Return the minimum number of characters that must be used from this string</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// to obtain a match in the UNICHARMAP.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00659.html#a6295b2e22ddf302e81d81d1151ac4a8f">minmatch</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> unichar_repr) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Clear the UNICHARMAP. All previous data is lost.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00659.html#a03d0b5a94f3b73fb17183e4bbf6a90d4">clear</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// The UNICHARMAP is represented as a tree whose nodes are of type</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// UNICHARMAP_NODE.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">struct </span>UNICHARMAP_NODE {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    UNICHARMAP_NODE();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ~UNICHARMAP_NODE();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    UNICHARMAP_NODE* children;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> id;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  };</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  UNICHARMAP_NODE* nodes;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif  // TESSERACT_CCUTIL_UNICHARMAP_H__</span></div>
-<div class="ttc" id="a00659_html"><div class="ttname"><a href="a00659.html">UNICHARMAP</a></div><div class="ttdef"><b>Definition:</b> <a href="a00887_source.html#l00027">unicharmap.h:27</a></div></div>
-<div class="ttc" id="a00659_html_afda8d7b17ca0741a12edab53da366bd4"><div class="ttname"><a href="a00659.html#afda8d7b17ca0741a12edab53da366bd4">UNICHARMAP::unichar_to_id</a></div><div class="ttdeci">UNICHAR_ID unichar_to_id(const char *const unichar_repr) const </div><div class="ttdef"><b>Definition:</b> <a href="a00886_source.html#l00036">unicharmap.cpp:36</a></div></div>
-<div class="ttc" id="a00659_html_a1d967e078291984427cc95d60ad61c11"><div class="ttname"><a href="a00659.html#a1d967e078291984427cc95d60ad61c11">UNICHARMAP::UNICHARMAP</a></div><div class="ttdeci">UNICHARMAP()</div><div class="ttdef"><b>Definition:</b> <a href="a00886_source.html#l00025">unicharmap.cpp:25</a></div></div>
-<div class="ttc" id="a00885_html_a8578b19fa1ff5ca75080db1a18ecc32e"><div class="ttname"><a href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a></div><div class="ttdeci">int UNICHAR_ID</div><div class="ttdef"><b>Definition:</b> <a href="a00885_source.html#l00033">unichar.h:33</a></div></div>
-<div class="ttc" id="a00659_html_a7b62f14a3fc81145f3e4df6fe7ae64ce"><div class="ttname"><a href="a00659.html#a7b62f14a3fc81145f3e4df6fe7ae64ce">UNICHARMAP::contains</a></div><div class="ttdeci">bool contains(const char *const unichar_repr) const </div><div class="ttdef"><b>Definition:</b> <a href="a00886_source.html#l00101">unicharmap.cpp:101</a></div></div>
-<div class="ttc" id="a00659_html_a83ec56c382b3f94f31400ff884bbcf87"><div class="ttname"><a href="a00659.html#a83ec56c382b3f94f31400ff884bbcf87">UNICHARMAP::insert</a></div><div class="ttdeci">void insert(const char *const unichar_repr, UNICHAR_ID id)</div><div class="ttdef"><b>Definition:</b> <a href="a00886_source.html#l00076">unicharmap.cpp:76</a></div></div>
-<div class="ttc" id="a00659_html_a03d0b5a94f3b73fb17183e4bbf6a90d4"><div class="ttname"><a href="a00659.html#a03d0b5a94f3b73fb17183e4bbf6a90d4">UNICHARMAP::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="a00886_source.html#l00154">unicharmap.cpp:154</a></div></div>
-<div class="ttc" id="a00659_html_a6295b2e22ddf302e81d81d1151ac4a8f"><div class="ttname"><a href="a00659.html#a6295b2e22ddf302e81d81d1151ac4a8f">UNICHARMAP::minmatch</a></div><div class="ttdeci">int minmatch(const char *const unichar_repr) const </div><div class="ttdef"><b>Definition:</b> <a href="a00886_source.html#l00140">unicharmap.cpp:140</a></div></div>
-<div class="ttc" id="a00659_html_acb69ce2363844e6082995a1c4c4832e0"><div class="ttname"><a href="a00659.html#acb69ce2363844e6082995a1c4c4832e0">UNICHARMAP::~UNICHARMAP</a></div><div class="ttdeci">~UNICHARMAP()</div><div class="ttdef"><b>Definition:</b> <a href="a00886_source.html#l00029">unicharmap.cpp:29</a></div></div>
-<div class="ttc" id="a00885_html"><div class="ttname"><a href="a00885.html">unichar.h</a></div></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00887.html#a5243f4a6e700ddc871cc53130efbea1b">   35</a></span>&#160;<span class="preprocessor">#define MAX_CUTOFF      1000</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00314.html#a49a37c1ce02f5e114f0d57e49871b802">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00314.html#a49a37c1ce02f5e114f0d57e49871b802">Classify::ReadNewCutoffs</a>(FILE *CutoffFile, <span class="keywordtype">bool</span> swap, <a class="code" href="a00835.html#ac53c9cafaf7fe16f985994c49f6b0964">inT64</a> end_offset,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                              <a class="code" href="a00888.html#a5f54131664d48951e46f5e4952350582">CLASS_CUTOFF_ARRAY</a> Cutoffs) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> **             Filename        name of file containing cutoff definitions</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **             Cutoffs         array to put cutoffs into</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> **     Operation: Open Filename, read in all of the class-id/cutoff pairs</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> **             and insert them into the Cutoffs array.  Cutoffs are</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> **             indexed in the array by class id.  Unused entries in the</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> **             array are set to an arbitrarily high cutoff value.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> **     Return: none</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> **     History: Wed Feb 20 09:38:26 1991, DSJ, Created.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">char</span> Class[<a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a> + 1];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="a01057.html#afdabe64d68192a21409dd58c119709f8">CLASS_ID</a> ClassId;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">int</span> Cutoff;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00314.html#a471b3e8f03ddc5281c167b37d8ddc5b5">shape_table_</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (!shapetable_cutoffs_.<a class="code" href="a00406.html#aa4f5b1bc0d044fbd1fc77363b798c39c">DeSerialize</a>(swap, CutoffFile)) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Error during read of shapetable pffmtable!\n&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">for</span> (i = 0; i &lt; <a class="code" href="a01057.html#adcc52d7d059a8ca452172df64faa231c">MAX_NUM_CLASSES</a>; i++)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Cutoffs[i] = <a class="code" href="a00887.html#a5243f4a6e700ddc871cc53130efbea1b">MAX_CUTOFF</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">while</span> ((end_offset &lt; 0 || ftell(CutoffFile) &lt; end_offset) &amp;&amp;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         <a class="code" href="a00851.html#aa11dd049f17d50a5af65fbd245e705d0">tfscanf</a>(CutoffFile, <span class="stringliteral">&quot;%&quot;</span> <a class="code" href="a00887.html#a4eb176890e7426e710ac2670a66394d7">REALLY_QUOTE_IT</a>(<a class="code" href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a>) <span class="stringliteral">&quot;s %d&quot;</span>,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                Class, &amp;Cutoff) == 2) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (strcmp(Class, <span class="stringliteral">&quot;NULL&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      ClassId = <a class="code" href="a00295.html#a69c5179ac5f10a24f3f97e16ca09460f">unicharset</a>.<a class="code" href="a00643.html#ae786fa834962ef4d6dbf8300c6c5d456">unichar_to_id</a>(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      ClassId = <a class="code" href="a00295.html#a69c5179ac5f10a24f3f97e16ca09460f">unicharset</a>.<a class="code" href="a00643.html#ae786fa834962ef4d6dbf8300c6c5d456">unichar_to_id</a>(Class);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Cutoffs[ClassId] = Cutoff;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="a00834.html#a2ddd0a4cdfa269201be6c7716ae94b0a">SkipNewline</a>(CutoffFile);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}                                <span class="comment">/* ReadNewCutoffs */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
+<div class="ttc" id="a00314_html_a471b3e8f03ddc5281c167b37d8ddc5b5"><div class="ttname"><a href="a00314.html#a471b3e8f03ddc5281c167b37d8ddc5b5">tesseract::Classify::shape_table_</a></div><div class="ttdeci">ShapeTable * shape_table_</div><div class="ttdef"><b>Definition:</b> <a href="a00882_source.html#l00491">classify.h:491</a></div></div>
+<div class="ttc" id="a00295_html_a69c5179ac5f10a24f3f97e16ca09460f"><div class="ttname"><a href="a00295.html#a69c5179ac5f10a24f3f97e16ca09460f">tesseract::CCUtil::unicharset</a></div><div class="ttdeci">UNICHARSET unicharset</div><div class="ttdef"><b>Definition:</b> <a href="a00818_source.html#l00072">ccutil.h:72</a></div></div>
+<div class="ttc" id="a00888_html"><div class="ttname"><a href="a00888.html">cutoffs.h</a></div></div>
+<div class="ttc" id="a00887_html_a5243f4a6e700ddc871cc53130efbea1b"><div class="ttname"><a href="a00887.html#a5243f4a6e700ddc871cc53130efbea1b">MAX_CUTOFF</a></div><div class="ttdeci">#define MAX_CUTOFF</div><div class="ttdef"><b>Definition:</b> <a href="a00887_source.html#l00035">cutoffs.cpp:35</a></div></div>
+<div class="ttc" id="a01042_html"><div class="ttname"><a href="a01042.html">globals.h</a></div></div>
+<div class="ttc" id="a00855_html"><div class="ttname"><a href="a00855.html">serialis.h</a></div></div>
+<div class="ttc" id="a00882_html"><div class="ttname"><a href="a00882.html">classify.h</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00643_html_ae786fa834962ef4d6dbf8300c6c5d456"><div class="ttname"><a href="a00643.html#ae786fa834962ef4d6dbf8300c6c5d456">UNICHARSET::unichar_to_id</a></div><div class="ttdeci">const UNICHAR_ID unichar_to_id(const char *const unichar_repr) const </div><div class="ttdef"><b>Definition:</b> <a href="a00869_source.html#l00190">unicharset.cpp:190</a></div></div>
+<div class="ttc" id="a00834_html_a2ddd0a4cdfa269201be6c7716ae94b0a"><div class="ttname"><a href="a00834.html#a2ddd0a4cdfa269201be6c7716ae94b0a">SkipNewline</a></div><div class="ttdeci">void SkipNewline(FILE *file)</div><div class="ttdef"><b>Definition:</b> <a href="a00834_source.html#l00084">helpers.h:84</a></div></div>
+<div class="ttc" id="a00834_html"><div class="ttname"><a href="a00834.html">helpers.h</a></div></div>
+<div class="ttc" id="a00866_html"><div class="ttname"><a href="a00866.html">unichar.h</a></div></div>
+<div class="ttc" id="a00852_html"><div class="ttname"><a href="a00852.html">scanutils.h</a></div></div>
+<div class="ttc" id="a00887_html_a4eb176890e7426e710ac2670a66394d7"><div class="ttname"><a href="a00887.html#a4eb176890e7426e710ac2670a66394d7">REALLY_QUOTE_IT</a></div><div class="ttdeci">#define REALLY_QUOTE_IT(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00887_source.html#l00033">cutoffs.cpp:33</a></div></div>
+<div class="ttc" id="a00835_html_ac53c9cafaf7fe16f985994c49f6b0964"><div class="ttname"><a href="a00835.html#ac53c9cafaf7fe16f985994c49f6b0964">inT64</a></div><div class="ttdeci">long long int inT64</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00108">host.h:108</a></div></div>
+<div class="ttc" id="a00314_html_a49a37c1ce02f5e114f0d57e49871b802"><div class="ttname"><a href="a00314.html#a49a37c1ce02f5e114f0d57e49871b802">tesseract::Classify::ReadNewCutoffs</a></div><div class="ttdeci">void ReadNewCutoffs(FILE *CutoffFile, bool swap, inT64 end_offset, CLASS_CUTOFF_ARRAY Cutoffs)</div><div class="ttdef"><b>Definition:</b> <a href="a00887_source.html#l00042">cutoffs.cpp:42</a></div></div>
+<div class="ttc" id="a01037_html"><div class="ttname"><a href="a01037.html">efio.h</a></div></div>
+<div class="ttc" id="a00866_html_a902bc40c9d89802bc063afe30ce9e708"><div class="ttname"><a href="a00866.html#a902bc40c9d89802bc063afe30ce9e708">UNICHAR_LEN</a></div><div class="ttdeci">#define UNICHAR_LEN</div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00030">unichar.h:30</a></div></div>
+<div class="ttc" id="a00406_html_aa4f5b1bc0d044fbd1fc77363b798c39c"><div class="ttname"><a href="a00406.html#aa4f5b1bc0d044fbd1fc77363b798c39c">GenericVector::DeSerialize</a></div><div class="ttdeci">bool DeSerialize(bool swap, FILE *fp)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00898">genericvector.h:898</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a01057_html_adcc52d7d059a8ca452172df64faa231c"><div class="ttname"><a href="a01057.html#adcc52d7d059a8ca452172df64faa231c">MAX_NUM_CLASSES</a></div><div class="ttdeci">#define MAX_NUM_CLASSES</div><div class="ttdef"><b>Definition:</b> <a href="a01057_source.html#l00031">matchdefs.h:31</a></div></div>
+<div class="ttc" id="a00888_html_a5f54131664d48951e46f5e4952350582"><div class="ttname"><a href="a00888.html#a5f54131664d48951e46f5e4952350582">CLASS_CUTOFF_ARRAY</a></div><div class="ttdeci">uinT16 CLASS_CUTOFF_ARRAY[MAX_NUM_CLASSES]</div><div class="ttdef"><b>Definition:</b> <a href="a00888_source.html#l00026">cutoffs.h:26</a></div></div>
+<div class="ttc" id="a01057_html_afdabe64d68192a21409dd58c119709f8"><div class="ttname"><a href="a01057.html#afdabe64d68192a21409dd58c119709f8">CLASS_ID</a></div><div class="ttdeci">UNICHAR_ID CLASS_ID</div><div class="ttdef"><b>Definition:</b> <a href="a01057_source.html#l00035">matchdefs.h:35</a></div></div>
+<div class="ttc" id="a00851_html_aa11dd049f17d50a5af65fbd245e705d0"><div class="ttname"><a href="a00851.html#aa11dd049f17d50a5af65fbd245e705d0">tfscanf</a></div><div class="ttdeci">int tfscanf(FILE *stream, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="a00851_source.html#l00229">scanutils.cpp:229</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00887.html">unicharmap.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:24 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00887.html">cutoffs.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:59 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

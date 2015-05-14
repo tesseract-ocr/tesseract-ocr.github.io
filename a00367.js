@@ -1,9 +1,14 @@
 var a00367 =
 [
-    [ "DoubleParam", "a00367.html#af4464cf6564465114c5da137ff7529b2", null ],
-    [ "~DoubleParam", "a00367.html#a00f5ad90e3361cd448f8da6c40d8beb5", null ],
-    [ "operator double", "a00367.html#a0f5ce305bf1194a917e436a055593912", null ],
-    [ "operator=", "a00367.html#a3f51b3d01143ea5f47cb3ae06250c5d6", null ],
-    [ "ResetToDefault", "a00367.html#ad35235e3e9a8d7c31bd1ab243c47c62d", null ],
-    [ "set_value", "a00367.html#ab90748e34aa51a57e642c305306f7d5b", null ]
+    [ "ELIST2", "a00367.html#aec61ebc85fb7723b2faaa8b171a245cf", null ],
+    [ "add_sorted", "a00367.html#a60ca0c17e57acd6bef6f6c8e9feb14de", null ],
+    [ "assign_to_sublist", "a00367.html#ad5423476e647131533f2edf5e9ddae92", null ],
+    [ "empty", "a00367.html#a6364393be64ef97448bdafad36445263", null ],
+    [ "internal_clear", "a00367.html#a139d095c5afbef067aee41ac594c81f8", null ],
+    [ "internal_deep_copy", "a00367.html#a50d9aecd9d79a1a529c9bd855e707799", null ],
+    [ "length", "a00367.html#a186ae5f8d9a5feab0f1f080f07f21bf8", null ],
+    [ "shallow_copy", "a00367.html#a1ed31d39a10a6d4737cde2c730383fbd", null ],
+    [ "singleton", "a00367.html#a67dc76149164c23ee9122b9f84aac399", null ],
+    [ "sort", "a00367.html#a88e5760e7749fb933a4eb7ac035b2f67", null ],
+    [ "ELIST2_ITERATOR", "a00367.html#af7728b876c6dd33bccd65730b0732cca", null ]
 ];

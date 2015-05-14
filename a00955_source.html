@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/shapeclassifier.h Source File</title>
+<title>Tesseract: cube/altlist.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,161 +105,86 @@ $(document).ready(function(){initNavTree('a00955_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">shapeclassifier.h</div>  </div>
+<div class="title">altlist.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00955.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright 2011 Google Inc. All Rights Reserved.</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Author: rays@google.com (Ray Smith)</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span><span class="comment">// File:        shapeclassifier.h</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Description: Base interface class for classifiers that return a</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//              shape index.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Author:      Ray Smith</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Created:     Tue Sep 13 11:26:32 PDT 2011</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// (C) Copyright 2011, Google Inc.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// limitations under the License.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef TESSERACT_CLASSIFY_SHAPECLASSIFIER_H_</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define TESSERACT_CLASSIFY_SHAPECLASSIFIER_H_</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00885.html">unichar.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="a00416.html">GenericVector</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">struct </span>Pix;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span><a class="code" href="a00553.html">ScrollView</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">class </span><a class="code" href="a00661.html">UNICHARSET</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span>PointerVector;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">struct </span>ShapeRating;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">class </span>ShapeTable;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">class </span>TrainingSample;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">class </span>TrainingSampleSet;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">struct </span>UnicharRating;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Interface base class for classifiers that produce ShapeRating results.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00561.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00561.html">ShapeClassifier</a> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00561.html#a8beb57719279f6b67f426dcccb6231b7">   45</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00561.html#a8beb57719279f6b67f426dcccb6231b7">~ShapeClassifier</a>() {}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// Classifies the given [training] sample, writing to results.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// If page_pix is not NULL, the overriding function may call</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// sample.GetSamplePix(padding, page_pix) to get an image of the sample</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// padded (with real image data) by the given padding to extract features</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// from the image of the character. Other members of TrainingSample:</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// features(), micro_features(), cn_feature(), geo_feature() may be used</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// to get the appropriate tesseract features.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// If debug is non-zero, then various degrees of classifier dependent debug</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// information is provided.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// If keep_this (a UNICHAR_ID) is &gt;= 0, then the results should always</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// contain keep_this, and (if possible) anything of intermediate confidence.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// (Used for answering &quot;Why didn&#39;t it get that right?&quot; questions.) It must</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// be a UNICHAR_ID as the callers have no clue how to choose the best shape</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// that may contain a desired answer.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// The return value is the number of classes saved in results.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// NOTE that overriding functions MUST clear and sort the results by</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// descending rating unless the classifier is working with a team of such</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// classifiers.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// NOTE: Neither overload of ClassifySample is pure, but at least one must</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// be overridden by a classifier in order for it to do anything.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00561.html#a7c02e74689b6591fd0d56ab2f0e92a86">UnicharClassifySample</a>(<span class="keyword">const</span> <a class="code" href="a00648.html">TrainingSample</a>&amp; <a class="code" href="a00546.html">sample</a>, Pix* page_pix,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                    <span class="keywordtype">int</span> debug, <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> keep_this,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                    <a class="code" href="a00416.html">GenericVector&lt;UnicharRating&gt;</a>* results);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00561.html#a0bd45d4adca11310d79afa0c0a312e5f">ClassifySample</a>(<span class="keyword">const</span> <a class="code" href="a00648.html">TrainingSample</a>&amp; <a class="code" href="a00546.html">sample</a>, Pix* page_pix,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                             <span class="keywordtype">int</span> debug, <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> keep_this,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                             <a class="code" href="a00416.html">GenericVector&lt;ShapeRating&gt;</a>* results);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// Returns the shape that contains unichar_id that has the best result.</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// If result is not NULL, it is set with the shape_id and rating.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Returns -1 if ClassifySample fails to provide any result containing</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// unichar_id. BestShapeForUnichar does not need to be overridden if</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// ClassifySample respects the keep_this rule.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00561.html#a57b3d00a13eb4e73f9a5284a74e789d9">BestShapeForUnichar</a>(<span class="keyword">const</span> <a class="code" href="a00648.html">TrainingSample</a>&amp; <a class="code" href="a00546.html">sample</a>, Pix* page_pix,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                  <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> unichar_id, <a class="code" href="a00564.html">ShapeRating</a>* result);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// Provides access to the ShapeTable that this classifier works with.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a00565.html">ShapeTable</a>* <a class="code" href="a00561.html#ab5e612b18003a7c0ceae685ea1fe8571">GetShapeTable</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// Provides access to the UNICHARSET that this classifier works with.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">// Must be overridden IFF GetShapeTable() returns NULL.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a00661.html">UNICHARSET</a>&amp; <a class="code" href="a00561.html#a327269e74451ae730d5ee6795f0ed21a">GetUnicharset</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">// Visual debugger classifies the given sample, displays the results and</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// solicits user input to display other classifications. Returns when</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// the user has finished with debugging the sample.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">// Probably doesn&#39;t need to be overridden if the subclass provides</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">// DisplayClassifyAs.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00561.html#a9bb8cad25572380e63fc9b51fc2c857c">DebugDisplay</a>(<span class="keyword">const</span> <a class="code" href="a00648.html">TrainingSample</a>&amp; <a class="code" href="a00546.html">sample</a>, Pix* page_pix,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                            <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> unichar_id);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// Displays classification as the given unichar_id. Creates as many windows</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">// as it feels fit, using index as a guide for placement. Adds any created</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="comment">// windows to the windows output and returns a new index that may be used</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="comment">// by any subsequent classifiers. Caller waits for the user to view and</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// then destroys the windows by clearing the vector.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00561.html#a0687b15edcbd8fe3d3d611e1d073c3f4">DisplayClassifyAs</a>(<span class="keyword">const</span> <a class="code" href="a00648.html">TrainingSample</a>&amp; <a class="code" href="a00546.html">sample</a>,  Pix* page_pix,</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                <a class="code" href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> unichar_id, <span class="keywordtype">int</span> index,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                <a class="code" href="a00524.html">PointerVector&lt;ScrollView&gt;</a>* windows);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">// Prints debug information on the results. context is some introductory/title</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// message.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00561.html#a1857da78597dd078f51204097c4f3146">UnicharPrintResults</a>(</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">char</span>* context, <span class="keyword">const</span> <a class="code" href="a00416.html">GenericVector&lt;UnicharRating&gt;</a>&amp; results) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00561.html#aa91458caf58bc2ff1a4837ae2761fd3a">PrintResults</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* context,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                            <span class="keyword">const</span> <a class="code" href="a00416.html">GenericVector&lt;ShapeRating&gt;</a>&amp; results) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="comment">// Removes any result that has all its unichars covered by a better choice,</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="comment">// regardless of font.</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00561.html#a3d89d23ffe2b0f04f9360d75243d904e">FilterDuplicateUnichars</a>(<a class="code" href="a00416.html">GenericVector&lt;ShapeRating&gt;</a>* results) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}  <span class="comment">// namespace tesseract.</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif  // TESSERACT_CLASSIFY_SHAPECLASSIFIER_H_</span></div>
-<div class="ttc" id="a00561_html_ab5e612b18003a7c0ceae685ea1fe8571"><div class="ttname"><a href="a00561.html#ab5e612b18003a7c0ceae685ea1fe8571">tesseract::ShapeClassifier::GetShapeTable</a></div><div class="ttdeci">virtual const ShapeTable * GetShapeTable() const =0</div></div>
-<div class="ttc" id="a00524_html"><div class="ttname"><a href="a00524.html">tesseract::PointerVector</a></div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00424">genericvector.h:424</a></div></div>
-<div class="ttc" id="a00561_html_a1857da78597dd078f51204097c4f3146"><div class="ttname"><a href="a00561.html#a1857da78597dd078f51204097c4f3146">tesseract::ShapeClassifier::UnicharPrintResults</a></div><div class="ttdeci">virtual void UnicharPrintResults(const char *context, const GenericVector&lt; UnicharRating &gt; &amp;results) const </div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00173">shapeclassifier.cpp:173</a></div></div>
-<div class="ttc" id="a00561_html_a9bb8cad25572380e63fc9b51fc2c857c"><div class="ttname"><a href="a00561.html#a9bb8cad25572380e63fc9b51fc2c857c">tesseract::ShapeClassifier::DebugDisplay</a></div><div class="ttdeci">virtual void DebugDisplay(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id)</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00097">shapeclassifier.cpp:97</a></div></div>
-<div class="ttc" id="a00561_html_a8beb57719279f6b67f426dcccb6231b7"><div class="ttname"><a href="a00561.html#a8beb57719279f6b67f426dcccb6231b7">tesseract::ShapeClassifier::~ShapeClassifier</a></div><div class="ttdeci">virtual ~ShapeClassifier()</div><div class="ttdef"><b>Definition:</b> <a href="a00955_source.html#l00045">shapeclassifier.h:45</a></div></div>
-<div class="ttc" id="a00561_html_a327269e74451ae730d5ee6795f0ed21a"><div class="ttname"><a href="a00561.html#a327269e74451ae730d5ee6795f0ed21a">tesseract::ShapeClassifier::GetUnicharset</a></div><div class="ttdeci">virtual const UNICHARSET &amp; GetUnicharset() const </div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00088">shapeclassifier.cpp:88</a></div></div>
-<div class="ttc" id="a00561_html_a0bd45d4adca11310d79afa0c0a312e5f"><div class="ttname"><a href="a00561.html#a0bd45d4adca11310d79afa0c0a312e5f">tesseract::ShapeClassifier::ClassifySample</a></div><div class="ttdeci">virtual int ClassifySample(const TrainingSample &amp;sample, Pix *page_pix, int debug, UNICHAR_ID keep_this, GenericVector&lt; ShapeRating &gt; *results)</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00059">shapeclassifier.cpp:59</a></div></div>
-<div class="ttc" id="a00564_html"><div class="ttname"><a href="a00564.html">tesseract::ShapeRating</a></div><div class="ttdef"><b>Definition:</b> <a href="a00957_source.html#l00093">shapetable.h:93</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00661_html"><div class="ttname"><a href="a00661.html">UNICHARSET</a></div><div class="ttdef"><b>Definition:</b> <a href="a00889_source.html#l00139">unicharset.h:139</a></div></div>
-<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">tesseract::ShapeClassifier</a></div><div class="ttdef"><b>Definition:</b> <a href="a00955_source.html#l00043">shapeclassifier.h:43</a></div></div>
-<div class="ttc" id="a00885_html_a8578b19fa1ff5ca75080db1a18ecc32e"><div class="ttname"><a href="a00885.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a></div><div class="ttdeci">int UNICHAR_ID</div><div class="ttdef"><b>Definition:</b> <a href="a00885_source.html#l00033">unichar.h:33</a></div></div>
-<div class="ttc" id="a00561_html_a57b3d00a13eb4e73f9a5284a74e789d9"><div class="ttname"><a href="a00561.html#a57b3d00a13eb4e73f9a5284a74e789d9">tesseract::ShapeClassifier::BestShapeForUnichar</a></div><div class="ttdeci">virtual int BestShapeForUnichar(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id, ShapeRating *result)</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00070">shapeclassifier.cpp:70</a></div></div>
-<div class="ttc" id="a00546_html"><div class="ttname"><a href="a00546.html">sample</a></div><div class="ttdef"><b>Definition:</b> <a href="a00903_source.html#l00032">cluster.h:32</a></div></div>
-<div class="ttc" id="a00561_html_a3d89d23ffe2b0f04f9360d75243d904e"><div class="ttname"><a href="a00561.html#a3d89d23ffe2b0f04f9360d75243d904e">tesseract::ShapeClassifier::FilterDuplicateUnichars</a></div><div class="ttdeci">void FilterDuplicateUnichars(GenericVector&lt; ShapeRating &gt; *results) const </div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00203">shapeclassifier.cpp:203</a></div></div>
-<div class="ttc" id="a00561_html_aa91458caf58bc2ff1a4837ae2761fd3a"><div class="ttname"><a href="a00561.html#aa91458caf58bc2ff1a4837ae2761fd3a">tesseract::ShapeClassifier::PrintResults</a></div><div class="ttdeci">virtual void PrintResults(const char *context, const GenericVector&lt; ShapeRating &gt; &amp;results) const </div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00188">shapeclassifier.cpp:188</a></div></div>
-<div class="ttc" id="a00561_html_a0687b15edcbd8fe3d3d611e1d073c3f4"><div class="ttname"><a href="a00561.html#a0687b15edcbd8fe3d3d611e1d073c3f4">tesseract::ShapeClassifier::DisplayClassifyAs</a></div><div class="ttdeci">virtual int DisplayClassifyAs(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id, int index, PointerVector&lt; ScrollView &gt; *windows)</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00164">shapeclassifier.cpp:164</a></div></div>
-<div class="ttc" id="a00561_html_a7c02e74689b6591fd0d56ab2f0e92a86"><div class="ttname"><a href="a00561.html#a7c02e74689b6591fd0d56ab2f0e92a86">tesseract::ShapeClassifier::UnicharClassifySample</a></div><div class="ttdeci">virtual int UnicharClassifySample(const TrainingSample &amp;sample, Pix *page_pix, int debug, UNICHAR_ID keep_this, GenericVector&lt; UnicharRating &gt; *results)</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00040">shapeclassifier.cpp:40</a></div></div>
-<div class="ttc" id="a00565_html"><div class="ttname"><a href="a00565.html">tesseract::ShapeTable</a></div><div class="ttdef"><b>Definition:</b> <a href="a00957_source.html#l00264">shapetable.h:264</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-<div class="ttc" id="a00416_html"><div class="ttname"><a href="a00416.html">GenericVector</a></div><div class="ttdef"><b>Definition:</b> <a href="a00682_source.html#l00041">baseapi.h:41</a></div></div>
-<div class="ttc" id="a00885_html"><div class="ttname"><a href="a00885.html">unichar.h</a></div></div>
-<div class="ttc" id="a00648_html"><div class="ttname"><a href="a00648.html">tesseract::TrainingSample</a></div><div class="ttdef"><b>Definition:</b> <a href="a00961_source.html#l00053">trainingsample.h:53</a></div></div>
+<a href="a00955.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        alt_list.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Class to abstarct a list of alternate results</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2007</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2008, Google Inc.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00956.html">altlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00259.html#a8469cc99ad3fdad109ba6df979ca9cfe">   25</a></span>&#160;<a class="code" href="a00259.html#a8469cc99ad3fdad109ba6df979ca9cfe">AltList::AltList</a>(<span class="keywordtype">int</span> max_alt) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="a00259.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a> = max_alt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a> = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00259.html#a0f9763670aea57c9b9b3e958ce0a5464">   32</a></span>&#160;<a class="code" href="a00259.html#a0f9763670aea57c9b9b3e958ce0a5464">AltList::~AltList</a>() {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">delete</span> []<a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">delete</span> []<a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// return the best possible cost and index of corresponding alternate</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00259.html#aa5fa04cf2bb199215be50307d189aeea">   45</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00259.html#aa5fa04cf2bb199215be50307d189aeea">AltList::BestCost</a>(<span class="keywordtype">int</span> *best_alt)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a> &lt;= 0) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    (*best_alt) = -1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">int</span> best_alt_idx = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 1; alt_idx &lt; <a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx] &lt; <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[best_alt_idx]) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      best_alt_idx = alt_idx;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  (*best_alt) = best_alt_idx;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[best_alt_idx];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="ttc" id="a00259_html_af2feccb6f1085ac6c1884a0440c47578"><div class="ttname"><a href="a00259.html#af2feccb6f1085ac6c1884a0440c47578">tesseract::AltList::max_alt_</a></div><div class="ttdeci">int max_alt_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00051">altlist.h:51</a></div></div>
+<div class="ttc" id="a00956_html"><div class="ttname"><a href="a00956.html">altlist.h</a></div></div>
+<div class="ttc" id="a00259_html_a9c30e8b6c8fd2346184b0180ff5af4d6"><div class="ttname"><a href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">tesseract::AltList::alt_tag_</a></div><div class="ttdeci">void ** alt_tag_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00057">altlist.h:57</a></div></div>
+<div class="ttc" id="a00259_html_a0f9763670aea57c9b9b3e958ce0a5464"><div class="ttname"><a href="a00259.html#a0f9763670aea57c9b9b3e958ce0a5464">tesseract::AltList::~AltList</a></div><div class="ttdeci">virtual ~AltList()</div><div class="ttdef"><b>Definition:</b> <a href="a00955_source.html#l00032">altlist.cpp:32</a></div></div>
+<div class="ttc" id="a00259_html_a5a4e150fef9c9beb9cfbf6529cf8b467"><div class="ttname"><a href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">tesseract::AltList::alt_cnt_</a></div><div class="ttdeci">int alt_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00053">altlist.h:53</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00259_html_a8469cc99ad3fdad109ba6df979ca9cfe"><div class="ttname"><a href="a00259.html#a8469cc99ad3fdad109ba6df979ca9cfe">tesseract::AltList::AltList</a></div><div class="ttdeci">AltList(int max_alt)</div><div class="ttdef"><b>Definition:</b> <a href="a00955_source.html#l00025">altlist.cpp:25</a></div></div>
+<div class="ttc" id="a00259_html_afad648f9ceb847661f71cab87c00e208"><div class="ttname"><a href="a00259.html#afad648f9ceb847661f71cab87c00e208">tesseract::AltList::alt_cost_</a></div><div class="ttdeci">int * alt_cost_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00055">altlist.h:55</a></div></div>
+<div class="ttc" id="a00259_html_aa5fa04cf2bb199215be50307d189aeea"><div class="ttname"><a href="a00259.html#aa5fa04cf2bb199215be50307d189aeea">tesseract::AltList::BestCost</a></div><div class="ttdeci">int BestCost(int *best_alt) const </div><div class="ttdef"><b>Definition:</b> <a href="a00955_source.html#l00045">altlist.cpp:45</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00955.html">shapeclassifier.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:26 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00955.html">altlist.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:00 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

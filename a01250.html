@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/language_model.h File Reference</title>
+<title>Tesseract: wordrec/pieces.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,44 +105,44 @@ $(document).ready(function(){initNavTree('a01250.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">language_model.h File Reference</div>  </div>
+<div class="title">pieces.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01238_source.html">associate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01061_source.html">dawg.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01065_source.html">dict.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00768_source.html">fontinfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00927_source.html">intproto.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01252_source.html">lm_consistency.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01254_source.html">lm_pain_points.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01256_source.html">lm_state.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00778_source.html">matrix.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00792_source.html">pageres.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01261_source.html">params_model.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01041_source.html">freelist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00834_source.html">helpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00759_source.html">matrix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00843_source.html">ndminx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00792_source.html">ratngs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00798_source.html">seam.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01259_source.html">wordrec.h</a>&quot;</code><br />
 </div>
 <p><a href="a01250_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html">tesseract::LanguageModel</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a23c436879a7a3c0729cdf23e7c36e1f2"><td class="memTemplParams" colspan="2">template&lt;class BLOB_CHOICE &gt; </td></tr>
+<tr class="memitem:a23c436879a7a3c0729cdf23e7c36e1f2"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a01267.html#a23c436879a7a3c0729cdf23e7c36e1f2">tesseract::SortByUnicharID</a> (const void *void1, const void *void2)</td></tr>
+<tr class="separator:a23c436879a7a3c0729cdf23e7c36e1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7900da278a2093f2ad84ebf3431522e0"><td class="memTemplParams" colspan="2">template&lt;class BLOB_CHOICE &gt; </td></tr>
+<tr class="memitem:a7900da278a2093f2ad84ebf3431522e0"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a01267.html#a7900da278a2093f2ad84ebf3431522e0">tesseract::SortByRating</a> (const void *void1, const void *void2)</td></tr>
+<tr class="separator:a7900da278a2093f2ad84ebf3431522e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01250.html">language_model.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01250.html">pieces.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

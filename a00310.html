@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::CharClassifierFactory Class Reference</title>
+<title>Tesseract: CHISTRUCT Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,154 +106,78 @@ $(document).ready(function(){initNavTree('a00310.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a01782.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="a01550.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::CharClassifierFactory Class Reference</div>  </div>
+<div class="title">CHISTRUCT Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a00987_source.html">classifier_factory.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2d64213198e8eb30f9f8eb7cb2135437"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00309.html">CharClassifier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00310.html#a2d64213198e8eb30f9f8eb7cb2135437">Create</a> (const string &amp;data_file_path, const string &amp;lang, <a class="el" href="a00461.html">LangModel</a> *lang_mod, <a class="el" href="a00314.html">CharSet</a> *char_set, <a class="el" href="a00653.html">TuningParams</a> *params)</td></tr>
-<tr class="separator:a2d64213198e8eb30f9f8eb7cb2135437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a15a3b870d88bb0fcedd7accc60d195c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00310.html#a15a3b870d88bb0fcedd7accc60d195c7">DegreesOfFreedom</a></td></tr>
+<tr class="separator:a15a3b870d88bb0fcedd7accc60d195c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a4707e32861b244d471e6d152fe43a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#aa8336782d864ba03efadb73a51260961">FLOAT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00310.html#a58a4707e32861b244d471e6d152fe43a">Alpha</a></td></tr>
+<tr class="separator:a58a4707e32861b244d471e6d152fe43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ebe43673dcf3e24c6a792c3bed43ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#aa8336782d864ba03efadb73a51260961">FLOAT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00310.html#ab8ebe43673dcf3e24c6a792c3bed43ea">ChiSquared</a></td></tr>
+<tr class="separator:ab8ebe43673dcf3e24c6a792c3bed43ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00987_source.html#l00031">31</a> of file <a class="el" href="a00987_source.html">classifier_factory.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2d64213198e8eb30f9f8eb7cb2135437"></a>
+<p>Definition at line <a class="el" href="a00883_source.html#l00189">189</a> of file <a class="el" href="a00883_source.html">cluster.cpp</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a58a4707e32861b244d471e6d152fe43a"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00309.html">CharClassifier</a> * tesseract::CharClassifierFactory::Create </td>
-          <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>data_file_path</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>lang</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00461.html">LangModel</a> *&#160;</td>
-          <td class="paramname"><em>lang_mod</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00314.html">CharSet</a> *&#160;</td>
-          <td class="paramname"><em>char_set</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00653.html">TuningParams</a> *&#160;</td>
-          <td class="paramname"><em>params</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname"><a class="el" href="a00835.html#aa8336782d864ba03efadb73a51260961">FLOAT64</a> CHISTRUCT::Alpha</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00986_source.html#l00035">35</a> of file <a class="el" href="a00986_source.html">classifier_factory.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                                    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// create the feature extraction object</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  FeatureBase *feat_extract;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">switch</span> (params-&gt;TypeFeature()) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00653.html#a2b1c025469e919800e21ac36d852b699a77a5e6adc522d14daee68de8385a3b8f">TuningParams::BMP</a>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      feat_extract = <span class="keyword">new</span> FeatureBmp(params);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00653.html#a2b1c025469e919800e21ac36d852b699adb6668fd25628268552f4a6ebf81e47c">TuningParams::CHEBYSHEV</a>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      feat_extract = <span class="keyword">new</span> FeatureChebyshev(params);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00653.html#a2b1c025469e919800e21ac36d852b699aec577e154f491c89dc750f02f51cfa08">TuningParams::HYBRID</a>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      feat_extract = <span class="keyword">new</span> FeatureHybrid(params);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      fprintf(stderr, <span class="stringliteral">&quot;Cube ERROR (CharClassifierFactory::Create): invalid &quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;              <span class="stringliteral">&quot;feature type.\n&quot;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">if</span> (feat_extract == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Cube ERROR (CharClassifierFactory::Create): unable &quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;              <span class="stringliteral">&quot;to instantiate feature extraction object.\n&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// create the classifier object</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  CharClassifier *classifier_obj;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">switch</span> (params-&gt;TypeClassifier()) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00653.html#a4404799ff32c49a0307a47694bf2f94ba6e409d826f36c9474ea023130f02a232">TuningParams::NN</a>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      classifier_obj = <span class="keyword">new</span> ConvNetCharClassifier(char_set, params,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                 feat_extract);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00653.html#a4404799ff32c49a0307a47694bf2f94ba39ea8e61fbe13d025554076247e9ff3c">TuningParams::HYBRID_NN</a>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      classifier_obj = <span class="keyword">new</span> HybridNeuralNetCharClassifier(char_set, params,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                         feat_extract);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      fprintf(stderr, <span class="stringliteral">&quot;Cube ERROR (CharClassifierFactory::Create): invalid &quot;</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              <span class="stringliteral">&quot;classifier type.\n&quot;</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">if</span> (classifier_obj == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Cube ERROR (CharClassifierFactory::Create): error &quot;</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="stringliteral">&quot;allocating memory for character classifier object.\n&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">// Init the classifier</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">if</span> (!classifier_obj-&gt;Init(data_file_path, <a class="code" href="a01280.html#a5f5eb917f55d9d6ccaa95131ae5d171c">lang</a>, lang_mod)) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">delete</span> classifier_obj;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Cube ERROR (CharClassifierFactory::Create): unable &quot;</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="stringliteral">&quot;to Init() character classifier object.\n&quot;</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">return</span> classifier_obj;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="ttc" id="a01280_html_a5f5eb917f55d9d6ccaa95131ae5d171c"><div class="ttname"><a href="a01280.html#a5f5eb917f55d9d6ccaa95131ae5d171c">tesseract-c_api-demo.lang</a></div><div class="ttdeci">string lang</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00028">tesseract-c_api-demo.py:28</a></div></div>
-<div class="ttc" id="a00653_html_a4404799ff32c49a0307a47694bf2f94ba39ea8e61fbe13d025554076247e9ff3c"><div class="ttname"><a href="a00653.html#a4404799ff32c49a0307a47694bf2f94ba39ea8e61fbe13d025554076247e9ff3c">tesseract::TuningParams::HYBRID_NN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00037">tuning_params.h:37</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00653_html_a4404799ff32c49a0307a47694bf2f94ba6e409d826f36c9474ea023130f02a232"><div class="ttname"><a href="a00653.html#a4404799ff32c49a0307a47694bf2f94ba6e409d826f36c9474ea023130f02a232">tesseract::TuningParams::NN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00036">tuning_params.h:36</a></div></div>
-<div class="ttc" id="a00653_html_a2b1c025469e919800e21ac36d852b699adb6668fd25628268552f4a6ebf81e47c"><div class="ttname"><a href="a00653.html#a2b1c025469e919800e21ac36d852b699adb6668fd25628268552f4a6ebf81e47c">tesseract::TuningParams::CHEBYSHEV</a></div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00041">tuning_params.h:41</a></div></div>
-<div class="ttc" id="a00653_html_a2b1c025469e919800e21ac36d852b699aec577e154f491c89dc750f02f51cfa08"><div class="ttname"><a href="a00653.html#a2b1c025469e919800e21ac36d852b699aec577e154f491c89dc750f02f51cfa08">tesseract::TuningParams::HYBRID</a></div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00042">tuning_params.h:42</a></div></div>
-<div class="ttc" id="a00653_html_a2b1c025469e919800e21ac36d852b699a77a5e6adc522d14daee68de8385a3b8f"><div class="ttname"><a href="a00653.html#a2b1c025469e919800e21ac36d852b699a77a5e6adc522d14daee68de8385a3b8f">tesseract::TuningParams::BMP</a></div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00040">tuning_params.h:40</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00883_source.html#l00191">191</a> of file <a class="el" href="a00883_source.html">cluster.cpp</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>cube/<a class="el" href="a00987_source.html">classifier_factory.h</a></li>
-<li>cube/<a class="el" href="a00986_source.html">classifier_factory.cpp</a></li>
+<a class="anchor" id="ab8ebe43673dcf3e24c6a792c3bed43ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#aa8336782d864ba03efadb73a51260961">FLOAT64</a> CHISTRUCT::ChiSquared</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00883_source.html#l00192">192</a> of file <a class="el" href="a00883_source.html">cluster.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a15a3b870d88bb0fcedd7accc60d195c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a> CHISTRUCT::DegreesOfFreedom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00883_source.html#l00190">190</a> of file <a class="el" href="a00883_source.html">cluster.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>classify/<a class="el" href="a00883_source.html">cluster.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00310.html">CharClassifierFactory</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:49 for Tesseract by
+    <li class="navelem"><a class="el" href="a00310.html">CHISTRUCT</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:19 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

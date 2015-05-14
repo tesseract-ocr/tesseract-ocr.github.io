@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: textord/drawedg.h File Reference</title>
+<title>Tesseract: textord/fpchop.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,77 +105,71 @@ $(document).ready(function(){initNavTree('a01122.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">drawedg.h File Reference</div>  </div>
+<div class="title">fpchop.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01220_source.html">scrollview.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00762_source.html">crakedge.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00730_source.html">blobbox.h</a>&quot;</code><br />
 </div>
 <p><a href="a01122_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00291.html">C_OUTLINE_FRAG</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afcd23447e659c1d86b6b97b43db81bd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00553.html">ScrollView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#afcd23447e659c1d86b6b97b43db81bd3">create_edges_window</a> (<a class="el" href="a00425.html">ICOORD</a> page_tr)</td></tr>
-<tr class="separator:afcd23447e659c1d86b6b97b43db81bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9f6bfa06fa02b79185604744debbaeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#ad9f6bfa06fa02b79185604744debbaeb">draw_raw_edge</a> (<a class="el" href="a00553.html">ScrollView</a> *fd, <a class="el" href="a00341.html">CRACKEDGE</a> *start, <a class="el" href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a> colour)</td></tr>
-<tr class="separator:ad9f6bfa06fa02b79185604744debbaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a847ce086f4000dcaea3f209f5ca70429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00525.html">ROW</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a847ce086f4000dcaea3f209f5ca70429">fixed_pitch_words</a> (<a class="el" href="a00628.html">TO_ROW</a> *row, <a class="el" href="a00377.html">FCOORD</a> rotation)</td></tr>
+<tr class="separator:a847ce086f4000dcaea3f209f5ca70429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec8eecb5022ef4527945f94627e916a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00649.html">WERD</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a1ec8eecb5022ef4527945f94627e916a">add_repeated_word</a> (WERD_IT *rep_it, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> &amp;rep_left, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> &amp;prev_chop_coord, <a class="el" href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> &amp;blanks, float pitch, WERD_IT *word_it)</td></tr>
+<tr class="separator:a1ec8eecb5022ef4527945f94627e916a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd0a4200a7f9548505d80456ea3f9e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a9fd0a4200a7f9548505d80456ea3f9e9">split_to_blob</a> (<a class="el" href="a00279.html">BLOBNBOX</a> *blob, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> chop_coord, float pitch_error, C_OUTLINE_LIST *left_coutlines, C_OUTLINE_LIST *right_coutlines)</td></tr>
+<tr class="separator:a9fd0a4200a7f9548505d80456ea3f9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4f288cfb9603b1d0a8d420855c8fba8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#ac4f288cfb9603b1d0a8d420855c8fba8">fixed_chop_cblob</a> (<a class="el" href="a00289.html">C_BLOB</a> *blob, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> chop_coord, float pitch_error, C_OUTLINE_LIST *left_outlines, C_OUTLINE_LIST *right_outlines)</td></tr>
+<tr class="separator:ac4f288cfb9603b1d0a8d420855c8fba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725ecaa2d2c5f4d463c40708a1ee5a6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a725ecaa2d2c5f4d463c40708a1ee5a6a">fixed_split_coutline</a> (<a class="el" href="a00290.html">C_OUTLINE</a> *srcline, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> chop_coord, float pitch_error, C_OUTLINE_IT *left_it, C_OUTLINE_IT *right_it)</td></tr>
+<tr class="separator:a725ecaa2d2c5f4d463c40708a1ee5a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d832098cc043f50b04d2734c4b8eefb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a7d832098cc043f50b04d2734c4b8eefb">fixed_chop_coutline</a> (<a class="el" href="a00290.html">C_OUTLINE</a> *srcline, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> chop_coord, float pitch_error, C_OUTLINE_FRAG_LIST *left_frags, C_OUTLINE_FRAG_LIST *right_frags)</td></tr>
+<tr class="separator:a7d832098cc043f50b04d2734c4b8eefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a6f1acf9bc02e11a300e7559ca4972a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a0a6f1acf9bc02e11a300e7559ca4972a">save_chop_cfragment</a> (<a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> head_index, <a class="el" href="a00412.html">ICOORD</a> head_pos, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> tail_index, <a class="el" href="a00412.html">ICOORD</a> tail_pos, <a class="el" href="a00290.html">C_OUTLINE</a> *srcline, C_OUTLINE_FRAG_LIST *frags)</td></tr>
+<tr class="separator:a0a6f1acf9bc02e11a300e7559ca4972a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1434d38fe4f3bae685a9a7e57ae920e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a1434d38fe4f3bae685a9a7e57ae920e8">add_frag_to_list</a> (<a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *frag, C_OUTLINE_FRAG_LIST *frags)</td></tr>
+<tr class="separator:a1434d38fe4f3bae685a9a7e57ae920e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4275b5c0c8c10cc8775f51ec5c4aab6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#ac4275b5c0c8c10cc8775f51ec5c4aab6">close_chopped_cfragments</a> (C_OUTLINE_FRAG_LIST *frags, C_OUTLINE_LIST *children, float pitch_error, C_OUTLINE_IT *dest_it)</td></tr>
+<tr class="separator:ac4275b5c0c8c10cc8775f51ec5c4aab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375591af79f8740853e7c5016d65c7ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00290.html">C_OUTLINE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a375591af79f8740853e7c5016d65c7ac">join_chopped_fragments</a> (<a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *bottom, <a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *top)</td></tr>
+<tr class="separator:a375591af79f8740853e7c5016d65c7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2273ca7e91ca8154840f53753a2ee94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#ad2273ca7e91ca8154840f53753a2ee94">join_segments</a> (<a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *bottom, <a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *top)</td></tr>
+<tr class="separator:ad2273ca7e91ca8154840f53753a2ee94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2a0d157354238600ccd3b59e304b4414"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a2a0d157354238600ccd3b59e304b4414">textord_fp_chop_error</a> = 2</td></tr>
+<tr class="separator:a2a0d157354238600ccd3b59e304b4414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001d94f8a785916584f8bdceb4164802"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01122.html#a001d94f8a785916584f8bdceb4164802">textord_fp_chop_snap</a> = 0.5</td></tr>
+<tr class="separator:a001d94f8a785916584f8bdceb4164802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="afcd23447e659c1d86b6b97b43db81bd3"></a>
+<a class="anchor" id="a1434d38fe4f3bae685a9a7e57ae920e8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00553.html">ScrollView</a>* create_edges_window </td>
+          <td class="memname">void add_frag_to_list </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00425.html">ICOORD</a>&#160;</td>
-          <td class="paramname"><em>page_tr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01121_source.html#l00044">44</a> of file <a class="el" href="a01121_source.html">drawedg.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="a00553.html">ScrollView</a>* <a class="code" href="a00722.html#a730c30366e543cdef27b905ec2895aca">image_win</a>;              <span class="comment">//image window</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 <span class="comment">//create the window</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  image_win = <span class="keyword">new</span> <a class="code" href="a00553.html">ScrollView</a> (<a class="code" href="a01121.html#a7b5f2b5b9b1b1478a6f5fb9023dc8b70">IMAGE_WIN_NAME</a>, <a class="code" href="a01121.html#aeea7f900b4a1f399ebb9eab80a50bf6e">IMAGE_XPOS</a>, <a class="code" href="a01121.html#a7440cf700084d356d42ddbc650f5d479">IMAGE_YPOS</a>, 0, 0, page_tr.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> (),  page_tr.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ());</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00722.html#a730c30366e543cdef27b905ec2895aca">image_win</a>;              <span class="comment">//window</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="ttc" id="a00722_html_a730c30366e543cdef27b905ec2895aca"><div class="ttname"><a href="a00722.html#a730c30366e543cdef27b905ec2895aca">image_win</a></div><div class="ttdeci">ScrollView * image_win</div><div class="ttdef"><b>Definition:</b> <a href="a00722_source.html#l00107">pgedit.cpp:107</a></div></div>
-<div class="ttc" id="a01121_html_a7b5f2b5b9b1b1478a6f5fb9023dc8b70"><div class="ttname"><a href="a01121.html#a7b5f2b5b9b1b1478a6f5fb9023dc8b70">IMAGE_WIN_NAME</a></div><div class="ttdeci">#define IMAGE_WIN_NAME</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00030">drawedg.cpp:30</a></div></div>
-<div class="ttc" id="a00425_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00056">points.h:56</a></div></div>
-<div class="ttc" id="a01121_html_a7440cf700084d356d42ddbc650f5d479"><div class="ttname"><a href="a01121.html#a7440cf700084d356d42ddbc650f5d479">IMAGE_YPOS</a></div><div class="ttdeci">#define IMAGE_YPOS</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00033">drawedg.cpp:33</a></div></div>
-<div class="ttc" id="a00425_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00425.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00052">points.h:52</a></div></div>
-<div class="ttc" id="a01121_html_aeea7f900b4a1f399ebb9eab80a50bf6e"><div class="ttname"><a href="a01121.html#aeea7f900b4a1f399ebb9eab80a50bf6e">IMAGE_XPOS</a></div><div class="ttdeci">#define IMAGE_XPOS</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00031">drawedg.cpp:31</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ad9f6bfa06fa02b79185604744debbaeb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void draw_raw_edge </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00553.html">ScrollView</a> *&#160;</td>
-          <td class="paramname"><em>fd</em>, </td>
+          <td class="paramtype"><a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *&#160;</td>
+          <td class="paramname"><em>frag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00341.html">CRACKEDGE</a> *&#160;</td>
-          <td class="paramname"><em>start</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a>&#160;</td>
-          <td class="paramname"><em>colour</em>&#160;</td>
+          <td class="paramtype">C_OUTLINE_FRAG_LIST *&#160;</td>
+          <td class="paramname"><em>frags</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -185,36 +179,1089 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01121_source.html#l00062">62</a> of file <a class="el" href="a01121_source.html">drawedg.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                           {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="a00341.html">CRACKEDGE</a> *edgept;             <span class="comment">//current point</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  fd-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(colour);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  edgept = start;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  fd-&gt;<a class="code" href="a00553.html#a730b182e350dfe37b0986d7f0591fee5">SetCursor</a>(edgept-&gt;<a class="code" href="a00341.html#ae7bcdb1f6f28f612a0ff4ace03b38165">pos</a>.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> (), edgept-&gt;<a class="code" href="a00341.html#ae7bcdb1f6f28f612a0ff4ace03b38165">pos</a>.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">do</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    edgept = edgept-&gt;<a class="code" href="a00341.html#a65662bdae2f4b5a3b670791fa6d6d44a">next</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                 <span class="comment">//merge straight lines</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">while</span> (edgept != start &amp;&amp; edgept-&gt;<a class="code" href="a00341.html#a22411a30eb2b7529ccb755dc3971b0d1">prev</a>-&gt;<a class="code" href="a00341.html#a907cb1dc30d54151b7bd96a8ab90f207">stepx</a> == edgept-&gt;<a class="code" href="a00341.html#a907cb1dc30d54151b7bd96a8ab90f207">stepx</a> &amp;&amp; edgept-&gt;<a class="code" href="a00341.html#a22411a30eb2b7529ccb755dc3971b0d1">prev</a>-&gt;<a class="code" href="a00341.html#a25eed9381f5de431869fd4d61fdbd15d">stepy</a> == edgept-&gt;<a class="code" href="a00341.html#a25eed9381f5de431869fd4d61fdbd15d">stepy</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                 <span class="comment">//draw lines</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  fd-&gt;<a class="code" href="a00553.html#a101de80a4722fe821969f61f6e7303a6">DrawTo</a>(edgept-&gt;<a class="code" href="a00341.html#ae7bcdb1f6f28f612a0ff4ace03b38165">pos</a>.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> (), edgept-&gt;<a class="code" href="a00341.html#ae7bcdb1f6f28f612a0ff4ace03b38165">pos</a>.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ());</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">while</span> (edgept != start);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="ttc" id="a00341_html_ae7bcdb1f6f28f612a0ff4ace03b38165"><div class="ttname"><a href="a00341.html#ae7bcdb1f6f28f612a0ff4ace03b38165">CRACKEDGE::pos</a></div><div class="ttdeci">ICOORD pos</div><div class="ttdef"><b>Definition:</b> <a href="a00762_source.html#l00030">crakedge.h:30</a></div></div>
-<div class="ttc" id="a00341_html"><div class="ttname"><a href="a00341.html">CRACKEDGE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00762_source.html#l00026">crakedge.h:26</a></div></div>
-<div class="ttc" id="a00553_html_a101de80a4722fe821969f61f6e7303a6"><div class="ttname"><a href="a00553.html#a101de80a4722fe821969f61f6e7303a6">ScrollView::DrawTo</a></div><div class="ttdeci">void DrawTo(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00531">scrollview.cpp:531</a></div></div>
-<div class="ttc" id="a00341_html_a22411a30eb2b7529ccb755dc3971b0d1"><div class="ttname"><a href="a00341.html#a22411a30eb2b7529ccb755dc3971b0d1">CRACKEDGE::prev</a></div><div class="ttdeci">CRACKEDGE * prev</div><div class="ttdef"><b>Definition:</b> <a href="a00762_source.html#l00034">crakedge.h:34</a></div></div>
-<div class="ttc" id="a00425_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00056">points.h:56</a></div></div>
-<div class="ttc" id="a00553_html_a730b182e350dfe37b0986d7f0591fee5"><div class="ttname"><a href="a00553.html#a730b182e350dfe37b0986d7f0591fee5">ScrollView::SetCursor</a></div><div class="ttdeci">void SetCursor(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00525">scrollview.cpp:525</a></div></div>
-<div class="ttc" id="a00341_html_a907cb1dc30d54151b7bd96a8ab90f207"><div class="ttname"><a href="a00341.html#a907cb1dc30d54151b7bd96a8ab90f207">CRACKEDGE::stepx</a></div><div class="ttdeci">inT8 stepx</div><div class="ttdef"><b>Definition:</b> <a href="a00762_source.html#l00031">crakedge.h:31</a></div></div>
-<div class="ttc" id="a00425_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00425.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00052">points.h:52</a></div></div>
-<div class="ttc" id="a00553_html_a79855c525ec660b452382e9813d2edb5"><div class="ttname"><a href="a00553.html#a79855c525ec660b452382e9813d2edb5">ScrollView::Pen</a></div><div class="ttdeci">void Pen(Color color)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00726">scrollview.cpp:726</a></div></div>
-<div class="ttc" id="a00341_html_a65662bdae2f4b5a3b670791fa6d6d44a"><div class="ttname"><a href="a00341.html#a65662bdae2f4b5a3b670791fa6d6d44a">CRACKEDGE::next</a></div><div class="ttdeci">CRACKEDGE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00762_source.html#l00035">crakedge.h:35</a></div></div>
-<div class="ttc" id="a00341_html_a25eed9381f5de431869fd4d61fdbd15d"><div class="ttname"><a href="a00341.html#a25eed9381f5de431869fd4d61fdbd15d">CRACKEDGE::stepy</a></div><div class="ttdeci">inT8 stepy</div><div class="ttdef"><b>Definition:</b> <a href="a00762_source.html#l00032">crakedge.h:32</a></div></div>
+<p>Definition at line <a class="el" href="a01121_source.html#l00613">613</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                       {</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                                 <span class="comment">//output list</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;  C_OUTLINE_FRAG_IT frag_it = frags;</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;  <span class="keywordflow">if</span> (!frags-&gt;empty ()) {</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="keywordflow">for</span> (frag_it.mark_cycle_pt (); !frag_it.cycled_list ();</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    frag_it.forward ()) {</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;      <span class="keywordflow">if</span> (frag_it.data ()-&gt;ycoord &gt; frag-&gt;<a class="code" href="a00291.html#a58db00d6d620f9559bb4f9420928e0af">ycoord</a></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        || (frag_it.data ()-&gt;ycoord == frag-&gt;<a class="code" href="a00291.html#a58db00d6d620f9559bb4f9420928e0af">ycoord</a></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;         &amp;&amp; frag-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a>-&gt;<a class="code" href="a00291.html#a58db00d6d620f9559bb4f9420928e0af">ycoord</a> &lt; frag-&gt;<a class="code" href="a00291.html#a58db00d6d620f9559bb4f9420928e0af">ycoord</a>)) {</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        frag_it.add_before_then_move (frag);</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;      }</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    }</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;  }</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;  frag_it.add_to_end (frag);</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;}</div>
+<div class="ttc" id="a00291_html_af47b343a5b12475452c6ff6c14ea9d95"><div class="ttname"><a href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">C_OUTLINE_FRAG::other_end</a></div><div class="ttdeci">C_OUTLINE_FRAG * other_end</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00053">fpchop.h:53</a></div></div>
+<div class="ttc" id="a00291_html_a58db00d6d620f9559bb4f9420928e0af"><div class="ttname"><a href="a00291.html#a58db00d6d620f9559bb4f9420928e0af">C_OUTLINE_FRAG::ycoord</a></div><div class="ttdeci">inT16 ycoord</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00054">fpchop.h:54</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1ec8eecb5022ef4527945f94627e916a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00649.html">WERD</a>* add_repeated_word </td>
+          <td>(</td>
+          <td class="paramtype">WERD_IT *&#160;</td>
+          <td class="paramname"><em>rep_it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> &amp;&#160;</td>
+          <td class="paramname"><em>rep_left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> &amp;&#160;</td>
+          <td class="paramname"><em>prev_chop_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> &amp;&#160;</td>
+          <td class="paramname"><em>blanks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">WERD_IT *&#160;</td>
+          <td class="paramname"><em>word_it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00207">207</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                         {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <a class="code" href="a00649.html">WERD</a> *word;                    <span class="comment">//word to move</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> new_blanks;              <span class="comment">//extra blanks</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="keywordflow">if</span> (rep_left &gt; prev_chop_coord) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    new_blanks = (<a class="code" href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a>) floor ((rep_left - prev_chop_coord) / pitch + 0.5);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    blanks += new_blanks;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  word = rep_it-&gt;extract ();</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  prev_chop_coord = word-&gt;<a class="code" href="a00649.html#a151bbfb39ecdef93ab1a14b0f9e4ac74">bounding_box</a> ().<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> ();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  word_it-&gt;add_after_then_move (word);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  word-&gt;<a class="code" href="a00649.html#a93ba22caf0b8b3b19a47fdf2c11f4bf6">set_blanks</a> (blanks);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  rep_it-&gt;forward ();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordflow">if</span> (rep_it-&gt;empty ())</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    rep_left = <a class="code" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    rep_left = rep_it-&gt;data ()-&gt;bounding_box ().left ();</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  blanks = 0;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">return</span> word;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="ttc" id="a00835_html_a3905e54374e49708219791e7d59c60fb"><div class="ttname"><a href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></div><div class="ttdeci">#define MAX_INT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00119">host.h:119</a></div></div>
+<div class="ttc" id="a00649_html_a151bbfb39ecdef93ab1a14b0f9e4ac74"><div class="ttname"><a href="a00649.html#a151bbfb39ecdef93ab1a14b0f9e4ac74">WERD::bounding_box</a></div><div class="ttdeci">TBOX bounding_box()</div><div class="ttdef"><b>Definition:</b> <a href="a00807_source.html#l00163">werd.cpp:163</a></div></div>
+<div class="ttc" id="a00591_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00075">rect.h:75</a></div></div>
+<div class="ttc" id="a00649_html_a93ba22caf0b8b3b19a47fdf2c11f4bf6"><div class="ttname"><a href="a00649.html#a93ba22caf0b8b3b19a47fdf2c11f4bf6">WERD::set_blanks</a></div><div class="ttdeci">void set_blanks(uinT8 new_blanks)</div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00107">werd.h:107</a></div></div>
+<div class="ttc" id="a00649_html"><div class="ttname"><a href="a00649.html">WERD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00060">werd.h:60</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00835_html_a458fe97f82495945f8071bb3c18d1783"><div class="ttname"><a href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a></div><div class="ttdeci">unsigned char uinT8</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00099">host.h:99</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac4275b5c0c8c10cc8775f51ec5c4aab6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void close_chopped_cfragments </td>
+          <td>(</td>
+          <td class="paramtype">C_OUTLINE_FRAG_LIST *&#160;</td>
+          <td class="paramname"><em>frags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_LIST *&#160;</td>
+          <td class="paramname"><em>children</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pitch_error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_IT *&#160;</td>
+          <td class="paramname"><em>dest_it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00642">642</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                               {</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                                 <span class="comment">//iterator</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;  C_OUTLINE_FRAG_IT frag_it = frags;</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;  <a class="code" href="a00291.html">C_OUTLINE_FRAG</a> *bottom_frag;   <span class="comment">//bottom of cut</span></div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;  <a class="code" href="a00291.html">C_OUTLINE_FRAG</a> *top_frag;      <span class="comment">//top of cut</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;  <a class="code" href="a00290.html">C_OUTLINE</a> *outline;            <span class="comment">//new outline</span></div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;  <a class="code" href="a00290.html">C_OUTLINE</a> *child;              <span class="comment">//current child</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;  C_OUTLINE_IT child_it = children;</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;  C_OUTLINE_IT olchild_it;       <span class="comment">//children of outline</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;  <span class="keywordflow">while</span> (!frag_it.empty()) {</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    frag_it.move_to_first();</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                                 <span class="comment">// get bottom one</span></div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    bottom_frag = frag_it.extract();</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    frag_it.forward();</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    top_frag = frag_it.data();  <span class="comment">// look at next</span></div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="keywordflow">if</span> ((bottom_frag-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> == 0 &amp;&amp; top_frag-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> == 0)</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    || (bottom_frag-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> != 0 &amp;&amp; top_frag-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> != 0)) {</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;      <span class="keywordflow">if</span> (frag_it.data_relative(1)-&gt;ycoord == top_frag-&gt;<a class="code" href="a00291.html#a58db00d6d620f9559bb4f9420928e0af">ycoord</a>)</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        frag_it.forward();</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    }</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    top_frag = frag_it.extract();</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <span class="keywordflow">if</span> (top_frag-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a> != bottom_frag) {</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;      outline = <a class="code" href="a01121.html#a375591af79f8740853e7c5016d65c7ac">join_chopped_fragments</a>(bottom_frag, top_frag);</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;      <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(outline == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;      outline = <a class="code" href="a01121.html#a375591af79f8740853e7c5016d65c7ac">join_chopped_fragments</a>(bottom_frag, top_frag);</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;      <span class="keywordflow">if</span> (outline != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        olchild_it.set_to_list(outline-&gt;<a class="code" href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">child</a>());</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        <span class="keywordflow">for</span> (child_it.mark_cycle_pt(); !child_it.cycled_list();</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;             child_it.forward()) {</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;          child = child_it.data();</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;          <span class="keywordflow">if</span> (*child &lt; *outline)</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;            olchild_it.add_to_end(child_it.extract());</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        }</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        <span class="keywordflow">if</span> (outline-&gt;<a class="code" href="a00290.html#a6481db8e9c00281f20f45df48d499679">bounding_box</a>().<a class="code" href="a00591.html#af95494a2ccacc70cc2b83820b2948619">width</a>() &gt; pitch_error)</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;          dest_it-&gt;add_after_then_move(outline);</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;          <span class="keyword">delete</span> outline;          <span class="comment">// Make it disappear.</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;      }</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    }</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;  }</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;  <span class="keywordflow">while</span> (!child_it.empty ()) {</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    dest_it-&gt;add_after_then_move (child_it.extract ());</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    child_it.forward ();</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;  }</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;}</div>
+<div class="ttc" id="a00290_html_a87880b33bc69fa17ab37a93706ae8d84"><div class="ttname"><a href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">C_OUTLINE::child</a></div><div class="ttdeci">C_OUTLINE_LIST * child()</div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00106">coutln.h:106</a></div></div>
+<div class="ttc" id="a00291_html"><div class="ttname"><a href="a00291.html">C_OUTLINE_FRAG</a></div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00026">fpchop.h:26</a></div></div>
+<div class="ttc" id="a00290_html"><div class="ttname"><a href="a00290.html">C_OUTLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00069">coutln.h:69</a></div></div>
+<div class="ttc" id="a00290_html_a6481db8e9c00281f20f45df48d499679"><div class="ttname"><a href="a00290.html#a6481db8e9c00281f20f45df48d499679">C_OUTLINE::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00111">coutln.h:111</a></div></div>
+<div class="ttc" id="a00291_html_af47b343a5b12475452c6ff6c14ea9d95"><div class="ttname"><a href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">C_OUTLINE_FRAG::other_end</a></div><div class="ttdeci">C_OUTLINE_FRAG * other_end</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00053">fpchop.h:53</a></div></div>
+<div class="ttc" id="a00291_html_a58db00d6d620f9559bb4f9420928e0af"><div class="ttname"><a href="a00291.html#a58db00d6d620f9559bb4f9420928e0af">C_OUTLINE_FRAG::ycoord</a></div><div class="ttdeci">inT16 ycoord</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00054">fpchop.h:54</a></div></div>
+<div class="ttc" id="a00291_html_aa3d89d6ff984029b96313eb1ffedf171"><div class="ttname"><a href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">C_OUTLINE_FRAG::steps</a></div><div class="ttdeci">DIR128 * steps</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00051">fpchop.h:51</a></div></div>
+<div class="ttc" id="a01121_html_a375591af79f8740853e7c5016d65c7ac"><div class="ttname"><a href="a01121.html#a375591af79f8740853e7c5016d65c7ac">join_chopped_fragments</a></div><div class="ttdeci">C_OUTLINE * join_chopped_fragments(C_OUTLINE_FRAG *bottom, C_OUTLINE_FRAG *top)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00703">fpchop.cpp:703</a></div></div>
+<div class="ttc" id="a00591_html_af95494a2ccacc70cc2b83820b2948619"><div class="ttname"><a href="a00591.html#af95494a2ccacc70cc2b83820b2948619">TBOX::width</a></div><div class="ttdeci">inT16 width() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00111">rect.h:111</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac4f288cfb9603b1d0a8d420855c8fba8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fixed_chop_cblob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00289.html">C_BLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>chop_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pitch_error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_LIST *&#160;</td>
+          <td class="paramname"><em>left_outlines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_LIST *&#160;</td>
+          <td class="paramname"><em>right_outlines</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00273">273</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                       {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="a00290.html">C_OUTLINE</a> *old_right;          <span class="comment">//already there</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  C_OUTLINE_LIST new_outlines;   <span class="comment">//new right ones</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                 <span class="comment">//ouput iterator</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  C_OUTLINE_IT left_it = left_outlines;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                                 <span class="comment">//in/out iterator</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  C_OUTLINE_IT right_it = right_outlines;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  C_OUTLINE_IT new_it = &amp;new_outlines;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  C_OUTLINE_IT blob_it;          <span class="comment">//outlines in blob</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">if</span> (!right_it.empty ()) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">while</span> (!right_it.empty ()) {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      old_right = right_it.extract ();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      right_it.forward ();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      <a class="code" href="a01121.html#a725ecaa2d2c5f4d463c40708a1ee5a6a">fixed_split_coutline</a>(old_right,</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                           chop_coord,</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                           pitch_error,</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                           &amp;left_it,</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                           &amp;new_it);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    right_it.add_list_before (&amp;new_outlines);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keywordflow">if</span> (blob != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    blob_it.set_to_list (blob-&gt;<a class="code" href="a00289.html#ae510f3d0e7398fbb46608082429eac89">out_list</a> ());</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">for</span> (blob_it.mark_cycle_pt (); !blob_it.cycled_list ();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      blob_it.forward ())</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="a01121.html#a725ecaa2d2c5f4d463c40708a1ee5a6a">fixed_split_coutline</a> (blob_it.extract (), chop_coord, pitch_error,</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        &amp;left_it, &amp;right_it);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">delete</span> blob;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
+<div class="ttc" id="a01121_html_a725ecaa2d2c5f4d463c40708a1ee5a6a"><div class="ttname"><a href="a01121.html#a725ecaa2d2c5f4d463c40708a1ee5a6a">fixed_split_coutline</a></div><div class="ttdeci">void fixed_split_coutline(C_OUTLINE *srcline, inT16 chop_coord, float pitch_error, C_OUTLINE_IT *left_it, C_OUTLINE_IT *right_it)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00319">fpchop.cpp:319</a></div></div>
+<div class="ttc" id="a00289_html_ae510f3d0e7398fbb46608082429eac89"><div class="ttname"><a href="a00289.html#ae510f3d0e7398fbb46608082429eac89">C_BLOB::out_list</a></div><div class="ttdeci">C_OUTLINE_LIST * out_list()</div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00064">stepblob.h:64</a></div></div>
+<div class="ttc" id="a00290_html"><div class="ttname"><a href="a00290.html">C_OUTLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00069">coutln.h:69</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a7d832098cc043f50b04d2734c4b8eefb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> fixed_chop_coutline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00290.html">C_OUTLINE</a> *&#160;</td>
+          <td class="paramname"><em>srcline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>chop_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pitch_error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_FRAG_LIST *&#160;</td>
+          <td class="paramname"><em>left_frags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_FRAG_LIST *&#160;</td>
+          <td class="paramname"><em>right_frags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00401">401</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                           {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  <a class="code" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> first_frag;              <span class="comment">//fragment</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> left_edge;               <span class="comment">//of outline</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> startindex;              <span class="comment">//in first fragment</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> length;                  <span class="comment">//of outline</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> stepindex;               <span class="comment">//into outline</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> head_index;              <span class="comment">//start of fragment</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  <a class="code" href="a00412.html">ICOORD</a> head_pos;               <span class="comment">//start of fragment</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> tail_index;              <span class="comment">//end of fragment</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <a class="code" href="a00412.html">ICOORD</a> tail_pos;               <span class="comment">//end of fragment</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  <a class="code" href="a00412.html">ICOORD</a> pos;                    <span class="comment">//current point</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> first_index = 0;         <span class="comment">//first tail</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  <a class="code" href="a00412.html">ICOORD</a> first_pos;              <span class="comment">//first tail</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  length = srcline-&gt;<a class="code" href="a00290.html#afb87d87d3d48e964937b068f55f3ca3a">pathlength</a> ();</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;  pos = srcline-&gt;<a class="code" href="a00290.html#a0f9fef7d74691bbcf45faa2272600500">start_pos</a> ();</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;  left_edge = pos.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> ();</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  tail_index = 0;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;  tail_pos = pos;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;  <span class="keywordflow">for</span> (stepindex = 0; stepindex &lt; length; stepindex++) {</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="keywordflow">if</span> (pos.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () &lt; left_edge) {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;      left_edge = pos.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> ();</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;      tail_index = stepindex;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;      tail_pos = pos;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    }</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    pos += srcline-&gt;<a class="code" href="a00290.html#aea43094f29c8fc05632b449b45b66072">step</a> (stepindex);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  }</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  <span class="keywordflow">if</span> (left_edge &gt;= chop_coord - pitch_error)</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                <span class="comment">//not worth it</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  startindex = tail_index;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  first_frag = <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  head_index = tail_index;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  head_pos = tail_pos;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;      tail_pos += srcline-&gt;<a class="code" href="a00290.html#aea43094f29c8fc05632b449b45b66072">step</a> (tail_index);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;      tail_index++;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;      <span class="keywordflow">if</span> (tail_index == length)</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        tail_index = 0;</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    }</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordflow">while</span> (tail_pos.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () != chop_coord &amp;&amp; tail_index != startindex);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordflow">if</span> (tail_index == startindex) {</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;      <span class="keywordflow">if</span> (first_frag)</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;            <span class="comment">//doesn&#39;t cross line</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    }</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="comment">//#ifdef __UNIX__</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (head_index != tail_index);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="comment">//#endif</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="keywordflow">if</span> (!first_frag) {</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;      <a class="code" href="a01121.html#a0a6f1acf9bc02e11a300e7559ca4972a">save_chop_cfragment</a>(head_index,</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                          head_pos,</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                          tail_index,</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                          tail_pos,</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                          srcline,</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                          left_frags);</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    }</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;      first_index = tail_index;</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;      first_pos = tail_pos;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;      first_frag = <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    }</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">while</span> (srcline-&gt;<a class="code" href="a00290.html#aea43094f29c8fc05632b449b45b66072">step</a> (tail_index).<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () == 0) {</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;      tail_pos += srcline-&gt;<a class="code" href="a00290.html#aea43094f29c8fc05632b449b45b66072">step</a> (tail_index);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;      tail_index++;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;      <span class="keywordflow">if</span> (tail_index == length)</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        tail_index = 0;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    }</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    head_index = tail_index;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    head_pos = tail_pos;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <span class="keywordflow">while</span> (srcline-&gt;<a class="code" href="a00290.html#aea43094f29c8fc05632b449b45b66072">step</a> (tail_index).<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () &gt; 0) {</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;      <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;        tail_pos += srcline-&gt;<a class="code" href="a00290.html#aea43094f29c8fc05632b449b45b66072">step</a> (tail_index);</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;        tail_index++;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        <span class="keywordflow">if</span> (tail_index == length)</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;          tail_index = 0;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;      }</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;      <span class="keywordflow">while</span> (tail_pos.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () != chop_coord);</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;      <span class="comment">//#ifdef __UNIX__</span></div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;      <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (head_index != tail_index);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;      <span class="comment">//#endif</span></div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;      <a class="code" href="a01121.html#a0a6f1acf9bc02e11a300e7559ca4972a">save_chop_cfragment</a>(head_index,</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                          head_pos,</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                          tail_index,</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                          tail_pos,</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                          srcline,</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                          right_frags);</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;      <span class="keywordflow">while</span> (srcline-&gt;<a class="code" href="a00290.html#aea43094f29c8fc05632b449b45b66072">step</a> (tail_index).<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () == 0) {</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        tail_pos += srcline-&gt;<a class="code" href="a00290.html#aea43094f29c8fc05632b449b45b66072">step</a> (tail_index);</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        tail_index++;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        <span class="keywordflow">if</span> (tail_index == length)</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;          tail_index = 0;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;      }</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;      head_index = tail_index;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;      head_pos = tail_pos;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    }</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;  }</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;  <span class="keywordflow">while</span> (tail_index != startindex);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;  <a class="code" href="a01121.html#a0a6f1acf9bc02e11a300e7559ca4972a">save_chop_cfragment</a>(head_index,</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                      head_pos,</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                      first_index,</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                      first_pos,</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                      srcline,</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                      left_frags);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;                   <span class="comment">//did some chopping</span></div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;}</div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00290_html_a0f9fef7d74691bbcf45faa2272600500"><div class="ttname"><a href="a00290.html#a0f9fef7d74691bbcf45faa2272600500">C_OUTLINE::start_pos</a></div><div class="ttdeci">const ICOORD &amp; start_pos() const </div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00146">coutln.h:146</a></div></div>
+<div class="ttc" id="a00290_html_afb87d87d3d48e964937b068f55f3ca3a"><div class="ttname"><a href="a00290.html#afb87d87d3d48e964937b068f55f3ca3a">C_OUTLINE::pathlength</a></div><div class="ttdeci">inT32 pathlength() const </div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00133">coutln.h:133</a></div></div>
+<div class="ttc" id="a00412_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00412.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00052">points.h:52</a></div></div>
+<div class="ttc" id="a00835_html_a7712a7e28433d0ade59219a129549b6f"><div class="ttname"><a href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a></div><div class="ttdeci">unsigned char BOOL8</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00113">host.h:113</a></div></div>
+<div class="ttc" id="a00412_html"><div class="ttname"><a href="a00412.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00030">points.h:30</a></div></div>
+<div class="ttc" id="a00290_html_aea43094f29c8fc05632b449b45b66072"><div class="ttname"><a href="a00290.html#aea43094f29c8fc05632b449b45b66072">C_OUTLINE::step</a></div><div class="ttdeci">ICOORD step(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00142">coutln.h:142</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00665_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00028">capi.h:28</a></div></div>
+<div class="ttc" id="a01121_html_a0a6f1acf9bc02e11a300e7559ca4972a"><div class="ttname"><a href="a01121.html#a0a6f1acf9bc02e11a300e7559ca4972a">save_chop_cfragment</a></div><div class="ttdeci">void save_chop_cfragment(inT16 head_index, ICOORD head_pos, inT16 tail_index, ICOORD tail_pos, C_OUTLINE *srcline, C_OUTLINE_FRAG_LIST *frags)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00522">fpchop.cpp:522</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a847ce086f4000dcaea3f209f5ca70429"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00525.html">ROW</a>* fixed_pitch_words </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00628.html">TO_ROW</a> *&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00377.html">FCOORD</a>&#160;</td>
+          <td class="paramname"><em>rotation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00051">51</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> bol;                     <span class="comment">//start of line</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> blanks;                  <span class="comment">//in front of word</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> new_blanks;              <span class="comment">//blanks in empty cell</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> chop_coord;              <span class="comment">//chop boundary</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> prev_chop_coord;         <span class="comment">//start of cell</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> rep_left;                <span class="comment">//left edge of rep word</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="a00525.html">ROW</a> *real_row;                 <span class="comment">//output row</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  C_OUTLINE_LIST left_coutlines;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  C_OUTLINE_LIST right_coutlines;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  C_BLOB_LIST cblobs;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  C_BLOB_IT cblob_it = &amp;cblobs;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  WERD_LIST words;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  WERD_IT word_it = &amp;words;      <span class="comment">//new words</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                 <span class="comment">//repeated blobs</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  WERD_IT rep_it = &amp;row-&gt;<a class="code" href="a00628.html#a93c01f889dc8031cfd19c45069d49aed">rep_words</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="a00649.html">WERD</a> *word;                    <span class="comment">//new word</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> xstarts[2];              <span class="comment">//row ends</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> prev_x;                  <span class="comment">//end of prev blob</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                 <span class="comment">//iterator</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  BLOBNBOX_IT box_it = row-&gt;<a class="code" href="a00628.html#a39cee94572e70d35179c27cdf21a3022">blob_list</a> ();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                 <span class="comment">//boundaries</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  ICOORDELT_IT cell_it = &amp;row-&gt;<a class="code" href="a00628.html#a90aca184dd67683af2f14903ddabf7c2">char_cells</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifndef GRAPHICS_DISABLED</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01155.html#a18a35fc9c67a01ad53601578a50e530a">textord_show_page_cuts</a> &amp;&amp; <a class="code" href="a01113.html#a65aeba67da16b0fd87082f9966362f0e">to_win</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="a01113.html#a0e989a3f79b110a1bcd477561de37207">plot_row_cells</a> (<a class="code" href="a01113.html#a65aeba67da16b0fd87082f9966362f0e">to_win</a>, <a class="code" href="a00536.html#a100504544a5423a94222149ee9ed0fe8a0959f7470b08ae1a38aa7e38fba29402">ScrollView::RED</a>, row, 0, &amp;row-&gt;<a class="code" href="a00628.html#a90aca184dd67683af2f14903ddabf7c2">char_cells</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  prev_x = -<a class="code" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  bol = <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  blanks = 0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">if</span> (rep_it.empty ())</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    rep_left = <a class="code" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    rep_left = rep_it.data ()-&gt;bounding_box ().left ();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">if</span> (box_it.empty ())</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;                 <span class="comment">//empty row</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  xstarts[0] = box_it.data ()-&gt;bounding_box ().left ();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (rep_left &lt; xstarts[0]) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    xstarts[0] = rep_left;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordflow">if</span> (cell_it.empty () || row-&gt;<a class="code" href="a00628.html#a90aca184dd67683af2f14903ddabf7c2">char_cells</a>.singleton ()) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a> (<span class="stringliteral">&quot;Row without enough char cells!\n&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a> (<span class="stringliteral">&quot;Leftmost blob is at (%d,%d)\n&quot;</span>,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      box_it.data ()-&gt;bounding_box ().left (),</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      box_it.data ()-&gt;bounding_box ().bottom ());</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (!cell_it.empty () &amp;&amp; !row-&gt;<a class="code" href="a00628.html#a90aca184dd67683af2f14903ddabf7c2">char_cells</a>.singleton ());</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  prev_chop_coord = cell_it.data ()-&gt;x ();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  word = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordflow">while</span> (rep_left &lt; cell_it.data ()-&gt;x ()) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    word = <a class="code" href="a01121.html#a1ec8eecb5022ef4527945f94627e916a">add_repeated_word</a> (&amp;rep_it, rep_left, prev_chop_coord,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      blanks, row-&gt;<a class="code" href="a00628.html#a08041181b248c640984261653189212a">fixed_pitch</a>, &amp;word_it);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  cell_it.mark_cycle_pt ();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">if</span> (prev_chop_coord &gt;= cell_it.data ()-&gt;x ())</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    cell_it.forward ();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">for</span> (; !cell_it.cycled_list (); cell_it.forward ()) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    chop_coord = cell_it.data ()-&gt;x ();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">while</span> (!box_it.empty ()</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    &amp;&amp; box_it.data ()-&gt;bounding_box ().left () &lt;= chop_coord) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">if</span> (box_it.data ()-&gt;bounding_box ().right () &gt; prev_x)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        prev_x = box_it.data ()-&gt;bounding_box ().right ();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <a class="code" href="a01121.html#a9fd0a4200a7f9548505d80456ea3f9e9">split_to_blob</a> (box_it.extract (), chop_coord,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="a01121.html#a3a42cc68fcf01c0535132af2f2337b3d">textord_fp_chop_error</a> + 0.5f,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        &amp;left_coutlines,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        &amp;right_coutlines);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      box_it.forward ();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <span class="keywordflow">while</span> (!box_it.empty() &amp;&amp; box_it.data()-&gt;cblob() == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keyword">delete</span> box_it.extract();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        box_it.forward();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (!right_coutlines.empty() &amp;&amp; left_coutlines.empty())</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <a class="code" href="a01121.html#a9fd0a4200a7f9548505d80456ea3f9e9">split_to_blob</a> (<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, chop_coord,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="a01121.html#a3a42cc68fcf01c0535132af2f2337b3d">textord_fp_chop_error</a> + 0.5f,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        &amp;left_coutlines,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        &amp;right_coutlines);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (!left_coutlines.empty()) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      cblob_it.add_after_then_move(<span class="keyword">new</span> <a class="code" href="a00289.html">C_BLOB</a>(&amp;left_coutlines));</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">if</span> (rep_left &lt; chop_coord) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">if</span> (rep_left &gt; prev_chop_coord)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;          new_blanks = (<a class="code" href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a>) floor ((rep_left - prev_chop_coord)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            / row-&gt;<a class="code" href="a00628.html#a08041181b248c640984261653189212a">fixed_pitch</a> + 0.5);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;          new_blanks = 0;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">if</span> (chop_coord &gt; prev_chop_coord)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          new_blanks = (<a class="code" href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a>) floor ((chop_coord - prev_chop_coord)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            / row-&gt;<a class="code" href="a00628.html#a08041181b248c640984261653189212a">fixed_pitch</a> + 0.5);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;          new_blanks = 0;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordflow">if</span> (!cblob_it.empty()) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (blanks &lt; 1 &amp;&amp; word != NULL &amp;&amp; !word-&gt;flag (<a class="code" href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0beaa20dcde8552519bb81c4206b0e57a8ce">W_REP_CHAR</a>))</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          blanks = 1;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        word = <span class="keyword">new</span> <a class="code" href="a00649.html">WERD</a> (&amp;cblobs, blanks, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        cblob_it.set_to_list (&amp;cblobs);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        word-&gt;<a class="code" href="a00649.html#aa42c9f53794ab51c95503cd277e89c60">set_flag</a> (<a class="code" href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e">W_DONT_CHOP</a>, <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        word_it.add_after_then_move (word);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">if</span> (bol) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;          word-&gt;<a class="code" href="a00649.html#aa42c9f53794ab51c95503cd277e89c60">set_flag</a> (<a class="code" href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2">W_BOL</a>, <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;          bol = <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        blanks = new_blanks;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        blanks += new_blanks;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="keywordflow">while</span> (rep_left &lt; chop_coord) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        word = <a class="code" href="a01121.html#a1ec8eecb5022ef4527945f94627e916a">add_repeated_word</a> (&amp;rep_it, rep_left, prev_chop_coord,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;          blanks, row-&gt;<a class="code" href="a00628.html#a08041181b248c640984261653189212a">fixed_pitch</a>, &amp;word_it);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">if</span> (prev_chop_coord &lt; chop_coord)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      prev_chop_coord = chop_coord;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordflow">if</span> (!cblob_it.empty()) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    word = <span class="keyword">new</span> <a class="code" href="a00649.html">WERD</a>(&amp;cblobs, blanks, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    word-&gt;<a class="code" href="a00649.html#aa42c9f53794ab51c95503cd277e89c60">set_flag</a> (<a class="code" href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e">W_DONT_CHOP</a>, <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    word_it.add_after_then_move (word);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">if</span> (bol)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      word-&gt;<a class="code" href="a00649.html#aa42c9f53794ab51c95503cd277e89c60">set_flag</a> (<a class="code" href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2">W_BOL</a>, <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (word != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">while</span> (!rep_it.empty ()) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="a01121.html#a1ec8eecb5022ef4527945f94627e916a">add_repeated_word</a> (&amp;rep_it, rep_left, prev_chop_coord,</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      blanks, row-&gt;<a class="code" href="a00628.html#a08041181b248c640984261653189212a">fixed_pitch</a>, &amp;word_it);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                                 <span class="comment">//at end of line</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  word_it.data ()-&gt;set_flag (<a class="code" href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce">W_EOL</a>, <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">if</span> (prev_chop_coord &gt; prev_x)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    prev_x = prev_chop_coord;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  xstarts[1] = prev_x + 1;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  real_row = <span class="keyword">new</span> <a class="code" href="a00525.html">ROW</a> (row, (<a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>) row-&gt;<a class="code" href="a00628.html#a9fca8cf6eb34357e616e056a483e98d5">kern_size</a>, (<a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>) row-&gt;<a class="code" href="a00628.html#af15ca7af4b650c4089de86ecf8b6f6b2">space_size</a>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  word_it.set_to_list (real_row-&gt;<a class="code" href="a00525.html#ac9d07f978420b3564bf5508ad294fb70">word_list</a> ());</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                 <span class="comment">//put words in row</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  word_it.add_list_after (&amp;words);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  real_row-&gt;<a class="code" href="a00525.html#ad0341ee4465010249bfc0ae4882e43ec">recalc_bounding_box</a> ();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">return</span> real_row;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="ttc" id="a00628_html_a39cee94572e70d35179c27cdf21a3022"><div class="ttname"><a href="a00628.html#a39cee94572e70d35179c27cdf21a3022">TO_ROW::blob_list</a></div><div class="ttdeci">BLOBNBOX_LIST * blob_list()</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00586">blobbox.h:586</a></div></div>
+<div class="ttc" id="a01121_html_a1ec8eecb5022ef4527945f94627e916a"><div class="ttname"><a href="a01121.html#a1ec8eecb5022ef4527945f94627e916a">add_repeated_word</a></div><div class="ttdeci">WERD * add_repeated_word(WERD_IT *rep_it, inT16 &amp;rep_left, inT16 &amp;prev_chop_coord, uinT8 &amp;blanks, float pitch, WERD_IT *word_it)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00207">fpchop.cpp:207</a></div></div>
+<div class="ttc" id="a01113_html_a65aeba67da16b0fd87082f9966362f0e"><div class="ttname"><a href="a01113.html#a65aeba67da16b0fd87082f9966362f0e">to_win</a></div><div class="ttdeci">EXTERN ScrollView * to_win</div><div class="ttdef"><b>Definition:</b> <a href="a01113_source.html#l00038">drawtord.cpp:38</a></div></div>
+<div class="ttc" id="a01113_html_a0e989a3f79b110a1bcd477561de37207"><div class="ttname"><a href="a01113.html#a0e989a3f79b110a1bcd477561de37207">plot_row_cells</a></div><div class="ttdeci">void plot_row_cells(ScrollView *win, ScrollView::Color colour, TO_ROW *row, float xshift, ICOORDELT_LIST *cells)</div><div class="ttdef"><b>Definition:</b> <a href="a01113_source.html#l00397">drawtord.cpp:397</a></div></div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00835_html_a3905e54374e49708219791e7d59c60fb"><div class="ttname"><a href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></div><div class="ttdeci">#define MAX_INT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00119">host.h:119</a></div></div>
+<div class="ttc" id="a01121_html_a9fd0a4200a7f9548505d80456ea3f9e9"><div class="ttname"><a href="a01121.html#a9fd0a4200a7f9548505d80456ea3f9e9">split_to_blob</a></div><div class="ttdeci">void split_to_blob(BLOBNBOX *blob, inT16 chop_coord, float pitch_error, C_OUTLINE_LIST *left_coutlines, C_OUTLINE_LIST *right_coutlines)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00243">fpchop.cpp:243</a></div></div>
+<div class="ttc" id="a00628_html_af15ca7af4b650c4089de86ecf8b6f6b2"><div class="ttname"><a href="a00628.html#af15ca7af4b650c4089de86ecf8b6f6b2">TO_ROW::space_size</a></div><div class="ttdeci">float space_size</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00654">blobbox.h:654</a></div></div>
+<div class="ttc" id="a00649_html_aa42c9f53794ab51c95503cd277e89c60"><div class="ttname"><a href="a00649.html#aa42c9f53794ab51c95503cd277e89c60">WERD::set_flag</a></div><div class="ttdeci">void set_flag(WERD_FLAGS mask, BOOL8 value)</div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00123">werd.h:123</a></div></div>
+<div class="ttc" id="a00808_html_ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2"><div class="ttname"><a href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2">W_BOL</a></div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00035">werd.h:35</a></div></div>
+<div class="ttc" id="a00835_html_a7712a7e28433d0ade59219a129549b6f"><div class="ttname"><a href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a></div><div class="ttdeci">unsigned char BOOL8</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00113">host.h:113</a></div></div>
+<div class="ttc" id="a00808_html_ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce"><div class="ttname"><a href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce">W_EOL</a></div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00036">werd.h:36</a></div></div>
+<div class="ttc" id="a00808_html_ad6968adbf8f2cc44adf333ec96efb0beaa20dcde8552519bb81c4206b0e57a8ce"><div class="ttname"><a href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0beaa20dcde8552519bb81c4206b0e57a8ce">W_REP_CHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00041">werd.h:41</a></div></div>
+<div class="ttc" id="a00808_html_ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e"><div class="ttname"><a href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e">W_DONT_CHOP</a></div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00040">werd.h:40</a></div></div>
+<div class="ttc" id="a00525_html_ad0341ee4465010249bfc0ae4882e43ec"><div class="ttname"><a href="a00525.html#ad0341ee4465010249bfc0ae4882e43ec">ROW::recalc_bounding_box</a></div><div class="ttdeci">void recalc_bounding_box()</div><div class="ttdef"><b>Definition:</b> <a href="a00768_source.html#l00090">ocrrow.cpp:90</a></div></div>
+<div class="ttc" id="a00525_html_ac9d07f978420b3564bf5508ad294fb70"><div class="ttname"><a href="a00525.html#ac9d07f978420b3564bf5508ad294fb70">ROW::word_list</a></div><div class="ttdeci">WERD_LIST * word_list()</div><div class="ttdef"><b>Definition:</b> <a href="a00769_source.html#l00052">ocrrow.h:52</a></div></div>
+<div class="ttc" id="a00628_html_a9fca8cf6eb34357e616e056a483e98d5"><div class="ttname"><a href="a00628.html#a9fca8cf6eb34357e616e056a483e98d5">TO_ROW::kern_size</a></div><div class="ttdeci">float kern_size</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00653">blobbox.h:653</a></div></div>
+<div class="ttc" id="a00649_html"><div class="ttname"><a href="a00649.html">WERD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00060">werd.h:60</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00525_html"><div class="ttname"><a href="a00525.html">ROW</a></div><div class="ttdef"><b>Definition:</b> <a href="a00769_source.html#l00032">ocrrow.h:32</a></div></div>
+<div class="ttc" id="a01155_html_a18a35fc9c67a01ad53601578a50e530a"><div class="ttname"><a href="a01155.html#a18a35fc9c67a01ad53601578a50e530a">textord_show_page_cuts</a></div><div class="ttdeci">EXTERN bool textord_show_page_cuts</div><div class="ttdef"><b>Definition:</b> <a href="a01155_source.html#l00052">topitch.cpp:52</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00835_html_a458fe97f82495945f8071bb3c18d1783"><div class="ttname"><a href="a00835.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a></div><div class="ttdeci">unsigned char uinT8</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00099">host.h:99</a></div></div>
+<div class="ttc" id="a01121_html_a3a42cc68fcf01c0535132af2f2337b3d"><div class="ttname"><a href="a01121.html#a3a42cc68fcf01c0535132af2f2337b3d">textord_fp_chop_error</a></div><div class="ttdeci">EXTERN int textord_fp_chop_error</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00039">fpchop.cpp:39</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00289_html"><div class="ttname"><a href="a00289.html">C_BLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00030">stepblob.h:30</a></div></div>
+<div class="ttc" id="a00628_html_a08041181b248c640984261653189212a"><div class="ttname"><a href="a00628.html#a08041181b248c640984261653189212a">TO_ROW::fixed_pitch</a></div><div class="ttdeci">float fixed_pitch</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00638">blobbox.h:638</a></div></div>
+<div class="ttc" id="a00628_html_a90aca184dd67683af2f14903ddabf7c2"><div class="ttname"><a href="a00628.html#a90aca184dd67683af2f14903ddabf7c2">TO_ROW::char_cells</a></div><div class="ttdeci">ICOORDELT_LIST char_cells</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00656">blobbox.h:656</a></div></div>
+<div class="ttc" id="a00665_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00028">capi.h:28</a></div></div>
+<div class="ttc" id="a00628_html_a93c01f889dc8031cfd19c45069d49aed"><div class="ttname"><a href="a00628.html#a93c01f889dc8031cfd19c45069d49aed">TO_ROW::rep_words</a></div><div class="ttdeci">WERD_LIST rep_words</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00655">blobbox.h:655</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+<div class="ttc" id="a00536_html_a100504544a5423a94222149ee9ed0fe8a0959f7470b08ae1a38aa7e38fba29402"><div class="ttname"><a href="a00536.html#a100504544a5423a94222149ee9ed0fe8a0959f7470b08ae1a38aa7e38fba29402">ScrollView::RED</a></div><div class="ttdef"><b>Definition:</b> <a href="a01206_source.html#l00109">scrollview.h:109</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a725ecaa2d2c5f4d463c40708a1ee5a6a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fixed_split_coutline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00290.html">C_OUTLINE</a> *&#160;</td>
+          <td class="paramname"><em>srcline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>chop_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pitch_error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_IT *&#160;</td>
+          <td class="paramname"><em>left_it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_IT *&#160;</td>
+          <td class="paramname"><em>right_it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00319">319</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                           {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  <a class="code" href="a00290.html">C_OUTLINE</a> *child;              <span class="comment">//child outline</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <a class="code" href="a00591.html">TBOX</a> srcbox;                    <span class="comment">//box of outline</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  C_OUTLINE_LIST left_ch;        <span class="comment">//left children</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  C_OUTLINE_LIST right_ch;       <span class="comment">//right children</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  C_OUTLINE_FRAG_LIST left_frags;<span class="comment">//chopped fragments</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  C_OUTLINE_FRAG_LIST right_frags;;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  C_OUTLINE_IT left_ch_it = &amp;left_ch;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                 <span class="comment">//for whole children</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  C_OUTLINE_IT right_ch_it = &amp;right_ch;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                 <span class="comment">//for holes</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  C_OUTLINE_IT child_it = srcline-&gt;<a class="code" href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">child</a> ();</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  srcbox = srcline-&gt;<a class="code" href="a00290.html#a6481db8e9c00281f20f45df48d499679">bounding_box</a>();</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <span class="keywordflow">if</span> (srcbox.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>() + srcbox.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>() &lt;= chop_coord * 2</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;      &amp;&amp; srcbox.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>() &lt; chop_coord + pitch_error) {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">// Whole outline is in the left side or not far over the chop_coord,</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// so put the whole thing on the left.</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    left_it-&gt;add_after_then_move(srcline);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (srcbox.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>() + srcbox.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>() &gt; chop_coord * 2</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;             &amp;&amp; srcbox.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> () &gt; chop_coord - pitch_error) {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="comment">// Whole outline is in the right side or not far over the chop_coord,</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// so put the whole thing on the right.</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;   right_it-&gt;add_before_stay_put(srcline);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">// Needs real chopping.</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a01121.html#a7d832098cc043f50b04d2734c4b8eefb">fixed_chop_coutline</a>(srcline, chop_coord, pitch_error,</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        &amp;left_frags, &amp;right_frags)) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      <span class="keywordflow">for</span> (child_it.mark_cycle_pt(); !child_it.cycled_list();</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;           child_it.forward()) {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        child = child_it.extract();</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        srcbox = child-&gt;<a class="code" href="a00290.html#a6481db8e9c00281f20f45df48d499679">bounding_box</a>();</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">if</span> (srcbox.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>() &lt; chop_coord) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;          <span class="comment">// Whole child is on the left.</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;          left_ch_it.add_after_then_move(child);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (srcbox.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>() &gt; chop_coord) {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;          <span class="comment">// Whole child is on the right.</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;          right_ch_it.add_after_then_move (child);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;          <span class="comment">// No pitch_error is allowed when chopping children to prevent</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;          <span class="comment">// impossible outlines from being created.</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="a01121.html#a7d832098cc043f50b04d2734c4b8eefb">fixed_chop_coutline</a>(child, chop_coord, 0.0f,</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;              &amp;left_frags, &amp;right_frags)) {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="keyword">delete</span> child;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">if</span> (srcbox.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>() + srcbox.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>() &lt;= chop_coord * 2)</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;              left_ch_it.add_after_then_move(child);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;              right_ch_it.add_after_then_move(child);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;          }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;      }</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;      <a class="code" href="a01121.html#ac4275b5c0c8c10cc8775f51ec5c4aab6">close_chopped_cfragments</a>(&amp;left_frags, &amp;left_ch, pitch_error, left_it);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;      <a class="code" href="a01121.html#ac4275b5c0c8c10cc8775f51ec5c4aab6">close_chopped_cfragments</a>(&amp;right_frags, &amp;right_ch, pitch_error, right_it);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;      <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(left_ch.empty() &amp;&amp; right_ch.empty());</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;      <span class="comment">// No children left.</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;      <span class="keyword">delete</span> srcline;            <span class="comment">// Smashed up.</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;      <span class="comment">// Chop failed. Just use middle coord.</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;      <span class="keywordflow">if</span> (srcbox.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>() + srcbox.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>() &lt;= chop_coord * 2)</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        left_it-&gt;add_after_then_move(srcline);  <span class="comment">// Stick whole in left.</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        right_it-&gt;add_before_stay_put(srcline);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
+<div class="ttc" id="a00290_html_a87880b33bc69fa17ab37a93706ae8d84"><div class="ttname"><a href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">C_OUTLINE::child</a></div><div class="ttdeci">C_OUTLINE_LIST * child()</div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00106">coutln.h:106</a></div></div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00290_html"><div class="ttname"><a href="a00290.html">C_OUTLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00069">coutln.h:69</a></div></div>
+<div class="ttc" id="a00591_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00075">rect.h:75</a></div></div>
+<div class="ttc" id="a00290_html_a6481db8e9c00281f20f45df48d499679"><div class="ttname"><a href="a00290.html#a6481db8e9c00281f20f45df48d499679">C_OUTLINE::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00111">coutln.h:111</a></div></div>
+<div class="ttc" id="a01121_html_a7d832098cc043f50b04d2734c4b8eefb"><div class="ttname"><a href="a01121.html#a7d832098cc043f50b04d2734c4b8eefb">fixed_chop_coutline</a></div><div class="ttdeci">BOOL8 fixed_chop_coutline(C_OUTLINE *srcline, inT16 chop_coord, float pitch_error, C_OUTLINE_FRAG_LIST *left_frags, C_OUTLINE_FRAG_LIST *right_frags)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00401">fpchop.cpp:401</a></div></div>
+<div class="ttc" id="a01121_html_ac4275b5c0c8c10cc8775f51ec5c4aab6"><div class="ttname"><a href="a01121.html#ac4275b5c0c8c10cc8775f51ec5c4aab6">close_chopped_cfragments</a></div><div class="ttdeci">void close_chopped_cfragments(C_OUTLINE_FRAG_LIST *frags, C_OUTLINE_LIST *children, float pitch_error, C_OUTLINE_IT *dest_it)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00642">fpchop.cpp:642</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a375591af79f8740853e7c5016d65c7ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00290.html">C_OUTLINE</a>* join_chopped_fragments </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *&#160;</td>
+          <td class="paramname"><em>top</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00703">703</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                                   {</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;  <a class="code" href="a00290.html">C_OUTLINE</a> *outline;            <span class="comment">//closed loop</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;  <span class="keywordflow">if</span> (bottom-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a> == top) {</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordflow">if</span> (bottom-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> == 0)</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;      outline = top-&gt;<a class="code" href="a00291.html#a9a96841ca88a927dcf89903fc8006829">close</a> ();   <span class="comment">//turn to outline</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;      outline = bottom-&gt;<a class="code" href="a00291.html#a9a96841ca88a927dcf89903fc8006829">close</a> ();</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keyword">delete</span> top;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keyword">delete</span> bottom;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="keywordflow">return</span> outline;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;  }</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;  <span class="keywordflow">if</span> (bottom-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> == 0) {</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (top-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> != 0);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <a class="code" href="a01121.html#ad2273ca7e91ca8154840f53753a2ee94">join_segments</a> (bottom-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a>, top);</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;  }</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;  <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (top-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> == 0);</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <a class="code" href="a01121.html#ad2273ca7e91ca8154840f53753a2ee94">join_segments</a> (top-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a>, bottom);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;  }</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;  top-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a>-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a> = bottom-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a>;</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;  bottom-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a>-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a> = top-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a>;</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;  <span class="keyword">delete</span> bottom;</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;  <span class="keyword">delete</span> top;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;}</div>
+<div class="ttc" id="a00290_html"><div class="ttname"><a href="a00290.html">C_OUTLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00069">coutln.h:69</a></div></div>
+<div class="ttc" id="a01121_html_ad2273ca7e91ca8154840f53753a2ee94"><div class="ttname"><a href="a01121.html#ad2273ca7e91ca8154840f53753a2ee94">join_segments</a></div><div class="ttdeci">void join_segments(C_OUTLINE_FRAG *bottom, C_OUTLINE_FRAG *top)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00741">fpchop.cpp:741</a></div></div>
+<div class="ttc" id="a00291_html_af47b343a5b12475452c6ff6c14ea9d95"><div class="ttname"><a href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">C_OUTLINE_FRAG::other_end</a></div><div class="ttdeci">C_OUTLINE_FRAG * other_end</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00053">fpchop.h:53</a></div></div>
+<div class="ttc" id="a00291_html_aa3d89d6ff984029b96313eb1ffedf171"><div class="ttname"><a href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">C_OUTLINE_FRAG::steps</a></div><div class="ttdeci">DIR128 * steps</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00051">fpchop.h:51</a></div></div>
+<div class="ttc" id="a00291_html_a9a96841ca88a927dcf89903fc8006829"><div class="ttname"><a href="a00291.html#a9a96841ca88a927dcf89903fc8006829">C_OUTLINE_FRAG::close</a></div><div class="ttdeci">C_OUTLINE * close()</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00779">fpchop.cpp:779</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad2273ca7e91ca8154840f53753a2ee94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void join_segments </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00291.html">C_OUTLINE_FRAG</a> *&#160;</td>
+          <td class="paramname"><em>top</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00741">741</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                    {</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;  <a class="code" href="a00355.html">DIR128</a> *steps;                  <span class="comment">//new steps</span></div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> stepcount;               <span class="comment">//no of steps</span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> fake_count;              <span class="comment">//fake steps</span></div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;  <a class="code" href="a00355.html">DIR128</a> fake_step;               <span class="comment">//step entry</span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (bottom-&gt;<a class="code" href="a00291.html#a7265903e4d24691b1603aaabf1759c0b">end</a>.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () == top-&gt;<a class="code" href="a00291.html#ab73dd2ebe4d7766121e62353da385ae2">start</a>.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> ());</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;  fake_count = top-&gt;<a class="code" href="a00291.html#ab73dd2ebe4d7766121e62353da385ae2">start</a>.<a class="code" href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> () - bottom-&gt;<a class="code" href="a00291.html#a7265903e4d24691b1603aaabf1759c0b">end</a>.<a class="code" href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ();</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;  <span class="keywordflow">if</span> (fake_count &lt; 0) {</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    fake_count = -fake_count;</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    fake_step = 32;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;  }</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    fake_step = 96;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;  stepcount = bottom-&gt;<a class="code" href="a00291.html#a48db13a611990a03339379b9125bd036">stepcount</a> + fake_count + top-&gt;<a class="code" href="a00291.html#a48db13a611990a03339379b9125bd036">stepcount</a>;</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;  steps = <span class="keyword">new</span> <a class="code" href="a00355.html">DIR128</a>[stepcount];</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;  memmove (steps, bottom-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a>, bottom-&gt;<a class="code" href="a00291.html#a48db13a611990a03339379b9125bd036">stepcount</a>);</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;  memset (steps + bottom-&gt;<a class="code" href="a00291.html#a48db13a611990a03339379b9125bd036">stepcount</a>, fake_step.<a class="code" href="a00355.html#a20420b3fa5c0968a2ebb0763c7e43c2f">get_dir</a>(), fake_count);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;  memmove (steps + bottom-&gt;<a class="code" href="a00291.html#a48db13a611990a03339379b9125bd036">stepcount</a> + fake_count, top-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a>,</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    top-&gt;<a class="code" href="a00291.html#a48db13a611990a03339379b9125bd036">stepcount</a>);</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;  <span class="keyword">delete</span> [] bottom-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a>;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;  bottom-&gt;<a class="code" href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">steps</a> = steps;</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;  bottom-&gt;<a class="code" href="a00291.html#a48db13a611990a03339379b9125bd036">stepcount</a> = stepcount;</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;  bottom-&gt;<a class="code" href="a00291.html#a7265903e4d24691b1603aaabf1759c0b">end</a> = top-&gt;<a class="code" href="a00291.html#a7265903e4d24691b1603aaabf1759c0b">end</a>;</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;  bottom-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a>-&gt;<a class="code" href="a00291.html#a7265903e4d24691b1603aaabf1759c0b">end</a> = top-&gt;<a class="code" href="a00291.html#a7265903e4d24691b1603aaabf1759c0b">end</a>;</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;}</div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00412_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00412.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00052">points.h:52</a></div></div>
+<div class="ttc" id="a00355_html"><div class="ttname"><a href="a00355.html">DIR128</a></div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00029">mod128.h:29</a></div></div>
+<div class="ttc" id="a00291_html_a48db13a611990a03339379b9125bd036"><div class="ttname"><a href="a00291.html#a48db13a611990a03339379b9125bd036">C_OUTLINE_FRAG::stepcount</a></div><div class="ttdeci">inT32 stepcount</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00052">fpchop.h:52</a></div></div>
+<div class="ttc" id="a00355_html_a20420b3fa5c0968a2ebb0763c7e43c2f"><div class="ttname"><a href="a00355.html#a20420b3fa5c0968a2ebb0763c7e43c2f">DIR128::get_dir</a></div><div class="ttdeci">inT8 get_dir() const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00077">mod128.h:77</a></div></div>
+<div class="ttc" id="a00291_html_af47b343a5b12475452c6ff6c14ea9d95"><div class="ttname"><a href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">C_OUTLINE_FRAG::other_end</a></div><div class="ttdeci">C_OUTLINE_FRAG * other_end</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00053">fpchop.h:53</a></div></div>
+<div class="ttc" id="a00291_html_aa3d89d6ff984029b96313eb1ffedf171"><div class="ttname"><a href="a00291.html#aa3d89d6ff984029b96313eb1ffedf171">C_OUTLINE_FRAG::steps</a></div><div class="ttdeci">DIR128 * steps</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00051">fpchop.h:51</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00412_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00056">points.h:56</a></div></div>
+<div class="ttc" id="a00291_html_a7265903e4d24691b1603aaabf1759c0b"><div class="ttname"><a href="a00291.html#a7265903e4d24691b1603aaabf1759c0b">C_OUTLINE_FRAG::end</a></div><div class="ttdeci">ICOORD end</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00050">fpchop.h:50</a></div></div>
+<div class="ttc" id="a00291_html_ab73dd2ebe4d7766121e62353da385ae2"><div class="ttname"><a href="a00291.html#ab73dd2ebe4d7766121e62353da385ae2">C_OUTLINE_FRAG::start</a></div><div class="ttdeci">ICOORD start</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00049">fpchop.h:49</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0a6f1acf9bc02e11a300e7559ca4972a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void save_chop_cfragment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>head_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00412.html">ICOORD</a>&#160;</td>
+          <td class="paramname"><em>head_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>tail_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00412.html">ICOORD</a>&#160;</td>
+          <td class="paramname"><em>tail_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00290.html">C_OUTLINE</a> *&#160;</td>
+          <td class="paramname"><em>srcline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_FRAG_LIST *&#160;</td>
+          <td class="paramname"><em>frags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00522">522</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                          {</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> jump;                    <span class="comment">//gap across end</span></div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> stepcount;               <span class="comment">//total steps</span></div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;  <a class="code" href="a00291.html">C_OUTLINE_FRAG</a> *head;          <span class="comment">//head of fragment</span></div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;  <a class="code" href="a00291.html">C_OUTLINE_FRAG</a> *tail;          <span class="comment">//tail of fragment</span></div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> tail_y;                  <span class="comment">//ycoord of tail</span></div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (tail_pos.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () == head_pos.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> ());</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (tail_index != head_index);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;  stepcount = tail_index - head_index;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;  <span class="keywordflow">if</span> (stepcount &lt; 0)</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    stepcount += srcline-&gt;<a class="code" href="a00290.html#afb87d87d3d48e964937b068f55f3ca3a">pathlength</a> ();</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;  jump = tail_pos.<a class="code" href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> () - head_pos.<a class="code" href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ();</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;  <span class="keywordflow">if</span> (jump &lt; 0)</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    jump = -jump;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;  <span class="keywordflow">if</span> (jump == stepcount)</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="keywordflow">return</span>;                      <span class="comment">//its a nop</span></div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;  tail_y = tail_pos.<a class="code" href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ();</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;  head = <span class="keyword">new</span> <a class="code" href="a00291.html">C_OUTLINE_FRAG</a> (head_pos, tail_pos, srcline,</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    head_index, tail_index);</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  tail = <span class="keyword">new</span> <a class="code" href="a00291.html">C_OUTLINE_FRAG</a> (head, tail_y);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;  head-&gt;<a class="code" href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">other_end</a> = tail;</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;  <a class="code" href="a01121.html#a1434d38fe4f3bae685a9a7e57ae920e8">add_frag_to_list</a>(head, frags);</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;  <a class="code" href="a01121.html#a1434d38fe4f3bae685a9a7e57ae920e8">add_frag_to_list</a>(tail, frags);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;}</div>
+<div class="ttc" id="a01121_html_a1434d38fe4f3bae685a9a7e57ae920e8"><div class="ttname"><a href="a01121.html#a1434d38fe4f3bae685a9a7e57ae920e8">add_frag_to_list</a></div><div class="ttdeci">void add_frag_to_list(C_OUTLINE_FRAG *frag, C_OUTLINE_FRAG_LIST *frags)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00613">fpchop.cpp:613</a></div></div>
+<div class="ttc" id="a00291_html"><div class="ttname"><a href="a00291.html">C_OUTLINE_FRAG</a></div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00026">fpchop.h:26</a></div></div>
+<div class="ttc" id="a00290_html_afb87d87d3d48e964937b068f55f3ca3a"><div class="ttname"><a href="a00290.html#afb87d87d3d48e964937b068f55f3ca3a">C_OUTLINE::pathlength</a></div><div class="ttdeci">inT32 pathlength() const </div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00133">coutln.h:133</a></div></div>
+<div class="ttc" id="a00412_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00412.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00052">points.h:52</a></div></div>
+<div class="ttc" id="a00291_html_af47b343a5b12475452c6ff6c14ea9d95"><div class="ttname"><a href="a00291.html#af47b343a5b12475452c6ff6c14ea9d95">C_OUTLINE_FRAG::other_end</a></div><div class="ttdeci">C_OUTLINE_FRAG * other_end</div><div class="ttdef"><b>Definition:</b> <a href="a01122_source.html#l00053">fpchop.h:53</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00412_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00056">points.h:56</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a9fd0a4200a7f9548505d80456ea3f9e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void split_to_blob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00279.html">BLOBNBOX</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>chop_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pitch_error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_LIST *&#160;</td>
+          <td class="paramname"><em>left_coutlines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_LIST *&#160;</td>
+          <td class="paramname"><em>right_coutlines</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00243">243</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                                    {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <a class="code" href="a00289.html">C_BLOB</a> *real_cblob;            <span class="comment">//cblob to chop</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordflow">if</span> (blob != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    real_cblob = blob-&gt;<a class="code" href="a00279.html#a483f44541a4dd818f02225c92f030e07">cblob</a>();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    real_cblob = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordflow">if</span> (!right_coutlines-&gt;empty() || real_cblob != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="a01121.html#ac4f288cfb9603b1d0a8d420855c8fba8">fixed_chop_cblob</a>(real_cblob,</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                     chop_coord,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                     pitch_error,</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                     left_coutlines,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                     right_coutlines);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keywordflow">if</span> (blob != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">delete</span> blob;                 <span class="comment">//free it</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
+<div class="ttc" id="a01121_html_ac4f288cfb9603b1d0a8d420855c8fba8"><div class="ttname"><a href="a01121.html#ac4f288cfb9603b1d0a8d420855c8fba8">fixed_chop_cblob</a></div><div class="ttdeci">void fixed_chop_cblob(C_BLOB *blob, inT16 chop_coord, float pitch_error, C_OUTLINE_LIST *left_outlines, C_OUTLINE_LIST *right_outlines)</div><div class="ttdef"><b>Definition:</b> <a href="a01121_source.html#l00273">fpchop.cpp:273</a></div></div>
+<div class="ttc" id="a00289_html"><div class="ttname"><a href="a00289.html">C_BLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00030">stepblob.h:30</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00279_html_a483f44541a4dd818f02225c92f030e07"><div class="ttname"><a href="a00279.html#a483f44541a4dd818f02225c92f030e07">BLOBNBOX::cblob</a></div><div class="ttdeci">C_BLOB * cblob() const </div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00250">blobbox.h:250</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a2a0d157354238600ccd3b59e304b4414"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int textord_fp_chop_error = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Max allowed bending of chop cells" </p>
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00039">39</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a001d94f8a785916584f8bdceb4164802"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double textord_fp_chop_snap = 0.5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Max distance of chop pt from vertex" </p>
+
+<p>Definition at line <a class="el" href="a01121_source.html#l00041">41</a> of file <a class="el" href="a01121_source.html">fpchop.cpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -222,8 +1269,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01122.html">drawedg.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01122.html">fpchop.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

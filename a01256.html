@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/lm_state.h File Reference</title>
+<title>Tesseract: wordrec/tface.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,60 +105,38 @@ $(document).ready(function(){initNavTree('a01256.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">lm_state.h File Reference</div>  </div>
+<div class="title">tface.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01238_source.html">associate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00842_source.html">elst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01061_source.html">dawg.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01252_source.html">lm_consistency.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00778_source.html">matrix.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00811_source.html">ratngs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01070_source.html">stopper.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00878_source.html">strngs.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01028_source.html">callcpp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01224_source.html">chop.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01226_source.html">chopper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01035_source.html">danerror.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00903_source.html">fxdefs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01042_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01232_source.html">gradechop.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00773_source.html">pageres.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01259_source.html">wordrec.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00895_source.html">featdefs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01249_source.html">params_model.h</a>&quot;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 </div>
 <p><a href="a01256_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00463.html">tesseract::LanguageModelDawgInfo</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00464.html">tesseract::LanguageModelNgramInfo</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00665.html">tesseract::ViterbiStateEntry</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00465.html">tesseract::LanguageModelState</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00273.html">tesseract::BestChoiceBundle</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a87cc64ed462a40c9c210a8bab7cb9b87"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a87cc64ed462a40c9c210a8bab7cb9b87">tesseract::LanguageModelFlagsType</a></td></tr>
-<tr class="separator:a87cc64ed462a40c9c210a8bab7cb9b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a897f98148e8c084774a0c00f774da30a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a897f98148e8c084774a0c00f774da30a">tesseract::ELISTIZEH</a> (ViterbiStateEntry)</td></tr>
-<tr class="separator:a897f98148e8c084774a0c00f774da30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01256.html">lm_state.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01256.html">tface.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

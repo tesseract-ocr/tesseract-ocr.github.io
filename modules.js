@@ -1,6 +1,6 @@
 var modules =
 [
-    [ "Advanced API", "a01282.html", "a01282" ],
-    [ "ocropus add-ons", "a01283.html", "a01283" ],
-    [ "Thresholder Parameters", "a01284.html", "a01284" ]
+    [ "Advanced API", "a01269.html", "a01269" ],
+    [ "ocropus add-ons", "a01270.html", "a01270" ],
+    [ "Thresholder Parameters", "a01271.html", "a01271" ]
 ];

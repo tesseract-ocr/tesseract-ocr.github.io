@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/blamer.cpp File Reference</title>
+<title>Tesseract: ccstruct/detlinefit.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,264 +105,35 @@ $(document).ready(function(){initNavTree('a00745.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">blamer.cpp File Reference</div>  </div>
+<div class="title">detlinefit.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00746_source.html">blamer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00751_source.html">blobs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00778_source.html">matrix.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00782_source.html">normalis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00792_source.html">pageres.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00838_source.html">kdpair.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00779_source.html">points.h</a>&quot;</code><br />
 </div>
 <p><a href="a00745_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a939a828ea97a292eed52468bfc886f5f"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#a939a828ea97a292eed52468bfc886f5f">kBlameCorrect</a> [] = &quot;corr&quot;</td></tr>
-<tr class="separator:a939a828ea97a292eed52468bfc886f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0691e45d7e7b5e6e0671f5167e4a0e71"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#a0691e45d7e7b5e6e0671f5167e4a0e71">kBlameClassifier</a> [] = &quot;cl&quot;</td></tr>
-<tr class="separator:a0691e45d7e7b5e6e0671f5167e4a0e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4db1a8ed37b0eff0d2e038ff2a107c2c"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#a4db1a8ed37b0eff0d2e038ff2a107c2c">kBlameChopper</a> [] = &quot;chop&quot;</td></tr>
-<tr class="separator:a4db1a8ed37b0eff0d2e038ff2a107c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c0e7d2e8cba382e6de905c1612dad3b"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#a5c0e7d2e8cba382e6de905c1612dad3b">kBlameClassLMTradeoff</a> [] = &quot;cl/LM&quot;</td></tr>
-<tr class="separator:a5c0e7d2e8cba382e6de905c1612dad3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7fc57611e72df3bbe8a760f7d9a8bf1"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#ad7fc57611e72df3bbe8a760f7d9a8bf1">kBlamePageLayout</a> [] = &quot;pglt&quot;</td></tr>
-<tr class="separator:ad7fc57611e72df3bbe8a760f7d9a8bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89e8d8eda8453e09c7b0c95d60a57f7c"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#a89e8d8eda8453e09c7b0c95d60a57f7c">kBlameSegsearchHeur</a> [] = &quot;ss_heur&quot;</td></tr>
-<tr class="separator:a89e8d8eda8453e09c7b0c95d60a57f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dc22321ca86643deb20076a2198c8cf"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#a5dc22321ca86643deb20076a2198c8cf">kBlameSegsearchPP</a> [] = &quot;ss_pp&quot;</td></tr>
-<tr class="separator:a5dc22321ca86643deb20076a2198c8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa05d635a577a5fafa7fd3b2a3ef0c17d"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#aa05d635a577a5fafa7fd3b2a3ef0c17d">kBlameClassOldLMTradeoff</a> [] = &quot;cl/old_LM&quot;</td></tr>
-<tr class="separator:aa05d635a577a5fafa7fd3b2a3ef0c17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbe9ed9b199de04329403be78d43a20e"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#afbe9ed9b199de04329403be78d43a20e">kBlameAdaption</a> [] = &quot;adapt&quot;</td></tr>
-<tr class="separator:afbe9ed9b199de04329403be78d43a20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5f1678db33a085c6a72c606584c8f6f"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#af5f1678db33a085c6a72c606584c8f6f">kBlameNoTruthSplit</a> [] = &quot;no_tr_spl&quot;</td></tr>
-<tr class="separator:af5f1678db33a085c6a72c606584c8f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbc066860637c1eb6ba9777ec6914020"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#acbc066860637c1eb6ba9777ec6914020">kBlameNoTruth</a> [] = &quot;no_tr&quot;</td></tr>
-<tr class="separator:acbc066860637c1eb6ba9777ec6914020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c9260acc89f21815ea4f8c8fc12e473"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#a5c9260acc89f21815ea4f8c8fc12e473">kBlameUnknown</a> [] = &quot;unkn&quot;</td></tr>
-<tr class="separator:a5c9260acc89f21815ea4f8c8fc12e473"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85fc3ba2e9db3adeb717fbdba6f9481f"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00745.html#a85fc3ba2e9db3adeb717fbdba6f9481f">kIncorrectResultReasonNames</a> []</td></tr>
-<tr class="separator:a85fc3ba2e9db3adeb717fbdba6f9481f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00353.html">tesseract::DetLineFit</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="afbe9ed9b199de04329403be78d43a20e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameAdaption[] = &quot;adapt&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00036">36</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4db1a8ed37b0eff0d2e038ff2a107c2c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameChopper[] = &quot;chop&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00030">30</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0691e45d7e7b5e6e0671f5167e4a0e71"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameClassifier[] = &quot;cl&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00029">29</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5c0e7d2e8cba382e6de905c1612dad3b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameClassLMTradeoff[] = &quot;cl/LM&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00031">31</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa05d635a577a5fafa7fd3b2a3ef0c17d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameClassOldLMTradeoff[] = &quot;cl/old_LM&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00035">35</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a939a828ea97a292eed52468bfc886f5f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameCorrect[] = &quot;corr&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00028">28</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="acbc066860637c1eb6ba9777ec6914020"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameNoTruth[] = &quot;no_tr&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00038">38</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af5f1678db33a085c6a72c606584c8f6f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameNoTruthSplit[] = &quot;no_tr_spl&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00037">37</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad7fc57611e72df3bbe8a760f7d9a8bf1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlamePageLayout[] = &quot;pglt&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00032">32</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a89e8d8eda8453e09c7b0c95d60a57f7c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameSegsearchHeur[] = &quot;ss_heur&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00033">33</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5dc22321ca86643deb20076a2198c8cf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameSegsearchPP[] = &quot;ss_pp&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00034">34</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5c9260acc89f21815ea4f8c8fc12e473"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char kBlameUnknown[] = &quot;unkn&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00745_source.html#l00039">39</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a85fc3ba2e9db3adeb717fbdba6f9481f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* const kIncorrectResultReasonNames[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code" href="a00745.html#a939a828ea97a292eed52468bfc886f5f">kBlameCorrect</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#a0691e45d7e7b5e6e0671f5167e4a0e71">kBlameClassifier</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#a4db1a8ed37b0eff0d2e038ff2a107c2c">kBlameChopper</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#a5c0e7d2e8cba382e6de905c1612dad3b">kBlameClassLMTradeoff</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#ad7fc57611e72df3bbe8a760f7d9a8bf1">kBlamePageLayout</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#a89e8d8eda8453e09c7b0c95d60a57f7c">kBlameSegsearchHeur</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#a5dc22321ca86643deb20076a2198c8cf">kBlameSegsearchPP</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#aa05d635a577a5fafa7fd3b2a3ef0c17d">kBlameClassOldLMTradeoff</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#afbe9ed9b199de04329403be78d43a20e">kBlameAdaption</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#af5f1678db33a085c6a72c606584c8f6f">kBlameNoTruthSplit</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#acbc066860637c1eb6ba9777ec6914020">kBlameNoTruth</a>,</div>
-<div class="line">    <a class="code" href="a00745.html#a5c9260acc89f21815ea4f8c8fc12e473">kBlameUnknown</a></div>
-<div class="line">}</div>
-<div class="ttc" id="a00745_html_af5f1678db33a085c6a72c606584c8f6f"><div class="ttname"><a href="a00745.html#af5f1678db33a085c6a72c606584c8f6f">kBlameNoTruthSplit</a></div><div class="ttdeci">const char kBlameNoTruthSplit[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00037">blamer.cpp:37</a></div></div>
-<div class="ttc" id="a00745_html_ad7fc57611e72df3bbe8a760f7d9a8bf1"><div class="ttname"><a href="a00745.html#ad7fc57611e72df3bbe8a760f7d9a8bf1">kBlamePageLayout</a></div><div class="ttdeci">const char kBlamePageLayout[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00032">blamer.cpp:32</a></div></div>
-<div class="ttc" id="a00745_html_a5c0e7d2e8cba382e6de905c1612dad3b"><div class="ttname"><a href="a00745.html#a5c0e7d2e8cba382e6de905c1612dad3b">kBlameClassLMTradeoff</a></div><div class="ttdeci">const char kBlameClassLMTradeoff[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00031">blamer.cpp:31</a></div></div>
-<div class="ttc" id="a00745_html_acbc066860637c1eb6ba9777ec6914020"><div class="ttname"><a href="a00745.html#acbc066860637c1eb6ba9777ec6914020">kBlameNoTruth</a></div><div class="ttdeci">const char kBlameNoTruth[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00038">blamer.cpp:38</a></div></div>
-<div class="ttc" id="a00745_html_a939a828ea97a292eed52468bfc886f5f"><div class="ttname"><a href="a00745.html#a939a828ea97a292eed52468bfc886f5f">kBlameCorrect</a></div><div class="ttdeci">const char kBlameCorrect[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00028">blamer.cpp:28</a></div></div>
-<div class="ttc" id="a00745_html_aa05d635a577a5fafa7fd3b2a3ef0c17d"><div class="ttname"><a href="a00745.html#aa05d635a577a5fafa7fd3b2a3ef0c17d">kBlameClassOldLMTradeoff</a></div><div class="ttdeci">const char kBlameClassOldLMTradeoff[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00035">blamer.cpp:35</a></div></div>
-<div class="ttc" id="a00745_html_a89e8d8eda8453e09c7b0c95d60a57f7c"><div class="ttname"><a href="a00745.html#a89e8d8eda8453e09c7b0c95d60a57f7c">kBlameSegsearchHeur</a></div><div class="ttdeci">const char kBlameSegsearchHeur[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00033">blamer.cpp:33</a></div></div>
-<div class="ttc" id="a00745_html_a5dc22321ca86643deb20076a2198c8cf"><div class="ttname"><a href="a00745.html#a5dc22321ca86643deb20076a2198c8cf">kBlameSegsearchPP</a></div><div class="ttdeci">const char kBlameSegsearchPP[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00034">blamer.cpp:34</a></div></div>
-<div class="ttc" id="a00745_html_a5c9260acc89f21815ea4f8c8fc12e473"><div class="ttname"><a href="a00745.html#a5c9260acc89f21815ea4f8c8fc12e473">kBlameUnknown</a></div><div class="ttdeci">const char kBlameUnknown[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00039">blamer.cpp:39</a></div></div>
-<div class="ttc" id="a00745_html_a0691e45d7e7b5e6e0671f5167e4a0e71"><div class="ttname"><a href="a00745.html#a0691e45d7e7b5e6e0671f5167e4a0e71">kBlameClassifier</a></div><div class="ttdeci">const char kBlameClassifier[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00029">blamer.cpp:29</a></div></div>
-<div class="ttc" id="a00745_html_afbe9ed9b199de04329403be78d43a20e"><div class="ttname"><a href="a00745.html#afbe9ed9b199de04329403be78d43a20e">kBlameAdaption</a></div><div class="ttdeci">const char kBlameAdaption[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00036">blamer.cpp:36</a></div></div>
-<div class="ttc" id="a00745_html_a4db1a8ed37b0eff0d2e038ff2a107c2c"><div class="ttname"><a href="a00745.html#a4db1a8ed37b0eff0d2e038ff2a107c2c">kBlameChopper</a></div><div class="ttdeci">const char kBlameChopper[]</div><div class="ttdef"><b>Definition:</b> <a href="a00745_source.html#l00030">blamer.cpp:30</a></div></div>
-</div><!-- fragment -->
-<p>Definition at line <a class="el" href="a00745_source.html#l00041">41</a> of file <a class="el" href="a00745_source.html">blamer.cpp</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00745.html">blamer.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00745.html">detlinefit.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/feature_base.h Source File</title>
+<title>Tesseract: cube/lang_model.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,13 +105,13 @@ $(document).ready(function(){initNavTree('a01005_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">feature_base.h</div>  </div>
+<div class="title">lang_model.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01005.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        feature_base.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Feature Base Class</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ping Ping (xiupingping), Ahmad Abdulkader</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        lang_model.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Language Model Edge Base Class</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2007</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2008, Google Inc.</span></div>
@@ -127,61 +127,102 @@ $(document).ready(function(){initNavTree('a01005_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The FeatureBase class is the base class for any Feature Extraction class</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// It provided 3 pure virtual functions (to inherit):</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// 1- FeatureCnt: A method to returns the count of features</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// 2- ComputeFeatures: A method to compute the features for a given CharSamp</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// 3- ComputeFeatureBitmap: A method to render a visualization of the features</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// to a CharSamp. This is mainly used by visual-debuggers</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef FEATURE_BASE_H</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define FEATURE_BASE_H</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00978.html">char_samp.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01026.html">tuning_params.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The LanguageModel class abstracts a State machine that is modeled as a Trie</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// structure. The state machine models the language being recognized by the OCR</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Engine</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// This is an abstract class that is to be inherited by any language model</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef LANG_MODEL_H</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define LANG_MODEL_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01004.html">lang_mod_edge.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00964.html">char_altlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00974.html">char_set.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01016.html">tuning_params.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00390.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00390.html">FeatureBase</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00449.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00449.html">LangModel</a> {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a00390.html#af731352f6bbd74d24e86cecfb27ebd34">   36</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00390.html#af731352f6bbd74d24e86cecfb27ebd34">FeatureBase</a>(<a class="code" href="a00653.html">TuningParams</a> *params)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      : <a class="code" href="a00390.html#a0200a23773488d48842ebfc8a2f46b6d">params_</a>(params) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00390.html#a72e31dac7b67f26e5478ca7fefba7825">   39</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00390.html#a72e31dac7b67f26e5478ca7fefba7825">~FeatureBase</a>() {}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// Compute the features for a given CharSamp</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00390.html#a48d4dc8529d3a878e4eef08c76101c0d">ComputeFeatures</a>(<a class="code" href="a00311.html">CharSamp</a> *char_samp, <span class="keywordtype">float</span> *features) = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// Render a visualization of the features to a CharSamp.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// This is mainly used by visual-debuggers</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00311.html">CharSamp</a> *<a class="code" href="a00390.html#adaf3ad330751f301a10e8b45502146d2">ComputeFeatureBitmap</a>(<a class="code" href="a00311.html">CharSamp</a> *char_samp) = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Returns the count of features</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00390.html#a2ae28b0e5bc8361cac1cea91e96501e7">FeatureCnt</a>() = 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a00390.html#a0200a23773488d48842ebfc8a2f46b6d">   50</a></span>&#160;  <a class="code" href="a00653.html">TuningParams</a> *<a class="code" href="a00390.html#a0200a23773488d48842ebfc8a2f46b6d">params_</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif  // FEATURE_BASE_H</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="ttc" id="a00390_html_af731352f6bbd74d24e86cecfb27ebd34"><div class="ttname"><a href="a00390.html#af731352f6bbd74d24e86cecfb27ebd34">tesseract::FeatureBase::FeatureBase</a></div><div class="ttdeci">FeatureBase(TuningParams *params)</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00036">feature_base.h:36</a></div></div>
-<div class="ttc" id="a00390_html_a48d4dc8529d3a878e4eef08c76101c0d"><div class="ttname"><a href="a00390.html#a48d4dc8529d3a878e4eef08c76101c0d">tesseract::FeatureBase::ComputeFeatures</a></div><div class="ttdeci">virtual bool ComputeFeatures(CharSamp *char_samp, float *features)=0</div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00390_html"><div class="ttname"><a href="a00390.html">tesseract::FeatureBase</a></div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00034">feature_base.h:34</a></div></div>
-<div class="ttc" id="a00390_html_a72e31dac7b67f26e5478ca7fefba7825"><div class="ttname"><a href="a00390.html#a72e31dac7b67f26e5478ca7fefba7825">tesseract::FeatureBase::~FeatureBase</a></div><div class="ttdeci">virtual ~FeatureBase()</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00039">feature_base.h:39</a></div></div>
-<div class="ttc" id="a01026_html"><div class="ttname"><a href="a01026.html">tuning_params.h</a></div></div>
-<div class="ttc" id="a00978_html"><div class="ttname"><a href="a00978.html">char_samp.h</a></div></div>
-<div class="ttc" id="a00311_html"><div class="ttname"><a href="a00311.html">tesseract::CharSamp</a></div><div class="ttdef"><b>Definition:</b> <a href="a00978_source.html#l00039">char_samp.h:39</a></div></div>
-<div class="ttc" id="a00390_html_adaf3ad330751f301a10e8b45502146d2"><div class="ttname"><a href="a00390.html#adaf3ad330751f301a10e8b45502146d2">tesseract::FeatureBase::ComputeFeatureBitmap</a></div><div class="ttdeci">virtual CharSamp * ComputeFeatureBitmap(CharSamp *char_samp)=0</div></div>
-<div class="ttc" id="a00390_html_a0200a23773488d48842ebfc8a2f46b6d"><div class="ttname"><a href="a00390.html#a0200a23773488d48842ebfc8a2f46b6d">tesseract::FeatureBase::params_</a></div><div class="ttdeci">TuningParams * params_</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00050">feature_base.h:50</a></div></div>
-<div class="ttc" id="a00653_html"><div class="ttname"><a href="a00653.html">tesseract::TuningParams</a></div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00033">tuning_params.h:33</a></div></div>
-<div class="ttc" id="a00390_html_a2ae28b0e5bc8361cac1cea91e96501e7"><div class="ttname"><a href="a00390.html#a2ae28b0e5bc8361cac1cea91e96501e7">tesseract::FeatureBase::FeatureCnt</a></div><div class="ttdeci">virtual int FeatureCnt()=0</div></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a00449.html#abf2f207148aa4563bedc41dbd650bc10">   36</a></span>&#160;  <a class="code" href="a00449.html#abf2f207148aa4563bedc41dbd650bc10">LangModel</a>() {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="a00449.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="a00449.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="a00449.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="a00449.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00449.html#afff28be0aa6c2451e8a0e32e7c88331f">   42</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00449.html#afff28be0aa6c2451e8a0e32e7c88331f">~LangModel</a>() {}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// Returns an edge pointer to the Root</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00448.html">LangModEdge</a> *<a class="code" href="a00449.html#a46178bf09d08aa9c8048adb0a8561b75">Root</a>() = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Returns the edges that fan-out of the specified edge and their count</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00448.html">LangModEdge</a> **<a class="code" href="a00449.html#a61071a0736427f808d7134aeeb456701">GetEdges</a>(<a class="code" href="a00300.html">CharAltList</a> *alt_list,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 <a class="code" href="a00448.html">LangModEdge</a> *parent_edge,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                 <span class="keywordtype">int</span> *edge_cnt) = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Returns is a sequence of 32-bit characters are valid within this language</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// model or net. And EndOfWord flag is specified. If true, the sequence has</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// to end on a valid word. The function also optionally returns the list</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// of language model edges traversed to parse the string</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00449.html#a8b2edb01fa6b82d7a0eba6fb28717494">IsValidSequence</a>(<span class="keyword">const</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str, <span class="keywordtype">bool</span> eow_flag,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                               <a class="code" href="a00448.html">LangModEdge</a> **edge_array = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00449.html#ade13ad9a3c3f6bb19a1071aa20bffb4b">IsLeadingPunc</a>(<a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00449.html#a0235bd607e1d0cd00082661e0b71d495">IsTrailingPunc</a>(<a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00449.html#aae119709c73d00d731c65588be763a1d">IsDigit</a>(<a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// accessor functions</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a00449.html#adf7be83dc2b85f86e126ca31ddf7e744">   61</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="a00449.html#adf7be83dc2b85f86e126ca31ddf7e744">OOD</a>() { <span class="keywordflow">return</span> <a class="code" href="a00449.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a>; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a00449.html#a99ff66ba44ba88d7b5e47ef779b4844d">   62</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="a00449.html#a99ff66ba44ba88d7b5e47ef779b4844d">Numeric</a>() { <span class="keywordflow">return</span> <a class="code" href="a00449.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a>; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00449.html#abd7c96a934e736cd3487f6340a1d4433">   63</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="a00449.html#abd7c96a934e736cd3487f6340a1d4433">WordList</a>() { <span class="keywordflow">return</span> <a class="code" href="a00449.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a>; }</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a00449.html#a3a8c70497813e15dbfc42f9990952b19">   64</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="a00449.html#a3a8c70497813e15dbfc42f9990952b19">Punc</a>() { <span class="keywordflow">return</span> <a class="code" href="a00449.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a>; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00449.html#a6c4a21482e846de85722a7208240da66">   65</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="a00449.html#a6c4a21482e846de85722a7208240da66">SetOOD</a>(<span class="keywordtype">bool</span> ood) { <a class="code" href="a00449.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a> = ood; }</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="a00449.html#a7612159b5eca3fd43eedfa9f68d3b79c">   66</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="a00449.html#a7612159b5eca3fd43eedfa9f68d3b79c">SetNumeric</a>(<span class="keywordtype">bool</span> numeric) { <a class="code" href="a00449.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a> = numeric; }</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00449.html#af2d51a52e748886fca42fa6b6f3d2b78">   67</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="a00449.html#af2d51a52e748886fca42fa6b6f3d2b78">SetWordList</a>(<span class="keywordtype">bool</span> word_list) { <a class="code" href="a00449.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a> = word_list; }</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a00449.html#ab467aec7089e513e1e891828c7f9b4d3">   68</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="a00449.html#ab467aec7089e513e1e891828c7f9b4d3">SetPunc</a>(<span class="keywordtype">bool</span> punc_enabled) { <a class="code" href="a00449.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a> = punc_enabled; }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00449.html#aafdf3a806f6fe7ffbe75d257ecbede56">   71</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00449.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="a00449.html#a877e0ae377a2c2b3b2950b497ff1b772">   72</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00449.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a00449.html#aa62a12331a5be9099c7744b74eddeff2">   73</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00449.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="a00449.html#a70621f842de37a67dd00e7c5a2d97877">   74</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00449.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif  // LANG_MODEL_H</span></div>
+<div class="ttc" id="a01016_html"><div class="ttname"><a href="a01016.html">tuning_params.h</a></div></div>
+<div class="ttc" id="a01004_html"><div class="ttname"><a href="a01004.html">lang_mod_edge.h</a></div></div>
+<div class="ttc" id="a00449_html_a46178bf09d08aa9c8048adb0a8561b75"><div class="ttname"><a href="a00449.html#a46178bf09d08aa9c8048adb0a8561b75">tesseract::LangModel::Root</a></div><div class="ttdeci">virtual LangModEdge * Root()=0</div></div>
+<div class="ttc" id="a00449_html_a61071a0736427f808d7134aeeb456701"><div class="ttname"><a href="a00449.html#a61071a0736427f808d7134aeeb456701">tesseract::LangModel::GetEdges</a></div><div class="ttdeci">virtual LangModEdge ** GetEdges(CharAltList *alt_list, LangModEdge *parent_edge, int *edge_cnt)=0</div></div>
+<div class="ttc" id="a00964_html"><div class="ttname"><a href="a00964.html">char_altlist.h</a></div></div>
+<div class="ttc" id="a00449_html_ab467aec7089e513e1e891828c7f9b4d3"><div class="ttname"><a href="a00449.html#ab467aec7089e513e1e891828c7f9b4d3">tesseract::LangModel::SetPunc</a></div><div class="ttdeci">void SetPunc(bool punc_enabled)</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00068">lang_model.h:68</a></div></div>
+<div class="ttc" id="a00449_html_a6c4a21482e846de85722a7208240da66"><div class="ttname"><a href="a00449.html#a6c4a21482e846de85722a7208240da66">tesseract::LangModel::SetOOD</a></div><div class="ttdeci">void SetOOD(bool ood)</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00065">lang_model.h:65</a></div></div>
+<div class="ttc" id="a00449_html_a70621f842de37a67dd00e7c5a2d97877"><div class="ttname"><a href="a00449.html#a70621f842de37a67dd00e7c5a2d97877">tesseract::LangModel::punc_enabled_</a></div><div class="ttdeci">bool punc_enabled_</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00074">lang_model.h:74</a></div></div>
+<div class="ttc" id="a00449_html_a8b2edb01fa6b82d7a0eba6fb28717494"><div class="ttname"><a href="a00449.html#a8b2edb01fa6b82d7a0eba6fb28717494">tesseract::LangModel::IsValidSequence</a></div><div class="ttdeci">virtual bool IsValidSequence(const char_32 *str, bool eow_flag, LangModEdge **edge_array=NULL)=0</div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00449_html_ade13ad9a3c3f6bb19a1071aa20bffb4b"><div class="ttname"><a href="a00449.html#ade13ad9a3c3f6bb19a1071aa20bffb4b">tesseract::LangModel::IsLeadingPunc</a></div><div class="ttdeci">virtual bool IsLeadingPunc(char_32 ch)=0</div></div>
+<div class="ttc" id="a00300_html"><div class="ttname"><a href="a00300.html">tesseract::CharAltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00032">char_altlist.h:32</a></div></div>
+<div class="ttc" id="a00449_html_aafdf3a806f6fe7ffbe75d257ecbede56"><div class="ttname"><a href="a00449.html#aafdf3a806f6fe7ffbe75d257ecbede56">tesseract::LangModel::ood_enabled_</a></div><div class="ttdeci">bool ood_enabled_</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00071">lang_model.h:71</a></div></div>
+<div class="ttc" id="a00449_html_abf2f207148aa4563bedc41dbd650bc10"><div class="ttname"><a href="a00449.html#abf2f207148aa4563bedc41dbd650bc10">tesseract::LangModel::LangModel</a></div><div class="ttdeci">LangModel()</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00036">lang_model.h:36</a></div></div>
+<div class="ttc" id="a00449_html_adf7be83dc2b85f86e126ca31ddf7e744"><div class="ttname"><a href="a00449.html#adf7be83dc2b85f86e126ca31ddf7e744">tesseract::LangModel::OOD</a></div><div class="ttdeci">bool OOD()</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00061">lang_model.h:61</a></div></div>
+<div class="ttc" id="a00449_html_af2d51a52e748886fca42fa6b6f3d2b78"><div class="ttname"><a href="a00449.html#af2d51a52e748886fca42fa6b6f3d2b78">tesseract::LangModel::SetWordList</a></div><div class="ttdeci">void SetWordList(bool word_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00067">lang_model.h:67</a></div></div>
+<div class="ttc" id="a00449_html_a877e0ae377a2c2b3b2950b497ff1b772"><div class="ttname"><a href="a00449.html#a877e0ae377a2c2b3b2950b497ff1b772">tesseract::LangModel::numeric_enabled_</a></div><div class="ttdeci">bool numeric_enabled_</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00072">lang_model.h:72</a></div></div>
+<div class="ttc" id="a00449_html_a3a8c70497813e15dbfc42f9990952b19"><div class="ttname"><a href="a00449.html#a3a8c70497813e15dbfc42f9990952b19">tesseract::LangModel::Punc</a></div><div class="ttdeci">bool Punc()</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00064">lang_model.h:64</a></div></div>
+<div class="ttc" id="a00449_html"><div class="ttname"><a href="a00449.html">tesseract::LangModel</a></div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00034">lang_model.h:34</a></div></div>
+<div class="ttc" id="a00449_html_aae119709c73d00d731c65588be763a1d"><div class="ttname"><a href="a00449.html#aae119709c73d00d731c65588be763a1d">tesseract::LangModel::IsDigit</a></div><div class="ttdeci">virtual bool IsDigit(char_32 ch)=0</div></div>
+<div class="ttc" id="a00449_html_aa62a12331a5be9099c7744b74eddeff2"><div class="ttname"><a href="a00449.html#aa62a12331a5be9099c7744b74eddeff2">tesseract::LangModel::word_list_enabled_</a></div><div class="ttdeci">bool word_list_enabled_</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00073">lang_model.h:73</a></div></div>
+<div class="ttc" id="a00449_html_abd7c96a934e736cd3487f6340a1d4433"><div class="ttname"><a href="a00449.html#abd7c96a934e736cd3487f6340a1d4433">tesseract::LangModel::WordList</a></div><div class="ttdeci">bool WordList()</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00063">lang_model.h:63</a></div></div>
+<div class="ttc" id="a01267_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01267.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01011_source.html#l00040">string_32.h:40</a></div></div>
+<div class="ttc" id="a00449_html_a0235bd607e1d0cd00082661e0b71d495"><div class="ttname"><a href="a00449.html#a0235bd607e1d0cd00082661e0b71d495">tesseract::LangModel::IsTrailingPunc</a></div><div class="ttdeci">virtual bool IsTrailingPunc(char_32 ch)=0</div></div>
+<div class="ttc" id="a00449_html_a99ff66ba44ba88d7b5e47ef779b4844d"><div class="ttname"><a href="a00449.html#a99ff66ba44ba88d7b5e47ef779b4844d">tesseract::LangModel::Numeric</a></div><div class="ttdeci">bool Numeric()</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00062">lang_model.h:62</a></div></div>
+<div class="ttc" id="a00974_html"><div class="ttname"><a href="a00974.html">char_set.h</a></div></div>
+<div class="ttc" id="a00449_html_a7612159b5eca3fd43eedfa9f68d3b79c"><div class="ttname"><a href="a00449.html#a7612159b5eca3fd43eedfa9f68d3b79c">tesseract::LangModel::SetNumeric</a></div><div class="ttdeci">void SetNumeric(bool numeric)</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00066">lang_model.h:66</a></div></div>
+<div class="ttc" id="a00449_html_afff28be0aa6c2451e8a0e32e7c88331f"><div class="ttname"><a href="a00449.html#afff28be0aa6c2451e8a0e32e7c88331f">tesseract::LangModel::~LangModel</a></div><div class="ttdeci">virtual ~LangModel()</div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00042">lang_model.h:42</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00448_html"><div class="ttname"><a href="a00448.html">tesseract::LangModEdge</a></div><div class="ttdef"><b>Definition:</b> <a href="a01004_source.html#l00043">lang_mod_edge.h:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01005.html">feature_base.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01005.html">lang_model.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:00 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

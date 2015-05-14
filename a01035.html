@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cutil/bitvec.cpp File Reference</title>
+<title>Tesseract: cutil/danerror.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,44 +105,111 @@ $(document).ready(function(){initNavTree('a01035.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">bitvec.cpp File Reference</div>  </div>
+<div class="title">danerror.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01036_source.html">bitvec.h</a>&quot;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a01049_source.html">emalloc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01051_source.html">freelist.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00883_source.html">tprintf.h</a>&quot;</code><br />
-</div>
+
 <p><a href="a01035_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a7c8e007a5b28cfb6d606095153d7e764"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01035.html#a7c8e007a5b28cfb6d606095153d7e764">NOERROR</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a7c8e007a5b28cfb6d606095153d7e764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa67df6726d3707c387dec5d0355b1ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01035.html#aaa67df6726d3707c387dec5d0355b1ee">DO_NOTHING</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aaa67df6726d3707c387dec5d0355b1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:af1d16ae4700d1dd99ca650fa27b1d9eb"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01035.html#af1d16ae4700d1dd99ca650fa27b1d9eb">TRAPERROR</a></td></tr>
+<tr class="separator:af1d16ae4700d1dd99ca650fa27b1d9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e31991574bd1fed2b343c6855f7567c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01035.html#a9e31991574bd1fed2b343c6855f7567c">VOID_PROC</a> )()</td></tr>
+<tr class="separator:a9e31991574bd1fed2b343c6855f7567c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a74773bfbcc12095f8d32c11b28e2577d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01035.html#a74773bfbcc12095f8d32c11b28e2577d">ExpandBitVector</a> (<a class="el" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> Vector, int NewNumBits)</td></tr>
-<tr class="separator:a74773bfbcc12095f8d32c11b28e2577d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1a7f52bb1fce0746e1e5725ad679f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01035.html#adc1a7f52bb1fce0746e1e5725ad679f6">FreeBitVector</a> (<a class="el" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> BitVector)</td></tr>
-<tr class="separator:adc1a7f52bb1fce0746e1e5725ad679f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a502314dc3ee4b178df067713b324b868"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01035.html#a502314dc3ee4b178df067713b324b868">NewBitVector</a> (int NumBits)</td></tr>
-<tr class="separator:a502314dc3ee4b178df067713b324b868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a480942fa88232bda23e9809e5afa9f25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01035.html#a480942fa88232bda23e9809e5afa9f25">DoError</a> (int Error, const char *Message)</td></tr>
+<tr class="separator:a480942fa88232bda23e9809e5afa9f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a74773bfbcc12095f8d32c11b28e2577d"></a>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="aaa67df6726d3707c387dec5d0355b1ee"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> ExpandBitVector </td>
+          <td class="memname">#define DO_NOTHING&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01035_source.html#l00025">25</a> of file <a class="el" href="a01035_source.html">danerror.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c8e007a5b28cfb6d606095153d7e764"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOERROR&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<hr/>
+ <h2>Include Files and Type Defines </h2>
+
+<p>Definition at line <a class="el" href="a01035_source.html#l00024">24</a> of file <a class="el" href="a01035_source.html">danerror.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="af1d16ae4700d1dd99ca650fa27b1d9eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="a01035.html#af1d16ae4700d1dd99ca650fa27b1d9eb">TRAPERROR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01035_source.html#l00027">27</a> of file <a class="el" href="a01035_source.html">danerror.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e31991574bd1fed2b343c6855f7567c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* VOID_PROC)()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01035_source.html#l00028">28</a> of file <a class="el" href="a01035_source.html">danerror.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a480942fa88232bda23e9809e5afa9f25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DoError </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>&#160;</td>
-          <td class="paramname"><em>Vector</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Error</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>NewNumBits</em>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>Message</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -151,107 +218,41 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This routine uses realloc to increase the size of the specified bit vector.</p>
-<p>Globals:</p><ul>
-<li>none</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Vector</td><td>bit vector to be expanded </td></tr>
-    <tr><td class="paramname">NewNumBits</td><td>new size of bit vector</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New expanded bit vector. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Exceptions: none </dd>
-<dd>
-History: Fri Nov 16 10:11:16 1990, DSJ, Created. </dd></dl>
+<hr/>
+ <h2>Public Function Prototypes </h2>
+<hr/>
+ <h2>Include Files and Type Defines </h2>
 
-<p>Definition at line <a class="el" href="a01035_source.html#l00048">48</a> of file <a class="el" href="a01035_source.html">bitvec.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                              {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> ((<a class="code" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>) <a class="code" href="a01048.html#a2bd9b4f7899f8798018497faa3b12eed">Erealloc</a>(Vector,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">sizeof</span>(Vector[0]) * <a class="code" href="a01036.html#a905ff9b6c51cb231dd8baf1713a3c9b8">WordsInVectorOfSize</a>(NewNumBits)));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}                                <span class="comment">/* ExpandBitVector */</span></div>
-<div class="ttc" id="a01048_html_a2bd9b4f7899f8798018497faa3b12eed"><div class="ttname"><a href="a01048.html#a2bd9b4f7899f8798018497faa3b12eed">Erealloc</a></div><div class="ttdeci">void * Erealloc(void *ptr, int size)</div><div class="ttdef"><b>Definition:</b> <a href="a01048_source.html#l00070">emalloc.cpp:70</a></div></div>
-<div class="ttc" id="a01036_html_a905ff9b6c51cb231dd8baf1713a3c9b8"><div class="ttname"><a href="a01036.html#a905ff9b6c51cb231dd8baf1713a3c9b8">WordsInVectorOfSize</a></div><div class="ttdeci">#define WordsInVectorOfSize(NumBits)</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00063">bitvec.h:63</a></div></div>
-<div class="ttc" id="a01036_html_a584fa1e33e36d105f97bc7e7288fb259"><div class="ttname"><a href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a></div><div class="ttdeci">uinT32 * BIT_VECTOR</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00028">bitvec.h:28</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="adc1a7f52bb1fce0746e1e5725ad679f6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void FreeBitVector </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>&#160;</td>
-          <td class="paramname"><em>BitVector</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This routine frees a bit vector. It also decrements the global counter that keeps track of the number of bit vectors allocated. If BitVector is NULL, then the count is printed to stderr.</p>
-<p>Globals:</p><ul>
-<li>BitVectorCount count of number of bit vectors allocated</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">BitVector</td><td>bit vector to be freed</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Exceptions: none </dd>
-<dd>
-History: Tue Oct 23 16:46:09 1990, DSJ, Created.</dd></dl>
-
-<p>Definition at line <a class="el" href="a01035_source.html#l00055">55</a> of file <a class="el" href="a01035_source.html">bitvec.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                         {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (BitVector) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="a01048.html#af846576ae65dc13e49ddc616e17baa27">Efree</a>(BitVector);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}                                <span class="comment">/* FreeBitVector */</span></div>
-<div class="ttc" id="a01048_html_af846576ae65dc13e49ddc616e17baa27"><div class="ttname"><a href="a01048.html#af846576ae65dc13e49ddc616e17baa27">Efree</a></div><div class="ttdeci">void Efree(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="a01048_source.html#l00085">emalloc.cpp:85</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a502314dc3ee4b178df067713b324b868"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a> NewBitVector </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>NumBits</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Allocate and return a new bit vector large enough to hold the specified number of bits.</p>
-<p>Globals:</p><ul>
-<li>BitVectorCount number of bit vectors allocated</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">NumBits</td><td>number of bits in new bit vector</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>New bit vector. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Exceptions: none </dd>
-<dd>
-History: Tue Oct 23 16:51:27 1990, DSJ, Created. </dd></dl>
-
-<p>Definition at line <a class="el" href="a01035_source.html#l00090">90</a> of file <a class="el" href="a01035_source.html">bitvec.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                     {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> ((<a class="code" href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a>) <a class="code" href="a01048.html#a9bdc0885c33bbb5b062c77b1d90e2305">Emalloc</a>(<span class="keyword">sizeof</span>(<a class="code" href="a00854.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a>) *</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="a01036.html#a905ff9b6c51cb231dd8baf1713a3c9b8">WordsInVectorOfSize</a>(NumBits)));</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}                                <span class="comment">/* NewBitVector */</span></div>
-<div class="ttc" id="a00854_html_afc8530b39ebe0b6df1e19159d2508d15"><div class="ttname"><a href="a00854.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a></div><div class="ttdeci">unsigned int uinT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00103">host.h:103</a></div></div>
-<div class="ttc" id="a01036_html_a905ff9b6c51cb231dd8baf1713a3c9b8"><div class="ttname"><a href="a01036.html#a905ff9b6c51cb231dd8baf1713a3c9b8">WordsInVectorOfSize</a></div><div class="ttdeci">#define WordsInVectorOfSize(NumBits)</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00063">bitvec.h:63</a></div></div>
-<div class="ttc" id="a01048_html_a9bdc0885c33bbb5b062c77b1d90e2305"><div class="ttname"><a href="a01048.html#a9bdc0885c33bbb5b062c77b1d90e2305">Emalloc</a></div><div class="ttdeci">void * Emalloc(int Size)</div><div class="ttdef"><b>Definition:</b> <a href="a01048_source.html#l00035">emalloc.cpp:35</a></div></div>
-<div class="ttc" id="a01036_html_a584fa1e33e36d105f97bc7e7288fb259"><div class="ttname"><a href="a01036.html#a584fa1e33e36d105f97bc7e7288fb259">BIT_VECTOR</a></div><div class="ttdeci">uinT32 * BIT_VECTOR</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00028">bitvec.h:28</a></div></div>
+<p>Definition at line <a class="el" href="a01034_source.html#l00032">32</a> of file <a class="el" href="a01034_source.html">danerror.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                             {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **             Error   error number which is to be trapped</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **             Message pointer to a string to be printed as an error message</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **     Globals:</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **             ErrorTrapStack          stack of error traps</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **             CurrentTrapDepth        number of traps on the stack</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **     Operation:</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **             This routine prints the specified error message to stderr.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **             It then jumps to the current error trap.  If the error trap</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **             stack is empty, the calling program is terminated with a</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **             fatal error message.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **     Return:</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> **             None - this routine does not return.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **     Exceptions:</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> **             Empty error trap stack terminates the calling program.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> **     History:</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> **             4/3/89, DSJ, Created.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span> (Message != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;\nError: %s!\n&quot;</span>, Message);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="a00831.html#a7da97df8ad833cd9bbae484fa4fc4f9a">err_exit</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}                                <span class="comment">/* DoError */</span></div>
+<div class="ttc" id="a00831_html_a7da97df8ad833cd9bbae484fa4fc4f9a"><div class="ttname"><a href="a00831.html#a7da97df8ad833cd9bbae484fa4fc4f9a">err_exit</a></div><div class="ttdeci">void err_exit()</div><div class="ttdef"><b>Definition:</b> <a href="a00831_source.html#l00074">globaloc.cpp:74</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,8 +261,8 @@ History: Tue Oct 23 16:51:27 1990, DSJ, Created. </dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01035.html">bitvec.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01035.html">danerror.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

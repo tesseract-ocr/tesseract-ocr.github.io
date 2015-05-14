@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/reject.h File Reference</title>
+<title>Tesseract: ccstruct/blamer.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,252 +105,254 @@ $(document).ready(function(){initNavTree('a00726.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">reject.h File Reference</div>  </div>
+<div class="title">blamer.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00792_source.html">pageres.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00727_source.html">blamer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00759_source.html">matrix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00763_source.html">normalis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00773_source.html">pageres.h</a>&quot;</code><br />
 </div>
 <p><a href="a00726_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a38678800d902519bdb0b6dcff44e5ee8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a38678800d902519bdb0b6dcff44e5ee8">reject_blanks</a> (<a class="el" href="a00669.html">WERD_RES</a> *word)</td></tr>
-<tr class="separator:a38678800d902519bdb0b6dcff44e5ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acda8fceb6df94a957f3a2380b944a09e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#acda8fceb6df94a957f3a2380b944a09e">reject_poor_matches</a> (<a class="el" href="a00669.html">WERD_RES</a> *word)</td></tr>
-<tr class="separator:acda8fceb6df94a957f3a2380b944a09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7769557523c23cea384f550ae030e5ba"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a7769557523c23cea384f550ae030e5ba">compute_reject_threshold</a> (<a class="el" href="a00668.html">WERD_CHOICE</a> *word)</td></tr>
-<tr class="separator:a7769557523c23cea384f550ae030e5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d609b0738a36642da8760d23bbbddae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a6d609b0738a36642da8760d23bbbddae">word_contains_non_1_digit</a> (const char *word, const char *word_lengths)</td></tr>
-<tr class="separator:a6d609b0738a36642da8760d23bbbddae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad83dc1005097e689a58b493e14b943a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#ad83dc1005097e689a58b493e14b943a6">dont_allow_1Il</a> (<a class="el" href="a00669.html">WERD_RES</a> *word)</td></tr>
-<tr class="separator:ad83dc1005097e689a58b493e14b943a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24694172b77bc1092fb404873485b1c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a24694172b77bc1092fb404873485b1c3">flip_hyphens</a> (<a class="el" href="a00669.html">WERD_RES</a> *word)</td></tr>
-<tr class="separator:a24694172b77bc1092fb404873485b1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a619bb19b0a304dcfa4e73be192ace9c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a619bb19b0a304dcfa4e73be192ace9c5">flip_0O</a> (<a class="el" href="a00669.html">WERD_RES</a> *word)</td></tr>
-<tr class="separator:a619bb19b0a304dcfa4e73be192ace9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27a3530b849ae71446548b3705bc7e59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a27a3530b849ae71446548b3705bc7e59">non_0_digit</a> (const char *str, int length)</td></tr>
-<tr class="separator:a27a3530b849ae71446548b3705bc7e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a939a828ea97a292eed52468bfc886f5f"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a939a828ea97a292eed52468bfc886f5f">kBlameCorrect</a> [] = &quot;corr&quot;</td></tr>
+<tr class="separator:a939a828ea97a292eed52468bfc886f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0691e45d7e7b5e6e0671f5167e4a0e71"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a0691e45d7e7b5e6e0671f5167e4a0e71">kBlameClassifier</a> [] = &quot;cl&quot;</td></tr>
+<tr class="separator:a0691e45d7e7b5e6e0671f5167e4a0e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db1a8ed37b0eff0d2e038ff2a107c2c"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a4db1a8ed37b0eff0d2e038ff2a107c2c">kBlameChopper</a> [] = &quot;chop&quot;</td></tr>
+<tr class="separator:a4db1a8ed37b0eff0d2e038ff2a107c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0e7d2e8cba382e6de905c1612dad3b"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a5c0e7d2e8cba382e6de905c1612dad3b">kBlameClassLMTradeoff</a> [] = &quot;cl/LM&quot;</td></tr>
+<tr class="separator:a5c0e7d2e8cba382e6de905c1612dad3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7fc57611e72df3bbe8a760f7d9a8bf1"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#ad7fc57611e72df3bbe8a760f7d9a8bf1">kBlamePageLayout</a> [] = &quot;pglt&quot;</td></tr>
+<tr class="separator:ad7fc57611e72df3bbe8a760f7d9a8bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89e8d8eda8453e09c7b0c95d60a57f7c"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a89e8d8eda8453e09c7b0c95d60a57f7c">kBlameSegsearchHeur</a> [] = &quot;ss_heur&quot;</td></tr>
+<tr class="separator:a89e8d8eda8453e09c7b0c95d60a57f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc22321ca86643deb20076a2198c8cf"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a5dc22321ca86643deb20076a2198c8cf">kBlameSegsearchPP</a> [] = &quot;ss_pp&quot;</td></tr>
+<tr class="separator:a5dc22321ca86643deb20076a2198c8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05d635a577a5fafa7fd3b2a3ef0c17d"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#aa05d635a577a5fafa7fd3b2a3ef0c17d">kBlameClassOldLMTradeoff</a> [] = &quot;cl/old_LM&quot;</td></tr>
+<tr class="separator:aa05d635a577a5fafa7fd3b2a3ef0c17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe9ed9b199de04329403be78d43a20e"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#afbe9ed9b199de04329403be78d43a20e">kBlameAdaption</a> [] = &quot;adapt&quot;</td></tr>
+<tr class="separator:afbe9ed9b199de04329403be78d43a20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5f1678db33a085c6a72c606584c8f6f"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#af5f1678db33a085c6a72c606584c8f6f">kBlameNoTruthSplit</a> [] = &quot;no_tr_spl&quot;</td></tr>
+<tr class="separator:af5f1678db33a085c6a72c606584c8f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc066860637c1eb6ba9777ec6914020"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#acbc066860637c1eb6ba9777ec6914020">kBlameNoTruth</a> [] = &quot;no_tr&quot;</td></tr>
+<tr class="separator:acbc066860637c1eb6ba9777ec6914020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c9260acc89f21815ea4f8c8fc12e473"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a5c9260acc89f21815ea4f8c8fc12e473">kBlameUnknown</a> [] = &quot;unkn&quot;</td></tr>
+<tr class="separator:a5c9260acc89f21815ea4f8c8fc12e473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fc3ba2e9db3adeb717fbdba6f9481f"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00726.html#a85fc3ba2e9db3adeb717fbdba6f9481f">kIncorrectResultReasonNames</a> []</td></tr>
+<tr class="separator:a85fc3ba2e9db3adeb717fbdba6f9481f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a7769557523c23cea384f550ae030e5ba"></a>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="afbe9ed9b199de04329403be78d43a20e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float compute_reject_threshold </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00668.html">WERD_CHOICE</a> *&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
+          <td class="memname">const char kBlameAdaption[] = &quot;adapt&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00725_source.html#l00226">226</a> of file <a class="el" href="a00725_source.html">reject.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                                  {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">float</span> threshold;               <span class="comment">// rejection threshold</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordtype">float</span> bestgap = 0.0f;          <span class="comment">// biggest gap</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordtype">float</span> gapstart;                <span class="comment">// bottom of gap</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                 <span class="comment">// super iterator</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  BLOB_CHOICE_IT choice_it;      <span class="comment">// real iterator</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordtype">int</span> blob_count = word-&gt;<a class="code" href="a00668.html#a7be59abe97b052dd3aaa324aea8c4a6c">length</a>();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;float&gt;</a> ratings;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  ratings.<a class="code" href="a00416.html#a6751521fd3eb461d81fc83ef93a0def3">init_to_size</a>(blob_count, 0.0f);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; blob_count; ++i) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    ratings[i] = word-&gt;<a class="code" href="a00668.html#a1b25ef2b44d21a7204483a7ca804f293">certainty</a>(i);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  ratings.<a class="code" href="a00416.html#a999bbd8ff336c81fe1198ea714c7936d">sort</a>();</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  gapstart = ratings[0] - 1;     <span class="comment">// all reject if none better</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordflow">if</span> (blob_count &gt;= 3) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt; blob_count - 1; index++) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <span class="keywordflow">if</span> (ratings[index + 1] - ratings[index] &gt; bestgap) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        bestgap = ratings[index + 1] - ratings[index];</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="comment">// find biggest</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        gapstart = ratings[index];</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  threshold = gapstart + bestgap / 2;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordflow">return</span> threshold;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
-<div class="ttc" id="a00416_html_a999bbd8ff336c81fe1198ea714c7936d"><div class="ttname"><a href="a00416.html#a999bbd8ff336c81fe1198ea714c7936d">GenericVector::sort</a></div><div class="ttdeci">void sort()</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00998">genericvector.h:998</a></div></div>
-<div class="ttc" id="a00668_html_a1b25ef2b44d21a7204483a7ca804f293"><div class="ttname"><a href="a00668.html#a1b25ef2b44d21a7204483a7ca804f293">WERD_CHOICE::certainty</a></div><div class="ttdeci">float certainty() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00327">ratngs.h:327</a></div></div>
-<div class="ttc" id="a00416_html_a6751521fd3eb461d81fc83ef93a0def3"><div class="ttname"><a href="a00416.html#a6751521fd3eb461d81fc83ef93a0def3">GenericVector::init_to_size</a></div><div class="ttdeci">void init_to_size(int size, T t)</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00646">genericvector.h:646</a></div></div>
-<div class="ttc" id="a00416_html"><div class="ttname"><a href="a00416.html">GenericVector&lt; float &gt;</a></div></div>
-<div class="ttc" id="a00668_html_a7be59abe97b052dd3aaa324aea8c4a6c"><div class="ttname"><a href="a00668.html#a7be59abe97b052dd3aaa324aea8c4a6c">WERD_CHOICE::length</a></div><div class="ttdeci">int length() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00300">ratngs.h:300</a></div></div>
+<p>Definition at line <a class="el" href="a00726_source.html#l00036">36</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4db1a8ed37b0eff0d2e038ff2a107c2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameChopper[] = &quot;chop&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00030">30</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0691e45d7e7b5e6e0671f5167e4a0e71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameClassifier[] = &quot;cl&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00029">29</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c0e7d2e8cba382e6de905c1612dad3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameClassLMTradeoff[] = &quot;cl/LM&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00031">31</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa05d635a577a5fafa7fd3b2a3ef0c17d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameClassOldLMTradeoff[] = &quot;cl/old_LM&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00035">35</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a939a828ea97a292eed52468bfc886f5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameCorrect[] = &quot;corr&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00028">28</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acbc066860637c1eb6ba9777ec6914020"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameNoTruth[] = &quot;no_tr&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00038">38</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5f1678db33a085c6a72c606584c8f6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameNoTruthSplit[] = &quot;no_tr_spl&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00037">37</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7fc57611e72df3bbe8a760f7d9a8bf1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlamePageLayout[] = &quot;pglt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00032">32</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89e8d8eda8453e09c7b0c95d60a57f7c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameSegsearchHeur[] = &quot;ss_heur&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00033">33</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5dc22321ca86643deb20076a2198c8cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameSegsearchPP[] = &quot;ss_pp&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00034">34</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c9260acc89f21815ea4f8c8fc12e473"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char kBlameUnknown[] = &quot;unkn&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00726_source.html#l00039">39</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a85fc3ba2e9db3adeb717fbdba6f9481f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* const kIncorrectResultReasonNames[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <a class="code" href="a00726.html#a939a828ea97a292eed52468bfc886f5f">kBlameCorrect</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#a0691e45d7e7b5e6e0671f5167e4a0e71">kBlameClassifier</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#a4db1a8ed37b0eff0d2e038ff2a107c2c">kBlameChopper</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#a5c0e7d2e8cba382e6de905c1612dad3b">kBlameClassLMTradeoff</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#ad7fc57611e72df3bbe8a760f7d9a8bf1">kBlamePageLayout</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#a89e8d8eda8453e09c7b0c95d60a57f7c">kBlameSegsearchHeur</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#a5dc22321ca86643deb20076a2198c8cf">kBlameSegsearchPP</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#aa05d635a577a5fafa7fd3b2a3ef0c17d">kBlameClassOldLMTradeoff</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#afbe9ed9b199de04329403be78d43a20e">kBlameAdaption</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#af5f1678db33a085c6a72c606584c8f6f">kBlameNoTruthSplit</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#acbc066860637c1eb6ba9777ec6914020">kBlameNoTruth</a>,</div>
+<div class="line">    <a class="code" href="a00726.html#a5c9260acc89f21815ea4f8c8fc12e473">kBlameUnknown</a></div>
+<div class="line">}</div>
+<div class="ttc" id="a00726_html_a939a828ea97a292eed52468bfc886f5f"><div class="ttname"><a href="a00726.html#a939a828ea97a292eed52468bfc886f5f">kBlameCorrect</a></div><div class="ttdeci">const char kBlameCorrect[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00028">blamer.cpp:28</a></div></div>
+<div class="ttc" id="a00726_html_aa05d635a577a5fafa7fd3b2a3ef0c17d"><div class="ttname"><a href="a00726.html#aa05d635a577a5fafa7fd3b2a3ef0c17d">kBlameClassOldLMTradeoff</a></div><div class="ttdeci">const char kBlameClassOldLMTradeoff[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00035">blamer.cpp:35</a></div></div>
+<div class="ttc" id="a00726_html_a5c9260acc89f21815ea4f8c8fc12e473"><div class="ttname"><a href="a00726.html#a5c9260acc89f21815ea4f8c8fc12e473">kBlameUnknown</a></div><div class="ttdeci">const char kBlameUnknown[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00039">blamer.cpp:39</a></div></div>
+<div class="ttc" id="a00726_html_a5c0e7d2e8cba382e6de905c1612dad3b"><div class="ttname"><a href="a00726.html#a5c0e7d2e8cba382e6de905c1612dad3b">kBlameClassLMTradeoff</a></div><div class="ttdeci">const char kBlameClassLMTradeoff[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00031">blamer.cpp:31</a></div></div>
+<div class="ttc" id="a00726_html_a5dc22321ca86643deb20076a2198c8cf"><div class="ttname"><a href="a00726.html#a5dc22321ca86643deb20076a2198c8cf">kBlameSegsearchPP</a></div><div class="ttdeci">const char kBlameSegsearchPP[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00034">blamer.cpp:34</a></div></div>
+<div class="ttc" id="a00726_html_af5f1678db33a085c6a72c606584c8f6f"><div class="ttname"><a href="a00726.html#af5f1678db33a085c6a72c606584c8f6f">kBlameNoTruthSplit</a></div><div class="ttdeci">const char kBlameNoTruthSplit[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00037">blamer.cpp:37</a></div></div>
+<div class="ttc" id="a00726_html_a4db1a8ed37b0eff0d2e038ff2a107c2c"><div class="ttname"><a href="a00726.html#a4db1a8ed37b0eff0d2e038ff2a107c2c">kBlameChopper</a></div><div class="ttdeci">const char kBlameChopper[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00030">blamer.cpp:30</a></div></div>
+<div class="ttc" id="a00726_html_acbc066860637c1eb6ba9777ec6914020"><div class="ttname"><a href="a00726.html#acbc066860637c1eb6ba9777ec6914020">kBlameNoTruth</a></div><div class="ttdeci">const char kBlameNoTruth[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00038">blamer.cpp:38</a></div></div>
+<div class="ttc" id="a00726_html_ad7fc57611e72df3bbe8a760f7d9a8bf1"><div class="ttname"><a href="a00726.html#ad7fc57611e72df3bbe8a760f7d9a8bf1">kBlamePageLayout</a></div><div class="ttdeci">const char kBlamePageLayout[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00032">blamer.cpp:32</a></div></div>
+<div class="ttc" id="a00726_html_a89e8d8eda8453e09c7b0c95d60a57f7c"><div class="ttname"><a href="a00726.html#a89e8d8eda8453e09c7b0c95d60a57f7c">kBlameSegsearchHeur</a></div><div class="ttdeci">const char kBlameSegsearchHeur[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00033">blamer.cpp:33</a></div></div>
+<div class="ttc" id="a00726_html_afbe9ed9b199de04329403be78d43a20e"><div class="ttname"><a href="a00726.html#afbe9ed9b199de04329403be78d43a20e">kBlameAdaption</a></div><div class="ttdeci">const char kBlameAdaption[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00036">blamer.cpp:36</a></div></div>
+<div class="ttc" id="a00726_html_a0691e45d7e7b5e6e0671f5167e4a0e71"><div class="ttname"><a href="a00726.html#a0691e45d7e7b5e6e0671f5167e4a0e71">kBlameClassifier</a></div><div class="ttdeci">const char kBlameClassifier[]</div><div class="ttdef"><b>Definition:</b> <a href="a00726_source.html#l00029">blamer.cpp:29</a></div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ad83dc1005097e689a58b493e14b943a6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void dont_allow_1Il </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00669.html">WERD_RES</a> *&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a619bb19b0a304dcfa4e73be192ace9c5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void flip_0O </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00669.html">WERD_RES</a> *&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a24694172b77bc1092fb404873485b1c3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void flip_hyphens </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00669.html">WERD_RES</a> *&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a27a3530b849ae71446548b3705bc7e59"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> non_0_digit </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a38678800d902519bdb0b6dcff44e5ee8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void reject_blanks </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00669.html">WERD_RES</a> *&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00725_source.html#l00178">178</a> of file <a class="el" href="a00725_source.html">reject.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                   {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> i;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> offset;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordflow">for</span> (i = 0, offset = 0; word-&gt;<a class="code" href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">best_choice</a>-&gt;<a class="code" href="a00668.html#a41d740f0accccdfb245d34d554122116">unichar_string</a>()[offset] != <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;       offset += word-&gt;<a class="code" href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">best_choice</a>-&gt;<a class="code" href="a00668.html#a93ab94b6fa6d5c0469fb52d66c62968c">unichar_lengths</a>()[i], i += 1) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">if</span> (word-&gt;<a class="code" href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">best_choice</a>-&gt;<a class="code" href="a00668.html#a41d740f0accccdfb245d34d554122116">unichar_string</a>()[offset] == <span class="charliteral">&#39; &#39;</span>)</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                 <span class="comment">//rej unrecognised blobs</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      word-&gt;<a class="code" href="a00669.html#ae24eb58be06cf275aee411d947fd31ef">reject_map</a>[i].setrej_tess_failure ();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
-<div class="ttc" id="a00668_html_a41d740f0accccdfb245d34d554122116"><div class="ttname"><a href="a00668.html#a41d740f0accccdfb245d34d554122116">WERD_CHOICE::unichar_string</a></div><div class="ttdeci">const STRING &amp; unichar_string() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00524">ratngs.h:524</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a00668_html_a93ab94b6fa6d5c0469fb52d66c62968c"><div class="ttname"><a href="a00668.html#a93ab94b6fa6d5c0469fb52d66c62968c">WERD_CHOICE::unichar_lengths</a></div><div class="ttdeci">const STRING &amp; unichar_lengths() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00531">ratngs.h:531</a></div></div>
-<div class="ttc" id="a00669_html_a3d42ac7ec121263e757c9b7160dfd50d"><div class="ttname"><a href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">WERD_RES::best_choice</a></div><div class="ttdeci">WERD_CHOICE * best_choice</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00219">pageres.h:219</a></div></div>
-<div class="ttc" id="a00669_html_ae24eb58be06cf275aee411d947fd31ef"><div class="ttname"><a href="a00669.html#ae24eb58be06cf275aee411d947fd31ef">WERD_RES::reject_map</a></div><div class="ttdeci">REJMAP reject_map</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00271">pageres.h:271</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="acda8fceb6df94a957f3a2380b944a09e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void reject_poor_matches </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00669.html">WERD_RES</a> *&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00725_source.html#l00207">207</a> of file <a class="el" href="a00725_source.html">reject.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                         {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keywordtype">float</span> threshold = <a class="code" href="a00725.html#a7769557523c23cea384f550ae030e5ba">compute_reject_threshold</a>(word-&gt;<a class="code" href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">best_choice</a>);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; word-&gt;<a class="code" href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">best_choice</a>-&gt;<a class="code" href="a00668.html#a7be59abe97b052dd3aaa324aea8c4a6c">length</a>(); ++i) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (word-&gt;<a class="code" href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">best_choice</a>-&gt;<a class="code" href="a00668.html#a6b917b2e6157f7956ff53ca230425ed3">unichar_id</a>(i) == <a class="code" href="a00889.html#a08fdf52fb8650b2a0752cfd7bd236871af05dfe36988b7a26764e26e820873a71">UNICHAR_SPACE</a>)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      word-&gt;<a class="code" href="a00669.html#ae24eb58be06cf275aee411d947fd31ef">reject_map</a>[i].setrej_tess_failure();</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (word-&gt;<a class="code" href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">best_choice</a>-&gt;<a class="code" href="a00668.html#a1b25ef2b44d21a7204483a7ca804f293">certainty</a>(i) &lt; threshold)</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      word-&gt;<a class="code" href="a00669.html#ae24eb58be06cf275aee411d947fd31ef">reject_map</a>[i].setrej_poor_match();</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
-<div class="ttc" id="a00725_html_a7769557523c23cea384f550ae030e5ba"><div class="ttname"><a href="a00725.html#a7769557523c23cea384f550ae030e5ba">compute_reject_threshold</a></div><div class="ttdeci">float compute_reject_threshold(WERD_CHOICE *word)</div><div class="ttdef"><b>Definition:</b> <a href="a00725_source.html#l00226">reject.cpp:226</a></div></div>
-<div class="ttc" id="a00668_html_a1b25ef2b44d21a7204483a7ca804f293"><div class="ttname"><a href="a00668.html#a1b25ef2b44d21a7204483a7ca804f293">WERD_CHOICE::certainty</a></div><div class="ttdeci">float certainty() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00327">ratngs.h:327</a></div></div>
-<div class="ttc" id="a00668_html_a6b917b2e6157f7956ff53ca230425ed3"><div class="ttname"><a href="a00668.html#a6b917b2e6157f7956ff53ca230425ed3">WERD_CHOICE::unichar_id</a></div><div class="ttdeci">const UNICHAR_ID unichar_id(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00312">ratngs.h:312</a></div></div>
-<div class="ttc" id="a00668_html_a7be59abe97b052dd3aaa324aea8c4a6c"><div class="ttname"><a href="a00668.html#a7be59abe97b052dd3aaa324aea8c4a6c">WERD_CHOICE::length</a></div><div class="ttdeci">int length() const </div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00300">ratngs.h:300</a></div></div>
-<div class="ttc" id="a00669_html_a3d42ac7ec121263e757c9b7160dfd50d"><div class="ttname"><a href="a00669.html#a3d42ac7ec121263e757c9b7160dfd50d">WERD_RES::best_choice</a></div><div class="ttdeci">WERD_CHOICE * best_choice</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00219">pageres.h:219</a></div></div>
-<div class="ttc" id="a00669_html_ae24eb58be06cf275aee411d947fd31ef"><div class="ttname"><a href="a00669.html#ae24eb58be06cf275aee411d947fd31ef">WERD_RES::reject_map</a></div><div class="ttdeci">REJMAP reject_map</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00271">pageres.h:271</a></div></div>
-<div class="ttc" id="a00889_html_a08fdf52fb8650b2a0752cfd7bd236871af05dfe36988b7a26764e26e820873a71"><div class="ttname"><a href="a00889.html#a08fdf52fb8650b2a0752cfd7bd236871af05dfe36988b7a26764e26e820873a71">UNICHAR_SPACE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00889_source.html#l00035">unicharset.h:35</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a6d609b0738a36642da8760d23bbbddae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> word_contains_non_1_digit </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>word</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>word_lengths</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="a00726_source.html#l00041">41</a> of file <a class="el" href="a00726_source.html">blamer.cpp</a>.</p>
 
 </div>
 </div>
@@ -359,8 +361,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00726.html">reject.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00726.html">blamer.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

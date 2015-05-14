@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/control.h File Reference</title>
+<title>Tesseract: ccmain/output.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,83 +105,110 @@ $(document).ready(function(){initNavTree('a00692.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">control.h File Reference</div>  </div>
+<div class="title">output.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00784_source.html">ocrblock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00811_source.html">ratngs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00821_source.html">statistc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00792_source.html">pageres.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00773_source.html">pageres.h</a>&quot;</code><br />
 </div>
 <p><a href="a00692_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:af9ff5a7d7a1b9eeea7ce4106bffa7eee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eee">ACCEPTABLE_WERD_TYPE</a> { <br />
-&#160;&#160;<a class="el" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeeaab0741a5a5ff9757ca343af255353ba0">AC_UNACCEPTABLE</a>, 
-<a class="el" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeeaf8e947b78fa9ddbd1172c0157a3516ff">AC_LOWER_CASE</a>, 
-<a class="el" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeead58aa8857ae2a3ec6a90b29a849700d7">AC_UPPER_CASE</a>, 
-<a class="el" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea71786bea8ae4bacc2670610dde24e707">AC_INITIAL_CAP</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea7bae128b501c1b34213e7ce6b17f7988">AC_LC_ABBREV</a>, 
-<a class="el" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea6d37e3775faa628c72b7953f89caeb22">AC_UC_ABBREV</a>
-<br />
- }</td></tr>
-<tr class="separator:af9ff5a7d7a1b9eeea7ce4106bffa7eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a74d88ed281bbae562fcb4f4a0eb22e54"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00692.html#a74d88ed281bbae562fcb4f4a0eb22e54">determine_newline_type</a> (<a class="el" href="a00649.html">WERD</a> *word, <a class="el" href="a00280.html">BLOCK</a> *block, <a class="el" href="a00649.html">WERD</a> *next_word, <a class="el" href="a00280.html">BLOCK</a> *next_block)</td></tr>
+<tr class="separator:a74d88ed281bbae562fcb4f4a0eb22e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Module-independent matcher controller. </p>
-
-<p>Definition in file <a class="el" href="a00692_source.html">control.h</a>.</p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="af9ff5a7d7a1b9eeea7ce4106bffa7eee"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a74d88ed281bbae562fcb4f4a0eb22e54"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eee">ACCEPTABLE_WERD_TYPE</a></td>
+          <td class="memname">char determine_newline_type </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00649.html">WERD</a> *&#160;</td>
+          <td class="paramname"><em>word</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00280.html">BLOCK</a> *&#160;</td>
+          <td class="paramname"><em>block</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00649.html">WERD</a> *&#160;</td>
+          <td class="paramname"><em>next_word</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00280.html">BLOCK</a> *&#160;</td>
+          <td class="paramname"><em>next_block</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="af9ff5a7d7a1b9eeea7ce4106bffa7eeeaab0741a5a5ff9757ca343af255353ba0"></a>AC_UNACCEPTABLE&#160;</td><td class="fielddoc">
-<p>Unacceptable word. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af9ff5a7d7a1b9eeea7ce4106bffa7eeeaf8e947b78fa9ddbd1172c0157a3516ff"></a>AC_LOWER_CASE&#160;</td><td class="fielddoc">
-<p>ALL lower case. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af9ff5a7d7a1b9eeea7ce4106bffa7eeead58aa8857ae2a3ec6a90b29a849700d7"></a>AC_UPPER_CASE&#160;</td><td class="fielddoc">
-<p>ALL upper case. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af9ff5a7d7a1b9eeea7ce4106bffa7eeea71786bea8ae4bacc2670610dde24e707"></a>AC_INITIAL_CAP&#160;</td><td class="fielddoc">
-<p>ALL but initial lc. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af9ff5a7d7a1b9eeea7ce4106bffa7eeea7bae128b501c1b34213e7ce6b17f7988"></a>AC_LC_ABBREV&#160;</td><td class="fielddoc">
-<p>a.b.c. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af9ff5a7d7a1b9eeea7ce4106bffa7eeea6d37e3775faa628c72b7953f89caeb22"></a>AC_UC_ABBREV&#160;</td><td class="fielddoc">
-<p>A.B.C. </p>
-</td></tr>
-</table>
+<p>test line ends </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">word</td><td>word to do </td></tr>
+    <tr><td class="paramname">block</td><td>current block </td></tr>
+    <tr><td class="paramname">next_word</td><td>next word </td></tr>
+    <tr><td class="paramname">next_block</td><td>block of next word </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="a00692_source.html#l00034">34</a> of file <a class="el" href="a00692_source.html">control.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeeaab0741a5a5ff9757ca343af255353ba0">AC_UNACCEPTABLE</a>,               </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeeaf8e947b78fa9ddbd1172c0157a3516ff">AC_LOWER_CASE</a>,                 </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeead58aa8857ae2a3ec6a90b29a849700d7">AC_UPPER_CASE</a>,                 </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea71786bea8ae4bacc2670610dde24e707">AC_INITIAL_CAP</a>,                </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea7bae128b501c1b34213e7ce6b17f7988">AC_LC_ABBREV</a>,                  </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea6d37e3775faa628c72b7953f89caeb22">AC_UC_ABBREV</a>                   </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="ttc" id="a00692_html_af9ff5a7d7a1b9eeea7ce4106bffa7eeeaab0741a5a5ff9757ca343af255353ba0"><div class="ttname"><a href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeeaab0741a5a5ff9757ca343af255353ba0">AC_UNACCEPTABLE</a></div><div class="ttdoc">Unacceptable word. </div><div class="ttdef"><b>Definition:</b> <a href="a00692_source.html#l00036">control.h:36</a></div></div>
-<div class="ttc" id="a00692_html_af9ff5a7d7a1b9eeea7ce4106bffa7eeea71786bea8ae4bacc2670610dde24e707"><div class="ttname"><a href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea71786bea8ae4bacc2670610dde24e707">AC_INITIAL_CAP</a></div><div class="ttdoc">ALL but initial lc. </div><div class="ttdef"><b>Definition:</b> <a href="a00692_source.html#l00039">control.h:39</a></div></div>
-<div class="ttc" id="a00692_html_af9ff5a7d7a1b9eeea7ce4106bffa7eeeaf8e947b78fa9ddbd1172c0157a3516ff"><div class="ttname"><a href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeeaf8e947b78fa9ddbd1172c0157a3516ff">AC_LOWER_CASE</a></div><div class="ttdoc">ALL lower case. </div><div class="ttdef"><b>Definition:</b> <a href="a00692_source.html#l00037">control.h:37</a></div></div>
-<div class="ttc" id="a00692_html_af9ff5a7d7a1b9eeea7ce4106bffa7eeea7bae128b501c1b34213e7ce6b17f7988"><div class="ttname"><a href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea7bae128b501c1b34213e7ce6b17f7988">AC_LC_ABBREV</a></div><div class="ttdoc">a.b.c. </div><div class="ttdef"><b>Definition:</b> <a href="a00692_source.html#l00040">control.h:40</a></div></div>
-<div class="ttc" id="a00692_html_af9ff5a7d7a1b9eeea7ce4106bffa7eeea6d37e3775faa628c72b7953f89caeb22"><div class="ttname"><a href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea6d37e3775faa628c72b7953f89caeb22">AC_UC_ABBREV</a></div><div class="ttdoc">A.B.C. </div><div class="ttdef"><b>Definition:</b> <a href="a00692_source.html#l00041">control.h:41</a></div></div>
-<div class="ttc" id="a00692_html_af9ff5a7d7a1b9eeea7ce4106bffa7eeead58aa8857ae2a3ec6a90b29a849700d7"><div class="ttname"><a href="a00692.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeead58aa8857ae2a3ec6a90b29a849700d7">AC_UPPER_CASE</a></div><div class="ttdoc">ALL upper case. </div><div class="ttdef"><b>Definition:</b> <a href="a00692_source.html#l00038">control.h:38</a></div></div>
+<p>Definition at line <a class="el" href="a00691_source.html#l00247">247</a> of file <a class="el" href="a00691_source.html">output.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                             {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> end_gap;                 <span class="comment">//to right edge</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> width;                   <span class="comment">//of next word</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <a class="code" href="a00591.html">TBOX</a> word_box;                  <span class="comment">//bounding</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <a class="code" href="a00591.html">TBOX</a> next_box;                  <span class="comment">//next word</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <a class="code" href="a00591.html">TBOX</a> block_box;                 <span class="comment">//block bounding</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordflow">if</span> (!word-&gt;<a class="code" href="a00649.html#a81edde8597a3d9fd8a664d703d332c41">flag</a> (<a class="code" href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce">W_EOL</a>))</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;                <span class="comment">//not end of line</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">if</span> (next_word == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || next_block == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || block != next_block)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00691.html#a124c113d0437142a4c8d8c5412c65690">CTRL_NEWLINE</a>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="keywordflow">if</span> (next_word-&gt;<a class="code" href="a00649.html#ab2979974cf23f5c66f4e77cc51f2e189">space</a> () &gt; 0)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00691.html#ab6892379dea0cd119bb14c2678b65c55">CTRL_HARDLINE</a>;        <span class="comment">//it is tabbed</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  word_box = word-&gt;<a class="code" href="a00649.html#a151bbfb39ecdef93ab1a14b0f9e4ac74">bounding_box</a> ();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  next_box = next_word-&gt;<a class="code" href="a00649.html#a151bbfb39ecdef93ab1a14b0f9e4ac74">bounding_box</a> ();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  block_box = block-&gt;<a class="code" href="a00504.html#a91950a96127b4a0bb9b237e1f5f889a4">bounding_box</a> ();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                                 <span class="comment">//gap to eol</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  end_gap = block_box.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () - word_box.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> ();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  end_gap -= (<a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>) block-&gt;<a class="code" href="a00280.html#a421d1cc1e230f8598de6ceacb6e43e51">space</a> ();</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  width = next_box.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () - next_box.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> ();</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="comment">//      tprintf(&quot;end_gap=%d-%d=%d, width=%d-%d=%d, nl=%d\n&quot;,</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="comment">//              block_box.right(),word_box.right(),end_gap,</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="comment">//              next_box.right(),next_box.left(),width,</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="comment">//              end_gap&gt;width ? CTRL_HARDLINE : CTRL_NEWLINE);</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordflow">return</span> end_gap &gt; width ? <a class="code" href="a00691.html#ab6892379dea0cd119bb14c2678b65c55">CTRL_HARDLINE</a> : <a class="code" href="a00691.html#a124c113d0437142a4c8d8c5412c65690">CTRL_NEWLINE</a>;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
+<div class="ttc" id="a00649_html_ab2979974cf23f5c66f4e77cc51f2e189"><div class="ttname"><a href="a00649.html#ab2979974cf23f5c66f4e77cc51f2e189">WERD::space</a></div><div class="ttdeci">uinT8 space()</div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00104">werd.h:104</a></div></div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00691_html_ab6892379dea0cd119bb14c2678b65c55"><div class="ttname"><a href="a00691.html#ab6892379dea0cd119bb14c2678b65c55">CTRL_HARDLINE</a></div><div class="ttdeci">#define CTRL_HARDLINE</div><div class="ttdef"><b>Definition:</b> <a href="a00691_source.html#l00048">output.cpp:48</a></div></div>
+<div class="ttc" id="a00649_html_a151bbfb39ecdef93ab1a14b0f9e4ac74"><div class="ttname"><a href="a00649.html#a151bbfb39ecdef93ab1a14b0f9e4ac74">WERD::bounding_box</a></div><div class="ttdeci">TBOX bounding_box()</div><div class="ttdef"><b>Definition:</b> <a href="a00807_source.html#l00163">werd.cpp:163</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00808_html_ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce"><div class="ttname"><a href="a00808.html#ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce">W_EOL</a></div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00036">werd.h:36</a></div></div>
+<div class="ttc" id="a00280_html_a421d1cc1e230f8598de6ceacb6e43e51"><div class="ttname"><a href="a00280.html#a421d1cc1e230f8598de6ceacb6e43e51">BLOCK::space</a></div><div class="ttdeci">inT16 space() const </div><div class="ttdoc">return spacing </div><div class="ttdef"><b>Definition:</b> <a href="a00765_source.html#l00102">ocrblock.h:102</a></div></div>
+<div class="ttc" id="a00504_html_a91950a96127b4a0bb9b237e1f5f889a4"><div class="ttname"><a href="a00504.html#a91950a96127b4a0bb9b237e1f5f889a4">PDBLK::bounding_box</a></div><div class="ttdeci">void bounding_box(ICOORD &amp;bottom_left, ICOORD &amp;top_right) const </div><div class="ttdoc">get box </div><div class="ttdef"><b>Definition:</b> <a href="a00777_source.html#l00067">pdblock.h:67</a></div></div>
+<div class="ttc" id="a00591_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00075">rect.h:75</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00691_html_a124c113d0437142a4c8d8c5412c65690"><div class="ttname"><a href="a00691.html#a124c113d0437142a4c8d8c5412c65690">CTRL_NEWLINE</a></div><div class="ttdeci">#define CTRL_NEWLINE</div><div class="ttdef"><b>Definition:</b> <a href="a00691_source.html#l00047">output.cpp:47</a></div></div>
+<div class="ttc" id="a00649_html_a81edde8597a3d9fd8a664d703d332c41"><div class="ttname"><a href="a00649.html#a81edde8597a3d9fd8a664d703d332c41">WERD::flag</a></div><div class="ttdeci">BOOL8 flag(WERD_FLAGS mask) const </div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00122">werd.h:122</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -190,8 +217,8 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00692.html">control.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00692.html">output.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

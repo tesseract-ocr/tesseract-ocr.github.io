@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::WordData Struct Reference</title>
+<title>Tesseract: ccmain/applybox.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,9 +70,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,240 +105,73 @@ $(document).ready(function(){initNavTree('a00671.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="a01960.html">List of all members</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::WordData Struct Reference</div>  </div>
+<div class="title">applybox.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a00737_source.html">tesseractclass.h</a>&gt;</code></p>
+<div class="textblock"><code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;allheaders.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00736_source.html">boxread.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01226_source.html">chopper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00773_source.html">pageres.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00866_source.html">unichar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00870_source.html">unicharset.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00718_source.html">tesseractclass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+</div>
+<p><a href="a00671_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a9b43d8f46166e7ecfc3febf93906b5f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a9b43d8f46166e7ecfc3febf93906b5f9">WordData</a> ()</td></tr>
-<tr class="separator:a9b43d8f46166e7ecfc3febf93906b5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a256df1af944dcca7dbf021c148f00276"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a256df1af944dcca7dbf021c148f00276">WordData</a> (const <a class="el" href="a00502.html">PAGE_RES_IT</a> &amp;page_res_it)</td></tr>
-<tr class="separator:a256df1af944dcca7dbf021c148f00276"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09cdfbee720fd893f3afc6814c650d9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a09cdfbee720fd893f3afc6814c650d9a">WordData</a> (<a class="el" href="a00283.html">BLOCK</a> *block_in, <a class="el" href="a00542.html">ROW</a> *row_in, <a class="el" href="a00669.html">WERD_RES</a> *word_res)</td></tr>
-<tr class="separator:a09cdfbee720fd893f3afc6814c650d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ab189fc52942daf7523d8a38c4f89dc03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00669.html">WERD_RES</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#ab189fc52942daf7523d8a38c4f89dc03">word</a></td></tr>
-<tr class="separator:ab189fc52942daf7523d8a38c4f89dc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09761e92902bb23f628aad4f1921e185"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00542.html">ROW</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a09761e92902bb23f628aad4f1921e185">row</a></td></tr>
-<tr class="separator:a09761e92902bb23f628aad4f1921e185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab19dcdca65fe4c60d68bfe94cbf3a241"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00283.html">BLOCK</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#ab19dcdca65fe4c60d68bfe94cbf3a241">block</a></td></tr>
-<tr class="separator:ab19dcdca65fe4c60d68bfe94cbf3a241"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57d68d6db8d0d8304c7c6fbc1e53e6ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00671.html">WordData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a57d68d6db8d0d8304c7c6fbc1e53e6ee">prev_word</a></td></tr>
-<tr class="separator:a57d68d6db8d0d8304c7c6fbc1e53e6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb1834fafca588a45c64bebcfad8e795"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00524.html">PointerVector</a>&lt; <a class="el" href="a00669.html">WERD_RES</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#abb1834fafca588a45c64bebcfad8e795">lang_words</a></td></tr>
-<tr class="separator:abb1834fafca588a45c64bebcfad8e795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a1ecfbb8dde381ffc9c672e569cb1a1d2"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a1ecfbb8dde381ffc9c672e569cb1a1d2">kMaxGroupSize</a> = 4</td></tr>
+<tr class="separator:a1ecfbb8dde381ffc9c672e569cb1a1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c746c8c99aa2b6f10f7c26838290da0"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a7c746c8c99aa2b6f10f7c26838290da0">kMaxXHeightDeviationFraction</a> = 0.125</td></tr>
+<tr class="separator:a7c746c8c99aa2b6f10f7c26838290da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="a00737_source.html#l00144">144</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a9b43d8f46166e7ecfc3febf93906b5f9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::WordData::WordData </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00737_source.html#l00145">145</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;: <a class="code" href="a00671.html#ab189fc52942daf7523d8a38c4f89dc03">word</a>(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), <a class="code" href="a00671.html#a09761e92902bb23f628aad4f1921e185">row</a>(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), <a class="code" href="a00671.html#ab19dcdca65fe4c60d68bfe94cbf3a241">block</a>(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), <a class="code" href="a00671.html#a57d68d6db8d0d8304c7c6fbc1e53e6ee">prev_word</a>(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {}</div>
-<div class="ttc" id="a00671_html_ab189fc52942daf7523d8a38c4f89dc03"><div class="ttname"><a href="a00671.html#ab189fc52942daf7523d8a38c4f89dc03">tesseract::WordData::word</a></div><div class="ttdeci">WERD_RES * word</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00152">tesseractclass.h:152</a></div></div>
-<div class="ttc" id="a00671_html_a57d68d6db8d0d8304c7c6fbc1e53e6ee"><div class="ttname"><a href="a00671.html#a57d68d6db8d0d8304c7c6fbc1e53e6ee">tesseract::WordData::prev_word</a></div><div class="ttdeci">WordData * prev_word</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00155">tesseractclass.h:155</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00671_html_a09761e92902bb23f628aad4f1921e185"><div class="ttname"><a href="a00671.html#a09761e92902bb23f628aad4f1921e185">tesseract::WordData::row</a></div><div class="ttdeci">ROW * row</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00153">tesseractclass.h:153</a></div></div>
-<div class="ttc" id="a00671_html_ab19dcdca65fe4c60d68bfe94cbf3a241"><div class="ttname"><a href="a00671.html#ab19dcdca65fe4c60d68bfe94cbf3a241">tesseract::WordData::block</a></div><div class="ttdeci">BLOCK * block</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00154">tesseractclass.h:154</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a256df1af944dcca7dbf021c148f00276"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::WordData::WordData </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00502.html">PAGE_RES_IT</a> &amp;&#160;</td>
-          <td class="paramname"><em>page_res_it</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00737_source.html#l00146">146</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    : <a class="code" href="a00671.html#ab189fc52942daf7523d8a38c4f89dc03">word</a>(page_res_it.<a class="code" href="a00502.html#ab84b4850200ba8802791c6197c113fd0">word</a>()), <a class="code" href="a00671.html#a09761e92902bb23f628aad4f1921e185">row</a>(page_res_it.<a class="code" href="a00502.html#a312f58081e9410962396160eaf5f90e4">row</a>()-&gt;<a class="code" href="a00543.html#ad3a856f3e9217c47b8f2f54cd3908721">row</a>),</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <a class="code" href="a00671.html#ab19dcdca65fe4c60d68bfe94cbf3a241">block</a>(page_res_it.<a class="code" href="a00502.html#a8a349c5163802e1f127d5c88db044059">block</a>()-&gt;<a class="code" href="a00286.html#ae7c240d4878247ebdfe78433446751bf">block</a>), <a class="code" href="a00671.html#a57d68d6db8d0d8304c7c6fbc1e53e6ee">prev_word</a>(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {}</div>
-<div class="ttc" id="a00671_html_ab189fc52942daf7523d8a38c4f89dc03"><div class="ttname"><a href="a00671.html#ab189fc52942daf7523d8a38c4f89dc03">tesseract::WordData::word</a></div><div class="ttdeci">WERD_RES * word</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00152">tesseractclass.h:152</a></div></div>
-<div class="ttc" id="a00671_html_a57d68d6db8d0d8304c7c6fbc1e53e6ee"><div class="ttname"><a href="a00671.html#a57d68d6db8d0d8304c7c6fbc1e53e6ee">tesseract::WordData::prev_word</a></div><div class="ttdeci">WordData * prev_word</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00155">tesseractclass.h:155</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00543_html_ad3a856f3e9217c47b8f2f54cd3908721"><div class="ttname"><a href="a00543.html#ad3a856f3e9217c47b8f2f54cd3908721">ROW_RES::row</a></div><div class="ttdeci">ROW * row</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00127">pageres.h:127</a></div></div>
-<div class="ttc" id="a00502_html_a312f58081e9410962396160eaf5f90e4"><div class="ttname"><a href="a00502.html#a312f58081e9410962396160eaf5f90e4">PAGE_RES_IT::row</a></div><div class="ttdeci">ROW_RES * row() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00736">pageres.h:736</a></div></div>
-<div class="ttc" id="a00286_html_ae7c240d4878247ebdfe78433446751bf"><div class="ttname"><a href="a00286.html#ae7c240d4878247ebdfe78433446751bf">BLOCK_RES::block</a></div><div class="ttdeci">BLOCK * block</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00099">pageres.h:99</a></div></div>
-<div class="ttc" id="a00502_html_ab84b4850200ba8802791c6197c113fd0"><div class="ttname"><a href="a00502.html#ab84b4850200ba8802791c6197c113fd0">PAGE_RES_IT::word</a></div><div class="ttdeci">WERD_RES * word() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00733">pageres.h:733</a></div></div>
-<div class="ttc" id="a00671_html_a09761e92902bb23f628aad4f1921e185"><div class="ttname"><a href="a00671.html#a09761e92902bb23f628aad4f1921e185">tesseract::WordData::row</a></div><div class="ttdeci">ROW * row</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00153">tesseractclass.h:153</a></div></div>
-<div class="ttc" id="a00502_html_a8a349c5163802e1f127d5c88db044059"><div class="ttname"><a href="a00502.html#a8a349c5163802e1f127d5c88db044059">PAGE_RES_IT::block</a></div><div class="ttdeci">BLOCK_RES * block() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00739">pageres.h:739</a></div></div>
-<div class="ttc" id="a00671_html_ab19dcdca65fe4c60d68bfe94cbf3a241"><div class="ttname"><a href="a00671.html#ab19dcdca65fe4c60d68bfe94cbf3a241">tesseract::WordData::block</a></div><div class="ttdeci">BLOCK * block</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00154">tesseractclass.h:154</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a09cdfbee720fd893f3afc6814c650d9a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::WordData::WordData </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00283.html">BLOCK</a> *&#160;</td>
-          <td class="paramname"><em>block_in</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00542.html">ROW</a> *&#160;</td>
-          <td class="paramname"><em>row_in</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00669.html">WERD_RES</a> *&#160;</td>
-          <td class="paramname"><em>word_res</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00737_source.html#l00149">149</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    : <a class="code" href="a00671.html#ab189fc52942daf7523d8a38c4f89dc03">word</a>(word_res), <a class="code" href="a00671.html#a09761e92902bb23f628aad4f1921e185">row</a>(row_in), <a class="code" href="a00671.html#ab19dcdca65fe4c60d68bfe94cbf3a241">block</a>(block_in), <a class="code" href="a00671.html#a57d68d6db8d0d8304c7c6fbc1e53e6ee">prev_word</a>(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {}</div>
-<div class="ttc" id="a00671_html_ab189fc52942daf7523d8a38c4f89dc03"><div class="ttname"><a href="a00671.html#ab189fc52942daf7523d8a38c4f89dc03">tesseract::WordData::word</a></div><div class="ttdeci">WERD_RES * word</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00152">tesseractclass.h:152</a></div></div>
-<div class="ttc" id="a00671_html_a57d68d6db8d0d8304c7c6fbc1e53e6ee"><div class="ttname"><a href="a00671.html#a57d68d6db8d0d8304c7c6fbc1e53e6ee">tesseract::WordData::prev_word</a></div><div class="ttdeci">WordData * prev_word</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00155">tesseractclass.h:155</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00671_html_a09761e92902bb23f628aad4f1921e185"><div class="ttname"><a href="a00671.html#a09761e92902bb23f628aad4f1921e185">tesseract::WordData::row</a></div><div class="ttdeci">ROW * row</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00153">tesseractclass.h:153</a></div></div>
-<div class="ttc" id="a00671_html_ab19dcdca65fe4c60d68bfe94cbf3a241"><div class="ttname"><a href="a00671.html#ab19dcdca65fe4c60d68bfe94cbf3a241">tesseract::WordData::block</a></div><div class="ttdeci">BLOCK * block</div><div class="ttdef"><b>Definition:</b> <a href="a00737_source.html#l00154">tesseractclass.h:154</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ab19dcdca65fe4c60d68bfe94cbf3a241"></a>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a1ecfbb8dde381ffc9c672e569cb1a1d2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00283.html">BLOCK</a>* tesseract::WordData::block</td>
+          <td class="memname">const int kMaxGroupSize = 4</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00737_source.html#l00154">154</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
+<p>Definition at line <a class="el" href="a00671_source.html#l00040">40</a> of file <a class="el" href="a00671_source.html">applybox.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abb1834fafca588a45c64bebcfad8e795"></a>
+<a class="anchor" id="a7c746c8c99aa2b6f10f7c26838290da0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00524.html">PointerVector</a>&lt;<a class="el" href="a00669.html">WERD_RES</a>&gt; tesseract::WordData::lang_words</td>
+          <td class="memname">const double kMaxXHeightDeviationFraction = 0.125</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00737_source.html#l00156">156</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
+<p>Definition at line <a class="el" href="a00671_source.html#l00043">43</a> of file <a class="el" href="a00671_source.html">applybox.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a57d68d6db8d0d8304c7c6fbc1e53e6ee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00671.html">WordData</a>* tesseract::WordData::prev_word</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00737_source.html#l00155">155</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a09761e92902bb23f628aad4f1921e185"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00542.html">ROW</a>* tesseract::WordData::row</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00737_source.html#l00153">153</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab189fc52942daf7523d8a38c4f89dc03"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00669.html">WERD_RES</a>* tesseract::WordData::word</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00737_source.html#l00152">152</a> of file <a class="el" href="a00737_source.html">tesseractclass.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>ccmain/<a class="el" href="a00737_source.html">tesseractclass.h</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00671.html">WordData</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:57 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00671.html">applybox.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

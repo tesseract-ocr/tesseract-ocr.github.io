@@ -1,4 +1,4 @@
 var a00907 =
 [
-    [ "CLASS_CUTOFF_ARRAY", "a00907.html#a5f54131664d48951e46f5e4952350582", null ]
+    [ "IntFeatureMap", "a00433.html", "a00433" ]
 ];

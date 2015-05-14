@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/nwmain.h File Reference</title>
+<title>Tesseract: ccutil/tprintf.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,41 +105,84 @@ $(document).ready(function(){initNavTree('a00863.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">nwmain.h File Reference</div>  </div>
+<div class="title">tprintf.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00854_source.html">host.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00818_source.html">ccutil.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00859_source.html">strngs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00864_source.html">tprintf.h</a>&quot;</code><br />
 </div>
 <p><a href="a00863_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a599a97a750a6cce889edbdf248dd057c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a599a97a750a6cce889edbdf248dd057c">DECLARE_MAIN</a>(ARGC, ARGV)</td></tr>
-<tr class="separator:a599a97a750a6cce889edbdf248dd057c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad67f21790d2680ad7893162f7c00f98f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#ad67f21790d2680ad7893162f7c00f98f">DECLARE_MAIN_CONFIG</a>(ARGC, ARGV, NAME)</td></tr>
-<tr class="separator:ad67f21790d2680ad7893162f7c00f98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d7d179eb9320d0e113df1b82220c942"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a8d7d179eb9320d0e113df1b82220c942">REALLY_DECLARE_MAIN</a>(ARGC, ARGV)</td></tr>
-<tr class="separator:a8d7d179eb9320d0e113df1b82220c942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d90ea93d4b55e086cb490f7478e684"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a51d90ea93d4b55e086cb490f7478e684">MAX_MSG_LEN</a>&#160;&#160;&#160;65536</td></tr>
+<tr class="separator:a51d90ea93d4b55e086cb490f7478e684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77366c1bd428629dc898e188bfd182a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a></td></tr>
+<tr class="separator:a77366c1bd428629dc898e188bfd182a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2f73f7667eb32eaba83b4bd3a916c470"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#a2f73f7667eb32eaba83b4bd3a916c470">tprintf_internal</a> (const char *format,...)</td></tr>
+<tr class="separator:a2f73f7667eb32eaba83b4bd3a916c470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa8ce7e96765d92da2430b440edb0724a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00863.html#aa8ce7e96765d92da2430b440edb0724a">debug_file</a> = &quot;&quot;</td></tr>
+<tr class="separator:aa8ce7e96765d92da2430b440edb0724a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a599a97a750a6cce889edbdf248dd057c"></a>
+<a class="anchor" id="a77366c1bd428629dc898e188bfd182a3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DECLARE_MAIN</td>
+          <td class="memname">#define EXTERN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00863_source.html#l00034">34</a> of file <a class="el" href="a00863_source.html">tprintf.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51d90ea93d4b55e086cb490f7478e684"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_MSG_LEN&#160;&#160;&#160;65536</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00863_source.html#l00032">32</a> of file <a class="el" href="a00863_source.html">tprintf.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2f73f7667eb32eaba83b4bd3a916c470"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> void tprintf_internal </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ARGC, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">ARGV&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -148,78 +191,62 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="a00867.html#abaa7778083ba376d8c70a59631d4a6ab">STRING_VAR</a>(init_config_file,<span class="stringliteral">&quot;config&quot;</span>,<span class="stringliteral">&quot;Config file to read on startup&quot;</span>);<a class="code" href="a00863.html#a8d7d179eb9320d0e113df1b82220c942">\</a></div>
-<div class="line"><a class="code" href="a00863.html#a8d7d179eb9320d0e113df1b82220c942">REALLY_DECLARE_MAIN</a>(ARGC,ARGV)</div>
-<div class="ttc" id="a00867_html_abaa7778083ba376d8c70a59631d4a6ab"><div class="ttname"><a href="a00867.html#abaa7778083ba376d8c70a59631d4a6ab">STRING_VAR</a></div><div class="ttdeci">#define STRING_VAR(name, val, comment)</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00283">params.h:283</a></div></div>
-<div class="ttc" id="a00863_html_a8d7d179eb9320d0e113df1b82220c942"><div class="ttname"><a href="a00863.html#a8d7d179eb9320d0e113df1b82220c942">REALLY_DECLARE_MAIN</a></div><div class="ttdeci">#define REALLY_DECLARE_MAIN(ARGC, ARGV)</div><div class="ttdef"><b>Definition:</b> <a href="a00863_source.html#l00122">nwmain.h:122</a></div></div>
+
+<p>Definition at line <a class="el" href="a00863_source.html#l00039">39</a> of file <a class="el" href="a00863_source.html">tprintf.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a01267.html#a21e8ca8a9b5682a2649f8915227d4a8c">tesseract::tprintfMutex</a>.<a class="code" href="a00296.html#a9b593dd73dc2510c71739841e37ee17c">Lock</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  va_list args;                  <span class="comment">// variable args</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">static</span> FILE *debugfp = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;   <span class="comment">// debug file</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                 <span class="comment">// debug window</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> offset = 0;              <span class="comment">// into message</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">char</span> msg[<a class="code" href="a00863.html#a51d90ea93d4b55e086cb490f7478e684">MAX_MSG_LEN</a> + 1];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  va_start(args, format);  <span class="comment">// variable list</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Format into msg</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">  #ifdef _WIN32</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  offset += _vsnprintf(msg + offset, <a class="code" href="a00863.html#a51d90ea93d4b55e086cb490f7478e684">MAX_MSG_LEN</a> - offset, format, args);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">if</span> (strcmp(<a class="code" href="a00863.html#aa8ce7e96765d92da2430b440edb0724a">debug_file</a>.string(), <span class="stringliteral">&quot;/dev/null&quot;</span>) == 0)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="a00863.html#aa8ce7e96765d92da2430b440edb0724a">debug_file</a>.set_value(<span class="stringliteral">&quot;nul&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">  #else</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  offset += vsnprintf(msg + offset, <a class="code" href="a00863.html#a51d90ea93d4b55e086cb490f7478e684">MAX_MSG_LEN</a> - offset, format, args);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">  #endif</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  va_end(args);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (debugfp == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; strlen(<a class="code" href="a00863.html#aa8ce7e96765d92da2430b440edb0724a">debug_file</a>.string()) &gt; 0) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    debugfp = fopen(<a class="code" href="a00863.html#aa8ce7e96765d92da2430b440edb0724a">debug_file</a>.string(), <span class="stringliteral">&quot;wb&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (debugfp != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; strlen(<a class="code" href="a00863.html#aa8ce7e96765d92da2430b440edb0724a">debug_file</a>.string()) == 0) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    fclose(debugfp);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    debugfp = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span> (debugfp != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    fprintf(debugfp, <span class="stringliteral">&quot;%s&quot;</span>, msg);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;%s&quot;</span>, msg);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="a01267.html#a21e8ca8a9b5682a2649f8915227d4a8c">tesseract::tprintfMutex</a>.<a class="code" href="a00296.html#a0cc750edb4d5b9baca124ebee032c09b">Unlock</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="ttc" id="a00863_html_a51d90ea93d4b55e086cb490f7478e684"><div class="ttname"><a href="a00863.html#a51d90ea93d4b55e086cb490f7478e684">MAX_MSG_LEN</a></div><div class="ttdeci">#define MAX_MSG_LEN</div><div class="ttdef"><b>Definition:</b> <a href="a00863_source.html#l00032">tprintf.cpp:32</a></div></div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00863_html_aa8ce7e96765d92da2430b440edb0724a"><div class="ttname"><a href="a00863.html#aa8ce7e96765d92da2430b440edb0724a">debug_file</a></div><div class="ttdeci">DLLSYM char * debug_file</div><div class="ttdef"><b>Definition:</b> <a href="a00863_source.html#l00036">tprintf.cpp:36</a></div></div>
+<div class="ttc" id="a00296_html_a9b593dd73dc2510c71739841e37ee17c"><div class="ttname"><a href="a00296.html#a9b593dd73dc2510c71739841e37ee17c">tesseract::CCUtilMutex::Lock</a></div><div class="ttdeci">void Lock()</div><div class="ttdef"><b>Definition:</b> <a href="a00817_source.html#l00035">ccutil.cpp:35</a></div></div>
+<div class="ttc" id="a00296_html_a0cc750edb4d5b9baca124ebee032c09b"><div class="ttname"><a href="a00296.html#a0cc750edb4d5b9baca124ebee032c09b">tesseract::CCUtilMutex::Unlock</a></div><div class="ttdeci">void Unlock()</div><div class="ttdef"><b>Definition:</b> <a href="a00817_source.html#l00043">ccutil.cpp:43</a></div></div>
+<div class="ttc" id="a01267_html_a21e8ca8a9b5682a2649f8915227d4a8c"><div class="ttname"><a href="a01267.html#a21e8ca8a9b5682a2649f8915227d4a8c">tesseract::tprintfMutex</a></div><div class="ttdeci">CCUtilMutex tprintfMutex</div><div class="ttdef"><b>Definition:</b> <a href="a00817_source.html#l00051">ccutil.cpp:51</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="a00863_source.html#l00026">26</a> of file <a class="el" href="a00863_source.html">nwmain.h</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="ad67f21790d2680ad7893162f7c00f98f"></a>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="aa8ce7e96765d92da2430b440edb0724a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DECLARE_MAIN_CONFIG</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ARGC, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ARGV, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">NAME&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname"><a class="el" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> char* debug_file = &quot;&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="a00867.html#abaa7778083ba376d8c70a59631d4a6ab">STRING_VAR</a>(init_config_file,NAME,<span class="stringliteral">&quot;Config file to read on startup&quot;</span>);<a class="code" href="a00863.html#a8d7d179eb9320d0e113df1b82220c942">\</a></div>
-<div class="line"><a class="code" href="a00863.html#a8d7d179eb9320d0e113df1b82220c942">REALLY_DECLARE_MAIN</a>(ARGC,ARGV)</div>
-<div class="ttc" id="a00867_html_abaa7778083ba376d8c70a59631d4a6ab"><div class="ttname"><a href="a00867.html#abaa7778083ba376d8c70a59631d4a6ab">STRING_VAR</a></div><div class="ttdeci">#define STRING_VAR(name, val, comment)</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00283">params.h:283</a></div></div>
-<div class="ttc" id="a00863_html_a8d7d179eb9320d0e113df1b82220c942"><div class="ttname"><a href="a00863.html#a8d7d179eb9320d0e113df1b82220c942">REALLY_DECLARE_MAIN</a></div><div class="ttdeci">#define REALLY_DECLARE_MAIN(ARGC, ARGV)</div><div class="ttdef"><b>Definition:</b> <a href="a00863_source.html#l00122">nwmain.h:122</a></div></div>
-</div><!-- fragment -->
-<p>Definition at line <a class="el" href="a00863_source.html#l00030">30</a> of file <a class="el" href="a00863_source.html">nwmain.h</a>.</p>
+<p>"File to send tprintf output to" </p>
 
-</div>
-</div>
-<a class="anchor" id="a8d7d179eb9320d0e113df1b82220c942"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define REALLY_DECLARE_MAIN</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ARGC, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ARGV&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00863_source.html#l00122">122</a> of file <a class="el" href="a00863_source.html">nwmain.h</a>.</p>
+<p>Definition at line <a class="el" href="a00863_source.html#l00036">36</a> of file <a class="el" href="a00863_source.html">tprintf.cpp</a>.</p>
 
 </div>
 </div>
@@ -228,8 +255,8 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00863.html">nwmain.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00863.html">tprintf.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:09 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

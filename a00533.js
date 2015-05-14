@@ -1,9 +1,10 @@
 var a00533 =
 [
-    [ "QRSequenceGenerator", "a00533.html#a5a059ef6ea8b396ad0569e7e948609f8", null ],
-    [ "GetBinaryReversedInteger", "a00533.html#a76df4c96183f70454be79371ad16ba62", null ],
-    [ "GetVal", "a00533.html#a28c125707aded762182e647e0ec91900", null ],
-    [ "N_", "a00533.html#a7c5369f6274a766bd8fa27c73def6821", null ],
-    [ "next_num_", "a00533.html#ab764a4da80a6383e730def95256987e7", null ],
-    [ "num_bits_", "a00533.html#abc925af9d97d630cd000a20c719c8c60", null ]
+    [ "Clear", "a00533.html#a2c13d9e0b848687d31343e91e7084814", null ],
+    [ "ClearFeatureEvidence", "a00533.html#a471d50a958b4db76b029fb80cfe518df", null ],
+    [ "NormalizeSums", "a00533.html#a464a2acbcf47898c7028173204793749", null ],
+    [ "UpdateSumOfProtoEvidences", "a00533.html#a79dd917414b5c32c9c181fce578fd919", null ],
+    [ "feature_evidence_", "a00533.html#a84bd5533dcf7e98c637ccb86bbe826a3", null ],
+    [ "proto_evidence_", "a00533.html#a9b3d9a4f9c214b55d313d9241d3ee71a", null ],
+    [ "sum_feature_evidence_", "a00533.html#ab308dd0dfb19adb21841cd771470de26", null ]
 ];

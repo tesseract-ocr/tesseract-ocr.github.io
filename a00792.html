@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/pageres.h File Reference</title>
+<title>Tesseract: ccstruct/ratngs.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,110 +107,375 @@ $(document).ready(function(){initNavTree('a00792.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">pageres.h File Reference</div>  </div>
+<div class="title">ratngs.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00746_source.html">blamer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00751_source.html">blobs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00757_source.html">boxword.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00842_source.html">elst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00849_source.html">genericvector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00782_source.html">normalis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00784_source.html">ocrblock.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00788_source.html">ocrrow.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00794_source.html">params_training_featdef.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00811_source.html">ratngs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00815_source.html">rejctmap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00817_source.html">seam.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00827_source.html">werd.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00820_source.html">clst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00823_source.html">elst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00759_source.html">matrix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00866_source.html">unichar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00870_source.html">unicharset.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00808_source.html">werd.h</a>&quot;</code><br />
 </div>
 <p><a href="a00792_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00501.html">PAGE_RES</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00276.html">BLOB_CHOICE</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00286.html">BLOCK_RES</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00543.html">ROW_RES</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00669.html">WERD_RES</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00502.html">PAGE_RES_IT</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00650.html">WERD_CHOICE</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a78a6d74d56415802d31e350314b23e65"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00406.html">GenericVector</a><br class="typebreak" />
+&lt; BLOB_CHOICE_LIST * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00792.html#a78a6d74d56415802d31e350314b23e65">BLOB_CHOICE_LIST_VECTOR</a></td></tr>
+<tr class="separator:a78a6d74d56415802d31e350314b23e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:affc9a96d31e23e645355e534f11c40e9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00792.html#affc9a96d31e23e645355e534f11c40e9">CRUNCH_MODE</a> { <a class="el" href="a00792.html#affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9">CR_NONE</a>, 
-<a class="el" href="a00792.html#affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003">CR_KEEP_SPACE</a>, 
-<a class="el" href="a00792.html#affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387">CR_LOOSE_SPACE</a>, 
-<a class="el" href="a00792.html#affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4">CR_DELETE</a>
+<tr class="memitem:ac7c62d4383ee54bc9c16ef51a0ec3207"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207">BlobChoiceClassifier</a> { <br />
+&#160;&#160;<a class="el" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207af99f6ba7d0068fe55ec1d462144c2417">BCC_STATIC_CLASSIFIER</a>, 
+<a class="el" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a08697f2ff3b04a4ce9f4b869660e9f33">BCC_ADAPTED_CLASSIFIER</a>, 
+<a class="el" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a807c445ba9b972d41a358a0a695076a1">BCC_SPECKLE_CLASSIFIER</a>, 
+<a class="el" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a91ff206d2a86f2a3e9682ae4ba5bdd21">BCC_AMBIG</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a5d1ababd7ec62c799477a1ff0c33723f">BCC_FAKE</a>
+<br />
  }</td></tr>
-<tr class="separator:affc9a96d31e23e645355e534f11c40e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ac7c62d4383ee54bc9c16ef51a0ec3207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e2c75cefe9e5b78e8ce41aa5fa25bc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bc">PermuterType</a> { <br />
+&#160;&#160;<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcafbce35860451a2bdc0a266cd83a4397f">NO_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaa416e1922ec40e584a929afc70a90fe6">PUNC_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca12d29cc139fe00da7420978c101d2889">TOP_CHOICE_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcab997c3c17318b4549ee9255422c25f16">LOWER_CASE_PERM</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcad09d7ce85c0f3d35179e887e54f15b62">UPPER_CASE_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca75b442d44a0439fa11444512c47576e4">NGRAM_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca809574e2067a5304fbd2279d869e9b24">NUMBER_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca4004377f07488741fde22cbc8d2ae729">USER_PATTERN_PERM</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca40f46ca413dfd53f7d7938c9fc305d04">DOC_DAWG_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca5e293e54fa687876197992131e779d54">USER_DAWG_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca4fd9d3b025ecc5ea8f2248fea29543e4">FREQ_DAWG_PERM</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaea73d015098d9432d1be3c569db95bb5">COMPOUND_PERM</a>, 
+<a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcae57ff54d1c91de8a7f32b8a5261e4d75">NUM_PERMUTER_TYPES</a>
+<br />
+ }</td></tr>
+<tr class="separator:a18e2c75cefe9e5b78e8ce41aa5fa25bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496c25ad3b69eb36c48ae9cbf15f2fe2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a496c25ad3b69eb36c48ae9cbf15f2fe2">tesseract::ScriptPos</a> { <a class="el" href="a01267.html#a496c25ad3b69eb36c48ae9cbf15f2fe2a4aa5a5c8505a529a803f4a837d54c526">tesseract::SP_NORMAL</a>, 
+<a class="el" href="a01267.html#a496c25ad3b69eb36c48ae9cbf15f2fe2a0018c0645e510228c6701ff42d36bd01">tesseract::SP_SUBSCRIPT</a>, 
+<a class="el" href="a01267.html#a496c25ad3b69eb36c48ae9cbf15f2fe2a6160fc6d2a9bba3b56e3f673f84b24b8">tesseract::SP_SUPERSCRIPT</a>, 
+<a class="el" href="a01267.html#a496c25ad3b69eb36c48ae9cbf15f2fe2a39a9b42f2bd03c3cb815dcf93b3d00d4">tesseract::SP_DROPCAP</a>
+ }</td></tr>
+<tr class="separator:a496c25ad3b69eb36c48ae9cbf15f2fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5e04440deecb14b35c5ba5ab85b8149d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00792.html#a5e04440deecb14b35c5ba5ab85b8149d">ELISTIZEH</a> (<a class="el" href="a00286.html">BLOCK_RES</a>) <a class="el" href="a00751.html#a10cd68a8dccd74ea2389f2cda56cdc88">CLISTIZEH</a>(<a class="el" href="a00286.html">BLOCK_RES</a>) class <a class="el" href="a00543.html">ROW_RES</a></td></tr>
-<tr class="separator:a5e04440deecb14b35c5ba5ab85b8149d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d10d7f2ebc33a80d4c2ec84996e121"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00276.html">BLOB_CHOICE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00792.html#ae7d10d7f2ebc33a80d4c2ec84996e121">FindMatchingChoice</a> (<a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> char_id, BLOB_CHOICE_LIST *bc_list)</td></tr>
+<tr class="separator:ae7d10d7f2ebc33a80d4c2ec84996e121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a75fa73a4d69a48bdf5918c1949c976"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a9a75fa73a4d69a48bdf5918c1949c976">tesseract::ScriptPosToString</a> (enum ScriptPos script_pos)</td></tr>
+<tr class="separator:a9a75fa73a4d69a48bdf5918c1949c976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98992670ff5a4da6695f318643d48ca4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00792.html#a98992670ff5a4da6695f318643d48ca4">EqualIgnoringCaseAndTerminalPunct</a> (const <a class="el" href="a00650.html">WERD_CHOICE</a> &amp;word1, const <a class="el" href="a00650.html">WERD_CHOICE</a> &amp;word2)</td></tr>
+<tr class="separator:a98992670ff5a4da6695f318643d48ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2de5b7d5a020bb9823091dbece4ea36e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00792.html#a2de5b7d5a020bb9823091dbece4ea36e">print_ratings_list</a> (const char *msg, BLOB_CHOICE_LIST *ratings, const <a class="el" href="a00643.html">UNICHARSET</a> &amp;current_unicharset)</td></tr>
+<tr class="separator:a2de5b7d5a020bb9823091dbece4ea36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="affc9a96d31e23e645355e534f11c40e9"></a>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a78a6d74d56415802d31e350314b23e65"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00792.html#affc9a96d31e23e645355e534f11c40e9">CRUNCH_MODE</a></td>
+          <td class="memname">typedef <a class="el" href="a00406.html">GenericVector</a>&lt;BLOB_CHOICE_LIST *&gt; <a class="el" href="a00792.html#a78a6d74d56415802d31e350314b23e65">BLOB_CHOICE_LIST_VECTOR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00792_source.html#l00612">612</a> of file <a class="el" href="a00792_source.html">ratngs.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ac7c62d4383ee54bc9c16ef51a0ec3207"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207">BlobChoiceClassifier</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9"></a>CR_NONE&#160;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ac7c62d4383ee54bc9c16ef51a0ec3207af99f6ba7d0068fe55ec1d462144c2417"></a>BCC_STATIC_CLASSIFIER&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003"></a>CR_KEEP_SPACE&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ac7c62d4383ee54bc9c16ef51a0ec3207a08697f2ff3b04a4ce9f4b869660e9f33"></a>BCC_ADAPTED_CLASSIFIER&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387"></a>CR_LOOSE_SPACE&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ac7c62d4383ee54bc9c16ef51a0ec3207a807c445ba9b972d41a358a0a695076a1"></a>BCC_SPECKLE_CLASSIFIER&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4"></a>CR_DELETE&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="ac7c62d4383ee54bc9c16ef51a0ec3207a91ff206d2a86f2a3e9682ae4ba5bdd21"></a>BCC_AMBIG&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ac7c62d4383ee54bc9c16ef51a0ec3207a5d1ababd7ec62c799477a1ff0c33723f"></a>BCC_FAKE&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="a00792_source.html#l00145">145</a> of file <a class="el" href="a00792_source.html">pageres.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="a00792.html#affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9">CR_NONE</a>,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="a00792.html#affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003">CR_KEEP_SPACE</a>,</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="a00792.html#affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387">CR_LOOSE_SPACE</a>,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="a00792.html#affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4">CR_DELETE</a></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
-<div class="ttc" id="a00792_html_affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9"><div class="ttname"><a href="a00792.html#affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9">CR_NONE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00147">pageres.h:147</a></div></div>
-<div class="ttc" id="a00792_html_affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4"><div class="ttname"><a href="a00792.html#affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4">CR_DELETE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00150">pageres.h:150</a></div></div>
-<div class="ttc" id="a00792_html_affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387"><div class="ttname"><a href="a00792.html#affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387">CR_LOOSE_SPACE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00149">pageres.h:149</a></div></div>
-<div class="ttc" id="a00792_html_affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003"><div class="ttname"><a href="a00792.html#affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003">CR_KEEP_SPACE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00148">pageres.h:148</a></div></div>
+<p>Definition at line <a class="el" href="a00792_source.html#l00039">39</a> of file <a class="el" href="a00792_source.html">ratngs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                          {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207af99f6ba7d0068fe55ec1d462144c2417">BCC_STATIC_CLASSIFIER</a>,   <span class="comment">// From the char_norm classifier.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a08697f2ff3b04a4ce9f4b869660e9f33">BCC_ADAPTED_CLASSIFIER</a>,  <span class="comment">// From the adaptive classifier.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a807c445ba9b972d41a358a0a695076a1">BCC_SPECKLE_CLASSIFIER</a>,  <span class="comment">// Backup for failed classification.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a91ff206d2a86f2a3e9682ae4ba5bdd21">BCC_AMBIG</a>,               <span class="comment">// Generated by ambiguity detection.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a5d1ababd7ec62c799477a1ff0c33723f">BCC_FAKE</a>,                <span class="comment">// From some other process.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="ttc" id="a00792_html_ac7c62d4383ee54bc9c16ef51a0ec3207a08697f2ff3b04a4ce9f4b869660e9f33"><div class="ttname"><a href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a08697f2ff3b04a4ce9f4b869660e9f33">BCC_ADAPTED_CLASSIFIER</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00041">ratngs.h:41</a></div></div>
+<div class="ttc" id="a00792_html_ac7c62d4383ee54bc9c16ef51a0ec3207a807c445ba9b972d41a358a0a695076a1"><div class="ttname"><a href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a807c445ba9b972d41a358a0a695076a1">BCC_SPECKLE_CLASSIFIER</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00042">ratngs.h:42</a></div></div>
+<div class="ttc" id="a00792_html_ac7c62d4383ee54bc9c16ef51a0ec3207a91ff206d2a86f2a3e9682ae4ba5bdd21"><div class="ttname"><a href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a91ff206d2a86f2a3e9682ae4ba5bdd21">BCC_AMBIG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00043">ratngs.h:43</a></div></div>
+<div class="ttc" id="a00792_html_ac7c62d4383ee54bc9c16ef51a0ec3207a5d1ababd7ec62c799477a1ff0c33723f"><div class="ttname"><a href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207a5d1ababd7ec62c799477a1ff0c33723f">BCC_FAKE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00044">ratngs.h:44</a></div></div>
+<div class="ttc" id="a00792_html_ac7c62d4383ee54bc9c16ef51a0ec3207af99f6ba7d0068fe55ec1d462144c2417"><div class="ttname"><a href="a00792.html#ac7c62d4383ee54bc9c16ef51a0ec3207af99f6ba7d0068fe55ec1d462144c2417">BCC_STATIC_CLASSIFIER</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00040">ratngs.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a5e04440deecb14b35c5ba5ab85b8149d"></a>
+<a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ELISTIZEH </td>
+          <td class="memname">enum <a class="el" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bc">PermuterType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bcafbce35860451a2bdc0a266cd83a4397f"></a>NO_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bcaa416e1922ec40e584a929afc70a90fe6"></a>PUNC_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bca12d29cc139fe00da7420978c101d2889"></a>TOP_CHOICE_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bcab997c3c17318b4549ee9255422c25f16"></a>LOWER_CASE_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bcad09d7ce85c0f3d35179e887e54f15b62"></a>UPPER_CASE_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bca75b442d44a0439fa11444512c47576e4"></a>NGRAM_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bca809574e2067a5304fbd2279d869e9b24"></a>NUMBER_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bca4004377f07488741fde22cbc8d2ae729"></a>USER_PATTERN_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1"></a>SYSTEM_DAWG_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bca40f46ca413dfd53f7d7938c9fc305d04"></a>DOC_DAWG_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bca5e293e54fa687876197992131e779d54"></a>USER_DAWG_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bca4fd9d3b025ecc5ea8f2248fea29543e4"></a>FREQ_DAWG_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bcaea73d015098d9432d1be3c569db95bb5"></a>COMPOUND_PERM&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a18e2c75cefe9e5b78e8ce41aa5fa25bcae57ff54d1c91de8a7f32b8a5261e4d75"></a>NUM_PERMUTER_TYPES&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00792_source.html#l00225">225</a> of file <a class="el" href="a00792_source.html">ratngs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                  {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcafbce35860451a2bdc0a266cd83a4397f">NO_PERM</a>,            <span class="comment">// 0</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaa416e1922ec40e584a929afc70a90fe6">PUNC_PERM</a>,          <span class="comment">// 1</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca12d29cc139fe00da7420978c101d2889">TOP_CHOICE_PERM</a>,    <span class="comment">// 2</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcab997c3c17318b4549ee9255422c25f16">LOWER_CASE_PERM</a>,    <span class="comment">// 3</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcad09d7ce85c0f3d35179e887e54f15b62">UPPER_CASE_PERM</a>,    <span class="comment">// 4</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca75b442d44a0439fa11444512c47576e4">NGRAM_PERM</a>,         <span class="comment">// 5</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca809574e2067a5304fbd2279d869e9b24">NUMBER_PERM</a>,        <span class="comment">// 6</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca4004377f07488741fde22cbc8d2ae729">USER_PATTERN_PERM</a>,  <span class="comment">// 7</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a>,   <span class="comment">// 8</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca40f46ca413dfd53f7d7938c9fc305d04">DOC_DAWG_PERM</a>,      <span class="comment">// 9</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca5e293e54fa687876197992131e779d54">USER_DAWG_PERM</a>,     <span class="comment">// 10</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca4fd9d3b025ecc5ea8f2248fea29543e4">FREQ_DAWG_PERM</a>,     <span class="comment">// 11</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaea73d015098d9432d1be3c569db95bb5">COMPOUND_PERM</a>,      <span class="comment">// 12</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <a class="code" href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcae57ff54d1c91de8a7f32b8a5261e4d75">NUM_PERMUTER_TYPES</a></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;};</div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bcaea73d015098d9432d1be3c569db95bb5"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaea73d015098d9432d1be3c569db95bb5">COMPOUND_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00238">ratngs.h:238</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca75b442d44a0439fa11444512c47576e4"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca75b442d44a0439fa11444512c47576e4">NGRAM_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00231">ratngs.h:231</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca809574e2067a5304fbd2279d869e9b24"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca809574e2067a5304fbd2279d869e9b24">NUMBER_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00232">ratngs.h:232</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bcaa416e1922ec40e584a929afc70a90fe6"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcaa416e1922ec40e584a929afc70a90fe6">PUNC_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00227">ratngs.h:227</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca12d29cc139fe00da7420978c101d2889"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca12d29cc139fe00da7420978c101d2889">TOP_CHOICE_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00228">ratngs.h:228</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca4fd9d3b025ecc5ea8f2248fea29543e4"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca4fd9d3b025ecc5ea8f2248fea29543e4">FREQ_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00237">ratngs.h:237</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bcae57ff54d1c91de8a7f32b8a5261e4d75"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcae57ff54d1c91de8a7f32b8a5261e4d75">NUM_PERMUTER_TYPES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00240">ratngs.h:240</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca40f46ca413dfd53f7d7938c9fc305d04"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca40f46ca413dfd53f7d7938c9fc305d04">DOC_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00235">ratngs.h:235</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca4004377f07488741fde22cbc8d2ae729"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca4004377f07488741fde22cbc8d2ae729">USER_PATTERN_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00233">ratngs.h:233</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bcad09d7ce85c0f3d35179e887e54f15b62"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcad09d7ce85c0f3d35179e887e54f15b62">UPPER_CASE_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00230">ratngs.h:230</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bcab997c3c17318b4549ee9255422c25f16"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcab997c3c17318b4549ee9255422c25f16">LOWER_CASE_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00229">ratngs.h:229</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bcafbce35860451a2bdc0a266cd83a4397f"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bcafbce35860451a2bdc0a266cd83a4397f">NO_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00226">ratngs.h:226</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca5e293e54fa687876197992131e779d54"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca5e293e54fa687876197992131e779d54">USER_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00236">ratngs.h:236</a></div></div>
+<div class="ttc" id="a00792_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1"><div class="ttname"><a href="a00792.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00234">ratngs.h:234</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a98992670ff5a4da6695f318643d48ca4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EqualIgnoringCaseAndTerminalPunct </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00286.html">BLOCK_RES</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="a00650.html">WERD_CHOICE</a> &amp;&#160;</td>
+          <td class="paramname"><em>word1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="a00650.html">WERD_CHOICE</a> &amp;&#160;</td>
+          <td class="paramname"><em>word2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="a00791_source.html#l00792">792</a> of file <a class="el" href="a00791_source.html">ratngs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00643.html">UNICHARSET</a> *uchset = word1.<a class="code" href="a00650.html#a5431f457a3617528f3f1aa6ddc7f34bc">unicharset</a>();</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  <span class="keywordflow">if</span> (word2.<a class="code" href="a00650.html#a5431f457a3617528f3f1aa6ddc7f34bc">unicharset</a>() != uchset) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;  <span class="keywordtype">int</span> w1start, w1end;</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  word1.<a class="code" href="a00650.html#a34205ac439b74d2b65e23a885852be3f">punct_stripped</a>(&amp;w1start, &amp;w1end);</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;  <span class="keywordtype">int</span> w2start, w2end;</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;  word2.<a class="code" href="a00650.html#a34205ac439b74d2b65e23a885852be3f">punct_stripped</a>(&amp;w2start, &amp;w2end);</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;  <span class="keywordflow">if</span> (w1end - w1start != w2end - w2start) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; w1end - w1start; i++) {</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <span class="keywordflow">if</span> (uchset-&gt;<a class="code" href="a00643.html#a00b50ec1de787807c383b204df642b44">to_lower</a>(word1.<a class="code" href="a00650.html#a6b917b2e6157f7956ff53ca230425ed3">unichar_id</a>(w1start + i)) !=</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        uchset-&gt;<a class="code" href="a00643.html#a00b50ec1de787807c383b204df642b44">to_lower</a>(word2.<a class="code" href="a00650.html#a6b917b2e6157f7956ff53ca230425ed3">unichar_id</a>(w2start + i))) {</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    }</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;  }</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;}</div>
+<div class="ttc" id="a00650_html_a5431f457a3617528f3f1aa6ddc7f34bc"><div class="ttname"><a href="a00650.html#a5431f457a3617528f3f1aa6ddc7f34bc">WERD_CHOICE::unicharset</a></div><div class="ttdeci">const UNICHARSET * unicharset() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00282">ratngs.h:282</a></div></div>
+<div class="ttc" id="a00643_html"><div class="ttname"><a href="a00643.html">UNICHARSET</a></div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00139">unicharset.h:139</a></div></div>
+<div class="ttc" id="a00650_html_a6b917b2e6157f7956ff53ca230425ed3"><div class="ttname"><a href="a00650.html#a6b917b2e6157f7956ff53ca230425ed3">WERD_CHOICE::unichar_id</a></div><div class="ttdeci">const UNICHAR_ID unichar_id(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00297">ratngs.h:297</a></div></div>
+<div class="ttc" id="a00650_html_a34205ac439b74d2b65e23a885852be3f"><div class="ttname"><a href="a00650.html#a34205ac439b74d2b65e23a885852be3f">WERD_CHOICE::punct_stripped</a></div><div class="ttdeci">void punct_stripped(int *start_core, int *end_core) const </div><div class="ttdef"><b>Definition:</b> <a href="a00791_source.html#l00362">ratngs.cpp:362</a></div></div>
+<div class="ttc" id="a00643_html_a00b50ec1de787807c383b204df642b44"><div class="ttname"><a href="a00643.html#a00b50ec1de787807c383b204df642b44">UNICHARSET::to_lower</a></div><div class="ttdeci">UNICHAR_ID to_lower(UNICHAR_ID unichar_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00662">unicharset.h:662</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae7d10d7f2ebc33a80d4c2ec84996e121"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00276.html">BLOB_CHOICE</a>* FindMatchingChoice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a>&#160;</td>
+          <td class="paramname"><em>char_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BLOB_CHOICE_LIST *&#160;</td>
+          <td class="paramname"><em>bc_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00791_source.html#l00161">161</a> of file <a class="el" href="a00791_source.html">ratngs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                                           {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="comment">// Find the corresponding best BLOB_CHOICE.</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  BLOB_CHOICE_IT choice_it(bc_list);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">for</span> (choice_it.mark_cycle_pt(); !choice_it.cycled_list();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;       choice_it.forward()) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="a00276.html">BLOB_CHOICE</a>* choice = choice_it.data();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">if</span> (choice-&gt;<a class="code" href="a00276.html#aaba6190b77c5f3dc21905fc4118afa94">unichar_id</a>() == char_id) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">return</span> choice;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="ttc" id="a00276_html"><div class="ttname"><a href="a00276.html">BLOB_CHOICE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00047">ratngs.h:47</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00276_html_aaba6190b77c5f3dc21905fc4118afa94"><div class="ttname"><a href="a00276.html#aaba6190b77c5f3dc21905fc4118afa94">BLOB_CHOICE::unichar_id</a></div><div class="ttdeci">UNICHAR_ID unichar_id() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00077">ratngs.h:77</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2de5b7d5a020bb9823091dbece4ea36e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_ratings_list </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BLOB_CHOICE_LIST *&#160;</td>
+          <td class="paramname"><em>ratings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00643.html">UNICHARSET</a> &amp;&#160;</td>
+          <td class="paramname"><em>current_unicharset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>print_ratings_list</p>
+<p>Send all the ratings out to the logfile.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>intro message </td></tr>
+    <tr><td class="paramname">ratings</td><td>list of ratings </td></tr>
+    <tr><td class="paramname">current_unicharset</td><td>unicharset that can be used for id-to-unichar conversion </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00791_source.html#l00820">820</a> of file <a class="el" href="a00791_source.html">ratngs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                                                              {</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;  <span class="keywordflow">if</span> (ratings-&gt;length() == 0) {</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;%s:&lt;none&gt;\n&quot;</span>, msg);</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;  }</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;  <span class="keywordflow">if</span> (*msg != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;%s\n&quot;</span>, msg);</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;  }</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;  BLOB_CHOICE_IT c_it;</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;  c_it.set_to_list(ratings);</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;  <span class="keywordflow">for</span> (c_it.mark_cycle_pt(); !c_it.cycled_list(); c_it.forward()) {</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    c_it.data()-&gt;print(&amp;current_unicharset);</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    <span class="keywordflow">if</span> (!c_it.at_last()) <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;  }</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;  fflush(stdout);</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;}</div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -218,8 +483,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00792.html">pageres.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00792.html">ratngs.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

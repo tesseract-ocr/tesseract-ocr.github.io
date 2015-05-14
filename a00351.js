@@ -1,5 +1,6 @@
 var a00351 =
 [
-    [ "CubeUtils", "a00351.html#a432565e7aa410467dff8d89d0073052a", null ],
-    [ "~CubeUtils", "a00351.html#a3c1af8e5f546426e1527fcdbb9c7e3c1", null ]
+    [ "~DawgPositionVector", "a00351.html#aaea033b85651c1e68a4947bf9275238d", null ],
+    [ "add_unique", "a00351.html#a2ee8fd1c42204db7513e0c040868ce7c", null ],
+    [ "clear", "a00351.html#a9a3da3d468cd8cc03f2a56ac9fe65ea0", null ]
 ];

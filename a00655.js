@@ -1,11 +1,13 @@
 var a00655 =
 [
-    [ "const_iterator", "a00338.html", "a00338" ],
-    [ "UNICHAR", "a00655.html#a7fb65b084f53bcf45ba1cefd1eb88398", null ],
-    [ "UNICHAR", "a00655.html#a3d21067938609802ec2284a1cfcea48f", null ],
-    [ "UNICHAR", "a00655.html#a6793ad5d9ed95380e92bbec2aabf9255", null ],
-    [ "first_uni", "a00655.html#a59ffb904d7e604da0fea3fad1c63ee64", null ],
-    [ "utf8", "a00655.html#a53272d41ca98377c2342ed091b1a17be", null ],
-    [ "utf8_len", "a00655.html#a7726199d64a4f8afa0aa5c831bbcf155", null ],
-    [ "utf8_str", "a00655.html#a06c2f8824d2f49385ca8cbcf5434e918", null ]
+    [ "WordListLangModel", "a00655.html#a555aa61eb20325586260257dce8605ed", null ],
+    [ "~WordListLangModel", "a00655.html#ac844e1a86d6899330c722dc6983f5cd8", null ],
+    [ "AddString", "a00655.html#a924a9ca1a4d5ad4ac51e62bf8f17e340", null ],
+    [ "AddString32", "a00655.html#a377a15d1f95c5766bc1af48180491d66", null ],
+    [ "GetEdges", "a00655.html#abe363ed3ef497bbbbf7a985d8f07be2f", null ],
+    [ "IsDigit", "a00655.html#a43bb8e1972be27eac8870df64720b77b", null ],
+    [ "IsLeadingPunc", "a00655.html#abc0adc44077a4e1ed691bcd8b478cfb6", null ],
+    [ "IsTrailingPunc", "a00655.html#a5afdc764c2aeca6646beb04a1a511bf5", null ],
+    [ "IsValidSequence", "a00655.html#a3466190b26c1ecf2c0ddaf5cc39fe203", null ],
+    [ "Root", "a00655.html#a773e0620380b5416098db0b86dce5ad8", null ]
 ];

@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00523.html','');});
+$(document).ready(function(){initNavTree('a00588.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,26 +106,39 @@ $(document).ready(function(){initNavTree('a00523.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::PixelHistogram Member List</div>  </div>
+<div class="title">tesseract::TableRecognizer Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00523.html">tesseract::PixelHistogram</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00588.html">tesseract::TableRecognizer</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00523.html#aaa214752dc7cbb3923fcece5dff758ed">Clear</a>()</td><td class="entry"><a class="el" href="a00523.html">tesseract::PixelHistogram</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00523.html#a7d423f56f2e8440301f8af11a952fade">ConstructHorizontalCountHist</a>(Pix *pix)</td><td class="entry"><a class="el" href="a00523.html">tesseract::PixelHistogram</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00523.html#ae6f0d2fd25a0a76b84e370aac7f7b58f">ConstructVerticalCountHist</a>(Pix *pix)</td><td class="entry"><a class="el" href="a00523.html">tesseract::PixelHistogram</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00523.html#ac984a3128e256cdc178cc33da1d81238">GetHistogramMaximum</a>(int *count) const </td><td class="entry"><a class="el" href="a00523.html">tesseract::PixelHistogram</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00523.html#abd202025de01aaf80fa2a852d0fcb38d">hist</a>() const </td><td class="entry"><a class="el" href="a00523.html">tesseract::PixelHistogram</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00523.html#a249999ec8e8d202613bbff2bbd73518b">length</a>() const </td><td class="entry"><a class="el" href="a00523.html">tesseract::PixelHistogram</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00523.html#a7aae88da4ca93d46a01a3593a3b6d6bc">PixelHistogram</a>()</td><td class="entry"><a class="el" href="a00523.html">tesseract::PixelHistogram</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00523.html#a760c8036bca85b190cf24909966bee21">~PixelHistogram</a>()</td><td class="entry"><a class="el" href="a00523.html">tesseract::PixelHistogram</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a1976dd404a086faf445085759cc3024c">FindLinesBoundingBox</a>(TBOX *bounding_box)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#a0e3b073b746ba18778b10413fe16f4e0">FindLinesBoundingBoxIteration</a>(TBOX *bounding_box)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a9d994f1b39135c0a95e558e8bc0489ec">HasSignificantLines</a>(const TBOX &amp;guess)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#aca159b4dcd53ac99591aff44ce50a015">Init</a>()</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a3fb9b12226218c00102c77c2a9e2ca6f">IsWeakTableRow</a>(StructuredTable *table, int row)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#acef775b055806466bf907b9008a9f705">line_grid_</a></td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a2d6b6326270fc127b50a497e4d0c6c7c">max_text_height_</a></td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#a4a0cb917deb38c9cd761390e2e89967b">min_height_</a></td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a99ef7bab6b09c69357a69f440235d83c">min_width_</a></td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#a6852b6aaf9df0c7085a644b7696ff881">NextHorizontalSplit</a>(int left, int right, int y, bool top_to_bottom)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a09c44b26f6ef2bf6308b669031cc00f1">RecognizeLinedTable</a>(const TBOX &amp;guess_box, StructuredTable *table)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#adc08877ea279ece9d88e2e69cd00b2b4">RecognizeTable</a>(const TBOX &amp;guess_box)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#ad40e89784fedeaa63f2b8e6088e9b270">RecognizeWhitespacedTable</a>(const TBOX &amp;guess_box, StructuredTable *table)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#a969a85b74ae52c0fc72da54e66ed93a6">set_line_grid</a>(ColPartitionGrid *lines)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a5c4fca3ea6f9452c7ec5a76f2e085a0c">set_max_text_height</a>(int height)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#ad24b027f3a4261cf7cb25f03646e58de">set_min_height</a>(int height)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a394e60c5a4a61f8572ae33d2fade3ee3">set_min_width</a>(int width)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#abdb2fec4ac7970b190ceaaf4bfb4368f">set_text_grid</a>(ColPartitionGrid *text)</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#af82ad8abb0e3f94edb554594b9e41b55">TableRecognizer</a>()</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00588.html#a1ec03b4d8e7b7cd1361d23be47d5d81a">text_grid_</a></td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00588.html#a5a661cb9168813a34fe23af441958bb2">~TableRecognizer</a>()</td><td class="entry"><a class="el" href="a00588.html">tesseract::TableRecognizer</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:29 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

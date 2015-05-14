@@ -1,23 +1,11 @@
 var a00547 =
 [
-    [ "SampleIterator", "a00547.html#a9789d39f648bb3942e69fb42402b173c", null ],
-    [ "~SampleIterator", "a00547.html#a6a7e5ec1f292ab6ecea1f3385496ec37", null ],
-    [ "AtEnd", "a00547.html#a4dde9bf911b04c848fbdc4cca8699b70", null ],
-    [ "Begin", "a00547.html#a90e5190efbff41c67519ba29fa59186f", null ],
-    [ "charset_map", "a00547.html#a1fdfa33c330477eb7c5eef8ca47fd40c", null ],
-    [ "Clear", "a00547.html#ab9b74fc9ac303c34474b69ee69f2d663", null ],
-    [ "CompactCharsetSize", "a00547.html#a95b17d95d0777709dee9606e57a6aad1", null ],
-    [ "GetCompactClassID", "a00547.html#a745b2bf5f8956bc1233e28f9b1c5b639", null ],
-    [ "GetSample", "a00547.html#a274fa0bca10b58d7efddebde0338a698", null ],
-    [ "GetSparseClassID", "a00547.html#a35e0355b17965fef669f2bd84ea624a7", null ],
-    [ "GlobalSampleIndex", "a00547.html#a3651237953d616f7d27f4ed46106707c", null ],
-    [ "Init", "a00547.html#a0cdb514895d01dff26b51a2e5bc1b0ea", null ],
-    [ "MapSampleFeatures", "a00547.html#a476d245234d73a6c9ef7c85b57148a27", null ],
-    [ "MutableSample", "a00547.html#a0941312fec55859dc29a1b32b0e298cd", null ],
-    [ "Next", "a00547.html#aea58e8234a0b6bab9061929622150bb1", null ],
-    [ "NormalizeSamples", "a00547.html#ac0a70c42261385f21d97c699ff181fad", null ],
-    [ "sample_set", "a00547.html#a11e0a8f5f60216b68c3fe6528d551295", null ],
-    [ "shape_table", "a00547.html#aeae6fe3f5607f0e0ff9f82151d096ced", null ],
-    [ "SparseCharsetSize", "a00547.html#ad575eda15498de5a5de614dbcfa4d0aa", null ],
-    [ "UniformSamples", "a00547.html#a82e48b99ecac34b9e0dbf8a96521bb4e", null ]
+    [ "ShapeRating", "a00547.html#aa4fdeaa6ecd92883a6657cfd4e477435", null ],
+    [ "ShapeRating", "a00547.html#a0a3e81db5638853ea9af1df54cd83e17", null ],
+    [ "broken", "a00547.html#aa0659dec5528a9d1b92b9188d9805c4d", null ],
+    [ "font", "a00547.html#a77578c64b592de4b8cfabcebc2fa2e58", null ],
+    [ "joined", "a00547.html#aad5139ffe6fca8f2ead7b2e0d37f7459", null ],
+    [ "rating", "a00547.html#aa15fe25d5c41ccf5ff1c198eb627b2ce", null ],
+    [ "raw", "a00547.html#a53f0b9442ef699d05f08641242b68980", null ],
+    [ "shape_id", "a00547.html#a988673a089e6c60dfe067c3626437ebd", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/unicharset.cpp File Reference</title>
+<title>Tesseract: classify/cutoffs.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,64 +105,34 @@ $(document).ready(function(){initNavTree('a00888.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">unicharset.cpp File Reference</div>  </div>
+<div class="title">cutoffs.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00889_source.html">unicharset.h</a>&quot;</code><br />
-<code>#include &lt;assert.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00874_source.html">serialis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00879_source.html">tesscallback.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00883_source.html">tprintf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00885_source.html">unichar.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01057_source.html">matchdefs.h</a>&quot;</code><br />
 </div>
 <p><a href="a00888_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00434.html">InMemoryFilePointer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00473.html">LocalFilePointer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:adc8d0ca6841f77218a8db3e9b8c61b75"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00888.html#adc8d0ca6841f77218a8db3e9b8c61b75">kMinXHeightFraction</a> = 0.25</td></tr>
-<tr class="separator:adc8d0ca6841f77218a8db3e9b8c61b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26f266710ee10c783d867b473b89490d"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00888.html#a26f266710ee10c783d867b473b89490d">kMinCapHeightFraction</a> = 0.05</td></tr>
-<tr class="separator:a26f266710ee10c783d867b473b89490d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a5f54131664d48951e46f5e4952350582"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00835.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00888.html#a5f54131664d48951e46f5e4952350582">CLASS_CUTOFF_ARRAY</a> [<a class="el" href="a01057.html#adcc52d7d059a8ca452172df64faa231c">MAX_NUM_CLASSES</a>]</td></tr>
+<tr class="separator:a5f54131664d48951e46f5e4952350582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a26f266710ee10c783d867b473b89490d"></a>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a5f54131664d48951e46f5e4952350582"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const double kMinCapHeightFraction = 0.05</td>
+          <td class="memname">typedef <a class="el" href="a00835.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a> CLASS_CUTOFF_ARRAY[<a class="el" href="a01057.html#adcc52d7d059a8ca452172df64faa231c">MAX_NUM_CLASSES</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<hr/>
+ <h2>Include Files and Type Defines </h2>
 
-<p>Definition at line <a class="el" href="a00888_source.html#l00054">54</a> of file <a class="el" href="a00888_source.html">unicharset.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adc8d0ca6841f77218a8db3e9b8c61b75"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double kMinXHeightFraction = 0.25</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00888_source.html#l00053">53</a> of file <a class="el" href="a00888_source.html">unicharset.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a00888_source.html#l00026">26</a> of file <a class="el" href="a00888_source.html">cutoffs.h</a>.</p>
 
 </div>
 </div>
@@ -171,8 +141,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00888.html">unicharset.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:34 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00888.html">cutoffs.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:09 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

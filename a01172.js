@@ -1,11 +1,10 @@
 var a01172 =
 [
-    [ "EXTERN", "a01172.html#a77366c1bd428629dc898e188bfd182a3", null ],
-    [ "PROJECTION_MARGIN", "a01172.html#a01dbc51856714fc0f1871d2eb3c03a5e", null ],
-    [ "find_underlined_blobs", "a01172.html#afc00f3a1057255657116acf952f3d7a4", null ],
-    [ "most_overlapping_row", "a01172.html#a0dd8a5ba42169e80f12ce943084cb307", null ],
-    [ "restore_underlined_blobs", "a01172.html#a2118358b0e0f62667f62a0aaf2fb2ae8", null ],
-    [ "vertical_cunderline_projection", "a01172.html#a8c1248a073d641cea7a9fec3e563dfc5", null ],
-    [ "textord_restore_underlines", "a01172.html#a3b7ff031211912735f61bd0dc97c6f2b", null ],
-    [ "textord_underline_offset", "a01172.html#a58d10b85902de6aee9f8b6befb411e32", null ]
+    [ "PROGRAM_FEATURE_TYPE", "a01172.html#a13f1cc39e4f40922426135364cb7c3c2", null ],
+    [ "DECLARE_STRING_PARAM_FLAG", "a01172.html#ae29834ed66efca59d89938ee1ddeb922", null ],
+    [ "main", "a01172.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
+    [ "main", "a01172.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
+    [ "WriteNormProtos", "a01172.html#a6c8c93ebadfa96fb7adeeb5ace122e9c", null ],
+    [ "WriteProtos", "a01172.html#a3b0603890697f92689a2c54d135ddaf4", null ],
+    [ "CNConfig", "a01172.html#a9243fe96ef4ae297e9fa0aab69416195", null ]
 ];

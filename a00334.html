@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::ColSegment Class Reference</title>
+<title>Tesseract: CrackPos Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,526 +106,80 @@ $(document).ready(function(){initNavTree('a00334.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01794.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="a01561.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::ColSegment Class Reference</div>  </div>
+<div class="title">CrackPos Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a01156_source.html">tablefind.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for tesseract::ColSegment:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00334.png" usemap="#tesseract::ColSegment_map" alt=""/>
-  <map id="tesseract::ColSegment_map" name="tesseract::ColSegment_map">
-<area href="a00379.html" alt="ELIST_LINK" shape="rect" coords="0,0,136,24"/>
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a01138_source.html">scanedg.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a874cf2f3d78f2feb57b0527b3edb9f82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a874cf2f3d78f2feb57b0527b3edb9f82">ColSegment</a> ()</td></tr>
-<tr class="separator:a874cf2f3d78f2feb57b0527b3edb9f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69ec7d6f06f5a6794817f000d778bfb3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a69ec7d6f06f5a6794817f000d778bfb3">~ColSegment</a> ()</td></tr>
-<tr class="separator:a69ec7d6f06f5a6794817f000d778bfb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56879c95501a7c25defc6628cdca872c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00609.html">TBOX</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a56879c95501a7c25defc6628cdca872c">bounding_box</a> () const </td></tr>
-<tr class="separator:a56879c95501a7c25defc6628cdca872c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58a1fd435c14ee22a42585aa6aff88cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a58a1fd435c14ee22a42585aa6aff88cf">set_top</a> (int y)</td></tr>
-<tr class="separator:a58a1fd435c14ee22a42585aa6aff88cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accc08475adcd0574efc1438e115bd291"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#accc08475adcd0574efc1438e115bd291">set_bottom</a> (int y)</td></tr>
-<tr class="separator:accc08475adcd0574efc1438e115bd291"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab52af684cafefa03589e24426efc1564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#ab52af684cafefa03589e24426efc1564">set_left</a> (int x)</td></tr>
-<tr class="separator:ab52af684cafefa03589e24426efc1564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a604f5e305fe0ed5286502d0c22bda6d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a604f5e305fe0ed5286502d0c22bda6d3">set_right</a> (int x)</td></tr>
-<tr class="separator:a604f5e305fe0ed5286502d0c22bda6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39031c0f0997a85c4bf8398b47dd0c60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a39031c0f0997a85c4bf8398b47dd0c60">set_bounding_box</a> (const <a class="el" href="a00609.html">TBOX</a> &amp;other)</td></tr>
-<tr class="separator:a39031c0f0997a85c4bf8398b47dd0c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabc56799b769fa63eaa2b517e7a1242f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#aabc56799b769fa63eaa2b517e7a1242f">get_num_table_cells</a> () const </td></tr>
-<tr class="separator:aabc56799b769fa63eaa2b517e7a1242f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54b273e51bc8df1c995c403fb05f6723"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a54b273e51bc8df1c995c403fb05f6723">set_num_table_cells</a> (int n)</td></tr>
-<tr class="separator:a54b273e51bc8df1c995c403fb05f6723"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02438fd9c0c20a07871386ad7d4c0e23"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a02438fd9c0c20a07871386ad7d4c0e23">get_num_text_cells</a> () const </td></tr>
-<tr class="separator:a02438fd9c0c20a07871386ad7d4c0e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a570528471500732df47c1c4027f3e0ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a570528471500732df47c1c4027f3e0ed">set_num_text_cells</a> (int n)</td></tr>
-<tr class="separator:a570528471500732df47c1c4027f3e0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad10da5c5a6144425167a0c438c0bd421"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01279.html#a25254b3df45454565d58a62480d3a6cb">ColSegType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#ad10da5c5a6144425167a0c438c0bd421">type</a> () const </td></tr>
-<tr class="separator:ad10da5c5a6144425167a0c438c0bd421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a789e1edd90789444e3b420291969b196"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a789e1edd90789444e3b420291969b196">set_type</a> ()</td></tr>
-<tr class="separator:a789e1edd90789444e3b420291969b196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac93fb3f8a7db9ad2364fc5850fd959e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#ac93fb3f8a7db9ad2364fc5850fd959e8">BoxColor</a> () const </td></tr>
-<tr class="separator:ac93fb3f8a7db9ad2364fc5850fd959e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d9a6fbd449a9201bdda5b9ffc5a5cb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a2d9a6fbd449a9201bdda5b9ffc5a5cb9">InsertBox</a> (const <a class="el" href="a00609.html">TBOX</a> &amp;other)</td></tr>
-<tr class="separator:a2d9a6fbd449a9201bdda5b9ffc5a5cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00379"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00379')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00379.html">ELIST_LINK</a></td></tr>
-<tr class="memitem:ab3cdce5789339d12de62e18fdfb52974 inherit pub_methods_a00379"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html#ab3cdce5789339d12de62e18fdfb52974">ELIST_LINK</a> ()</td></tr>
-<tr class="separator:ab3cdce5789339d12de62e18fdfb52974 inherit pub_methods_a00379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30be968896fac3d1c88d127213aa03f7 inherit pub_methods_a00379"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html#a30be968896fac3d1c88d127213aa03f7">ELIST_LINK</a> (const <a class="el" href="a00379.html">ELIST_LINK</a> &amp;)</td></tr>
-<tr class="separator:a30be968896fac3d1c88d127213aa03f7 inherit pub_methods_a00379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a949f5dfcc3c145a19f2d61ee3461701e inherit pub_methods_a00379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html#a949f5dfcc3c145a19f2d61ee3461701e">operator=</a> (const <a class="el" href="a00379.html">ELIST_LINK</a> &amp;)</td></tr>
-<tr class="separator:a949f5dfcc3c145a19f2d61ee3461701e inherit pub_methods_a00379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ad0f5bf625d55d94e09e5a5f4e920461e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00333.html">CRACKEDGE</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#ad0f5bf625d55d94e09e5a5f4e920461e">free_cracks</a></td></tr>
+<tr class="separator:ad0f5bf625d55d94e09e5a5f4e920461e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152fb63ed25f1545f1d10a1a80466bd4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a152fb63ed25f1545f1d10a1a80466bd4">x</a></td></tr>
+<tr class="separator:a152fb63ed25f1545f1d10a1a80466bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71d7e214daf3a1ce26ee03037a0f0caf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a71d7e214daf3a1ce26ee03037a0f0caf">y</a></td></tr>
+<tr class="separator:a71d7e214daf3a1ce26ee03037a0f0caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a01156_source.html#l00046">46</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a874cf2f3d78f2feb57b0527b3edb9f82"></a>
+<p>Definition at line <a class="el" href="a01138_source.html#l00030">30</a> of file <a class="el" href="a01138_source.html">scanedg.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ad0f5bf625d55d94e09e5a5f4e920461e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::ColSegment::ColSegment </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00333.html">CRACKEDGE</a>** CrackPos::free_cracks</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01155_source.html#l02149">2149</a> of file <a class="el" href="a01155_source.html">tablefind.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02150"></a><span class="lineno"> 2150</span>&#160;    : <a class="code" href="a00379.html#ab3cdce5789339d12de62e18fdfb52974">ELIST_LINK</a>(),</div>
-<div class="line"><a name="l02151"></a><span class="lineno"> 2151</span>&#160;      num_table_cells_(0),</div>
-<div class="line"><a name="l02152"></a><span class="lineno"> 2152</span>&#160;      num_text_cells_(0),</div>
-<div class="line"><a name="l02153"></a><span class="lineno"> 2153</span>&#160;      type_(<a class="code" href="a01279.html#a25254b3df45454565d58a62480d3a6cbaee1976dbb59fbd65d366f0424759c729">COL_UNKNOWN</a>) {</div>
-<div class="line"><a name="l02154"></a><span class="lineno"> 2154</span>&#160;}</div>
-<div class="ttc" id="a00379_html_ab3cdce5789339d12de62e18fdfb52974"><div class="ttname"><a href="a00379.html#ab3cdce5789339d12de62e18fdfb52974">ELIST_LINK::ELIST_LINK</a></div><div class="ttdeci">ELIST_LINK()</div><div class="ttdef"><b>Definition:</b> <a href="a00842_source.html#l00092">elst.h:92</a></div></div>
-<div class="ttc" id="a01279_html_a25254b3df45454565d58a62480d3a6cbaee1976dbb59fbd65d366f0424759c729"><div class="ttname"><a href="a01279.html#a25254b3df45454565d58a62480d3a6cbaee1976dbb59fbd65d366f0424759c729">tesseract::COL_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01156_source.html#l00031">tablefind.h:31</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a01138_source.html#l00031">31</a> of file <a class="el" href="a01138_source.html">scanedg.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a69ec7d6f06f5a6794817f000d778bfb3"></a>
+<a class="anchor" id="a152fb63ed25f1545f1d10a1a80466bd4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::ColSegment::~ColSegment </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">int CrackPos::x</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01155_source.html#l02155">2155</a> of file <a class="el" href="a01155_source.html">tablefind.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02155"></a><span class="lineno"> 2155</span>&#160;                        {</div>
-<div class="line"><a name="l02156"></a><span class="lineno"> 2156</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a56879c95501a7c25defc6628cdca872c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00609.html">TBOX</a>&amp; tesseract::ColSegment::bounding_box </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="a01138_source.html#l00032">32</a> of file <a class="el" href="a01138_source.html">scanedg.h</a>.</p>
 
-<p>Definition at line <a class="el" href="a01156_source.html#l00052">52</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                   {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> bounding_box_;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
-</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="ac93fb3f8a7db9ad2364fc5850fd959e8"></a>
+<a class="anchor" id="a71d7e214daf3a1ce26ee03037a0f0caf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a> tesseract::ColSegment::BoxColor </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="memname">int CrackPos::y</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01155_source.html#l02159">2159</a> of file <a class="el" href="a01155_source.html">tablefind.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02159"></a><span class="lineno"> 2159</span>&#160;                                            {</div>
-<div class="line"><a name="l02160"></a><span class="lineno"> 2160</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a> kBoxColors[<a class="code" href="a00684.html#a02cfd8369d5ad8c70a8b90c0f40d677fa1cfce41c30bf1aefe403aaa66d271da1">PT_COUNT</a>] = {</div>
-<div class="line"><a name="l02161"></a><span class="lineno"> 2161</span>&#160;    <a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a61dec9bc0aaf1d527a731b2a6ce055c8">ScrollView::YELLOW</a>,</div>
-<div class="line"><a name="l02162"></a><span class="lineno"> 2162</span>&#160;    <a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a66e5117e4930fdd9a43bdb674d57a719">ScrollView::BLUE</a>,</div>
-<div class="line"><a name="l02163"></a><span class="lineno"> 2163</span>&#160;    <a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8a61dec9bc0aaf1d527a731b2a6ce055c8">ScrollView::YELLOW</a>,</div>
-<div class="line"><a name="l02164"></a><span class="lineno"> 2164</span>&#160;    <a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8aebeaaeee353c6f04b4498b1fef94bbb3">ScrollView::MAGENTA</a>,</div>
-<div class="line"><a name="l02165"></a><span class="lineno"> 2165</span>&#160;  };</div>
-<div class="line"><a name="l02166"></a><span class="lineno"> 2166</span>&#160;  <span class="keywordflow">return</span> kBoxColors[type_];</div>
-<div class="line"><a name="l02167"></a><span class="lineno"> 2167</span>&#160;}</div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8a66e5117e4930fdd9a43bdb674d57a719"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8a66e5117e4930fdd9a43bdb674d57a719">ScrollView::BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00113">scrollview.h:113</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8a61dec9bc0aaf1d527a731b2a6ce055c8"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8a61dec9bc0aaf1d527a731b2a6ce055c8">ScrollView::YELLOW</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00110">scrollview.h:110</a></div></div>
-<div class="ttc" id="a00684_html_a02cfd8369d5ad8c70a8b90c0f40d677fa1cfce41c30bf1aefe403aaa66d271da1"><div class="ttname"><a href="a00684.html#a02cfd8369d5ad8c70a8b90c0f40d677fa1cfce41c30bf1aefe403aaa66d271da1">PT_COUNT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00684_source.html#l00079">capi.h:79</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8aebeaaeee353c6f04b4498b1fef94bbb3"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8aebeaaeee353c6f04b4498b1fef94bbb3">ScrollView::MAGENTA</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00114">scrollview.h:114</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a></div><div class="ttdeci">Color</div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00105">scrollview.h:105</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aabc56799b769fa63eaa2b517e7a1242f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::ColSegment::get_num_table_cells </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="a01138_source.html#l00033">33</a> of file <a class="el" href="a01138_source.html">scanedg.h</a>.</p>
 
-<p>Definition at line <a class="el" href="a01156_source.html#l00076">76</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                  {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> num_table_cells_;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
-</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a02438fd9c0c20a07871386ad7d4c0e23"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::ColSegment::get_num_text_cells </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00085">85</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                 {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> num_text_cells_;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a2d9a6fbd449a9201bdda5b9ffc5a5cb9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::InsertBox </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00609.html">TBOX</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01155_source.html#l02170">2170</a> of file <a class="el" href="a01155_source.html">tablefind.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02170"></a><span class="lineno"> 2170</span>&#160;                                            {</div>
-<div class="line"><a name="l02171"></a><span class="lineno"> 2171</span>&#160;  bounding_box_ = bounding_box_.<a class="code" href="a00609.html#ab8ae7b66782fa1802f78ff034da16089">bounding_union</a>(other);</div>
-<div class="line"><a name="l02172"></a><span class="lineno"> 2172</span>&#160;}</div>
-<div class="ttc" id="a00609_html_ab8ae7b66782fa1802f78ff034da16089"><div class="ttname"><a href="a00609.html#ab8ae7b66782fa1802f78ff034da16089">TBOX::bounding_union</a></div><div class="ttdeci">TBOX bounding_union(const TBOX &amp;box) const </div><div class="ttdef"><b>Definition:</b> <a href="a00812_source.html#l00129">rect.cpp:129</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="accc08475adcd0574efc1438e115bd291"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::set_bottom </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00060">60</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                         {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    bounding_box_.<a class="code" href="a00609.html#a6f803b24b046883cb0f3882dc3d92302">set_bottom</a>(y);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
-<div class="ttc" id="a00609_html_a6f803b24b046883cb0f3882dc3d92302"><div class="ttname"><a href="a00609.html#a6f803b24b046883cb0f3882dc3d92302">TBOX::set_bottom</a></div><div class="ttdeci">void set_bottom(int y)</div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00064">rect.h:64</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a39031c0f0997a85c4bf8398b47dd0c60"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::set_bounding_box </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00609.html">TBOX</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00072">72</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                           {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    bounding_box_ = other;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ab52af684cafefa03589e24426efc1564"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::set_left </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00064">64</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                       {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    bounding_box_.<a class="code" href="a00609.html#ae6151cd794841e100d8a346a0c4a46e6">set_left</a>(x);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
-<div class="ttc" id="a00609_html_ae6151cd794841e100d8a346a0c4a46e6"><div class="ttname"><a href="a00609.html#ae6151cd794841e100d8a346a0c4a46e6">TBOX::set_left</a></div><div class="ttdeci">void set_left(int x)</div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00071">rect.h:71</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a54b273e51bc8df1c995c403fb05f6723"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::set_num_table_cells </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00081">81</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                  {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    num_table_cells_ = n;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a570528471500732df47c1c4027f3e0ed"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::set_num_text_cells </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00090">90</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                 {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    num_text_cells_ = n;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a604f5e305fe0ed5286502d0c22bda6d3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::set_right </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00068">68</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    bounding_box_.<a class="code" href="a00609.html#a2246293d3667b28c52a52353a2d5caea">set_right</a>(x);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
-<div class="ttc" id="a00609_html_a2246293d3667b28c52a52353a2d5caea"><div class="ttname"><a href="a00609.html#a2246293d3667b28c52a52353a2d5caea">TBOX::set_right</a></div><div class="ttdeci">void set_right(int x)</div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00078">rect.h:78</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a58a1fd435c14ee22a42585aa6aff88cf"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::set_top </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00056">56</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                      {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    bounding_box_.<a class="code" href="a00609.html#a7f40dfd290a907200bdc98c196f63f45">set_top</a>(y);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
-<div class="ttc" id="a00609_html_a7f40dfd290a907200bdc98c196f63f45"><div class="ttname"><a href="a00609.html#a7f40dfd290a907200bdc98c196f63f45">TBOX::set_top</a></div><div class="ttdeci">void set_top(int y)</div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00057">rect.h:57</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a789e1edd90789444e3b420291969b196"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::ColSegment::set_type </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01155_source.html#l02176">2176</a> of file <a class="el" href="a01155_source.html">tablefind.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l02176"></a><span class="lineno"> 2176</span>&#160;                          {</div>
-<div class="line"><a name="l02177"></a><span class="lineno"> 2177</span>&#160;  <span class="keywordflow">if</span> (num_table_cells_ &gt; <a class="code" href="a01279.html#a6a040ffaa830485299daa5c344ebe039">kTableColumnThreshold</a> * num_text_cells_)</div>
-<div class="line"><a name="l02178"></a><span class="lineno"> 2178</span>&#160;    type_ = <a class="code" href="a01279.html#a25254b3df45454565d58a62480d3a6cba8943a61e53229e72f0f896ec8e415316">COL_TABLE</a>;</div>
-<div class="line"><a name="l02179"></a><span class="lineno"> 2179</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (num_text_cells_ &gt; num_table_cells_)</div>
-<div class="line"><a name="l02180"></a><span class="lineno"> 2180</span>&#160;    type_ = <a class="code" href="a01279.html#a25254b3df45454565d58a62480d3a6cba05d5fe5bf814b3e82827a3a321d5b2ec">COL_TEXT</a>;</div>
-<div class="line"><a name="l02181"></a><span class="lineno"> 2181</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l02182"></a><span class="lineno"> 2182</span>&#160;    type_ = <a class="code" href="a01279.html#a25254b3df45454565d58a62480d3a6cba794ff16294744099e9bab9ecf2cabc11">COL_MIXED</a>;</div>
-<div class="line"><a name="l02183"></a><span class="lineno"> 2183</span>&#160;}</div>
-<div class="ttc" id="a01279_html_a25254b3df45454565d58a62480d3a6cba794ff16294744099e9bab9ecf2cabc11"><div class="ttname"><a href="a01279.html#a25254b3df45454565d58a62480d3a6cba794ff16294744099e9bab9ecf2cabc11">tesseract::COL_MIXED</a></div><div class="ttdef"><b>Definition:</b> <a href="a01156_source.html#l00034">tablefind.h:34</a></div></div>
-<div class="ttc" id="a01279_html_a25254b3df45454565d58a62480d3a6cba05d5fe5bf814b3e82827a3a321d5b2ec"><div class="ttname"><a href="a01279.html#a25254b3df45454565d58a62480d3a6cba05d5fe5bf814b3e82827a3a321d5b2ec">tesseract::COL_TEXT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01156_source.html#l00032">tablefind.h:32</a></div></div>
-<div class="ttc" id="a01279_html_a25254b3df45454565d58a62480d3a6cba8943a61e53229e72f0f896ec8e415316"><div class="ttname"><a href="a01279.html#a25254b3df45454565d58a62480d3a6cba8943a61e53229e72f0f896ec8e415316">tesseract::COL_TABLE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01156_source.html#l00033">tablefind.h:33</a></div></div>
-<div class="ttc" id="a01279_html_a6a040ffaa830485299daa5c344ebe039"><div class="ttname"><a href="a01279.html#a6a040ffaa830485299daa5c344ebe039">tesseract::kTableColumnThreshold</a></div><div class="ttdeci">const double kTableColumnThreshold</div><div class="ttdef"><b>Definition:</b> <a href="a01155_source.html#l00092">tablefind.cpp:92</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ad10da5c5a6144425167a0c438c0bd421"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01279.html#a25254b3df45454565d58a62480d3a6cb">ColSegType</a> tesseract::ColSegment::type </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01156_source.html#l00094">94</a> of file <a class="el" href="a01156_source.html">tablefind.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                          {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> type_;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>textord/<a class="el" href="a01156_source.html">tablefind.h</a></li>
-<li>textord/<a class="el" href="a01155_source.html">tablefind.cpp</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>textord/<a class="el" href="a01138_source.html">scanedg.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00334.html">ColSegment</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:50 for Tesseract by
+    <li class="navelem"><a class="el" href="a00334.html">CrackPos</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:19 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

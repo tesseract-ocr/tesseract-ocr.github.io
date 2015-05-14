@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: textord/blobgrid.h Source File</title>
+<title>Tesseract: textord/colpartitiongrid.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,15 +105,15 @@ $(document).ready(function(){initNavTree('a01106_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">blobgrid.h</div>  </div>
+<div class="title">colpartitiongrid.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01106.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        blobgrid.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: BBGrid of BLOBNBOX with useful BLOBNBOX-specific methods.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Copyright 2011 Google Inc. All Rights Reserved.</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Author: rays@google.com (Ray Smith)</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Created:     Sat Jun 11 10:26:01 PST 2011</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
+<a href="a01106.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        colpartitionrid.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: Class collecting code that acts on a BBGrid of ColPartitions.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      Ray Smith</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Mon Oct 05 08:42:01 PDT 2009</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2009, Google Inc.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
@@ -125,50 +125,291 @@ $(document).ready(function(){initNavTree('a01106_source.html','');});
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef TESSERACT_TEXTORD_BLOBGRID_H_</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define TESSERACT_TEXTORD_BLOBGRID_H_</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01102.html">bbgrid.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00749.html">blobbox.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TESSERACT_TEXTORD_COLPARTITIONGRID_H__</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TESSERACT_TEXTORD_COLPARTITIONGRID_H__</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01092.html">bbgrid.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01104.html">colpartition.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01108.html">colpartitionset.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="a00839.html#a253f497a3c8fd08cdc6ff8a785b00349">CLISTIZEH</a>(<a class="code" href="a00282.html">BLOBNBOX</a>)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;namespace <a class="code" href="a01279.html">tesseract</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span>TabFind;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01279.html#a2681de132e11a73d6fc4f281b2750109">   31</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00420.html">GridSearch&lt;BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT&gt;</a> <a class="code" href="a01279.html#a2681de132e11a73d6fc4f281b2750109">BlobGridSearch</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00281.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00281.html">BlobGrid</a> : <span class="keyword">public</span> <a class="code" href="a00271.html">BBGrid</a>&lt;BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT&gt; {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="a00281.html">BlobGrid</a>(<span class="keywordtype">int</span> gridsize, <span class="keyword">const</span> <a class="code" href="a00425.html">ICOORD</a>&amp; bleft, <span class="keyword">const</span> <a class="code" href="a00425.html">ICOORD</a>&amp; tright);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="a00281.html">BlobGrid</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// Inserts all the blobs from the given list, with x and y spreading,</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// without removing from the source list, so ownership remains with the</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// source list.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> InsertBlobList(BLOBNBOX_LIST* blobs);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}  <span class="comment">// namespace tesseract.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif  // TESSERACT_TEXTORD_BLOBGRID_H_</span></div>
-<div class="ttc" id="a00839_html_a253f497a3c8fd08cdc6ff8a785b00349"><div class="ttname"><a href="a00839.html#a253f497a3c8fd08cdc6ff8a785b00349">CLISTIZEH</a></div><div class="ttdeci">#define CLISTIZEH(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00839_source.html#l00946">clst.h:946</a></div></div>
-<div class="ttc" id="a01102_html"><div class="ttname"><a href="a01102.html">bbgrid.h</a></div></div>
-<div class="ttc" id="a01279_html_a2681de132e11a73d6fc4f281b2750109"><div class="ttname"><a href="a01279.html#a2681de132e11a73d6fc4f281b2750109">tesseract::BlobGridSearch</a></div><div class="ttdeci">GridSearch&lt; BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT &gt; BlobGridSearch</div><div class="ttdef"><b>Definition:</b> <a href="a01106_source.html#l00031">blobgrid.h:31</a></div></div>
-<div class="ttc" id="a00282_html"><div class="ttname"><a href="a00282.html">BLOBNBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00128">blobbox.h:128</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00281_html"><div class="ttname"><a href="a00281.html">tesseract::BlobGrid</a></div><div class="ttdef"><b>Definition:</b> <a href="a01106_source.html#l00033">blobgrid.h:33</a></div></div>
-<div class="ttc" id="a00420_html"><div class="ttname"><a href="a00420.html">tesseract::GridSearch</a></div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00048">bbgrid.h:48</a></div></div>
-<div class="ttc" id="a00749_html"><div class="ttname"><a href="a00749.html">blobbox.h</a></div></div>
-<div class="ttc" id="a00425_html"><div class="ttname"><a href="a00425.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00030">points.h:30</a></div></div>
-<div class="ttc" id="a00271_html"><div class="ttname"><a href="a00271.html">tesseract::BBGrid</a></div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00158">bbgrid.h:158</a></div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// ColPartitionGrid is a BBGrid of ColPartition.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// It collects functions that work on the grid.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00324.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00324.html">ColPartitionGrid</a> : <span class="keyword">public</span> <a class="code" href="a00268.html">BBGrid</a>&lt;ColPartition,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                       ColPartition_CLIST,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                       ColPartition_C_IT&gt; {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="a00324.html#af3cb4db916111aede6f4afde7fed8dca">ColPartitionGrid</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="a00324.html#af3cb4db916111aede6f4afde7fed8dca">ColPartitionGrid</a>(<span class="keywordtype">int</span> <a class="code" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, <span class="keyword">const</span> <a class="code" href="a00412.html">ICOORD</a>&amp; <a class="code" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, <span class="keyword">const</span> <a class="code" href="a00412.html">ICOORD</a>&amp; <a class="code" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00324.html#ac05ecda9fea55d1456474fe368681c43">~ColPartitionGrid</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// Handles a click event in a display window.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#ace404c79d8fae1a884f15ea234a5a1a1">HandleClick</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// Merges ColPartitions in the grid that look like they belong in the same</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// textline.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// For all partitions in the grid, calls the box_cb permanent callback</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// to compute the search box, seaches the box, and if a candidate is found,</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// calls the confirm_cb to check any more rules. If the confirm_cb returns</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// true, then the partitions are merged.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Both callbacks are deleted before returning.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a5a2c2f6ef0b1b5a0febab87ffb0f764d">Merges</a>(<a class="code" href="a00617.html">TessResultCallback2&lt;bool, ColPartition*, TBOX*&gt;</a>* box_cb,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;              <a class="code" href="a00617.html">TessResultCallback2</a>&lt;<span class="keywordtype">bool</span>, <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>*,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                  <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>*&gt;* confirm_cb);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// For the given partition, calls the box_cb permanent callback</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// to compute the search box, searches the box, and if a candidate is found,</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// calls the confirm_cb to check any more rules. If the confirm_cb returns</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// true, then the partitions are merged.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// Returns true if the partition is consumed by one or more merges.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00324.html#a9e8324dcf738819305dfec86b504f27c">MergePart</a>(<a class="code" href="a00617.html">TessResultCallback2&lt;bool, ColPartition*, TBOX*&gt;</a>* box_cb,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                 <a class="code" href="a00617.html">TessResultCallback2</a>&lt;<span class="keywordtype">bool</span>, <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>*,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                     <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>*&gt;* confirm_cb,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                 <a class="code" href="a00323.html">ColPartition</a>* part);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// Finds all the ColPartitions in the grid that overlap with the given</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// box and returns them SortByBoxLeft(ed) and uniqued in the given list.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// Any partition equal to not_this (may be NULL) is excluded.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#ad5beb0b5d583b9160299ccd5262359dd">FindOverlappingPartitions</a>(<span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; box, <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>* not_this,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                 ColPartition_CLIST* parts);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// Finds and returns the best candidate ColPartition to merge with part,</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// selected from the candidates list, based on the minimum increase in</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// pairwise overlap among all the partitions overlapped by the combined box.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// If overlap_increase is not NULL then it returns the increase in overlap</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// that would result from the merge.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// See colpartitiongrid.cpp for a diagram.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="a00323.html">ColPartition</a>* <a class="code" href="a00324.html#a2d5a64ce0293feaa94880ee1397bd65a">BestMergeCandidate</a>(</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>* part, ColPartition_CLIST* candidates, <span class="keywordtype">bool</span> debug,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <a class="code" href="a00617.html">TessResultCallback2</a>&lt;<span class="keywordtype">bool</span>, <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>*,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                          <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>*&gt;* confirm_cb,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordtype">int</span>* overlap_increase);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// Split partitions where it reduces overlap between their bounding boxes.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// ColPartitions are after all supposed to be a partitioning of the blobs</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// AND of the space on the page!</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// Blobs that cause overlaps get removed, put in individual partitions</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="comment">// and added to the big_parts list. They are most likely characters on</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// 2 textlines that touch, or something big like a dropcap.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a82e8b8c81fca51c36744a859831154e7">SplitOverlappingPartitions</a>(ColPartition_LIST* big_parts);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// Filters partitions of source_type by looking at local neighbours.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// Where a majority of neighbours have a text type, the partitions are</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">// changed to text, where the neighbours have image type, they are changed</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">// to image, and partitions that have no definite neighbourhood type are</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="comment">// left unchanged.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">// im_box and rerotation are used to map blob coordinates onto the</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="comment">// nontext_map, which is used to prevent the spread of text neighbourhoods</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="comment">// into images.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// Returns true if anything was changed.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00324.html#a88a22ddb5578787c2819536b9152ca15">GridSmoothNeighbours</a>(<a class="code" href="a00730.html#aa72f1499398e9694bf46752e1cc895e1">BlobTextFlowType</a> source_type, Pix* nontext_map,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                            <span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; im_box, <span class="keyword">const</span> <a class="code" href="a00377.html">FCOORD</a>&amp; rerotation);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// Compute the mean RGB of the light and dark pixels in each ColPartition</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="comment">// and also the rms error in the linearity of color.</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#ac83fa786cb4ce07219f64a8db367dcdd">ComputePartitionColors</a>(Pix* scaled_color, <span class="keywordtype">int</span> scaled_factor,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                              <span class="keyword">const</span> <a class="code" href="a00377.html">FCOORD</a>&amp; rerotation);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">// Reflects the grid and its colpartitions in the y-axis, assuming that</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// all blob boxes have already been done.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a423a93040be0e2075dce35597ab30d3a">ReflectInYAxis</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// Rotates the grid and its colpartitions by the given angle, assuming that</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="comment">// all blob boxes have already been done.</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#ae184cea03e3195e505140c200c70b335">Deskew</a>(<span class="keyword">const</span> <a class="code" href="a00377.html">FCOORD</a>&amp; deskew);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="comment">// Transforms the grid of partitions to the output blocks, putting each</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="comment">// partition into a separate block. We don&#39;t really care about the order,</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="comment">// as we just want to get as much text as possible without trying to organize</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">// it into proper blocks or columns.</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a340a41a02be925abaed397a99ce58bde">ExtractPartitionsAsBlocks</a>(BLOCK_LIST* blocks, TO_BLOCK_LIST* to_blocks);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">// Sets the left and right tabs of the partitions in the grid.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a40b0e4db617400d53951521ab11b5b8a">SetTabStops</a>(<a class="code" href="a00585.html">TabFind</a>* tabgrid);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="comment">// Makes the ColPartSets and puts them in the PartSetVector ready</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="comment">// for finding column bounds. Returns false if no partitions were found.</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="comment">// Each ColPartition in the grid is placed in a single ColPartSet based</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="comment">// on the bottom-left of its bounding box.</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00324.html#a6dbb1d12ebe468f00e2b63265fdda569">MakeColPartSets</a>(<a class="code" href="a00406.html">PartSetVector</a>* part_sets);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="comment">// Makes a single ColPartitionSet consisting of a single ColPartition that</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="comment">// represents the total horizontal extent of the significant content on the</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="comment">// page. Used for the single column setting in place of automatic detection.</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="comment">// Returns NULL if the page is empty of significant content.</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="a00325.html">ColPartitionSet</a>* <a class="code" href="a00324.html#a804a04162511d6952635ba8713a751a8">MakeSingleColumnSet</a>(<a class="code" href="a00616.html">WidthCallback</a>* cb);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="comment">// Mark the BLOBNBOXes in each partition as being owned by that partition.</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#aed47e56ca1a0b658811e4cf287582f04">ClaimBoxes</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="comment">// Retypes all the blobs referenced by the partitions in the grid.</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="comment">// Image blobs are sliced on the grid boundaries to give the tab finder</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="comment">// a better handle on the edges of the images, and the actual blobs are</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="comment">// returned in the im_blobs list, as they are not owned by the block.</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#aecd8e56c6111338a9f7a42ce00d3636f">ReTypeBlobs</a>(BLOBNBOX_LIST* im_blobs);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">// The boxes within the partitions have changed (by deskew) so recompute</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="comment">// the bounds of all the partitions and reinsert them into the grid.</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a4f9c81b3be7d951e96338488d66fbdcd">RecomputeBounds</a>(<span class="keywordtype">int</span> gridsize, <span class="keyword">const</span> <a class="code" href="a00412.html">ICOORD</a>&amp; bleft,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                       <span class="keyword">const</span> <a class="code" href="a00412.html">ICOORD</a>&amp; tright, <span class="keyword">const</span> <a class="code" href="a00412.html">ICOORD</a>&amp; vertical);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="comment">// Improves the margins of the ColPartitions in the grid by calling</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="comment">// FindPartitionMargins on each.</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a6840942249ec02a7c24c051a6f51f14c">GridFindMargins</a>(<a class="code" href="a00325.html">ColPartitionSet</a>** best_columns);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="comment">// Improves the margins of the ColPartitions in the list by calling</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="comment">// FindPartitionMargins on each.</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#af60361b4951944acc282c87f9d2dfd88">ListFindMargins</a>(<a class="code" href="a00325.html">ColPartitionSet</a>** best_columns,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                       ColPartition_LIST* parts);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="comment">// Deletes all the partitions in the grid after disowning all the blobs.</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a274c6b7670b91545b63dd8f44c79782e">DeleteParts</a>();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="comment">// Deletes all the partitions in the grid that are of type BRT_UNKNOWN and</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="comment">// all the blobs in them.</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#ab4756f20467daf31de174d0da440a279">DeleteUnknownParts</a>(<a class="code" href="a00627.html">TO_BLOCK</a>* block);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="comment">// Finds and marks text partitions that represent figure captions.</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#ae99dfe01a80478cc1ef370aa74b79773">FindFigureCaptions</a>();</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="comment">// For every ColPartition in the grid, finds its upper and lower neighbours.</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a7ed32c7b4717fc000dd55796f6bf86d7">FindPartitionPartners</a>();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="comment">// Finds the best partner in the given direction for the given partition.</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="comment">// Stores the result with AddPartner.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a7ed32c7b4717fc000dd55796f6bf86d7">FindPartitionPartners</a>(<span class="keywordtype">bool</span> upper, <a class="code" href="a00323.html">ColPartition</a>* part);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="comment">// Finds the best partner in the given direction for the given partition.</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="comment">// Stores the result with AddPartner.</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a14732f02e00e801e979f0b51daa3f34b">FindVPartitionPartners</a>(<span class="keywordtype">bool</span> to_the_left, <a class="code" href="a00323.html">ColPartition</a>* part);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="comment">// For every ColPartition with multiple partners in the grid, reduces the</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="comment">// number of partners to 0 or 1. If get_desperate is true, goes to more</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="comment">// desperate merge methods to merge flowing text before breaking partnerships.</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00324.html#a4781167f958ee8cc47549d8b39b9f1b5">RefinePartitionPartners</a>(<span class="keywordtype">bool</span> get_desperate);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="comment">// Finds and returns a list of candidate ColPartitions to merge with part.</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="comment">// The candidates must overlap search_box, and when merged must not</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="comment">// overlap any other partitions that are not overlapped by each individually.</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordtype">void</span> FindMergeCandidates(<span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>* part, <span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; search_box,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                           <span class="keywordtype">bool</span> debug, ColPartition_CLIST* candidates);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="comment">// Smoothes the region type/flow type of the given part by looking at local</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="comment">// neigbours and the given image mask. Searches a padded rectangle with the</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="comment">// padding truncated on one size of the part&#39;s box in turn for each side,</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="comment">// using the result (if any) that has the least distance to all neighbours</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">// that contribute to the decision. This biases in favor of rectangular</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="comment">// regions without completely enforcing them.</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="comment">// If a good decision cannot be reached, the part is left unchanged.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="comment">// im_box and rerotation are used to map blob coordinates onto the</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="comment">// nontext_map, which is used to prevent the spread of text neighbourhoods</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">// into images.</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="comment">// Returns true if the partition was changed.</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordtype">bool</span> SmoothRegionType(Pix* nontext_map,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        <span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; im_box,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        <span class="keyword">const</span> <a class="code" href="a00377.html">FCOORD</a>&amp; rerotation,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        <span class="keywordtype">bool</span> debug,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        <a class="code" href="a00323.html">ColPartition</a>* part);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="comment">// Executes the search for SmoothRegionType in a single direction.</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="comment">// Creates a bounding box that is padded in all directions except direction,</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="comment">// and searches it for other partitions. Finds the nearest collection of</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="comment">// partitions that makes a decisive result (if any) and returns the type</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="comment">// and the distance of the collection. If there are any pixels in the</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="comment">// nontext_map, then the decision is biased towards image.</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <a class="code" href="a00730.html#aebfaf711760a99b60c297d1d619df575">BlobRegionType</a> SmoothInOneDirection(<a class="code" href="a00730.html#a4974474b3b161b68355d9a16eeaa3883">BlobNeighbourDir</a> <a class="code" href="a00805.html#a57d4a186a22b01e2110793bc22a5d8f0">direction</a>,</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                      Pix* nontext_map,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                      <span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; im_box,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                      <span class="keyword">const</span> <a class="code" href="a00377.html">FCOORD</a>&amp; rerotation,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                      <span class="keywordtype">bool</span> debug,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                      <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>&amp; part,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                      <span class="keywordtype">int</span>* best_distance);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="comment">// Counts the partitions in the given search_box by appending the gap</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="comment">// distance (scaled by dist_scaling) of the part from the base_part to the</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">// vector of the appropriate type for the partition. Prior to return, the</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="comment">// vectors in the dists array are sorted in increasing order.</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="comment">// dists must be an array of GenericVectors of size NPT_COUNT.</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">void</span> AccumulatePartDistances(<span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>&amp; base_part,</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                               <span class="keyword">const</span> <a class="code" href="a00412.html">ICOORD</a>&amp; dist_scaling,</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                               <span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; search_box,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                               Pix* nontext_map,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                               <span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; im_box,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                               <span class="keyword">const</span> <a class="code" href="a00377.html">FCOORD</a>&amp; rerotation,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                               <span class="keywordtype">bool</span> debug,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                               <a class="code" href="a00406.html">GenericVector&lt;int&gt;</a>* dists);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="comment">// Improves the margins of the ColPartition by searching for</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="comment">// neighbours that vertically overlap significantly.</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keywordtype">void</span> FindPartitionMargins(<a class="code" href="a00325.html">ColPartitionSet</a>* columns, <a class="code" href="a00323.html">ColPartition</a>* part);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="comment">// Starting at x, and going in the specified direction, upto x_limit, finds</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="comment">// the margin for the given y range by searching sideways,</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="comment">// and ignoring not_this.</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordtype">int</span> FindMargin(<span class="keywordtype">int</span> x, <span class="keywordtype">bool</span> right_to_left, <span class="keywordtype">int</span> x_limit,</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                 <span class="keywordtype">int</span> y_bottom, <span class="keywordtype">int</span> y_top, <span class="keyword">const</span> <a class="code" href="a00323.html">ColPartition</a>* not_this);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;};</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}  <span class="comment">// namespace tesseract.</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#endif  // TESSERACT_TEXTORD_COLPARTITIONGRID_H__</span></div>
+<div class="ttc" id="a00730_html_a4974474b3b161b68355d9a16eeaa3883"><div class="ttname"><a href="a00730.html#a4974474b3b161b68355d9a16eeaa3883">BlobNeighbourDir</a></div><div class="ttdeci">BlobNeighbourDir</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00072">blobbox.h:72</a></div></div>
+<div class="ttc" id="a00324_html"><div class="ttname"><a href="a00324.html">tesseract::ColPartitionGrid</a></div><div class="ttdef"><b>Definition:</b> <a href="a01106_source.html#l00033">colpartitiongrid.h:33</a></div></div>
+<div class="ttc" id="a00730_html_aa72f1499398e9694bf46752e1cc895e1"><div class="ttname"><a href="a00730.html#aa72f1499398e9694bf46752e1cc895e1">BlobTextFlowType</a></div><div class="ttdeci">BlobTextFlowType</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00099">blobbox.h:99</a></div></div>
+<div class="ttc" id="a01104_html"><div class="ttname"><a href="a01104.html">colpartition.h</a></div></div>
+<div class="ttc" id="a00268_html"><div class="ttname"><a href="a00268.html">tesseract::BBGrid</a></div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00158">bbgrid.h:158</a></div></div>
+<div class="ttc" id="a00324_html_ad5beb0b5d583b9160299ccd5262359dd"><div class="ttname"><a href="a00324.html#ad5beb0b5d583b9160299ccd5262359dd">tesseract::ColPartitionGrid::FindOverlappingPartitions</a></div><div class="ttdeci">void FindOverlappingPartitions(const TBOX &amp;box, const ColPartition *not_this, ColPartition_CLIST *parts)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00330">colpartitiongrid.cpp:330</a></div></div>
+<div class="ttc" id="a00409_html_aa94e147841b6a4fae0b28e7e872685a5"><div class="ttname"><a href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tesseract::GridBase::tright</a></div><div class="ttdeci">const ICOORD &amp; tright() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00075">bbgrid.h:75</a></div></div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00627_html"><div class="ttname"><a href="a00627.html">TO_BLOCK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00679">blobbox.h:679</a></div></div>
+<div class="ttc" id="a00324_html_a6dbb1d12ebe468f00e2b63265fdda569"><div class="ttname"><a href="a00324.html#a6dbb1d12ebe468f00e2b63265fdda569">tesseract::ColPartitionGrid::MakeColPartSets</a></div><div class="ttdeci">bool MakeColPartSets(PartSetVector *part_sets)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00800">colpartitiongrid.cpp:800</a></div></div>
+<div class="ttc" id="a00324_html_a6840942249ec02a7c24c051a6f51f14c"><div class="ttname"><a href="a00324.html#a6840942249ec02a7c24c051a6f51f14c">tesseract::ColPartitionGrid::GridFindMargins</a></div><div class="ttdeci">void GridFindMargins(ColPartitionSet **best_columns)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00976">colpartitiongrid.cpp:976</a></div></div>
+<div class="ttc" id="a00409_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00409.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00063">bbgrid.h:63</a></div></div>
+<div class="ttc" id="a00324_html_ac83fa786cb4ce07219f64a8db367dcdd"><div class="ttname"><a href="a00324.html#ac83fa786cb4ce07219f64a8db367dcdd">tesseract::ColPartitionGrid::ComputePartitionColors</a></div><div class="ttdeci">void ComputePartitionColors(Pix *scaled_color, int scaled_factor, const FCOORD &amp;rerotation)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00624">colpartitiongrid.cpp:624</a></div></div>
+<div class="ttc" id="a00323_html"><div class="ttname"><a href="a00323.html">tesseract::ColPartition</a></div><div class="ttdef"><b>Definition:</b> <a href="a01104_source.html#l00067">colpartition.h:67</a></div></div>
+<div class="ttc" id="a00324_html_aed47e56ca1a0b658811e4cf287582f04"><div class="ttname"><a href="a00324.html#aed47e56ca1a0b658811e4cf287582f04">tesseract::ColPartitionGrid::ClaimBoxes</a></div><div class="ttdeci">void ClaimBoxes()</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00880">colpartitiongrid.cpp:880</a></div></div>
+<div class="ttc" id="a00409_html_ad20b2cb8eb2bf52871d5260c04949cce"><div class="ttname"><a href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">tesseract::GridBase::bleft</a></div><div class="ttdeci">const ICOORD &amp; bleft() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00072">bbgrid.h:72</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector&lt; ColPartitionSet * &gt;</a></div></div>
+<div class="ttc" id="a00324_html_a40b0e4db617400d53951521ab11b5b8a"><div class="ttname"><a href="a00324.html#a40b0e4db617400d53951521ab11b5b8a">tesseract::ColPartitionGrid::SetTabStops</a></div><div class="ttdeci">void SetTabStops(TabFind *tabgrid)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00776">colpartitiongrid.cpp:776</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00324_html_a274c6b7670b91545b63dd8f44c79782e"><div class="ttname"><a href="a00324.html#a274c6b7670b91545b63dd8f44c79782e">tesseract::ColPartitionGrid::DeleteParts</a></div><div class="ttdeci">void DeleteParts()</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l01018">colpartitiongrid.cpp:1018</a></div></div>
+<div class="ttc" id="a00324_html_aecd8e56c6111338a9f7a42ce00d3636f"><div class="ttname"><a href="a00324.html#aecd8e56c6111338a9f7a42ce00d3636f">tesseract::ColPartitionGrid::ReTypeBlobs</a></div><div class="ttdeci">void ReTypeBlobs(BLOBNBOX_LIST *im_blobs)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00893">colpartitiongrid.cpp:893</a></div></div>
+<div class="ttc" id="a00412_html"><div class="ttname"><a href="a00412.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00030">points.h:30</a></div></div>
+<div class="ttc" id="a00324_html_a5a2c2f6ef0b1b5a0febab87ffb0f764d"><div class="ttname"><a href="a00324.html#a5a2c2f6ef0b1b5a0febab87ffb0f764d">tesseract::ColPartitionGrid::Merges</a></div><div class="ttdeci">void Merges(TessResultCallback2&lt; bool, ColPartition *, TBOX * &gt; *box_cb, TessResultCallback2&lt; bool, const ColPartition *, const ColPartition * &gt; *confirm_cb)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00113">colpartitiongrid.cpp:113</a></div></div>
+<div class="ttc" id="a00324_html_af60361b4951944acc282c87f9d2dfd88"><div class="ttname"><a href="a00324.html#af60361b4951944acc282c87f9d2dfd88">tesseract::ColPartitionGrid::ListFindMargins</a></div><div class="ttdeci">void ListFindMargins(ColPartitionSet **best_columns, ColPartition_LIST *parts)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l01000">colpartitiongrid.cpp:1000</a></div></div>
+<div class="ttc" id="a00617_html"><div class="ttname"><a href="a00617.html">TessResultCallback2</a></div><div class="ttdef"><b>Definition:</b> <a href="a00860_source.html#l01688">tesscallback.h:1688</a></div></div>
+<div class="ttc" id="a00324_html_ac05ecda9fea55d1456474fe368681c43"><div class="ttname"><a href="a00324.html#ac05ecda9fea55d1456474fe368681c43">tesseract::ColPartitionGrid::~ColPartitionGrid</a></div><div class="ttdeci">virtual ~ColPartitionGrid()</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00083">colpartitiongrid.cpp:83</a></div></div>
+<div class="ttc" id="a00324_html_a82e8b8c81fca51c36744a859831154e7"><div class="ttname"><a href="a00324.html#a82e8b8c81fca51c36744a859831154e7">tesseract::ColPartitionGrid::SplitOverlappingPartitions</a></div><div class="ttdeci">void SplitOverlappingPartitions(ColPartition_LIST *big_parts)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00492">colpartitiongrid.cpp:492</a></div></div>
+<div class="ttc" id="a00325_html"><div class="ttname"><a href="a00325.html">tesseract::ColPartitionSet</a></div><div class="ttdef"><b>Definition:</b> <a href="a01108_source.html#l00040">colpartitionset.h:40</a></div></div>
+<div class="ttc" id="a00324_html_ab4756f20467daf31de174d0da440a279"><div class="ttname"><a href="a00324.html#ab4756f20467daf31de174d0da440a279">tesseract::ColPartitionGrid::DeleteUnknownParts</a></div><div class="ttdeci">void DeleteUnknownParts(TO_BLOCK *block)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l01033">colpartitiongrid.cpp:1033</a></div></div>
+<div class="ttc" id="a00324_html_ae99dfe01a80478cc1ef370aa74b79773"><div class="ttname"><a href="a00324.html#ae99dfe01a80478cc1ef370aa74b79773">tesseract::ColPartitionGrid::FindFigureCaptions</a></div><div class="ttdeci">void FindFigureCaptions()</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l01052">colpartitiongrid.cpp:1052</a></div></div>
+<div class="ttc" id="a00324_html_a2d5a64ce0293feaa94880ee1397bd65a"><div class="ttname"><a href="a00324.html#a2d5a64ce0293feaa94880ee1397bd65a">tesseract::ColPartitionGrid::BestMergeCandidate</a></div><div class="ttdeci">ColPartition * BestMergeCandidate(const ColPartition *part, ColPartition_CLIST *candidates, bool debug, TessResultCallback2&lt; bool, const ColPartition *, const ColPartition * &gt; *confirm_cb, int *overlap_increase)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00383">colpartitiongrid.cpp:383</a></div></div>
+<div class="ttc" id="a00324_html_a9e8324dcf738819305dfec86b504f27c"><div class="ttname"><a href="a00324.html#a9e8324dcf738819305dfec86b504f27c">tesseract::ColPartitionGrid::MergePart</a></div><div class="ttdeci">bool MergePart(TessResultCallback2&lt; bool, ColPartition *, TBOX * &gt; *box_cb, TessResultCallback2&lt; bool, const ColPartition *, const ColPartition * &gt; *confirm_cb, ColPartition *part)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00134">colpartitiongrid.cpp:134</a></div></div>
+<div class="ttc" id="a00324_html_ae184cea03e3195e505140c200c70b335"><div class="ttname"><a href="a00324.html#ae184cea03e3195e505140c200c70b335">tesseract::ColPartitionGrid::Deskew</a></div><div class="ttdeci">void Deskew(const FCOORD &amp;deskew)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00752">colpartitiongrid.cpp:752</a></div></div>
+<div class="ttc" id="a00324_html_ace404c79d8fae1a884f15ea234a5a1a1"><div class="ttname"><a href="a00324.html#ace404c79d8fae1a884f15ea234a5a1a1">tesseract::ColPartitionGrid::HandleClick</a></div><div class="ttdeci">void HandleClick(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00087">colpartitiongrid.cpp:87</a></div></div>
+<div class="ttc" id="a00730_html_aebfaf711760a99b60c297d1d619df575"><div class="ttname"><a href="a00730.html#aebfaf711760a99b60c297d1d619df575">BlobRegionType</a></div><div class="ttdeci">BlobRegionType</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00057">blobbox.h:57</a></div></div>
+<div class="ttc" id="a00324_html_a4f9c81b3be7d951e96338488d66fbdcd"><div class="ttname"><a href="a00324.html#a4f9c81b3be7d951e96338488d66fbdcd">tesseract::ColPartitionGrid::RecomputeBounds</a></div><div class="ttdeci">void RecomputeBounds(int gridsize, const ICOORD &amp;bleft, const ICOORD &amp;tright, const ICOORD &amp;vertical)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00947">colpartitiongrid.cpp:947</a></div></div>
+<div class="ttc" id="a00324_html_a7ed32c7b4717fc000dd55796f6bf86d7"><div class="ttname"><a href="a00324.html#a7ed32c7b4717fc000dd55796f6bf86d7">tesseract::ColPartitionGrid::FindPartitionPartners</a></div><div class="ttdeci">void FindPartitionPartners()</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l01177">colpartitiongrid.cpp:1177</a></div></div>
+<div class="ttc" id="a00324_html_a4781167f958ee8cc47549d8b39b9f1b5"><div class="ttname"><a href="a00324.html#a4781167f958ee8cc47549d8b39b9f1b5">tesseract::ColPartitionGrid::RefinePartitionPartners</a></div><div class="ttdeci">void RefinePartitionPartners(bool get_desperate)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l01285">colpartitiongrid.cpp:1285</a></div></div>
+<div class="ttc" id="a00377_html"><div class="ttname"><a href="a00377.html">FCOORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00189">points.h:189</a></div></div>
+<div class="ttc" id="a00324_html_a804a04162511d6952635ba8713a751a8"><div class="ttname"><a href="a00324.html#a804a04162511d6952635ba8713a751a8">tesseract::ColPartitionGrid::MakeSingleColumnSet</a></div><div class="ttdeci">ColPartitionSet * MakeSingleColumnSet(WidthCallback *cb)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00838">colpartitiongrid.cpp:838</a></div></div>
+<div class="ttc" id="a00324_html_af3cb4db916111aede6f4afde7fed8dca"><div class="ttname"><a href="a00324.html#af3cb4db916111aede6f4afde7fed8dca">tesseract::ColPartitionGrid::ColPartitionGrid</a></div><div class="ttdeci">ColPartitionGrid()</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00075">colpartitiongrid.cpp:75</a></div></div>
+<div class="ttc" id="a00805_html_a57d4a186a22b01e2110793bc22a5d8f0"><div class="ttname"><a href="a00805.html#a57d4a186a22b01e2110793bc22a5d8f0">direction</a></div><div class="ttdeci">int direction(EDGEPT *point)</div><div class="ttdef"><b>Definition:</b> <a href="a00805_source.html#l00042">vecfuncs.cpp:42</a></div></div>
+<div class="ttc" id="a00616_html"><div class="ttname"><a href="a00616.html">TessResultCallback1</a></div><div class="ttdef"><b>Definition:</b> <a href="a00860_source.html#l01673">tesscallback.h:1673</a></div></div>
+<div class="ttc" id="a01108_html"><div class="ttname"><a href="a01108.html">colpartitionset.h</a></div></div>
+<div class="ttc" id="a00324_html_a423a93040be0e2075dce35597ab30d3a"><div class="ttname"><a href="a00324.html#a423a93040be0e2075dce35597ab30d3a">tesseract::ColPartitionGrid::ReflectInYAxis</a></div><div class="ttdeci">void ReflectInYAxis()</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00664">colpartitiongrid.cpp:664</a></div></div>
+<div class="ttc" id="a00324_html_a340a41a02be925abaed397a99ce58bde"><div class="ttname"><a href="a00324.html#a340a41a02be925abaed397a99ce58bde">tesseract::ColPartitionGrid::ExtractPartitionsAsBlocks</a></div><div class="ttdeci">void ExtractPartitionsAsBlocks(BLOCK_LIST *blocks, TO_BLOCK_LIST *to_blocks)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00692">colpartitiongrid.cpp:692</a></div></div>
+<div class="ttc" id="a00585_html"><div class="ttname"><a href="a00585.html">tesseract::TabFind</a></div><div class="ttdef"><b>Definition:</b> <a href="a01144_source.html#l00062">tabfind.h:62</a></div></div>
+<div class="ttc" id="a00324_html_a88a22ddb5578787c2819536b9152ca15"><div class="ttname"><a href="a00324.html#a88a22ddb5578787c2819536b9152ca15">tesseract::ColPartitionGrid::GridSmoothNeighbours</a></div><div class="ttdeci">bool GridSmoothNeighbours(BlobTextFlowType source_type, Pix *nontext_map, const TBOX &amp;im_box, const FCOORD &amp;rerotation)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l00602">colpartitiongrid.cpp:602</a></div></div>
+<div class="ttc" id="a00324_html_a14732f02e00e801e979f0b51daa3f34b"><div class="ttname"><a href="a00324.html#a14732f02e00e801e979f0b51daa3f34b">tesseract::ColPartitionGrid::FindVPartitionPartners</a></div><div class="ttdeci">void FindVPartitionPartners(bool to_the_left, ColPartition *part)</div><div class="ttdef"><b>Definition:</b> <a href="a01105_source.html#l01239">colpartitiongrid.cpp:1239</a></div></div>
+<div class="ttc" id="a01092_html"><div class="ttname"><a href="a01092.html">bbgrid.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01106.html">blobgrid.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:28 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01106.html">colpartitiongrid.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:03 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

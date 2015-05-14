@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/vecfuncs.h File Reference</title>
+<title>Tesseract: ccutil/elst2.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,188 +105,192 @@ $(document).ready(function(){initNavTree('a00825.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">vecfuncs.h File Reference</div>  </div>
+<div class="title">elst2.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00835_source.html">host.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00855_source.html">serialis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00839_source.html">lsterr.h</a>&quot;</code><br />
 </div>
 <p><a href="a00825_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00369.html">ELIST2_LINK</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00367.html">ELIST2</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00368.html">ELIST2_ITERATOR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:adc5b1f2b1c3f7afb5b0b035449f5e2ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#adc5b1f2b1c3f7afb5b0b035449f5e2ec">point_diff</a>(p, p1, p2)</td></tr>
-<tr class="separator:adc5b1f2b1c3f7afb5b0b035449f5e2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec4dedcf89534ed10f6107bf9c6418f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#aec4dedcf89534ed10f6107bf9c6418f3">CROSS</a>(a, b)&#160;&#160;&#160;((a).x * (b).y - (a).y * (b).x)</td></tr>
-<tr class="separator:aec4dedcf89534ed10f6107bf9c6418f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9c4c0cbfeda43da7c0c28c7a8e836ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#aa9c4c0cbfeda43da7c0c28c7a8e836ed">SCALAR</a>(a, b)&#160;&#160;&#160;((a).x * (b).x + (a).y * (b).y)</td></tr>
-<tr class="separator:aa9c4c0cbfeda43da7c0c28c7a8e836ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0e13d94164219be2d5bbd4d65e71d1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#ad0e13d94164219be2d5bbd4d65e71d1e">LENGTH</a>(a)&#160;&#160;&#160;((a).x * (a).x + (a).y * (a).y)</td></tr>
-<tr class="separator:ad0e13d94164219be2d5bbd4d65e71d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a57d4a186a22b01e2110793bc22a5d8f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#a57d4a186a22b01e2110793bc22a5d8f0">direction</a> (<a class="el" href="a00372.html">EDGEPT</a> *point)</td></tr>
-<tr class="separator:a57d4a186a22b01e2110793bc22a5d8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc858fd865cb4f529784fbc52d4d2b87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#adc858fd865cb4f529784fbc52d4d2b87">QUOTE_IT</a>(parm)&#160;&#160;&#160;#parm</td></tr>
+<tr class="separator:adc858fd865cb4f529784fbc52d4d2b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9bc96f0255f620d7eb93aa9ad921e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#afe9bc96f0255f620d7eb93aa9ad921e1">ELIST2IZEH_A</a>(CLASSNAME)</td></tr>
+<tr class="separator:afe9bc96f0255f620d7eb93aa9ad921e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61d7ced1948543bdac72c2ae9d92cc7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#a61d7ced1948543bdac72c2ae9d92cc7a">ELIST2IZEH_B</a>(CLASSNAME)</td></tr>
+<tr class="separator:a61d7ced1948543bdac72c2ae9d92cc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580e2302bf687d2a94a171a32e609997"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#a580e2302bf687d2a94a171a32e609997">ELIST2IZEH_C</a>(CLASSNAME)</td></tr>
+<tr class="separator:a580e2302bf687d2a94a171a32e609997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a790562c8bc97eb7c596d2388a3b2918c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#a790562c8bc97eb7c596d2388a3b2918c">ELIST2IZEH</a>(CLASSNAME)</td></tr>
+<tr class="separator:a790562c8bc97eb7c596d2388a3b2918c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a574b9d080e6a413d915407cea6ac0243"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00825.html#a574b9d080e6a413d915407cea6ac0243">ELIST2IZE</a>(CLASSNAME)</td></tr>
+<tr class="separator:a574b9d080e6a413d915407cea6ac0243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="aec4dedcf89534ed10f6107bf9c6418f3"></a>
+<a class="anchor" id="a574b9d080e6a413d915407cea6ac0243"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CROSS</td>
+          <td class="memname">#define ELIST2IZE</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">a, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
           <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((a).x * (b).y - (a).y * (b).x)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00825_source.html#l00052">52</a> of file <a class="el" href="a00825_source.html">vecfuncs.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad0e13d94164219be2d5bbd4d65e71d1e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LENGTH</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">a</td><td>)</td>
-          <td>&#160;&#160;&#160;((a).x * (a).x + (a).y * (a).y)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00825_source.html#l00070">70</a> of file <a class="el" href="a00825_source.html">vecfuncs.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adc5b1f2b1c3f7afb5b0b035449f5e2ec"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define point_diff</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">p, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">p1, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">p2&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((p).x = (p1).x - (p2).x,        \</div>
-<div class="line">        (p).y = (p1).y - (p2).y)</div>
+<b>Value:</b><div class="fragment"><div class="line">\</div>
+<div class="line"><span class="comment">/***********************************************************************                \</span></div>
+<div class="line"><span class="comment">*                                                       CLASSNAME##_zapper                                                                                                                                                      \</span></div>
+<div class="line"><span class="comment">*                                                                                                                                                                                                               \</span></div>
+<div class="line"><span class="comment">*  A function which can delete a CLASSNAME element.  This is passed to the              \</span></div>
+<div class="line"><span class="comment">*  generic clear list member function so that when a list is cleared the                \</span></div>
+<div class="line"><span class="comment">*  elements on the list are properly destroyed from the base class, even                \</span></div>
+<div class="line"><span class="comment">*  though we dont use a virtual destructor function.                                                                    \</span></div>
+<div class="line"><span class="comment">**********************************************************************/</span>                 \</div>
+<div class="line">                                                                                                                                                                                                                <a class="code" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">\</a></div>
+<div class="line"><a class="code" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <span class="keywordtype">void</span>                                     CLASSNAME##_zapper(                     <span class="comment">/*delete a link*/</span>               \</div>
+<div class="line"><a class="code" href="a00369.html">ELIST2_LINK</a>*                            link)                                           <span class="comment">/*link to delete*/</span>      \</div>
+<div class="line">{                                                                                                                                                                                                               \</div>
+<div class="line">delete (CLASSNAME *) link;                                                                                                                                      \</div>
+<div class="line">}                                                                                                                                                                                                               \</div>
+<div class="line">\</div>
+<div class="line"><span class="comment">/* Become a deep copy of src_list*/</span> \</div>
+<div class="line"><span class="keywordtype">void</span> CLASSNAME<span class="preprocessor">##_LIST::deep_copy(const CLASSNAME##_LIST* src_list, \</span></div>
+<div class="line"><span class="preprocessor">               CLASSNAME* (*copier)(const CLASSNAME*)) { \</span></div>
+<div class="line"><span class="preprocessor">\</span></div>
+<div class="line"><span class="preprocessor">  CLASSNAME##_IT from_it(const_cast&lt;CLASSNAME##_LIST*&gt;(src_list)); \</span></div>
+<div class="line"><span class="preprocessor">  CLASSNAME##_IT to_it(this); \</span></div>
+<div class="line"><span class="preprocessor">\</span></div>
+<div class="line"><span class="preprocessor">  for (from_it.mark_cycle_pt(); !from_it.cycled_list(); from_it.forward()) \</span></div>
+<div class="line"><span class="preprocessor">    to_it.add_after_then_move((*copier)(from_it.data())); \</span></div>
+<div class="line"><span class="preprocessor">}</span></div>
+<div class="ttc" id="a00849_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00025">platform.h:25</a></div></div>
+<div class="ttc" id="a00369_html"><div class="ttname"><a href="a00369.html">ELIST2_LINK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00825_source.html#l00058">elst2.h:58</a></div></div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="a00825_source.html#l00042">42</a> of file <a class="el" href="a00825_source.html">vecfuncs.h</a>.</p>
+<p>Definition at line <a class="el" href="a00825_source.html#l01010">1010</a> of file <a class="el" href="a00825_source.html">elst2.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa9c4c0cbfeda43da7c0c28c7a8e836ed"></a>
+<a class="anchor" id="a790562c8bc97eb7c596d2388a3b2918c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SCALAR</td>
+          <td class="memname">#define ELIST2IZEH</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">a, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((a).x * (b).x + (a).y * (b).y)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00825_source.html#l00061">61</a> of file <a class="el" href="a00825_source.html">vecfuncs.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a57d4a186a22b01e2110793bc22a5d8f0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int direction </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00372.html">EDGEPT</a> *&#160;</td>
-          <td class="paramname"><em>point</em></td><td>)</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>direction to return</p>
-<p>prev point</p>
-<p>next point </p>
-
-<p>Definition at line <a class="el" href="a00824_source.html#l00043">43</a> of file <a class="el" href="a00824_source.html">vecfuncs.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                             {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">int</span> dir;                       </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="a00372.html">EDGEPT</a> *prev;                  </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="a00372.html">EDGEPT</a> *next;                  </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  dir = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  prev = point-&gt;<a class="code" href="a00372.html#a8326da8daf597bcdc5a05064a37cbbb1">prev</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  next = point-&gt;<a class="code" href="a00372.html#a196f7786194752f89e364a586d24884d">next</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">if</span> (((prev-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &lt;= point-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) &amp;&amp;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    (point-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &lt; next-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>)) ||</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    ((prev-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &lt; point-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) &amp;&amp; (point-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &lt;= next-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>)))</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    dir = 1;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span> (((prev-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt;= point-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) &amp;&amp;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    (point-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt; next-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>)) ||</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    ((prev-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt; point-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) &amp;&amp; (point-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt;= next-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>.<a class="code" href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>)))</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    dir = -1;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> dir;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="ttc" id="a00372_html_a8326da8daf597bcdc5a05064a37cbbb1"><div class="ttname"><a href="a00372.html#a8326da8daf597bcdc5a05064a37cbbb1">EDGEPT::prev</a></div><div class="ttdeci">EDGEPT * prev</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00170">blobs.h:170</a></div></div>
-<div class="ttc" id="a00647_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00647.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00071">blobs.h:71</a></div></div>
-<div class="ttc" id="a00372_html_a196f7786194752f89e364a586d24884d"><div class="ttname"><a href="a00372.html#a196f7786194752f89e364a586d24884d">EDGEPT::next</a></div><div class="ttdeci">EDGEPT * next</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00169">blobs.h:169</a></div></div>
-<div class="ttc" id="a00372_html_adee462d390e637a8393ba373c8d2a1bb"><div class="ttname"><a href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">EDGEPT::pos</a></div><div class="ttdeci">TPOINT pos</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00163">blobs.h:163</a></div></div>
-<div class="ttc" id="a00372_html"><div class="ttname"><a href="a00372.html">EDGEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00076">blobs.h:76</a></div></div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="a00825.html#afe9bc96f0255f620d7eb93aa9ad921e1">\</a></div>
+<div class="line"><a class="code" href="a00825.html#afe9bc96f0255f620d7eb93aa9ad921e1">ELIST2IZEH_A</a>( CLASSNAME )                                                                                                                                               <a class="code" href="a00825.html#a61d7ced1948543bdac72c2ae9d92cc7a">\</a></div>
+<div class="line"><a class="code" href="a00825.html#a61d7ced1948543bdac72c2ae9d92cc7a">																										\</a></div>
+<div class="line"><a class="code" href="a00825.html#a61d7ced1948543bdac72c2ae9d92cc7a">ELIST2IZEH_B</a>( CLASSNAME )                                                                                                                                               <a class="code" href="a00825.html#a580e2302bf687d2a94a171a32e609997">\</a></div>
+<div class="line"><a class="code" href="a00825.html#a580e2302bf687d2a94a171a32e609997">																										\</a></div>
+<div class="line"><a class="code" href="a00825.html#a580e2302bf687d2a94a171a32e609997">ELIST2IZEH_C</a>( CLASSNAME )</div>
+<div class="ttc" id="a00825_html_afe9bc96f0255f620d7eb93aa9ad921e1"><div class="ttname"><a href="a00825.html#afe9bc96f0255f620d7eb93aa9ad921e1">ELIST2IZEH_A</a></div><div class="ttdeci">#define ELIST2IZEH_A(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00825_source.html#l00910">elst2.h:910</a></div></div>
+<div class="ttc" id="a00825_html_a61d7ced1948543bdac72c2ae9d92cc7a"><div class="ttname"><a href="a00825.html#a61d7ced1948543bdac72c2ae9d92cc7a">ELIST2IZEH_B</a></div><div class="ttdeci">#define ELIST2IZEH_B(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00825_source.html#l00915">elst2.h:915</a></div></div>
+<div class="ttc" id="a00825_html_a580e2302bf687d2a94a171a32e609997"><div class="ttname"><a href="a00825.html#a580e2302bf687d2a94a171a32e609997">ELIST2IZEH_C</a></div><div class="ttdeci">#define ELIST2IZEH_C(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00825_source.html#l00950">elst2.h:950</a></div></div>
 </div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00825_source.html#l00997">997</a> of file <a class="el" href="a00825_source.html">elst2.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe9bc96f0255f620d7eb93aa9ad921e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELIST2IZEH_A</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">\</div>
+<div class="line">extern <a class="code" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <span class="keywordtype">void</span>                      CLASSNAME##_zapper(                     <span class="comment">/*delete a link*/</span>               \</div>
+<div class="line"><a class="code" href="a00369.html">ELIST2_LINK</a>*                            link);                                          <span class="comment">/*link to delete*/</span></div>
+<div class="ttc" id="a00849_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00025">platform.h:25</a></div></div>
+<div class="ttc" id="a00369_html"><div class="ttname"><a href="a00369.html">ELIST2_LINK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00825_source.html#l00058">elst2.h:58</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00825_source.html#l00910">910</a> of file <a class="el" href="a00825_source.html">elst2.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61d7ced1948543bdac72c2ae9d92cc7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELIST2IZEH_B</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00825_source.html#l00915">915</a> of file <a class="el" href="a00825_source.html">elst2.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a580e2302bf687d2a94a171a32e609997"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELIST2IZEH_C</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00825_source.html#l00950">950</a> of file <a class="el" href="a00825_source.html">elst2.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc858fd865cb4f529784fbc52d4d2b87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QUOTE_IT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">parm</td><td>)</td>
+          <td>&#160;&#160;&#160;#parm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00825_source.html#l00877">877</a> of file <a class="el" href="a00825_source.html">elst2.h</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -294,8 +298,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00825.html">vecfuncs.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00825.html">elst2.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

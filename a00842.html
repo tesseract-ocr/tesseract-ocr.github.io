@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/elst.h File Reference</title>
+<title>Tesseract: ccutil/memry.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,189 +105,233 @@ $(document).ready(function(){initNavTree('a00842.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">elst.h File Reference</div>  </div>
+<div class="title">memry.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00854_source.html">host.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00874_source.html">serialis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00858_source.html">lsterr.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00835_source.html">host.h</a>&quot;</code><br />
 </div>
 <p><a href="a00842_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html">ELIST_LINK</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html">ELIST</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00378.html">ELIST_ITERATOR</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:adc858fd865cb4f529784fbc52d4d2b87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#adc858fd865cb4f529784fbc52d4d2b87">QUOTE_IT</a>(parm)&#160;&#160;&#160;#parm</td></tr>
-<tr class="separator:adc858fd865cb4f529784fbc52d4d2b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a181b0cf1742311895ddeb0cd3125fb90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a181b0cf1742311895ddeb0cd3125fb90">ELISTIZEH_A</a>(CLASSNAME)</td></tr>
-<tr class="separator:a181b0cf1742311895ddeb0cd3125fb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10f14f7e0589faff72f2104fbb0fd71f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a10f14f7e0589faff72f2104fbb0fd71f">ELISTIZEH_B</a>(CLASSNAME)</td></tr>
-<tr class="separator:a10f14f7e0589faff72f2104fbb0fd71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6980dec74200e9b5d5ec5ecd2844f291"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a6980dec74200e9b5d5ec5ecd2844f291">ELISTIZEH_C</a>(CLASSNAME)</td></tr>
-<tr class="separator:a6980dec74200e9b5d5ec5ecd2844f291"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cf5144252ef24ea7bb5e0da1e698a0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a6cf5144252ef24ea7bb5e0da1e698a0b">ELISTIZEH</a>(CLASSNAME)</td></tr>
-<tr class="separator:a6cf5144252ef24ea7bb5e0da1e698a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab54325a3cfcd9bee58697d77e1902240"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#ab54325a3cfcd9bee58697d77e1902240">ELISTIZE</a>(CLASSNAME)</td></tr>
-<tr class="separator:ab54325a3cfcd9bee58697d77e1902240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a29cbb5255dbc65a22c2a47c21480f264"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a29cbb5255dbc65a22c2a47c21480f264">alloc_string</a> (<a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> <a class="el" href="a01046.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>)</td></tr>
+<tr class="separator:a29cbb5255dbc65a22c2a47c21480f264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadab03126da19fefc98afefc9549d5c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#aadab03126da19fefc98afefc9549d5c3">free_string</a> (char *string)</td></tr>
+<tr class="separator:aadab03126da19fefc98afefc9549d5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9a87464b391f9004ebcab8f8545241"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a2d9a87464b391f9004ebcab8f8545241">alloc_struct</a> (<a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> <a class="el" href="a01046.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>, const char *name=<a class="el" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</td></tr>
+<tr class="separator:a2d9a87464b391f9004ebcab8f8545241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663c99cbcf3eb087c6b9aeed7dc6dd71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a663c99cbcf3eb087c6b9aeed7dc6dd71">free_struct</a> (void *deadstruct, <a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>, const char *name=<a class="el" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</td></tr>
+<tr class="separator:a663c99cbcf3eb087c6b9aeed7dc6dd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c14b091498fb7866a1dd0af51a591fe"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a4c14b091498fb7866a1dd0af51a591fe">alloc_mem</a> (<a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> <a class="el" href="a01046.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>)</td></tr>
+<tr class="separator:a4c14b091498fb7866a1dd0af51a591fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c475a93760aa04525aa0b4d1216fda"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#ac8c475a93760aa04525aa0b4d1216fda">alloc_big_zeros</a> (<a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> <a class="el" href="a01046.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>)</td></tr>
+<tr class="separator:ac8c475a93760aa04525aa0b4d1216fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef1862b8e026e23eef238af032858e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#a9ef1862b8e026e23eef238af032858e4">free_mem</a> (void *oldchunk)</td></tr>
+<tr class="separator:a9ef1862b8e026e23eef238af032858e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30c02896b354139efbfb8936dfe8b69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00842.html#ab30c02896b354139efbfb8936dfe8b69">free_big_mem</a> (void *oldchunk)</td></tr>
+<tr class="separator:ab30c02896b354139efbfb8936dfe8b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ab54325a3cfcd9bee58697d77e1902240"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ac8c475a93760aa04525aa0b4d1216fda"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ELISTIZE</td>
+          <td class="memname">void* alloc_big_zeros </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">\</div>
-<div class="line"><span class="comment">/***********************************************************************    \</span></div>
-<div class="line"><span class="comment">*                           CLASSNAME##_zapper                              \</span></div>
-<div class="line"><span class="comment">*                                                                           \</span></div>
-<div class="line"><span class="comment">*  A function which can delete a CLASSNAME element.  This is passed to the  \</span></div>
-<div class="line"><span class="comment">*  generic clear list member function so that when a list is cleared the    \</span></div>
-<div class="line"><span class="comment">*  elements on the list are properly destroyed from the base class, even    \</span></div>
-<div class="line"><span class="comment">*  though we dont use a virtual destructor function.                        \</span></div>
-<div class="line"><span class="comment">**********************************************************************/</span>     \</div>
-<div class="line">                                                                            <a class="code" href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">\</a></div>
-<div class="line"><a class="code" href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <span class="keywordtype">void</span> CLASSNAME##_zapper(<a class="code" href="a00379.html">ELIST_LINK</a>* link) {                          \</div>
-<div class="line">  delete <span class="keyword">reinterpret_cast&lt;</span>CLASSNAME*<span class="keyword">&gt;</span>(link);                                \</div>
-<div class="line">}                                                                           \</div>
-<div class="line">                                                                            \</div>
-<div class="line"><span class="comment">/* Become a deep copy of src_list*/</span>                                         \</div>
-<div class="line">void CLASSNAME##_LIST::deep_copy(<span class="keyword">const</span> CLASSNAME##_LIST* src_list,          \</div>
-<div class="line">               CLASSNAME* (*copier)(<span class="keyword">const</span> CLASSNAME*)) {                    \</div>
-<div class="line">                                                                            \</div>
-<div class="line">  CLASSNAME##_IT from_it(const_cast&lt;CLASSNAME##_LIST*&gt;(src_list));          \</div>
-<div class="line">  CLASSNAME##_IT to_it(<span class="keyword">this</span>);                                               \</div>
-<div class="line">                                                                            \</div>
-<div class="line">  for (from_it.mark_cycle_pt(); !from_it.cycled_list(); from_it.forward())  \</div>
-<div class="line">    to_it.add_after_then_move((*copier)(from_it.data()));                   \</div>
-<div class="line">}</div>
-<div class="ttc" id="a00379_html"><div class="ttname"><a href="a00379.html">ELIST_LINK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00842_source.html#l00084">elst.h:84</a></div></div>
-<div class="ttc" id="a00868_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00868_source.html#l00025">platform.h:25</a></div></div>
+
+<p>Definition at line <a class="el" href="a00841_source.html#l00051">51</a> of file <a class="el" href="a00841_source.html">memry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                   {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> calloc(static_cast&lt;size_t&gt;(<a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>), 1);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="a01045_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01045_source.html#l00108">oldlist.cpp:108</a></div></div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="a00842_source.html#l00994">994</a> of file <a class="el" href="a00842_source.html">elst.h</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a6cf5144252ef24ea7bb5e0da1e698a0b"></a>
+<a class="anchor" id="a4c14b091498fb7866a1dd0af51a591fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ELISTIZEH</td>
+          <td class="memname">void* alloc_mem </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="a00842.html#a181b0cf1742311895ddeb0cd3125fb90">\</a></div>
-<div class="line"><a class="code" href="a00842.html#a181b0cf1742311895ddeb0cd3125fb90">ELISTIZEH_A</a>( CLASSNAME )                                                      <a class="code" href="a00842.html#a10f14f7e0589faff72f2104fbb0fd71f">\</a></div>
-<div class="line"><a class="code" href="a00842.html#a10f14f7e0589faff72f2104fbb0fd71f">                                                                              \</a></div>
-<div class="line"><a class="code" href="a00842.html#a10f14f7e0589faff72f2104fbb0fd71f">ELISTIZEH_B</a>( CLASSNAME )                                                      <a class="code" href="a00842.html#a6980dec74200e9b5d5ec5ecd2844f291">\</a></div>
-<div class="line"><a class="code" href="a00842.html#a6980dec74200e9b5d5ec5ecd2844f291">                                                                              \</a></div>
-<div class="line"><a class="code" href="a00842.html#a6980dec74200e9b5d5ec5ecd2844f291">ELISTIZEH_C</a>( CLASSNAME )</div>
-<div class="ttc" id="a00842_html_a6980dec74200e9b5d5ec5ecd2844f291"><div class="ttname"><a href="a00842.html#a6980dec74200e9b5d5ec5ecd2844f291">ELISTIZEH_C</a></div><div class="ttdeci">#define ELISTIZEH_C(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00842_source.html#l00932">elst.h:932</a></div></div>
-<div class="ttc" id="a00842_html_a10f14f7e0589faff72f2104fbb0fd71f"><div class="ttname"><a href="a00842.html#a10f14f7e0589faff72f2104fbb0fd71f">ELISTIZEH_B</a></div><div class="ttdeci">#define ELISTIZEH_B(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00842_source.html#l00898">elst.h:898</a></div></div>
-<div class="ttc" id="a00842_html_a181b0cf1742311895ddeb0cd3125fb90"><div class="ttname"><a href="a00842.html#a181b0cf1742311895ddeb0cd3125fb90">ELISTIZEH_A</a></div><div class="ttdeci">#define ELISTIZEH_A(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00842_source.html#l00894">elst.h:894</a></div></div>
+
+<p>Definition at line <a class="el" href="a00841_source.html#l00047">47</a> of file <a class="el" href="a00841_source.html">memry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                             {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">return</span> malloc(static_cast&lt;size_t&gt;(<a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="ttc" id="a01045_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01045_source.html#l00108">oldlist.cpp:108</a></div></div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="a00842_source.html#l00981">981</a> of file <a class="el" href="a00842_source.html">elst.h</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a181b0cf1742311895ddeb0cd3125fb90"></a>
+<a class="anchor" id="a29cbb5255dbc65a22c2a47c21480f264"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ELISTIZEH_A</td>
+          <td class="memname">char* alloc_string </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">\</div>
-<div class="line">extern <a class="code" href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <span class="keywordtype">void</span> CLASSNAME##_zapper(<a class="code" href="a00379.html">ELIST_LINK</a>* link);</div>
-<div class="ttc" id="a00379_html"><div class="ttname"><a href="a00379.html">ELIST_LINK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00842_source.html#l00084">elst.h:84</a></div></div>
-<div class="ttc" id="a00868_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00868_source.html#l00025">platform.h:25</a></div></div>
+
+<p>Definition at line <a class="el" href="a00841_source.html#l00030">30</a> of file <a class="el" href="a00841_source.html">memry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// Round up the amount allocated to a multiple of 4</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(malloc((<a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a> + 3) &amp; ~3));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="ttc" id="a01045_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01045_source.html#l00108">oldlist.cpp:108</a></div></div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="a00842_source.html#l00894">894</a> of file <a class="el" href="a00842_source.html">elst.h</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a10f14f7e0589faff72f2104fbb0fd71f"></a>
+<a class="anchor" id="a2d9a87464b391f9004ebcab8f8545241"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ELISTIZEH_B</td>
+          <td class="memname">void* alloc_struct </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td class="paramtype"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em> = <code><a class="el" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00841_source.html#l00039">39</a> of file <a class="el" href="a00841_source.html">memry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                              {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">return</span> malloc(<a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="ttc" id="a01045_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01045_source.html#l00108">oldlist.cpp:108</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab30c02896b354139efbfb8936dfe8b69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_big_mem </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>oldchunk</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00842_source.html#l00898">898</a> of file <a class="el" href="a00842_source.html">elst.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00841_source.html#l00059">59</a> of file <a class="el" href="a00841_source.html">memry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                  {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  free(oldchunk);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a6980dec74200e9b5d5ec5ecd2844f291"></a>
+<a class="anchor" id="a9ef1862b8e026e23eef238af032858e4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ELISTIZEH_C</td>
+          <td class="memname">void free_mem </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>oldchunk</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00842_source.html#l00932">932</a> of file <a class="el" href="a00842_source.html">elst.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00841_source.html#l00055">55</a> of file <a class="el" href="a00841_source.html">memry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                              {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  free(oldchunk);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="adc858fd865cb4f529784fbc52d4d2b87"></a>
+<a class="anchor" id="aadab03126da19fefc98afefc9549d5c3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define QUOTE_IT</td>
+          <td class="memname">void free_string </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">parm</td><td>)</td>
-          <td>&#160;&#160;&#160;#parm</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00842_source.html#l00862">862</a> of file <a class="el" href="a00842_source.html">elst.h</a>.</p>
+<p>Definition at line <a class="el" href="a00841_source.html#l00035">35</a> of file <a class="el" href="a00841_source.html">memry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                               {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  free(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a663c99cbcf3eb087c6b9aeed7dc6dd71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_struct </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>deadstruct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em> = <code><a class="el" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="a00841_source.html#l00043">43</a> of file <a class="el" href="a00841_source.html">memry.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                                        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  free(deadstruct);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -295,8 +339,8 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00842.html">elst.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00842.html">memry.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

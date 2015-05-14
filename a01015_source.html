@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/lang_model.h Source File</title>
+<title>Tesseract: cube/tess_lang_model.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('a01015_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">lang_model.h</div>  </div>
+<div class="title">tess_lang_model.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01015.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        lang_model.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Language Model Edge Base Class</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        tess_lang_model.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Tesseract Language Model Class</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2007</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2008</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2008, Google Inc.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -127,102 +127,168 @@ $(document).ready(function(){initNavTree('a01015_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The LanguageModel class abstracts a State machine that is modeled as a Trie</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// structure. The state machine models the language being recognized by the OCR</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Engine</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// This is an abstract class that is to be inherited by any language model</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TESS_LANG_MODEL_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TESS_LANG_MODEL_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifndef LANG_MODEL_H</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define LANG_MODEL_H</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01014.html">lang_mod_edge.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00974.html">char_altlist.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00984.html">char_set.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01026.html">tuning_params.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00964.html">char_altlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00676.html">cube_reco_context.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00992.html">cube_tuning_params.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01055.html">dict.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01005.html">lang_model.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00862.html">tessdatamanager.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01013.html">tess_lang_mod_edge.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00461.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00461.html">LangModel</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a00461.html#abf2f207148aa4563bedc41dbd650bc10">   36</a></span>&#160;  <a class="code" href="a00461.html#abf2f207148aa4563bedc41dbd650bc10">LangModel</a>() {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="a00461.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="a00461.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="a00461.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="a00461.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00461.html#afff28be0aa6c2451e8a0e32e7c88331f">   42</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00461.html#afff28be0aa6c2451e8a0e32e7c88331f">~LangModel</a>() {}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// Returns an edge pointer to the Root</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00460.html">LangModEdge</a> *<a class="code" href="a00461.html#a46178bf09d08aa9c8048adb0a8561b75">Root</a>() = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Returns the edges that fan-out of the specified edge and their count</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00460.html">LangModEdge</a> **<a class="code" href="a00461.html#a61071a0736427f808d7134aeeb456701">GetEdges</a>(<a class="code" href="a00305.html">CharAltList</a> *alt_list,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 <a class="code" href="a00460.html">LangModEdge</a> *parent_edge,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                 <span class="keywordtype">int</span> *edge_cnt) = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Returns is a sequence of 32-bit characters are valid within this language</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// model or net. And EndOfWord flag is specified. If true, the sequence has</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// to end on a valid word. The function also optionally returns the list</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// of language model edges traversed to parse the string</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00461.html#a8b2edb01fa6b82d7a0eba6fb28717494">IsValidSequence</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str, <span class="keywordtype">bool</span> eow_flag,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                               <a class="code" href="a00460.html">LangModEdge</a> **edge_array = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00461.html#ade13ad9a3c3f6bb19a1071aa20bffb4b">IsLeadingPunc</a>(<a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00461.html#a0235bd607e1d0cd00082661e0b71d495">IsTrailingPunc</a>(<a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) = 0;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00461.html#aae119709c73d00d731c65588be763a1d">IsDigit</a>(<a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) = 0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// accessor functions</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a00461.html#adf7be83dc2b85f86e126ca31ddf7e744">   61</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="a00461.html#adf7be83dc2b85f86e126ca31ddf7e744">OOD</a>() { <span class="keywordflow">return</span> <a class="code" href="a00461.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a>; }</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a00461.html#a99ff66ba44ba88d7b5e47ef779b4844d">   62</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="a00461.html#a99ff66ba44ba88d7b5e47ef779b4844d">Numeric</a>() { <span class="keywordflow">return</span> <a class="code" href="a00461.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a>; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00461.html#abd7c96a934e736cd3487f6340a1d4433">   63</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="a00461.html#abd7c96a934e736cd3487f6340a1d4433">WordList</a>() { <span class="keywordflow">return</span> <a class="code" href="a00461.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a>; }</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a00461.html#a3a8c70497813e15dbfc42f9990952b19">   64</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="a00461.html#a3a8c70497813e15dbfc42f9990952b19">Punc</a>() { <span class="keywordflow">return</span> <a class="code" href="a00461.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a>; }</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00461.html#a6c4a21482e846de85722a7208240da66">   65</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="a00461.html#a6c4a21482e846de85722a7208240da66">SetOOD</a>(<span class="keywordtype">bool</span> ood) { <a class="code" href="a00461.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a> = ood; }</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="a00461.html#a7612159b5eca3fd43eedfa9f68d3b79c">   66</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="a00461.html#a7612159b5eca3fd43eedfa9f68d3b79c">SetNumeric</a>(<span class="keywordtype">bool</span> numeric) { <a class="code" href="a00461.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a> = numeric; }</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00461.html#af2d51a52e748886fca42fa6b6f3d2b78">   67</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="a00461.html#af2d51a52e748886fca42fa6b6f3d2b78">SetWordList</a>(<span class="keywordtype">bool</span> word_list) { <a class="code" href="a00461.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a> = word_list; }</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a00461.html#ab467aec7089e513e1e891828c7f9b4d3">   68</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="a00461.html#ab467aec7089e513e1e891828c7f9b4d3">SetPunc</a>(<span class="keywordtype">bool</span> punc_enabled) { <a class="code" href="a00461.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a> = punc_enabled; }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00461.html#aafdf3a806f6fe7ffbe75d257ecbede56">   71</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00461.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="a00461.html#a877e0ae377a2c2b3b2950b497ff1b772">   72</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00461.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a00461.html#aa62a12331a5be9099c7744b74eddeff2">   73</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00461.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="a00461.html#a70621f842de37a67dd00e7c5a2d97877">   74</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00461.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif  // LANG_MODEL_H</span></div>
-<div class="ttc" id="a00461_html_a3a8c70497813e15dbfc42f9990952b19"><div class="ttname"><a href="a00461.html#a3a8c70497813e15dbfc42f9990952b19">tesseract::LangModel::Punc</a></div><div class="ttdeci">bool Punc()</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00064">lang_model.h:64</a></div></div>
-<div class="ttc" id="a00461_html_aafdf3a806f6fe7ffbe75d257ecbede56"><div class="ttname"><a href="a00461.html#aafdf3a806f6fe7ffbe75d257ecbede56">tesseract::LangModel::ood_enabled_</a></div><div class="ttdeci">bool ood_enabled_</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00071">lang_model.h:71</a></div></div>
-<div class="ttc" id="a00461_html_ab467aec7089e513e1e891828c7f9b4d3"><div class="ttname"><a href="a00461.html#ab467aec7089e513e1e891828c7f9b4d3">tesseract::LangModel::SetPunc</a></div><div class="ttdeci">void SetPunc(bool punc_enabled)</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00068">lang_model.h:68</a></div></div>
-<div class="ttc" id="a00461_html_a6c4a21482e846de85722a7208240da66"><div class="ttname"><a href="a00461.html#a6c4a21482e846de85722a7208240da66">tesseract::LangModel::SetOOD</a></div><div class="ttdeci">void SetOOD(bool ood)</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00065">lang_model.h:65</a></div></div>
-<div class="ttc" id="a00461_html_afff28be0aa6c2451e8a0e32e7c88331f"><div class="ttname"><a href="a00461.html#afff28be0aa6c2451e8a0e32e7c88331f">tesseract::LangModel::~LangModel</a></div><div class="ttdeci">virtual ~LangModel()</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00042">lang_model.h:42</a></div></div>
-<div class="ttc" id="a00461_html_a61071a0736427f808d7134aeeb456701"><div class="ttname"><a href="a00461.html#a61071a0736427f808d7134aeeb456701">tesseract::LangModel::GetEdges</a></div><div class="ttdeci">virtual LangModEdge ** GetEdges(CharAltList *alt_list, LangModEdge *parent_edge, int *edge_cnt)=0</div></div>
-<div class="ttc" id="a00461_html_a46178bf09d08aa9c8048adb0a8561b75"><div class="ttname"><a href="a00461.html#a46178bf09d08aa9c8048adb0a8561b75">tesseract::LangModel::Root</a></div><div class="ttdeci">virtual LangModEdge * Root()=0</div></div>
-<div class="ttc" id="a00461_html_a877e0ae377a2c2b3b2950b497ff1b772"><div class="ttname"><a href="a00461.html#a877e0ae377a2c2b3b2950b497ff1b772">tesseract::LangModel::numeric_enabled_</a></div><div class="ttdeci">bool numeric_enabled_</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00072">lang_model.h:72</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00984_html"><div class="ttname"><a href="a00984.html">char_set.h</a></div></div>
-<div class="ttc" id="a00461_html_adf7be83dc2b85f86e126ca31ddf7e744"><div class="ttname"><a href="a00461.html#adf7be83dc2b85f86e126ca31ddf7e744">tesseract::LangModel::OOD</a></div><div class="ttdeci">bool OOD()</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00061">lang_model.h:61</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00461_html"><div class="ttname"><a href="a00461.html">tesseract::LangModel</a></div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00034">lang_model.h:34</a></div></div>
-<div class="ttc" id="a00305_html"><div class="ttname"><a href="a00305.html">tesseract::CharAltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00974_source.html#l00032">char_altlist.h:32</a></div></div>
-<div class="ttc" id="a01026_html"><div class="ttname"><a href="a01026.html">tuning_params.h</a></div></div>
-<div class="ttc" id="a00461_html_af2d51a52e748886fca42fa6b6f3d2b78"><div class="ttname"><a href="a00461.html#af2d51a52e748886fca42fa6b6f3d2b78">tesseract::LangModel::SetWordList</a></div><div class="ttdeci">void SetWordList(bool word_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00067">lang_model.h:67</a></div></div>
-<div class="ttc" id="a01014_html"><div class="ttname"><a href="a01014.html">lang_mod_edge.h</a></div></div>
-<div class="ttc" id="a00461_html_a8b2edb01fa6b82d7a0eba6fb28717494"><div class="ttname"><a href="a00461.html#a8b2edb01fa6b82d7a0eba6fb28717494">tesseract::LangModel::IsValidSequence</a></div><div class="ttdeci">virtual bool IsValidSequence(const char_32 *str, bool eow_flag, LangModEdge **edge_array=NULL)=0</div></div>
-<div class="ttc" id="a00461_html_a7612159b5eca3fd43eedfa9f68d3b79c"><div class="ttname"><a href="a00461.html#a7612159b5eca3fd43eedfa9f68d3b79c">tesseract::LangModel::SetNumeric</a></div><div class="ttdeci">void SetNumeric(bool numeric)</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00066">lang_model.h:66</a></div></div>
-<div class="ttc" id="a00461_html_aa62a12331a5be9099c7744b74eddeff2"><div class="ttname"><a href="a00461.html#aa62a12331a5be9099c7744b74eddeff2">tesseract::LangModel::word_list_enabled_</a></div><div class="ttdeci">bool word_list_enabled_</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00073">lang_model.h:73</a></div></div>
-<div class="ttc" id="a00461_html_abf2f207148aa4563bedc41dbd650bc10"><div class="ttname"><a href="a00461.html#abf2f207148aa4563bedc41dbd650bc10">tesseract::LangModel::LangModel</a></div><div class="ttdeci">LangModel()</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00036">lang_model.h:36</a></div></div>
-<div class="ttc" id="a00974_html"><div class="ttname"><a href="a00974.html">char_altlist.h</a></div></div>
-<div class="ttc" id="a00461_html_a99ff66ba44ba88d7b5e47ef779b4844d"><div class="ttname"><a href="a00461.html#a99ff66ba44ba88d7b5e47ef779b4844d">tesseract::LangModel::Numeric</a></div><div class="ttdeci">bool Numeric()</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00062">lang_model.h:62</a></div></div>
-<div class="ttc" id="a00460_html"><div class="ttname"><a href="a00460.html">tesseract::LangModEdge</a></div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00043">lang_mod_edge.h:43</a></div></div>
-<div class="ttc" id="a00461_html_ade13ad9a3c3f6bb19a1071aa20bffb4b"><div class="ttname"><a href="a00461.html#ade13ad9a3c3f6bb19a1071aa20bffb4b">tesseract::LangModel::IsLeadingPunc</a></div><div class="ttdeci">virtual bool IsLeadingPunc(char_32 ch)=0</div></div>
-<div class="ttc" id="a00461_html_aae119709c73d00d731c65588be763a1d"><div class="ttname"><a href="a00461.html#aae119709c73d00d731c65588be763a1d">tesseract::LangModel::IsDigit</a></div><div class="ttdeci">virtual bool IsDigit(char_32 ch)=0</div></div>
-<div class="ttc" id="a01279_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01279.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00040">string_32.h:40</a></div></div>
-<div class="ttc" id="a00461_html_abd7c96a934e736cd3487f6340a1d4433"><div class="ttname"><a href="a00461.html#abd7c96a934e736cd3487f6340a1d4433">tesseract::LangModel::WordList</a></div><div class="ttdeci">bool WordList()</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00063">lang_model.h:63</a></div></div>
-<div class="ttc" id="a00461_html_a70621f842de37a67dd00e7c5a2d97877"><div class="ttname"><a href="a00461.html#a70621f842de37a67dd00e7c5a2d97877">tesseract::LangModel::punc_enabled_</a></div><div class="ttdeci">bool punc_enabled_</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00074">lang_model.h:74</a></div></div>
-<div class="ttc" id="a00461_html_a0235bd607e1d0cd00082661e0b71d495"><div class="ttname"><a href="a00461.html#a0235bd607e1d0cd00082661e0b71d495">tesseract::LangModel::IsTrailingPunc</a></div><div class="ttdeci">virtual bool IsTrailingPunc(char_32 ch)=0</div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01267.html#acc744c888b291dd541ba6fb60c76b0a9">   35</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a01267.html#acc744c888b291dd541ba6fb60c76b0a9">kStateCnt</a> = 4;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a01267.html#a6b4a65d34133edfd1e49af29cb711767">   36</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a01267.html#a6b4a65d34133edfd1e49af29cb711767">kNumLiteralCnt</a> = 5;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00612.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00612.html">TessLangModel</a> : <span class="keyword">public</span> <a class="code" href="a00449.html">LangModel</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a00612.html#a23d5290b102bb43428957c4c4a96e6d6">TessLangModel</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;lm_params,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;data_file_path,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordtype">bool</span> load_system_dawg,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="a00606.html">TessdataManager</a> *tessdata_manager,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="a00339.html">CubeRecoContext</a> *cntxt);</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00612.html#a3976ab4c324b005b9165609e3b077dbc">   45</a></span>&#160;  <a class="code" href="a00612.html#a3976ab4c324b005b9165609e3b077dbc">~TessLangModel</a>() {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (word_dawgs_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      word_dawgs_-&gt;<a class="code" href="a00406.html#a98f62dccd75224a60437c2761bd215cd">delete_data_pointers</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keyword">delete</span> word_dawgs_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// returns a pointer to the root of the language model</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00612.html#a939ea7ad8b064d8167b3c7019bf82d9f">   53</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="a00611.html">TessLangModEdge</a> *<a class="code" href="a00612.html#a939ea7ad8b064d8167b3c7019bf82d9f">Root</a>() {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// The general fan-out generation function. Returns the list of edges</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// fanning-out of the specified edge and their count. If an AltList is</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// specified, only the class-ids with a minimum cost are considered</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="a00448.html">LangModEdge</a> **<a class="code" href="a00612.html#abd9a2fc77fe18caeb4a8f17020b460a4">GetEdges</a>(<a class="code" href="a00300.html">CharAltList</a> *alt_list,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                         <a class="code" href="a00448.html">LangModEdge</a> *edge,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                         <span class="keywordtype">int</span> *edge_cnt);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Determines if a sequence of 32-bit chars is valid in this language model</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// starting from the root. If the eow_flag is ON, also checks for</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// a valid EndOfWord. If final_edge is not NULL, returns a pointer to the last</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// edge</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00612.html#a2c303d6052f7b99c6b65a497592e5e2e">IsValidSequence</a>(<span class="keyword">const</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *sequence, <span class="keywordtype">bool</span> eow_flag,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                       <a class="code" href="a00448.html">LangModEdge</a> **final_edge = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00612.html#ae012b6f6dec52e66ccc7b78fa8975b10">IsLeadingPunc</a>(<a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00612.html#aed986e1547e8faf18a522ef074e0413a">IsTrailingPunc</a>(<a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00612.html#a69d61128a73ddf1e9ce709a3808c6530">IsDigit</a>(<a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00612.html#a1fc3e4c81803a84dba0ff7dd1e0ec936">RemoveInvalidCharacters</a>(<span class="keywordtype">string</span> *lm_str);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// static LM state machines</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="a00346.html">Dawg</a> *ood_dawg_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="a00346.html">Dawg</a> *number_dawg_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> num_state_machine_[<a class="code" href="a01267.html#acc744c888b291dd541ba6fb60c76b0a9">kStateCnt</a>][<a class="code" href="a01267.html#a6b4a65d34133edfd1e49af29cb711767">kNumLiteralCnt</a>];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> num_max_repeat_[<a class="code" href="a01267.html#acc744c888b291dd541ba6fb60c76b0a9">kStateCnt</a>];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// word_dawgs_ should only be loaded if cube has its own version of the</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// unicharset (different from the one used by tesseract) and therefore</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// can not use the dawgs loaded for tesseract (since the unichar ids</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// encoded in the dawgs differ).</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="a00406.html">DawgVector</a> *word_dawgs_;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> max_edge_;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> max_ood_shape_cost_;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// remaining language model elements needed by cube. These get loaded from</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">// the .lm file</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">string</span> lead_punc_;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">string</span> trail_punc_;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">string</span> num_lead_punc_;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">string</span> num_trail_punc_;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">string</span> operators_;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">string</span> digits_;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">string</span> alphas_;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="comment">// String of characters in RHS of each line of &lt;lang&gt;.cube.lm</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="comment">// Each element is hard-coded to correspond to a specific token type</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// (see LoadLangModelElements)</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">string</span> *literal_str_[<a class="code" href="a01267.html#a6b4a65d34133edfd1e49af29cb711767">kNumLiteralCnt</a>];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="comment">// Recognition context needed to access language properties</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="comment">// (case, cursive,..)</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="a00339.html">CubeRecoContext</a> *cntxt_;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordtype">bool</span> has_case_;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="comment">// computes and returns the edges that fan out of an edge ref</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">int</span> FanOut(<a class="code" href="a00300.html">CharAltList</a> *alt_list,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;             <span class="keyword">const</span> <a class="code" href="a00346.html">Dawg</a> *dawg, <a class="code" href="a01051.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_ref, <a class="code" href="a01051.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_ref_mask,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;             <span class="keyword">const</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str, <span class="keywordtype">bool</span> root_flag, <a class="code" href="a00448.html">LangModEdge</a> **edge_array);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// generate edges from an NULL terminated string</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="comment">// (used for punctuation, operators and digits)</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">int</span> Edges(<span class="keyword">const</span> <span class="keywordtype">char</span> *strng, <span class="keyword">const</span> <a class="code" href="a00346.html">Dawg</a> *dawg,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="a01051.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_ref, <a class="code" href="a01051.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_ref_mask,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <a class="code" href="a00448.html">LangModEdge</a> **edge_array);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="comment">// Generate the edges fanning-out from an edge in the number state machine</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">int</span> NumberEdges(<a class="code" href="a01051.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_ref, <a class="code" href="a00448.html">LangModEdge</a> **edge_array);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="comment">// Generate OOD edges</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">int</span> OODEdges(<a class="code" href="a00300.html">CharAltList</a> *alt_list, <a class="code" href="a01051.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_ref,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;               <a class="code" href="a01051.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_ref_mask, <a class="code" href="a00448.html">LangModEdge</a> **edge_array);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="comment">// Cleanup an edge array</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">void</span> FreeEdges(<span class="keywordtype">int</span> edge_cnt, <a class="code" href="a00448.html">LangModEdge</a> **edge_array);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">// Determines if a sequence of 32-bit chars is valid in this language model</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">// starting from the specified edge. If the eow_flag is ON, also checks for</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="comment">// a valid EndOfWord. If final_edge is not NULL, returns a pointer to the last</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="comment">// edge</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00612.html#a2c303d6052f7b99c6b65a497592e5e2e">IsValidSequence</a>(<a class="code" href="a00448.html">LangModEdge</a> *edge, <span class="keyword">const</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *sequence,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                       <span class="keywordtype">bool</span> eow_flag, <a class="code" href="a00448.html">LangModEdge</a> **final_edge);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="comment">// Parse language model elements from the given string, which should</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="comment">// have been loaded from &lt;lang&gt;.cube.lm file, e.g. in CubeRecoContext</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">bool</span> LoadLangModelElements(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;lm_params);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="comment">// Returns the number of word Dawgs in the language model.</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordtype">int</span> NumDawgs() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="comment">// Returns the dawgs with the given index from either the dawgs</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="comment">// stored by the Tesseract object, or the word_dawgs_.</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00346.html">Dawg</a> *GetDawg(<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;};</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}  <span class="comment">// tesseract</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#endif  // TESS_LANG_MODEL_H</span></div>
+<div class="ttc" id="a00339_html"><div class="ttname"><a href="a00339.html">tesseract::CubeRecoContext</a></div><div class="ttdef"><b>Definition:</b> <a href="a00676_source.html#l00043">cube_reco_context.h:43</a></div></div>
+<div class="ttc" id="a00612_html_aed986e1547e8faf18a522ef074e0413a"><div class="ttname"><a href="a00612.html#aed986e1547e8faf18a522ef074e0413a">tesseract::TessLangModel::IsTrailingPunc</a></div><div class="ttdeci">bool IsTrailingPunc(char_32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00158">tess_lang_model.cpp:158</a></div></div>
+<div class="ttc" id="a00676_html"><div class="ttname"><a href="a00676.html">cube_reco_context.h</a></div></div>
+<div class="ttc" id="a00612_html_a2c303d6052f7b99c6b65a497592e5e2e"><div class="ttname"><a href="a00612.html#a2c303d6052f7b99c6b65a497592e5e2e">tesseract::TessLangModel::IsValidSequence</a></div><div class="ttdeci">bool IsValidSequence(const char_32 *sequence, bool eow_flag, LangModEdge **final_edge=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00145">tess_lang_model.cpp:145</a></div></div>
+<div class="ttc" id="a00612_html_ae012b6f6dec52e66ccc7b78fa8975b10"><div class="ttname"><a href="a00612.html#ae012b6f6dec52e66ccc7b78fa8975b10">tesseract::TessLangModel::IsLeadingPunc</a></div><div class="ttdeci">bool IsLeadingPunc(char_32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00154">tess_lang_model.cpp:154</a></div></div>
+<div class="ttc" id="a00964_html"><div class="ttname"><a href="a00964.html">char_altlist.h</a></div></div>
+<div class="ttc" id="a00612_html_a23d5290b102bb43428957c4c4a96e6d6"><div class="ttname"><a href="a00612.html#a23d5290b102bb43428957c4c4a96e6d6">tesseract::TessLangModel::TessLangModel</a></div><div class="ttdeci">TessLangModel(const string &amp;lm_params, const string &amp;data_file_path, bool load_system_dawg, TessdataManager *tessdata_manager, CubeRecoContext *cntxt)</div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00060">tess_lang_model.cpp:60</a></div></div>
+<div class="ttc" id="a00862_html"><div class="ttname"><a href="a00862.html">tessdatamanager.h</a></div></div>
+<div class="ttc" id="a01051_html_a178eb445f9820b58d062f0c988a6f54f"><div class="ttname"><a href="a01051.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a></div><div class="ttdeci">inT64 EDGE_REF</div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00054">dawg.h:54</a></div></div>
+<div class="ttc" id="a01267_html_acc744c888b291dd541ba6fb60c76b0a9"><div class="ttname"><a href="a01267.html#acc744c888b291dd541ba6fb60c76b0a9">tesseract::kStateCnt</a></div><div class="ttdeci">const int kStateCnt</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00035">tess_lang_model.h:35</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector&lt; Dawg * &gt;</a></div></div>
+<div class="ttc" id="a00606_html"><div class="ttname"><a href="a00606.html">tesseract::TessdataManager</a></div><div class="ttdef"><b>Definition:</b> <a href="a00862_source.html#l00133">tessdatamanager.h:133</a></div></div>
+<div class="ttc" id="a00612_html_a69d61128a73ddf1e9ce709a3808c6530"><div class="ttname"><a href="a00612.html#a69d61128a73ddf1e9ce709a3808c6530">tesseract::TessLangModel::IsDigit</a></div><div class="ttdeci">bool IsDigit(char_32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00162">tess_lang_model.cpp:162</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a01055_html"><div class="ttname"><a href="a01055.html">dict.h</a></div></div>
+<div class="ttc" id="a00612_html_a1fc3e4c81803a84dba0ff7dd1e0ec936"><div class="ttname"><a href="a00612.html#a1fc3e4c81803a84dba0ff7dd1e0ec936">tesseract::TessLangModel::RemoveInvalidCharacters</a></div><div class="ttdeci">void RemoveInvalidCharacters(string *lm_str)</div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00482">tess_lang_model.cpp:482</a></div></div>
+<div class="ttc" id="a00612_html_a939ea7ad8b064d8167b3c7019bf82d9f"><div class="ttname"><a href="a00612.html#a939ea7ad8b064d8167b3c7019bf82d9f">tesseract::TessLangModel::Root</a></div><div class="ttdeci">TessLangModEdge * Root()</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00053">tess_lang_model.h:53</a></div></div>
+<div class="ttc" id="a00612_html"><div class="ttname"><a href="a00612.html">tesseract::TessLangModel</a></div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00038">tess_lang_model.h:38</a></div></div>
+<div class="ttc" id="a00300_html"><div class="ttname"><a href="a00300.html">tesseract::CharAltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00032">char_altlist.h:32</a></div></div>
+<div class="ttc" id="a00346_html"><div class="ttname"><a href="a00346.html">tesseract::Dawg</a></div><div class="ttdef"><b>Definition:</b> <a href="a01051_source.html#l00118">dawg.h:118</a></div></div>
+<div class="ttc" id="a00612_html_abd9a2fc77fe18caeb4a8f17020b460a4"><div class="ttname"><a href="a00612.html#abd9a2fc77fe18caeb4a8f17020b460a4">tesseract::TessLangModel::GetEdges</a></div><div class="ttdeci">LangModEdge ** GetEdges(CharAltList *alt_list, LangModEdge *edge, int *edge_cnt)</div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00169">tess_lang_model.cpp:169</a></div></div>
+<div class="ttc" id="a00449_html"><div class="ttname"><a href="a00449.html">tesseract::LangModel</a></div><div class="ttdef"><b>Definition:</b> <a href="a01005_source.html#l00034">lang_model.h:34</a></div></div>
+<div class="ttc" id="a01005_html"><div class="ttname"><a href="a01005.html">lang_model.h</a></div></div>
+<div class="ttc" id="a00611_html"><div class="ttname"><a href="a00611.html">tesseract::TessLangModEdge</a></div><div class="ttdef"><b>Definition:</b> <a href="a01013_source.html#l00068">tess_lang_mod_edge.h:68</a></div></div>
+<div class="ttc" id="a01267_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01267.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01011_source.html#l00040">string_32.h:40</a></div></div>
+<div class="ttc" id="a00612_html_a3976ab4c324b005b9165609e3b077dbc"><div class="ttname"><a href="a00612.html#a3976ab4c324b005b9165609e3b077dbc">tesseract::TessLangModel::~TessLangModel</a></div><div class="ttdeci">~TessLangModel()</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00045">tess_lang_model.h:45</a></div></div>
+<div class="ttc" id="a01013_html"><div class="ttname"><a href="a01013.html">tess_lang_mod_edge.h</a></div></div>
+<div class="ttc" id="a00406_html_a98f62dccd75224a60437c2761bd215cd"><div class="ttname"><a href="a00406.html#a98f62dccd75224a60437c2761bd215cd">GenericVector::delete_data_pointers</a></div><div class="ttdeci">void delete_data_pointers()</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00823">genericvector.h:823</a></div></div>
+<div class="ttc" id="a00992_html"><div class="ttname"><a href="a00992.html">cube_tuning_params.h</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00448_html"><div class="ttname"><a href="a00448.html">tesseract::LangModEdge</a></div><div class="ttdef"><b>Definition:</b> <a href="a01004_source.html#l00043">lang_mod_edge.h:43</a></div></div>
+<div class="ttc" id="a01267_html_a6b4a65d34133edfd1e49af29cb711767"><div class="ttname"><a href="a01267.html#a6b4a65d34133edfd1e49af29cb711767">tesseract::kNumLiteralCnt</a></div><div class="ttdeci">const int kNumLiteralCnt</div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00036">tess_lang_model.h:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01015.html">lang_model.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01015.html">tess_lang_model.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:01 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

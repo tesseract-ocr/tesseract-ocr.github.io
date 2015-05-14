@@ -1,8 +1,20 @@
 var a01189 =
 [
-    [ "DegradeImage", "a01189.html#a5ec70b0b405809ad2ae1c11779b92b0c", null ],
-    [ "kExposureFactor", "a01189.html#a2b686fae6a2068a34ba2b249e00e626a", null ],
-    [ "kMinRampSize", "a01189.html#aa3cdf13f551014b8c398df242dcad5da", null ],
-    [ "kRotationRange", "a01189.html#a071851e783e15faecdae5d243c7c7c98", null ],
-    [ "kSaltnPepper", "a01189.html#a52a77f40077fb14cf8b612d23dc1386a", null ]
+    [ "FullwidthToHalfwidth", "a01189.html#aca6a2632b0f687483f5bd456b4d9519e", null ],
+    [ "is_double_quote", "a01189.html#afccc429ec5aefa4ff51028efda41ab5f", null ],
+    [ "is_hyphen_punc", "a01189.html#a80a3d58bfde54e914ba50f67530c21ed", null ],
+    [ "is_single_quote", "a01189.html#a256d65f05f9a2ee00cb3de8952ae8911", null ],
+    [ "IsInterchangeValid", "a01189.html#aa484d8f4911001a1ee4e7e1d80538134", null ],
+    [ "IsInterchangeValid7BitAscii", "a01189.html#adbfb3af5ba264b52863c017abef65c24", null ],
+    [ "IsOCREquivalent", "a01189.html#a0beebc0e894a446f5c06d1cc0c6ba76a", null ],
+    [ "IsUTF8Whitespace", "a01189.html#a15a043d54c5b87e6e027c02cf9043790", null ],
+    [ "IsValidCodepoint", "a01189.html#af3a6623b10b354715444d7fd89bace38", null ],
+    [ "IsWhitespace", "a01189.html#adb8dccc5b88073c6c43003c1115e5cf5", null ],
+    [ "NormalizeChar32", "a01189.html#ae799e8b7a0d86f3861d39bad9371c127", null ],
+    [ "NormalizeUTF8String", "a01189.html#ae901b2654181446e15ea5aca487e89f0", null ],
+    [ "OCRNormalize", "a01189.html#a2c6f394d8641a1004a65f277e3da841e", null ],
+    [ "SpanUTF8NotWhitespace", "a01189.html#ae6a88d248fdf7e060f84949432676030", null ],
+    [ "SpanUTF8Whitespace", "a01189.html#a3f73126324c8b86c9570de3131224601", null ],
+    [ "UTF32ToUTF8", "a01189.html#a34f64417c417283fbb3cbdd220e77ae2", null ],
+    [ "UTF8ToUTF32", "a01189.html#a903ffe993b52191b0b18a019dd790276", null ]
 ];

@@ -1,10 +1,8 @@
 var a00672 =
 [
-    [ "WordFeature", "a00672.html#adaa422092c3a5e939e6b8c3c86477da4", null ],
-    [ "WordFeature", "a00672.html#a3808a896bf421d8beda02b4150bba8db", null ],
-    [ "DeSerialize", "a00672.html#a9c764e69cdcf73b13f35bce4d4cd11d1", null ],
-    [ "dir", "a00672.html#a79d100b52dbc5c4600ca111dc099d87d", null ],
-    [ "Serialize", "a00672.html#adc614482472086014b0ade6d5b1eaa5d", null ],
-    [ "x", "a00672.html#a27983fd5498c26e094d77ce9053c85a4", null ],
-    [ "y", "a00672.html#a8da9fae32c3b315c1270660768be8608", null ]
+    [ "MAX_XHEIGHT_DIFF", "a00672.html#aa8d754cedd7892fe25f2035441f3f6b6", null ],
+    [ "MIN_FONT_ROW_COUNT", "a00672.html#aca24741a901aa8187e889f1ef122f701", null ],
+    [ "kBackUpConfigFile", "a00672.html#a4976a2b3ea53d82ffdb2767bba98aa80", null ],
+    [ "kMinRefitXHeightFraction", "a00672.html#a91ae9908e7c8f49bf292bbdd6678230e", null ],
+    [ "kRepcharGapThreshold", "a00672.html#a321d48155cfbd3e9673c2436c1a72870", null ]
 ];

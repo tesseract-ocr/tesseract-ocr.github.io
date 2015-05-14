@@ -1,16 +1,20 @@
 var a00410 =
 [
-    [ "FPSEGPT", "a00410.html#a088aff5c1071d1ee5b4ecea021f8e733", null ],
-    [ "FPSEGPT", "a00410.html#a5ffecee179a3483cbc9fe4953dc5a4bf", null ],
-    [ "FPSEGPT", "a00410.html#a8205f3429c45672f6b8e380f5b100d89", null ],
-    [ "FPSEGPT", "a00410.html#aecaefcc18a32620ca9092d6045190a91", null ],
-    [ "cheap_cuts", "a00410.html#a00c3a543c45c04991a3bc167e1cfd4f2", null ],
-    [ "cost_function", "a00410.html#a2d099c15bf06dc51039f45eb81927de3", null ],
-    [ "position", "a00410.html#a1a63caa9483f9b0ea37ec8fda2e8fa5b", null ],
-    [ "previous", "a00410.html#a4386c87b640304091479028601b74ff9", null ],
-    [ "squares", "a00410.html#ac7534344b8a1c731292c295606a5ec06", null ],
-    [ "sum", "a00410.html#acfb4b892f4ee3cdfd1bbd8916ac5f002", null ],
-    [ "fake_count", "a00410.html#a3174c1dbd5dde6b07482fa5c9d1e1900", null ],
-    [ "faked", "a00410.html#aad5db657759063c17115abfdd74c0689", null ],
-    [ "terminal", "a00410.html#a5e21f19a9e0d86f3009dc96a776f0199", null ]
+    [ "GridSearch", "a00410.html#a6c4b247e12b58d26847ee52aa31f7ec6", null ],
+    [ "GridX", "a00410.html#adfbb219c4fc7bc7f3b30dbc7dbe04ada", null ],
+    [ "GridY", "a00410.html#abb4fccc7685ba0e893b8b638a11b5cde", null ],
+    [ "NextFullSearch", "a00410.html#ae9cd15b1815e744caf0650320aecfc2c", null ],
+    [ "NextRadSearch", "a00410.html#aeed540deb91d38e3cd390d4caf1bd44f", null ],
+    [ "NextRectSearch", "a00410.html#ab2699cb16c4514663963d2e2aa1dadc3", null ],
+    [ "NextSideSearch", "a00410.html#a7515ca407e452687f762349f1c3113ff", null ],
+    [ "NextVerticalSearch", "a00410.html#adfe2bf527306cdd264be5bdcdd5ac351", null ],
+    [ "RemoveBBox", "a00410.html#aa6a2166899235a22f58e607786ffd25e", null ],
+    [ "RepositionIterator", "a00410.html#ae43afa517cd9b682f10ca1d54dad4ab0", null ],
+    [ "ReturnedSeedElement", "a00410.html#a4cfda44497eb9f7ec77bd2a077000caa", null ],
+    [ "SetUniqueMode", "a00410.html#a3c44b7c8272584600153d8249a841e73", null ],
+    [ "StartFullSearch", "a00410.html#ad7f7e99bcda5e0daeb682b772e445f60", null ],
+    [ "StartRadSearch", "a00410.html#a2c170fae34250472834f9ed50cfb83db", null ],
+    [ "StartRectSearch", "a00410.html#ae9661d7b80a279a93a4bdd5ecb347871", null ],
+    [ "StartSideSearch", "a00410.html#ab4eb5b4d43442c26b598b45672713fab", null ],
+    [ "StartVerticalSearch", "a00410.html#a071abe1128e59e6ccf1f98a8c6002744", null ]
 ];

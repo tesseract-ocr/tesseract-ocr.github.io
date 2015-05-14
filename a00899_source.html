@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/blobclass.h Source File</title>
+<title>Tesseract: classify/float2int.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('a00899_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">blobclass.h</div>  </div>
+<div class="title">float2int.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00899.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:       blobclass.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:        Interface to high level classification and training.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:         Dan Johnson</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:        5/29/89, DSJ, Created.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:    float2int.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:     Routines for converting float features to int features</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:      Dan Johnson</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:     Wed Mar 13 08:06:41 1991, DSJ, Created.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **     (c) Copyright Hewlett-Packard Company, 1988.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -125,45 +125,28 @@ $(document).ready(function(){initNavTree('a00899_source.html','');});
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef   BLOBCLASS_H</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define   BLOBCLASS_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef FLOAT2INT_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define FLOAT2INT_H</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00878.html">strngs.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/*---------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">          Macros</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/* macros for controlling the display of recognized characters */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00899.html#aaba4f6185ffd4b4398726794b565d114">   30</a></span>&#160;<span class="preprocessor">#define EnableCharDisplay()   (DisplayCharacters = TRUE)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00899.html#a0886f5a1957fafc7b4c94b960fffd4dd">   31</a></span>&#160;<span class="preprocessor">#define DisableCharDisplay()    (DisplayCharacters = FALSE)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/* macros for controlling the display of the entire match list */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00899.html#a7ba242098083608d939e1d8ee365efc4">   34</a></span>&#160;<span class="preprocessor">#define EnableMatchDisplay()    (DisplayMatchList = TRUE)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00899.html#a3153d73346f50f6c901137134968f633">   35</a></span>&#160;<span class="preprocessor">#define DisableMatchDisplay()   (DisplayMatchList = FALSE)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Finds the name of the training font and returns it in fontname, by cutting</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// it out based on the expectation that the filename is of the form:</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// /path/to/dir/[lang].[fontname].exp[num]</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// The [lang], [fontname] and [num] fields should not have &#39;.&#39; characters.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// If the global parameter classify_font_name is set, its value is used instead.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01279.html#aa011b40b5e90b4087d0e42ea5fcce12c">ExtractFontName</a>(<span class="keyword">const</span> <a class="code" href="a00578.html">STRING</a>&amp; <a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <a class="code" href="a00578.html">STRING</a>* fontname);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}  <span class="comment">// namespace tesseract.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a01280_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
-<div class="ttc" id="a00878_html"><div class="ttname"><a href="a00878.html">strngs.h</a></div></div>
-<div class="ttc" id="a00578_html"><div class="ttname"><a href="a00578.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00044">strngs.h:44</a></div></div>
-<div class="ttc" id="a01279_html_aa011b40b5e90b4087d0e42ea5fcce12c"><div class="ttname"><a href="a01279.html#aa011b40b5e90b4087d0e42ea5fcce12c">tesseract::ExtractFontName</a></div><div class="ttdeci">void ExtractFontName(const STRING &amp;filename, STRING *fontname)</div><div class="ttdef"><b>Definition:</b> <a href="a00898_source.html#l00046">blobclass.cpp:46</a></div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">/*-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">          Include Files and Type Defines</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">-----------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00913.html">intmatcher.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00933.html">ocrfeatures.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00899.html#ae30a299d1150890d3f3606094fbf1169">   27</a></span>&#160;<span class="preprocessor">#define INT_FEAT_RANGE    256</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00899.html#a0cd5a36a70bcf28d6727fe56e419b5a2">   28</a></span>&#160;<span class="preprocessor">#define BASELINE_Y_SHIFT  (0.25)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00913_html"><div class="ttname"><a href="a00913.html">intmatcher.h</a></div></div>
+<div class="ttc" id="a00933_html"><div class="ttname"><a href="a00933.html">ocrfeatures.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00899.html">blobclass.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:25 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00899.html">float2int.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:59 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

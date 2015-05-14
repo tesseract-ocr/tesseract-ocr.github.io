@@ -1,5 +1,5 @@
 var a00382 =
 [
-    [ "ERRCODE", "a00382.html#a254b7f27badabab53217143590a5ef39", null ],
-    [ "error", "a00382.html#abc4cc64aad0ddb74c02523b69c95a1c1", null ]
+    [ "Params", "a00382.html#ace52f36cfcba955504f4a24f86a897b4", null ],
+    [ "Type", "a00382.html#a1a034f275ff504afd63bd99643fae589", null ]
 ];

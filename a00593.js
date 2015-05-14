@@ -1,9 +1,6 @@
 var a00593 =
 [
-    [ "SVNetwork", "a00593.html#a72f0c73a7d3a610035043d10f552d462", null ],
-    [ "~SVNetwork", "a00593.html#a85f11ef0f1e673319ec4cdd740eddbfa", null ],
-    [ "Close", "a00593.html#ac42718fcb9311770b737210a5ab14b27", null ],
-    [ "Flush", "a00593.html#ad89f207ad0f1b7fa764e2edb37c0e2c0", null ],
-    [ "Receive", "a00593.html#a6cf1cd38c287bdce0ed8594ed9076c2d", null ],
-    [ "Send", "a00593.html#a2de9fb634926d1ffc46b617e87d129f6", null ]
+    [ "dummy", "a00593.html#ab14faedd59339be64f3ba8ddab81c39b", null ],
+    [ "Proto", "a00593.html#acf720eb61d4a91e84d949a6f772ea7c5", null ],
+    [ "ProtoId", "a00593.html#a93992200ebfddd13e25d0e9122af9b5b", null ]
 ];

@@ -1,12 +1,10 @@
 var a00532 =
 [
-    [ "QLSQ", "a00532.html#a397f12ae540c919ecd64f4fc17427501", null ],
-    [ "add", "a00532.html#adbbaa8f4d49392cc26b46fabc476cc88", null ],
-    [ "clear", "a00532.html#a9f6ee88370df57093e248a2918ab20b2", null ],
-    [ "count", "a00532.html#a3ba6a079e2f2cea8c434393cfb0fcc61", null ],
-    [ "fit", "a00532.html#a847b2fa0f918e971a56e8db0ce8ed18f", null ],
-    [ "get_a", "a00532.html#a748cebc68a35dcb80970e2cfc1cace2d", null ],
-    [ "get_b", "a00532.html#ab8de83e0968609f28aa83854431e2593", null ],
-    [ "get_c", "a00532.html#aeeedb9b168cef907167e4530dd4bf68a", null ],
-    [ "remove", "a00532.html#a504bacca02e1204111ae32d152e95a70", null ]
+    [ "adapted", "a00532.html#a090f44ac2eedadd72c93fb628dfaf167", null ],
+    [ "config", "a00532.html#aa8ff624b603b87dd4cc41304e1e72b05", null ],
+    [ "fontinfo_id", "a00532.html#aef50f14f803115ac96f57bf3d7e519f9", null ],
+    [ "fontinfo_id2", "a00532.html#ac30be99b1e1ac98855c624896f9f0389", null ],
+    [ "rating", "a00532.html#aa410f972971cfb2df154972833783f72", null ],
+    [ "shape_id", "a00532.html#ab3db24ffe2690f52d86053ba1f631520", null ],
+    [ "unichar_id", "a00532.html#ac067f8f00b90b65e9e8348355a771736", null ]
 ];

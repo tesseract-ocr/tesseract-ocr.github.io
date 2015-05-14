@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: TessResultCallback2&lt; R, A1, A2 &gt; Class Template Reference</title>
+<title>Tesseract: tesseract::TuningParams Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,69 +106,230 @@ $(document).ready(function(){initNavTree('a00635.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01723.html">List of all members</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="a01921.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">TessResultCallback2&lt; R, A1, A2 &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">tesseract::TuningParams Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00879_source.html">tesscallback.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a01016_source.html">tuning_params.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for TessResultCallback2&lt; R, A1, A2 &gt;:</div>
+Inheritance diagram for tesseract::TuningParams:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00635.png" usemap="#TessResultCallback2&lt; R, A1, A2 &gt;_map" alt=""/>
-  <map id="TessResultCallback2&lt; R, A1, A2 &gt;_map" name="TessResultCallback2&lt; R, A1, A2 &gt;_map">
-<area href="a00005.html" alt="_ConstTessMemberResultCallback_0_2&lt; del, R, T, A1, A2 &gt;" shape="rect" coords="512,56,1014,80"/>
-<area href="a00017.html" alt="_ConstTessMemberResultCallback_1_2&lt; del, R, T, P1, A1, A2 &gt;" shape="rect" coords="512,112,1014,136"/>
-<area href="a00029.html" alt="_ConstTessMemberResultCallback_2_2&lt; del, R, T, P1, P2, A1, A2 &gt;" shape="rect" coords="512,168,1014,192"/>
-<area href="a00041.html" alt="_ConstTessMemberResultCallback_3_2&lt; del, R, T, P1, P2, P3, A1, A2 &gt;" shape="rect" coords="512,224,1014,248"/>
-<area href="a00053.html" alt="_ConstTessMemberResultCallback_4_2&lt; del, R, T, P1, P2, P3, P4, A1, A2 &gt;" shape="rect" coords="512,280,1014,304"/>
-<area href="a00065.html" alt="_ConstTessMemberResultCallback_5_2&lt; del, R, T, P1, P2, P3, P4, P5, A1, A2 &gt;" shape="rect" coords="512,336,1014,360"/>
-<area href="a00077.html" alt="_ConstTessMemberResultCallback_6_2&lt; del, R, T, P1, P2, P3, P4, P5, P6, A1, A2 &gt;" shape="rect" coords="512,392,1014,416"/>
-<area href="a00091.html" alt="_TessFunctionResultCallback_0_2&lt; del, R, A1, A2 &gt;" shape="rect" coords="512,448,1014,472"/>
-<area href="a00103.html" alt="_TessFunctionResultCallback_1_2&lt; del, R, P1, A1, A2 &gt;" shape="rect" coords="512,504,1014,528"/>
-<area href="a00115.html" alt="_TessFunctionResultCallback_2_2&lt; del, R, P1, P2, A1, A2 &gt;" shape="rect" coords="512,560,1014,584"/>
-<area href="a00127.html" alt="_TessFunctionResultCallback_3_2&lt; del, R, P1, P2, P3, A1, A2 &gt;" shape="rect" coords="512,616,1014,640"/>
-<area href="a00139.html" alt="_TessFunctionResultCallback_4_2&lt; del, R, P1, P2, P3, P4, A1, A2 &gt;" shape="rect" coords="512,672,1014,696"/>
-<area href="a00151.html" alt="_TessFunctionResultCallback_5_2&lt; del, R, P1, P2, P3, P4, P5, A1, A2 &gt;" shape="rect" coords="512,728,1014,752"/>
-<area href="a00163.html" alt="_TessFunctionResultCallback_6_2&lt; del, R, P1, P2, P3, P4, P5, P6, A1, A2 &gt;" shape="rect" coords="512,784,1014,808"/>
-<area href="a00175.html" alt="_TessMemberResultCallback_0_2&lt; del, R, T, A1, A2 &gt;" shape="rect" coords="512,840,1014,864"/>
-<area href="a00187.html" alt="_TessMemberResultCallback_1_2&lt; del, R, T, P1, A1, A2 &gt;" shape="rect" coords="512,896,1014,920"/>
-<area href="a00199.html" alt="_TessMemberResultCallback_2_2&lt; del, R, T, P1, P2, A1, A2 &gt;" shape="rect" coords="512,952,1014,976"/>
-<area href="a00211.html" alt="_TessMemberResultCallback_3_2&lt; del, R, T, P1, P2, P3, A1, A2 &gt;" shape="rect" coords="512,1008,1014,1032"/>
-<area href="a00223.html" alt="_TessMemberResultCallback_4_2&lt; del, R, T, P1, P2, P3, P4, A1, A2 &gt;" shape="rect" coords="512,1064,1014,1088"/>
-<area href="a00235.html" alt="_TessMemberResultCallback_5_2&lt; del, R, T, P1, P2, P3, P4, P5, A1, A2 &gt;" shape="rect" coords="512,1120,1014,1144"/>
-<area href="a00247.html" alt="_TessMemberResultCallback_6_2&lt; del, R, T, P1, P2, P3, P4, P5, P6, A1, A2 &gt;" shape="rect" coords="512,1176,1014,1200"/>
+  <img src="a00635.png" usemap="#tesseract::TuningParams_map" alt=""/>
+  <map id="tesseract::TuningParams_map" name="tesseract::TuningParams_map">
+<area href="a00342.html" alt="tesseract::CubeTuningParams" shape="rect" coords="0,56,179,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a4404799ff32c49a0307a47694bf2f94b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a4404799ff32c49a0307a47694bf2f94b">type_classifer</a> { <a class="el" href="a00635.html#a4404799ff32c49a0307a47694bf2f94ba6e409d826f36c9474ea023130f02a232">NN</a>, 
+<a class="el" href="a00635.html#a4404799ff32c49a0307a47694bf2f94ba39ea8e61fbe13d025554076247e9ff3c">HYBRID_NN</a>
+ }</td></tr>
+<tr class="separator:a4404799ff32c49a0307a47694bf2f94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1c025469e919800e21ac36d852b699"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699">type_feature</a> { <a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699a77a5e6adc522d14daee68de8385a3b8f">BMP</a>, 
+<a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699adb6668fd25628268552f4a6ebf81e47c">CHEBYSHEV</a>, 
+<a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699aec577e154f491c89dc750f02f51cfa08">HYBRID</a>
+ }</td></tr>
+<tr class="separator:a2b1c025469e919800e21ac36d852b699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a740cf69940812a79e354b5207ac6cad3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a740cf69940812a79e354b5207ac6cad3">~TessResultCallback2</a> ()</td></tr>
-<tr class="separator:a740cf69940812a79e354b5207ac6cad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61bd799697bce338fc064326a7b764e3"><td class="memItemLeft" align="right" valign="top">virtual R&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a61bd799697bce338fc064326a7b764e3">Run</a> (A1, A2)=0</td></tr>
-<tr class="separator:a61bd799697bce338fc064326a7b764e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f41b1e713e4f5858fa644ecf86d652"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ae6f41b1e713e4f5858fa644ecf86d652">TuningParams</a> ()</td></tr>
+<tr class="separator:ae6f41b1e713e4f5858fa644ecf86d652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d6cc5a6d2c541723b289fee7648e255"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a0d6cc5a6d2c541723b289fee7648e255">~TuningParams</a> ()</td></tr>
+<tr class="separator:a0d6cc5a6d2c541723b289fee7648e255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20f4885d6efe282305e9f356536771db"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a20f4885d6efe282305e9f356536771db">RecoWgt</a> () const </td></tr>
+<tr class="separator:a20f4885d6efe282305e9f356536771db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fec980d9b962fe7357787e7511c1e7a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a4fec980d9b962fe7357787e7511c1e7a">SizeWgt</a> () const </td></tr>
+<tr class="separator:a4fec980d9b962fe7357787e7511c1e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41babfa4b23f2d2602f3ca1317f4aab1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a41babfa4b23f2d2602f3ca1317f4aab1">CharBigramWgt</a> () const </td></tr>
+<tr class="separator:a41babfa4b23f2d2602f3ca1317f4aab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89ff4cdb95d8257c2f2b05e767082c2e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a89ff4cdb95d8257c2f2b05e767082c2e">WordUnigramWgt</a> () const </td></tr>
+<tr class="separator:a89ff4cdb95d8257c2f2b05e767082c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e53deafe8e2cb34f550ec456346d1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a36e53deafe8e2cb34f550ec456346d1f">MaxSegPerChar</a> () const </td></tr>
+<tr class="separator:a36e53deafe8e2cb34f550ec456346d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19ca7d2ab3f2ee05b5606c7ff66f754"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ae19ca7d2ab3f2ee05b5606c7ff66f754">BeamWidth</a> () const </td></tr>
+<tr class="separator:ae19ca7d2ab3f2ee05b5606c7ff66f754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3baa1f97923acc3f5cc731a20edb898e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a3baa1f97923acc3f5cc731a20edb898e">TypeClassifier</a> () const </td></tr>
+<tr class="separator:a3baa1f97923acc3f5cc731a20edb898e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354127bbeb26ea51eefc77eb8f4d9218"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a354127bbeb26ea51eefc77eb8f4d9218">TypeFeature</a> () const </td></tr>
+<tr class="separator:a354127bbeb26ea51eefc77eb8f4d9218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef1f189427e73fc8baae5daae1149d1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#aef1f189427e73fc8baae5daae1149d1e">ConvGridSize</a> () const </td></tr>
+<tr class="separator:aef1f189427e73fc8baae5daae1149d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb97e0caf80f7022b19bcab7f88e3ae5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#aeb97e0caf80f7022b19bcab7f88e3ae5">HistWindWid</a> () const </td></tr>
+<tr class="separator:aeb97e0caf80f7022b19bcab7f88e3ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefdb8ecfc2d820c84acd46bba99d2d58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#aefdb8ecfc2d820c84acd46bba99d2d58">MinConCompSize</a> () const </td></tr>
+<tr class="separator:aefdb8ecfc2d820c84acd46bba99d2d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d09cfdc288427b9aaa14a273d0e6bb7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a2d09cfdc288427b9aaa14a273d0e6bb7">MaxWordAspectRatio</a> () const </td></tr>
+<tr class="separator:a2d09cfdc288427b9aaa14a273d0e6bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c6cb66ce40b97c6eab87072863b825b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a6c6cb66ce40b97c6eab87072863b825b">MinSpaceHeightRatio</a> () const </td></tr>
+<tr class="separator:a6c6cb66ce40b97c6eab87072863b825b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f71f5b62a82b2d1a859750d7022e0f2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a4f71f5b62a82b2d1a859750d7022e0f2">MaxSpaceHeightRatio</a> () const </td></tr>
+<tr class="separator:a4f71f5b62a82b2d1a859750d7022e0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab65808e3fa6cb1cc11d9279a1a405c1f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ab65808e3fa6cb1cc11d9279a1a405c1f">CombinerRunThresh</a> () const </td></tr>
+<tr class="separator:ab65808e3fa6cb1cc11d9279a1a405c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb95e7c0511f7715eab7baa880f2daab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#abb95e7c0511f7715eab7baa880f2daab">CombinerClassifierThresh</a> () const </td></tr>
+<tr class="separator:abb95e7c0511f7715eab7baa880f2daab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81e3d8f3a5c6fcff47e6196de51e7ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ab81e3d8f3a5c6fcff47e6196de51e7ee">SetRecoWgt</a> (double wgt)</td></tr>
+<tr class="separator:ab81e3d8f3a5c6fcff47e6196de51e7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec11139e837f4bb3f5c2bd8856ed080f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#aec11139e837f4bb3f5c2bd8856ed080f">SetSizeWgt</a> (double wgt)</td></tr>
+<tr class="separator:aec11139e837f4bb3f5c2bd8856ed080f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1188f2b306fe7f7ba5428c71608ca21f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a1188f2b306fe7f7ba5428c71608ca21f">SetCharBigramWgt</a> (double wgt)</td></tr>
+<tr class="separator:a1188f2b306fe7f7ba5428c71608ca21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ea597024162bf33e076cb0d6b104c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a32ea597024162bf33e076cb0d6b104c3">SetWordUnigramWgt</a> (double wgt)</td></tr>
+<tr class="separator:a32ea597024162bf33e076cb0d6b104c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60d05cb1dd0d285adc328629ba9581c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ae60d05cb1dd0d285adc328629ba9581c">SetMaxSegPerChar</a> (int max_seg_per_char)</td></tr>
+<tr class="separator:ae60d05cb1dd0d285adc328629ba9581c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ac1f66af05f131bbadeb86cc7d943d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a15ac1f66af05f131bbadeb86cc7d943d">SetBeamWidth</a> (int beam_width)</td></tr>
+<tr class="separator:a15ac1f66af05f131bbadeb86cc7d943d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac65f0b55d57935404dfedb4c3566ad84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ac65f0b55d57935404dfedb4c3566ad84">SetTypeClassifier</a> (<a class="el" href="a00635.html#a4404799ff32c49a0307a47694bf2f94b">type_classifer</a> tp_classifier)</td></tr>
+<tr class="separator:ac65f0b55d57935404dfedb4c3566ad84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0150891c64c44288dd0de999646ff2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ad0150891c64c44288dd0de999646ff2a">SetTypeFeature</a> (<a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699">type_feature</a> tp_feat)</td></tr>
+<tr class="separator:ad0150891c64c44288dd0de999646ff2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105d4be15f8a255daf005eba66dda531"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a105d4be15f8a255daf005eba66dda531">SetHistWindWid</a> (int hist_wind_wid)</td></tr>
+<tr class="separator:a105d4be15f8a255daf005eba66dda531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c927208b2dcf449b160818d7ff6f287"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a1c927208b2dcf449b160818d7ff6f287">Save</a> (string file_name)=0</td></tr>
+<tr class="separator:a1c927208b2dcf449b160818d7ff6f287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dac140d3f6d043d7fa3f5c442094b95"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a6dac140d3f6d043d7fa3f5c442094b95">Load</a> (string file_name)=0</td></tr>
+<tr class="separator:a6dac140d3f6d043d7fa3f5c442094b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ab229bbf707022cace4517db9d036d499"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ab229bbf707022cace4517db9d036d499">reco_wgt_</a></td></tr>
+<tr class="separator:ab229bbf707022cace4517db9d036d499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75248f72bdad2baa235e8ec9f7df0a0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ac75248f72bdad2baa235e8ec9f7df0a0">size_wgt_</a></td></tr>
+<tr class="separator:ac75248f72bdad2baa235e8ec9f7df0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a669dc45f5309f38c5a8be98fc9766eec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a669dc45f5309f38c5a8be98fc9766eec">char_bigrams_wgt_</a></td></tr>
+<tr class="separator:a669dc45f5309f38c5a8be98fc9766eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7dbc05624b980f088f2a6fed9a9d1b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a1a7dbc05624b980f088f2a6fed9a9d1b">word_unigrams_wgt_</a></td></tr>
+<tr class="separator:a1a7dbc05624b980f088f2a6fed9a9d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a606d1d14c2b7c6f0478ad92adc921b61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a606d1d14c2b7c6f0478ad92adc921b61">max_seg_per_char_</a></td></tr>
+<tr class="separator:a606d1d14c2b7c6f0478ad92adc921b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01257c28f61300c7ef1a29bbd80b817e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a01257c28f61300c7ef1a29bbd80b817e">beam_width_</a></td></tr>
+<tr class="separator:a01257c28f61300c7ef1a29bbd80b817e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac029b6f08d241e309a861e2e970809b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00635.html#a4404799ff32c49a0307a47694bf2f94b">type_classifer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ac029b6f08d241e309a861e2e970809b3">tp_classifier_</a></td></tr>
+<tr class="separator:ac029b6f08d241e309a861e2e970809b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625fb6f3eb1dbab3f1985503046245d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699">type_feature</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a625fb6f3eb1dbab3f1985503046245d0">tp_feat_</a></td></tr>
+<tr class="separator:a625fb6f3eb1dbab3f1985503046245d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad96f57d9c80e0d538ec8fed1bc91055c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ad96f57d9c80e0d538ec8fed1bc91055c">conv_grid_size_</a></td></tr>
+<tr class="separator:ad96f57d9c80e0d538ec8fed1bc91055c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec68d6f0467185de5c759e41822e6f1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#aec68d6f0467185de5c759e41822e6f1a">hist_wind_wid_</a></td></tr>
+<tr class="separator:aec68d6f0467185de5c759e41822e6f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49559612d8893fe182c66de08e9fa28"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ab49559612d8893fe182c66de08e9fa28">min_con_comp_size_</a></td></tr>
+<tr class="separator:ab49559612d8893fe182c66de08e9fa28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad03b466658f7cb6ac4225c2a2601699f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ad03b466658f7cb6ac4225c2a2601699f">max_word_aspect_ratio_</a></td></tr>
+<tr class="separator:ad03b466658f7cb6ac4225c2a2601699f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac625293da7991548ea725ea903e29f82"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#ac625293da7991548ea725ea903e29f82">min_space_height_ratio_</a></td></tr>
+<tr class="separator:ac625293da7991548ea725ea903e29f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae3f14d6dcf443f0a4ff063f0bff89c2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#aae3f14d6dcf443f0a4ff063f0bff89c2">max_space_height_ratio_</a></td></tr>
+<tr class="separator:aae3f14d6dcf443f0a4ff063f0bff89c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a064ead05d47ac926d01aaa231bdfee00"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a064ead05d47ac926d01aaa231bdfee00">combiner_run_thresh_</a></td></tr>
+<tr class="separator:a064ead05d47ac926d01aaa231bdfee00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f162ede8be31236c53dcce512da5394"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00635.html#a3f162ede8be31236c53dcce512da5394">combiner_classifier_thresh_</a></td></tr>
+<tr class="separator:a3f162ede8be31236c53dcce512da5394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class R, class A1, class A2&gt;<br />
-class TessResultCallback2&lt; R, A1, A2 &gt;</h3>
-
-
-<p>Definition at line <a class="el" href="a00879_source.html#l01688">1688</a> of file <a class="el" href="a00879_source.html">tesscallback.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a740cf69940812a79e354b5207ac6cad3"></a>
+<div class="textblock">
+<p>Definition at line <a class="el" href="a01016_source.html#l00033">33</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a4404799ff32c49a0307a47694bf2f94b"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class R, class A1, class A2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00635.html#a4404799ff32c49a0307a47694bf2f94b">tesseract::TuningParams::type_classifer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a4404799ff32c49a0307a47694bf2f94ba6e409d826f36c9474ea023130f02a232"></a>NN&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4404799ff32c49a0307a47694bf2f94ba39ea8e61fbe13d025554076247e9ff3c"></a>HYBRID_NN&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00035">35</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                      {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="a00635.html#a4404799ff32c49a0307a47694bf2f94ba6e409d826f36c9474ea023130f02a232">NN</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="a00635.html#a4404799ff32c49a0307a47694bf2f94ba39ea8e61fbe13d025554076247e9ff3c">HYBRID_NN</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  };</div>
+<div class="ttc" id="a00635_html_a4404799ff32c49a0307a47694bf2f94ba6e409d826f36c9474ea023130f02a232"><div class="ttname"><a href="a00635.html#a4404799ff32c49a0307a47694bf2f94ba6e409d826f36c9474ea023130f02a232">tesseract::TuningParams::NN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00036">tuning_params.h:36</a></div></div>
+<div class="ttc" id="a00635_html_a4404799ff32c49a0307a47694bf2f94ba39ea8e61fbe13d025554076247e9ff3c"><div class="ttname"><a href="a00635.html#a4404799ff32c49a0307a47694bf2f94ba39ea8e61fbe13d025554076247e9ff3c">tesseract::TuningParams::HYBRID_NN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00037">tuning_params.h:37</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2b1c025469e919800e21ac36d852b699"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699">tesseract::TuningParams::type_feature</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a2b1c025469e919800e21ac36d852b699a77a5e6adc522d14daee68de8385a3b8f"></a>BMP&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2b1c025469e919800e21ac36d852b699adb6668fd25628268552f4a6ebf81e47c"></a>CHEBYSHEV&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2b1c025469e919800e21ac36d852b699aec577e154f491c89dc750f02f51cfa08"></a>HYBRID&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00039">39</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="a00635.html#a2b1c025469e919800e21ac36d852b699a77a5e6adc522d14daee68de8385a3b8f">BMP</a>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="a00635.html#a2b1c025469e919800e21ac36d852b699adb6668fd25628268552f4a6ebf81e47c">CHEBYSHEV</a>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="a00635.html#a2b1c025469e919800e21ac36d852b699aec577e154f491c89dc750f02f51cfa08">HYBRID</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  };</div>
+<div class="ttc" id="a00635_html_a2b1c025469e919800e21ac36d852b699adb6668fd25628268552f4a6ebf81e47c"><div class="ttname"><a href="a00635.html#a2b1c025469e919800e21ac36d852b699adb6668fd25628268552f4a6ebf81e47c">tesseract::TuningParams::CHEBYSHEV</a></div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00041">tuning_params.h:41</a></div></div>
+<div class="ttc" id="a00635_html_a2b1c025469e919800e21ac36d852b699aec577e154f491c89dc750f02f51cfa08"><div class="ttname"><a href="a00635.html#a2b1c025469e919800e21ac36d852b699aec577e154f491c89dc750f02f51cfa08">tesseract::TuningParams::HYBRID</a></div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00042">tuning_params.h:42</a></div></div>
+<div class="ttc" id="a00635_html_a2b1c025469e919800e21ac36d852b699a77a5e6adc522d14daee68de8385a3b8f"><div class="ttname"><a href="a00635.html#a2b1c025469e919800e21ac36d852b699a77a5e6adc522d14daee68de8385a3b8f">tesseract::TuningParams::BMP</a></div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00040">tuning_params.h:40</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae6f41b1e713e4f5858fa644ecf86d652"></a>
+<div class="memitem">
+<div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="a00635.html">TessResultCallback2</a>&lt; R, A1, A2 &gt;::~<a class="el" href="a00635.html">TessResultCallback2</a> </td>
+          <td class="memname">tesseract::TuningParams::TuningParams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00045">45</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0d6cc5a6d2c541723b289fee7648e255"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual tesseract::TuningParams::~TuningParams </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -181,37 +342,188 @@ template&lt;class R, class A1, class A2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00879_source.html#l01690">1690</a> of file <a class="el" href="a00879_source.html">tesscallback.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;{ }</div>
+<p>Definition at line <a class="el" href="a01016_source.html#l00046">46</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a61bd799697bce338fc064326a7b764e3"></a>
+<a class="anchor" id="ae19ca7d2ab3f2ee05b5606c7ff66f754"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class R, class A1, class A2&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual R <a class="el" href="a00635.html">TessResultCallback2</a>&lt; R, A1, A2 &gt;::Run </td>
+          <td class="memname">int tesseract::TuningParams::BeamWidth </td>
           <td>(</td>
-          <td class="paramtype">A1&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00053">53</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#a01257c28f61300c7ef1a29bbd80b817e">beam_width_</a>; }</div>
+<div class="ttc" id="a00635_html_a01257c28f61300c7ef1a29bbd80b817e"><div class="ttname"><a href="a00635.html#a01257c28f61300c7ef1a29bbd80b817e">tesseract::TuningParams::beam_width_</a></div><div class="ttdeci">int beam_width_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00098">tuning_params.h:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a41babfa4b23f2d2602f3ca1317f4aab1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
         <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">A2&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="memname">double tesseract::TuningParams::CharBigramWgt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00050">50</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#a669dc45f5309f38c5a8be98fc9766eec">char_bigrams_wgt_</a>; }</div>
+<div class="ttc" id="a00635_html_a669dc45f5309f38c5a8be98fc9766eec"><div class="ttname"><a href="a00635.html#a669dc45f5309f38c5a8be98fc9766eec">tesseract::TuningParams::char_bigrams_wgt_</a></div><div class="ttdeci">double char_bigrams_wgt_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00091">tuning_params.h:91</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="abb95e7c0511f7715eab7baa880f2daab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
         <tr>
+          <td class="memname">double tesseract::TuningParams::CombinerClassifierThresh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00063">63</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                 {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00635.html#a3f162ede8be31236c53dcce512da5394">combiner_classifier_thresh_</a>; }</div>
+<div class="ttc" id="a00635_html_a3f162ede8be31236c53dcce512da5394"><div class="ttname"><a href="a00635.html#a3f162ede8be31236c53dcce512da5394">tesseract::TuningParams::combiner_classifier_thresh_</a></div><div class="ttdeci">double combiner_classifier_thresh_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00125">tuning_params.h:125</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab65808e3fa6cb1cc11d9279a1a405c1f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::CombinerRunThresh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00062">62</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#a064ead05d47ac926d01aaa231bdfee00">combiner_run_thresh_</a>; }</div>
+<div class="ttc" id="a00635_html_a064ead05d47ac926d01aaa231bdfee00"><div class="ttname"><a href="a00635.html#a064ead05d47ac926d01aaa231bdfee00">tesseract::TuningParams::combiner_run_thresh_</a></div><div class="ttdeci">double combiner_run_thresh_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00121">tuning_params.h:121</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aef1f189427e73fc8baae5daae1149d1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::ConvGridSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00056">56</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#ad96f57d9c80e0d538ec8fed1bc91055c">conv_grid_size_</a>; }</div>
+<div class="ttc" id="a00635_html_ad96f57d9c80e0d538ec8fed1bc91055c"><div class="ttname"><a href="a00635.html#ad96f57d9c80e0d538ec8fed1bc91055c">tesseract::TuningParams::conv_grid_size_</a></div><div class="ttdeci">int conv_grid_size_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00104">tuning_params.h:104</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aeb97e0caf80f7022b19bcab7f88e3ae5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::HistWindWid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00057">57</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#aec68d6f0467185de5c759e41822e6f1a">hist_wind_wid_</a>; }</div>
+<div class="ttc" id="a00635_html_aec68d6f0467185de5c759e41822e6f1a"><div class="ttname"><a href="a00635.html#aec68d6f0467185de5c759e41822e6f1a">tesseract::TuningParams::hist_wind_wid_</a></div><div class="ttdeci">int hist_wind_wid_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00107">tuning_params.h:107</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6dac140d3f6d043d7fa3f5c442094b95"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool tesseract::TuningParams::Load </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>file_name</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -221,20 +533,927 @@ template&lt;class R, class A1, class A2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="a00163.html#ac5795e0de7c5fec2140c4429c6f1f51b">_TessFunctionResultCallback_6_2&lt; del, R, P1, P2, P3, P4, P5, P6, A1, A2 &gt;</a>, <a class="el" href="a00247.html#a622fc0b01d90f5d5e56f8b9d7b18c229">_TessMemberResultCallback_6_2&lt; del, R, T, P1, P2, P3, P4, P5, P6, A1, A2 &gt;</a>, <a class="el" href="a00077.html#a9d05e6e22e7cfe9ba8a8ba2306e6029e">_ConstTessMemberResultCallback_6_2&lt; del, R, T, P1, P2, P3, P4, P5, P6, A1, A2 &gt;</a>, <a class="el" href="a00151.html#ad5e562ef6f6aecff758c5a98c8c74ab7">_TessFunctionResultCallback_5_2&lt; del, R, P1, P2, P3, P4, P5, A1, A2 &gt;</a>, <a class="el" href="a00235.html#a21c218010d64311c4beee852d9bc4c06">_TessMemberResultCallback_5_2&lt; del, R, T, P1, P2, P3, P4, P5, A1, A2 &gt;</a>, <a class="el" href="a00065.html#ae5720faaf090f900c0ce4bd28aa66cbc">_ConstTessMemberResultCallback_5_2&lt; del, R, T, P1, P2, P3, P4, P5, A1, A2 &gt;</a>, <a class="el" href="a00139.html#a57526cc4b1831417e8e49cdc80101200">_TessFunctionResultCallback_4_2&lt; del, R, P1, P2, P3, P4, A1, A2 &gt;</a>, <a class="el" href="a00223.html#aba6b6f9d3ef09907daa3f605e87b9c32">_TessMemberResultCallback_4_2&lt; del, R, T, P1, P2, P3, P4, A1, A2 &gt;</a>, <a class="el" href="a00053.html#a5a6dc489db05720779034162b527114b">_ConstTessMemberResultCallback_4_2&lt; del, R, T, P1, P2, P3, P4, A1, A2 &gt;</a>, <a class="el" href="a00127.html#a517b719d3c4900d4760cb833045b8826">_TessFunctionResultCallback_3_2&lt; del, R, P1, P2, P3, A1, A2 &gt;</a>, <a class="el" href="a00211.html#a10a49db7c5bef9d8de201eb25adeb0f7">_TessMemberResultCallback_3_2&lt; del, R, T, P1, P2, P3, A1, A2 &gt;</a>, <a class="el" href="a00041.html#aa1f0cd63e3fbab60c2e0e2b14698745f">_ConstTessMemberResultCallback_3_2&lt; del, R, T, P1, P2, P3, A1, A2 &gt;</a>, <a class="el" href="a00115.html#a93682ed2df536ff9875a9a21a41ed0ae">_TessFunctionResultCallback_2_2&lt; del, R, P1, P2, A1, A2 &gt;</a>, <a class="el" href="a00199.html#a1e1be95923a52bac37f1c95a35aa6c7f">_TessMemberResultCallback_2_2&lt; del, R, T, P1, P2, A1, A2 &gt;</a>, <a class="el" href="a00029.html#ae714dcb8a3d1bd06e537f1687a7ea24a">_ConstTessMemberResultCallback_2_2&lt; del, R, T, P1, P2, A1, A2 &gt;</a>, <a class="el" href="a00103.html#acef59bf4ed8831016f10994a26a076bc">_TessFunctionResultCallback_1_2&lt; del, R, P1, A1, A2 &gt;</a>, <a class="el" href="a00187.html#a5c6e14d91d9dc9818955d6822e2eda2c">_TessMemberResultCallback_1_2&lt; del, R, T, P1, A1, A2 &gt;</a>, <a class="el" href="a00017.html#a82f583a9a400f0213940e4738e7c5ea9">_ConstTessMemberResultCallback_1_2&lt; del, R, T, P1, A1, A2 &gt;</a>, <a class="el" href="a00091.html#a14c8bc85d7a5b7aadb9f7381a9d8a79f">_TessFunctionResultCallback_0_2&lt; del, R, A1, A2 &gt;</a>, <a class="el" href="a00175.html#a30f34b2cebac981b0ff2be7508b2537a">_TessMemberResultCallback_0_2&lt; del, R, T, A1, A2 &gt;</a>, and <a class="el" href="a00005.html#aee6792a8b3a165bc3abdd2fd03be0a4c">_ConstTessMemberResultCallback_0_2&lt; del, R, T, A1, A2 &gt;</a>.</p>
+<p>Implemented in <a class="el" href="a00342.html#a3198aaa8d178661bf353836045abde7e">tesseract::CubeTuningParams</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36e53deafe8e2cb34f550ec456346d1f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::MaxSegPerChar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00052">52</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#a606d1d14c2b7c6f0478ad92adc921b61">max_seg_per_char_</a>; }</div>
+<div class="ttc" id="a00635_html_a606d1d14c2b7c6f0478ad92adc921b61"><div class="ttname"><a href="a00635.html#a606d1d14c2b7c6f0478ad92adc921b61">tesseract::TuningParams::max_seg_per_char_</a></div><div class="ttdeci">int max_seg_per_char_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00095">tuning_params.h:95</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4f71f5b62a82b2d1a859750d7022e0f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::MaxSpaceHeightRatio </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00061">61</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#aae3f14d6dcf443f0a4ff063f0bff89c2">max_space_height_ratio_</a>; }</div>
+<div class="ttc" id="a00635_html_aae3f14d6dcf443f0a4ff063f0bff89c2"><div class="ttname"><a href="a00635.html#aae3f14d6dcf443f0a4ff063f0bff89c2">tesseract::TuningParams::max_space_height_ratio_</a></div><div class="ttdeci">double max_space_height_ratio_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00117">tuning_params.h:117</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2d09cfdc288427b9aaa14a273d0e6bb7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::MaxWordAspectRatio </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00059">59</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#ad03b466658f7cb6ac4225c2a2601699f">max_word_aspect_ratio_</a>; }</div>
+<div class="ttc" id="a00635_html_ad03b466658f7cb6ac4225c2a2601699f"><div class="ttname"><a href="a00635.html#ad03b466658f7cb6ac4225c2a2601699f">tesseract::TuningParams::max_word_aspect_ratio_</a></div><div class="ttdeci">double max_word_aspect_ratio_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00111">tuning_params.h:111</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aefdb8ecfc2d820c84acd46bba99d2d58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::MinConCompSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00058">58</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#ab49559612d8893fe182c66de08e9fa28">min_con_comp_size_</a>; }</div>
+<div class="ttc" id="a00635_html_ab49559612d8893fe182c66de08e9fa28"><div class="ttname"><a href="a00635.html#ab49559612d8893fe182c66de08e9fa28">tesseract::TuningParams::min_con_comp_size_</a></div><div class="ttdeci">int min_con_comp_size_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00109">tuning_params.h:109</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6c6cb66ce40b97c6eab87072863b825b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::MinSpaceHeightRatio </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00060">60</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#ac625293da7991548ea725ea903e29f82">min_space_height_ratio_</a>; }</div>
+<div class="ttc" id="a00635_html_ac625293da7991548ea725ea903e29f82"><div class="ttname"><a href="a00635.html#ac625293da7991548ea725ea903e29f82">tesseract::TuningParams::min_space_height_ratio_</a></div><div class="ttdeci">double min_space_height_ratio_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00114">tuning_params.h:114</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a20f4885d6efe282305e9f356536771db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::RecoWgt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00048">48</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#ab229bbf707022cace4517db9d036d499">reco_wgt_</a>; }</div>
+<div class="ttc" id="a00635_html_ab229bbf707022cace4517db9d036d499"><div class="ttname"><a href="a00635.html#ab229bbf707022cace4517db9d036d499">tesseract::TuningParams::reco_wgt_</a></div><div class="ttdeci">double reco_wgt_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00087">tuning_params.h:87</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1c927208b2dcf449b160818d7ff6f287"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool tesseract::TuningParams::Save </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>file_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="a00342.html#a95fe5bbb6aa56db63d0daac56265c419">tesseract::CubeTuningParams</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a15ac1f66af05f131bbadeb86cc7d943d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetBeamWidth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>beam_width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00073">73</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{ <a class="code" href="a00635.html#a01257c28f61300c7ef1a29bbd80b817e">beam_width_</a> = beam_width; }</div>
+<div class="ttc" id="a00635_html_a01257c28f61300c7ef1a29bbd80b817e"><div class="ttname"><a href="a00635.html#a01257c28f61300c7ef1a29bbd80b817e">tesseract::TuningParams::beam_width_</a></div><div class="ttdeci">int beam_width_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00098">tuning_params.h:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1188f2b306fe7f7ba5428c71608ca21f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetCharBigramWgt </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>wgt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00068">68</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{ <a class="code" href="a00635.html#a669dc45f5309f38c5a8be98fc9766eec">char_bigrams_wgt_</a> = wgt; }</div>
+<div class="ttc" id="a00635_html_a669dc45f5309f38c5a8be98fc9766eec"><div class="ttname"><a href="a00635.html#a669dc45f5309f38c5a8be98fc9766eec">tesseract::TuningParams::char_bigrams_wgt_</a></div><div class="ttdeci">double char_bigrams_wgt_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00091">tuning_params.h:91</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a105d4be15f8a255daf005eba66dda531"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetHistWindWid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hist_wind_wid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00078">78</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="a00635.html#aec68d6f0467185de5c759e41822e6f1a">hist_wind_wid_</a> = hist_wind_wid;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
+<div class="ttc" id="a00635_html_aec68d6f0467185de5c759e41822e6f1a"><div class="ttname"><a href="a00635.html#aec68d6f0467185de5c759e41822e6f1a">tesseract::TuningParams::hist_wind_wid_</a></div><div class="ttdeci">int hist_wind_wid_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00107">tuning_params.h:107</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae60d05cb1dd0d285adc328629ba9581c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetMaxSegPerChar </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_seg_per_char</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00070">70</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                     {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="a00635.html#a606d1d14c2b7c6f0478ad92adc921b61">max_seg_per_char_</a> = max_seg_per_char;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="ttc" id="a00635_html_a606d1d14c2b7c6f0478ad92adc921b61"><div class="ttname"><a href="a00635.html#a606d1d14c2b7c6f0478ad92adc921b61">tesseract::TuningParams::max_seg_per_char_</a></div><div class="ttdeci">int max_seg_per_char_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00095">tuning_params.h:95</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab81e3d8f3a5c6fcff47e6196de51e7ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetRecoWgt </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>wgt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00066">66</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <a class="code" href="a00635.html#ab229bbf707022cace4517db9d036d499">reco_wgt_</a> = wgt; }</div>
+<div class="ttc" id="a00635_html_ab229bbf707022cace4517db9d036d499"><div class="ttname"><a href="a00635.html#ab229bbf707022cace4517db9d036d499">tesseract::TuningParams::reco_wgt_</a></div><div class="ttdeci">double reco_wgt_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00087">tuning_params.h:87</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aec11139e837f4bb3f5c2bd8856ed080f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetSizeWgt </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>wgt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00067">67</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{ <a class="code" href="a00635.html#ac75248f72bdad2baa235e8ec9f7df0a0">size_wgt_</a> = wgt; }</div>
+<div class="ttc" id="a00635_html_ac75248f72bdad2baa235e8ec9f7df0a0"><div class="ttname"><a href="a00635.html#ac75248f72bdad2baa235e8ec9f7df0a0">tesseract::TuningParams::size_wgt_</a></div><div class="ttdeci">double size_wgt_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00089">tuning_params.h:89</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac65f0b55d57935404dfedb4c3566ad84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetTypeClassifier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00635.html#a4404799ff32c49a0307a47694bf2f94b">type_classifer</a>&#160;</td>
+          <td class="paramname"><em>tp_classifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00074">74</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                              {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="a00635.html#ac029b6f08d241e309a861e2e970809b3">tp_classifier_</a> = tp_classifier;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="ttc" id="a00635_html_ac029b6f08d241e309a861e2e970809b3"><div class="ttname"><a href="a00635.html#ac029b6f08d241e309a861e2e970809b3">tesseract::TuningParams::tp_classifier_</a></div><div class="ttdeci">type_classifer tp_classifier_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00100">tuning_params.h:100</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad0150891c64c44288dd0de999646ff2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetTypeFeature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699">type_feature</a>&#160;</td>
+          <td class="paramname"><em>tp_feat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00077">77</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{<a class="code" href="a00635.html#a625fb6f3eb1dbab3f1985503046245d0">tp_feat_</a> = tp_feat;}</div>
+<div class="ttc" id="a00635_html_a625fb6f3eb1dbab3f1985503046245d0"><div class="ttname"><a href="a00635.html#a625fb6f3eb1dbab3f1985503046245d0">tesseract::TuningParams::tp_feat_</a></div><div class="ttdeci">type_feature tp_feat_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00102">tuning_params.h:102</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a32ea597024162bf33e076cb0d6b104c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::TuningParams::SetWordUnigramWgt </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>wgt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00069">69</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{ <a class="code" href="a00635.html#a1a7dbc05624b980f088f2a6fed9a9d1b">word_unigrams_wgt_</a> = wgt; }</div>
+<div class="ttc" id="a00635_html_a1a7dbc05624b980f088f2a6fed9a9d1b"><div class="ttname"><a href="a00635.html#a1a7dbc05624b980f088f2a6fed9a9d1b">tesseract::TuningParams::word_unigrams_wgt_</a></div><div class="ttdeci">double word_unigrams_wgt_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00093">tuning_params.h:93</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4fec980d9b962fe7357787e7511c1e7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::SizeWgt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00049">49</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#ac75248f72bdad2baa235e8ec9f7df0a0">size_wgt_</a>; }</div>
+<div class="ttc" id="a00635_html_ac75248f72bdad2baa235e8ec9f7df0a0"><div class="ttname"><a href="a00635.html#ac75248f72bdad2baa235e8ec9f7df0a0">tesseract::TuningParams::size_wgt_</a></div><div class="ttdeci">double size_wgt_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00089">tuning_params.h:89</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3baa1f97923acc3f5cc731a20edb898e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::TypeClassifier </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00054">54</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#ac029b6f08d241e309a861e2e970809b3">tp_classifier_</a>; }</div>
+<div class="ttc" id="a00635_html_ac029b6f08d241e309a861e2e970809b3"><div class="ttname"><a href="a00635.html#ac029b6f08d241e309a861e2e970809b3">tesseract::TuningParams::tp_classifier_</a></div><div class="ttdeci">type_classifer tp_classifier_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00100">tuning_params.h:100</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a354127bbeb26ea51eefc77eb8f4d9218"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::TypeFeature </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00055">55</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#a625fb6f3eb1dbab3f1985503046245d0">tp_feat_</a>; }</div>
+<div class="ttc" id="a00635_html_a625fb6f3eb1dbab3f1985503046245d0"><div class="ttname"><a href="a00635.html#a625fb6f3eb1dbab3f1985503046245d0">tesseract::TuningParams::tp_feat_</a></div><div class="ttdeci">type_feature tp_feat_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00102">tuning_params.h:102</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a89ff4cdb95d8257c2f2b05e767082c2e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::WordUnigramWgt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00051">51</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="a00635.html#a1a7dbc05624b980f088f2a6fed9a9d1b">word_unigrams_wgt_</a>; }</div>
+<div class="ttc" id="a00635_html_a1a7dbc05624b980f088f2a6fed9a9d1b"><div class="ttname"><a href="a00635.html#a1a7dbc05624b980f088f2a6fed9a9d1b">tesseract::TuningParams::word_unigrams_wgt_</a></div><div class="ttdeci">double word_unigrams_wgt_</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00093">tuning_params.h:93</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a01257c28f61300c7ef1a29bbd80b817e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::beam_width_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00098">98</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a669dc45f5309f38c5a8be98fc9766eec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::char_bigrams_wgt_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00091">91</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f162ede8be31236c53dcce512da5394"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::combiner_classifier_thresh_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00125">125</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a064ead05d47ac926d01aaa231bdfee00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::combiner_run_thresh_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00121">121</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad96f57d9c80e0d538ec8fed1bc91055c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::conv_grid_size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00104">104</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec68d6f0467185de5c759e41822e6f1a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::hist_wind_wid_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00107">107</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a606d1d14c2b7c6f0478ad92adc921b61"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::max_seg_per_char_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00095">95</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae3f14d6dcf443f0a4ff063f0bff89c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::max_space_height_ratio_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00117">117</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad03b466658f7cb6ac4225c2a2601699f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::max_word_aspect_ratio_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00111">111</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab49559612d8893fe182c66de08e9fa28"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::TuningParams::min_con_comp_size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00109">109</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac625293da7991548ea725ea903e29f82"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::min_space_height_ratio_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00114">114</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab229bbf707022cace4517db9d036d499"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::reco_wgt_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00087">87</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac75248f72bdad2baa235e8ec9f7df0a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::size_wgt_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00089">89</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac029b6f08d241e309a861e2e970809b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00635.html#a4404799ff32c49a0307a47694bf2f94b">type_classifer</a> tesseract::TuningParams::tp_classifier_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00100">100</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a625fb6f3eb1dbab3f1985503046245d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00635.html#a2b1c025469e919800e21ac36d852b699">type_feature</a> tesseract::TuningParams::tp_feat_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00102">102</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a7dbc05624b980f088f2a6fed9a9d1b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double tesseract::TuningParams::word_unigrams_wgt_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01016_source.html#l00093">93</a> of file <a class="el" href="a01016_source.html">tuning_params.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>ccutil/<a class="el" href="a00879_source.html">tesscallback.h</a></li>
+<li>cube/<a class="el" href="a01016_source.html">tuning_params.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00635.html">TessResultCallback2</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:47 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00635.html">TuningParams</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:32 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

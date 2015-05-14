@@ -1,12 +1,16 @@
 var a00839 =
 [
-    [ "CLIST_LINK", "a00323.html", "a00323" ],
-    [ "CLIST", "a00321.html", "a00321" ],
-    [ "CLIST_ITERATOR", "a00322.html", "a00322" ],
-    [ "CLISTIZE", "a00839.html#a721c1e0acc4a882f9ea934613aee64be", null ],
-    [ "CLISTIZEH", "a00839.html#a253f497a3c8fd08cdc6ff8a785b00349", null ],
-    [ "CLISTIZEH_A", "a00839.html#ad7192f84af8c075b0af63983f8b5257d", null ],
-    [ "CLISTIZEH_B", "a00839.html#ab8b579be7f8c3f327aa5e05be8f5c5b7", null ],
-    [ "CLISTIZEH_C", "a00839.html#a9f58a7d9d3bc7ca09a4d08cbd9ea0513", null ],
-    [ "QUOTE_IT", "a00839.html#adc858fd865cb4f529784fbc52d4d2b87", null ]
+    [ "LSTERR_H", "a00839.html#a48c67317214b0778a4adca63a3c8ba5f", null ],
+    [ "BAD_PARAMETER", "a00839.html#a55134ddce5fbe49d262fefe6e9f1eb8b", null ],
+    [ "DONT_ASSIGN_LISTS", "a00839.html#ad324cbd7e4b9d11e46b84785d3a5bea9", null ],
+    [ "DONT_CONSTRUCT_LIST_BY_COPY", "a00839.html#a855710b0ec46d26a8a8b566dd6317888", null ],
+    [ "EMPTY_LIST", "a00839.html#ac1f578a70f3eaeca57b7e6ea1a00fd8a", null ],
+    [ "NO_LIST", "a00839.html#aaffb45f5550e84f2443ffb2585055ffd", null ],
+    [ "NULL_CURRENT", "a00839.html#ac0fc36ed86576a24b07bb350cf021aba", null ],
+    [ "NULL_DATA", "a00839.html#a8104a8aded87671d4ddbf6be9a172666", null ],
+    [ "NULL_NEXT", "a00839.html#a835c8893f8804ece0a468f5649966fd3", null ],
+    [ "NULL_OBJECT", "a00839.html#aa905f4edc3563a45c13d5067f6398d6a", null ],
+    [ "NULL_PREV", "a00839.html#a6de4517e5ce7f8b1782f86ff96875fb7", null ],
+    [ "SERIALISE_LINKS", "a00839.html#a9efe4a42d25d2d35f3d234485e96f47a", null ],
+    [ "STILL_LINKED", "a00839.html#a79ccb5823fc9ffa52f94155cedb17796", null ]
 ];

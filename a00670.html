@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::WordAltList Class Reference</title>
+<title>Tesseract: ccmain/adaptions.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,9 +70,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,342 +105,35 @@ $(document).ready(function(){initNavTree('a00670.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01959.html">List of all members</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::WordAltList Class Reference</div>  </div>
+<div class="title">adaptions.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a01028_source.html">word_altlist.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for tesseract::WordAltList:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00670.png" usemap="#tesseract::WordAltList_map" alt=""/>
-  <map id="tesseract::WordAltList_map" name="tesseract::WordAltList_map">
-<area href="a00262.html" alt="tesseract::AltList" shape="rect" coords="0,0,133,24"/>
-</map>
- </div></div>
+<div class="textblock"><code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00712_source.html">tessbox.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00720_source.html">tessvars.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00842_source.html">memry.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00707_source.html">reject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00673_source.html">control.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01060_source.html">stopper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00718_source.html">tesseractclass.h</a>&quot;</code><br />
+</div>
+<p><a href="a00670_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:aed7544a93d45d94e50095caba8e0dcf0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00670.html#aed7544a93d45d94e50095caba8e0dcf0">WordAltList</a> (int max_alt)</td></tr>
-<tr class="separator:aed7544a93d45d94e50095caba8e0dcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af020c489d5502728fa9ab73f67bb20b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00670.html#af020c489d5502728fa9ab73f67bb20b0">~WordAltList</a> ()</td></tr>
-<tr class="separator:af020c489d5502728fa9ab73f67bb20b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95f2cdc000e6a4a605326f2b12faac23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00670.html#a95f2cdc000e6a4a605326f2b12faac23">Sort</a> ()</td></tr>
-<tr class="separator:a95f2cdc000e6a4a605326f2b12faac23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ea326591aae2390151765f15d93a954"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00670.html#a5ea326591aae2390151765f15d93a954">Insert</a> (<a class="el" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *char_ptr, int cost, void *tag=<a class="el" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</td></tr>
-<tr class="separator:a5ea326591aae2390151765f15d93a954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a522352cc3284f467f08c7520f5ffa072"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00670.html#a522352cc3284f467f08c7520f5ffa072">Alt</a> (int alt_idx)</td></tr>
-<tr class="separator:a522352cc3284f467f08c7520f5ffa072"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98be76081103c8732f07836d1278da63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00670.html#a98be76081103c8732f07836d1278da63">PrintDebug</a> ()</td></tr>
-<tr class="separator:a98be76081103c8732f07836d1278da63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00262"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00262')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00262.html">tesseract::AltList</a></td></tr>
-<tr class="memitem:a8469cc99ad3fdad109ba6df979ca9cfe inherit pub_methods_a00262"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#a8469cc99ad3fdad109ba6df979ca9cfe">AltList</a> (int max_alt)</td></tr>
-<tr class="separator:a8469cc99ad3fdad109ba6df979ca9cfe inherit pub_methods_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f9763670aea57c9b9b3e958ce0a5464 inherit pub_methods_a00262"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#a0f9763670aea57c9b9b3e958ce0a5464">~AltList</a> ()</td></tr>
-<tr class="separator:a0f9763670aea57c9b9b3e958ce0a5464 inherit pub_methods_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5fa04cf2bb199215be50307d189aeea inherit pub_methods_a00262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#aa5fa04cf2bb199215be50307d189aeea">BestCost</a> (int *best_alt) const </td></tr>
-<tr class="separator:aa5fa04cf2bb199215be50307d189aeea inherit pub_methods_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadb48ec686ebb9f9c2873c2153da8825 inherit pub_methods_a00262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#aadb48ec686ebb9f9c2873c2153da8825">AltCount</a> () const </td></tr>
-<tr class="separator:aadb48ec686ebb9f9c2873c2153da8825 inherit pub_methods_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a306aeb11c4477af0309561ceb5da404e inherit pub_methods_a00262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#a306aeb11c4477af0309561ceb5da404e">AltCost</a> (int alt_idx) const </td></tr>
-<tr class="separator:a306aeb11c4477af0309561ceb5da404e inherit pub_methods_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae2b790bbc85ca17d3c96bb67b56df80 inherit pub_methods_a00262"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#aae2b790bbc85ca17d3c96bb67b56df80">AltProb</a> (int alt_idx) const </td></tr>
-<tr class="separator:aae2b790bbc85ca17d3c96bb67b56df80 inherit pub_methods_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3864321e544f4cb5d2a4caeb954d8b85 inherit pub_methods_a00262"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#a3864321e544f4cb5d2a4caeb954d8b85">AltTag</a> (int alt_idx) const </td></tr>
-<tr class="separator:a3864321e544f4cb5d2a4caeb954d8b85 inherit pub_methods_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_a00262"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00262')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a00262.html">tesseract::AltList</a></td></tr>
-<tr class="memitem:af2feccb6f1085ac6c1884a0440c47578 inherit pro_attribs_a00262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a></td></tr>
-<tr class="separator:af2feccb6f1085ac6c1884a0440c47578 inherit pro_attribs_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a4e150fef9c9beb9cfbf6529cf8b467 inherit pro_attribs_a00262"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a></td></tr>
-<tr class="separator:a5a4e150fef9c9beb9cfbf6529cf8b467 inherit pro_attribs_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afad648f9ceb847661f71cab87c00e208 inherit pro_attribs_a00262"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a></td></tr>
-<tr class="separator:afad648f9ceb847661f71cab87c00e208 inherit pro_attribs_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c30e8b6c8fd2346184b0180ff5af4d6 inherit pro_attribs_a00262"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a></td></tr>
-<tr class="separator:a9c30e8b6c8fd2346184b0180ff5af4d6 inherit pro_attribs_a00262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="a01028_source.html#l00032">32</a> of file <a class="el" href="a01028_source.html">word_altlist.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aed7544a93d45d94e50095caba8e0dcf0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::WordAltList::WordAltList </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_alt</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01027_source.html#l00023">23</a> of file <a class="el" href="a01027_source.html">word_altlist.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    : <a class="code" href="a00262.html#a8469cc99ad3fdad109ba6df979ca9cfe">AltList</a>(max_alt) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  word_alt_ = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00262_html_a8469cc99ad3fdad109ba6df979ca9cfe"><div class="ttname"><a href="a00262.html#a8469cc99ad3fdad109ba6df979ca9cfe">tesseract::AltList::AltList</a></div><div class="ttdeci">AltList(int max_alt)</div><div class="ttdef"><b>Definition:</b> <a href="a00965_source.html#l00025">altlist.cpp:25</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="af020c489d5502728fa9ab73f67bb20b0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::WordAltList::~WordAltList </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01027_source.html#l00028">28</a> of file <a class="el" href="a01027_source.html">word_altlist.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                          {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">if</span> (word_alt_ != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 0; alt_idx &lt; <a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordflow">if</span> (word_alt_[alt_idx] != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">delete</span> []word_alt_[alt_idx];</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">delete</span> []word_alt_;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    word_alt_ = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00262_html_a5a4e150fef9c9beb9cfbf6529cf8b467"><div class="ttname"><a href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">tesseract::AltList::alt_cnt_</a></div><div class="ttdeci">int alt_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00053">altlist.h:53</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a522352cc3284f467f08c7520f5ffa072"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a>* tesseract::WordAltList::Alt </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>alt_idx</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01028_source.html#l00041">41</a> of file <a class="el" href="a01028_source.html">word_altlist.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{ <span class="keywordflow">return</span> word_alt_[alt_idx]; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a5ea326591aae2390151765f15d93a954"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::WordAltList::Insert </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *&#160;</td>
-          <td class="paramname"><em>char_ptr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>cost</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>tag</em> = <code><a class="el" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01027_source.html#l00041">41</a> of file <a class="el" href="a01027_source.html">word_altlist.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                               {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> (word_alt_ == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    word_alt_ = <span class="keyword">new</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a>*[<a class="code" href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a>];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> = <span class="keyword">new</span> <span class="keywordtype">int</span>[<a class="code" href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a>];</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a> = <span class="keyword">new</span> <span class="keywordtype">void</span> *[<a class="code" href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a>];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (word_alt_ == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a> == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    memset(<a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>, 0, <a class="code" href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a> * <span class="keyword">sizeof</span>(*<a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>));</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// check if alt already exists</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 0; alt_idx &lt; <a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00351.html#ad0ca280e451878dc769ce3e095c97ea0">CubeUtils::StrCmp</a>(word_str, word_alt_[alt_idx]) == 0) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// update the cost if we have a lower one</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (cost &lt; <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx]) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx] = cost;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt_idx] = tag;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// determine length of alternate</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">int</span> len = <a class="code" href="a00351.html#a88fe596e3dcadab7909c0bff64f61f59">CubeUtils::StrLen</a>(word_str);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  word_alt_[<a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>] = <span class="keyword">new</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a>[len + 1];</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (word_alt_[alt_cnt_] == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">if</span> (len &gt; 0) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    memcpy(word_alt_[alt_cnt_], word_str, len * <span class="keyword">sizeof</span>(*word_str));</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  word_alt_[<a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>][len] = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[<a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>] = cost;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[<a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>] = tag;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  alt_cnt_++;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="ttc" id="a00262_html_a9c30e8b6c8fd2346184b0180ff5af4d6"><div class="ttname"><a href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">tesseract::AltList::alt_tag_</a></div><div class="ttdeci">void ** alt_tag_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00057">altlist.h:57</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00262_html_a5a4e150fef9c9beb9cfbf6529cf8b467"><div class="ttname"><a href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">tesseract::AltList::alt_cnt_</a></div><div class="ttdeci">int alt_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00053">altlist.h:53</a></div></div>
-<div class="ttc" id="a00262_html_af2feccb6f1085ac6c1884a0440c47578"><div class="ttname"><a href="a00262.html#af2feccb6f1085ac6c1884a0440c47578">tesseract::AltList::max_alt_</a></div><div class="ttdeci">int max_alt_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00051">altlist.h:51</a></div></div>
-<div class="ttc" id="a00262_html_afad648f9ceb847661f71cab87c00e208"><div class="ttname"><a href="a00262.html#afad648f9ceb847661f71cab87c00e208">tesseract::AltList::alt_cost_</a></div><div class="ttdeci">int * alt_cost_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00055">altlist.h:55</a></div></div>
-<div class="ttc" id="a00351_html_a88fe596e3dcadab7909c0bff64f61f59"><div class="ttname"><a href="a00351.html#a88fe596e3dcadab7909c0bff64f61f59">tesseract::CubeUtils::StrLen</a></div><div class="ttdeci">static int StrLen(const char_32 *str)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00048">cube_utils.cpp:48</a></div></div>
-<div class="ttc" id="a00351_html_ad0ca280e451878dc769ce3e095c97ea0"><div class="ttname"><a href="a00351.html#ad0ca280e451878dc769ce3e095c97ea0">tesseract::CubeUtils::StrCmp</a></div><div class="ttdeci">static int StrCmp(const char_32 *str1, const char_32 *str2)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00058">cube_utils.cpp:58</a></div></div>
-<div class="ttc" id="a01279_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01279.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00040">string_32.h:40</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a98be76081103c8732f07836d1278da63"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::WordAltList::PrintDebug </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01027_source.html#l00108">108</a> of file <a class="el" href="a01027_source.html">word_altlist.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                             {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 0; alt_idx &lt; <a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *word_32 = word_alt_[alt_idx];</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">string</span> word_str;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="a00351.html#a30c20693fc79e49a67c9694700f1d0b5">CubeUtils::UTF32ToUTF8</a>(word_32, &amp;word_str);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">int</span> num_unichars = <a class="code" href="a00351.html#a88fe596e3dcadab7909c0bff64f61f59">CubeUtils::StrLen</a>(word_32);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Alt[%d]=%s (cost=%d, num_unichars=%d); unichars=&quot;</span>, alt_idx,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            word_str.c_str(), <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx], num_unichars);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_unichars; ++i)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      fprintf(stderr, <span class="stringliteral">&quot;%d &quot;</span>, word_32[i]);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="ttc" id="a00262_html_a5a4e150fef9c9beb9cfbf6529cf8b467"><div class="ttname"><a href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">tesseract::AltList::alt_cnt_</a></div><div class="ttdeci">int alt_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00053">altlist.h:53</a></div></div>
-<div class="ttc" id="a00262_html_afad648f9ceb847661f71cab87c00e208"><div class="ttname"><a href="a00262.html#afad648f9ceb847661f71cab87c00e208">tesseract::AltList::alt_cost_</a></div><div class="ttdeci">int * alt_cost_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00055">altlist.h:55</a></div></div>
-<div class="ttc" id="a00351_html_a88fe596e3dcadab7909c0bff64f61f59"><div class="ttname"><a href="a00351.html#a88fe596e3dcadab7909c0bff64f61f59">tesseract::CubeUtils::StrLen</a></div><div class="ttdeci">static int StrLen(const char_32 *str)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00048">cube_utils.cpp:48</a></div></div>
-<div class="ttc" id="a00351_html_a30c20693fc79e49a67c9694700f1d0b5"><div class="ttname"><a href="a00351.html#a30c20693fc79e49a67c9694700f1d0b5">tesseract::CubeUtils::UTF32ToUTF8</a></div><div class="ttdeci">static void UTF32ToUTF8(const char_32 *utf32_str, string *str)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00258">cube_utils.cpp:258</a></div></div>
-<div class="ttc" id="a01279_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01279.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00040">string_32.h:40</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a95f2cdc000e6a4a605326f2b12faac23"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::WordAltList::Sort </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00262.html#a20c701f1ff8ef7397a2b3abe661aa403">tesseract::AltList</a>.</p>
-
-<p>Definition at line <a class="el" href="a01027_source.html#l00088">88</a> of file <a class="el" href="a01027_source.html">word_altlist.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                       {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 0; alt_idx &lt; <a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt = alt_idx + 1; alt &lt; <a class="code" href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt++) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx] &gt; <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt]) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *pchTemp = word_alt_[alt_idx];</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        word_alt_[alt_idx] = word_alt_[alt];</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        word_alt_[alt] = pchTemp;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">int</span> temp = <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx];</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx] = <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt];</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="a00262.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt] = temp;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> *tag = <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt_idx];</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt_idx] = <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt];</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt] = tag;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="ttc" id="a00262_html_a9c30e8b6c8fd2346184b0180ff5af4d6"><div class="ttname"><a href="a00262.html#a9c30e8b6c8fd2346184b0180ff5af4d6">tesseract::AltList::alt_tag_</a></div><div class="ttdeci">void ** alt_tag_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00057">altlist.h:57</a></div></div>
-<div class="ttc" id="a00262_html_a5a4e150fef9c9beb9cfbf6529cf8b467"><div class="ttname"><a href="a00262.html#a5a4e150fef9c9beb9cfbf6529cf8b467">tesseract::AltList::alt_cnt_</a></div><div class="ttdeci">int alt_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00053">altlist.h:53</a></div></div>
-<div class="ttc" id="a00262_html_afad648f9ceb847661f71cab87c00e208"><div class="ttname"><a href="a00262.html#afad648f9ceb847661f71cab87c00e208">tesseract::AltList::alt_cost_</a></div><div class="ttdeci">int * alt_cost_</div><div class="ttdef"><b>Definition:</b> <a href="a00966_source.html#l00055">altlist.h:55</a></div></div>
-<div class="ttc" id="a01279_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01279.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00040">string_32.h:40</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>cube/<a class="el" href="a01028_source.html">word_altlist.h</a></li>
-<li>cube/<a class="el" href="a01027_source.html">word_altlist.cpp</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00670.html">WordAltList</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:57 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00670.html">adaptions.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

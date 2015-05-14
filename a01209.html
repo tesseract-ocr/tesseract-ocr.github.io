@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: training/tessopt.cpp File Reference</title>
+<title>Tesseract: viewer/svpaint.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,52 +105,51 @@ $(document).ready(function(){initNavTree('a01209.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tessopt.cpp File Reference</div>  </div>
+<div class="title">svpaint.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a01210_source.html">tessopt.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01206_source.html">scrollview.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01208_source.html">svmnode.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div>
 <p><a href="a01209_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00577.html">SVPaint</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a810b696d632429d99dd1a92fbcfed32d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01209.html#a810b696d632429d99dd1a92fbcfed32d">tessopt</a> (<a class="el" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> argc, char *argv[], const char *arglist)</td></tr>
-<tr class="separator:a810b696d632429d99dd1a92fbcfed32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01209.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aef382bc42a86adef688f3b7901cc9593"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a></td></tr>
-<tr class="separator:aef382bc42a86adef688f3b7901cc9593"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2c7e7835346e9460d1534ecc3ba3f2f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01209.html#ae2c7e7835346e9460d1534ecc3ba3f2f">tessoptarg</a></td></tr>
-<tr class="separator:ae2c7e7835346e9460d1534ecc3ba3f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2af510c23176345b05b6a9a29fe524b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01209.html#ae2af510c23176345b05b6a9a29fe524b">rgb</a> [3] = { 255, 255, 255 }</td></tr>
+<tr class="separator:ae2af510c23176345b05b6a9a29fe524b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a810b696d632429d99dd1a92fbcfed32d"></a>
+<a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int tessopt </td>
+          <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argv</em>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>arglist</em>&#160;</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -159,63 +158,31 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<hr/>
+ <h2>Public Function Prototypes </h2>
 
-<p>Definition at line <a class="el" href="a01209_source.html#l00033">33</a> of file <a class="el" href="a01209_source.html">tessopt.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *arg;                     <span class="comment">//arg char</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a> == 0)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a> = 1;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a> &lt; argc &amp;&amp; argv[<a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a>][0] == <span class="charliteral">&#39;-&#39;</span>) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    arg = strchr (arglist, argv[<a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a>][1]);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (arg == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || *arg == <span class="charliteral">&#39;:&#39;</span>)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">return</span> <span class="charliteral">&#39;?&#39;</span>;                <span class="comment">//dud option</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a>++;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="a01209.html#ae2c7e7835346e9460d1534ecc3ba3f2f">tessoptarg</a> = argv[<a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a>];</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (arg[1] == <span class="charliteral">&#39;:&#39;</span>) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">if</span> (argv[<a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a> - 1][2] != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                 <span class="comment">//immediately after</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="a01209.html#ae2c7e7835346e9460d1534ecc3ba3f2f">tessoptarg</a> = argv[<a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a> - 1] + 2;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a>++;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> *arg;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> EOF;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a01209_html_ae2c7e7835346e9460d1534ecc3ba3f2f"><div class="ttname"><a href="a01209.html#ae2c7e7835346e9460d1534ecc3ba3f2f">tessoptarg</a></div><div class="ttdeci">char * tessoptarg</div><div class="ttdef"><b>Definition:</b> <a href="a01209_source.html#l00025">tessopt.cpp:25</a></div></div>
-<div class="ttc" id="a01209_html_aef382bc42a86adef688f3b7901cc9593"><div class="ttname"><a href="a01209.html#aef382bc42a86adef688f3b7901cc9593">tessoptind</a></div><div class="ttdeci">int tessoptind</div><div class="ttdef"><b>Definition:</b> <a href="a01209_source.html#l00024">tessopt.cpp:24</a></div></div>
+<p>Definition at line <a class="el" href="a01209_source.html#l00221">221</a> of file <a class="el" href="a01209_source.html">svpaint.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* server_name;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">if</span> (argc &gt; 1) { server_name = argv[1]; } <span class="keywordflow">else</span> { server_name = <span class="stringliteral">&quot;localhost&quot;</span>; }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="a00577.html">SVPaint</a> svp(server_name);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="ttc" id="a00577_html"><div class="ttname"><a href="a00577.html">SVPaint</a></div><div class="ttdef"><b>Definition:</b> <a href="a01209_source.html#l00028">svpaint.cpp:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="ae2c7e7835346e9460d1534ecc3ba3f2f"></a>
+<a class="anchor" id="ae2af510c23176345b05b6a9a29fe524b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* tessoptarg</td>
+          <td class="memname">int rgb[3] = { 255, 255, 255 }</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01209_source.html#l00025">25</a> of file <a class="el" href="a01209_source.html">tessopt.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aef382bc42a86adef688f3b7901cc9593"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tessoptind</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01209_source.html#l00024">24</a> of file <a class="el" href="a01209_source.html">tessopt.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a01209_source.html#l00026">26</a> of file <a class="el" href="a01209_source.html">svpaint.cpp</a>.</p>
 
 </div>
 </div>
@@ -224,8 +191,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01209.html">tessopt.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1c1630eaace7758f38c01fd8ae719f7e.html">viewer</a></li><li class="navelem"><a class="el" href="a01209.html">svpaint.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

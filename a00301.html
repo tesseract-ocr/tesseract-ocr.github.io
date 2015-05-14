@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::CCUtilMutex Class Reference</title>
+<title>Tesseract: tesseract::CharBigram Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,114 +106,80 @@ $(document).ready(function(){initNavTree('a00301.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01776.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="a01748.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::CCUtilMutex Class Reference</div>  </div>
+<div class="title">tesseract::CharBigram Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00837_source.html">ccutil.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00966_source.html">char_bigrams.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:aa63f782c48ef478f9f3dd80381056888"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#aa63f782c48ef478f9f3dd80381056888">CCUtilMutex</a> ()</td></tr>
-<tr class="separator:aa63f782c48ef478f9f3dd80381056888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b593dd73dc2510c71739841e37ee17c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">Lock</a> ()</td></tr>
-<tr class="separator:a9b593dd73dc2510c71739841e37ee17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cc750edb4d5b9baca124ebee032c09b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">Unlock</a> ()</td></tr>
-<tr class="separator:a0cc750edb4d5b9baca124ebee032c09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a5fcb5e2bd655dcf9185f8059af6ae392"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#a5fcb5e2bd655dcf9185f8059af6ae392">total_cnt</a></td></tr>
+<tr class="separator:a5fcb5e2bd655dcf9185f8059af6ae392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2bd3dc796213605662064c8c2bebc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#a2e2bd3dc796213605662064c8c2bebc9">max_char</a></td></tr>
+<tr class="separator:a2e2bd3dc796213605662064c8c2bebc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf18b9398a62f9f184fdd18b8d91bdd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00271.html">Bigram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00301.html#acf18b9398a62f9f184fdd18b8d91bdd8">bigram</a></td></tr>
+<tr class="separator:acf18b9398a62f9f184fdd18b8d91bdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00837_source.html#l00038">38</a> of file <a class="el" href="a00837_source.html">ccutil.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aa63f782c48ef478f9f3dd80381056888"></a>
+<p>Definition at line <a class="el" href="a00966_source.html#l00042">42</a> of file <a class="el" href="a00966_source.html">char_bigrams.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="acf18b9398a62f9f184fdd18b8d91bdd8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::CCUtilMutex::CCUtilMutex </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00271.html">Bigram</a>* tesseract::CharBigram::bigram</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00836_source.html#l00027">27</a> of file <a class="el" href="a00836_source.html">ccutil.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                         {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  mutex_ = CreateMutex(0, <a class="code" href="a00684.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>, 0);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  pthread_mutex_init(&amp;mutex_, <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00684_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00684.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00684_source.html#l00029">capi.h:29</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00966_source.html#l00045">45</a> of file <a class="el" href="a00966_source.html">char_bigrams.h</a>.</p>
+
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9b593dd73dc2510c71739841e37ee17c"></a>
+<a class="anchor" id="a2e2bd3dc796213605662064c8c2bebc9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tesseract::CCUtilMutex::Lock </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> tesseract::CharBigram::max_char</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00836_source.html#l00035">35</a> of file <a class="el" href="a00836_source.html">ccutil.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                       {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  WaitForSingleObject(mutex_, INFINITE);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  pthread_mutex_lock(&amp;mutex_);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00966_source.html#l00044">44</a> of file <a class="el" href="a00966_source.html">char_bigrams.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a0cc750edb4d5b9baca124ebee032c09b"></a>
+<a class="anchor" id="a5fcb5e2bd655dcf9185f8059af6ae392"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tesseract::CCUtilMutex::Unlock </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">int tesseract::CharBigram::total_cnt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00836_source.html#l00043">43</a> of file <a class="el" href="a00836_source.html">ccutil.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                         {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  ReleaseMutex(mutex_);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  pthread_mutex_unlock(&amp;mutex_);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00966_source.html#l00043">43</a> of file <a class="el" href="a00966_source.html">char_bigrams.h</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>ccutil/<a class="el" href="a00837_source.html">ccutil.h</a></li>
-<li>ccutil/<a class="el" href="a00836_source.html">ccutil.cpp</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cube/<a class="el" href="a00966_source.html">char_bigrams.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00301.html">CCUtilMutex</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:49 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00301.html">CharBigram</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:24 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

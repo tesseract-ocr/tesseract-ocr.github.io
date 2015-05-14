@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/char_samp_set.h File Reference</title>
+<title>Tesseract: cube/cube_const.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,49 +105,111 @@ $(document).ready(function(){initNavTree('a00982.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">char_samp_set.h File Reference</div>  </div>
+<div class="title">cube_const.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00978_source.html">char_samp.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00980_source.html">char_samp_enum.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00984_source.html">char_set.h</a>&quot;</code><br />
-</div>
+
 <p><a href="a00982_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00313.html">tesseract::CharSampSet</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a7cce6aa6b8dd0efe0cef336c06b386b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00982.html#a7cce6aa6b8dd0efe0cef336c06b386b4">SAMP_ALLOC_BLOCK</a>&#160;&#160;&#160;10000</td></tr>
-<tr class="separator:a7cce6aa6b8dd0efe0cef336c06b386b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e863295c568a5acf35176a474a87a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00982.html#ab1e863295c568a5acf35176a474a87a9">PROB2COST_SCALE</a>&#160;&#160;&#160;4096.0</td></tr>
+<tr class="separator:ab1e863295c568a5acf35176a474a87a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d98e096ee6e9bda7836df456b6b25e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00982.html#a7d98e096ee6e9bda7836df456b6b25e6">MIN_PROB_COST</a>&#160;&#160;&#160;65536</td></tr>
+<tr class="separator:a7d98e096ee6e9bda7836df456b6b25e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77709ecf4b96a5243f69dec32f214f61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00982.html#a77709ecf4b96a5243f69dec32f214f61">MIN_PROB</a>&#160;&#160;&#160;0.000000113</td></tr>
+<tr class="separator:a77709ecf4b96a5243f69dec32f214f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15bac3baa4fd3e56ba19eefebe4065f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00982.html#ab15bac3baa4fd3e56ba19eefebe4065f">WORST_COST</a>&#160;&#160;&#160;0x40000</td></tr>
+<tr class="separator:ab15bac3baa4fd3e56ba19eefebe4065f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec189a023f988ece297cca8b0d492631"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00982.html#aec189a023f988ece297cca8b0d492631">HIST_WND_RATIO</a>&#160;&#160;&#160;0.1f</td></tr>
+<tr class="separator:aec189a023f988ece297cca8b0d492631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f63172fc6a5989d5934e7154ac0612e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00982.html#a2f63172fc6a5989d5934e7154ac0612e">SEG_PT_WND_RATIO</a>&#160;&#160;&#160;0.1f</td></tr>
+<tr class="separator:a2f63172fc6a5989d5934e7154ac0612e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a7cce6aa6b8dd0efe0cef336c06b386b4"></a>
+<a class="anchor" id="aec189a023f988ece297cca8b0d492631"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SAMP_ALLOC_BLOCK&#160;&#160;&#160;10000</td>
+          <td class="memname">#define HIST_WND_RATIO&#160;&#160;&#160;0.1f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00982_source.html#l00038">38</a> of file <a class="el" href="a00982_source.html">char_samp_set.h</a>.</p>
+<p>Definition at line <a class="el" href="a00982_source.html#l00032">32</a> of file <a class="el" href="a00982_source.html">cube_const.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a77709ecf4b96a5243f69dec32f214f61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_PROB&#160;&#160;&#160;0.000000113</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00982_source.html#l00028">28</a> of file <a class="el" href="a00982_source.html">cube_const.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d98e096ee6e9bda7836df456b6b25e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_PROB_COST&#160;&#160;&#160;65536</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00982_source.html#l00026">26</a> of file <a class="el" href="a00982_source.html">cube_const.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1e863295c568a5acf35176a474a87a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PROB2COST_SCALE&#160;&#160;&#160;4096.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00982_source.html#l00024">24</a> of file <a class="el" href="a00982_source.html">cube_const.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f63172fc6a5989d5934e7154ac0612e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SEG_PT_WND_RATIO&#160;&#160;&#160;0.1f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00982_source.html#l00033">33</a> of file <a class="el" href="a00982_source.html">cube_const.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab15bac3baa4fd3e56ba19eefebe4065f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WORST_COST&#160;&#160;&#160;0x40000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00982_source.html#l00030">30</a> of file <a class="el" href="a00982_source.html">cube_const.h</a>.</p>
 
 </div>
 </div>
@@ -156,8 +218,8 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00982.html">char_samp_set.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:35 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a00982.html">cube_const.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

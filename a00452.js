@@ -1,6 +1,9 @@
 var a00452 =
 [
-    [ "KDPairInc", "a00452.html#ac3234b4de44208d494019ad863ca9bdc", null ],
-    [ "KDPairInc", "a00452.html#a7eaa49d49e9ed9cb8cc978894abad937", null ],
-    [ "operator<", "a00452.html#a1b689d172084968b21fb887f0fca3ffd", null ]
+    [ "LanguageModelNgramInfo", "a00452.html#af271ad4d3585f9df5a707934ec725dcd", null ],
+    [ "context", "a00452.html#aa2ec2374e908afc391e8d24d911f793f", null ],
+    [ "context_unichar_step_len", "a00452.html#a2d07dfbfe069644b1a51799d0b71e300", null ],
+    [ "ngram_and_classifier_cost", "a00452.html#a2cf402dba7da143b5aaf6bb4d7473027", null ],
+    [ "ngram_cost", "a00452.html#ad3e0f58154ee4646c06c0bd9cc6b3127", null ],
+    [ "pruned", "a00452.html#a4e5c109a8e5e6a3887024615f40817d1", null ]
 ];

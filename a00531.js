@@ -1,4 +1,6 @@
 var a00531 =
 [
-    [ "operator()", "a00531.html#af36a457f114b2e58a639d8e55df32ea6", null ]
+    [ "MaxNumSamples", "a00531.html#a2d52a197ab5cacdecef8ae9748834eb4", null ],
+    [ "NumSamples", "a00531.html#a5f1cc4fb9ec4f7fb4955eb90e83ba182", null ],
+    [ "Sample", "a00531.html#aee7b23bef7e0cdd87974d3c9d36e9d73", null ]
 ];

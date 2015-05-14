@@ -1,4 +1,4 @@
 var a01169 =
 [
-    [ "MAXSPACING", "a01169.html#a22abbfce8776ec4773a672fd1544d21c", null ]
+    [ "kMaxLineLength", "a01169.html#a6188675c2a5f53695fc07b8f22c977ab", null ]
 ];

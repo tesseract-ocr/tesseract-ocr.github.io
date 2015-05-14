@@ -1,8 +1,18 @@
 var a00258 =
 [
-    [ "Class", "a00258.html#a0256081fa31eb38b52b19788ca62e327", null ],
-    [ "dummy", "a00258.html#aa040fcd0981abbaead178f882a09e410", null ],
-    [ "NumNonEmptyClasses", "a00258.html#aa644a299b7046916ce731566866df325", null ],
-    [ "NumPermClasses", "a00258.html#ac4e39261d76ebdd092eeb754fe1e15c3", null ],
-    [ "Templates", "a00258.html#a592229e83546c1b6840e7862b92a0629", null ]
+    [ "AlignedBlobParams", "a00258.html#aac285afe5a09388331a6dc25f4fef615", null ],
+    [ "AlignedBlobParams", "a00258.html#a575b3a2cf7713d3168753cd78354966f", null ],
+    [ "set_vertical", "a00258.html#a83e44cae379b6731699515fb80f5be33", null ],
+    [ "alignment", "a00258.html#a77bb80612aed62986d8dab3508a2a6b4", null ],
+    [ "confirmed_type", "a00258.html#a86260944382d57f10f5f6a3718318b6d", null ],
+    [ "gutter_fraction", "a00258.html#afe400c5d4ef1bfe294a4baf45812ef01", null ],
+    [ "l_align_tolerance", "a00258.html#a2eab7048a1f698433d9d0dc5fccd8fed", null ],
+    [ "max_v_gap", "a00258.html#a70e2ffc29607853e0453d98bc146034c", null ],
+    [ "min_gutter", "a00258.html#a4bbdae9960d3343725a77f92cf61f639", null ],
+    [ "min_length", "a00258.html#a156cc5a176a7753c680415f035aa55fd", null ],
+    [ "min_points", "a00258.html#ad95c5a1a4612b1182d2460a9b02f77dc", null ],
+    [ "r_align_tolerance", "a00258.html#ab8ae6a57a362fea6e62386a2d086202f", null ],
+    [ "ragged", "a00258.html#ac80a942a45ca308b6db82c52672f2441", null ],
+    [ "right_tab", "a00258.html#af5be29a0f0602a9cee85ea55cc72ce82", null ],
+    [ "vertical", "a00258.html#acdc3b3bc6a750096da1641b343517ace", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: training/tlog.h File Reference</title>
+<title>Tesseract: vs2010/tesseract/resource.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,137 +104,19 @@ $(document).ready(function(){initNavTree('a01213.html','');});
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">tlog.h File Reference</div>  </div>
+<div class="title">resource.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01185_source.html">commandlineflags.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00846_source.html">errcode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00883_source.html">tprintf.h</a>&quot;</code><br />
-</div>
+
 <p><a href="a01213_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:adef45c0cb7d54999abcf14ce2741d59b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01213.html#adef45c0cb7d54999abcf14ce2741d59b">tlog</a>(level,...)</td></tr>
-<tr class="separator:adef45c0cb7d54999abcf14ce2741d59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49f5c062187b5f41f68e02021a3e2960"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01213.html#a49f5c062187b5f41f68e02021a3e2960">TLOG_IS_ON</a>(level)&#160;&#160;&#160;(FLAGS_tlog_level &gt;= level)</td></tr>
-<tr class="separator:a49f5c062187b5f41f68e02021a3e2960"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a674cae8a13f09379902ff614b7019f22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01213.html#a674cae8a13f09379902ff614b7019f22">TLOG_FATAL</a>(msg...)</td></tr>
-<tr class="separator:a674cae8a13f09379902ff614b7019f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a51de2c0227d339d607dabd566919db01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01213.html#a51de2c0227d339d607dabd566919db01">DECLARE_INT_PARAM_FLAG</a> (tlog_level)</td></tr>
-<tr class="separator:a51de2c0227d339d607dabd566919db01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="adef45c0cb7d54999abcf14ce2741d59b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define tlog</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">level, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                        \</div>
-<div class="line">  if (FLAGS_tlog_level &gt;= level) {                <a class="code" href="a00882.html#a2f73f7667eb32eaba83b4bd3a916c470">\</a></div>
-<div class="line"><a class="code" href="a00882.html#a2f73f7667eb32eaba83b4bd3a916c470">    tprintf_internal</a>(__VA_ARGS__);                \</div>
-<div class="line">  }                                               \</div>
-<div class="line">}</div>
-<div class="ttc" id="a00882_html_a2f73f7667eb32eaba83b4bd3a916c470"><div class="ttname"><a href="a00882.html#a2f73f7667eb32eaba83b4bd3a916c470">tprintf_internal</a></div><div class="ttdeci">DLLSYM void tprintf_internal(const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="a00882_source.html#l00039">tprintf.cpp:39</a></div></div>
-</div><!-- fragment -->
-<p>Definition at line <a class="el" href="a01213_source.html#l00033">33</a> of file <a class="el" href="a01213_source.html">tlog.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a674cae8a13f09379902ff614b7019f22"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TLOG_FATAL</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">msg...</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">{                                                                     <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">\</a></div>
-<div class="line"><a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">    tprintf</a>(msg);                                                       <a class="code" href="a00846.html#a006fcbc9264ebdb76b55e7fa3b20695a">\</a></div>
-<div class="line"><a class="code" href="a00846.html#a006fcbc9264ebdb76b55e7fa3b20695a">    ASSERT_FAILED</a>.<a class="code" href="a00382.html#abc4cc64aad0ddb74c02523b69c95a1c1">error</a>(<span class="stringliteral">&quot;&quot;</span>, <a class="code" href="a00846.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a>, <span class="stringliteral">&quot;in file %s, line %d&quot;</span>,               \</div>
-<div class="line">                        __FILE__, __LINE__);                            \</div>
-<div class="line">  }</div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a00382_html_abc4cc64aad0ddb74c02523b69c95a1c1"><div class="ttname"><a href="a00382.html#abc4cc64aad0ddb74c02523b69c95a1c1">ERRCODE::error</a></div><div class="ttdeci">void error(const char *caller, TessErrorLogCode action, const char *format,...) const </div><div class="ttdef"><b>Definition:</b> <a href="a00845_source.html#l00040">errcode.cpp:40</a></div></div>
-<div class="ttc" id="a00846_html_a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096"><div class="ttname"><a href="a00846.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00030">errcode.h:30</a></div></div>
-<div class="ttc" id="a00846_html_a006fcbc9264ebdb76b55e7fa3b20695a"><div class="ttname"><a href="a00846.html#a006fcbc9264ebdb76b55e7fa3b20695a">ASSERT_FAILED</a></div><div class="ttdeci">const ERRCODE ASSERT_FAILED</div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00082">errcode.h:82</a></div></div>
-</div><!-- fragment -->
-<p>Definition at line <a class="el" href="a01213_source.html#l00041">41</a> of file <a class="el" href="a01213_source.html">tlog.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a49f5c062187b5f41f68e02021a3e2960"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TLOG_IS_ON</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">level</td><td>)</td>
-          <td>&#160;&#160;&#160;(FLAGS_tlog_level &gt;= level)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01213_source.html#l00039">39</a> of file <a class="el" href="a01213_source.html">tlog.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a51de2c0227d339d607dabd566919db01"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_INT_PARAM_FLAG </td>
-          <td>(</td>
-          <td class="paramtype">tlog_level&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01213.html">tlog.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a5945898d232e1adecd1190672f72f3b.html">vs2010</a></li><li class="navelem"><a class="el" href="dir_8f864a8f9696ec84687752b23655d63a.html">tesseract</a></li><li class="navelem"><a class="el" href="a01213.html">resource.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

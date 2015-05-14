@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['node_5fmap',['NODE_MAP',['../a01061.html#a62f0e84ff219b74912d723e231fefd00',1,'dawg.h']]],
-  ['node_5fmarker',['NODE_MARKER',['../a01072.html#a48a570537b653a890670d576f8d314cf',1,'trie.h']]],
-  ['node_5fref',['NODE_REF',['../a01061.html#ac76aca11806fd7167c274dc45b7f7fe8',1,'dawg.h']]],
-  ['nodechildvector',['NodeChildVector',['../a01279.html#a5084886f7cd9adefa73d03111d92f593',1,'tesseract']]]
+  ['off_5ft',['off_t',['../a00851.html#af83497edef361523a95b06deda0b4c2d',1,'scanutils.cpp']]]
 ];

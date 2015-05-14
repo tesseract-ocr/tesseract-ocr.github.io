@@ -1,8 +1,11 @@
 var a00313 =
 [
-    [ "CharSampSet", "a00313.html#a86ed83f376692acdde8eb3a80eb96d70", null ],
-    [ "~CharSampSet", "a00313.html#a068ef020d9868f214c4feda160f0828d", null ],
-    [ "Add", "a00313.html#ab43b1f39a5db126d4e554f43e858353d", null ],
-    [ "SampleCount", "a00313.html#a462d6d9f406445d88eacf08a2564a94c", null ],
-    [ "Samples", "a00313.html#aa63a4baf00b2ed6523ffc8c6cfc5a8ca", null ]
+    [ "CLASS_STRUCT", "a00313.html#a9947adddf6eef29142b46074950703f6", null ],
+    [ "Configurations", "a00313.html#ac5524279d10e5bafe306355d72309b69", null ],
+    [ "font_set", "a00313.html#a42fd551c9f2ee48e5873ae7308df64b4", null ],
+    [ "MaxNumConfigs", "a00313.html#a35830ba1f40d31ef5bb3ad9d4e4596dc", null ],
+    [ "MaxNumProtos", "a00313.html#ae5646d21fd1609343ad276deac642757", null ],
+    [ "NumConfigs", "a00313.html#a452c42efe7ec87439ef16f1e51d57f2c", null ],
+    [ "NumProtos", "a00313.html#aed122893fec98b9ebccee234bbb00292", null ],
+    [ "Prototypes", "a00313.html#add1a2c4f7b02eb438c377242495013ef", null ]
 ];

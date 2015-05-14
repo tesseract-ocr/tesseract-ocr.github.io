@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/linlsq.cpp Source File</title>
+<title>Tesseract: ccstruct/params_training_featdef.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,300 +105,207 @@ $(document).ready(function(){initNavTree('a00775_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">linlsq.cpp</div>  </div>
+<div class="title">params_training_featdef.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00775.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        linlsq.cpp  (Formerly llsq.c)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Linear Least squares fitting code.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:              Ray Smith</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:             Thu Sep 12 08:44:51 BST 1991</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1991, Hewlett-Packard Ltd.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include          &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include          &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00846.html">errcode.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00776.html">linlsq.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00775.html#a39d4e21e57d29d2cbd0031886ba5822a">   25</a></span>&#160;<span class="keyword">const</span> <a class="code" href="a00382.html">ERRCODE</a> <a class="code" href="a00775.html#a39d4e21e57d29d2cbd0031886ba5822a">EMPTY_LLSQ</a> = <span class="stringliteral">&quot;Can&#39;t delete from an empty LLSQ&quot;</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * LLSQ::clear</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * Function to initialize a LLSQ.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00470.html#a9f7b92005193802bc03539a6ae48a27a">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00470.html#a9f7b92005193802bc03539a6ae48a27a">LLSQ::clear</a>() {  <span class="comment">// initialize</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  total_weight = 0.0;                         <span class="comment">// no elements</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  sigx = 0.0;                      <span class="comment">// update accumulators</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  sigy = 0.0;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  sigxx = 0.0;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  sigxy = 0.0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  sigyy = 0.0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * LLSQ::add</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * Add an element to the accumulator.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a00470.html#aa439294be0539828cf042f8941125b3c">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00470.html#aa439294be0539828cf042f8941125b3c">LLSQ::add</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y) {          <span class="comment">// add an element</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  total_weight++;                           <span class="comment">// count elements</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  sigx += x;                     <span class="comment">// update accumulators</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  sigy += y;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  sigxx += x * x;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  sigxy += x * y;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  sigyy += y * y;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// Adds an element with a specified weight.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a00470.html#a9a52d110b019972ea2d6009352c4c592">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00470.html#aa439294be0539828cf042f8941125b3c">LLSQ::add</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> weight) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  total_weight += weight;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  sigx += x * weight;                     <span class="comment">// update accumulators</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  sigy += y * weight;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  sigxx += x * x * weight;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  sigxy += x * y * weight;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  sigyy += y * y * weight;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// Adds a whole LLSQ.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00470.html#ae06248347a9cea5045ff8d5b92d76962">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00470.html#aa439294be0539828cf042f8941125b3c">LLSQ::add</a>(<span class="keyword">const</span> <a class="code" href="a00470.html">LLSQ</a>&amp; other) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  total_weight += other.total_weight;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  sigx += other.sigx;                     <span class="comment">// update accumulators</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  sigy += other.sigy;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  sigxx += other.sigxx;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  sigxy += other.sigxy;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  sigyy += other.sigyy;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> * LLSQ::remove</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> * Delete an element from the acculuator.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a00470.html#a2fc29873c4ec3ae881a26c54813d36ff">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00470.html#a2fc29873c4ec3ae881a26c54813d36ff">LLSQ::remove</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y) {          <span class="comment">// delete an element</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span> (total_weight &lt;= 0.0)                       <span class="comment">// illegal</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    EMPTY_LLSQ.<a class="code" href="a00382.html#abc4cc64aad0ddb74c02523b69c95a1c1">error</a>(<span class="stringliteral">&quot;LLSQ::remove&quot;</span>, <a class="code" href="a00846.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a>, <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  total_weight--;                           <span class="comment">// count elements</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  sigx -= x;                     <span class="comment">// update accumulators</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  sigy -= y;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  sigxx -= x * x;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  sigxy -= x * y;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  sigyy -= y * y;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> * LLSQ::m</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> * Return the gradient of the line fit.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="a00470.html#ad3aed3a5a46cf180dd80893c1034aa9e">  101</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="a00470.html#ad3aed3a5a46cf180dd80893c1034aa9e">LLSQ::m</a>()<span class="keyword"> const </span>{  <span class="comment">// get gradient</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">double</span> covar = <a class="code" href="a00470.html#a36d6bf1e469425fc4f9b97521aee481e">covariance</a>();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">double</span> x_var = <a class="code" href="a00470.html#a27994b02b1ea16d8e3a6c951c90205dd">x_variance</a>();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">if</span> (x_var != 0.0)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> covar / x_var;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> 0.0;                    <span class="comment">// too little</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * LLSQ::c</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> * Return the constant of the line fit.</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="a00470.html#af66af81c0276216acfa659178189019f">  117</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="a00470.html#af66af81c0276216acfa659178189019f">LLSQ::c</a>(<span class="keywordtype">double</span> m)<span class="keyword"> const </span>{          <span class="comment">// get constant</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordflow">if</span> (total_weight &gt; 0.0)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> (sigy - m * sigx) / total_weight;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> 0;                    <span class="comment">// too little</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<a href="a00775.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        params_training_featdef.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: Feature definitions for params training.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      Rika Antonova</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Mon Nov 28 11:26:42 PDT 2011</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2011, Google Inc.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TESSERACT_WORDREC_PARAMS_TRAINING_FEATDEF_H_</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TESSERACT_WORDREC_PARAMS_TRAINING_FEATDEF_H_</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00830.html">genericvector.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00859.html">strngs.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Maximum number of unichars in the small and medium sized words</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kMaxSmallWordUnichars = 3;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kMaxMediumWordUnichars = 6;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// Raw features extracted from a single OCR hypothesis.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// The features are normalized (by outline length or number of unichars as</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// appropriate) real-valued quantities with unbounded range and</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// unknown distribution.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Normalization / binarization of these features is done at a later stage.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// Note: when adding new fields to this enum make sure to modify</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// kParamsTrainingFeatureTypeName</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467">   39</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467">kParamsTrainingFeatureType</a> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// Digits</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1500cece41ad4b1311e252f2b84d2650">   41</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1500cece41ad4b1311e252f2b84d2650">PTRAIN_DIGITS_SHORT</a>,             <span class="comment">// 0</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a8e5df70e0a4feb520442eea38ad42581">   42</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a8e5df70e0a4feb520442eea38ad42581">PTRAIN_DIGITS_MED</a>,               <span class="comment">// 1</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ae94102012c081e339674591a1ea39423">   43</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ae94102012c081e339674591a1ea39423">PTRAIN_DIGITS_LONG</a>,              <span class="comment">// 2</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// Number or pattern (NUMBER_PERM, USER_PATTERN_PERM)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a9993582b2b81198845d05ba22a9bdb34">   45</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a9993582b2b81198845d05ba22a9bdb34">PTRAIN_NUM_SHORT</a>,                <span class="comment">// 3</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a70e53977ac4926e96923c104e4da104e">   46</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a70e53977ac4926e96923c104e4da104e">PTRAIN_NUM_MED</a>,                  <span class="comment">// 4</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a4e3a359d1accb5c88630a86193085b30">   47</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a4e3a359d1accb5c88630a86193085b30">PTRAIN_NUM_LONG</a>,                 <span class="comment">// 5</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// Document word (DOC_DAWG_PERM)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467abb1f75943b9c111831107bd17c327062">   49</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467abb1f75943b9c111831107bd17c327062">PTRAIN_DOC_SHORT</a>,                <span class="comment">// 6</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a073cad7d2dddd23f878513b197f70836">   50</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a073cad7d2dddd23f878513b197f70836">PTRAIN_DOC_MED</a>,                  <span class="comment">// 7</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a28c22a50dfa668c9d74a39cfab211b10">   51</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a28c22a50dfa668c9d74a39cfab211b10">PTRAIN_DOC_LONG</a>,                 <span class="comment">// 8</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// Word (SYSTEM_DAWG_PERM, USER_DAWG_PERM, COMPOUND_PERM)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a4ed49f4fd757ded1bf8eca9aecdbeab7">   53</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a4ed49f4fd757ded1bf8eca9aecdbeab7">PTRAIN_DICT_SHORT</a>,               <span class="comment">// 9</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467aae16de223a8d019d2847a7bdae6c8d5d">   54</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467aae16de223a8d019d2847a7bdae6c8d5d">PTRAIN_DICT_MED</a>,                 <span class="comment">// 10</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a70a08810d2d0222f222ce03f5ad0efa8">   55</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a70a08810d2d0222f222ce03f5ad0efa8">PTRAIN_DICT_LONG</a>,                <span class="comment">// 11</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// Frequent word (FREQ_DAWG_PERM)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a5d90fce75b366d7e15fa7a69d83357c2">   57</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a5d90fce75b366d7e15fa7a69d83357c2">PTRAIN_FREQ_SHORT</a>,               <span class="comment">// 12</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a695424d03a50adf3fe6a1998acbe3f87">   58</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a695424d03a50adf3fe6a1998acbe3f87">PTRAIN_FREQ_MED</a>,                 <span class="comment">// 13</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467aea70fe3d96122e670ec9e5a4152d93d9">   59</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467aea70fe3d96122e670ec9e5a4152d93d9">PTRAIN_FREQ_LONG</a>,                <span class="comment">// 14</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a8a4552af7b096cd4e07365b0142b39b2">   60</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a8a4552af7b096cd4e07365b0142b39b2">PTRAIN_SHAPE_COST_PER_CHAR</a>,      <span class="comment">// 15</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a232084d7e65391f3c7e6b5709a989aa9">   61</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a232084d7e65391f3c7e6b5709a989aa9">PTRAIN_NGRAM_COST_PER_CHAR</a>,      <span class="comment">// 16</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ac5449fec1bf1e8ce13f0c4b534aa9081">   62</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ac5449fec1bf1e8ce13f0c4b534aa9081">PTRAIN_NUM_BAD_PUNC</a>,             <span class="comment">// 17</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a9638fa9da907b679b1ec6ceacc49a625">   63</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a9638fa9da907b679b1ec6ceacc49a625">PTRAIN_NUM_BAD_CASE</a>,             <span class="comment">// 18</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ac1573ea4f6bb4964d253022e801a214e">   64</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ac1573ea4f6bb4964d253022e801a214e">PTRAIN_XHEIGHT_CONSISTENCY</a>,      <span class="comment">// 19</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a2b5b59226e9e2688f6d620a551cc14c9">   65</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a2b5b59226e9e2688f6d620a551cc14c9">PTRAIN_NUM_BAD_CHAR_TYPE</a>,        <span class="comment">// 20</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467abf6ca295b288dca43c10b9022372a1db">   66</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467abf6ca295b288dca43c10b9022372a1db">PTRAIN_NUM_BAD_SPACING</a>,          <span class="comment">// 21</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467adb38a8f09fbe5d6515936780e6cc2561">   67</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467adb38a8f09fbe5d6515936780e6cc2561">PTRAIN_NUM_BAD_FONT</a>,             <span class="comment">// 22</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a0f4d3799e004120bbaeaf1b6194264a8">   68</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a0f4d3799e004120bbaeaf1b6194264a8">PTRAIN_RATING_PER_CHAR</a>,          <span class="comment">// 23</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">   70</a></span>&#160;  <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">PTRAIN_NUM_FEATURE_TYPES</a></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> * <span class="keyword">const</span> kParamsTrainingFeatureTypeName[] = {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DIGITS_SHORT&quot;</span>,             <span class="comment">// 0</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DIGITS_MED&quot;</span>,               <span class="comment">// 1</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DIGITS_LONG&quot;</span>,              <span class="comment">// 2</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NUM_SHORT&quot;</span>,                <span class="comment">// 3</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NUM_MED&quot;</span>,                  <span class="comment">// 4</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NUM_LONG&quot;</span>,                 <span class="comment">// 5</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DOC_SHORT&quot;</span>,                <span class="comment">// 6</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DOC_MED&quot;</span>,                  <span class="comment">// 7</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DOC_LONG&quot;</span>,                 <span class="comment">// 8</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DICT_SHORT&quot;</span>,               <span class="comment">// 9</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DICT_MED&quot;</span>,                 <span class="comment">// 10</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="stringliteral">&quot;PTRAIN_DICT_LONG&quot;</span>,                <span class="comment">// 11</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="stringliteral">&quot;PTRAIN_FREQ_SHORT&quot;</span>,               <span class="comment">// 12</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="stringliteral">&quot;PTRAIN_FREQ_MED&quot;</span>,                 <span class="comment">// 13</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="stringliteral">&quot;PTRAIN_FREQ_LONG&quot;</span>,                <span class="comment">// 14</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="stringliteral">&quot;PTRAIN_SHAPE_COST_PER_CHAR&quot;</span>,      <span class="comment">// 15</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NGRAM_COST_PER_CHAR&quot;</span>,      <span class="comment">// 16</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NUM_BAD_PUNC&quot;</span>,             <span class="comment">// 17</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NUM_BAD_CASE&quot;</span>,             <span class="comment">// 18</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="stringliteral">&quot;PTRAIN_XHEIGHT_CONSISTENCY&quot;</span>,      <span class="comment">// 19</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NUM_BAD_CHAR_TYPE&quot;</span>,        <span class="comment">// 20</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NUM_BAD_SPACING&quot;</span>,          <span class="comment">// 21</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="stringliteral">&quot;PTRAIN_NUM_BAD_FONT&quot;</span>,             <span class="comment">// 22</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="stringliteral">&quot;PTRAIN_RATING_PER_CHAR&quot;</span>,          <span class="comment">// 23</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// Returns the index of the given feature (by name),</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// or -1 meaning the feature is unknown.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">int</span> <a class="code" href="a01267.html#a12cc58bffc8cbb802685ce4cb25aff37">ParamsTrainingFeatureByName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// Entry with features extracted from a single OCR hypothesis for a word.</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="a00500.html">  106</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00500.html">ParamsTrainingHypothesis</a> {</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="a00500.html#a1c30109a96767c1ee27c0b00065ad205">  107</a></span>&#160;  <a class="code" href="a00500.html#a1c30109a96767c1ee27c0b00065ad205">ParamsTrainingHypothesis</a>() : <a class="code" href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">cost</a>(0.0) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    memset(<a class="code" href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">features</a>, 0, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>) * <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">PTRAIN_NUM_FEATURE_TYPES</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="a00500.html#a00f8e977a94665eefcee06d769a28331">  110</a></span>&#160;  <a class="code" href="a00500.html#a00f8e977a94665eefcee06d769a28331">ParamsTrainingHypothesis</a>(<span class="keyword">const</span> <a class="code" href="a00500.html">ParamsTrainingHypothesis</a> &amp;other) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    memcpy(<a class="code" href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">features</a>, other.<a class="code" href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">features</a>,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;           <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>) * <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">PTRAIN_NUM_FEATURE_TYPES</a>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="a00500.html#a5dee966c19cad16f4eba3efc879f51b3">str</a> = other.<a class="code" href="a00500.html#a5dee966c19cad16f4eba3efc879f51b3">str</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">cost</a> = other.<a class="code" href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">cost</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">  116</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">features</a>[<a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">PTRAIN_NUM_FEATURE_TYPES</a>];</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="a00500.html#a5dee966c19cad16f4eba3efc879f51b3">  117</a></span>&#160;  <a class="code" href="a00561.html">STRING</a> <a class="code" href="a00500.html#a5dee966c19cad16f4eba3efc879f51b3">str</a>;  <span class="comment">// string corresponding to word hypothesis (for debugging)</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">  118</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">cost</a>;  <span class="comment">// path cost computed by segsearch</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">// A list of hypotheses explored during one run of segmentation search.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="a01267.html#ac276fef8cf1673fac0a8759dcbb0ec4d">  122</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00406.html">GenericVector&lt;ParamsTrainingHypothesis&gt;</a> <a class="code" href="a01267.html#ac276fef8cf1673fac0a8759dcbb0ec4d">ParamsTrainingHypothesisList</a>;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment"> * LLSQ::rms</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment"> * Return the rms error of the fit.</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="a00470.html#adb169c39429f6f206130e463c557af67">  131</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="a00470.html#adb169c39429f6f206130e463c557af67">LLSQ::rms</a>(<span class="keywordtype">double</span> m,  <span class="keywordtype">double</span> c)<span class="keyword"> const </span>{          <span class="comment">// get error</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">double</span> error;                  <span class="comment">// total error</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordflow">if</span> (total_weight &gt; 0) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    error = sigyy + m * (m * sigxx + 2 * (c * sigx - sigxy)) + c *</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            (total_weight * c - 2 * sigy);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (error &gt;= 0)</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      error = sqrt(error / total_weight);  <span class="comment">// sqrt of mean</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      error = 0;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    error = 0;                   <span class="comment">// too little</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordflow">return</span> error;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// A bundle that accumulates all of the hypothesis lists explored during all</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// of the runs of segmentation search on a word (e.g. a list of hypotheses</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">// explored on PASS1, PASS2, fix xheight pass, etc).</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="a00499.html">  127</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00499.html">ParamsTrainingBundle</a> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="a00499.html#a5baad028035af666ec532a5743adfce5">  129</a></span>&#160;  <a class="code" href="a00499.html#a5baad028035af666ec532a5743adfce5">ParamsTrainingBundle</a>() {};</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="comment">// Starts a new hypothesis list.</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="comment">// Should be called at the beginning of a new run of the segmentation search.</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="a00499.html#a60a524854331fa85661fd74f0350b193">  132</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00499.html#a60a524854331fa85661fd74f0350b193">StartHypothesisList</a>() {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="a00499.html#ab1fe926bbbf3808ca874c57a7d7070c9">hyp_list_vec</a>.push_back(<a class="code" href="a01267.html#ac276fef8cf1673fac0a8759dcbb0ec4d">ParamsTrainingHypothesisList</a>());</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="comment">// Adds a new ParamsTrainingHypothesis to the current hypothesis list</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="comment">// and returns the reference to the newly added entry.</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="a00499.html#a8bec5bb8047ba4d2676072ea0deab1ca">  137</a></span>&#160;  <a class="code" href="a00500.html">ParamsTrainingHypothesis</a> &amp;<a class="code" href="a00499.html#a8bec5bb8047ba4d2676072ea0deab1ca">AddHypothesis</a>(</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keyword">const</span> <a class="code" href="a00500.html">ParamsTrainingHypothesis</a> &amp;other) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00499.html#ab1fe926bbbf3808ca874c57a7d7070c9">hyp_list_vec</a>.empty()) <a class="code" href="a00499.html#a60a524854331fa85661fd74f0350b193">StartHypothesisList</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="a00499.html#ab1fe926bbbf3808ca874c57a7d7070c9">hyp_list_vec</a>.back().push_back(<a class="code" href="a00500.html">ParamsTrainingHypothesis</a>(other));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00499.html#ab1fe926bbbf3808ca874c57a7d7070c9">hyp_list_vec</a>.back().back();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="a00499.html#ab1fe926bbbf3808ca874c57a7d7070c9">  144</a></span>&#160;  <a class="code" href="a00406.html">GenericVector&lt;ParamsTrainingHypothesisList&gt;</a> <a class="code" href="a00499.html#ab1fe926bbbf3808ca874c57a7d7070c9">hyp_list_vec</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;};</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment"> * LLSQ::pearson</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"> * Return the pearson product moment correlation coefficient.</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="a00470.html#a8537176180a1cd3ff9c3b1f97d1ffb78">  154</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="a00470.html#a8537176180a1cd3ff9c3b1f97d1ffb78">LLSQ::pearson</a>()<span class="keyword"> const </span>{  <span class="comment">// get correlation</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keywordtype">double</span> r = 0.0;                  <span class="comment">// Correlation is 0 if insufficent data.</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">double</span> covar = <a class="code" href="a00470.html#a36d6bf1e469425fc4f9b97521aee481e">covariance</a>();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">if</span> (covar != 0.0) {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">double</span> var_product = <a class="code" href="a00470.html#a27994b02b1ea16d8e3a6c951c90205dd">x_variance</a>()  * <a class="code" href="a00470.html#a3e386f3db4343cca32ac4a4f028c6ea4">y_variance</a>();</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> (var_product &gt; 0.0)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      r = covar / sqrt(var_product);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">// Returns the x,y means as an FCOORD.</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="a00470.html#ac786685f62b271ca20aa719a8a03aa3d">  167</a></span>&#160;<a class="code" href="a00385.html">FCOORD</a> <a class="code" href="a00470.html#ac786685f62b271ca20aa719a8a03aa3d">LLSQ::mean_point</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">if</span> (total_weight &gt; 0.0) {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00385.html">FCOORD</a>(sigx / total_weight, sigy / total_weight);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00385.html">FCOORD</a>(0.0f, 0.0f);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">// Returns the sqrt of the mean squared error measured perpendicular from the</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">// line through mean_point() in the direction dir.</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">// Derivation:</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">//   Lemma:  Let v and x_i (i=1..N) be a k-dimensional vectors (1xk matrices).</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">//     Let % be dot product and &#39; be transpose.  Note that:</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">//      Sum[i=1..N] (v % x_i)^2</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">//         = v * [x_1&#39; x_2&#39; ... x_N&#39;] * [x_1&#39; x_2&#39; .. x_N&#39;]&#39; * v&#39;</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">//     If x_i have average 0 we have:</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">//       = v * (N * COVARIANCE_MATRIX(X)) * v&#39;</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">//     Expanded for the case that k = 2, where we treat the dimensions</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">//     as x_i and y_i, this is:</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">//       = v * (N * [VAR(X), COV(X,Y); COV(X,Y) VAR(Y)]) * v&#39;</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">//  Now, we are trying to calculate the mean squared error, where v is</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">//  perpendicular to our line of interest:</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">//    Mean squared error</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">//      = E [ (v % (x_i - x_avg))) ^2 ]</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">//      = Sum (v % (x_i - x_avg))^2 / N</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">//      = v * N * [VAR(X) COV(X,Y); COV(X,Y) VAR(Y)] / N * v&#39;</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">//      = v * [VAR(X) COV(X,Y); COV(X,Y) VAR(Y)] * v&#39;</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">//      = code below</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="a00470.html#af047401ce847d873866f6018d15d4a95">  196</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="a00470.html#af047401ce847d873866f6018d15d4a95">LLSQ::rms_orth</a>(<span class="keyword">const</span> <a class="code" href="a00385.html">FCOORD</a> &amp;dir)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <a class="code" href="a00385.html">FCOORD</a> v = !dir;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  v.<a class="code" href="a00385.html#ae038bea84e90d493366d15c9578e4be9">normalise</a>();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">return</span> sqrt(v.<a class="code" href="a00385.html#a9edadbfc357c730f62fa3c92677b0d58">x</a>() * v.<a class="code" href="a00385.html#a9edadbfc357c730f62fa3c92677b0d58">x</a>() * <a class="code" href="a00470.html#a27994b02b1ea16d8e3a6c951c90205dd">x_variance</a>() +</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;              2 * v.<a class="code" href="a00385.html#a9edadbfc357c730f62fa3c92677b0d58">x</a>() * v.<a class="code" href="a00385.html#a397f7ce997b246df18e7bd5a20cc422e">y</a>() * <a class="code" href="a00470.html#a36d6bf1e469425fc4f9b97521aee481e">covariance</a>() +</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;              v.<a class="code" href="a00385.html#a397f7ce997b246df18e7bd5a20cc422e">y</a>() * v.<a class="code" href="a00385.html#a397f7ce997b246df18e7bd5a20cc422e">y</a>() * <a class="code" href="a00470.html#a3e386f3db4343cca32ac4a4f028c6ea4">y_variance</a>());</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">// Returns the direction of the fitted line as a unit vector, using the</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">// least mean squared perpendicular distance. The line runs through the</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">// mean_point, i.e. a point p on the line is given by:</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">// p = mean_point() + lambda * vector_fit() for some real number lambda.</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">// Note that the result (0&lt;=x&lt;=1, -1&lt;=y&lt;=-1) is directionally ambiguous</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">// and may be negated without changing its meaning.</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">// Fitting a line m + 𝜆v to a set of N points Pi = (xi, yi), where</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">// m is the mean point (𝝁, 𝝂) and</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">// v is the direction vector (cos𝜃, sin𝜃)</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">// The perpendicular distance of each Pi from the line is:</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">// (Pi - m) x v, where x is the scalar cross product.</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">// Total squared error is thus:</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">// E = ∑((xi - 𝝁)sin𝜃 - (yi - 𝝂)cos𝜃)²</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">//   = ∑(xi - 𝝁)²sin²𝜃  - 2∑(xi - 𝝁)(yi - 𝝂)sin𝜃 cos𝜃 + ∑(yi - 𝝂)²cos²𝜃</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">//   = NVar(xi)sin²𝜃  - 2NCovar(xi, yi)sin𝜃 cos𝜃  + NVar(yi)cos²𝜃   (Eq 1)</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">// where Var(xi) is the variance of xi,</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">// and Covar(xi, yi) is the covariance of xi, yi.</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">// Taking the derivative wrt 𝜃 and setting to 0 to obtain the min/max:</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">// 0 = 2NVar(xi)sin𝜃 cos𝜃 -2NCovar(xi, yi)(cos²𝜃 - sin²𝜃) -2NVar(yi)sin𝜃 cos𝜃</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">// =&gt; Covar(xi, yi)(cos²𝜃 - sin²𝜃) = (Var(xi) - Var(yi))sin𝜃 cos𝜃</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">// Using double angles:</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">// 2Covar(xi, yi)cos2𝜃 = (Var(xi) - Var(yi))sin2𝜃   (Eq 2)</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">// So 𝜃 = 0.5 atan2(2Covar(xi, yi), Var(xi) - Var(yi)) (Eq 3)</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">// Because it involves 2𝜃 , Eq 2 has 2 solutions 90 degrees apart, but which</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">// is the min and which is the max? From Eq1:</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">// E/N = Var(xi)sin²𝜃  - 2Covar(xi, yi)sin𝜃 cos𝜃  + Var(yi)cos²𝜃</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">// and 90 degrees away, using sin/cos equivalences:</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">// E&#39;/N = Var(xi)cos²𝜃  + 2Covar(xi, yi)sin𝜃 cos𝜃  + Var(yi)sin²𝜃</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">// The second error is smaller (making it the minimum) iff</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">// E&#39;/N &lt; E/N ie:</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">// (Var(xi) - Var(yi))(cos²𝜃 - sin²𝜃) &lt; -4Covar(xi, yi)sin𝜃 cos𝜃</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">// Using double angles:</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">// (Var(xi) - Var(yi))cos2𝜃  &lt; -2Covar(xi, yi)sin2𝜃  (InEq 1)</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">// But atan2(2Covar(xi, yi), Var(xi) - Var(yi)) picks 2𝜃  such that:</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// sgn(cos2𝜃) = sgn(Var(xi) - Var(yi)) and sgn(sin2𝜃) = sgn(Covar(xi, yi))</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">// so InEq1 can *never* be true, making the atan2 result *always* the min!</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">// In the degenerate case, where Covar(xi, yi) = 0 AND Var(xi) = Var(yi),</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">// the 2 solutions have equal error and the inequality is still false.</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">// Therefore the solution really is as trivial as Eq 3.</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">// This is equivalent to returning the Principal Component in PCA, or the</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">// eigenvector corresponding to the largest eigenvalue in the covariance</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment">// matrix.  However, atan2 is much simpler! The one reference I found that</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment">// uses this formula is http://web.mit.edu/18.06/www/Essays/tlsfit.pdf but</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment">// that is still a much more complex derivation. It seems Pearson had already</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">// found this simple solution in 1901.</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">// http://books.google.com/books?id=WXwvAQAAIAAJ&amp;pg=PA559</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="a00470.html#a1e15590443e86960c79ae5785f850d6d">  252</a></span>&#160;<a class="code" href="a00385.html">FCOORD</a> <a class="code" href="a00470.html#a1e15590443e86960c79ae5785f850d6d">LLSQ::vector_fit</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keywordtype">double</span> x_var = <a class="code" href="a00470.html#a27994b02b1ea16d8e3a6c951c90205dd">x_variance</a>();</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordtype">double</span> y_var = <a class="code" href="a00470.html#a3e386f3db4343cca32ac4a4f028c6ea4">y_variance</a>();</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">double</span> covar = <a class="code" href="a00470.html#a36d6bf1e469425fc4f9b97521aee481e">covariance</a>();</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordtype">double</span> theta = 0.5 * atan2(2.0 * covar, x_var - y_var);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <a class="code" href="a00385.html">FCOORD</a> result(cos(theta), sin(theta));</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
-<div class="ttc" id="a00470_html_af047401ce847d873866f6018d15d4a95"><div class="ttname"><a href="a00470.html#af047401ce847d873866f6018d15d4a95">LLSQ::rms_orth</a></div><div class="ttdeci">double rms_orth(const FCOORD &amp;dir) const </div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00196">linlsq.cpp:196</a></div></div>
-<div class="ttc" id="a00470_html_a9f7b92005193802bc03539a6ae48a27a"><div class="ttname"><a href="a00470.html#a9f7b92005193802bc03539a6ae48a27a">LLSQ::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00033">linlsq.cpp:33</a></div></div>
-<div class="ttc" id="a00470_html_a8537176180a1cd3ff9c3b1f97d1ffb78"><div class="ttname"><a href="a00470.html#a8537176180a1cd3ff9c3b1f97d1ffb78">LLSQ::pearson</a></div><div class="ttdeci">double pearson() const </div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00154">linlsq.cpp:154</a></div></div>
-<div class="ttc" id="a00385_html_a9edadbfc357c730f62fa3c92677b0d58"><div class="ttname"><a href="a00385.html#a9edadbfc357c730f62fa3c92677b0d58">FCOORD::x</a></div><div class="ttdeci">float x() const </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00209">points.h:209</a></div></div>
-<div class="ttc" id="a00776_html"><div class="ttname"><a href="a00776.html">linlsq.h</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00470_html_a36d6bf1e469425fc4f9b97521aee481e"><div class="ttname"><a href="a00470.html#a36d6bf1e469425fc4f9b97521aee481e">LLSQ::covariance</a></div><div class="ttdeci">double covariance() const </div><div class="ttdef"><b>Definition:</b> <a href="a00776_source.html#l00073">linlsq.h:73</a></div></div>
-<div class="ttc" id="a00470_html_adb169c39429f6f206130e463c557af67"><div class="ttname"><a href="a00470.html#adb169c39429f6f206130e463c557af67">LLSQ::rms</a></div><div class="ttdeci">double rms(double m, double c) const </div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00131">linlsq.cpp:131</a></div></div>
-<div class="ttc" id="a00382_html"><div class="ttname"><a href="a00382.html">ERRCODE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00069">errcode.h:69</a></div></div>
-<div class="ttc" id="a00470_html"><div class="ttname"><a href="a00470.html">LLSQ</a></div><div class="ttdef"><b>Definition:</b> <a href="a00776_source.html#l00026">linlsq.h:26</a></div></div>
-<div class="ttc" id="a00470_html_ad3aed3a5a46cf180dd80893c1034aa9e"><div class="ttname"><a href="a00470.html#ad3aed3a5a46cf180dd80893c1034aa9e">LLSQ::m</a></div><div class="ttdeci">double m() const </div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00101">linlsq.cpp:101</a></div></div>
-<div class="ttc" id="a00470_html_a27994b02b1ea16d8e3a6c951c90205dd"><div class="ttname"><a href="a00470.html#a27994b02b1ea16d8e3a6c951c90205dd">LLSQ::x_variance</a></div><div class="ttdeci">double x_variance() const </div><div class="ttdef"><b>Definition:</b> <a href="a00776_source.html#l00079">linlsq.h:79</a></div></div>
-<div class="ttc" id="a00775_html_a39d4e21e57d29d2cbd0031886ba5822a"><div class="ttname"><a href="a00775.html#a39d4e21e57d29d2cbd0031886ba5822a">EMPTY_LLSQ</a></div><div class="ttdeci">const ERRCODE EMPTY_LLSQ</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00025">linlsq.cpp:25</a></div></div>
-<div class="ttc" id="a00470_html_a2fc29873c4ec3ae881a26c54813d36ff"><div class="ttname"><a href="a00470.html#a2fc29873c4ec3ae881a26c54813d36ff">LLSQ::remove</a></div><div class="ttdeci">void remove(double x, double y)</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00083">linlsq.cpp:83</a></div></div>
-<div class="ttc" id="a00470_html_af66af81c0276216acfa659178189019f"><div class="ttname"><a href="a00470.html#af66af81c0276216acfa659178189019f">LLSQ::c</a></div><div class="ttdeci">double c(double m) const </div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00117">linlsq.cpp:117</a></div></div>
-<div class="ttc" id="a00846_html"><div class="ttname"><a href="a00846.html">errcode.h</a></div></div>
-<div class="ttc" id="a00470_html_a3e386f3db4343cca32ac4a4f028c6ea4"><div class="ttname"><a href="a00470.html#a3e386f3db4343cca32ac4a4f028c6ea4">LLSQ::y_variance</a></div><div class="ttdeci">double y_variance() const </div><div class="ttdef"><b>Definition:</b> <a href="a00776_source.html#l00085">linlsq.h:85</a></div></div>
-<div class="ttc" id="a00470_html_aa439294be0539828cf042f8941125b3c"><div class="ttname"><a href="a00470.html#aa439294be0539828cf042f8941125b3c">LLSQ::add</a></div><div class="ttdeci">void add(double x, double y)</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00049">linlsq.cpp:49</a></div></div>
-<div class="ttc" id="a00382_html_abc4cc64aad0ddb74c02523b69c95a1c1"><div class="ttname"><a href="a00382.html#abc4cc64aad0ddb74c02523b69c95a1c1">ERRCODE::error</a></div><div class="ttdeci">void error(const char *caller, TessErrorLogCode action, const char *format,...) const </div><div class="ttdef"><b>Definition:</b> <a href="a00845_source.html#l00040">errcode.cpp:40</a></div></div>
-<div class="ttc" id="a00846_html_a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096"><div class="ttname"><a href="a00846.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00030">errcode.h:30</a></div></div>
-<div class="ttc" id="a00470_html_ac786685f62b271ca20aa719a8a03aa3d"><div class="ttname"><a href="a00470.html#ac786685f62b271ca20aa719a8a03aa3d">LLSQ::mean_point</a></div><div class="ttdeci">FCOORD mean_point() const </div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00167">linlsq.cpp:167</a></div></div>
-<div class="ttc" id="a00385_html_a397f7ce997b246df18e7bd5a20cc422e"><div class="ttname"><a href="a00385.html#a397f7ce997b246df18e7bd5a20cc422e">FCOORD::y</a></div><div class="ttdeci">float y() const </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00212">points.h:212</a></div></div>
-<div class="ttc" id="a00385_html_ae038bea84e90d493366d15c9578e4be9"><div class="ttname"><a href="a00385.html#ae038bea84e90d493366d15c9578e4be9">FCOORD::normalise</a></div><div class="ttdeci">bool normalise()</div><div class="ttdoc">Convert to unit vec. </div></div>
-<div class="ttc" id="a00470_html_a1e15590443e86960c79ae5785f850d6d"><div class="ttname"><a href="a00470.html#a1e15590443e86960c79ae5785f850d6d">LLSQ::vector_fit</a></div><div class="ttdeci">FCOORD vector_fit() const </div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00252">linlsq.cpp:252</a></div></div>
-<div class="ttc" id="a00385_html"><div class="ttname"><a href="a00385.html">FCOORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00189">points.h:189</a></div></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#endif  // TESSERACT_WORDREC_PARAMS_TRAINING_FEATDEF_H_</span></div>
+<div class="ttc" id="a00500_html_a5dee966c19cad16f4eba3efc879f51b3"><div class="ttname"><a href="a00500.html#a5dee966c19cad16f4eba3efc879f51b3">tesseract::ParamsTrainingHypothesis::str</a></div><div class="ttdeci">STRING str</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00117">params_training_featdef.h:117</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a9993582b2b81198845d05ba22a9bdb34"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a9993582b2b81198845d05ba22a9bdb34">tesseract::PTRAIN_NUM_SHORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00045">params_training_featdef.h:45</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a0f4d3799e004120bbaeaf1b6194264a8"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a0f4d3799e004120bbaeaf1b6194264a8">tesseract::PTRAIN_RATING_PER_CHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00068">params_training_featdef.h:68</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467">tesseract::kParamsTrainingFeatureType</a></div><div class="ttdeci">kParamsTrainingFeatureType</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00039">params_training_featdef.h:39</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a4ed49f4fd757ded1bf8eca9aecdbeab7"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a4ed49f4fd757ded1bf8eca9aecdbeab7">tesseract::PTRAIN_DICT_SHORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00053">params_training_featdef.h:53</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467abb1f75943b9c111831107bd17c327062"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467abb1f75943b9c111831107bd17c327062">tesseract::PTRAIN_DOC_SHORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00049">params_training_featdef.h:49</a></div></div>
+<div class="ttc" id="a00499_html_a5baad028035af666ec532a5743adfce5"><div class="ttname"><a href="a00499.html#a5baad028035af666ec532a5743adfce5">tesseract::ParamsTrainingBundle::ParamsTrainingBundle</a></div><div class="ttdeci">ParamsTrainingBundle()</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00129">params_training_featdef.h:129</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a8a4552af7b096cd4e07365b0142b39b2"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a8a4552af7b096cd4e07365b0142b39b2">tesseract::PTRAIN_SHAPE_COST_PER_CHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00060">params_training_featdef.h:60</a></div></div>
+<div class="ttc" id="a00830_html"><div class="ttname"><a href="a00830.html">genericvector.h</a></div></div>
+<div class="ttc" id="a01267_html_a12cc58bffc8cbb802685ce4cb25aff37"><div class="ttname"><a href="a01267.html#a12cc58bffc8cbb802685ce4cb25aff37">tesseract::ParamsTrainingFeatureByName</a></div><div class="ttdeci">int ParamsTrainingFeatureByName(const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="a00774_source.html#l00026">params_training_featdef.cpp:26</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467aea70fe3d96122e670ec9e5a4152d93d9"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467aea70fe3d96122e670ec9e5a4152d93d9">tesseract::PTRAIN_FREQ_LONG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00059">params_training_featdef.h:59</a></div></div>
+<div class="ttc" id="a00859_html"><div class="ttname"><a href="a00859.html">strngs.h</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a28c22a50dfa668c9d74a39cfab211b10"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a28c22a50dfa668c9d74a39cfab211b10">tesseract::PTRAIN_DOC_LONG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00051">params_training_featdef.h:51</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a70e53977ac4926e96923c104e4da104e"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a70e53977ac4926e96923c104e4da104e">tesseract::PTRAIN_NUM_MED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00046">params_training_featdef.h:46</a></div></div>
+<div class="ttc" id="a00500_html_ae7ed45d7e6b6631cf3eec38f4dc0fb35"><div class="ttname"><a href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">tesseract::ParamsTrainingHypothesis::cost</a></div><div class="ttdeci">float cost</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00118">params_training_featdef.h:118</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a695424d03a50adf3fe6a1998acbe3f87"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a695424d03a50adf3fe6a1998acbe3f87">tesseract::PTRAIN_FREQ_MED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00058">params_training_featdef.h:58</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector</a></div><div class="ttdef"><b>Definition:</b> <a href="a00663_source.html#l00041">baseapi.h:41</a></div></div>
+<div class="ttc" id="a00499_html"><div class="ttname"><a href="a00499.html">tesseract::ParamsTrainingBundle</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00127">params_training_featdef.h:127</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a70a08810d2d0222f222ce03f5ad0efa8"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a70a08810d2d0222f222ce03f5ad0efa8">tesseract::PTRAIN_DICT_LONG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00055">params_training_featdef.h:55</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a4e3a359d1accb5c88630a86193085b30"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a4e3a359d1accb5c88630a86193085b30">tesseract::PTRAIN_NUM_LONG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00047">params_training_featdef.h:47</a></div></div>
+<div class="ttc" id="a00499_html_ab1fe926bbbf3808ca874c57a7d7070c9"><div class="ttname"><a href="a00499.html#ab1fe926bbbf3808ca874c57a7d7070c9">tesseract::ParamsTrainingBundle::hyp_list_vec</a></div><div class="ttdeci">GenericVector&lt; ParamsTrainingHypothesisList &gt; hyp_list_vec</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00144">params_training_featdef.h:144</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467ac5449fec1bf1e8ce13f0c4b534aa9081"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467ac5449fec1bf1e8ce13f0c4b534aa9081">tesseract::PTRAIN_NUM_BAD_PUNC</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00062">params_training_featdef.h:62</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a8e5df70e0a4feb520442eea38ad42581"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a8e5df70e0a4feb520442eea38ad42581">tesseract::PTRAIN_DIGITS_MED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00042">params_training_featdef.h:42</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467adb38a8f09fbe5d6515936780e6cc2561"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467adb38a8f09fbe5d6515936780e6cc2561">tesseract::PTRAIN_NUM_BAD_FONT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00067">params_training_featdef.h:67</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a073cad7d2dddd23f878513b197f70836"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a073cad7d2dddd23f878513b197f70836">tesseract::PTRAIN_DOC_MED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00050">params_training_featdef.h:50</a></div></div>
+<div class="ttc" id="a00499_html_a8bec5bb8047ba4d2676072ea0deab1ca"><div class="ttname"><a href="a00499.html#a8bec5bb8047ba4d2676072ea0deab1ca">tesseract::ParamsTrainingBundle::AddHypothesis</a></div><div class="ttdeci">ParamsTrainingHypothesis &amp; AddHypothesis(const ParamsTrainingHypothesis &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00137">params_training_featdef.h:137</a></div></div>
+<div class="ttc" id="a00500_html_a1c30109a96767c1ee27c0b00065ad205"><div class="ttname"><a href="a00500.html#a1c30109a96767c1ee27c0b00065ad205">tesseract::ParamsTrainingHypothesis::ParamsTrainingHypothesis</a></div><div class="ttdeci">ParamsTrainingHypothesis()</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00107">params_training_featdef.h:107</a></div></div>
+<div class="ttc" id="a00500_html"><div class="ttname"><a href="a00500.html">tesseract::ParamsTrainingHypothesis</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00106">params_training_featdef.h:106</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">tesseract::PTRAIN_NUM_FEATURE_TYPES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00070">params_training_featdef.h:70</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467abf6ca295b288dca43c10b9022372a1db"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467abf6ca295b288dca43c10b9022372a1db">tesseract::PTRAIN_NUM_BAD_SPACING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00066">params_training_featdef.h:66</a></div></div>
+<div class="ttc" id="a00500_html_a20dd3bf8dc6796b69178d3fe350aef99"><div class="ttname"><a href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">tesseract::ParamsTrainingHypothesis::features</a></div><div class="ttdeci">float features[PTRAIN_NUM_FEATURE_TYPES]</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00116">params_training_featdef.h:116</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467aae16de223a8d019d2847a7bdae6c8d5d"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467aae16de223a8d019d2847a7bdae6c8d5d">tesseract::PTRAIN_DICT_MED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00054">params_training_featdef.h:54</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a2b5b59226e9e2688f6d620a551cc14c9"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a2b5b59226e9e2688f6d620a551cc14c9">tesseract::PTRAIN_NUM_BAD_CHAR_TYPE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00065">params_training_featdef.h:65</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467ac1573ea4f6bb4964d253022e801a214e"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467ac1573ea4f6bb4964d253022e801a214e">tesseract::PTRAIN_XHEIGHT_CONSISTENCY</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00064">params_training_featdef.h:64</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a9638fa9da907b679b1ec6ceacc49a625"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a9638fa9da907b679b1ec6ceacc49a625">tesseract::PTRAIN_NUM_BAD_CASE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00063">params_training_featdef.h:63</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467ae94102012c081e339674591a1ea39423"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467ae94102012c081e339674591a1ea39423">tesseract::PTRAIN_DIGITS_LONG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00043">params_training_featdef.h:43</a></div></div>
+<div class="ttc" id="a00500_html_a00f8e977a94665eefcee06d769a28331"><div class="ttname"><a href="a00500.html#a00f8e977a94665eefcee06d769a28331">tesseract::ParamsTrainingHypothesis::ParamsTrainingHypothesis</a></div><div class="ttdeci">ParamsTrainingHypothesis(const ParamsTrainingHypothesis &amp;other)</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00110">params_training_featdef.h:110</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a232084d7e65391f3c7e6b5709a989aa9"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a232084d7e65391f3c7e6b5709a989aa9">tesseract::PTRAIN_NGRAM_COST_PER_CHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00061">params_training_featdef.h:61</a></div></div>
+<div class="ttc" id="a01267_html_ac276fef8cf1673fac0a8759dcbb0ec4d"><div class="ttname"><a href="a01267.html#ac276fef8cf1673fac0a8759dcbb0ec4d">tesseract::ParamsTrainingHypothesisList</a></div><div class="ttdeci">GenericVector&lt; ParamsTrainingHypothesis &gt; ParamsTrainingHypothesisList</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00122">params_training_featdef.h:122</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a5d90fce75b366d7e15fa7a69d83357c2"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a5d90fce75b366d7e15fa7a69d83357c2">tesseract::PTRAIN_FREQ_SHORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00057">params_training_featdef.h:57</a></div></div>
+<div class="ttc" id="a00499_html_a60a524854331fa85661fd74f0350b193"><div class="ttname"><a href="a00499.html#a60a524854331fa85661fd74f0350b193">tesseract::ParamsTrainingBundle::StartHypothesisList</a></div><div class="ttdeci">void StartHypothesisList()</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00132">params_training_featdef.h:132</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a1500cece41ad4b1311e252f2b84d2650"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1500cece41ad4b1311e252f2b84d2650">tesseract::PTRAIN_DIGITS_SHORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00041">params_training_featdef.h:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00775.html">linlsq.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:20 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00775.html">params_training_featdef.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:54 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

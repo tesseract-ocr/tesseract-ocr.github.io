@@ -1,12 +1,11 @@
 var a00842 =
 [
-    [ "ELIST_LINK", "a00379.html", "a00379" ],
-    [ "ELIST", "a00374.html", "a00374" ],
-    [ "ELIST_ITERATOR", "a00378.html", "a00378" ],
-    [ "ELISTIZE", "a00842.html#ab54325a3cfcd9bee58697d77e1902240", null ],
-    [ "ELISTIZEH", "a00842.html#a6cf5144252ef24ea7bb5e0da1e698a0b", null ],
-    [ "ELISTIZEH_A", "a00842.html#a181b0cf1742311895ddeb0cd3125fb90", null ],
-    [ "ELISTIZEH_B", "a00842.html#a10f14f7e0589faff72f2104fbb0fd71f", null ],
-    [ "ELISTIZEH_C", "a00842.html#a6980dec74200e9b5d5ec5ecd2844f291", null ],
-    [ "QUOTE_IT", "a00842.html#adc858fd865cb4f529784fbc52d4d2b87", null ]
+    [ "alloc_big_zeros", "a00842.html#ac8c475a93760aa04525aa0b4d1216fda", null ],
+    [ "alloc_mem", "a00842.html#a4c14b091498fb7866a1dd0af51a591fe", null ],
+    [ "alloc_string", "a00842.html#a29cbb5255dbc65a22c2a47c21480f264", null ],
+    [ "alloc_struct", "a00842.html#a2d9a87464b391f9004ebcab8f8545241", null ],
+    [ "free_big_mem", "a00842.html#ab30c02896b354139efbfb8936dfe8b69", null ],
+    [ "free_mem", "a00842.html#a9ef1862b8e026e23eef238af032858e4", null ],
+    [ "free_string", "a00842.html#aadab03126da19fefc98afefc9549d5c3", null ],
+    [ "free_struct", "a00842.html#a663c99cbcf3eb087c6b9aeed7dc6dd71", null ]
 ];

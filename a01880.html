@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00489.html','');});
+$(document).ready(function(){initNavTree('a00544.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,22 +106,29 @@ $(document).ready(function(){initNavTree('a00489.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::NeuralNet::Node Member List</div>  </div>
+<div class="title">tesseract::ShapeClassifier Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00489.html">tesseract::NeuralNet::Node</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00544.html">tesseract::ShapeClassifier</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00489.html#ac44e32f79ad3e94f8daf9e4bc8fba3d0">bias</a></td><td class="entry"><a class="el" href="a00489.html">tesseract::NeuralNet::Node</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00489.html#a6a029f34191d8aa8c06ad77a35e852cb">fan_in_cnt</a></td><td class="entry"><a class="el" href="a00489.html">tesseract::NeuralNet::Node</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00489.html#adf7ec31c578849d8c7b1b95b6a612a6e">inputs</a></td><td class="entry"><a class="el" href="a00489.html">tesseract::NeuralNet::Node</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00489.html#a5d439cbb4c5fe79c99947974b45dac23">out</a></td><td class="entry"><a class="el" href="a00489.html">tesseract::NeuralNet::Node</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00544.html#a57b3d00a13eb4e73f9a5284a74e789d9">BestShapeForUnichar</a>(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id, ShapeRating *result)</td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00544.html#a0bd45d4adca11310d79afa0c0a312e5f">ClassifySample</a>(const TrainingSample &amp;sample, Pix *page_pix, int debug, UNICHAR_ID keep_this, GenericVector&lt; ShapeRating &gt; *results)</td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00544.html#a9bb8cad25572380e63fc9b51fc2c857c">DebugDisplay</a>(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id)</td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00544.html#a0687b15edcbd8fe3d3d611e1d073c3f4">DisplayClassifyAs</a>(const TrainingSample &amp;sample, Pix *page_pix, UNICHAR_ID unichar_id, int index, PointerVector&lt; ScrollView &gt; *windows)</td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00544.html#a3d89d23ffe2b0f04f9360d75243d904e">FilterDuplicateUnichars</a>(GenericVector&lt; ShapeRating &gt; *results) const </td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00544.html#ab5e612b18003a7c0ceae685ea1fe8571">GetShapeTable</a>() const =0</td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00544.html#a327269e74451ae730d5ee6795f0ed21a">GetUnicharset</a>() const </td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00544.html#aa91458caf58bc2ff1a4837ae2761fd3a">PrintResults</a>(const char *context, const GenericVector&lt; ShapeRating &gt; &amp;results) const </td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00544.html#a7c02e74689b6591fd0d56ab2f0e92a86">UnicharClassifySample</a>(const TrainingSample &amp;sample, Pix *page_pix, int debug, UNICHAR_ID keep_this, GenericVector&lt; UnicharRating &gt; *results)</td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00544.html#a1857da78597dd078f51204097c4f3146">UnicharPrintResults</a>(const char *context, const GenericVector&lt; UnicharRating &gt; &amp;results) const </td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00544.html#a8beb57719279f6b67f426dcccb6231b7">~ShapeClassifier</a>()</td><td class="entry"><a class="el" href="a00544.html">tesseract::ShapeClassifier</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:28 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

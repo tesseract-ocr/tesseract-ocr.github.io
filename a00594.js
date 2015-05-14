@@ -1,5 +1,5 @@
 var a00594 =
 [
-    [ "SVPaint", "a00594.html#ad4dd260f56a7e9e11b47ab0a015488ac", null ],
-    [ "Notify", "a00594.html#acdab8b59cf5444f0fe8694caa692e50c", null ]
+    [ "Cluster", "a00594.html#adfa4721271456305d40524737800bb2e", null ],
+    [ "Neighbor", "a00594.html#abc9f805357e72eae3febb1dbd4c412ac", null ]
 ];

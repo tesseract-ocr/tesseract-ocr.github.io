@@ -1,5 +1,6 @@
 var a00469 =
 [
-    [ "next", "a00469.html#af4f6ed22cbbd6d68b0bc4505defed426", null ],
-    [ "node", "a00469.html#ab409a262c4a240475b50b330b4483e9c", null ]
+    [ "Class", "a00469.html#a1c7b735de8e1caa16763adf0cfc95593", null ],
+    [ "Label", "a00469.html#a748285b0d7014218f0b335dcb0513168", null ],
+    [ "NumMerged", "a00469.html#a66ece12653cd86542d9c9c461a256f8a", null ]
 ];

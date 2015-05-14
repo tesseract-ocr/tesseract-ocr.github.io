@@ -1,9 +1,15 @@
 var a00435 =
 [
-    [ "InputBuffer", "a00435.html#a14bbf8f4be142330141d33443aa3839b", null ],
-    [ "InputBuffer", "a00435.html#a6e7961cdc461d079f01b9215115eb468", null ],
-    [ "~InputBuffer", "a00435.html#a780708058546af7d6a19c1d7b572d951", null ],
-    [ "CloseFile", "a00435.html#ab2f13cd7b1a2bedcdf9faa6fc4a87d2d", null ],
-    [ "Read", "a00435.html#a4a942f7c87ff92c87ceb821dfeff4d4e", null ],
-    [ "ReadLine", "a00435.html#a84d399d89cd3c8ba685b8001242b6fea", null ]
+    [ "IntGrid", "a00435.html#ad035d5cf48ebae7e0befe040cd5581ff", null ],
+    [ "IntGrid", "a00435.html#a93d4b4775fa833798b14d7a17968ec76", null ],
+    [ "~IntGrid", "a00435.html#a3d9a594271d2056482c0a12cedcda3d0", null ],
+    [ "AnyZeroInRect", "a00435.html#aa73c52b6333d511c72d77fb167b799f1", null ],
+    [ "Clear", "a00435.html#a46dc23ed91af648648515010a1b1c988", null ],
+    [ "GridCellValue", "a00435.html#a993a05924433985cb3084e691679bb84", null ],
+    [ "Init", "a00435.html#a5f8aae7fd3be5e1f041e499906dd057f", null ],
+    [ "NeighbourhoodSum", "a00435.html#a2412b6a04f710d91a050d8f92d3e3c25", null ],
+    [ "RectMostlyOverThreshold", "a00435.html#af48643ce60c1d55c1ddc7cc42d84cc79", null ],
+    [ "Rotate", "a00435.html#ad1389d68ae52483114b995117280db18", null ],
+    [ "SetGridCell", "a00435.html#aa02baa9ac4108665b5f33a9bbf3c4546", null ],
+    [ "ThresholdToPix", "a00435.html#a576f01a677601b22dbc56c47267a8ee7", null ]
 ];

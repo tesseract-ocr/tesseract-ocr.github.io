@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/word_list_lang_model.h Source File</title>
+<title>Tesseract: cutil/cutil.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,131 +105,125 @@ $(document).ready(function(){initNavTree('a01030_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">word_list_lang_model.h</div>  </div>
+<div class="title">cutil.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01030.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        word_list_lang_model.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Word List Language Model Class</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2008</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2008, Google Inc.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The WordListLangModel class abstracts a language model that is based on</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// a list of words. It inherits from the LangModel abstract class</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Besides providing the methods inherited from the LangModel abstract class,</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// the class provided methods to add new strings to the Language Model:</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// AddString &amp; AddString32</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef WORD_LIST_LANG_MODEL_H</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define WORD_LIST_LANG_MODEL_H</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00695.html">cube_reco_context.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01015.html">lang_model.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01023.html">tess_lang_mod_edge.h</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">class </span>Trie;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00673.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00673.html">WordListLangModel</a> : <span class="keyword">public</span> <a class="code" href="a00461.html">LangModel</a> {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00673.html#a555aa61eb20325586260257dce8605ed">WordListLangModel</a>(<a class="code" href="a00347.html">CubeRecoContext</a> *cntxt);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a00673.html#ac844e1a86d6899330c722dc6983f5cd8">~WordListLangModel</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// Returns an edge pointer to the Root</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a00460.html">LangModEdge</a> *<a class="code" href="a00673.html#a773e0620380b5416098db0b86dce5ad8">Root</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// Returns the edges that fan-out of the specified edge and their count</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="a00460.html">LangModEdge</a> **<a class="code" href="a00673.html#abe363ed3ef497bbbbf7a985d8f07be2f">GetEdges</a>(<a class="code" href="a00305.html">CharAltList</a> *alt_list,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                         <a class="code" href="a00460.html">LangModEdge</a> *edge,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                         <span class="keywordtype">int</span> *edge_cnt);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// Returns is a sequence of 32-bit characters are valid within this language</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// model or net. And EndOfWord flag is specified. If true, the sequence has</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// to end on a valid word. The function also optionally returns the list</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// of language model edges traversed to parse the string</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00673.html#a3466190b26c1ecf2c0ddaf5cc39fe203">IsValidSequence</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *sequence,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                       <span class="keywordtype">bool</span> eow_flag,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                       <a class="code" href="a00460.html">LangModEdge</a> **edges);</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a00673.html#abc0adc44077a4e1ed691bcd8b478cfb6">   56</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00673.html#abc0adc44077a4e1ed691bcd8b478cfb6">IsLeadingPunc</a>(<a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }  <span class="comment">// not yet implemented</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a00673.html#a5afdc764c2aeca6646beb04a1a511bf5">   57</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00673.html#a5afdc764c2aeca6646beb04a1a511bf5">IsTrailingPunc</a>(<a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }  <span class="comment">// not yet implemented</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="a00673.html#a43bb8e1972be27eac8870df64720b77b">   58</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00673.html#a43bb8e1972be27eac8870df64720b77b">IsDigit</a>(<a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> ch) { <span class="keywordflow">return</span> <span class="keyword">false</span>; }  <span class="comment">// not yet implemented</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// Adds a new UTF-8 string to the language model</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00673.html#a924a9ca1a4d5ad4ac51e62bf8f17e340">AddString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *char_ptr);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// Adds a new UTF-32 string to the language model</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="a00673.html#a377a15d1f95c5766bc1af48180491d66">AddString32</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *char_32_ptr);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Compute all the variants of a 32-bit string in terms of the class-ids.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// This is needed for languages that have ligatures. A word can then have</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// more than one spelling in terms of the class-ids.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00673.html#adbcf8c78ef7738a6ec26521a7057a5e6">WordVariants</a>(<span class="keyword">const</span> <a class="code" href="a00314.html">CharSet</a> &amp;char_set, <span class="keyword">const</span> <a class="code" href="a00661.html">UNICHARSET</a> *uchset,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                           <a class="code" href="a01279.html#a5e51e225e3ac13c918ed9f77715fa041">string_32</a> str32,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                           vector&lt;WERD_CHOICE *&gt; *word_variants);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// constants needed to configure the language model</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kMaxEdge = 512;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="a00347.html">CubeRecoContext</a> *cntxt_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="a00651.html">Trie</a> *dawg_;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> init_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Initialize the language model</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">bool</span> Init();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// Cleanup</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> Cleanup();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// Recursive helper function for WordVariants().</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00673.html#adbcf8c78ef7738a6ec26521a7057a5e6">WordVariants</a>(</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keyword">const</span> <a class="code" href="a00314.html">CharSet</a> &amp;char_set,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <a class="code" href="a01279.html#a5e51e225e3ac13c918ed9f77715fa041">string_32</a> prefix_str32, <a class="code" href="a00668.html">WERD_CHOICE</a> *word_so_far,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <a class="code" href="a01279.html#a5e51e225e3ac13c918ed9f77715fa041">string_32</a> str32,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      vector&lt;WERD_CHOICE *&gt; *word_variants);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}  <span class="comment">// tesseract</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif  // WORD_LIST_LANG_MODEL_H</span></div>
-<div class="ttc" id="a00673_html_a5afdc764c2aeca6646beb04a1a511bf5"><div class="ttname"><a href="a00673.html#a5afdc764c2aeca6646beb04a1a511bf5">tesseract::WordListLangModel::IsTrailingPunc</a></div><div class="ttdeci">bool IsTrailingPunc(char_32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01030_source.html#l00057">word_list_lang_model.h:57</a></div></div>
-<div class="ttc" id="a00673_html_a773e0620380b5416098db0b86dce5ad8"><div class="ttname"><a href="a00673.html#a773e0620380b5416098db0b86dce5ad8">tesseract::WordListLangModel::Root</a></div><div class="ttdeci">LangModEdge * Root()</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00065">word_list_lang_model.cpp:65</a></div></div>
-<div class="ttc" id="a00668_html"><div class="ttname"><a href="a00668.html">WERD_CHOICE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00271">ratngs.h:271</a></div></div>
-<div class="ttc" id="a00673_html_a43bb8e1972be27eac8870df64720b77b"><div class="ttname"><a href="a00673.html#a43bb8e1972be27eac8870df64720b77b">tesseract::WordListLangModel::IsDigit</a></div><div class="ttdeci">bool IsDigit(char_32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01030_source.html#l00058">word_list_lang_model.h:58</a></div></div>
-<div class="ttc" id="a00347_html"><div class="ttname"><a href="a00347.html">tesseract::CubeRecoContext</a></div><div class="ttdef"><b>Definition:</b> <a href="a00695_source.html#l00043">cube_reco_context.h:43</a></div></div>
-<div class="ttc" id="a01015_html"><div class="ttname"><a href="a01015.html">lang_model.h</a></div></div>
-<div class="ttc" id="a01023_html"><div class="ttname"><a href="a01023.html">tess_lang_mod_edge.h</a></div></div>
-<div class="ttc" id="a00673_html_ac844e1a86d6899330c722dc6983f5cd8"><div class="ttname"><a href="a00673.html#ac844e1a86d6899330c722dc6983f5cd8">tesseract::WordListLangModel::~WordListLangModel</a></div><div class="ttdeci">~WordListLangModel()</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00035">word_list_lang_model.cpp:35</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00673_html_abc0adc44077a4e1ed691bcd8b478cfb6"><div class="ttname"><a href="a00673.html#abc0adc44077a4e1ed691bcd8b478cfb6">tesseract::WordListLangModel::IsLeadingPunc</a></div><div class="ttdeci">bool IsLeadingPunc(char_32 ch)</div><div class="ttdef"><b>Definition:</b> <a href="a01030_source.html#l00056">word_list_lang_model.h:56</a></div></div>
-<div class="ttc" id="a00461_html"><div class="ttname"><a href="a00461.html">tesseract::LangModel</a></div><div class="ttdef"><b>Definition:</b> <a href="a01015_source.html#l00034">lang_model.h:34</a></div></div>
-<div class="ttc" id="a00661_html"><div class="ttname"><a href="a00661.html">UNICHARSET</a></div><div class="ttdef"><b>Definition:</b> <a href="a00889_source.html#l00139">unicharset.h:139</a></div></div>
-<div class="ttc" id="a00673_html_a3466190b26c1ecf2c0ddaf5cc39fe203"><div class="ttname"><a href="a00673.html#a3466190b26c1ecf2c0ddaf5cc39fe203">tesseract::WordListLangModel::IsValidSequence</a></div><div class="ttdeci">bool IsValidSequence(const char_32 *sequence, bool eow_flag, LangModEdge **edges)</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00113">word_list_lang_model.cpp:113</a></div></div>
-<div class="ttc" id="a00314_html"><div class="ttname"><a href="a00314.html">tesseract::CharSet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00984_source.html#l00042">char_set.h:42</a></div></div>
-<div class="ttc" id="a00673_html_a555aa61eb20325586260257dce8605ed"><div class="ttname"><a href="a00673.html#a555aa61eb20325586260257dce8605ed">tesseract::WordListLangModel::WordListLangModel</a></div><div class="ttdeci">WordListLangModel(CubeRecoContext *cntxt)</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00029">word_list_lang_model.cpp:29</a></div></div>
-<div class="ttc" id="a00695_html"><div class="ttname"><a href="a00695.html">cube_reco_context.h</a></div></div>
-<div class="ttc" id="a00673_html_adbcf8c78ef7738a6ec26521a7057a5e6"><div class="ttname"><a href="a00673.html#adbcf8c78ef7738a6ec26521a7057a5e6">tesseract::WordListLangModel::WordVariants</a></div><div class="ttdeci">static void WordVariants(const CharSet &amp;char_set, const UNICHARSET *uchset, string_32 str32, vector&lt; WERD_CHOICE * &gt; *word_variants)</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00153">word_list_lang_model.cpp:153</a></div></div>
-<div class="ttc" id="a00305_html"><div class="ttname"><a href="a00305.html">tesseract::CharAltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00974_source.html#l00032">char_altlist.h:32</a></div></div>
-<div class="ttc" id="a00673_html_a377a15d1f95c5766bc1af48180491d66"><div class="ttname"><a href="a00673.html#a377a15d1f95c5766bc1af48180491d66">tesseract::WordListLangModel::AddString32</a></div><div class="ttdeci">bool AddString32(const char_32 *char_32_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00180">word_list_lang_model.cpp:180</a></div></div>
-<div class="ttc" id="a00460_html"><div class="ttname"><a href="a00460.html">tesseract::LangModEdge</a></div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00043">lang_mod_edge.h:43</a></div></div>
-<div class="ttc" id="a00673_html_abe363ed3ef497bbbbf7a985d8f07be2f"><div class="ttname"><a href="a00673.html#abe363ed3ef497bbbbf7a985d8f07be2f">tesseract::WordListLangModel::GetEdges</a></div><div class="ttdeci">LangModEdge ** GetEdges(CharAltList *alt_list, LangModEdge *edge, int *edge_cnt)</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00070">word_list_lang_model.cpp:70</a></div></div>
-<div class="ttc" id="a01279_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01279.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00040">string_32.h:40</a></div></div>
-<div class="ttc" id="a00673_html_a924a9ca1a4d5ad4ac51e62bf8f17e340"><div class="ttname"><a href="a00673.html#a924a9ca1a4d5ad4ac51e62bf8f17e340">tesseract::WordListLangModel::AddString</a></div><div class="ttdeci">bool AddString(const char *char_ptr)</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00166">word_list_lang_model.cpp:166</a></div></div>
-<div class="ttc" id="a00651_html"><div class="ttname"><a href="a00651.html">tesseract::Trie</a></div><div class="ttdef"><b>Definition:</b> <a href="a01072_source.html#l00062">trie.h:62</a></div></div>
-<div class="ttc" id="a01279_html_a5e51e225e3ac13c918ed9f77715fa041"><div class="ttname"><a href="a01279.html#a5e51e225e3ac13c918ed9f77715fa041">tesseract::string_32</a></div><div class="ttdeci">basic_string&lt; char_32 &gt; string_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00041">string_32.h:41</a></div></div>
-<div class="ttc" id="a00673_html"><div class="ttname"><a href="a00673.html">tesseract::WordListLangModel</a></div><div class="ttdef"><b>Definition:</b> <a href="a01030_source.html#l00039">word_list_lang_model.h:39</a></div></div>
+<a href="a01030.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* -*-C-*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> ********************************************************************************</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * File:         cutil.c</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description:  General utility functions</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:       Mark Seaman, SW Productivity</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:      Fri Oct 16 14:37:00 1987</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Modified:     Wed Jun  6 16:29:17 1990 (Mark Seaman) marks@hpgrlt</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Language:     C</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Package:      N/A</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Status:       Reusable Software Component</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * (c) Copyright 1987, Hewlett-Packard Company.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> ********************************************************************************</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">Revision 1.1  2007/02/02 23:39:07  theraysmith</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">Fixed portability issues</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">Revision 1.1.1.1  2004/02/20 19:39:06  slumos</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">Import original HP distribution</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * Revision 1.3  90/03/06  15:39:10  15:39:10  marks (Mark Seaman)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * Look for correct file of &lt;malloc.h&gt; or &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * Revision 1.2  90/01/15  13:02:13  13:02:13  marks (Mark Seaman)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * Added memory allocator (*allocate) and (*deallocate)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * Revision 1.1  89/10/09  14:58:29  14:58:29  marks (Mark Seaman)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * Initial revision</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **/</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01031.html">cutil.h</a>&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00864.html">tprintf.h</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01028.html">callcpp.h</a>&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a01030.html#a6f918b4c4fd78a6a98a73d38d327f160">   47</a></span>&#160;<span class="preprocessor">#define RESET_COUNT 2000</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * long_rand</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> *  Return a long random number whose value is less than limit.  Do this</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> *  by calling the standard cheepo random number generator and reseting</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> *  it pretty often.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a01031.html#a33d2b2e66e43c48ac087a3e89f783f85">   56</a></span>&#160;<span class="keywordtype">long</span> <a class="code" href="a01030.html#a33d2b2e66e43c48ac087a3e89f783f85">long_rand</a>(<span class="keywordtype">long</span> limit) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#if RAND_MAX &lt; 0x1000000</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">long</span> seed;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">long</span> num;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  num = (long) rand () &lt;&lt; 16;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  num |= rand () &amp; 0xffff;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  seed ^= num;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">long</span> result = num % limit;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">while</span> (result &lt; 0) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    result += limit;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">return</span> (<span class="keywordtype">long</span>)((double)limit * rand()/(RAND_MAX + 1.0));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> * open_file</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> *  Open a file for reading or writing.  If the file name parameter is</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> *  NULL use stdin (or stdout) for the file.  If the file can not be</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> *  opened then call the error routine.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="a01031.html#ae3226f9d05617de0b7174bc7b7fce5b6">   82</a></span>&#160;FILE *<a class="code" href="a01030.html#ae3226f9d05617de0b7174bc7b7fce5b6">open_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a00703.html#afc03cf3e39248c2e339fee4d31f5f750">mode</a>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  FILE *thisfile = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span> ((thisfile = fopen (filename, mode)) == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a> (<span class="stringliteral">&quot;Could not open file, %s\n&quot;</span>, filename);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    exit (1);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> (thisfile);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="a01031.html#ae742eac688a0941097b28b88dd0f201b">   92</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a01030.html#ae742eac688a0941097b28b88dd0f201b">exists_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">bool</span> exists = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  FILE *f = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> ((f = fopen(filename, <span class="stringliteral">&quot;rb&quot;</span>)) != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    fclose(f);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    exists = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> exists;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="ttc" id="a01030_html_ae3226f9d05617de0b7174bc7b7fce5b6"><div class="ttname"><a href="a01030.html#ae3226f9d05617de0b7174bc7b7fce5b6">open_file</a></div><div class="ttdeci">FILE * open_file(const char *filename, const char *mode)</div><div class="ttdef"><b>Definition:</b> <a href="a01030_source.html#l00082">cutil.cpp:82</a></div></div>
+<div class="ttc" id="a00864_html"><div class="ttname"><a href="a00864.html">tprintf.h</a></div></div>
+<div class="ttc" id="a01030_html_ae742eac688a0941097b28b88dd0f201b"><div class="ttname"><a href="a01030.html#ae742eac688a0941097b28b88dd0f201b">exists_file</a></div><div class="ttdeci">bool exists_file(const char *filename)</div><div class="ttdoc">Check whether the file exists. </div><div class="ttdef"><b>Definition:</b> <a href="a01030_source.html#l00092">cutil.cpp:92</a></div></div>
+<div class="ttc" id="a00703_html_afc03cf3e39248c2e339fee4d31f5f750"><div class="ttname"><a href="a00703.html#afc03cf3e39248c2e339fee4d31f5f750">mode</a></div><div class="ttdeci">CMD_EVENTS mode</div><div class="ttdef"><b>Definition:</b> <a href="a00703_source.html#l00116">pgedit.cpp:116</a></div></div>
+<div class="ttc" id="a01030_html_a33d2b2e66e43c48ac087a3e89f783f85"><div class="ttname"><a href="a01030.html#a33d2b2e66e43c48ac087a3e89f783f85">long_rand</a></div><div class="ttdeci">long long_rand(long limit)</div><div class="ttdef"><b>Definition:</b> <a href="a01030_source.html#l00056">cutil.cpp:56</a></div></div>
+<div class="ttc" id="a01268_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a01031_html"><div class="ttname"><a href="a01031.html">cutil.h</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a01028_html"><div class="ttname"><a href="a01028.html">callcpp.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01030.html">word_list_lang_model.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01030.html">cutil.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:01 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

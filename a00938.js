@@ -1,10 +1,17 @@
 var a00938 =
 [
-    [ "NormalizeAngle", "a00938.html#a5418ed129c949071820a8d0c28093de1", null ],
-    [ "BlobMicroFeatures", "a00938.html#a807f06b47c5b936507ee2895e1452afa", null ],
-    [ "ComputeOrientation", "a00938.html#a06bc324f94765ef7be45570e5b419131", null ],
-    [ "ConvertToMicroFeatures", "a00938.html#ae9693813f30b3c834f46191be843b750", null ],
-    [ "ExtractMicroFeature", "a00938.html#aff6e1b00e3fdbcf73ecee608c906f6f8", null ],
-    [ "classify_max_slope", "a00938.html#a7a76f272add43800ab97ff8aeb0184a9", null ],
-    [ "classify_min_slope", "a00938.html#afc77a0a04110e77db4b31bb16800a207", null ]
+    [ "CONFIG_INCREMENT", "a00938.html#aab82a0eabce6034ba0e416fb1cd4757d", null ],
+    [ "PROTO_INCREMENT", "a00938.html#a84b07ab4cf4e8b013de05ee603af79e8", null ],
+    [ "AddConfigToClass", "a00938.html#a922ce6793eb82e1f8224ed372b75aa24", null ],
+    [ "AddProtoToClass", "a00938.html#a8a197adbd5718ec39c2b6a4a74694aa4", null ],
+    [ "ClassConfigLength", "a00938.html#a86edcc690e99519f70be27f330896d0a", null ],
+    [ "ClassProtoLength", "a00938.html#a94f965f81092518090eed62f5d64973f", null ],
+    [ "CopyProto", "a00938.html#a070f62ac01ae76642e6793410da68770", null ],
+    [ "FillABC", "a00938.html#ac0d58978bbcf0c732ae94fb554bccd3b", null ],
+    [ "FreeClass", "a00938.html#a751a34c0eb8b7dcba1439287dd3eb3d5", null ],
+    [ "FreeClassFields", "a00938.html#a8c42a896530af773ecb7de6ea5186b40", null ],
+    [ "NewClass", "a00938.html#ae1b779964924a618a307d8d6f0ec6dff", null ],
+    [ "PrintProtos", "a00938.html#a5c0c05c9986fd218a772e9acca9b02f6", null ],
+    [ "classify_training_file", "a00938.html#abdf276348661f25846b3638c463ca932", null ],
+    [ "TrainingData", "a00938.html#a7bd5364c17e272dee3bbad00a9b2874e", null ]
 ];

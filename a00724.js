@@ -1,5 +1,4 @@
 var a00724 =
 [
-    [ "read_t", "a00724.html#ad7ffe56cad38dd6067797106e3d284d5", null ],
-    [ "kMaxBoxEdgeDiff", "a00724.html#abfaec7e51561d081ff6615aaad765883", null ]
+    [ "make_pseudo_word", "a00724.html#a4033d1ec3632e2e780817fc5932f5951", null ]
 ];

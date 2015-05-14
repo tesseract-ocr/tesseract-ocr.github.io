@@ -1,5 +1,4 @@
 var a01047 =
 [
-    [ "FOPENERROR", "a01047.html#a57448c70d638b35c9a0c595d44d649fe", null ],
-    [ "Efopen", "a01047.html#a1a07e904724c29e89b04235a34ded950", null ]
+    [ "makestructure", "a01047.html#aa899a27883049fc4f690a5675e83af3b", null ]
 ];

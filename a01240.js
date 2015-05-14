@@ -1,6 +1,10 @@
 var a01240 =
 [
-    [ "MAX_NUM_POINTS", "a01240.html#acddb2ccb7be3d768d16abfd230d468eb", null ],
-    [ "PointHeap", "a01240.html#a2cc41609737c8b3fe2ee7c5cfd9aee19", null ],
-    [ "PointPair", "a01240.html#a5354bdfdcb4ce492d853ef15269e7bd8", null ]
+    [ "LanguageModelDawgInfo", "a00451.html", "a00451" ],
+    [ "LanguageModelNgramInfo", "a00452.html", "a00452" ],
+    [ "ViterbiStateEntry", "a00647.html", "a00647" ],
+    [ "LanguageModelState", "a00453.html", "a00453" ],
+    [ "BestChoiceBundle", "a00270.html", "a00270" ],
+    [ "LanguageModelFlagsType", "a01240.html#a87cc64ed462a40c9c210a8bab7cb9b87", null ],
+    [ "ELISTIZEH", "a01240.html#a897f98148e8c084774a0c00f774da30a", null ]
 ];

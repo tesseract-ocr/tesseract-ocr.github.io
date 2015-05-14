@@ -1,8 +1,8 @@
 var a00500 =
 [
-    [ "OutputBuffer", "a00500.html#af3bfbb2ecc084138ddb36d8f1d781323", null ],
-    [ "OutputBuffer", "a00500.html#a69aa56d60fee2d3d1f06fa03c2adb0f5", null ],
-    [ "~OutputBuffer", "a00500.html#a7b0c9f9ea7c448db7711893799410988", null ],
-    [ "CloseFile", "a00500.html#a05b5465b1c270f9caa4ac2caee5aed4d", null ],
-    [ "WriteString", "a00500.html#a95174ff7c876620fe0dcdef61654bcf5", null ]
+    [ "ParamsTrainingHypothesis", "a00500.html#a1c30109a96767c1ee27c0b00065ad205", null ],
+    [ "ParamsTrainingHypothesis", "a00500.html#a00f8e977a94665eefcee06d769a28331", null ],
+    [ "cost", "a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35", null ],
+    [ "features", "a00500.html#a20dd3bf8dc6796b69178d3fe350aef99", null ],
+    [ "str", "a00500.html#a5dee966c19cad16f4eba3efc879f51b3", null ]
 ];

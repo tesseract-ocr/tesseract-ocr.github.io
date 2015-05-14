@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::GridBase Class Reference</title>
+<title>Tesseract: tesseract::IndexMap Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,118 +108,205 @@ $(document).ready(function(){initNavTree('a00419.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="a01841.html">List of all members</a>  </div>
+<a href="a01818.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::GridBase Class Reference</div>  </div>
+<div class="title">tesseract::IndexMap Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a01102_source.html">bbgrid.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00837_source.html">indexmapbidi.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for tesseract::GridBase:</div>
+Inheritance diagram for tesseract::IndexMap:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00419.png" usemap="#tesseract::GridBase_map" alt=""/>
-  <map id="tesseract::GridBase_map" name="tesseract::GridBase_map">
-<area href="a00271.html" alt="tesseract::BBGrid&lt; BLOBNBOX, BLOBNBOX_CLIST, BLOBNBOX_C_IT &gt;" shape="rect" coords="442,56,874,80"/>
-<area href="a00271.html" alt="tesseract::BBGrid&lt; ColPartition, ColPartition_CLIST, ColPartition_C_IT &gt;" shape="rect" coords="884,56,1316,80"/>
-<area href="a00271.html" alt="tesseract::BBGrid&lt; ColSegment, ColSegment_CLIST, ColSegment_C_IT &gt;" shape="rect" coords="1326,56,1758,80"/>
-<area href="a00271.html" alt="tesseract::BBGrid&lt; BBC, BBC_CLIST, BBC_C_IT &gt;" shape="rect" coords="1768,56,2200,80"/>
-<area href="a00447.html" alt="tesseract::IntGrid" shape="rect" coords="2210,56,2642,80"/>
-<area href="a00281.html" alt="tesseract::BlobGrid" shape="rect" coords="442,112,874,136"/>
-<area href="a00332.html" alt="tesseract::ColPartitionGrid" shape="rect" coords="884,112,1316,136"/>
-<area href="a00260.html" alt="tesseract::AlignedBlob" shape="rect" coords="0,168,432,192"/>
-<area href="a00298.html" alt="tesseract::CCNonTextDetect" shape="rect" coords="442,168,874,192"/>
-<area href="a00582.html" alt="tesseract::StrokeWidth" shape="rect" coords="884,168,1316,192"/>
-<area href="a00602.html" alt="tesseract::TabFind" shape="rect" coords="0,224,432,248"/>
-<area href="a00335.html" alt="tesseract::ColumnFinder" shape="rect" coords="0,280,432,304"/>
+  <img src="a00419.png" usemap="#tesseract::IndexMap_map" alt=""/>
+  <map id="tesseract::IndexMap_map" name="tesseract::IndexMap_map">
+<area href="a00420.html" alt="tesseract::IndexMapBiDi" shape="rect" coords="0,56,147,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac1ea91a905041f0fa896bec740903a77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ac1ea91a905041f0fa896bec740903a77">GridBase</a> ()</td></tr>
-<tr class="separator:ac1ea91a905041f0fa896bec740903a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52bfcebedaa848425b8e2d228df559b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a52bfcebedaa848425b8e2d228df559b6">GridBase</a> (int <a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
-<tr class="separator:a52bfcebedaa848425b8e2d228df559b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee16480a8ca444d7847850ac0115813"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a7ee16480a8ca444d7847850ac0115813">~GridBase</a> ()</td></tr>
-<tr class="separator:a7ee16480a8ca444d7847850ac0115813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e23ba0f9d310510c9a2b3a38f11e683"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a9e23ba0f9d310510c9a2b3a38f11e683">Init</a> (int <a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00425.html">ICOORD</a> &amp;<a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
-<tr class="separator:a9e23ba0f9d310510c9a2b3a38f11e683"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afff2cee730084711205977b5fcb4901e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a> () const </td></tr>
-<tr class="separator:afff2cee730084711205977b5fcb4901e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a38ea995b9d65f8b67d66d5501a5b80"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a> () const </td></tr>
-<tr class="separator:a0a38ea995b9d65f8b67d66d5501a5b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07e6b230c150180d009ef1f317e642f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a07e6b230c150180d009ef1f317e642f2">gridheight</a> () const </td></tr>
-<tr class="separator:a07e6b230c150180d009ef1f317e642f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20b2cb8eb2bf52871d5260c04949cce"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a> () const </td></tr>
-<tr class="separator:ad20b2cb8eb2bf52871d5260c04949cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa94e147841b6a4fae0b28e7e872685a5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a> () const </td></tr>
-<tr class="separator:aa94e147841b6a4fae0b28e7e872685a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cb158bba184d657c51257b98eea9f8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a> (int x, int y, int *grid_x, int *grid_y) const </td></tr>
-<tr class="separator:a9cb158bba184d657c51257b98eea9f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6349387c9d98fae34cf247b12cdc5a00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a6349387c9d98fae34cf247b12cdc5a00">ClipGridCoords</a> (int *x, int *y) const </td></tr>
-<tr class="separator:a6349387c9d98fae34cf247b12cdc5a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed244a46cf41eaee538f917605a9c8c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a0ed244a46cf41eaee538f917605a9c8c">~IndexMap</a> ()</td></tr>
+<tr class="separator:a0ed244a46cf41eaee538f917605a9c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d980041372e85befb238aae69192c0"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#af6d980041372e85befb238aae69192c0">SparseToCompact</a> (int sparse_index) const </td></tr>
+<tr class="separator:af6d980041372e85befb238aae69192c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e50b500bcbadf8f3be98cd672f0c4a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ad9e50b500bcbadf8f3be98cd672f0c4a">CompactToSparse</a> (int compact_index) const </td></tr>
+<tr class="separator:ad9e50b500bcbadf8f3be98cd672f0c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25dc97e755104bf3e58a8a9f0a254d18"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a25dc97e755104bf3e58a8a9f0a254d18">SparseSize</a> () const </td></tr>
+<tr class="separator:a25dc97e755104bf3e58a8a9f0a254d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2904b1640580ad7ba6b2c14522dc3e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ab2904b1640580ad7ba6b2c14522dc3e8">CompactSize</a> () const </td></tr>
+<tr class="separator:ab2904b1640580ad7ba6b2c14522dc3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838d73d3bb8c7e8a1b43761cf99f337d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a838d73d3bb8c7e8a1b43761cf99f337d">CopyFrom</a> (const <a class="el" href="a00419.html">IndexMap</a> &amp;src)</td></tr>
+<tr class="separator:a838d73d3bb8c7e8a1b43761cf99f337d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6547a318de4fb3ca1422ba6c2c91b233"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a6547a318de4fb3ca1422ba6c2c91b233">CopyFrom</a> (const <a class="el" href="a00420.html">IndexMapBiDi</a> &amp;src)</td></tr>
+<tr class="separator:a6547a318de4fb3ca1422ba6c2c91b233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a067894b455dcd2e3d013a9449e1aae7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a067894b455dcd2e3d013a9449e1aae7d">Serialize</a> (FILE *fp) const </td></tr>
+<tr class="separator:a067894b455dcd2e3d013a9449e1aae7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a60120500f7ced59f2cea3bc42138f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a74a60120500f7ced59f2cea3bc42138f">DeSerialize</a> (bool swap, FILE *fp)</td></tr>
+<tr class="separator:a74a60120500f7ced59f2cea3bc42138f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a0758dd90d5ce47e504a4148f4cda33f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a></td></tr>
-<tr class="separator:a0758dd90d5ce47e504a4148f4cda33f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a429c00f7b3ea66cfd63a75cfa2c1b43d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a></td></tr>
-<tr class="separator:a429c00f7b3ea66cfd63a75cfa2c1b43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae70ca33c0676a296720fea5ddc0aa5cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">gridheight_</a></td></tr>
-<tr class="separator:ae70ca33c0676a296720fea5ddc0aa5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcda3a0efeed2a95fc777fc7127898a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#adcda3a0efeed2a95fc777fc7127898a6">gridbuckets_</a></td></tr>
-<tr class="separator:adcda3a0efeed2a95fc777fc7127898a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f09e93ec22c3f7a245eb6611309d8d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00425.html">ICOORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">bleft_</a></td></tr>
-<tr class="separator:a5f09e93ec22c3f7a245eb6611309d8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac348165d112922b3d956f924405012cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00425.html">ICOORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ac348165d112922b3d956f924405012cd">tright_</a></td></tr>
-<tr class="separator:ac348165d112922b3d956f924405012cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ff257a84297cf8c67ee4bb27e54194"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">sparse_size_</a></td></tr>
+<tr class="separator:ae3ff257a84297cf8c67ee4bb27e54194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5089b80f1c2f365c07dc075da232aa89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00406.html">GenericVector</a>&lt; <a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a></td></tr>
+<tr class="separator:a5089b80f1c2f365c07dc075da232aa89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a01102_source.html#l00052">52</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
+<p>Definition at line <a class="el" href="a00837_source.html#l00042">42</a> of file <a class="el" href="a00837_source.html">indexmapbidi.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac1ea91a905041f0fa896bec740903a77"></a>
+<a class="anchor" id="a0ed244a46cf41eaee538f917605a9c8c"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::GridBase::GridBase </td>
+          <td class="memname">virtual tesseract::IndexMap::~IndexMap </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01101_source.html#l00030">30</a> of file <a class="el" href="a01101_source.html">bbgrid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                   {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a00837_source.html#l00044">44</a> of file <a class="el" href="a00837_source.html">indexmapbidi.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a52bfcebedaa848425b8e2d228df559b6"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab2904b1640580ad7ba6b2c14522dc3e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::IndexMap::CompactSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00837_source.html#l00061">61</a> of file <a class="el" href="a00837_source.html">indexmapbidi.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                          {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a>.<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
+<div class="ttc" id="a00406_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00072">genericvector.h:72</a></div></div>
+<div class="ttc" id="a00419_html_a5089b80f1c2f365c07dc075da232aa89"><div class="ttname"><a href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">tesseract::IndexMap::compact_map_</a></div><div class="ttdeci">GenericVector&lt; inT32 &gt; compact_map_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00080">indexmapbidi.h:80</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad9e50b500bcbadf8f3be98cd672f0c4a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::IndexMap::CompactToSparse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>compact_index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00837_source.html#l00053">53</a> of file <a class="el" href="a00837_source.html">indexmapbidi.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                               {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a>[compact_index];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+<div class="ttc" id="a00419_html_a5089b80f1c2f365c07dc075da232aa89"><div class="ttname"><a href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">tesseract::IndexMap::compact_map_</a></div><div class="ttdeci">GenericVector&lt; inT32 &gt; compact_map_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00080">indexmapbidi.h:80</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a838d73d3bb8c7e8a1b43761cf99f337d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::GridBase::GridBase </td>
+          <td class="memname">void tesseract::IndexMap::CopyFrom </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>gridsize</em>, </td>
+          <td class="paramtype">const <a class="el" href="a00419.html">IndexMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00836_source.html#l00033">33</a> of file <a class="el" href="a00836_source.html">indexmapbidi.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                           {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">sparse_size_</a> = src.sparse_size_;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a> = src.compact_map_;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="ttc" id="a00419_html_ae3ff257a84297cf8c67ee4bb27e54194"><div class="ttname"><a href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">tesseract::IndexMap::sparse_size_</a></div><div class="ttdeci">int sparse_size_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00077">indexmapbidi.h:77</a></div></div>
+<div class="ttc" id="a00419_html_a5089b80f1c2f365c07dc075da232aa89"><div class="ttname"><a href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">tesseract::IndexMap::compact_map_</a></div><div class="ttdeci">GenericVector&lt; inT32 &gt; compact_map_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00080">indexmapbidi.h:80</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6547a318de4fb3ca1422ba6c2c91b233"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::IndexMap::CopyFrom </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00420.html">IndexMapBiDi</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00836_source.html#l00037">37</a> of file <a class="el" href="a00836_source.html">indexmapbidi.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                               {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">sparse_size_</a> = src.SparseSize();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a> = src.compact_map_;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="ttc" id="a00419_html_ae3ff257a84297cf8c67ee4bb27e54194"><div class="ttname"><a href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">tesseract::IndexMap::sparse_size_</a></div><div class="ttdeci">int sparse_size_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00077">indexmapbidi.h:77</a></div></div>
+<div class="ttc" id="a00419_html_a5089b80f1c2f365c07dc075da232aa89"><div class="ttname"><a href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">tesseract::IndexMap::compact_map_</a></div><div class="ttdeci">GenericVector&lt; inT32 &gt; compact_map_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00080">indexmapbidi.h:80</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a74a60120500f7ced59f2cea3bc42138f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tesseract::IndexMap::DeSerialize </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>swap</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>bleft</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>tright</em>&#160;</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -229,16 +316,53 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01101_source.html#l00033">33</a> of file <a class="el" href="a01101_source.html">bbgrid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                                          {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="a00419.html#a9e23ba0f9d310510c9a2b3a38f11e683">Init</a>(<a class="code" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, bleft, tright);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="ttc" id="a00419_html_a9e23ba0f9d310510c9a2b3a38f11e683"><div class="ttname"><a href="a00419.html#a9e23ba0f9d310510c9a2b3a38f11e683">tesseract::GridBase::Init</a></div><div class="ttdeci">void Init(int gridsize, const ICOORD &amp;bleft, const ICOORD &amp;tright)</div><div class="ttdef"><b>Definition:</b> <a href="a01101_source.html#l00042">bbgrid.cpp:42</a></div></div>
-<div class="ttc" id="a00419_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00419.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00063">bbgrid.h:63</a></div></div>
+<p>Definition at line <a class="el" href="a00836_source.html#l00052">52</a> of file <a class="el" href="a00836_source.html">indexmapbidi.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                              {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> sparse_size;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (fread(&amp;sparse_size, <span class="keyword">sizeof</span>(sparse_size), 1, fp) != 1) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (swap)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="a00834.html#ae7eeeca49954d4b13d269729f2fecd5a">ReverseN</a>(&amp;sparse_size, <span class="keyword">sizeof</span>(sparse_size));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">sparse_size_</a> = sparse_size;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a>.<a class="code" href="a00406.html#aa4f5b1bc0d044fbd1fc77363b798c39c">DeSerialize</a>(swap, fp)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00419_html_ae3ff257a84297cf8c67ee4bb27e54194"><div class="ttname"><a href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">tesseract::IndexMap::sparse_size_</a></div><div class="ttdeci">int sparse_size_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00077">indexmapbidi.h:77</a></div></div>
+<div class="ttc" id="a00406_html_aa4f5b1bc0d044fbd1fc77363b798c39c"><div class="ttname"><a href="a00406.html#aa4f5b1bc0d044fbd1fc77363b798c39c">GenericVector::DeSerialize</a></div><div class="ttdeci">bool DeSerialize(bool swap, FILE *fp)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00898">genericvector.h:898</a></div></div>
+<div class="ttc" id="a00419_html_a5089b80f1c2f365c07dc075da232aa89"><div class="ttname"><a href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">tesseract::IndexMap::compact_map_</a></div><div class="ttdeci">GenericVector&lt; inT32 &gt; compact_map_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00080">indexmapbidi.h:80</a></div></div>
+<div class="ttc" id="a00834_html_ae7eeeca49954d4b13d269729f2fecd5a"><div class="ttname"><a href="a00834.html#ae7eeeca49954d4b13d269729f2fecd5a">ReverseN</a></div><div class="ttdeci">void ReverseN(void *ptr, int num_bytes)</div><div class="ttdef"><b>Definition:</b> <a href="a00834_source.html#l00177">helpers.h:177</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a7ee16480a8ca444d7847850ac0115813"></a>
+<a class="anchor" id="a067894b455dcd2e3d013a9449e1aae7d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tesseract::IndexMap::Serialize </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00836_source.html#l00043">43</a> of file <a class="el" href="a00836_source.html">indexmapbidi.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                       {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> sparse_size = <a class="code" href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">sparse_size_</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">if</span> (fwrite(&amp;sparse_size, <span class="keyword">sizeof</span>(sparse_size), 1, fp) != 1) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a>.<a class="code" href="a00406.html#a51aeec27092537323abc7174af1c16ef">Serialize</a>(fp)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00419_html_ae3ff257a84297cf8c67ee4bb27e54194"><div class="ttname"><a href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">tesseract::IndexMap::sparse_size_</a></div><div class="ttdeci">int sparse_size_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00077">indexmapbidi.h:77</a></div></div>
+<div class="ttc" id="a00406_html_a51aeec27092537323abc7174af1c16ef"><div class="ttname"><a href="a00406.html#a51aeec27092537323abc7174af1c16ef">GenericVector::Serialize</a></div><div class="ttdeci">bool Serialize(FILE *fp) const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00881">genericvector.h:881</a></div></div>
+<div class="ttc" id="a00419_html_a5089b80f1c2f365c07dc075da232aa89"><div class="ttname"><a href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">tesseract::IndexMap::compact_map_</a></div><div class="ttdeci">GenericVector&lt; inT32 &gt; compact_map_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00080">indexmapbidi.h:80</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a25dc97e755104bf3e58a8a9f0a254d18"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -246,10 +370,42 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::GridBase::~GridBase </td>
+          <td class="memname">virtual int tesseract::IndexMap::SparseSize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="a00420.html#ae108e47d0f0049137072ad2bc1f6705d">tesseract::IndexMapBiDi</a>.</p>
+
+<p>Definition at line <a class="el" href="a00837_source.html#l00057">57</a> of file <a class="el" href="a00837_source.html">indexmapbidi.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                 {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">sparse_size_</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="ttc" id="a00419_html_ae3ff257a84297cf8c67ee4bb27e54194"><div class="ttname"><a href="a00419.html#ae3ff257a84297cf8c67ee4bb27e54194">tesseract::IndexMap::sparse_size_</a></div><div class="ttdeci">int sparse_size_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00077">indexmapbidi.h:77</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af6d980041372e85befb238aae69192c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::IndexMap::SparseToCompact </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sparse_index</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -259,300 +415,20 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01101_source.html#l00037">37</a> of file <a class="el" href="a01101_source.html">bbgrid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ad20b2cb8eb2bf52871d5260c04949cce"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00425.html">ICOORD</a>&amp; tesseract::GridBase::bleft </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Reimplemented in <a class="el" href="a00420.html#a2c0f96f5d5fad6c9973e1b074fac5a03">tesseract::IndexMapBiDi</a>.</p>
 
-<p>Definition at line <a class="el" href="a01102_source.html#l00072">72</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                              {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">bleft_</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="ttc" id="a00419_html_a5f09e93ec22c3f7a245eb6611309d8d6"><div class="ttname"><a href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">tesseract::GridBase::bleft_</a></div><div class="ttdeci">ICOORD bleft_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00090">bbgrid.h:90</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a6349387c9d98fae34cf247b12cdc5a00"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::GridBase::ClipGridCoords </td>
-          <td>(</td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01101_source.html#l00061">61</a> of file <a class="el" href="a01101_source.html">bbgrid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  *x = <a class="code" href="a00853.html#af8739168d5b3235996eeb25dac3c4044">ClipToRange</a>(*x, 0, <a class="code" href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a> - 1);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  *y = <a class="code" href="a00853.html#af8739168d5b3235996eeb25dac3c4044">ClipToRange</a>(*y, 0, <a class="code" href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">gridheight_</a> - 1);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="ttc" id="a00419_html_a429c00f7b3ea66cfd63a75cfa2c1b43d"><div class="ttname"><a href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">tesseract::GridBase::gridwidth_</a></div><div class="ttdeci">int gridwidth_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00087">bbgrid.h:87</a></div></div>
-<div class="ttc" id="a00419_html_ae70ca33c0676a296720fea5ddc0aa5cc"><div class="ttname"><a href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">tesseract::GridBase::gridheight_</a></div><div class="ttdeci">int gridheight_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00088">bbgrid.h:88</a></div></div>
-<div class="ttc" id="a00853_html_af8739168d5b3235996eeb25dac3c4044"><div class="ttname"><a href="a00853.html#af8739168d5b3235996eeb25dac3c4044">ClipToRange</a></div><div class="ttdeci">T ClipToRange(const T &amp;x, const T &amp;lower_bound, const T &amp;upper_bound)</div><div class="ttdef"><b>Definition:</b> <a href="a00853_source.html#l00115">helpers.h:115</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a9cb158bba184d657c51257b98eea9f8f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::GridBase::GridCoords </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>grid_x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>grid_y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01101_source.html#l00054">54</a> of file <a class="el" href="a01101_source.html">bbgrid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                                      {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  *grid_x = (x - <a class="code" href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">bleft_</a>.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a>()) / <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  *grid_y = (y - <a class="code" href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">bleft_</a>.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a>()) / <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="a00419.html#a6349387c9d98fae34cf247b12cdc5a00">ClipGridCoords</a>(grid_x, grid_y);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="ttc" id="a00419_html_a0758dd90d5ce47e504a4148f4cda33f3"><div class="ttname"><a href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">tesseract::GridBase::gridsize_</a></div><div class="ttdeci">int gridsize_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00086">bbgrid.h:86</a></div></div>
-<div class="ttc" id="a00425_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00056">points.h:56</a></div></div>
-<div class="ttc" id="a00425_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00425.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00052">points.h:52</a></div></div>
-<div class="ttc" id="a00419_html_a5f09e93ec22c3f7a245eb6611309d8d6"><div class="ttname"><a href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">tesseract::GridBase::bleft_</a></div><div class="ttdeci">ICOORD bleft_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00090">bbgrid.h:90</a></div></div>
-<div class="ttc" id="a00419_html_a6349387c9d98fae34cf247b12cdc5a00"><div class="ttname"><a href="a00419.html#a6349387c9d98fae34cf247b12cdc5a00">tesseract::GridBase::ClipGridCoords</a></div><div class="ttdeci">void ClipGridCoords(int *x, int *y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01101_source.html#l00061">bbgrid.cpp:61</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a07e6b230c150180d009ef1f317e642f2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::GridBase::gridheight </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01102_source.html#l00069">69</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                         {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">gridheight_</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
-<div class="ttc" id="a00419_html_ae70ca33c0676a296720fea5ddc0aa5cc"><div class="ttname"><a href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">tesseract::GridBase::gridheight_</a></div><div class="ttdeci">int gridheight_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00088">bbgrid.h:88</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="afff2cee730084711205977b5fcb4901e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::GridBase::gridsize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01102_source.html#l00063">63</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                       {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
-<div class="ttc" id="a00419_html_a0758dd90d5ce47e504a4148f4cda33f3"><div class="ttname"><a href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">tesseract::GridBase::gridsize_</a></div><div class="ttdeci">int gridsize_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00086">bbgrid.h:86</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a0a38ea995b9d65f8b67d66d5501a5b80"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::GridBase::gridwidth </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01102_source.html#l00066">66</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="ttc" id="a00419_html_a429c00f7b3ea66cfd63a75cfa2c1b43d"><div class="ttname"><a href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">tesseract::GridBase::gridwidth_</a></div><div class="ttdeci">int gridwidth_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00087">bbgrid.h:87</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a9e23ba0f9d310510c9a2b3a38f11e683"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::GridBase::Init </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>gridsize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>bleft</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00425.html">ICOORD</a> &amp;&#160;</td>
-          <td class="paramname"><em>tright</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01101_source.html#l00042">42</a> of file <a class="el" href="a01101_source.html">bbgrid.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                           {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a> = <a class="code" href="a00419.html#afff2cee730084711205977b5fcb4901e">gridsize</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">bleft_</a> = <a class="code" href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="a00419.html#ac348165d112922b3d956f924405012cd">tright_</a> = <a class="code" href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a> == 0)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a> = 1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a> = (tright.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a>() - bleft.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a>() + <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a> - 1) / <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">gridheight_</a> = (tright.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a>() - bleft.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a>() + <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a> - 1) / <a class="code" href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="a00419.html#adcda3a0efeed2a95fc777fc7127898a6">gridbuckets_</a> = <a class="code" href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a> * <a class="code" href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">gridheight_</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="a00419_html_adcda3a0efeed2a95fc777fc7127898a6"><div class="ttname"><a href="a00419.html#adcda3a0efeed2a95fc777fc7127898a6">tesseract::GridBase::gridbuckets_</a></div><div class="ttdeci">int gridbuckets_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00089">bbgrid.h:89</a></div></div>
-<div class="ttc" id="a00419_html_a429c00f7b3ea66cfd63a75cfa2c1b43d"><div class="ttname"><a href="a00419.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">tesseract::GridBase::gridwidth_</a></div><div class="ttdeci">int gridwidth_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00087">bbgrid.h:87</a></div></div>
-<div class="ttc" id="a00419_html_a0758dd90d5ce47e504a4148f4cda33f3"><div class="ttname"><a href="a00419.html#a0758dd90d5ce47e504a4148f4cda33f3">tesseract::GridBase::gridsize_</a></div><div class="ttdeci">int gridsize_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00086">bbgrid.h:86</a></div></div>
-<div class="ttc" id="a00419_html_ae70ca33c0676a296720fea5ddc0aa5cc"><div class="ttname"><a href="a00419.html#ae70ca33c0676a296720fea5ddc0aa5cc">tesseract::GridBase::gridheight_</a></div><div class="ttdeci">int gridheight_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00088">bbgrid.h:88</a></div></div>
-<div class="ttc" id="a00425_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00056">points.h:56</a></div></div>
-<div class="ttc" id="a00419_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00419.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00063">bbgrid.h:63</a></div></div>
-<div class="ttc" id="a00419_html_ad20b2cb8eb2bf52871d5260c04949cce"><div class="ttname"><a href="a00419.html#ad20b2cb8eb2bf52871d5260c04949cce">tesseract::GridBase::bleft</a></div><div class="ttdeci">const ICOORD &amp; bleft() const </div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00072">bbgrid.h:72</a></div></div>
-<div class="ttc" id="a00425_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00425.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00052">points.h:52</a></div></div>
-<div class="ttc" id="a00419_html_a5f09e93ec22c3f7a245eb6611309d8d6"><div class="ttname"><a href="a00419.html#a5f09e93ec22c3f7a245eb6611309d8d6">tesseract::GridBase::bleft_</a></div><div class="ttdeci">ICOORD bleft_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00090">bbgrid.h:90</a></div></div>
-<div class="ttc" id="a00419_html_aa94e147841b6a4fae0b28e7e872685a5"><div class="ttname"><a href="a00419.html#aa94e147841b6a4fae0b28e7e872685a5">tesseract::GridBase::tright</a></div><div class="ttdeci">const ICOORD &amp; tright() const </div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00075">bbgrid.h:75</a></div></div>
-<div class="ttc" id="a00419_html_ac348165d112922b3d956f924405012cd"><div class="ttname"><a href="a00419.html#ac348165d112922b3d956f924405012cd">tesseract::GridBase::tright_</a></div><div class="ttdeci">ICOORD tright_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00091">bbgrid.h:91</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aa94e147841b6a4fae0b28e7e872685a5"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00425.html">ICOORD</a>&amp; tesseract::GridBase::tright </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01102_source.html#l00075">75</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                               {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00419.html#ac348165d112922b3d956f924405012cd">tright_</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
-<div class="ttc" id="a00419_html_ac348165d112922b3d956f924405012cd"><div class="ttname"><a href="a00419.html#ac348165d112922b3d956f924405012cd">tesseract::GridBase::tright_</a></div><div class="ttdeci">ICOORD tright_</div><div class="ttdef"><b>Definition:</b> <a href="a01102_source.html#l00091">bbgrid.h:91</a></div></div>
+<p>Definition at line <a class="el" href="a00836_source.html#l00027">27</a> of file <a class="el" href="a00836_source.html">indexmapbidi.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">int</span> result = <a class="code" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a>.<a class="code" href="a00406.html#a2eaa0df35abb2c00571bb1d6e5d73377">binary_search</a>(sparse_index);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">compact_map_</a>[result] == sparse_index ? result : -1;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="ttc" id="a00406_html_a2eaa0df35abb2c00571bb1d6e5d73377"><div class="ttname"><a href="a00406.html#a2eaa0df35abb2c00571bb1d6e5d73377">GenericVector::binary_search</a></div><div class="ttdeci">int binary_search(const T &amp;target) const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00238">genericvector.h:238</a></div></div>
+<div class="ttc" id="a00419_html_a5089b80f1c2f365c07dc075da232aa89"><div class="ttname"><a href="a00419.html#a5089b80f1c2f365c07dc075da232aa89">tesseract::IndexMap::compact_map_</a></div><div class="ttdeci">GenericVector&lt; inT32 &gt; compact_map_</div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00080">indexmapbidi.h:80</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a5f09e93ec22c3f7a245eb6611309d8d6"></a>
+<a class="anchor" id="a5089b80f1c2f365c07dc075da232aa89"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -560,7 +436,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00425.html">ICOORD</a> tesseract::GridBase::bleft_</td>
+          <td class="memname"><a class="el" href="a00406.html">GenericVector</a>&lt;<a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&gt; tesseract::IndexMap::compact_map_</td>
         </tr>
       </table>
   </td>
@@ -570,11 +446,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01102_source.html#l00090">90</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
+<p>Definition at line <a class="el" href="a00837_source.html#l00080">80</a> of file <a class="el" href="a00837_source.html">indexmapbidi.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="adcda3a0efeed2a95fc777fc7127898a6"></a>
+<a class="anchor" id="ae3ff257a84297cf8c67ee4bb27e54194"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -582,7 +458,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int tesseract::GridBase::gridbuckets_</td>
+          <td class="memname">int tesseract::IndexMap::sparse_size_</td>
         </tr>
       </table>
   </td>
@@ -592,109 +468,21 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01102_source.html#l00089">89</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae70ca33c0676a296720fea5ddc0aa5cc"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::GridBase::gridheight_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01102_source.html#l00088">88</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0758dd90d5ce47e504a4148f4cda33f3"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::GridBase::gridsize_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01102_source.html#l00086">86</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a429c00f7b3ea66cfd63a75cfa2c1b43d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::GridBase::gridwidth_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01102_source.html#l00087">87</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac348165d112922b3d956f924405012cd"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00425.html">ICOORD</a> tesseract::GridBase::tright_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01102_source.html#l00091">91</a> of file <a class="el" href="a01102_source.html">bbgrid.h</a>.</p>
+<p>Definition at line <a class="el" href="a00837_source.html#l00077">77</a> of file <a class="el" href="a00837_source.html">indexmapbidi.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>textord/<a class="el" href="a01102_source.html">bbgrid.h</a></li>
-<li>textord/<a class="el" href="a01101_source.html">bbgrid.cpp</a></li>
+<li>ccutil/<a class="el" href="a00837_source.html">indexmapbidi.h</a></li>
+<li>ccutil/<a class="el" href="a00836_source.html">indexmapbidi.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00419.html">GridBase</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:52 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00419.html">IndexMap</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:27 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

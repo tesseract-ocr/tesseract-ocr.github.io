@@ -1,10 +1,14 @@
 var a00353 =
 [
-    [ "DANGERR_INFO", "a00353.html#a84f9091bf2031485313a01c27acadba6", null ],
-    [ "DANGERR_INFO", "a00353.html#aaef16575b8b0d298f1dcb4f56299f815", null ],
-    [ "begin", "a00353.html#a7fb0c9a1b1a22a2b3c308011a207e2c0", null ],
-    [ "correct_is_ngram", "a00353.html#a6aa009d85760b7acc7bf50158d64a143", null ],
-    [ "dangerous", "a00353.html#af8bd75c848bf8c8c43b4d6ae8350c96b", null ],
-    [ "end", "a00353.html#adfaf65ffc0f21a2fa0cbc56817b2549a", null ],
-    [ "leftmost", "a00353.html#abe509f094f3675bb73f82ce17fc703bc", null ]
+    [ "DetLineFit", "a00353.html#ab8226dd14457087c9a1445d0dc06353c", null ],
+    [ "~DetLineFit", "a00353.html#a1068df3ab255efe45ec89e19c961a99a", null ],
+    [ "Add", "a00353.html#a4eba2b6e761080e5d1a48c9c797257b2", null ],
+    [ "Add", "a00353.html#a973b2867010264127c143bbc171fd098", null ],
+    [ "Clear", "a00353.html#a97c074bfc1d7106ddda618ea8cf45ff7", null ],
+    [ "ConstrainedFit", "a00353.html#a6ef9f742eafdfaad81a30a3799800725", null ],
+    [ "ConstrainedFit", "a00353.html#a58c6ff442c9ab172952eea607f83dca8", null ],
+    [ "Fit", "a00353.html#a768ec4a8f90593d8d679981c873f7a56", null ],
+    [ "Fit", "a00353.html#a95bd394ff5fbd05c063aeb260bccfbe9", null ],
+    [ "Fit", "a00353.html#a45152c616343b9ff3ab245a6343bc794", null ],
+    [ "SufficientPointsForIndependentFit", "a00353.html#a1ad6f108535f64aed513e9107a88aa28", null ]
 ];

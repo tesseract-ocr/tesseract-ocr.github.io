@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: training/commandlineflags.cpp Source File</title>
+<title>Tesseract: training/ligature_table.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,353 +105,244 @@ $(document).ready(function(){initNavTree('a01184_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">commandlineflags.cpp</div>  </div>
+<div class="title">ligature_table.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01184.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01185.html">commandlineflags.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifdef USE_STD_NAMESPACE</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">bool</span> IntFlagExists(<span class="keyword">const</span> <span class="keywordtype">char</span>* flag_name, <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>* value) {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <a class="code" href="a00578.html">STRING</a> full_flag_name(<span class="stringliteral">&quot;FLAGS_&quot;</span>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  full_flag_name += flag_name;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;IntParam*&gt;</a> empty;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  IntParam *p = ParamUtils::FindParam&lt;IntParam&gt;(</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;      full_flag_name.string(), <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a22c42b48d2c626d2f3f3b0abd21bc902">int_params</a>, empty);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">if</span> (p == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  *value = (<a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>)(*p);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">bool</span> DoubleFlagExists(<span class="keyword">const</span> <span class="keywordtype">char</span>* flag_name, <span class="keywordtype">double</span>* value) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="a00578.html">STRING</a> full_flag_name(<span class="stringliteral">&quot;FLAGS_&quot;</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  full_flag_name += flag_name;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;DoubleParam*&gt;</a> empty;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  DoubleParam *p = ParamUtils::FindParam&lt;DoubleParam&gt;(</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      full_flag_name.string(), <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a83a1b9a0571c97380bdf3a32591cf196">double_params</a>, empty);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span> (p == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  *value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(*p);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">bool</span> BoolFlagExists(<span class="keyword">const</span> <span class="keywordtype">char</span>* flag_name, <span class="keywordtype">bool</span>* value) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="a00578.html">STRING</a> full_flag_name(<span class="stringliteral">&quot;FLAGS_&quot;</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  full_flag_name += flag_name;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;BoolParam*&gt;</a> empty;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  BoolParam *p = ParamUtils::FindParam&lt;BoolParam&gt;(</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      full_flag_name.string(), <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a6bb13133287d8d8d18c81bb974b1b54f">bool_params</a>, empty);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span> (p == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  *value = (<a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>)(*p);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">bool</span> StringFlagExists(<span class="keyword">const</span> <span class="keywordtype">char</span>* flag_name, <span class="keyword">const</span> <span class="keywordtype">char</span>** value) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a00578.html">STRING</a> full_flag_name(<span class="stringliteral">&quot;FLAGS_&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  full_flag_name += flag_name;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;StringParam*&gt;</a> empty;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  StringParam *p = ParamUtils::FindParam&lt;StringParam&gt;(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      full_flag_name.string(), <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a446a70d7d7c85af255d053ae54c5df8a">string_params</a>, empty);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  *value = (p != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) ? p-&gt;string() : <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">return</span> p != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> SetIntFlagValue(<span class="keyword">const</span> <span class="keywordtype">char</span>* flag_name, <span class="keyword">const</span> <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> new_val) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="a00578.html">STRING</a> full_flag_name(<span class="stringliteral">&quot;FLAGS_&quot;</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  full_flag_name += flag_name;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;IntParam*&gt;</a> empty;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  IntParam *p = ParamUtils::FindParam&lt;IntParam&gt;(</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      full_flag_name.string(), <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a22c42b48d2c626d2f3f3b0abd21bc902">int_params</a>, empty);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(p != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  p-&gt;set_value(new_val);</div>
+<a href="a01184.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        ligature_table.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Class for adding and removing optional latin ligatures,</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *              conditional on codepoint support by a specified font</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *              (if specified).</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:      Ranjith Unnikrishnan</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:     Mon Nov 18 2013</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * (C) Copyright 2013, Google Inc.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * limitations under the License.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01185.html">ligature_table.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01192.html">pango_font_info.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01201.html">tlog.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00866.html">unichar.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00870.html">unicharset.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;unicode/errorcode.h&quot;</span>  <span class="comment">// from libicu</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;unicode/normlzr.h&quot;</span>    <span class="comment">// from libicu</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;unicode/unistr.h&quot;</span>     <span class="comment">// from libicu</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;unicode/utypes.h&quot;</span>     <span class="comment">// from libicu</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">static</span> <span class="keywordtype">string</span> EncodeAsUTF8(<span class="keyword">const</span> <a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> ch32) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="a00637.html">UNICHAR</a> uni_ch(ch32);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">return</span> string(uni_ch.utf8(), uni_ch.utf8_len());</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Range of optional latin ligature characters in Unicode to build ligatures</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// from. Note that this range does not contain the custom ligatures that we</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// encode in the private use area.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01267.html#aa36914ff2c42e34ac0a61f8d3f176824">   45</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a01267.html#aa36914ff2c42e34ac0a61f8d3f176824">kMinLigature</a> = 0xfb00;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a01267.html#af9a9e14acbc32bb5c10dc55b29ef58d9">   46</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a01267.html#af9a9e14acbc32bb5c10dc55b29ef58d9">kMaxLigature</a> = 0xfb4f;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* static */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="a00551.html">SmartPtr&lt;LigatureTable&gt;</a> <a class="code" href="a00454.html#a2dfc35aae71697ea0d90f0e73980fc43">LigatureTable::instance_</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/* static */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00454.html#aba486383e49efbda9ea0b9b83836f6b1">   52</a></span>&#160;<a class="code" href="a00454.html">LigatureTable</a>* <a class="code" href="a00454.html#aba486383e49efbda9ea0b9b83836f6b1">LigatureTable::Get</a>() {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00454.html#a2dfc35aae71697ea0d90f0e73980fc43">instance_</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="a00454.html#a2dfc35aae71697ea0d90f0e73980fc43">instance_</a>.reset(<span class="keyword">new</span> <a class="code" href="a00454.html#af898d1f98a23a8d9dc67f69d214546f3">LigatureTable</a>());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="a00454.html#a2dfc35aae71697ea0d90f0e73980fc43">instance_</a>-&gt;Init();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00454.html#a2dfc35aae71697ea0d90f0e73980fc43">instance_</a>.get();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> SetDoubleFlagValue(<span class="keyword">const</span> <span class="keywordtype">char</span>* flag_name, <span class="keyword">const</span> <span class="keywordtype">double</span> new_val) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="a00578.html">STRING</a> full_flag_name(<span class="stringliteral">&quot;FLAGS_&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  full_flag_name += flag_name;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;DoubleParam*&gt;</a> empty;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  DoubleParam *p = ParamUtils::FindParam&lt;DoubleParam&gt;(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      full_flag_name.string(), <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a83a1b9a0571c97380bdf3a32591cf196">double_params</a>, empty);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(p != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  p-&gt;set_value(new_val);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> SetBoolFlagValue(<span class="keyword">const</span> <span class="keywordtype">char</span>* flag_name, <span class="keyword">const</span> <span class="keywordtype">bool</span> new_val) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="a00578.html">STRING</a> full_flag_name(<span class="stringliteral">&quot;FLAGS_&quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  full_flag_name += flag_name;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;BoolParam*&gt;</a> empty;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  BoolParam *p = ParamUtils::FindParam&lt;BoolParam&gt;(</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      full_flag_name.string(), <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a6bb13133287d8d8d18c81bb974b1b54f">bool_params</a>, empty);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(p != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  p-&gt;set_value(new_val);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> SetStringFlagValue(<span class="keyword">const</span> <span class="keywordtype">char</span>* flag_name, <span class="keyword">const</span> <span class="keywordtype">char</span>* new_val) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="a00578.html">STRING</a> full_flag_name(<span class="stringliteral">&quot;FLAGS_&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  full_flag_name += flag_name;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="a00416.html">GenericVector&lt;StringParam*&gt;</a> empty;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  StringParam *p = ParamUtils::FindParam&lt;StringParam&gt;(</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      full_flag_name.string(), <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a446a70d7d7c85af255d053ae54c5df8a">string_params</a>, empty);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(p != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  p-&gt;set_value(<a class="code" href="a00578.html">STRING</a>(new_val));</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">bool</span> SafeAtoi(<span class="keyword">const</span> <span class="keywordtype">char</span>* str, <span class="keywordtype">int</span>* val) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">char</span> *endptr = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  *val = strtol(str, &amp;endptr, 10);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">return</span> endptr != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; *endptr == <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">bool</span> SafeAtod(<span class="keyword">const</span> <span class="keywordtype">char</span>* str, <span class="keywordtype">double</span>* val) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">char</span> *endptr = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  *val = strtod(str, &amp;endptr);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> endptr != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; *endptr == <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> PrintCommandLineFlags() {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* kFlagNamePrefix = <span class="stringliteral">&quot;FLAGS_&quot;</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> kFlagNamePrefixLen = strlen(kFlagNamePrefix);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a22c42b48d2c626d2f3f3b0abd21bc902">int_params</a>.size(); ++i) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">if</span> (!strncmp(<a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;int_params[i]-&gt;name_str(),</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                 kFlagNamePrefix, kFlagNamePrefixLen)) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;  --%s  %s  (type:int default:%d)\n&quot;</span>,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;int_params[i]-&gt;name_str() + kFlagNamePrefixLen,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;int_params[i]-&gt;info_str(),</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;              <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>(*(<a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;int_params[i])));</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a83a1b9a0571c97380bdf3a32591cf196">double_params</a>.size(); ++i) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (!strncmp(<a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;double_params[i]-&gt;name_str(),</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                 kFlagNamePrefix, kFlagNamePrefixLen)) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;  --%s  %s  (type:double default:%g)\n&quot;</span>,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;double_params[i]-&gt;name_str() + kFlagNamePrefixLen,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;double_params[i]-&gt;info_str(),</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;              static_cast&lt;double&gt;(*(<a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;double_params[i])));</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a6bb13133287d8d8d18c81bb974b1b54f">bool_params</a>.size(); ++i) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (!strncmp(<a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;bool_params[i]-&gt;name_str(),</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 kFlagNamePrefix, kFlagNamePrefixLen)) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;  --%s  %s  (type:bool default:%s)\n&quot;</span>,</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;bool_params[i]-&gt;name_str() + kFlagNamePrefixLen,</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;bool_params[i]-&gt;info_str(),</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;              (<a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>(*(<a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;bool_params[i])) ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>));</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;<a class="code" href="a00517.html#a446a70d7d7c85af255d053ae54c5df8a">string_params</a>.size(); ++i) {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (!strncmp(<a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;string_params[i]-&gt;name_str(),</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                 kFlagNamePrefix, kFlagNamePrefixLen)) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;  --%s  %s  (type:string default:%s)\n&quot;</span>,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;string_params[i]-&gt;name_str() + kFlagNamePrefixLen,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;string_params[i]-&gt;info_str(),</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;              <a class="code" href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a>()-&gt;string_params[i]-&gt;<span class="keywordtype">string</span>());</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01279.html#a07614d344b574ebcc2d3ae4d68fad1d5">ParseCommandLineFlags</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* usage,</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                           <span class="keywordtype">int</span>* argc, <span class="keywordtype">char</span>*** argv,</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">bool</span> remove_flags) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordflow">for</span> (i = 1; i &lt; *argc; ++i) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* current_arg = (*argv)[i];</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">// If argument does not start with a hyphen then break.</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">if</span> (current_arg[0] != <span class="charliteral">&#39;-&#39;</span>) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// Position current_arg after startings hyphens. We treat a sequence of</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// consecutive hyphens of any length identically.</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">while</span> (*current_arg == <span class="charliteral">&#39;-&#39;</span>) {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      ++current_arg;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// If this is asking for usage, print the help message and abort.</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> (!strcmp(current_arg, <span class="stringliteral">&quot;help&quot;</span>) ||</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        !strcmp(current_arg, <span class="stringliteral">&quot;helpshort&quot;</span>)) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;USAGE: %s\n&quot;</span>, usage);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      PrintCommandLineFlags();</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      exit(0);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// Find the starting position of the value if it was specified in this</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// string.</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* equals_position = strchr(current_arg, <span class="charliteral">&#39;=&#39;</span>);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* rhs = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (equals_position != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      rhs = equals_position + 1;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// Extract the flag name.</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="a00578.html">STRING</a> lhs;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (equals_position == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      lhs = current_arg;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      lhs.<a class="code" href="a00578.html#a8cfe836a7f55f4761936ea2231b6b9d2">assign</a>(current_arg, equals_position - current_arg);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">if</span> (!lhs.<a class="code" href="a00578.html#a168505a533eda60219c93e25adf4cdc5">length</a>()) {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Bad argument: %s\n&quot;</span>, (*argv)[i]);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      exit(1);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="comment">// Find the flag name in the list of global flags.</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">// inT32 flag</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> int_val;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span> (IntFlagExists(lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), &amp;int_val)) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <span class="keywordflow">if</span> (rhs != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">if</span> (!strlen(rhs)) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;          <span class="comment">// Bad input of the format --int_flag=</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Bad argument: %s\n&quot;</span>, (*argv)[i]);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">if</span> (!SafeAtoi(rhs, &amp;int_val)) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Could not parse int from %s in flag %s\n&quot;</span>,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                  rhs, (*argv)[i]);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">// We need to parse the next argument</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">if</span> (i + 1 &gt;= *argc) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Could not find value argument for flag %s\n&quot;</span>,</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                  lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          ++i;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;          <span class="keywordflow">if</span> (!SafeAtoi((*argv)[i], &amp;int_val)) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Could not parse inT32 from %s\n&quot;</span>, (*argv)[i]);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            exit(1);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;          }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      SetIntFlagValue(lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), int_val);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">// double flag</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">double</span> double_val;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (DoubleFlagExists(lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), &amp;double_val)) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <span class="keywordflow">if</span> (rhs != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">if</span> (!strlen(rhs)) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;          <span class="comment">// Bad input of the format --double_flag=</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Bad argument: %s\n&quot;</span>, (*argv)[i]);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">if</span> (!SafeAtod(rhs, &amp;double_val)) {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Could not parse double from %s in flag %s\n&quot;</span>,</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                  rhs, (*argv)[i]);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="comment">// We need to parse the next argument</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">if</span> (i + 1 &gt;= *argc) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Could not find value argument for flag %s\n&quot;</span>,</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                  lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;          ++i;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;          <span class="keywordflow">if</span> (!SafeAtod((*argv)[i], &amp;double_val)) {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Could not parse double from %s\n&quot;</span>, (*argv)[i]);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            exit(1);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;          }</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      SetDoubleFlagValue(lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), double_val);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">// Bool flag. Allow input forms --flag (equivalent to --flag=true),</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// --flag=false, --flag=true, --flag=0 and --flag=1</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">bool</span> bool_val;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">if</span> (BoolFlagExists(lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), &amp;bool_val)) {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <span class="keywordflow">if</span> (rhs == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="comment">// --flag form</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        bool_val = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">if</span> (!strlen(rhs)) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;          <span class="comment">// Bad input of the format --bool_flag=</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Bad argument: %s\n&quot;</span>, (*argv)[i]);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        }</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">if</span> (!strcmp(rhs, <span class="stringliteral">&quot;false&quot;</span>) || !strcmp(rhs, <span class="stringliteral">&quot;0&quot;</span>)) {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;          bool_val = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(rhs, <span class="stringliteral">&quot;true&quot;</span>) || !strcmp(rhs, <span class="stringliteral">&quot;1&quot;</span>)) {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;          bool_val = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Could not parse bool from flag %s\n&quot;</span>, (*argv)[i]);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      SetBoolFlagValue(lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), bool_val);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// string flag</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* string_val;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">if</span> (StringFlagExists(lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), &amp;string_val)) {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      <span class="keywordflow">if</span> (rhs != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        string_val = rhs;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="comment">// Pick the next argument</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">if</span> (i + 1 &gt;= *argc) {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;          <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Could not find string value for flag %s\n&quot;</span>,</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                  lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;          exit(1);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;          string_val = (*argv)[++i];</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        }</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      SetStringFlagValue(lhs.<a class="code" href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), string_val);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// Flag was not found. Exit with an error message.</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ERROR: Non-existent flag %s\n&quot;</span>, (*argv)[i]);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    exit(1);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  }  <span class="comment">// for each argv</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <span class="keywordflow">if</span> (remove_flags) {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    (*argv)[i - 1] = (*argv)[0];</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    (*argv) += (i - 1);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    (*argc) -= (i - 1);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#include &quot;base/init_google.h&quot;</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="a01279.html#a07614d344b574ebcc2d3ae4d68fad1d5">  312</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01279.html#a07614d344b574ebcc2d3ae4d68fad1d5">ParseCommandLineFlags</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* usage,</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                           <span class="keywordtype">int</span>* argc, <span class="keywordtype">char</span>*** argv,</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                           <span class="keyword">const</span> <span class="keywordtype">bool</span> remove_flags) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  InitGoogle(usage, argc, argv, remove_flags);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00854_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00102">host.h:102</a></div></div>
-<div class="ttc" id="a01185_html"><div class="ttname"><a href="a01185.html">commandlineflags.h</a></div></div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a00578_html_a168505a533eda60219c93e25adf4cdc5"><div class="ttname"><a href="a00578.html#a168505a533eda60219c93e25adf4cdc5">STRING::length</a></div><div class="ttdeci">inT32 length() const </div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00188">strngs.cpp:188</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a01279_html_a07614d344b574ebcc2d3ae4d68fad1d5"><div class="ttname"><a href="a01279.html#a07614d344b574ebcc2d3ae4d68fad1d5">tesseract::ParseCommandLineFlags</a></div><div class="ttdeci">void ParseCommandLineFlags(const char *usage, int *argc, char ***argv, const bool remove_flags)</div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00312">commandlineflags.cpp:312</a></div></div>
-<div class="ttc" id="a00866_html_a71a3243019391d3a438fd279c07cef87"><div class="ttname"><a href="a00866.html#a71a3243019391d3a438fd279c07cef87">GlobalParams</a></div><div class="ttdeci">tesseract::ParamsVectors * GlobalParams()</div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00033">params.cpp:33</a></div></div>
-<div class="ttc" id="a00517_html_a6bb13133287d8d8d18c81bb974b1b54f"><div class="ttname"><a href="a00517.html#a6bb13133287d8d8d18c81bb974b1b54f">tesseract::ParamsVectors::bool_params</a></div><div class="ttdeci">GenericVector&lt; BoolParam * &gt; bool_params</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00045">params.h:45</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00517_html_a22c42b48d2c626d2f3f3b0abd21bc902"><div class="ttname"><a href="a00517.html#a22c42b48d2c626d2f3f3b0abd21bc902">tesseract::ParamsVectors::int_params</a></div><div class="ttdeci">GenericVector&lt; IntParam * &gt; int_params</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00044">params.h:44</a></div></div>
-<div class="ttc" id="a00578_html_a32beee43ecab1bed8bebc3466896ad6e"><div class="ttname"><a href="a00578.html#a32beee43ecab1bed8bebc3466896ad6e">STRING::string</a></div><div class="ttdeci">const char * string() const </div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00193">strngs.cpp:193</a></div></div>
-<div class="ttc" id="a00578_html"><div class="ttname"><a href="a00578.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00044">strngs.h:44</a></div></div>
-<div class="ttc" id="a00854_html_a7712a7e28433d0ade59219a129549b6f"><div class="ttname"><a href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a></div><div class="ttdeci">unsigned char BOOL8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00113">host.h:113</a></div></div>
-<div class="ttc" id="a00578_html_a8cfe836a7f55f4761936ea2231b6b9d2"><div class="ttname"><a href="a00578.html#a8cfe836a7f55f4761936ea2231b6b9d2">STRING::assign</a></div><div class="ttdeci">void assign(const char *cstr, int len)</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00417">strngs.cpp:417</a></div></div>
-<div class="ttc" id="a00517_html_a83a1b9a0571c97380bdf3a32591cf196"><div class="ttname"><a href="a00517.html#a83a1b9a0571c97380bdf3a32591cf196">tesseract::ParamsVectors::double_params</a></div><div class="ttdeci">GenericVector&lt; DoubleParam * &gt; double_params</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00047">params.h:47</a></div></div>
-<div class="ttc" id="a00416_html"><div class="ttname"><a href="a00416.html">GenericVector</a></div><div class="ttdef"><b>Definition:</b> <a href="a00682_source.html#l00041">baseapi.h:41</a></div></div>
-<div class="ttc" id="a00846_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00084">errcode.h:84</a></div></div>
-<div class="ttc" id="a00517_html_a446a70d7d7c85af255d053ae54c5df8a"><div class="ttname"><a href="a00517.html#a446a70d7d7c85af255d053ae54c5df8a">tesseract::ParamsVectors::string_params</a></div><div class="ttdeci">GenericVector&lt; StringParam * &gt; string_params</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00046">params.h:46</a></div></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00454.html#af898d1f98a23a8d9dc67f69d214546f3">   60</a></span>&#160;<a class="code" href="a00454.html#af898d1f98a23a8d9dc67f69d214546f3">LigatureTable::LigatureTable</a>() : min_lig_length_(0), max_lig_length_(0),</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                 min_norm_length_(0), max_norm_length_(0) {}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00454.html#a4b8c8b0c869b143ecfa0eea892ffdf8f">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00454.html#a4b8c8b0c869b143ecfa0eea892ffdf8f">LigatureTable::Init</a>() {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00454.html#a89607ae8cabe9cff8bddb99ff57f8ff9">norm_to_lig_table_</a>.empty()) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a> lig = kMinLigature; lig &lt;= <a class="code" href="a01267.html#af9a9e14acbc32bb5c10dc55b29ef58d9">kMaxLigature</a>; ++lig) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="comment">// For each char in the range, convert to utf8, nfkc normalize, and if</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="comment">// the strings are different put the both mappings in the hash_maps.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordtype">string</span> lig8 = EncodeAsUTF8(lig);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      icu::UnicodeString unicode_lig8(static_cast&lt;UChar32&gt;(lig));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      icu::UnicodeString normed8_result;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      icu::ErrorCode status;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      icu::Normalizer::normalize(unicode_lig8, UNORM_NFKC, 0, normed8_result,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                 status);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="keywordtype">string</span> normed8;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      normed8_result.toUTF8String(normed8);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="comment">// The icu::Normalizer maps the &quot;LONG S T&quot; ligature to &quot;st&quot;. Correct that</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="comment">// here manually so that AddLigatures() will work as desired.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">if</span> (lig8 == <span class="stringliteral">&quot;\uFB05&quot;</span>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        normed8 = <span class="stringliteral">&quot;ſt&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keywordtype">int</span> lig_length = lig8.length();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keywordtype">int</span> norm_length = normed8.size();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordflow">if</span> (normed8 != lig8 &amp;&amp; lig_length &gt; 1 &amp;&amp; norm_length &gt; 1) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="a00454.html#a89607ae8cabe9cff8bddb99ff57f8ff9">norm_to_lig_table_</a>[normed8] = lig8;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="a00454.html#ac2bbda92d0e7c5e07e11dc028423220f">lig_to_norm_table_</a>[lig8] = normed8;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="a00454.html#af5e58c8e852e6cf6421179792e133ac6">min_lig_length_</a> == 0 || lig_length &lt; <a class="code" href="a00454.html#af5e58c8e852e6cf6421179792e133ac6">min_lig_length_</a>)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          <a class="code" href="a00454.html#af5e58c8e852e6cf6421179792e133ac6">min_lig_length_</a> = lig_length;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (lig_length &gt; <a class="code" href="a00454.html#a7ebf0d92cf6632ed160a8967530ee27e">max_lig_length_</a>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;          <a class="code" href="a00454.html#a7ebf0d92cf6632ed160a8967530ee27e">max_lig_length_</a> = lig_length;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">min_norm_length_</a> == 0 || norm_length &lt; <a class="code" href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">min_norm_length_</a>)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          <a class="code" href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">min_norm_length_</a> = norm_length;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (norm_length &gt; <a class="code" href="a00454.html#aa8585a5f8ba698854023d2cf7b32b0fb">max_norm_length_</a>)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;          <a class="code" href="a00454.html#aa8585a5f8ba698854023d2cf7b32b0fb">max_norm_length_</a> = norm_length;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Add custom extra ligatures.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; <a class="code" href="a00643.html#a3fe8d26af62c7e9b98c16e749f6b24ee">UNICHARSET::kCustomLigatures</a>[i][0] != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; ++i) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <a class="code" href="a00454.html#a89607ae8cabe9cff8bddb99ff57f8ff9">norm_to_lig_table_</a>[<a class="code" href="a00643.html#a3fe8d26af62c7e9b98c16e749f6b24ee">UNICHARSET::kCustomLigatures</a>[i][0]] =</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          UNICHARSET::kCustomLigatures[i][1];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordtype">int</span> norm_length = strlen(UNICHARSET::kCustomLigatures[i][0]);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">min_norm_length_</a> == 0 || norm_length &lt; <a class="code" href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">min_norm_length_</a>)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">min_norm_length_</a> = norm_length;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordflow">if</span> (norm_length &gt; <a class="code" href="a00454.html#aa8585a5f8ba698854023d2cf7b32b0fb">max_norm_length_</a>)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="a00454.html#aa8585a5f8ba698854023d2cf7b32b0fb">max_norm_length_</a> = norm_length;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      <a class="code" href="a00454.html#ac2bbda92d0e7c5e07e11dc028423220f">lig_to_norm_table_</a>[UNICHARSET::kCustomLigatures[i][1]] =</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          UNICHARSET::kCustomLigatures[i][0];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="a00454.html#a7fd8d51b443628c2c620d79f7a42a0de">  111</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="a00454.html#a7fd8d51b443628c2c620d79f7a42a0de">LigatureTable::RemoveLigatures</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">string</span> result;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="a00330.html">UNICHAR::const_iterator</a> it_begin = <a class="code" href="a00637.html#a432bc2daca85cbd2ceaa837d0095437f">UNICHAR::begin</a>(str.c_str(), str.length());</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="a00330.html">UNICHAR::const_iterator</a> it_end = <a class="code" href="a00637.html#ad7daced81827613918361a7220209ddc">UNICHAR::end</a>(str.c_str(), str.length());</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">char</span> tmp[5];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordtype">int</span> len;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="a00330.html">UNICHAR::const_iterator</a> it = it_begin; it != it_end; ++it) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    len = it.<a class="code" href="a00330.html#aaf36b10de41ea4fd8759caf356a3422c">get_utf8</a>(tmp);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    tmp[len] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    LigHash::const_iterator lig_it = <a class="code" href="a00454.html#ac2bbda92d0e7c5e07e11dc028423220f">lig_to_norm_table_</a>.find(tmp);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (lig_it != <a class="code" href="a00454.html#ac2bbda92d0e7c5e07e11dc028423220f">lig_to_norm_table_</a>.end()) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      result += lig_it-&gt;second;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      result += tmp;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="a00454.html#a17305abf0bfa2bba6fd7027f428ded7c">  130</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="a00454.html#a17305abf0bfa2bba6fd7027f428ded7c">LigatureTable::RemoveCustomLigatures</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">string</span> result;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="a00330.html">UNICHAR::const_iterator</a> it_begin = <a class="code" href="a00637.html#a432bc2daca85cbd2ceaa837d0095437f">UNICHAR::begin</a>(str.c_str(), str.length());</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="a00330.html">UNICHAR::const_iterator</a> it_end = <a class="code" href="a00637.html#ad7daced81827613918361a7220209ddc">UNICHAR::end</a>(str.c_str(), str.length());</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordtype">char</span> tmp[5];</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordtype">int</span> len;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">int</span> norm_ind;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="a00330.html">UNICHAR::const_iterator</a> it = it_begin; it != it_end; ++it) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    len = it.<a class="code" href="a00330.html#aaf36b10de41ea4fd8759caf356a3422c">get_utf8</a>(tmp);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    tmp[len] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    norm_ind = -1;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; <a class="code" href="a00643.html#a3fe8d26af62c7e9b98c16e749f6b24ee">UNICHARSET::kCustomLigatures</a>[i][0] != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; norm_ind &lt; 0;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;         ++i) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <span class="keywordflow">if</span> (!strcmp(tmp, <a class="code" href="a00643.html#a3fe8d26af62c7e9b98c16e749f6b24ee">UNICHARSET::kCustomLigatures</a>[i][1])) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        norm_ind = i;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (norm_ind &gt;= 0) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      result += <a class="code" href="a00643.html#a3fe8d26af62c7e9b98c16e749f6b24ee">UNICHARSET::kCustomLigatures</a>[norm_ind][0];</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      result += tmp;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="a00454.html#ac04805404bf1e75b60159964c890a752">  156</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="a00454.html#ac04805404bf1e75b60159964c890a752">LigatureTable::AddLigatures</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; str,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                   <span class="keyword">const</span> <a class="code" href="a00489.html">PangoFontInfo</a>* font)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">string</span> result;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">int</span> len = str.size();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordtype">int</span> step = 0;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordflow">for</span> (i = 0; i &lt; len - <a class="code" href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">min_norm_length_</a> + 1; i += step) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    step = 0;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> liglen = <a class="code" href="a00454.html#aa8585a5f8ba698854023d2cf7b32b0fb">max_norm_length_</a>; liglen &gt;= <a class="code" href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">min_norm_length_</a>; --liglen) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keywordflow">if</span> (i + liglen &lt;= len) {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordtype">string</span> lig_cand = str.substr(i, liglen);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        LigHash::const_iterator it = <a class="code" href="a00454.html#a89607ae8cabe9cff8bddb99ff57f8ff9">norm_to_lig_table_</a>.find(lig_cand);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span> (it != <a class="code" href="a00454.html#a89607ae8cabe9cff8bddb99ff57f8ff9">norm_to_lig_table_</a>.end()) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;          <a class="code" href="a01201.html#adef45c0cb7d54999abcf14ce2741d59b">tlog</a>(3, <span class="stringliteral">&quot;Considering %s -&gt; %s\n&quot;</span>, lig_cand.c_str(),</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;               it-&gt;second.c_str());</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;          <span class="keywordflow">if</span> (font) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="comment">// Test for renderability.</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">if</span> (!font-&gt;<a class="code" href="a00489.html#aa1efbf4d25038dd781ce7bb635088f3a">CanRenderString</a>(it-&gt;second.data(), it-&gt;second.length()))</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;              <span class="keywordflow">continue</span>;  <span class="comment">// Not renderable</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;          <span class="comment">// Found a match so convert it.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;          step = liglen;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;          result += it-&gt;second;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;          <a class="code" href="a01201.html#adef45c0cb7d54999abcf14ce2741d59b">tlog</a>(2, <span class="stringliteral">&quot;Substituted %s -&gt; %s\n&quot;</span>, lig_cand.c_str(),</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;               it-&gt;second.c_str());</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;          <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (step == 0) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      result += str[i];</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      step = 1;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  result += str.substr(i, len - i);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
+<div class="ttc" id="a01192_html"><div class="ttname"><a href="a01192.html">pango_font_info.h</a></div></div>
+<div class="ttc" id="a00454_html_ac2bbda92d0e7c5e07e11dc028423220f"><div class="ttname"><a href="a00454.html#ac2bbda92d0e7c5e07e11dc028423220f">tesseract::LigatureTable::lig_to_norm_table_</a></div><div class="ttdeci">LigHash lig_to_norm_table_</div><div class="ttdef"><b>Definition:</b> <a href="a01185_source.html#l00066">ligature_table.h:66</a></div></div>
+<div class="ttc" id="a01185_html"><div class="ttname"><a href="a01185.html">ligature_table.h</a></div></div>
+<div class="ttc" id="a00643_html_a3fe8d26af62c7e9b98c16e749f6b24ee"><div class="ttname"><a href="a00643.html#a3fe8d26af62c7e9b98c16e749f6b24ee">UNICHARSET::kCustomLigatures</a></div><div class="ttdeci">static const char * kCustomLigatures[][2]</div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00144">unicharset.h:144</a></div></div>
+<div class="ttc" id="a00489_html_aa1efbf4d25038dd781ce7bb635088f3a"><div class="ttname"><a href="a00489.html#aa1efbf4d25038dd781ce7bb635088f3a">tesseract::PangoFontInfo::CanRenderString</a></div><div class="ttdeci">bool CanRenderString(const char *utf8_word, int len, vector&lt; string &gt; *graphemes) const </div><div class="ttdef"><b>Definition:</b> <a href="a01191_source.html#l00333">pango_font_info.cpp:333</a></div></div>
+<div class="ttc" id="a00330_html"><div class="ttname"><a href="a00330.html">UNICHAR::const_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00102">unichar.h:102</a></div></div>
+<div class="ttc" id="a00454_html_a89afe461e33f3a06cf61ab64de13778e"><div class="ttname"><a href="a00454.html#a89afe461e33f3a06cf61ab64de13778e">tesseract::LigatureTable::min_norm_length_</a></div><div class="ttdeci">int min_norm_length_</div><div class="ttdef"><b>Definition:</b> <a href="a01185_source.html#l00069">ligature_table.h:69</a></div></div>
+<div class="ttc" id="a01267_html_aa36914ff2c42e34ac0a61f8d3f176824"><div class="ttname"><a href="a01267.html#aa36914ff2c42e34ac0a61f8d3f176824">tesseract::kMinLigature</a></div><div class="ttdeci">const int kMinLigature</div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00045">ligature_table.cpp:45</a></div></div>
+<div class="ttc" id="a00454_html_a2dfc35aae71697ea0d90f0e73980fc43"><div class="ttname"><a href="a00454.html#a2dfc35aae71697ea0d90f0e73980fc43">tesseract::LigatureTable::instance_</a></div><div class="ttdeci">static SmartPtr&lt; LigatureTable &gt; instance_</div><div class="ttdef"><b>Definition:</b> <a href="a01185_source.html#l00064">ligature_table.h:64</a></div></div>
+<div class="ttc" id="a00454_html_a89607ae8cabe9cff8bddb99ff57f8ff9"><div class="ttname"><a href="a00454.html#a89607ae8cabe9cff8bddb99ff57f8ff9">tesseract::LigatureTable::norm_to_lig_table_</a></div><div class="ttdeci">LigHash norm_to_lig_table_</div><div class="ttdef"><b>Definition:</b> <a href="a01185_source.html#l00065">ligature_table.h:65</a></div></div>
+<div class="ttc" id="a00330_html_aaf36b10de41ea4fd8759caf356a3422c"><div class="ttname"><a href="a00330.html#aaf36b10de41ea4fd8759caf356a3422c">UNICHAR::const_iterator::get_utf8</a></div><div class="ttdeci">int get_utf8(char *buf) const </div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00174">unichar.cpp:174</a></div></div>
+<div class="ttc" id="a01201_html"><div class="ttname"><a href="a01201.html">tlog.h</a></div></div>
+<div class="ttc" id="a00870_html"><div class="ttname"><a href="a00870.html">unicharset.h</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00637_html_ad7daced81827613918361a7220209ddc"><div class="ttname"><a href="a00637.html#ad7daced81827613918361a7220209ddc">UNICHAR::end</a></div><div class="ttdeci">static const_iterator end(const char *utf8_str, const int byte_length)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00204">unichar.cpp:204</a></div></div>
+<div class="ttc" id="a00637_html_a432bc2daca85cbd2ceaa837d0095437f"><div class="ttname"><a href="a00637.html#a432bc2daca85cbd2ceaa837d0095437f">UNICHAR::begin</a></div><div class="ttdeci">static const_iterator begin(const char *utf8_str, const int byte_length)</div><div class="ttdef"><b>Definition:</b> <a href="a00865_source.html#l00200">unichar.cpp:200</a></div></div>
+<div class="ttc" id="a00454_html_ac04805404bf1e75b60159964c890a752"><div class="ttname"><a href="a00454.html#ac04805404bf1e75b60159964c890a752">tesseract::LigatureTable::AddLigatures</a></div><div class="ttdeci">string AddLigatures(const string &amp;str, const PangoFontInfo *font) const </div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00156">ligature_table.cpp:156</a></div></div>
+<div class="ttc" id="a01267_html_af9a9e14acbc32bb5c10dc55b29ef58d9"><div class="ttname"><a href="a01267.html#af9a9e14acbc32bb5c10dc55b29ef58d9">tesseract::kMaxLigature</a></div><div class="ttdeci">const int kMaxLigature</div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00046">ligature_table.cpp:46</a></div></div>
+<div class="ttc" id="a00454_html_a7ebf0d92cf6632ed160a8967530ee27e"><div class="ttname"><a href="a00454.html#a7ebf0d92cf6632ed160a8967530ee27e">tesseract::LigatureTable::max_lig_length_</a></div><div class="ttdeci">int max_lig_length_</div><div class="ttdef"><b>Definition:</b> <a href="a01185_source.html#l00068">ligature_table.h:68</a></div></div>
+<div class="ttc" id="a00866_html"><div class="ttname"><a href="a00866.html">unichar.h</a></div></div>
+<div class="ttc" id="a00637_html"><div class="ttname"><a href="a00637.html">UNICHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00052">unichar.h:52</a></div></div>
+<div class="ttc" id="a00454_html"><div class="ttname"><a href="a00454.html">tesseract::LigatureTable</a></div><div class="ttdef"><b>Definition:</b> <a href="a01185_source.html#l00037">ligature_table.h:37</a></div></div>
+<div class="ttc" id="a01201_html_adef45c0cb7d54999abcf14ce2741d59b"><div class="ttname"><a href="a01201.html#adef45c0cb7d54999abcf14ce2741d59b">tlog</a></div><div class="ttdeci">#define tlog(level,...)</div><div class="ttdef"><b>Definition:</b> <a href="a01201_source.html#l00033">tlog.h:33</a></div></div>
+<div class="ttc" id="a01190_html_a328af63b24a185a6916faebb5b85aa84"><div class="ttname"><a href="a01190.html#a328af63b24a185a6916faebb5b85aa84">char32</a></div><div class="ttdeci">signed int char32</div><div class="ttdef"><b>Definition:</b> <a href="a01190_source.html#l00027">normstrngs.h:27</a></div></div>
+<div class="ttc" id="a00454_html_aba486383e49efbda9ea0b9b83836f6b1"><div class="ttname"><a href="a00454.html#aba486383e49efbda9ea0b9b83836f6b1">tesseract::LigatureTable::Get</a></div><div class="ttdeci">static LigatureTable * Get()</div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00052">ligature_table.cpp:52</a></div></div>
+<div class="ttc" id="a00454_html_af898d1f98a23a8d9dc67f69d214546f3"><div class="ttname"><a href="a00454.html#af898d1f98a23a8d9dc67f69d214546f3">tesseract::LigatureTable::LigatureTable</a></div><div class="ttdeci">LigatureTable()</div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00060">ligature_table.cpp:60</a></div></div>
+<div class="ttc" id="a00454_html_a7fd8d51b443628c2c620d79f7a42a0de"><div class="ttname"><a href="a00454.html#a7fd8d51b443628c2c620d79f7a42a0de">tesseract::LigatureTable::RemoveLigatures</a></div><div class="ttdeci">string RemoveLigatures(const string &amp;str) const </div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00111">ligature_table.cpp:111</a></div></div>
+<div class="ttc" id="a00489_html"><div class="ttname"><a href="a00489.html">tesseract::PangoFontInfo</a></div><div class="ttdef"><b>Definition:</b> <a href="a01192_source.html#l00038">pango_font_info.h:38</a></div></div>
+<div class="ttc" id="a00454_html_af5e58c8e852e6cf6421179792e133ac6"><div class="ttname"><a href="a00454.html#af5e58c8e852e6cf6421179792e133ac6">tesseract::LigatureTable::min_lig_length_</a></div><div class="ttdeci">int min_lig_length_</div><div class="ttdef"><b>Definition:</b> <a href="a01185_source.html#l00067">ligature_table.h:67</a></div></div>
+<div class="ttc" id="a00551_html"><div class="ttname"><a href="a00551.html">SmartPtr</a></div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00059">hashfn.h:59</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00454_html_aa8585a5f8ba698854023d2cf7b32b0fb"><div class="ttname"><a href="a00454.html#aa8585a5f8ba698854023d2cf7b32b0fb">tesseract::LigatureTable::max_norm_length_</a></div><div class="ttdeci">int max_norm_length_</div><div class="ttdef"><b>Definition:</b> <a href="a01185_source.html#l00070">ligature_table.h:70</a></div></div>
+<div class="ttc" id="a00454_html_a4b8c8b0c869b143ecfa0eea892ffdf8f"><div class="ttname"><a href="a00454.html#a4b8c8b0c869b143ecfa0eea892ffdf8f">tesseract::LigatureTable::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00063">ligature_table.cpp:63</a></div></div>
+<div class="ttc" id="a00454_html_a17305abf0bfa2bba6fd7027f428ded7c"><div class="ttname"><a href="a00454.html#a17305abf0bfa2bba6fd7027f428ded7c">tesseract::LigatureTable::RemoveCustomLigatures</a></div><div class="ttdeci">string RemoveCustomLigatures(const string &amp;str) const </div><div class="ttdef"><b>Definition:</b> <a href="a01184_source.html#l00130">ligature_table.cpp:130</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01184.html">commandlineflags.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:31 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01184.html">ligature_table.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:06 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: training/GlyphLessFont.h File Reference</title>
+<title>Tesseract: training/shapeclustering.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,307 +105,239 @@ $(document).ready(function(){initNavTree('a01194.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">GlyphLessFont.h File Reference</div>  </div>
+<div class="title">shapeclustering.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;base/commandlineflags.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01177_source.html">commontraining.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00919_source.html">mastertrainer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00859_source.html">strngs.h</a>&quot;</code><br />
+</div>
 <p><a href="a01194_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00255.html">_uint24</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00085.html">_datetime</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00086.html">_longHorMetric</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00493.html">Offset_Table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00606.html">TableRecord</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00328.html">cmap_header</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00329.html">cmap_record</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00405.html">format0_cmap_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00406.html">format4_cmap_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00407.html">format6_cmap_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html">cmap_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00421.html">head_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00422.html">hhea_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00423.html">hmtx_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00479.html">maxp_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00486.html">NameRecord</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00485.html">name_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00496.html">OS2_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00526.html">post_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ab6cc7b4aeb6ea31aba2b3fbfc83ff5e6"><td class="memItemLeft" align="right" valign="top">typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#ab6cc7b4aeb6ea31aba2b3fbfc83ff5e6">BYTE</a></td></tr>
-<tr class="separator:ab6cc7b4aeb6ea31aba2b3fbfc83ff5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebb9e13210d88d43e32e735ada43a425"><td class="memItemLeft" align="right" valign="top">typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a></td></tr>
-<tr class="separator:aebb9e13210d88d43e32e735ada43a425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5850d5316caf7f4cedd742fdf8cd7c02"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td></tr>
-<tr class="separator:a5850d5316caf7f4cedd742fdf8cd7c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9909bd3cf05f0906045f2ee85be4eeac"><td class="memItemLeft" align="right" valign="top">typedef short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a9909bd3cf05f0906045f2ee85be4eeac">SHORT</a></td></tr>
-<tr class="separator:a9909bd3cf05f0906045f2ee85be4eeac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f1e893143b732c797caa38d1805ff8a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00255.html">_uint24</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a6f1e893143b732c797caa38d1805ff8a">UINT24</a></td></tr>
-<tr class="separator:a6f1e893143b732c797caa38d1805ff8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af632da489ebc3708ec3ab6791ee53fa4"><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#af632da489ebc3708ec3ab6791ee53fa4">ULONG</a></td></tr>
-<tr class="separator:af632da489ebc3708ec3ab6791ee53fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a3e0cda5f1249bef6db47c5eb8e3813"><td class="memItemLeft" align="right" valign="top">typedef long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a></td></tr>
-<tr class="separator:a2a3e0cda5f1249bef6db47c5eb8e3813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3495b1238a9ddb3140eaf48bc0f40d4"><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#aa3495b1238a9ddb3140eaf48bc0f40d4">Fixed</a></td></tr>
-<tr class="separator:aa3495b1238a9ddb3140eaf48bc0f40d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba6d1063f6368863d399576f80ccd6eb"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a01194.html#a9909bd3cf05f0906045f2ee85be4eeac">SHORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#aba6d1063f6368863d399576f80ccd6eb">FWORD</a></td></tr>
-<tr class="separator:aba6d1063f6368863d399576f80ccd6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0075e08e42f987c910d37d25f1b9b99"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a01194.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#ad0075e08e42f987c910d37d25f1b9b99">UFWORD</a></td></tr>
-<tr class="separator:ad0075e08e42f987c910d37d25f1b9b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bac279212c80c334c3572c2503bf27e"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a9bac279212c80c334c3572c2503bf27e">F2DOT14</a></td></tr>
-<tr class="separator:a9bac279212c80c334c3572c2503bf27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad35597ec9a8f02c64361cb0af60f0c11"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00085.html">_datetime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#ad35597ec9a8f02c64361cb0af60f0c11">LONGDATETIME</a></td></tr>
-<tr class="separator:ad35597ec9a8f02c64361cb0af60f0c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcf8d6074c4d853cdb586bc19696ad9d"><td class="memItemLeft" align="right" valign="top">typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#adcf8d6074c4d853cdb586bc19696ad9d">Tag</a> [4]</td></tr>
-<tr class="separator:adcf8d6074c4d853cdb586bc19696ad9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa53cefb93eb009d633309b42c51f0917"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a01194.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#aa53cefb93eb009d633309b42c51f0917">GlyphId</a></td></tr>
-<tr class="separator:aa53cefb93eb009d633309b42c51f0917"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16457f28d706b77e1eb0085c5bcc46eb"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a01194.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a16457f28d706b77e1eb0085c5bcc46eb">Offset</a></td></tr>
-<tr class="separator:a16457f28d706b77e1eb0085c5bcc46eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f54558423e75a0f4ccba022ca4b0044"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00086.html">_longHorMetric</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a2f54558423e75a0f4ccba022ca4b0044">longHorMetric</a></td></tr>
-<tr class="separator:a2f54558423e75a0f4ccba022ca4b0044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae24295f85aeea378392cf4b34b8d90d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#ae24295f85aeea378392cf4b34b8d90d2">INT_PARAM_FLAG</a> (display_cloud_font,-1,&quot;Display cloud <a class="el" href="a00894.html#a66c7f757ef35e33a52ac2efe3f4e8247">of</a> this font, canonical_class1&quot;)</td></tr>
+<tr class="separator:ae24295f85aeea378392cf4b34b8d90d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf92142160a0e7086e8cd2fedf16023b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#aaf92142160a0e7086e8cd2fedf16023b">INT_PARAM_FLAG</a> (display_canonical_font,-1,&quot;Display canonical <a class="el" href="a00529.html">sample</a> <a class="el" href="a00894.html#a66c7f757ef35e33a52ac2efe3f4e8247">of</a> this font, canonical_class2&quot;)</td></tr>
+<tr class="separator:aaf92142160a0e7086e8cd2fedf16023b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff524054cac371250f62ac657a8b28f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a4ff524054cac371250f62ac657a8b28f">STRING_PARAM_FLAG</a> (canonical_class1,&quot;&quot;,&quot;Class to show ambigs for&quot;)</td></tr>
+<tr class="separator:a4ff524054cac371250f62ac657a8b28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a272d69bc9bee998ba0fab285bfbb6697"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a272d69bc9bee998ba0fab285bfbb6697">STRING_PARAM_FLAG</a> (canonical_class2,&quot;&quot;,&quot;Class to show ambigs for&quot;)</td></tr>
+<tr class="separator:a272d69bc9bee998ba0fab285bfbb6697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01194.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="ab6cc7b4aeb6ea31aba2b3fbfc83ff5e6"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ae24295f85aeea378392cf4b34b8d90d2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef char <a class="el" href="a01194.html#ab6cc7b4aeb6ea31aba2b3fbfc83ff5e6">BYTE</a></td>
+          <td class="memname">INT_PARAM_FLAG </td>
+          <td>(</td>
+          <td class="paramtype">display_cloud_font&#160;</td>
+          <td class="paramname">, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00012">12</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aebb9e13210d88d43e32e735ada43a425"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef char <a class="el" href="a01194.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">-&#160;</td>
+          <td class="paramname"><em>1</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00013">13</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9bac279212c80c334c3572c2503bf27e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef unsigned short <a class="el" href="a01194.html#a9bac279212c80c334c3572c2503bf27e">F2DOT14</a></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Display cloud <a class="el" href="a00894.html#a66c7f757ef35e33a52ac2efe3f4e8247">of</a> this&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00022">22</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa3495b1238a9ddb3140eaf48bc0f40d4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef unsigned long <a class="el" href="a01194.html#aa3495b1238a9ddb3140eaf48bc0f40d4">Fixed</a></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">canonical_class1&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00019">19</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aba6d1063f6368863d399576f80ccd6eb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="a01194.html#a9909bd3cf05f0906045f2ee85be4eeac">SHORT</a> <a class="el" href="a01194.html#aba6d1063f6368863d399576f80ccd6eb">FWORD</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00020">20</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa53cefb93eb009d633309b42c51f0917"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="a01194.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a> <a class="el" href="a01194.html#aa53cefb93eb009d633309b42c51f0917">GlyphId</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00025">25</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2a3e0cda5f1249bef6db47c5eb8e3813"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef long <a class="el" href="a01194.html#a2a3e0cda5f1249bef6db47c5eb8e3813">LONG</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00018">18</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad35597ec9a8f02c64361cb0af60f0c11"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="a00085.html">_datetime</a>  <a class="el" href="a01194.html#ad35597ec9a8f02c64361cb0af60f0c11">LONGDATETIME</a></td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a2f54558423e75a0f4ccba022ca4b0044"></a>
+<a class="anchor" id="aaf92142160a0e7086e8cd2fedf16023b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="a00086.html">_longHorMetric</a>  <a class="el" href="a01194.html#a2f54558423e75a0f4ccba022ca4b0044">longHorMetric</a></td>
+          <td class="memname">INT_PARAM_FLAG </td>
+          <td>(</td>
+          <td class="paramtype">display_canonical_font&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">-&#160;</td>
+          <td class="paramname"><em>1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Display canonical <a class="el" href="a00529.html">sample</a> <a class="el" href="a00894.html#a66c7f757ef35e33a52ac2efe3f4e8247">of</a> this&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">canonical_class2&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a16457f28d706b77e1eb0085c5bcc46eb"></a>
+<a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="a01194.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a> <a class="el" href="a01194.html#a16457f28d706b77e1eb0085c5bcc46eb">Offset</a></td>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<hr/>
+ <h2>Public Function Prototypes </h2>
 
-<p>Definition at line <a class="el" href="a01194_source.html#l00026">26</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a01194_source.html#l00047">47</a> of file <a class="el" href="a01194_source.html">shapeclustering.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="a01176.html#a5177d61ebf73a60571198cb6eaa753ac">ParseArguments</a>(&amp;argc, &amp;argv);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="a00561.html">STRING</a> file_prefix;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="a00463.html">tesseract::MasterTrainer</a>* trainer = <a class="code" href="a01267.html#a2af3b74c1139cfc070d17e947f212b58">tesseract::LoadTrainingData</a>(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      argc, argv, <span class="keyword">false</span>, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, &amp;file_prefix);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (!trainer)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span> (FLAGS_display_cloud_font &gt;= 0) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#ifndef GRAPHICS_DISABLED</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    trainer-&gt;<a class="code" href="a00463.html#a180440eb25e7149056023d7975c34fd4">DisplaySamples</a>(FLAGS_canonical_class1.c_str(),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                            FLAGS_display_cloud_font,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                            FLAGS_canonical_class2.c_str(),</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                            FLAGS_display_canonical_font);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif  // GRAPHICS_DISABLED</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!FLAGS_canonical_class1.empty()) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    trainer-&gt;<a class="code" href="a00463.html#ab03d8639d3f122eb8c0705712ac44077">DebugCanonical</a>(FLAGS_canonical_class1.c_str(),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            FLAGS_canonical_class2.c_str());</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  trainer-&gt;<a class="code" href="a00463.html#a2dd43e518730bae0820c2f4baed81ac3">SetupMasterShapes</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="a01267.html#af6657e7cdbf17875a06df792c22cd28b">WriteShapeTable</a>(file_prefix, trainer-&gt;<a class="code" href="a00463.html#afd5dac7fae855b066e09ed16ce4a6d41">master_shapes</a>());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">delete</span> trainer;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <span class="comment">/* main */</span></div>
+<div class="ttc" id="a00463_html_a180440eb25e7149056023d7975c34fd4"><div class="ttname"><a href="a00463.html#a180440eb25e7149056023d7975c34fd4">tesseract::MasterTrainer::DisplaySamples</a></div><div class="ttdeci">void DisplaySamples(const char *unichar_str1, int cloud_font, const char *unichar_str2, int canonical_font)</div><div class="ttdef"><b>Definition:</b> <a href="a00918_source.html#l00703">mastertrainer.cpp:703</a></div></div>
+<div class="ttc" id="a00463_html"><div class="ttname"><a href="a00463.html">tesseract::MasterTrainer</a></div><div class="ttdef"><b>Definition:</b> <a href="a00919_source.html#l00069">mastertrainer.h:69</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a00463_html_ab03d8639d3f122eb8c0705712ac44077"><div class="ttname"><a href="a00463.html#ab03d8639d3f122eb8c0705712ac44077">tesseract::MasterTrainer::DebugCanonical</a></div><div class="ttdeci">void DebugCanonical(const char *unichar_str1, const char *unichar_str2)</div><div class="ttdef"><b>Definition:</b> <a href="a00918_source.html#l00643">mastertrainer.cpp:643</a></div></div>
+<div class="ttc" id="a01267_html_af6657e7cdbf17875a06df792c22cd28b"><div class="ttname"><a href="a01267.html#af6657e7cdbf17875a06df792c22cd28b">tesseract::WriteShapeTable</a></div><div class="ttdeci">void WriteShapeTable(const STRING &amp;file_prefix, const ShapeTable &amp;shape_table)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00145">commontraining.cpp:145</a></div></div>
+<div class="ttc" id="a01176_html_a5177d61ebf73a60571198cb6eaa753ac"><div class="ttname"><a href="a01176.html#a5177d61ebf73a60571198cb6eaa753ac">ParseArguments</a></div><div class="ttdeci">void ParseArguments(int *argc, char ***argv)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00089">commontraining.cpp:89</a></div></div>
+<div class="ttc" id="a00463_html_a2dd43e518730bae0820c2f4baed81ac3"><div class="ttname"><a href="a00463.html#a2dd43e518730bae0820c2f4baed81ac3">tesseract::MasterTrainer::SetupMasterShapes</a></div><div class="ttdeci">void SetupMasterShapes()</div><div class="ttdef"><b>Definition:</b> <a href="a00918_source.html#l00265">mastertrainer.cpp:265</a></div></div>
+<div class="ttc" id="a01267_html_a2af3b74c1139cfc070d17e947f212b58"><div class="ttname"><a href="a01267.html#a2af3b74c1139cfc070d17e947f212b58">tesseract::LoadTrainingData</a></div><div class="ttdeci">MasterTrainer * LoadTrainingData(int argc, const char *const *argv, bool replication, ShapeTable **shape_table, STRING *file_prefix)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00174">commontraining.cpp:174</a></div></div>
+<div class="ttc" id="a00463_html_afd5dac7fae855b066e09ed16ce4a6d41"><div class="ttname"><a href="a00463.html#afd5dac7fae855b066e09ed16ce4a6d41">tesseract::MasterTrainer::master_shapes</a></div><div class="ttdeci">const ShapeTable &amp; master_shapes() const </div><div class="ttdef"><b>Definition:</b> <a href="a00919_source.html#l00195">mastertrainer.h:195</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a9909bd3cf05f0906045f2ee85be4eeac"></a>
+<a class="anchor" id="a4ff524054cac371250f62ac657a8b28f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef short <a class="el" href="a01194.html#a9909bd3cf05f0906045f2ee85be4eeac">SHORT</a></td>
+          <td class="memname">STRING_PARAM_FLAG </td>
+          <td>(</td>
+          <td class="paramtype">canonical_class1&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Class to show ambigs for&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01194_source.html#l00015">15</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="adcf8d6074c4d853cdb586bc19696ad9d"></a>
+<a class="anchor" id="a272d69bc9bee998ba0fab285bfbb6697"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef char Tag[4]</td>
+          <td class="memname">STRING_PARAM_FLAG </td>
+          <td>(</td>
+          <td class="paramtype">canonical_class2&#160;</td>
+          <td class="paramname">, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00024">24</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad0075e08e42f987c910d37d25f1b9b99"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="a01194.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a> <a class="el" href="a01194.html#ad0075e08e42f987c910d37d25f1b9b99">UFWORD</a></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;&quot;&#160;</td>
+          <td class="paramname">, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00021">21</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6f1e893143b732c797caa38d1805ff8a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="a00255.html">_uint24</a>  <a class="el" href="a01194.html#a6f1e893143b732c797caa38d1805ff8a">UINT24</a></td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Class to show ambigs for&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af632da489ebc3708ec3ab6791ee53fa4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">typedef unsigned long <a class="el" href="a01194.html#af632da489ebc3708ec3ab6791ee53fa4">ULONG</a></td>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00017">17</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5850d5316caf7f4cedd742fdf8cd7c02"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef unsigned short <a class="el" href="a01194.html#a5850d5316caf7f4cedd742fdf8cd7c02">USHORT</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01194_source.html#l00014">14</a> of file <a class="el" href="a01194_source.html">GlyphLessFont.h</a>.</p>
 
 </div>
 </div>
@@ -414,8 +346,8 @@ Typedefs</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01194.html">GlyphLessFont.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01194.html">shapeclustering.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

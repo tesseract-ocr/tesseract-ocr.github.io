@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/drawfx.cpp Source File</title>
+<title>Tesseract: wordrec/measure.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,132 +105,155 @@ $(document).ready(function(){initNavTree('a01243_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">drawfx.cpp</div>  </div>
+<div class="title">measure.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01243.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        drawfx.cpp  (Formerly drawfx.c)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Draw things to do with feature extraction.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:              Ray Smith</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:             Mon Jan 27 11:02:16 GMT 1992</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1992, Hewlett-Packard Ltd.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef HAVE_CONFIG_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;config_auto.h&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a01244.html">drawfx.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00782.html">normalis.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00827.html">werd.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef GRAPHICS_DISABLED</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a01243.html#a598328cfb77c3b70aa688624e73a1e1d">   29</a></span>&#160;<span class="preprocessor">#define FXDEMOWIN     &quot;FXDemo&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a01243.html#ab91ddd2c62da43060f703b7b5945e60e">   30</a></span>&#160;<span class="preprocessor">#define FXDEMOXPOS      250</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01243.html#adcd9274df0c3dc448de7bc90ba59c627">   31</a></span>&#160;<span class="preprocessor">#define FXDEMOYPOS      0</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01243.html#a7ccaf3bfa2be233bc9e06de45417f3f0">   32</a></span>&#160;<span class="preprocessor">#define FXDEMOXSIZE     600</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01243.html#a06dd189f4dca5fe669a1d30a836ec4cb">   33</a></span>&#160;<span class="preprocessor">#define FXDEMOYSIZE     256</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01243.html#acaf0299e0b31c57e0dd971319b31bb81">   34</a></span>&#160;<span class="preprocessor">#define BLN_MAX       512        //max coord for bln</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01243.html#a006f74e514199ed33d09c64fcc8439da">   35</a></span>&#160;<span class="preprocessor">#define WERDWIDTH       (BLN_MAX*20)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a01243.html#afdda217630625f78f7144bdc5bf495ba">   36</a></span>&#160;<span class="preprocessor">#define DECENT_WERD_WIDTH (5*kBlnXHeight)</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 <span class="comment">//title of window</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01243.html#ab6aba1c8ae753116a3baeaf4a0603155">   38</a></span>&#160;<span class="preprocessor">#define DEBUG_WIN_NAME    &quot;FXDebug&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01243.html#a0ae39b0e22abddcd148564e73b9609b2">   39</a></span>&#160;<span class="preprocessor">#define DEBUG_XPOS      0</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a01243.html#abbd96591a73b71b4965ee05908639e95">   40</a></span>&#160;<span class="preprocessor">#define DEBUG_YPOS      120</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01243.html#abe4a3ec2dde117abc95575b06703f5d6">   41</a></span>&#160;<span class="preprocessor">#define DEBUG_XSIZE     80</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a01243.html#a6b9e8c8b86e2275fc9681965e3d96376">   42</a></span>&#160;<span class="preprocessor">#define DEBUG_YSIZE     32</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a01243.html#a610d6ad95b18966b70b6845de2a9c56b">   43</a></span>&#160;<span class="preprocessor">#define YMAX        3508</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a01243.html#a0312cb6d6cbc719075d4e5380c387ab3">   44</a></span>&#160;<span class="preprocessor">#define XMAX        2550</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a01243.html#ac23d40b8d6ad2aeced9ddb6a41867e36">   45</a></span>&#160;<span class="preprocessor">#define MAXEDGELENGTH   1024     //max steps inoutline</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a01243.html#a77366c1bd428629dc898e188bfd182a3">   47</a></span>&#160;<span class="preprocessor">#define EXTERN</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="a01244.html#aafd93dea58b33bc6c4245aaa39e8e9ee">   49</a></span>&#160;<a class="code" href="a01243.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <a class="code" href="a00867.html#abaa7778083ba376d8c70a59631d4a6ab">STRING_VAR</a> (<a class="code" href="a01243.html#afc23e20711cc96be6c32d1ba2924ca9e">fx_debugfile</a>, <a class="code" href="a01243.html#ab6aba1c8ae753116a3baeaf4a0603155">DEBUG_WIN_NAME</a>, <span class="stringliteral">&quot;Name of debugfile&quot;</span>);</div>
+<a href="a01243.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* -*-C-*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> ********************************************************************************</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * File:        measure.h  (Formerly measure.h)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description:  Statistics for a group of single measurements</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:       Mark Seaman, SW Productivity</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:      Fri Oct 16 14:37:00 1987</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Modified:     Mon Apr  8 09:42:28 1991 (Mark Seaman) marks@hpgrlt</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Language:     C</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Package:      N/A</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Status:       Reusable Software Component</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * (c) Copyright 1987, Hewlett-Packard Company.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> ********************************************************************************</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef MEASURE_H</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define MEASURE_H</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">              I n c l u d e s</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">              T y p e s</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00468.html">   44</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00468.html#a55024bca55b756d74e2350c5901626e7">   46</a></span>&#160;  <span class="keywordtype">long</span> <a class="code" href="a00468.html#a55024bca55b756d74e2350c5901626e7">num_samples</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00468.html#accb64bf2ff469735b75ec5100a7be3b6">   47</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="a00468.html#accb64bf2ff469735b75ec5100a7be3b6">sum_of_samples</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00468.html#a948e70eb70109e56d7ea77f671496ec5">   48</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="a00468.html#a948e70eb70109e56d7ea77f671496ec5">sum_of_squares</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <a class="code" href="a00468.html">MEASUREMENT</a>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a01244.html#a32821715e23d2e2666ba66b2a9d2ee8b">   51</a></span>&#160;<a class="code" href="a01243.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> <a class="code" href="a00553.html">ScrollView</a>* <a class="code" href="a01243.html#af3d3389751226a339de88b46cfc58f66">fx_win</a> = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a01244.html#a914f797563b0dc5f5d3f13f521e307a5">   52</a></span>&#160;<a class="code" href="a01243.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> FILE *<a class="code" href="a01243.html#aed8e04f7da923e0a60f6b486d34c0d85">fx_debug</a> = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * create_fx_win</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> * Create the fx window used to show the fit.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a01244.html#ae31e31904810bc4e3407c2f324cf7edb">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01243.html#ae31e31904810bc4e3407c2f324cf7edb">create_fx_win</a>() {  <span class="comment">//make features win</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="a01243.html#af3d3389751226a339de88b46cfc58f66">fx_win</a> = <span class="keyword">new</span> <a class="code" href="a00553.html">ScrollView</a> (<a class="code" href="a01243.html#a598328cfb77c3b70aa688624e73a1e1d">FXDEMOWIN</a>,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="a01243.html#ab91ddd2c62da43060f703b7b5945e60e">FXDEMOXPOS</a>, <a class="code" href="a01243.html#adcd9274df0c3dc448de7bc90ba59c627">FXDEMOYPOS</a>, <a class="code" href="a01243.html#a7ccaf3bfa2be233bc9e06de45417f3f0">FXDEMOXSIZE</a>, <a class="code" href="a01243.html#a06dd189f4dca5fe669a1d30a836ec4cb">FXDEMOYSIZE</a>,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="a01243.html#a006f74e514199ed33d09c64fcc8439da">WERDWIDTH</a>*2, <a class="code" href="a01243.html#acaf0299e0b31c57e0dd971319b31bb81">BLN_MAX</a>*2, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> * clear_fx_win</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * Clear the fx window and draw on the base/mean lines.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="a01244.html#aa3294a99fe8ad4b74a1e8577b89e3eff">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01243.html#aa3294a99fe8ad4b74a1e8577b89e3eff">clear_fx_win</a>() {  <span class="comment">//make features win</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="a01243.html#af3d3389751226a339de88b46cfc58f66">fx_win</a>-&gt;<a class="code" href="a00553.html#a5386b0da16d7cbdd33044e53b95313ac">Clear</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="a01243.html#af3d3389751226a339de88b46cfc58f66">fx_win</a>-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>(64,64,64);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="a01243.html#af3d3389751226a339de88b46cfc58f66">fx_win</a>-&gt;<a class="code" href="a00553.html#a2ba16f17fc401bb28be1a08160207e45">Line</a>(-<a class="code" href="a01243.html#a006f74e514199ed33d09c64fcc8439da">WERDWIDTH</a>, <a class="code" href="a00782.html#abe10ce41bf7240ae8a053dea471d6ed5">kBlnBaselineOffset</a>, <a class="code" href="a01243.html#a006f74e514199ed33d09c64fcc8439da">WERDWIDTH</a>, <a class="code" href="a00782.html#abe10ce41bf7240ae8a053dea471d6ed5">kBlnBaselineOffset</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="a01243.html#af3d3389751226a339de88b46cfc58f66">fx_win</a>-&gt;<a class="code" href="a00553.html#a2ba16f17fc401bb28be1a08160207e45">Line</a>(-<a class="code" href="a01243.html#a006f74e514199ed33d09c64fcc8439da">WERDWIDTH</a>, <a class="code" href="a00782.html#af974e6755e636c8bc7cbe57e3bcbdd73">kBlnXHeight</a> + <a class="code" href="a00782.html#abe10ce41bf7240ae8a053dea471d6ed5">kBlnBaselineOffset</a>, <a class="code" href="a01243.html#a006f74e514199ed33d09c64fcc8439da">WERDWIDTH</a>,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;               <a class="code" href="a00782.html#af974e6755e636c8bc7cbe57e3bcbdd73">kBlnXHeight</a> + <a class="code" href="a00782.html#abe10ce41bf7240ae8a053dea471d6ed5">kBlnBaselineOffset</a>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif  // GRAPHICS_DISABLED</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * create_fxdebug_win</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> * Create the fx window used to show the fit.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a01244.html#acb1c409d6a6de9cd0988e873ff68fd70">   89</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01243.html#acb1c409d6a6de9cd0988e873ff68fd70">create_fxdebug_win</a>() {  <span class="comment">//make gradients win</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="ttc" id="a01243_html_a77366c1bd428629dc898e188bfd182a3"><div class="ttname"><a href="a01243.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a></div><div class="ttdeci">#define EXTERN</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00047">drawfx.cpp:47</a></div></div>
-<div class="ttc" id="a00827_html"><div class="ttname"><a href="a00827.html">werd.h</a></div></div>
-<div class="ttc" id="a00782_html_abe10ce41bf7240ae8a053dea471d6ed5"><div class="ttname"><a href="a00782.html#abe10ce41bf7240ae8a053dea471d6ed5">kBlnBaselineOffset</a></div><div class="ttdeci">const int kBlnBaselineOffset</div><div class="ttdef"><b>Definition:</b> <a href="a00782_source.html#l00029">normalis.h:29</a></div></div>
-<div class="ttc" id="a01243_html_ae31e31904810bc4e3407c2f324cf7edb"><div class="ttname"><a href="a01243.html#ae31e31904810bc4e3407c2f324cf7edb">create_fx_win</a></div><div class="ttdeci">void create_fx_win()</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00060">drawfx.cpp:60</a></div></div>
-<div class="ttc" id="a00782_html_af974e6755e636c8bc7cbe57e3bcbdd73"><div class="ttname"><a href="a00782.html#af974e6755e636c8bc7cbe57e3bcbdd73">kBlnXHeight</a></div><div class="ttdeci">const int kBlnXHeight</div><div class="ttdef"><b>Definition:</b> <a href="a00782_source.html#l00028">normalis.h:28</a></div></div>
-<div class="ttc" id="a01244_html"><div class="ttname"><a href="a01244.html">drawfx.h</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00782_html"><div class="ttname"><a href="a00782.html">normalis.h</a></div></div>
-<div class="ttc" id="a00553_html_a5386b0da16d7cbdd33044e53b95313ac"><div class="ttname"><a href="a00553.html#a5386b0da16d7cbdd33044e53b95313ac">ScrollView::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00595">scrollview.cpp:595</a></div></div>
-<div class="ttc" id="a01243_html_a006f74e514199ed33d09c64fcc8439da"><div class="ttname"><a href="a01243.html#a006f74e514199ed33d09c64fcc8439da">WERDWIDTH</a></div><div class="ttdeci">#define WERDWIDTH</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00035">drawfx.cpp:35</a></div></div>
-<div class="ttc" id="a00867_html_abaa7778083ba376d8c70a59631d4a6ab"><div class="ttname"><a href="a00867.html#abaa7778083ba376d8c70a59631d4a6ab">STRING_VAR</a></div><div class="ttdeci">#define STRING_VAR(name, val, comment)</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00283">params.h:283</a></div></div>
-<div class="ttc" id="a01243_html_ab91ddd2c62da43060f703b7b5945e60e"><div class="ttname"><a href="a01243.html#ab91ddd2c62da43060f703b7b5945e60e">FXDEMOXPOS</a></div><div class="ttdeci">#define FXDEMOXPOS</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00030">drawfx.cpp:30</a></div></div>
-<div class="ttc" id="a01243_html_afc23e20711cc96be6c32d1ba2924ca9e"><div class="ttname"><a href="a01243.html#afc23e20711cc96be6c32d1ba2924ca9e">fx_debugfile</a></div><div class="ttdeci">EXTERN char * fx_debugfile</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00049">drawfx.cpp:49</a></div></div>
-<div class="ttc" id="a01243_html_adcd9274df0c3dc448de7bc90ba59c627"><div class="ttname"><a href="a01243.html#adcd9274df0c3dc448de7bc90ba59c627">FXDEMOYPOS</a></div><div class="ttdeci">#define FXDEMOYPOS</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00031">drawfx.cpp:31</a></div></div>
-<div class="ttc" id="a01243_html_ab6aba1c8ae753116a3baeaf4a0603155"><div class="ttname"><a href="a01243.html#ab6aba1c8ae753116a3baeaf4a0603155">DEBUG_WIN_NAME</a></div><div class="ttdeci">#define DEBUG_WIN_NAME</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00038">drawfx.cpp:38</a></div></div>
-<div class="ttc" id="a01243_html_acaf0299e0b31c57e0dd971319b31bb81"><div class="ttname"><a href="a01243.html#acaf0299e0b31c57e0dd971319b31bb81">BLN_MAX</a></div><div class="ttdeci">#define BLN_MAX</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00034">drawfx.cpp:34</a></div></div>
-<div class="ttc" id="a01243_html_a06dd189f4dca5fe669a1d30a836ec4cb"><div class="ttname"><a href="a01243.html#a06dd189f4dca5fe669a1d30a836ec4cb">FXDEMOYSIZE</a></div><div class="ttdeci">#define FXDEMOYSIZE</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00033">drawfx.cpp:33</a></div></div>
-<div class="ttc" id="a01243_html_acb1c409d6a6de9cd0988e873ff68fd70"><div class="ttname"><a href="a01243.html#acb1c409d6a6de9cd0988e873ff68fd70">create_fxdebug_win</a></div><div class="ttdeci">void create_fxdebug_win()</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00089">drawfx.cpp:89</a></div></div>
-<div class="ttc" id="a00553_html_a2ba16f17fc401bb28be1a08160207e45"><div class="ttname"><a href="a00553.html#a2ba16f17fc401bb28be1a08160207e45">ScrollView::Line</a></div><div class="ttdeci">void Line(int x1, int y1, int x2, int y2)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00538">scrollview.cpp:538</a></div></div>
-<div class="ttc" id="a00553_html_a79855c525ec660b452382e9813d2edb5"><div class="ttname"><a href="a00553.html#a79855c525ec660b452382e9813d2edb5">ScrollView::Pen</a></div><div class="ttdeci">void Pen(Color color)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00726">scrollview.cpp:726</a></div></div>
-<div class="ttc" id="a01243_html_aed8e04f7da923e0a60f6b486d34c0d85"><div class="ttname"><a href="a01243.html#aed8e04f7da923e0a60f6b486d34c0d85">fx_debug</a></div><div class="ttdeci">EXTERN FILE * fx_debug</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00052">drawfx.cpp:52</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-<div class="ttc" id="a01243_html_a7ccaf3bfa2be233bc9e06de45417f3f0"><div class="ttname"><a href="a01243.html#a7ccaf3bfa2be233bc9e06de45417f3f0">FXDEMOXSIZE</a></div><div class="ttdeci">#define FXDEMOXSIZE</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00032">drawfx.cpp:32</a></div></div>
-<div class="ttc" id="a01243_html_af3d3389751226a339de88b46cfc58f66"><div class="ttname"><a href="a01243.html#af3d3389751226a339de88b46cfc58f66">fx_win</a></div><div class="ttdeci">EXTERN ScrollView * fx_win</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00051">drawfx.cpp:51</a></div></div>
-<div class="ttc" id="a01243_html_a598328cfb77c3b70aa688624e73a1e1d"><div class="ttname"><a href="a01243.html#a598328cfb77c3b70aa688624e73a1e1d">FXDEMOWIN</a></div><div class="ttdeci">#define FXDEMOWIN</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00029">drawfx.cpp:29</a></div></div>
-<div class="ttc" id="a01243_html_aa3294a99fe8ad4b74a1e8577b89e3eff"><div class="ttname"><a href="a01243.html#aa3294a99fe8ad4b74a1e8577b89e3eff">clear_fx_win</a></div><div class="ttdeci">void clear_fx_win()</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00073">drawfx.cpp:73</a></div></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">              M a c r o s</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> * add_sample</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> * Add one more sample to a measurement.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a01243.html#acc2a20480b12cd0baa7b972014621c43">   63</a></span>&#160;<span class="preprocessor">#define ADD_SAMPLE(m,s)                           \</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">(m.sum_of_samples += (float) (s),               \</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">        m.sum_of_squares += (float) (s) * (float) (s), \</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">        ++m.num_samples)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * mean</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * Return the mean value of the measurement.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="a01243.html#a4dc0d2c69c4196c34103fb377cf89a55">   74</a></span>&#160;<span class="preprocessor">#define MEAN(m)                                       \</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">((m).num_samples ?                                  \</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">        ((float) ((m).sum_of_samples / (m).num_samples)) : \</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">        0)</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> * new_measurement</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> * Initalize a record to hold a measurement of a group of individual</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * samples.</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="a01243.html#af841ea538d8134f398f1c69553fd9c9a">   86</a></span>&#160;<span class="preprocessor">#define new_measurement(m)   \</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">((m).num_samples    = 0, \</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">        (m).sum_of_samples = 0, \</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">        (m).sum_of_squares = 0)</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * number_of_samples</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> * Return the number of samples in a measurement.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="a01243.html#a06fc1a60cd4129ce1f5b5341f29ab58c">   97</a></span>&#160;<span class="preprocessor">#define number_of_samples(m)  \</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">((m).num_samples)</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * standard_deviation</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> * Return the standard deviation of the measurement.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="a01243.html#a1190781e21c3d5e4a12bcd24d779f3ec">  106</a></span>&#160;<span class="preprocessor">#define standard_deviation(m)                                \</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">((float) sqrt (VARIANCE (m)))</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> * variance</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * Return the variance of the measurement.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="a01243.html#ae3c1a512eadd10f473675cfc6450e6dc">  115</a></span>&#160;<span class="preprocessor">#define VARIANCE(m)                                   \</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">(((m).num_samples &gt; 1) ?                            \</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">        ((float)                                           \</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">        (((m).num_samples * (m).sum_of_squares -          \</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">                (m).sum_of_samples * (m).sum_of_samples) /      \</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">        (((m).num_samples - 1) * (m).num_samples)))   :  \</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">        0)</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"> * print_summary</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment"> * Summarize a MEASUREMENT record.</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="a01243.html#ad4c2ed3ea71f5c47ed1aa55b7a324040">  129</a></span>&#160;<span class="preprocessor">#define print_summary(string,measure)                       \</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">cprintf (&quot;\t%-20s \tn = %d, \tm = %4.2f, \ts = %4.2f\n &quot;,  \</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">                        string,                                          \</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">                        number_of_samples  (measure),                    \</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">                        MEAN           (measure),                    \</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">                        standard_deviation (measure))</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00468_html"><div class="ttname"><a href="a00468.html">MEASUREMENT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00044">measure.h:44</a></div></div>
+<div class="ttc" id="a00468_html_accb64bf2ff469735b75ec5100a7be3b6"><div class="ttname"><a href="a00468.html#accb64bf2ff469735b75ec5100a7be3b6">MEASUREMENT::sum_of_samples</a></div><div class="ttdeci">float sum_of_samples</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00047">measure.h:47</a></div></div>
+<div class="ttc" id="a00468_html_a55024bca55b756d74e2350c5901626e7"><div class="ttname"><a href="a00468.html#a55024bca55b756d74e2350c5901626e7">MEASUREMENT::num_samples</a></div><div class="ttdeci">long num_samples</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00046">measure.h:46</a></div></div>
+<div class="ttc" id="a00468_html_a948e70eb70109e56d7ea77f671496ec5"><div class="ttname"><a href="a00468.html#a948e70eb70109e56d7ea77f671496ec5">MEASUREMENT::sum_of_squares</a></div><div class="ttdeci">float sum_of_squares</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00048">measure.h:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01243.html">drawfx.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:32 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01243.html">measure.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:06 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

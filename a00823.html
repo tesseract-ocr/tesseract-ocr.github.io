@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/stepblob.h File Reference</title>
+<title>Tesseract: ccutil/elst.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,28 +105,198 @@ $(document).ready(function(){initNavTree('a00823.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">stepblob.h File Reference</div>  </div>
+<div class="title">elst.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00761_source.html">coutln.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00813_source.html">rect.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00835_source.html">host.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00855_source.html">serialis.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00839_source.html">lsterr.h</a>&quot;</code><br />
 </div>
 <p><a href="a00823_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00294.html">C_BLOB</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00371.html">ELIST_LINK</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00366.html">ELIST</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00370.html">ELIST_ITERATOR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:adc858fd865cb4f529784fbc52d4d2b87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#adc858fd865cb4f529784fbc52d4d2b87">QUOTE_IT</a>(parm)&#160;&#160;&#160;#parm</td></tr>
+<tr class="separator:adc858fd865cb4f529784fbc52d4d2b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181b0cf1742311895ddeb0cd3125fb90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a181b0cf1742311895ddeb0cd3125fb90">ELISTIZEH_A</a>(CLASSNAME)</td></tr>
+<tr class="separator:a181b0cf1742311895ddeb0cd3125fb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f14f7e0589faff72f2104fbb0fd71f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a10f14f7e0589faff72f2104fbb0fd71f">ELISTIZEH_B</a>(CLASSNAME)</td></tr>
+<tr class="separator:a10f14f7e0589faff72f2104fbb0fd71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6980dec74200e9b5d5ec5ecd2844f291"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a6980dec74200e9b5d5ec5ecd2844f291">ELISTIZEH_C</a>(CLASSNAME)</td></tr>
+<tr class="separator:a6980dec74200e9b5d5ec5ecd2844f291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf5144252ef24ea7bb5e0da1e698a0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a6cf5144252ef24ea7bb5e0da1e698a0b">ELISTIZEH</a>(CLASSNAME)</td></tr>
+<tr class="separator:a6cf5144252ef24ea7bb5e0da1e698a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54325a3cfcd9bee58697d77e1902240"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#ab54325a3cfcd9bee58697d77e1902240">ELISTIZE</a>(CLASSNAME)</td></tr>
+<tr class="separator:ab54325a3cfcd9bee58697d77e1902240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ab54325a3cfcd9bee58697d77e1902240"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELISTIZE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">\</div>
+<div class="line"><span class="comment">/***********************************************************************    \</span></div>
+<div class="line"><span class="comment">*                           CLASSNAME##_zapper                              \</span></div>
+<div class="line"><span class="comment">*                                                                           \</span></div>
+<div class="line"><span class="comment">*  A function which can delete a CLASSNAME element.  This is passed to the  \</span></div>
+<div class="line"><span class="comment">*  generic clear list member function so that when a list is cleared the    \</span></div>
+<div class="line"><span class="comment">*  elements on the list are properly destroyed from the base class, even    \</span></div>
+<div class="line"><span class="comment">*  though we dont use a virtual destructor function.                        \</span></div>
+<div class="line"><span class="comment">**********************************************************************/</span>     \</div>
+<div class="line">                                                                            <a class="code" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">\</a></div>
+<div class="line"><a class="code" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <span class="keywordtype">void</span> CLASSNAME##_zapper(<a class="code" href="a00371.html">ELIST_LINK</a>* link) {                          \</div>
+<div class="line">  delete <span class="keyword">reinterpret_cast&lt;</span>CLASSNAME*<span class="keyword">&gt;</span>(link);                                \</div>
+<div class="line">}                                                                           \</div>
+<div class="line">                                                                            \</div>
+<div class="line"><span class="comment">/* Become a deep copy of src_list*/</span>                                         \</div>
+<div class="line">void CLASSNAME##_LIST::deep_copy(<span class="keyword">const</span> CLASSNAME##_LIST* src_list,          \</div>
+<div class="line">               CLASSNAME* (*copier)(<span class="keyword">const</span> CLASSNAME*)) {                    \</div>
+<div class="line">                                                                            \</div>
+<div class="line">  CLASSNAME##_IT from_it(const_cast&lt;CLASSNAME##_LIST*&gt;(src_list));          \</div>
+<div class="line">  CLASSNAME##_IT to_it(<span class="keyword">this</span>);                                               \</div>
+<div class="line">                                                                            \</div>
+<div class="line">  for (from_it.mark_cycle_pt(); !from_it.cycled_list(); from_it.forward())  \</div>
+<div class="line">    to_it.add_after_then_move((*copier)(from_it.data()));                   \</div>
+<div class="line">}</div>
+<div class="ttc" id="a00849_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00025">platform.h:25</a></div></div>
+<div class="ttc" id="a00371_html"><div class="ttname"><a href="a00371.html">ELIST_LINK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00084">elst.h:84</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00823_source.html#l00994">994</a> of file <a class="el" href="a00823_source.html">elst.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6cf5144252ef24ea7bb5e0da1e698a0b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELISTIZEH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="a00823.html#a181b0cf1742311895ddeb0cd3125fb90">\</a></div>
+<div class="line"><a class="code" href="a00823.html#a181b0cf1742311895ddeb0cd3125fb90">ELISTIZEH_A</a>( CLASSNAME )                                                      <a class="code" href="a00823.html#a10f14f7e0589faff72f2104fbb0fd71f">\</a></div>
+<div class="line"><a class="code" href="a00823.html#a10f14f7e0589faff72f2104fbb0fd71f">                                                                              \</a></div>
+<div class="line"><a class="code" href="a00823.html#a10f14f7e0589faff72f2104fbb0fd71f">ELISTIZEH_B</a>( CLASSNAME )                                                      <a class="code" href="a00823.html#a6980dec74200e9b5d5ec5ecd2844f291">\</a></div>
+<div class="line"><a class="code" href="a00823.html#a6980dec74200e9b5d5ec5ecd2844f291">                                                                              \</a></div>
+<div class="line"><a class="code" href="a00823.html#a6980dec74200e9b5d5ec5ecd2844f291">ELISTIZEH_C</a>( CLASSNAME )</div>
+<div class="ttc" id="a00823_html_a10f14f7e0589faff72f2104fbb0fd71f"><div class="ttname"><a href="a00823.html#a10f14f7e0589faff72f2104fbb0fd71f">ELISTIZEH_B</a></div><div class="ttdeci">#define ELISTIZEH_B(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00898">elst.h:898</a></div></div>
+<div class="ttc" id="a00823_html_a6980dec74200e9b5d5ec5ecd2844f291"><div class="ttname"><a href="a00823.html#a6980dec74200e9b5d5ec5ecd2844f291">ELISTIZEH_C</a></div><div class="ttdeci">#define ELISTIZEH_C(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00932">elst.h:932</a></div></div>
+<div class="ttc" id="a00823_html_a181b0cf1742311895ddeb0cd3125fb90"><div class="ttname"><a href="a00823.html#a181b0cf1742311895ddeb0cd3125fb90">ELISTIZEH_A</a></div><div class="ttdeci">#define ELISTIZEH_A(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00894">elst.h:894</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00823_source.html#l00981">981</a> of file <a class="el" href="a00823_source.html">elst.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a181b0cf1742311895ddeb0cd3125fb90"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELISTIZEH_A</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">\</div>
+<div class="line">extern <a class="code" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <span class="keywordtype">void</span> CLASSNAME##_zapper(<a class="code" href="a00371.html">ELIST_LINK</a>* link);</div>
+<div class="ttc" id="a00849_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00025">platform.h:25</a></div></div>
+<div class="ttc" id="a00371_html"><div class="ttname"><a href="a00371.html">ELIST_LINK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00084">elst.h:84</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00823_source.html#l00894">894</a> of file <a class="el" href="a00823_source.html">elst.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a10f14f7e0589faff72f2104fbb0fd71f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELISTIZEH_B</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00823_source.html#l00898">898</a> of file <a class="el" href="a00823_source.html">elst.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6980dec74200e9b5d5ec5ecd2844f291"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELISTIZEH_C</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CLASSNAME</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00823_source.html#l00932">932</a> of file <a class="el" href="a00823_source.html">elst.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc858fd865cb4f529784fbc52d4d2b87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define QUOTE_IT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">parm</td><td>)</td>
+          <td>&#160;&#160;&#160;#parm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00823_source.html#l00862">862</a> of file <a class="el" href="a00823_source.html">elst.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00823.html">stepblob.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00823.html">elst.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

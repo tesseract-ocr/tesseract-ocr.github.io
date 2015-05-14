@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: vs2010/port/mathfix.h Source File</title>
+<title>Tesseract: wordrec/findseam.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,53 +105,71 @@ $(document).ready(function(){initNavTree('a01230_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mathfix.h</div>  </div>
+<div class="title">findseam.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01230.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// File:        mathfix.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Description: Implement missing math functions</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Author:      zdenop</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Created:     Fri Feb 03 06:45:06 CET 2012</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// (C) Copyright 2012, Google Inc.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef VS2008_INCLUDE_MATHFIX_H_</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a01230.html#aab021ef273d807b6c9e11946cf0a3c1c">   21</a></span>&#160;<span class="preprocessor">#define VS2008_INCLUDE_MATHFIXT_H_</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef _MSC_VER</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#error &quot;Use this header only with Microsoft Visual C++ compilers!&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;float.h&gt;</span>  <span class="comment">// for _isnan(), _finite() on VC++</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#if _MSC_VER &lt; 1800</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a01230.html#a2e1baae9134e580910322362dc23290e">   31</a></span>&#160;<span class="preprocessor">#define isnan(x) _isnan(x)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a01230.html#a2a266c767456556e5c0da234b602b18b">   32</a></span>&#160;<span class="preprocessor">#define isinf(x) (!_finite(x))</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a01230.html#ac705d35734004d67c12286b1ab39f420">   33</a></span>&#160;<span class="preprocessor">#define fmax max //VC++ does not implement all the provisions of C99 Standard</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a01230.html#a6ea10f4260b54a61665ead26cb995ba3">   34</a></span>&#160;<span class="preprocessor">#define round(x) roundf(x)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a01230.html#ab07a4da26d604273a929cc442fadcedc">   35</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="a01230.html#ab07a4da26d604273a929cc442fadcedc">roundf</a>(<span class="keywordtype">float</span> num) { <span class="keywordflow">return</span> num &gt; 0 ? floorf(num + 0.5f) : ceilf(num - 0.5f); }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif  // VS2008_INCLUDE_MATHFIXT_H_</span></div>
-<div class="ttc" id="a01230_html_ab07a4da26d604273a929cc442fadcedc"><div class="ttname"><a href="a01230.html#ab07a4da26d604273a929cc442fadcedc">roundf</a></div><div class="ttdeci">float roundf(float num)</div><div class="ttdef"><b>Definition:</b> <a href="a01230_source.html#l00035">mathfix.h:35</a></div></div>
+<a href="a01230.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* -*-C-*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> ********************************************************************************</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * File:        findseam.h  (Formerly findseam.h)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description:</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:       Mark Seaman, SW Productivity</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:      Fri Oct 16 14:37:00 1987</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Modified:     Thu May 16 17:05:17 1991 (Mark Seaman) marks@hpgrlt</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Language:     C</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Package:      N/A</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Status:       Reusable Software Component</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * (c) Copyright 1987, Hewlett-Packard Company.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *********************************************************************************/</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef FINDSEAM_H</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define FINDSEAM_H</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">              I n c l u d e s</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00798.html">seam.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00829.html">genericheap.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00838.html">kdpair.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01224.html">chop.h</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// The SeamPair elements own their SEAMs and delete them upon destruction.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a01230.html#ad968f53798533f756579c5cd1fc1a980">   38</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00443.html">tesseract::KDPtrPairInc&lt;float, SEAM&gt;</a> <a class="code" href="a01230.html#ad968f53798533f756579c5cd1fc1a980">SeamPair</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a01230.html#ad75f559fa2ad0d090f83138d36e057cc">   39</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00405.html">tesseract::GenericHeap&lt;SeamPair&gt;</a> <a class="code" href="a01230.html#ad75f559fa2ad0d090f83138d36e057cc">SeamQueue</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a01230.html#a5294a4d0e0796a8ad92fa3bf63a3561a">   41</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00442.html">tesseract::KDPtrPairDec&lt;float, SEAM&gt;</a> <a class="code" href="a01230.html#a5294a4d0e0796a8ad92fa3bf63a3561a">SeamDecPair</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a01230.html#adaa99d84dea709fbf9c90de4c65e23f1">   42</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00405.html">tesseract::GenericHeap&lt;SeamDecPair&gt;</a> <a class="code" href="a01230.html#adaa99d84dea709fbf9c90de4c65e23f1">SeamPile</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00442_html"><div class="ttname"><a href="a00442.html">tesseract::KDPtrPairDec</a></div><div class="ttdef"><b>Definition:</b> <a href="a00838_source.html#l00162">kdpair.h:162</a></div></div>
+<div class="ttc" id="a01224_html"><div class="ttname"><a href="a01224.html">chop.h</a></div></div>
+<div class="ttc" id="a01230_html_adaa99d84dea709fbf9c90de4c65e23f1"><div class="ttname"><a href="a01230.html#adaa99d84dea709fbf9c90de4c65e23f1">SeamPile</a></div><div class="ttdeci">tesseract::GenericHeap&lt; SeamDecPair &gt; SeamPile</div><div class="ttdef"><b>Definition:</b> <a href="a01230_source.html#l00042">findseam.h:42</a></div></div>
+<div class="ttc" id="a00443_html"><div class="ttname"><a href="a00443.html">tesseract::KDPtrPairInc</a></div><div class="ttdef"><b>Definition:</b> <a href="a00838_source.html#l00145">kdpair.h:145</a></div></div>
+<div class="ttc" id="a00838_html"><div class="ttname"><a href="a00838.html">kdpair.h</a></div></div>
+<div class="ttc" id="a00829_html"><div class="ttname"><a href="a00829.html">genericheap.h</a></div></div>
+<div class="ttc" id="a00405_html"><div class="ttname"><a href="a00405.html">tesseract::GenericHeap</a></div><div class="ttdef"><b>Definition:</b> <a href="a00829_source.html#l00058">genericheap.h:58</a></div></div>
+<div class="ttc" id="a01230_html_ad75f559fa2ad0d090f83138d36e057cc"><div class="ttname"><a href="a01230.html#ad75f559fa2ad0d090f83138d36e057cc">SeamQueue</a></div><div class="ttdeci">tesseract::GenericHeap&lt; SeamPair &gt; SeamQueue</div><div class="ttdef"><b>Definition:</b> <a href="a01230_source.html#l00039">findseam.h:39</a></div></div>
+<div class="ttc" id="a00798_html"><div class="ttname"><a href="a00798.html">seam.h</a></div></div>
+<div class="ttc" id="a01230_html_ad968f53798533f756579c5cd1fc1a980"><div class="ttname"><a href="a01230.html#ad968f53798533f756579c5cd1fc1a980">SeamPair</a></div><div class="ttdeci">tesseract::KDPtrPairInc&lt; float, SEAM &gt; SeamPair</div><div class="ttdef"><b>Definition:</b> <a href="a01230_source.html#l00038">findseam.h:38</a></div></div>
+<div class="ttc" id="a01230_html_a5294a4d0e0796a8ad92fa3bf63a3561a"><div class="ttname"><a href="a01230.html#a5294a4d0e0796a8ad92fa3bf63a3561a">SeamDecPair</a></div><div class="ttdeci">tesseract::KDPtrPairDec&lt; float, SEAM &gt; SeamDecPair</div><div class="ttdef"><b>Definition:</b> <a href="a01230_source.html#l00041">findseam.h:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a5945898d232e1adecd1190672f72f3b.html">vs2010</a></li><li class="navelem"><a class="el" href="dir_ed8a104133014addff704383f7ba065c.html">port</a></li><li class="navelem"><a class="el" href="a01230.html">mathfix.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:32 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01230.html">findseam.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:06 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

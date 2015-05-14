@@ -1,7 +1,8 @@
 var a00632 =
 [
-    [ "TessPDFRenderer", "a00632.html#a104c094e02cf15047dc5a7e9d9002c24", null ],
-    [ "AddImageHandler", "a00632.html#ae4135e7f5013b96a2b9059c7cfd35e2d", null ],
-    [ "BeginDocumentHandler", "a00632.html#a7855cb1283ca229bec709a7ec6af2d63", null ],
-    [ "EndDocumentHandler", "a00632.html#ad9a3bd78c32a27600634fd2828aa8b26", null ]
+    [ "TRand", "a00632.html#a9cdae04e6a454f2c9a3e598a594407c0", null ],
+    [ "IntRand", "a00632.html#a935a71d19aa53169105e9e4750547a0b", null ],
+    [ "set_seed", "a00632.html#a70d99e81987513de130a95ab74d92bce", null ],
+    [ "SignedRand", "a00632.html#a7e05f43d116ea2c6f83435924937b0c9", null ],
+    [ "UnsignedRand", "a00632.html#a9fea4670b76b953afc288eba5e1be653", null ]
 ];

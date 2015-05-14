@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/outfeat.h Source File</title>
+<title>Tesseract: classify/tessclassifier.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,75 +105,109 @@ $(document).ready(function(){initNavTree('a00947_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">outfeat.h</div>  </div>
+<div class="title">tessclassifier.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00947.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:    outfeat.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:     Definition of outline features.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:      Dan Johnson</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:     11/13/90, DSJ, Created.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **     (c) Copyright Hewlett-Packard Company, 1988.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef   OUTFEAT_H</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define   OUTFEAT_H</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00945.html">ocrfeatures.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00915.html">fpoint.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00937.html">mfoutline.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00947.html#ab73697b859e4921472c6cf1de43267a1">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00947.html#ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6">   29</a></span>&#160;  <a class="code" href="a00947.html#ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6">OutlineFeatX</a>,</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00947.html#ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379">   30</a></span>&#160;  <a class="code" href="a00947.html#ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379">OutlineFeatY</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00947.html#ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741">   31</a></span>&#160;  <a class="code" href="a00947.html#ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741">OutlineFeatLength</a>,</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00947.html#ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb">   32</a></span>&#160;  <a class="code" href="a00947.html#ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb">OutlineFeatDir</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <a class="code" href="a00947.html#ab73697b859e4921472c6cf1de43267a1">OUTLINE_FEAT_PARAM_NAME</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00947.html#ac29e72cf5bfbadc9a7b2490ffdda297f">   35</a></span>&#160;<span class="preprocessor">#define MAX_OUTLINE_FEATURES  (100)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/*---------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">          Privat Function Prototypes</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">----------------------------------------------------------------------------*/</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00947.html#a7a23f0f713121c5a61e7f96df94d6ced">AddOutlineFeatureToSet</a>(<a class="code" href="a00409.html">FPOINT</a> *Start,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                            <a class="code" href="a00409.html">FPOINT</a> *End,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                            <a class="code" href="a00388.html">FEATURE_SET</a> FeatureSet);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00947.html#a46e551093fc5d100adbb071067948bd9">ConvertToOutlineFeatures</a>(<a class="code" href="a00469.html">MFOUTLINE</a> Outline, <a class="code" href="a00388.html">FEATURE_SET</a> FeatureSet);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00947.html#a31e740a46d077ad41735bbd17b0bef34">NormalizeOutlineX</a>(<a class="code" href="a00388.html">FEATURE_SET</a> FeatureSet);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00947_html_ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb"><div class="ttname"><a href="a00947.html#ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb">OutlineFeatDir</a></div><div class="ttdef"><b>Definition:</b> <a href="a00947_source.html#l00032">outfeat.h:32</a></div></div>
-<div class="ttc" id="a00915_html"><div class="ttname"><a href="a00915.html">fpoint.h</a></div></div>
-<div class="ttc" id="a00947_html_a7a23f0f713121c5a61e7f96df94d6ced"><div class="ttname"><a href="a00947.html#a7a23f0f713121c5a61e7f96df94d6ced">AddOutlineFeatureToSet</a></div><div class="ttdeci">void AddOutlineFeatureToSet(FPOINT *Start, FPOINT *End, FEATURE_SET FeatureSet)</div><div class="ttdef"><b>Definition:</b> <a href="a00946_source.html#l00078">outfeat.cpp:78</a></div></div>
-<div class="ttc" id="a00388_html"><div class="ttname"><a href="a00388.html">FEATURE_SET_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00069">ocrfeatures.h:69</a></div></div>
-<div class="ttc" id="a00947_html_a46e551093fc5d100adbb071067948bd9"><div class="ttname"><a href="a00947.html#a46e551093fc5d100adbb071067948bd9">ConvertToOutlineFeatures</a></div><div class="ttdeci">void ConvertToOutlineFeatures(MFOUTLINE Outline, FEATURE_SET FeatureSet)</div><div class="ttdef"><b>Definition:</b> <a href="a00946_source.html#l00111">outfeat.cpp:111</a></div></div>
-<div class="ttc" id="a00947_html_ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6"><div class="ttname"><a href="a00947.html#ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6">OutlineFeatX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00947_source.html#l00029">outfeat.h:29</a></div></div>
-<div class="ttc" id="a00947_html_ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741"><div class="ttname"><a href="a00947.html#ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741">OutlineFeatLength</a></div><div class="ttdef"><b>Definition:</b> <a href="a00947_source.html#l00031">outfeat.h:31</a></div></div>
-<div class="ttc" id="a00409_html"><div class="ttname"><a href="a00409.html">FPOINT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00915_source.html#l00029">fpoint.h:29</a></div></div>
-<div class="ttc" id="a00947_html_ab73697b859e4921472c6cf1de43267a1"><div class="ttname"><a href="a00947.html#ab73697b859e4921472c6cf1de43267a1">OUTLINE_FEAT_PARAM_NAME</a></div><div class="ttdeci">OUTLINE_FEAT_PARAM_NAME</div><div class="ttdef"><b>Definition:</b> <a href="a00947_source.html#l00028">outfeat.h:28</a></div></div>
-<div class="ttc" id="a00947_html_ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379"><div class="ttname"><a href="a00947.html#ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379">OutlineFeatY</a></div><div class="ttdef"><b>Definition:</b> <a href="a00947_source.html#l00030">outfeat.h:30</a></div></div>
-<div class="ttc" id="a00947_html_a31e740a46d077ad41735bbd17b0bef34"><div class="ttname"><a href="a00947.html#a31e740a46d077ad41735bbd17b0bef34">NormalizeOutlineX</a></div><div class="ttdeci">void NormalizeOutlineX(FEATURE_SET FeatureSet)</div><div class="ttdef"><b>Definition:</b> <a href="a00946_source.html#l00155">outfeat.cpp:155</a></div></div>
-<div class="ttc" id="a00937_html"><div class="ttname"><a href="a00937.html">mfoutline.h</a></div></div>
-<div class="ttc" id="a00469_html"><div class="ttname"><a href="a00469.html">list_rec</a></div><div class="ttdef"><b>Definition:</b> <a href="a01056_source.html#l00127">oldlist.h:127</a></div></div>
-<div class="ttc" id="a00945_html"><div class="ttname"><a href="a00945.html">ocrfeatures.h</a></div></div>
+<a href="a00947.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright 2011 Google Inc. All Rights Reserved.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Author: rays@google.com (Ray Smith)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span><span class="comment">// File:        tessclassifier.h</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Description: Tesseract implementation of a ShapeClassifier.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// Author:      Ray Smith</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Created:     Tue Nov 22 14:10:45 PST 2011</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// (C) Copyright 2011, Google Inc.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// limitations under the License.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef THIRD_PARTY_TESSERACT_CLASSIFY_TESSCLASSIFIER_H_</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define THIRD_PARTY_TESSERACT_CLASSIFY_TESSCLASSIFIER_H_</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00943.html">shapeclassifier.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span>Classify;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span>TrainingSample;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// Tesseract implementation of a ShapeClassifier.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Due to limitations in the content of TrainingSample, this currently</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// only works for the static classifier and only works if the ShapeTable</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// in classify is not NULL.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a00604.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00604.html">TessClassifier</a> : <span class="keyword">public</span> <a class="code" href="a00544.html">ShapeClassifier</a> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00604.html#a136f93886e941ec3ca91862b0017c502">   38</a></span>&#160;  <a class="code" href="a00604.html#a136f93886e941ec3ca91862b0017c502">TessClassifier</a>(<span class="keywordtype">bool</span> pruner_only, <a class="code" href="a00314.html">tesseract::Classify</a>* classify)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    : pruner_only_(pruner_only), classify_(classify) {}</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00604.html#a823c6f710c5845dd9bb08e8efd73bf1a">   40</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00604.html#a823c6f710c5845dd9bb08e8efd73bf1a">~TessClassifier</a>() {}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// Classifies the given [training] sample, writing to results.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// See ShapeClassifier for a full description.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00604.html#ae183fc5b349b67327e66b7accd7ae2c4">UnicharClassifySample</a>(<span class="keyword">const</span> <a class="code" href="a00630.html">TrainingSample</a>&amp; <a class="code" href="a00529.html">sample</a>, Pix* page_pix,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                    <span class="keywordtype">int</span> debug, <a class="code" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> keep_this,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                    <a class="code" href="a00406.html">GenericVector&lt;UnicharRating&gt;</a>* results);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// Provides access to the ShapeTable that this classifier works with.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a00548.html">ShapeTable</a>* <a class="code" href="a00604.html#a5afc5fa9f61af8d6fdecb1edd225c033">GetShapeTable</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// Provides access to the UNICHARSET that this classifier works with.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Only needs to be overridden if GetShapeTable() can return NULL.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a00643.html">UNICHARSET</a>&amp; <a class="code" href="a00604.html#a3eb47dedcbda5b5a33b53170a3cf17ea">GetUnicharset</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// Displays classification as the given shape_id. Creates as many windows</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// as it feels fit, using index as a guide for placement. Adds any created</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// windows to the windows output and returns a new index that may be used</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// by any subsequent classifiers. Caller waits for the user to view and</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// then destroys the windows by clearing the vector.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00604.html#a592970c9ad21ab0c6e5cdc46581eaa67">DisplayClassifyAs</a>(<span class="keyword">const</span> <a class="code" href="a00630.html">TrainingSample</a>&amp; <a class="code" href="a00529.html">sample</a>, Pix* page_pix,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                <span class="keywordtype">int</span> unichar_id, <span class="keywordtype">int</span> index,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                <a class="code" href="a00508.html">PointerVector&lt;ScrollView&gt;</a>* windows);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Indicates that this classifier is to use just the ClassPruner, or the</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// full classifier if false.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">bool</span> pruner_only_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// Borrowed pointer to the actual Tesseract classifier.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="a00314.html">tesseract::Classify</a>* classify_;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* THIRD_PARTY_TESSERACT_CLASSIFY_TESSCLASSIFIER_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a00604_html_a592970c9ad21ab0c6e5cdc46581eaa67"><div class="ttname"><a href="a00604.html#a592970c9ad21ab0c6e5cdc46581eaa67">tesseract::TessClassifier::DisplayClassifyAs</a></div><div class="ttdeci">virtual int DisplayClassifyAs(const TrainingSample &amp;sample, Pix *page_pix, int unichar_id, int index, PointerVector&lt; ScrollView &gt; *windows)</div><div class="ttdef"><b>Definition:</b> <a href="a00946_source.html#l00068">tessclassifier.cpp:68</a></div></div>
+<div class="ttc" id="a00544_html"><div class="ttname"><a href="a00544.html">tesseract::ShapeClassifier</a></div><div class="ttdef"><b>Definition:</b> <a href="a00943_source.html#l00043">shapeclassifier.h:43</a></div></div>
+<div class="ttc" id="a00630_html"><div class="ttname"><a href="a00630.html">tesseract::TrainingSample</a></div><div class="ttdef"><b>Definition:</b> <a href="a00949_source.html#l00053">trainingsample.h:53</a></div></div>
+<div class="ttc" id="a00604_html_a136f93886e941ec3ca91862b0017c502"><div class="ttname"><a href="a00604.html#a136f93886e941ec3ca91862b0017c502">tesseract::TessClassifier::TessClassifier</a></div><div class="ttdeci">TessClassifier(bool pruner_only, tesseract::Classify *classify)</div><div class="ttdef"><b>Definition:</b> <a href="a00947_source.html#l00038">tessclassifier.h:38</a></div></div>
+<div class="ttc" id="a00643_html"><div class="ttname"><a href="a00643.html">UNICHARSET</a></div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00139">unicharset.h:139</a></div></div>
+<div class="ttc" id="a00943_html"><div class="ttname"><a href="a00943.html">shapeclassifier.h</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector</a></div><div class="ttdef"><b>Definition:</b> <a href="a00663_source.html#l00041">baseapi.h:41</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00314_html"><div class="ttname"><a href="a00314.html">tesseract::Classify</a></div><div class="ttdef"><b>Definition:</b> <a href="a00882_source.html#l00060">classify.h:60</a></div></div>
+<div class="ttc" id="a00529_html"><div class="ttname"><a href="a00529.html">sample</a></div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00032">cluster.h:32</a></div></div>
+<div class="ttc" id="a00604_html_ae183fc5b349b67327e66b7accd7ae2c4"><div class="ttname"><a href="a00604.html#ae183fc5b349b67327e66b7accd7ae2c4">tesseract::TessClassifier::UnicharClassifySample</a></div><div class="ttdeci">virtual int UnicharClassifySample(const TrainingSample &amp;sample, Pix *page_pix, int debug, UNICHAR_ID keep_this, GenericVector&lt; UnicharRating &gt; *results)</div><div class="ttdef"><b>Definition:</b> <a href="a00946_source.html#l00031">tessclassifier.cpp:31</a></div></div>
+<div class="ttc" id="a00604_html_a5afc5fa9f61af8d6fdecb1edd225c033"><div class="ttname"><a href="a00604.html#a5afc5fa9f61af8d6fdecb1edd225c033">tesseract::TessClassifier::GetShapeTable</a></div><div class="ttdeci">virtual const ShapeTable * GetShapeTable() const </div><div class="ttdef"><b>Definition:</b> <a href="a00946_source.html#l00054">tessclassifier.cpp:54</a></div></div>
+<div class="ttc" id="a00604_html_a823c6f710c5845dd9bb08e8efd73bf1a"><div class="ttname"><a href="a00604.html#a823c6f710c5845dd9bb08e8efd73bf1a">tesseract::TessClassifier::~TessClassifier</a></div><div class="ttdeci">virtual ~TessClassifier()</div><div class="ttdef"><b>Definition:</b> <a href="a00947_source.html#l00040">tessclassifier.h:40</a></div></div>
+<div class="ttc" id="a00508_html"><div class="ttname"><a href="a00508.html">tesseract::PointerVector</a></div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00424">genericvector.h:424</a></div></div>
+<div class="ttc" id="a00866_html_a8578b19fa1ff5ca75080db1a18ecc32e"><div class="ttname"><a href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a></div><div class="ttdeci">int UNICHAR_ID</div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00033">unichar.h:33</a></div></div>
+<div class="ttc" id="a00604_html_a3eb47dedcbda5b5a33b53170a3cf17ea"><div class="ttname"><a href="a00604.html#a3eb47dedcbda5b5a33b53170a3cf17ea">tesseract::TessClassifier::GetUnicharset</a></div><div class="ttdeci">virtual const UNICHARSET &amp; GetUnicharset() const </div><div class="ttdef"><b>Definition:</b> <a href="a00946_source.html#l00059">tessclassifier.cpp:59</a></div></div>
+<div class="ttc" id="a00604_html"><div class="ttname"><a href="a00604.html">tesseract::TessClassifier</a></div><div class="ttdef"><b>Definition:</b> <a href="a00947_source.html#l00036">tessclassifier.h:36</a></div></div>
+<div class="ttc" id="a00548_html"><div class="ttname"><a href="a00548.html">tesseract::ShapeTable</a></div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00249">shapetable.h:249</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00947.html">outfeat.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:26 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00947.html">tessclassifier.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:00 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

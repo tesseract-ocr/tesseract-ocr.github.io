@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: training/dawg2wordlist.cpp File Reference</title>
+<title>Tesseract: training/mftraining.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,93 +105,110 @@ $(document).ready(function(){initNavTree('a01188.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">dawg2wordlist.cpp File Reference</div>  </div>
+<div class="title">mftraining.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01061_source.html">dawg.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00854_source.html">host.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00879_source.html">tesscallback.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01072_source.html">trie.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00889_source.html">unicharset.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00882_source.html">classify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00884_source.html">cluster.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00886_source.html">clusttool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01177_source.html">commontraining.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01035_source.html">danerror.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01037_source.html">efio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01039_source.html">emalloc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00895_source.html">featdefs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00749_source.html">fontinfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00837_source.html">indexmapbidi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00915_source.html">intproto.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00919_source.html">mastertrainer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01187_source.html">mergenf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00921_source.html">mf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00843_source.html">ndminx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00933_source.html">ocrfeatures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01046_source.html">oldlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00939_source.html">protos.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00945_source.html">shapetable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01198_source.html">tessopt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00864_source.html">tprintf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00871_source.html">unicity_table.h</a>&quot;</code><br />
 </div>
 <p><a href="a01188_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00674.html">WordOutputter</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a525335710b53cb064ca56b936120431e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#a525335710b53cb064ca56b936120431e">_USE_MATH_DEFINES</a></td></tr>
+<tr class="separator:a525335710b53cb064ca56b936120431e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f1cc39e4f40922426135364cb7c3c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#a13f1cc39e4f40922426135364cb7c3c2">PROGRAM_FEATURE_TYPE</a>&#160;&#160;&#160;&quot;mf&quot;</td></tr>
+<tr class="separator:a13f1cc39e4f40922426135364cb7c3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5b4bf0033d9904ad285f6adcb0cc4d0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00354.html">tesseract::Dawg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#a5b4bf0033d9904ad285f6adcb0cc4d0d">LoadSquishedDawg</a> (const <a class="el" href="a00661.html">UNICHARSET</a> &amp;unicharset, const char *filename)</td></tr>
-<tr class="separator:a5b4bf0033d9904ad285f6adcb0cc4d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ed4f2196ec2c0cc5e0999ad197c527c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#a7ed4f2196ec2c0cc5e0999ad197c527c">WriteDawgAsWordlist</a> (const <a class="el" href="a00661.html">UNICHARSET</a> &amp;unicharset, const <a class="el" href="a00354.html">tesseract::Dawg</a> *dawg, const char *outfile_name)</td></tr>
-<tr class="separator:a7ed4f2196ec2c0cc5e0999ad197c527c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
-<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada6b3784932de25658b118cf4a2b1195"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#ada6b3784932de25658b118cf4a2b1195">DECLARE_STRING_PARAM_FLAG</a> (test_ch)</td></tr>
+<tr class="separator:ada6b3784932de25658b118cf4a2b1195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aacd4a34e871006f4c22c0a3c1a8b9baa"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#aacd4a34e871006f4c22c0a3c1a8b9baa">kDictDebugLevel</a> = 1</td></tr>
-<tr class="separator:aacd4a34e871006f4c22c0a3c1a8b9baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c65f2b556fc46b9e4b01c7ef587586"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01188.html#a84c65f2b556fc46b9e4b01c7ef587586">kMaxShapeLabelLength</a> = 10</td></tr>
+<tr class="separator:a84c65f2b556fc46b9e4b01c7ef587586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a5b4bf0033d9904ad285f6adcb0cc4d0d"></a>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a525335710b53cb064ca56b936120431e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00354.html">tesseract::Dawg</a>* LoadSquishedDawg </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00661.html">UNICHARSET</a> &amp;&#160;</td>
-          <td class="paramname"><em>unicharset</em>, </td>
+          <td class="memname">#define _USE_MATH_DEFINES</td>
         </tr>
+      </table>
+</div><div class="memdoc">
+<hr/>
+ <h2>Include Files and Type Defines </h2>
+
+<p>Definition at line <a class="el" href="a01188_source.html#l00035">35</a> of file <a class="el" href="a01188_source.html">mftraining.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a13f1cc39e4f40922426135364cb7c3c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
         <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">#define PROGRAM_FEATURE_TYPE&#160;&#160;&#160;&quot;mf&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01188_source.html#l00028">28</a> of file <a class="el" href="a01188_source.html">dawg2wordlist.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a01188.html#aacd4a34e871006f4c22c0a3c1a8b9baa">kDictDebugLevel</a> = 1;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  FILE *dawg_file = fopen(<a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <span class="stringliteral">&quot;rb&quot;</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">if</span> (dawg_file == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Could not open %s for reading.\n&quot;</span>, <a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Loading word list from %s\n&quot;</span>, <a class="code" href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="a00354.html">tesseract::Dawg</a> *retval = <span class="keyword">new</span> <a class="code" href="a00575.html">tesseract::SquishedDawg</a>(</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      dawg_file, <a class="code" href="a01279.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">tesseract::DAWG_TYPE_WORD</a>, <span class="stringliteral">&quot;eng&quot;</span>, <a class="code" href="a00811.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a>,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      kDictDebugLevel);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Word list loaded.\n&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  fclose(dawg_file);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a00811_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1"><div class="ttname"><a href="a00811.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00249">ratngs.h:249</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00575_html"><div class="ttname"><a href="a00575.html">tesseract::SquishedDawg</a></div><div class="ttdef"><b>Definition:</b> <a href="a01061_source.html#l00409">dawg.h:409</a></div></div>
-<div class="ttc" id="a01280_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01280.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
-<div class="ttc" id="a01279_html_a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34"><div class="ttname"><a href="a01279.html#a07c41f251f1782c60df4e626c35d2151a9c67e397ff6d57a705cd4cd4524a2b34">tesseract::DAWG_TYPE_WORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a01061_source.html#l00073">dawg.h:73</a></div></div>
-<div class="ttc" id="a00354_html"><div class="ttname"><a href="a00354.html">tesseract::Dawg</a></div><div class="ttdef"><b>Definition:</b> <a href="a01061_source.html#l00118">dawg.h:118</a></div></div>
-<div class="ttc" id="a01188_html_aacd4a34e871006f4c22c0a3c1a8b9baa"><div class="ttname"><a href="a01188.html#aacd4a34e871006f4c22c0a3c1a8b9baa">kDictDebugLevel</a></div><div class="ttdeci">const int kDictDebugLevel</div><div class="ttdef"><b>Definition:</b> <a href="a01188_source.html#l00026">dawg2wordlist.cpp:26</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a01188_source.html#l00075">75</a> of file <a class="el" href="a01188_source.html">mftraining.cpp</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ada6b3784932de25658b118cf4a2b1195"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DECLARE_STRING_PARAM_FLAG </td>
+          <td>(</td>
+          <td class="paramtype">test_ch&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -204,8 +221,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>argv</em>[]&#160;</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -214,108 +231,162 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<hr/>
+ <h2>Public Function Prototypes </h2>
 
-<p>Definition at line <a class="el" href="a01188_source.html#l00070">70</a> of file <a class="el" href="a01188_source.html">dawg2wordlist.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                 {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (argc != 4) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Print all the words in a given dawg.\n&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Usage: %s &lt;unicharset&gt; &lt;dawgfile&gt; &lt;wordlistfile&gt;\n&quot;</span>,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            argv[0]);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *unicharset_file = argv[1];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *dawg_file = argv[2];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *wordlist_file = argv[3];</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="a00661.html">UNICHARSET</a> unicharset;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">if</span> (!unicharset.<a class="code" href="a00661.html#af066ba55fdc20f996eaaed05618b377e">load_from_file</a>(unicharset_file)) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Error loading unicharset from %s.\n&quot;</span>, unicharset_file);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="a00354.html">tesseract::Dawg</a> *dict = <a class="code" href="a01188.html#a5b4bf0033d9904ad285f6adcb0cc4d0d">LoadSquishedDawg</a>(unicharset, dawg_file);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">if</span> (dict == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Error loading dictionary from %s.\n&quot;</span>, dawg_file);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">int</span> retval = <a class="code" href="a01188.html#a7ed4f2196ec2c0cc5e0999ad197c527c">WriteDawgAsWordlist</a>(unicharset, dict, wordlist_file);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">delete</span> dict;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
-<div class="ttc" id="a00661_html_af066ba55fdc20f996eaaed05618b377e"><div class="ttname"><a href="a00661.html#af066ba55fdc20f996eaaed05618b377e">UNICHARSET::load_from_file</a></div><div class="ttdeci">bool load_from_file(const char *const filename, bool skip_fragments)</div><div class="ttdef"><b>Definition:</b> <a href="a00889_source.html#l00351">unicharset.h:351</a></div></div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a01188_html_a5b4bf0033d9904ad285f6adcb0cc4d0d"><div class="ttname"><a href="a01188.html#a5b4bf0033d9904ad285f6adcb0cc4d0d">LoadSquishedDawg</a></div><div class="ttdeci">tesseract::Dawg * LoadSquishedDawg(const UNICHARSET &amp;unicharset, const char *filename)</div><div class="ttdef"><b>Definition:</b> <a href="a01188_source.html#l00028">dawg2wordlist.cpp:28</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00661_html"><div class="ttname"><a href="a00661.html">UNICHARSET</a></div><div class="ttdef"><b>Definition:</b> <a href="a00889_source.html#l00139">unicharset.h:139</a></div></div>
-<div class="ttc" id="a00354_html"><div class="ttname"><a href="a00354.html">tesseract::Dawg</a></div><div class="ttdef"><b>Definition:</b> <a href="a01061_source.html#l00118">dawg.h:118</a></div></div>
-<div class="ttc" id="a01188_html_a7ed4f2196ec2c0cc5e0999ad197c527c"><div class="ttname"><a href="a01188.html#a7ed4f2196ec2c0cc5e0999ad197c527c">WriteDawgAsWordlist</a></div><div class="ttdeci">int WriteDawgAsWordlist(const UNICHARSET &amp;unicharset, const tesseract::Dawg *dawg, const char *outfile_name)</div><div class="ttdef"><b>Definition:</b> <a href="a01188_source.html#l00054">dawg2wordlist.cpp:54</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a7ed4f2196ec2c0cc5e0999ad197c527c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int WriteDawgAsWordlist </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00661.html">UNICHARSET</a> &amp;&#160;</td>
-          <td class="paramname"><em>unicharset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00354.html">tesseract::Dawg</a> *&#160;</td>
-          <td class="paramname"><em>dawg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>outfile_name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01188_source.html#l00054">54</a> of file <a class="el" href="a01188_source.html">dawg2wordlist.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                  {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  FILE *out = fopen(outfile_name, <span class="stringliteral">&quot;wb&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (out == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Could not open %s for writing.\n&quot;</span>, outfile_name);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="a00674.html">WordOutputter</a> outputter(out);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="a00616.html">TessCallback1&lt;const char *&gt;</a> *print_word_cb =</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="a00879.html#ad000c6729bae0f97075ca10a0b5bf7d6">NewPermanentTessCallback</a>(&amp;outputter, &amp;<a class="code" href="a00674.html#ad573101b61c94a4f017ed574d4308762">WordOutputter::output_word</a>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  dawg-&gt;<a class="code" href="a00354.html#afeedd2d27d9d9c127806a894facf24f8">iterate_words</a>(unicharset, print_word_cb);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">delete</span> print_word_cb;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> fclose(out);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00674_html_ad573101b61c94a4f017ed574d4308762"><div class="ttname"><a href="a00674.html#ad573101b61c94a4f017ed574d4308762">WordOutputter::output_word</a></div><div class="ttdeci">void output_word(const char *word)</div><div class="ttdef"><b>Definition:</b> <a href="a01188_source.html#l00048">dawg2wordlist.cpp:48</a></div></div>
-<div class="ttc" id="a00879_html_ad000c6729bae0f97075ca10a0b5bf7d6"><div class="ttname"><a href="a00879.html#ad000c6729bae0f97075ca10a0b5bf7d6">NewPermanentTessCallback</a></div><div class="ttdeci">_ConstTessMemberResultCallback_0_0&lt; false, R, T1 &gt;::base * NewPermanentTessCallback(const T1 *obj, R(T2::*member)() const)</div><div class="ttdef"><b>Definition:</b> <a href="a00879_source.html#l00116">tesscallback.h:116</a></div></div>
-<div class="ttc" id="a00354_html_afeedd2d27d9d9c127806a894facf24f8"><div class="ttname"><a href="a00354.html#afeedd2d27d9d9c127806a894facf24f8">tesseract::Dawg::iterate_words</a></div><div class="ttdeci">void iterate_words(const UNICHARSET &amp;unicharset, TessCallback1&lt; const WERD_CHOICE * &gt; *cb) const </div><div class="ttdef"><b>Definition:</b> <a href="a01060_source.html#l00106">dawg.cpp:106</a></div></div>
-<div class="ttc" id="a00674_html"><div class="ttname"><a href="a00674.html">WordOutputter</a></div><div class="ttdef"><b>Definition:</b> <a href="a01188_source.html#l00045">dawg2wordlist.cpp:45</a></div></div>
-<div class="ttc" id="a00616_html"><div class="ttname"><a href="a00616.html">TessCallback1</a></div><div class="ttdef"><b>Definition:</b> <a href="a00879_source.html#l01666">tesscallback.h:1666</a></div></div>
+<p>Definition at line <a class="el" href="a01188_source.html#l00212">212</a> of file <a class="el" href="a01188_source.html">mftraining.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                 {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">**  Parameters:</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">**    argc  number of command line arguments</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">**    argv  array of command line arguments</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">**  Globals: none</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">**  Operation:</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">**    This program reads in a text file consisting of feature</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">**    samples from a training page in the following format:</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">**      FontName UTF8-char-str xmin ymin xmax ymax page-number</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">**       NumberOfFeatureTypes(N)</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">**         FeatureTypeName1 NumberOfFeatures(M)</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">**            Feature1</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">**            ...</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">**            FeatureM</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">**         FeatureTypeName2 NumberOfFeatures(M)</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">**            Feature1</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">**            ...</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">**            FeatureM</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">**         ...</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">**         FeatureTypeNameN NumberOfFeatures(M)</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">**            Feature1</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">**            ...</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">**            FeatureM</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">**      FontName CharName ...</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">**    The result of this program is a binary inttemp file used by</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">**    the OCR engine.</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">**  Return: none</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">**  Exceptions: none</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">**  History:  Fri Aug 18 08:56:17 1989, DSJ, Created.</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">**        Mon May 18 1998, Christy Russson, Revistion started.</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <a class="code" href="a01176.html#a5177d61ebf73a60571198cb6eaa753ac">ParseArguments</a>(&amp;argc, &amp;argv);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <a class="code" href="a00548.html">ShapeTable</a>* shape_table = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <a class="code" href="a00561.html">STRING</a> file_prefix;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="comment">// Load the training data.</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <a class="code" href="a00463.html">MasterTrainer</a>* trainer = <a class="code" href="a01267.html#a2af3b74c1139cfc070d17e947f212b58">tesseract::LoadTrainingData</a>(argc, argv,</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                                       <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                                       &amp;shape_table,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                                       &amp;file_prefix);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordflow">if</span> (trainer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> 1;  <span class="comment">// Failed.</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="comment">// Setup an index mapping from the shapes in the shape table to the classes</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="comment">// that will be trained. In keeping with the original design, each shape</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="comment">// with the same list of unichars becomes a different class and the configs</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="comment">// represent the different combinations of fonts.</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <a class="code" href="a00420.html">IndexMapBiDi</a> config_map;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  SetupConfigMap(shape_table, &amp;config_map);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <a class="code" href="a01267.html#af6657e7cdbf17875a06df792c22cd28b">WriteShapeTable</a>(file_prefix, *shape_table);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="comment">// If the shape_table is flat, then either we didn&#39;t run shape clustering, or</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="comment">// it did nothing, so we just output the trainer&#39;s unicharset.</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="comment">// Otherwise shape_set will hold a fake unicharset with an entry for each</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="comment">// shape in the shape table, and we will output that instead.</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <a class="code" href="a00643.html">UNICHARSET</a> shape_set;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00643.html">UNICHARSET</a>* unicharset = &amp;trainer-&gt;<a class="code" href="a00463.html#ae89c92b73a62da4562e7f16ced0f759f">unicharset</a>();</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="comment">// If we ran shapeclustering (and it worked) then at least one shape will</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="comment">// have multiple unichars, so we have to build a fake unicharset.</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keywordflow">if</span> (shape_table-&gt;<a class="code" href="a00548.html#a77fc3b88ce452fe84f66476ebd0567ff">AnyMultipleUnichars</a>()) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    unicharset = &amp;shape_set;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// Now build a fake unicharset for the compact shape space to keep the</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">// output modules happy that we are doing things correctly.</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">int</span> num_shapes = config_map.<a class="code" href="a00419.html#ab2904b1640580ad7ba6b2c14522dc3e8">CompactSize</a>();</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> s = 0; s &lt; num_shapes; ++s) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      <span class="keywordtype">char</span> shape_label[<a class="code" href="a01188.html#a84c65f2b556fc46b9e4b01c7ef587586">kMaxShapeLabelLength</a> + 1];</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      snprintf(shape_label, <a class="code" href="a01188.html#a84c65f2b556fc46b9e4b01c7ef587586">kMaxShapeLabelLength</a>, <span class="stringliteral">&quot;sh%04d&quot;</span>, s);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      shape_set.<a class="code" href="a00643.html#ab5198816dde686850da3530a1f8261fe">unichar_insert</a>(shape_label);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="comment">// Now train each config separately.</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keywordtype">int</span> num_configs = shape_table-&gt;<a class="code" href="a00548.html#a924919daeadb48539e3d68c65013c173">NumShapes</a>();</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <a class="code" href="a00457.html">LIST</a> mf_classes = <a class="code" href="a01046.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> s = 0; s &lt; num_configs; ++s) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordtype">int</span> unichar_id, font_id;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span> (unicharset == &amp;shape_set) {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      <span class="comment">// Using fake unichar_ids from the config_map/shape_set.</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      unichar_id = config_map.<a class="code" href="a00420.html#a2c0f96f5d5fad6c9973e1b074fac5a03">SparseToCompact</a>(s);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      <span class="comment">// Get the real unichar_id from the shape table/unicharset.</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      shape_table-&gt;<a class="code" href="a00548.html#ade3f46eb910d83302b04f9f530277290">GetFirstUnicharAndFont</a>(s, &amp;unichar_id, &amp;font_id);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* class_label = unicharset-&gt;<a class="code" href="a00643.html#a421c0b6ebcbbe7547490252fb688c961">id_to_unichar</a>(unichar_id);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    mf_classes = ClusterOneConfig(s, class_label, mf_classes, *shape_table,</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                  trainer);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <a class="code" href="a00561.html">STRING</a> inttemp_file = file_prefix;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  inttemp_file += <span class="stringliteral">&quot;inttemp&quot;</span>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <a class="code" href="a00561.html">STRING</a> pffmtable_file = file_prefix;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  pffmtable_file += <span class="stringliteral">&quot;pffmtable&quot;</span>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <a class="code" href="a00313.html">CLASS_STRUCT</a>* float_classes = <a class="code" href="a01176.html#ae0ede748b48d1f73abdaeac0c2a1a000">SetUpForFloat2Int</a>(*unicharset, mf_classes);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="comment">// Now write the inttemp and pffmtable.</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  trainer-&gt;<a class="code" href="a00463.html#a9972b417fae44eb2515df89f111d415e">WriteInttempAndPFFMTable</a>(trainer-&gt;<a class="code" href="a00463.html#ae89c92b73a62da4562e7f16ced0f759f">unicharset</a>(), *unicharset,</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                                    *shape_table, float_classes,</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                    inttemp_file.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(),</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                    pffmtable_file.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keyword">delete</span> [] float_classes;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <a class="code" href="a01176.html#a0f90ef232622ab0d996654dd91a278e2">FreeLabeledClassList</a>(mf_classes);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keyword">delete</span> trainer;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keyword">delete</span> shape_table;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  printf(<span class="stringliteral">&quot;Done!\n&quot;</span>);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <span class="keywordflow">if</span> (!FLAGS_test_ch.empty()) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="comment">// If we are displaying debug window(s), wait for the user to look at them.</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    printf(<span class="stringliteral">&quot;Hit return to exit...\n&quot;</span>);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">while</span> (getchar() != <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;}  <span class="comment">/* main */</span></div>
+<div class="ttc" id="a00561_html_a32beee43ecab1bed8bebc3466896ad6e"><div class="ttname"><a href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">STRING::string</a></div><div class="ttdeci">const char * string() const </div><div class="ttdef"><b>Definition:</b> <a href="a00858_source.html#l00193">strngs.cpp:193</a></div></div>
+<div class="ttc" id="a00643_html_a421c0b6ebcbbe7547490252fb688c961"><div class="ttname"><a href="a00643.html#a421c0b6ebcbbe7547490252fb688c961">UNICHARSET::id_to_unichar</a></div><div class="ttdeci">const char *const id_to_unichar(UNICHAR_ID id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00869_source.html#l00290">unicharset.cpp:290</a></div></div>
+<div class="ttc" id="a01188_html_a84c65f2b556fc46b9e4b01c7ef587586"><div class="ttname"><a href="a01188.html#a84c65f2b556fc46b9e4b01c7ef587586">kMaxShapeLabelLength</a></div><div class="ttdeci">const int kMaxShapeLabelLength</div><div class="ttdef"><b>Definition:</b> <a href="a01188_source.html#l00078">mftraining.cpp:78</a></div></div>
+<div class="ttc" id="a00419_html_ab2904b1640580ad7ba6b2c14522dc3e8"><div class="ttname"><a href="a00419.html#ab2904b1640580ad7ba6b2c14522dc3e8">tesseract::IndexMap::CompactSize</a></div><div class="ttdeci">int CompactSize() const </div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00061">indexmapbidi.h:61</a></div></div>
+<div class="ttc" id="a00643_html"><div class="ttname"><a href="a00643.html">UNICHARSET</a></div><div class="ttdef"><b>Definition:</b> <a href="a00870_source.html#l00139">unicharset.h:139</a></div></div>
+<div class="ttc" id="a01046_html_ae212530ca629c67513698e988c705a5a"><div class="ttname"><a href="a01046.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a></div><div class="ttdeci">#define NIL_LIST</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00126">oldlist.h:126</a></div></div>
+<div class="ttc" id="a00463_html_a9972b417fae44eb2515df89f111d415e"><div class="ttname"><a href="a00463.html#a9972b417fae44eb2515df89f111d415e">tesseract::MasterTrainer::WriteInttempAndPFFMTable</a></div><div class="ttdeci">void WriteInttempAndPFFMTable(const UNICHARSET &amp;unicharset, const UNICHARSET &amp;shape_set, const ShapeTable &amp;shape_table, CLASS_STRUCT *float_classes, const char *inttemp_file, const char *pffmtable_file)</div><div class="ttdef"><b>Definition:</b> <a href="a00918_source.html#l00582">mastertrainer.cpp:582</a></div></div>
+<div class="ttc" id="a01176_html_a0f90ef232622ab0d996654dd91a278e2"><div class="ttname"><a href="a01176.html#a0f90ef232622ab0d996654dd91a278e2">FreeLabeledClassList</a></div><div class="ttdeci">void FreeLabeledClassList(LIST ClassList)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00744">commontraining.cpp:744</a></div></div>
+<div class="ttc" id="a00548_html_a77fc3b88ce452fe84f66476ebd0567ff"><div class="ttname"><a href="a00548.html#a77fc3b88ce452fe84f66476ebd0567ff">tesseract::ShapeTable::AnyMultipleUnichars</a></div><div class="ttdeci">bool AnyMultipleUnichars() const </div><div class="ttdef"><b>Definition:</b> <a href="a00944_source.html#l00454">shapetable.cpp:454</a></div></div>
+<div class="ttc" id="a00643_html_ab5198816dde686850da3530a1f8261fe"><div class="ttname"><a href="a00643.html#ab5198816dde686850da3530a1f8261fe">UNICHARSET::unichar_insert</a></div><div class="ttdeci">void unichar_insert(const char *const unichar_repr)</div><div class="ttdef"><b>Definition:</b> <a href="a00869_source.html#l00653">unicharset.cpp:653</a></div></div>
+<div class="ttc" id="a00463_html"><div class="ttname"><a href="a00463.html">tesseract::MasterTrainer</a></div><div class="ttdef"><b>Definition:</b> <a href="a00919_source.html#l00069">mastertrainer.h:69</a></div></div>
+<div class="ttc" id="a00548_html_a924919daeadb48539e3d68c65013c173"><div class="ttname"><a href="a00548.html#a924919daeadb48539e3d68c65013c173">tesseract::ShapeTable::NumShapes</a></div><div class="ttdeci">int NumShapes() const </div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00263">shapetable.h:263</a></div></div>
+<div class="ttc" id="a00463_html_ae89c92b73a62da4562e7f16ced0f759f"><div class="ttname"><a href="a00463.html#ae89c92b73a62da4562e7f16ced0f759f">tesseract::MasterTrainer::unicharset</a></div><div class="ttdeci">const UNICHARSET &amp; unicharset() const </div><div class="ttdef"><b>Definition:</b> <a href="a00919_source.html#l00189">mastertrainer.h:189</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a00420_html_a2c0f96f5d5fad6c9973e1b074fac5a03"><div class="ttname"><a href="a00420.html#a2c0f96f5d5fad6c9973e1b074fac5a03">tesseract::IndexMapBiDi::SparseToCompact</a></div><div class="ttdeci">virtual int SparseToCompact(int sparse_index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00138">indexmapbidi.h:138</a></div></div>
+<div class="ttc" id="a01267_html_af6657e7cdbf17875a06df792c22cd28b"><div class="ttname"><a href="a01267.html#af6657e7cdbf17875a06df792c22cd28b">tesseract::WriteShapeTable</a></div><div class="ttdeci">void WriteShapeTable(const STRING &amp;file_prefix, const ShapeTable &amp;shape_table)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00145">commontraining.cpp:145</a></div></div>
+<div class="ttc" id="a00420_html"><div class="ttname"><a href="a00420.html">tesseract::IndexMapBiDi</a></div><div class="ttdef"><b>Definition:</b> <a href="a00837_source.html#l00102">indexmapbidi.h:102</a></div></div>
+<div class="ttc" id="a01176_html_a5177d61ebf73a60571198cb6eaa753ac"><div class="ttname"><a href="a01176.html#a5177d61ebf73a60571198cb6eaa753ac">ParseArguments</a></div><div class="ttdeci">void ParseArguments(int *argc, char ***argv)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00089">commontraining.cpp:89</a></div></div>
+<div class="ttc" id="a00313_html"><div class="ttname"><a href="a00313.html">CLASS_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00939_source.html#l00054">protos.h:54</a></div></div>
+<div class="ttc" id="a00548_html_ade3f46eb910d83302b04f9f530277290"><div class="ttname"><a href="a00548.html#ade3f46eb910d83302b04f9f530277290">tesseract::ShapeTable::GetFirstUnicharAndFont</a></div><div class="ttdeci">void GetFirstUnicharAndFont(int shape_id, int *unichar_id, int *font_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00944_source.html#l00414">shapetable.cpp:414</a></div></div>
+<div class="ttc" id="a00457_html"><div class="ttname"><a href="a00457.html">list_rec</a></div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00127">oldlist.h:127</a></div></div>
+<div class="ttc" id="a01267_html_a2af3b74c1139cfc070d17e947f212b58"><div class="ttname"><a href="a01267.html#a2af3b74c1139cfc070d17e947f212b58">tesseract::LoadTrainingData</a></div><div class="ttdeci">MasterTrainer * LoadTrainingData(int argc, const char *const *argv, bool replication, ShapeTable **shape_table, STRING *file_prefix)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00174">commontraining.cpp:174</a></div></div>
+<div class="ttc" id="a01176_html_ae0ede748b48d1f73abdaeac0c2a1a000"><div class="ttname"><a href="a01176.html#ae0ede748b48d1f73abdaeac0c2a1a000">SetUpForFloat2Int</a></div><div class="ttdeci">CLASS_STRUCT * SetUpForFloat2Int(const UNICHARSET &amp;unicharset, LIST LabeledClassList)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00774">commontraining.cpp:774</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00548_html"><div class="ttname"><a href="a00548.html">tesseract::ShapeTable</a></div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00249">shapetable.h:249</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="aacd4a34e871006f4c22c0a3c1a8b9baa"></a>
+<a class="anchor" id="a84c65f2b556fc46b9e4b01c7ef587586"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int kDictDebugLevel = 1</td>
+          <td class="memname">const int kMaxShapeLabelLength = 10</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01188_source.html#l00026">26</a> of file <a class="el" href="a01188_source.html">dawg2wordlist.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a01188_source.html#l00078">78</a> of file <a class="el" href="a01188_source.html">mftraining.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,8 +395,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01188.html">dawg2wordlist.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01188.html">mftraining.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

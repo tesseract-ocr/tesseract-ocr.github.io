@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/unicodes.h Source File</title>
+<title>Tesseract: classify/extract.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,16 +105,16 @@ $(document).ready(function(){initNavTree('a00892_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">unicodes.h</div>  </div>
+<div class="title">extract.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00892.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        unicodes.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Unicode related machinery</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:      David Eger</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:     Wed Jun 15 16:37:50 PST 2011</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2011, Google, Inc.</span></div>
+<a href="a00892.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:    extract.c</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:     Generic high level feature extractor routines.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:      Dan Johnson</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:     Sun Jan 21 09:44:08 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **     (c) Copyright Hewlett-Packard Company, 1988.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
@@ -124,45 +124,64 @@ $(document).ready(function(){initNavTree('a00892_source.html','');});
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef TESSERACT_CCUTIL_UNICODES_H__</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define TESSERACT_CCUTIL_UNICODES_H__</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">          Include Files and Type Defines</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">-----------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00893.html">extract.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00897.html">flexfx.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01035.html">danerror.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01279.html#a8760587e4a172eabdec26d5820dfa8b9">kUTF8LineSeparator</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01279.html#aedb372736a48e98b9ea9075cdc65cc12">kUTF8ParagraphSeparator</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01279.html#aa393f17e77d059739f005ada9a805c69">kLRM</a>;  <span class="comment">// Left-to-Right Mark</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01279.html#a8aa0e462f167f686ef463b5a5b266f04">kRLM</a>;  <span class="comment">// Right-to-Left Mark</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01279.html#a20de3eb1fcacc29addf5c6903e743cfe">kRLE</a>;  <span class="comment">// Right-to-Left Embedding</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01279.html#a94431ee0c0b62532a711669a890a6d9c">kPDF</a>;  <span class="comment">// Pop Directional Formatting</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00892.html#adb0830e47d60cbde3a2dd0b637702eca">   25</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00933.html#a4e78d165adc7a1b8c5bf790563265d97">CHAR_FEATURES</a> (*<a class="code" href="a00892.html#adb0830e47d60cbde3a2dd0b637702eca">CF_FUNC</a>) ();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/*-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">          Private Function Prototypes</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">-----------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00892.html#a9bde4a81c41c3a504c78dd1a32d6d2b2">ExtractorStub</a>(); </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// The following are confusable internal word punctuation symbols</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// which we normalize to the first variant when matching in dawgs.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01279.html#aa1505ec49e73744b09f67e0a8390a103">kHyphenLikeUTF8</a>[];</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="a01279.html#a0e977b84de723eee3cf551283b1d1ed1">kApostropheLikeUTF8</a>[];</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}  <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif  // TESSERACT_CCUTIL_UNICODES_H__</span></div>
-<div class="ttc" id="a01279_html_a0e977b84de723eee3cf551283b1d1ed1"><div class="ttname"><a href="a01279.html#a0e977b84de723eee3cf551283b1d1ed1">tesseract::kApostropheLikeUTF8</a></div><div class="ttdeci">const char * kApostropheLikeUTF8[]</div><div class="ttdef"><b>Definition:</b> <a href="a00891_source.html#l00048">unicodes.cpp:48</a></div></div>
-<div class="ttc" id="a01279_html_aedb372736a48e98b9ea9075cdc65cc12"><div class="ttname"><a href="a01279.html#aedb372736a48e98b9ea9075cdc65cc12">tesseract::kUTF8ParagraphSeparator</a></div><div class="ttdeci">const char * kUTF8ParagraphSeparator</div><div class="ttdef"><b>Definition:</b> <a href="a00891_source.html#l00026">unicodes.cpp:26</a></div></div>
-<div class="ttc" id="a01279_html_a8aa0e462f167f686ef463b5a5b266f04"><div class="ttname"><a href="a01279.html#a8aa0e462f167f686ef463b5a5b266f04">tesseract::kRLM</a></div><div class="ttdeci">const char * kRLM</div><div class="ttdef"><b>Definition:</b> <a href="a00891_source.html#l00028">unicodes.cpp:28</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a01279_html_aa1505ec49e73744b09f67e0a8390a103"><div class="ttname"><a href="a01279.html#aa1505ec49e73744b09f67e0a8390a103">tesseract::kHyphenLikeUTF8</a></div><div class="ttdeci">const char * kHyphenLikeUTF8[]</div><div class="ttdef"><b>Definition:</b> <a href="a00891_source.html#l00032">unicodes.cpp:32</a></div></div>
-<div class="ttc" id="a01279_html_a94431ee0c0b62532a711669a890a6d9c"><div class="ttname"><a href="a01279.html#a94431ee0c0b62532a711669a890a6d9c">tesseract::kPDF</a></div><div class="ttdeci">const char * kPDF</div><div class="ttdef"><b>Definition:</b> <a href="a00891_source.html#l00030">unicodes.cpp:30</a></div></div>
-<div class="ttc" id="a01279_html_a20de3eb1fcacc29addf5c6903e743cfe"><div class="ttname"><a href="a01279.html#a20de3eb1fcacc29addf5c6903e743cfe">tesseract::kRLE</a></div><div class="ttdeci">const char * kRLE</div><div class="ttdef"><b>Definition:</b> <a href="a00891_source.html#l00029">unicodes.cpp:29</a></div></div>
-<div class="ttc" id="a01279_html_a8760587e4a172eabdec26d5820dfa8b9"><div class="ttname"><a href="a01279.html#a8760587e4a172eabdec26d5820dfa8b9">tesseract::kUTF8LineSeparator</a></div><div class="ttdeci">const char * kUTF8LineSeparator</div><div class="ttdef"><b>Definition:</b> <a href="a00891_source.html#l00025">unicodes.cpp:25</a></div></div>
-<div class="ttc" id="a01279_html_aa393f17e77d059739f005ada9a805c69"><div class="ttname"><a href="a01279.html#aa393f17e77d059739f005ada9a805c69">tesseract::kLRM</a></div><div class="ttdeci">const char * kLRM</div><div class="ttdef"><b>Definition:</b> <a href="a00891_source.html#l00027">unicodes.cpp:27</a></div></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/*-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">              Public Code</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">-----------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00893.html#ac64e1bf28a367722f09ef12e1faca692">   51</a></span>&#160;<a class="code" href="a00297.html">CHAR_DESC</a> <a class="code" href="a00892.html#ac64e1bf28a367722f09ef12e1faca692">ExtractBlobFeatures</a>(<span class="keyword">const</span> <a class="code" href="a00378.html">FEATURE_DEFS_STRUCT</a> &amp;FeatureDefs,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                              <span class="keyword">const</span> <a class="code" href="a00352.html">DENORM</a>&amp; bl_denorm, <span class="keyword">const</span> <a class="code" href="a00352.html">DENORM</a>&amp; cn_denorm,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                              <span class="keyword">const</span> <a class="code" href="a00426.html">INT_FX_RESULT_STRUCT</a>&amp; fx_info,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                              <a class="code" href="a00590.html">TBLOB</a> *Blob) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00896.html#a0da09852d315a6ea73501ce417a52d6e">ExtractFlexFeatures</a>(FeatureDefs, Blob, bl_denorm, cn_denorm, fx_info);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}                                <span class="comment">/* ExtractBlobFeatures */</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/*-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">              Private Code</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">-----------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/*---------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00893.html#a9bde4a81c41c3a504c78dd1a32d6d2b2">   63</a></span>&#160;<a class="code" href="a00892.html#a9bde4a81c41c3a504c78dd1a32d6d2b2">ExtractorStub</a> ()</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define DUMMY_ERROR     1</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a> (<a class="code" href="a00892.html#a85467fd5d95b32d0cbe881b77f668468">DUMMY_ERROR</a>, <span class="stringliteral">&quot;Selected feature extractor has been stubbed out!&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}                                <span class="comment">/* ExtractorStub */</span></div>
+<div class="ttc" id="a00893_html"><div class="ttname"><a href="a00893.html">extract.h</a></div></div>
+<div class="ttc" id="a00892_html_a9bde4a81c41c3a504c78dd1a32d6d2b2"><div class="ttname"><a href="a00892.html#a9bde4a81c41c3a504c78dd1a32d6d2b2">ExtractorStub</a></div><div class="ttdeci">void ExtractorStub()</div><div class="ttdef"><b>Definition:</b> <a href="a00892_source.html#l00063">extract.cpp:63</a></div></div>
+<div class="ttc" id="a00892_html_adb0830e47d60cbde3a2dd0b637702eca"><div class="ttname"><a href="a00892.html#adb0830e47d60cbde3a2dd0b637702eca">CF_FUNC</a></div><div class="ttdeci">CHAR_FEATURES(* CF_FUNC)()</div><div class="ttdef"><b>Definition:</b> <a href="a00892_source.html#l00025">extract.cpp:25</a></div></div>
+<div class="ttc" id="a01035_html"><div class="ttname"><a href="a01035.html">danerror.h</a></div></div>
+<div class="ttc" id="a01034_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00032">danerror.cpp:32</a></div></div>
+<div class="ttc" id="a00892_html_a85467fd5d95b32d0cbe881b77f668468"><div class="ttname"><a href="a00892.html#a85467fd5d95b32d0cbe881b77f668468">DUMMY_ERROR</a></div><div class="ttdeci">#define DUMMY_ERROR</div></div>
+<div class="ttc" id="a00426_html"><div class="ttname"><a href="a00426.html">INT_FX_RESULT_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00911_source.html#l00035">intfx.h:35</a></div></div>
+<div class="ttc" id="a00590_html"><div class="ttname"><a href="a00590.html">TBLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00193">blobs.h:193</a></div></div>
+<div class="ttc" id="a00896_html_a0da09852d315a6ea73501ce417a52d6e"><div class="ttname"><a href="a00896.html#a0da09852d315a6ea73501ce417a52d6e">ExtractFlexFeatures</a></div><div class="ttdeci">CHAR_DESC ExtractFlexFeatures(const FEATURE_DEFS_STRUCT &amp;FeatureDefs, TBLOB *Blob, const DENORM &amp;bl_denorm, const DENORM &amp;cn_denorm, const INT_FX_RESULT_STRUCT &amp;fx_info)</div><div class="ttdef"><b>Definition:</b> <a href="a00896_source.html#l00034">flexfx.cpp:34</a></div></div>
+<div class="ttc" id="a00933_html_a4e78d165adc7a1b8c5bf790563265d97"><div class="ttname"><a href="a00933.html#a4e78d165adc7a1b8c5bf790563265d97">CHAR_FEATURES</a></div><div class="ttdeci">char * CHAR_FEATURES</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00080">ocrfeatures.h:80</a></div></div>
+<div class="ttc" id="a00378_html"><div class="ttname"><a href="a00378.html">FEATURE_DEFS_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00895_source.html#l00048">featdefs.h:48</a></div></div>
+<div class="ttc" id="a00352_html"><div class="ttname"><a href="a00352.html">DENORM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00763_source.html#l00052">normalis.h:52</a></div></div>
+<div class="ttc" id="a00297_html"><div class="ttname"><a href="a00297.html">CHAR_DESC_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00895_source.html#l00042">featdefs.h:42</a></div></div>
+<div class="ttc" id="a00897_html"><div class="ttname"><a href="a00897.html">flexfx.h</a></div></div>
+<div class="ttc" id="a00892_html_ac64e1bf28a367722f09ef12e1faca692"><div class="ttname"><a href="a00892.html#ac64e1bf28a367722f09ef12e1faca692">ExtractBlobFeatures</a></div><div class="ttdeci">CHAR_DESC ExtractBlobFeatures(const FEATURE_DEFS_STRUCT &amp;FeatureDefs, const DENORM &amp;bl_denorm, const DENORM &amp;cn_denorm, const INT_FX_RESULT_STRUCT &amp;fx_info, TBLOB *Blob)</div><div class="ttdef"><b>Definition:</b> <a href="a00892_source.html#l00051">extract.cpp:51</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00892.html">unicodes.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:24 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00892.html">extract.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:59 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

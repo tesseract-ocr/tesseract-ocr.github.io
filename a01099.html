@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: textord/baselinedetect.cpp File Reference</title>
+<title>Tesseract: textord/cjkpitch.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,161 +105,111 @@ $(document).ready(function(){initNavTree('a01099.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">baselinedetect.cpp File Reference</div>  </div>
+<div class="title">cjkpitch.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01100_source.html">baselinedetect.h</a>&quot;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
-<code>#include &quot;allheaders.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00749_source.html">blobbox.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00764_source.html">detlinefit.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01124_source.html">drawtord.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00853_source.html">helpers.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00776_source.html">linlsq.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01140_source.html">makerow.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01164_source.html">textord.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00883_source.html">tprintf.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01173_source.html">underlin.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01100_source.html">cjkpitch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00843_source.html">ndminx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01156_source.html">topitch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01161_source.html">tovars.h</a>&quot;</code><br />
 </div>
 <p><a href="a01099_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a569376d5bd104938452ead2e78c21158"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#a569376d5bd104938452ead2e78c21158">compute_fixed_pitch_cjk</a> (<a class="el" href="a00412.html">ICOORD</a> page_tr, TO_BLOCK_LIST *port_blocks)</td></tr>
+<tr class="separator:a569376d5bd104938452ead2e78c21158"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a764108909ac86000da00e33ae249ff17"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#a764108909ac86000da00e33ae249ff17">kMaxDisplacementsModes</a> = 3</td></tr>
-<tr class="separator:a764108909ac86000da00e33ae249ff17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaf423fe42f3ca4b3343020dc41c376b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#adaf423fe42f3ca4b3343020dc41c376b">kNumSkipPoints</a> = 3</td></tr>
-<tr class="separator:adaf423fe42f3ca4b3343020dc41c376b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa447e3d51461981e8e7c5450e57d9300"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#aa447e3d51461981e8e7c5450e57d9300">kMaxSkewDeviation</a> = 1.0 / 64</td></tr>
-<tr class="separator:aa447e3d51461981e8e7c5450e57d9300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c9c93517d2f2243b2b265cb1e3b03db"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#a5c9c93517d2f2243b2b265cb1e3b03db">kOffsetQuantizationFactor</a> = 3.0 / 64</td></tr>
-<tr class="separator:a5c9c93517d2f2243b2b265cb1e3b03db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5acb8f8490c1a3b68684d10c460e1e96"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#a5acb8f8490c1a3b68684d10c460e1e96">kFitHalfrangeFactor</a> = 6.0 / 64</td></tr>
-<tr class="separator:a5acb8f8490c1a3b68684d10c460e1e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31cf284314686a893cae2fc26c503f0c"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#a31cf284314686a893cae2fc26c503f0c">kMaxBaselineError</a> = 3.0 / 64</td></tr>
-<tr class="separator:a31cf284314686a893cae2fc26c503f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46b90f606788891fac29c14f20f39b27"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#a46b90f606788891fac29c14f20f39b27">kMaxBlobSizeMultiple</a> = 1.3</td></tr>
-<tr class="separator:a46b90f606788891fac29c14f20f39b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa61dc7df62ef6cd14f8f4a9e6b3003c9"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#aa61dc7df62ef6cd14f8f4a9e6b3003c9">kMinFittingLinespacings</a> = 0.25</td></tr>
-<tr class="separator:aa61dc7df62ef6cd14f8f4a9e6b3003c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae487cd6731bb3f5515eced4c24adf033"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01099.html#ae487cd6731bb3f5515eced4c24adf033">textord_space_size_is_variable</a> = <a class="el" href="a01031.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td></tr>
+<tr class="separator:ae487cd6731bb3f5515eced4c24adf033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a569376d5bd104938452ead2e78c21158"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compute_fixed_pitch_cjk </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00412.html">ICOORD</a>&#160;</td>
+          <td class="paramname"><em>page_tr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TO_BLOCK_LIST *&#160;</td>
+          <td class="paramname"><em>port_blocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01099_source.html#l01057">1057</a> of file <a class="el" href="a01099_source.html">cjkpitch.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;                                                         {</div>
+<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;  FPAnalyzer analyzer;</div>
+<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;  analyzer.Init(page_tr, port_blocks);</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;  <span class="keywordflow">if</span> (analyzer.num_rows() == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;</div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;  analyzer.Pass1Analyze();</div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;  analyzer.EstimatePitch(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;</div>
+<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;  <span class="comment">// Perform pass1 analysis again with the initial estimation of row</span></div>
+<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;  <span class="comment">// pitches, for better estimation.</span></div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;  analyzer.Pass1Analyze();</div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;  analyzer.EstimatePitch(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;  <span class="comment">// Early exit if the page doesn&#39;t seem to contain fixed pitch rows.</span></div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;  <span class="keywordflow">if</span> (!analyzer.maybe_fixed_pitch()) {</div>
+<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a01155.html#ad764b0bdba3585a8abdceb60288e54f0">textord_debug_pitch_test</a>) {</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;      <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Page doesn&#39;t seem to contain fixed pitch rows\n&quot;</span>);</div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    }</div>
+<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;  }</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;</div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;  <span class="keywordtype">int</span> iteration = 0;</div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;  <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    analyzer.MergeFragments();</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;    analyzer.FinalizeLargeChars();</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    analyzer.EstimatePitch(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;    iteration++;</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;  } <span class="keywordflow">while</span> (analyzer.Pass2Analyze() &amp;&amp; iteration &lt; analyzer.max_iteration());</div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;</div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01155.html#ad764b0bdba3585a8abdceb60288e54f0">textord_debug_pitch_test</a>) {</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;compute_fixed_pitch_cjk finished after %d iteration (limit=%d)\n&quot;</span>,</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;            iteration, analyzer.max_iteration());</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;  }</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;  analyzer.OutputEstimations();</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01155.html#ad764b0bdba3585a8abdceb60288e54f0">textord_debug_pitch_test</a>) analyzer.DebugOutputResult();</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;}</div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a01155_html_ad764b0bdba3585a8abdceb60288e54f0"><div class="ttname"><a href="a01155.html#ad764b0bdba3585a8abdceb60288e54f0">textord_debug_pitch_test</a></div><div class="ttdeci">EXTERN bool textord_debug_pitch_test</div><div class="ttdef"><b>Definition:</b> <a href="a01155_source.html#l00044">topitch.cpp:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a5acb8f8490c1a3b68684d10c460e1e96"></a>
+<a class="anchor" id="ae487cd6731bb3f5515eced4c24adf033"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const double kFitHalfrangeFactor = 6.0 / 64</td>
+          <td class="memname">bool textord_space_size_is_variable = <a class="el" href="a01031.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>"If true, word delimiter spaces are assumed to have " "variable width, even though characters have fixed pitch." </p>
 
-<p>Definition at line <a class="el" href="a01099_source.html#l00051">51</a> of file <a class="el" href="a01099_source.html">baselinedetect.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a31cf284314686a893cae2fc26c503f0c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double kMaxBaselineError = 3.0 / 64</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01099_source.html#l00053">53</a> of file <a class="el" href="a01099_source.html">baselinedetect.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a46b90f606788891fac29c14f20f39b27"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double kMaxBlobSizeMultiple = 1.3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01099_source.html#l00056">56</a> of file <a class="el" href="a01099_source.html">baselinedetect.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a764108909ac86000da00e33ae249ff17"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int kMaxDisplacementsModes = 3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01099_source.html#l00043">43</a> of file <a class="el" href="a01099_source.html">baselinedetect.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa447e3d51461981e8e7c5450e57d9300"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double kMaxSkewDeviation = 1.0 / 64</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01099_source.html#l00047">47</a> of file <a class="el" href="a01099_source.html">baselinedetect.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa61dc7df62ef6cd14f8f4a9e6b3003c9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double kMinFittingLinespacings = 0.25</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01099_source.html#l00059">59</a> of file <a class="el" href="a01099_source.html">baselinedetect.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adaf423fe42f3ca4b3343020dc41c376b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int kNumSkipPoints = 3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01099_source.html#l00045">45</a> of file <a class="el" href="a01099_source.html">baselinedetect.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5c9c93517d2f2243b2b265cb1e3b03db"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double kOffsetQuantizationFactor = 3.0 / 64</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01099_source.html#l00049">49</a> of file <a class="el" href="a01099_source.html">baselinedetect.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a01099_source.html#l00028">28</a> of file <a class="el" href="a01099_source.html">cjkpitch.cpp</a>.</p>
 
 </div>
 </div>
@@ -268,8 +218,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01099.html">baselinedetect.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01099.html">cjkpitch.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

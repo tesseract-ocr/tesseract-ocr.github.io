@@ -1,8 +1,13 @@
 var a00563 =
 [
-    [ "ShapeQueueEntry", "a00563.html#ac97238cffc4d5c8c029f4a060c2c90d2", null ],
-    [ "ShapeQueueEntry", "a00563.html#ad5fa2caff459fec3042e1a8dc9270c26", null ],
-    [ "operator<", "a00563.html#ab69c6f53edd14c603d0717ef0e360aa3", null ],
-    [ "level", "a00563.html#ae4495f6b637046f6dfbe631eef033921", null ],
-    [ "result", "a00563.html#ae1efe17c9d49b682690aeb7b86557da4", null ]
+    [ "StringParam", "a00563.html#a40a11080380d683951aa43c8205bca29", null ],
+    [ "~StringParam", "a00563.html#a5b9b4f87236422c6389e66dcc4d08583", null ],
+    [ "c_str", "a00563.html#aee5d9da59188242b7a2135039d35d40c", null ],
+    [ "empty", "a00563.html#a0ec3e515e2623176386ec2582381a573", null ],
+    [ "operator STRING &", "a00563.html#a1f25dd680a927ea639dbe98b5f62d2d0", null ],
+    [ "operator=", "a00563.html#a2b6cff9842475b308d88471ce362c998", null ],
+    [ "operator==", "a00563.html#a015e950a25b3f10e48c769159e404297", null ],
+    [ "ResetToDefault", "a00563.html#ac6307a498e62ff3cefc853838d87b2a0", null ],
+    [ "set_value", "a00563.html#a12824dcbc4500b02020b58e76ae4d8cd", null ],
+    [ "string", "a00563.html#a722ffc30ba31e0993847178593eca10b", null ]
 ];

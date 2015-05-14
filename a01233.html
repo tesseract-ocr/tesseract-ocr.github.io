@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: vs2010/port/strtok_r.cpp File Reference</title>
+<title>Tesseract: wordrec/language_model.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,80 +105,37 @@ $(document).ready(function(){initNavTree('a01233.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">strtok_r.cpp File Reference</div>  </div>
+<div class="title">language_model.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a01234_source.html">language_model.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01051_source.html">dawg.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01041_source.html">freelist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00915_source.html">intproto.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00834_source.html">helpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01240_source.html">lm_state.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01238_source.html">lm_pain_points.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00759_source.html">matrix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00775_source.html">params_training_featdef.h</a>&quot;</code><br />
 </div>
 <p><a href="a01233_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ada6f0d1c8962c7543f073d258efdb1bf"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01233.html#ada6f0d1c8962c7543f073d258efdb1bf">strtok_r</a> (char *s1, const char *s2, char **lasts)</td></tr>
-<tr class="separator:ada6f0d1c8962c7543f073d258efdb1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ada6f0d1c8962c7543f073d258efdb1bf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* strtok_r </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>s1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>s2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>lasts</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01233_source.html#l00038">38</a> of file <a class="el" href="a01233_source.html">strtok_r.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                       {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">char</span> *ret;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span> (s1 == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    s1 = *lasts;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">while</span> (*s1 &amp;&amp; strchr(s2, *s1))</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ++s1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">if</span> (*s1 == <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  ret = s1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">while</span> (*s1 &amp;&amp; !strchr(s2, *s1))</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    ++s1;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">if</span> (*s1)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    *s1++ = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  *lasts = s1;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a5945898d232e1adecd1190672f72f3b.html">vs2010</a></li><li class="navelem"><a class="el" href="dir_ed8a104133014addff704383f7ba065c.html">port</a></li><li class="navelem"><a class="el" href="a01233.html">strtok_r.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01233.html">language_model.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

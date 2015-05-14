@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/host.h Source File</title>
+<title>Tesseract: ccutil/serialis.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,183 +105,186 @@ $(document).ready(function(){initNavTree('a00854_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">host.h</div>  </div>
+<div class="title">serialis.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00854.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **  Filename:       Host.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **  Purpose:        This is the system independent typedefs and defines</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  Author:         MN, JG, MD</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **  Version:        5.4.1</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **  History:        11/7/94 MCD received the modification that Lennart made</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **                  to port to 32 bit world and modify this file so that it</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **                  will be shared between platform.</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **                  11/9/94 MCD Make MSW32 subset of MSW. Now MSW means</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **                  MicroSoft Window and MSW32 means the 32 bit worlds</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **                  of MicroSoft Window. Therefore you want the environment</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **                  to be MicroSoft Window and in the 32 bit world -</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **                  _WIN32 must be defined by your compiler.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **                  11/30/94 MCD Incorporated comments received for more</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **                  readability and the missing typedef for FLOAT.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **                  12/1/94 MCD Added PFVOID typedef</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **                  5/1/95 MCD. Made many changes based on the inputs.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **                  Changes:</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **                  1) Rearrange the #ifdef so that there&#39;re definitions for</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **                  particular platforms.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **                  2) Took out the #define for computer and environment</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **                  that developer can uncomment</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> **                  3) Added __OLDCODE__ where the defines will be</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> **                  obsoleted in the next version and advise not to use.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> **                  4) Added the definitions for the following:</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> **                  FILE_HANDLE, MEMORY_HANDLE, BOOL8,</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> **                  MAX_INT8, MAX_INT16, MAX_INT32, MAX_UINT8</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> **                  MAX_UINT16, MAX_UINT32, MAX_FLOAT32</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> **                 06/19/96 MCD. Took out MAX_FLOAT32</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> **                 07/15/96 MCD. Fixed the comments error</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> **                 Add back BOOL8.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> **  (c) Copyright Hewlett-Packard Company, 1988-1996.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifndef   __HOST__</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define   __HOST__</span></div>
+<a href="a00854.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        serialis.h  (Formerly serialmac.h)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Inline routines and macros for serialisation functions</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:      Phil Cheatle</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:     Tue Oct 08 08:33:12 BST 1991</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1990, Hewlett-Packard Ltd.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00855.html">serialis.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00830.html">genericvector.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00626.html#ae3a7067d085e6cddc50d56b692d6b878">   26</a></span>&#160;<a class="code" href="a00626.html#ae3a7067d085e6cddc50d56b692d6b878">TFile::TFile</a>()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    : offset_(0), data_(<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), data_is_owned_(false), is_writing_(false) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00626.html#afe782f50bac840f49c13d1a6119ca16c">   30</a></span>&#160;<a class="code" href="a00626.html#afe782f50bac840f49c13d1a6119ca16c">TFile::~TFile</a>() {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">if</span> (data_is_owned_)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">delete</span> data_;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00626.html#aa8cddbeec3274ac9e8417de368fe5ecc">   35</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00626.html#aa8cddbeec3274ac9e8417de368fe5ecc">TFile::Open</a>(<span class="keyword">const</span> <a class="code" href="a00561.html">STRING</a>&amp; <a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <a class="code" href="a01267.html#a689189939684bc6f10754a77a4c6c569">FileReader</a> reader) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (!data_is_owned_) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    data_ = <span class="keyword">new</span> <a class="code" href="a00406.html">GenericVector&lt;char&gt;</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    data_is_owned_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  offset_ = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  is_writing_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> (reader == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a01267.html#a3a2334d9500f5b9f41f2f33f106f4171">LoadDataFromFile</a>(filename, data_);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> (*reader)(<a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, data_);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/******************************************************************************</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> **                                IMPORTANT!!!                                                                                                                 **</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> **                                                                                                                                                                              **</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> ** Defines either _WIN32, __MAC__, __UNIX__, __OS2__, __PM__ to</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> ** use the specified definitions indicated below in the preprocessor settings.                                                        **</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> **                                                                                                                                                                              **</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> ** Also define either  __FarProc__ or  __FarData__  and __MOTO__ to use the</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> ** specified definitions indicated below in the preprocessor settings.                                                                        **</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> **                                                                                                                                                                             **</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> ** If a preprocessor settings is not allow in the compiler that is being use,</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> ** then it is recommended that a &quot;platform.h&quot; is created with the definition</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> ** of the computer and/or operating system.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00868.html">platform.h</a>&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/* _WIN32 */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &lt;winbase.h&gt;</span>             <span class="comment">// winbase.h contains windows.h</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/********************************************************/</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/* __MAC__ */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#ifdef __MAC__</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#include &lt;Types.h&gt;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">/*----------------------------*/</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/*----------------------------*/</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">/********************************************************/</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#if defined(__UNIX__) || defined( __DOS__ ) || defined(__OS2__) || defined(__PM__)</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/*----------------------------*/</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/* FarProc and FarData */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/*----------------------------*/</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/*----------------------------*/</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/*****************************************************************************</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> **                      Standard GHC Definitions</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> *****************************************************************************/</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00626.html#ab00caa26509b182f9c4ec603d48f5882">   48</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00626.html#aa8cddbeec3274ac9e8417de368fe5ecc">TFile::Open</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  offset_ = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">if</span> (!data_is_owned_) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    data_ = <span class="keyword">new</span> <a class="code" href="a00406.html">GenericVector&lt;char&gt;</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    data_is_owned_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  is_writing_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  data_-&gt;<a class="code" href="a00406.html#a6751521fd3eb461d81fc83ef93a0def3">init_to_size</a>(size, 0);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  memcpy(&amp;(*data_)[0], data, size);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00626.html#ae03ccaf8e407f79fdc9c577151355b35">   60</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00626.html#aa8cddbeec3274ac9e8417de368fe5ecc">TFile::Open</a>(FILE* fp, <a class="code" href="a00835.html#ac53c9cafaf7fe16f985994c49f6b0964">inT64</a> end_offset) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  offset_ = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="a00835.html#ac53c9cafaf7fe16f985994c49f6b0964">inT64</a> current_pos = ftell(fp);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">if</span> (end_offset &lt; 0) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    fseek(fp, 0, SEEK_END);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    end_offset = ftell(fp);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    fseek(fp, current_pos, SEEK_SET);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> size = end_offset - current_pos;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  is_writing_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (!data_is_owned_) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    data_ = <span class="keyword">new</span> <a class="code" href="a00406.html">GenericVector&lt;char&gt;</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    data_is_owned_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  data_-&gt;<a class="code" href="a00406.html#a6751521fd3eb461d81fc83ef93a0def3">init_to_size</a>(size, 0);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(fread(&amp;(*data_)[0], 1, size, fp)) == size;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="a00626.html#a9fecebb73dded838a8160b29066c3394">   78</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="a00626.html#a9fecebb73dded838a8160b29066c3394">TFile::FGets</a>(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">int</span> buffer_size) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(!is_writing_);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">int</span> size = 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">while</span> (size + 1 &lt; buffer_size &amp;&amp; offset_ &lt; data_-&gt;size()) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    buffer[size++] = (*data_)[offset_++];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> ((*data_)[offset_ - 1] == <span class="charliteral">&#39;\n&#39;</span>) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span> (size &lt; buffer_size) buffer[size] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">return</span> size &gt; 0 ? buffer : <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifdef __MOTO__</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define __NATIVE__   MOTO</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="a00854.html#ab4d425bc30f287a102d3bd994274a9cb">   92</a></span>&#160;<span class="preprocessor">#define __NATIVE__   INTEL</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">//typedef HANDLE FD*  PHANDLE;</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// definitions of portable data types (numbers and characters)</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">   98</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00868.html#a4dec4d9b2bace4f5bc6e6337f4086837">SIGNED</a> <span class="keywordtype">char</span> <a class="code" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">   99</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">  100</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">short</span> <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">  101</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">  102</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="a00854.html#afc8530b39ebe0b6df1e19159d2508d15">  103</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00854.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#if (_MSC_VER &gt;= 1200)            //%%% vkr for VC 6.0</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">typedef</span> INT64 <a class="code" href="a00854.html#ac53c9cafaf7fe16f985994c49f6b0964">inT64</a>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">typedef</span> UINT64 <a class="code" href="a00854.html#a7b5288262772176824620c2fb01a0abc">uinT64</a>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="a00854.html#ac53c9cafaf7fe16f985994c49f6b0964">  108</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="a00854.html#ac53c9cafaf7fe16f985994c49f6b0964">inT64</a>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="a00854.html#a7b5288262772176824620c2fb01a0abc">  109</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code" href="a00854.html#a7b5288262772176824620c2fb01a0abc">uinT64</a>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif                           //%%% vkr for VC 6.0</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">  111</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">float</span> <a class="code" href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="a00854.html#aa8336782d864ba03efadb73a51260961">  112</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="a00854.html#aa8336782d864ba03efadb73a51260961">FLOAT64</a>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">  113</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="a00854.html#abe22434564efd658acebe9e8cf6235bc">  115</a></span>&#160;<span class="preprocessor">#define INT32FORMAT &quot;%d&quot;</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="a00854.html#a892ace751693b202b636ebd2045bdc4e">  116</a></span>&#160;<span class="preprocessor">#define INT64FORMAT &quot;%lld&quot;</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="a00854.html#aa092b7d509790c28edc065b23de6e39e">  118</a></span>&#160;<span class="preprocessor">#define MAX_INT8  0x7f</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="a00854.html#a3905e54374e49708219791e7d59c60fb">  119</a></span>&#160;<span class="preprocessor">#define MAX_INT16 0x7fff</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="a00854.html#aac62d87844689a18b6f5339a89ed6e7f">  120</a></span>&#160;<span class="preprocessor">#define MAX_INT32 0x7fffffff</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="a00854.html#a05682ca8de174141447ff05a2289a27c">  121</a></span>&#160;<span class="preprocessor">#define MAX_UINT8 0xff</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="a00854.html#abc023544d8096a8fa1bd1f6f6f90bc41">  122</a></span>&#160;<span class="preprocessor">#define MAX_UINT16  0xffff</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="a00854.html#a26248174abf27973b9edfa9b70ba4c93">  123</a></span>&#160;<span class="preprocessor">#define MAX_UINT32  0xffffffff</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="a00854.html#a9adcee815220ec9db98062213806ed04">  124</a></span>&#160;<span class="preprocessor">#define MAX_FLOAT32 ((float)3.40282347e+38)</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="a00854.html#a8bbbfd2b585764c26d81d1375496b0b0">  126</a></span>&#160;<span class="preprocessor">#define MIN_INT8  0x80</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="a00854.html#afac94315e48d53a58b7d5cac22dae5ac">  127</a></span>&#160;<span class="preprocessor">#define MIN_INT16 0x8000</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="a00854.html#ae6f88d5bb15e97510f484289f2fc89fd">  128</a></span>&#160;<span class="preprocessor">#define MIN_INT32 static_cast&lt;int&gt;(0x80000000)</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="a00854.html#a6d4d51662dfd692a817610fc9c0bb3e1">  129</a></span>&#160;<span class="preprocessor">#define MIN_UINT8 0x00</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="a00854.html#a02c1592a2079b04253d871d57fa9b8a7">  130</a></span>&#160;<span class="preprocessor">#define MIN_UINT16  0x0000</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="a00854.html#a24f63d78ae91f41a54f311d489e49fba">  131</a></span>&#160;<span class="preprocessor">#define MIN_UINT32  0x00000000</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="a00854.html#abc11e6e108402d93b1ce7b9ddadc78ab">  132</a></span>&#160;<span class="preprocessor">#define MIN_FLOAT32 ((float)1.17549435e-38)</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// Defines</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#ifndef TRUE</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="a00854.html#aa8cecfc5c5c054d2875c03e77b7be15d">  136</a></span>&#160;<span class="preprocessor">#define TRUE            1</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#ifndef FALSE</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="a00854.html#aa93f0eb578d23995850d61f7d61c55c1">  140</a></span>&#160;<span class="preprocessor">#define FALSE           0</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#ifndef NULL</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">  144</a></span>&#160;<span class="preprocessor">#define NULL            0L</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">// Return true if x is within tolerance of y</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="a00854.html#a80998b3d098c50b53b1f275adeafe267">  148</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keywordtype">bool</span> <a class="code" href="a00854.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(T x, T y, T tolerance) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  T diff = x - y;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">return</span> diff &lt;= tolerance &amp;&amp; -diff &lt;= tolerance;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00854_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00102">host.h:102</a></div></div>
-<div class="ttc" id="a00868_html"><div class="ttname"><a href="a00868.html">platform.h</a></div></div>
-<div class="ttc" id="a00868_html_a4dec4d9b2bace4f5bc6e6337f4086837"><div class="ttname"><a href="a00868.html#a4dec4d9b2bace4f5bc6e6337f4086837">SIGNED</a></div><div class="ttdeci">#define SIGNED</div><div class="ttdef"><b>Definition:</b> <a href="a00868_source.html#l00045">platform.h:45</a></div></div>
-<div class="ttc" id="a00854_html_a2ba4d271e85baf0d333318985cb3bced"><div class="ttname"><a href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a></div><div class="ttdeci">SIGNED char inT8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00098">host.h:98</a></div></div>
-<div class="ttc" id="a00854_html_afc8530b39ebe0b6df1e19159d2508d15"><div class="ttname"><a href="a00854.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a></div><div class="ttdeci">unsigned int uinT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00103">host.h:103</a></div></div>
-<div class="ttc" id="a00854_html_a80998b3d098c50b53b1f275adeafe267"><div class="ttname"><a href="a00854.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a></div><div class="ttdeci">bool NearlyEqual(T x, T y, T tolerance)</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00148">host.h:148</a></div></div>
-<div class="ttc" id="a00854_html_a7b5288262772176824620c2fb01a0abc"><div class="ttname"><a href="a00854.html#a7b5288262772176824620c2fb01a0abc">uinT64</a></div><div class="ttdeci">unsigned long long int uinT64</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00109">host.h:109</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a00854_html_aa8336782d864ba03efadb73a51260961"><div class="ttname"><a href="a00854.html#aa8336782d864ba03efadb73a51260961">FLOAT64</a></div><div class="ttdeci">double FLOAT64</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00112">host.h:112</a></div></div>
-<div class="ttc" id="a00854_html_ac53c9cafaf7fe16f985994c49f6b0964"><div class="ttname"><a href="a00854.html#ac53c9cafaf7fe16f985994c49f6b0964">inT64</a></div><div class="ttdeci">long long int inT64</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00108">host.h:108</a></div></div>
-<div class="ttc" id="a00854_html_acb2dfad543247740dab87d31bb49dfff"><div class="ttname"><a href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a></div><div class="ttdeci">unsigned short uinT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00101">host.h:101</a></div></div>
-<div class="ttc" id="a00854_html_a7712a7e28433d0ade59219a129549b6f"><div class="ttname"><a href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a></div><div class="ttdeci">unsigned char BOOL8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00113">host.h:113</a></div></div>
-<div class="ttc" id="a00854_html_a458fe97f82495945f8071bb3c18d1783"><div class="ttname"><a href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a></div><div class="ttdeci">unsigned char uinT8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00099">host.h:99</a></div></div>
-<div class="ttc" id="a00854_html_a6a3da5f1db8d485c0d2f5a7ba526c4a0"><div class="ttname"><a href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a></div><div class="ttdeci">float FLOAT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00111">host.h:111</a></div></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00626.html#a3979cde747d25d7590d9e89ec5c81b68">   89</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00626.html#a3979cde747d25d7590d9e89ec5c81b68">TFile::FRead</a>(<span class="keywordtype">void</span>* buffer, <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> <a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(!is_writing_);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">int</span> required_size = size * <a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">if</span> (required_size &lt;= 0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">char</span>* char_buffer = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(buffer);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (data_-&gt;<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>() - offset_ &lt; required_size)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    required_size = data_-&gt;<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>() - offset_;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span> (required_size &gt; 0)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    memcpy(char_buffer, &amp;(*data_)[offset_], required_size);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  offset_ += required_size;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> required_size / size;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="a00626.html#a1c0ba65762bfcdee6e7348294a617079">  102</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00626.html#a1c0ba65762bfcdee6e7348294a617079">TFile::Rewind</a>() {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(!is_writing_);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  offset_ = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="a00626.html#a2eac843874713c6b3660a70126377cd9">  107</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00626.html#a2eac843874713c6b3660a70126377cd9">TFile::OpenWrite</a>(<a class="code" href="a00406.html">GenericVector&lt;char&gt;</a>* data) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  offset_ = 0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span> (data != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (data_is_owned_) <span class="keyword">delete</span> data_;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    data_ = data;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    data_is_owned_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!data_is_owned_) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    data_ = <span class="keyword">new</span> <a class="code" href="a00406.html">GenericVector&lt;char&gt;</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    data_is_owned_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  is_writing_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  data_-&gt;<a class="code" href="a00406.html#a980882b5ebc3e72fdedbdbe345196f21">truncate</a>(0);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="a00626.html#ad2dad347ebd0b7fc48c15dc20edbf77f">  121</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00626.html#ad2dad347ebd0b7fc48c15dc20edbf77f">TFile::CloseWrite</a>(<span class="keyword">const</span> <a class="code" href="a00561.html">STRING</a>&amp; <a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, <a class="code" href="a01267.html#a2798105c0cfb0544a42004acf050eabd">FileWriter</a> writer) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(is_writing_);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">if</span> (writer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a01267.html#aaa09bed25d3e99223b82da2f1f64105a">SaveDataToFile</a>(*data_, filename);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> (*writer)(*data_, <a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="a00626.html#ab6a5213231ecf64e7b585dbb37d9faf3">  129</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00626.html#ab6a5213231ecf64e7b585dbb37d9faf3">TFile::FWrite</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* buffer, <span class="keywordtype">int</span> size, <span class="keywordtype">int</span> <a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(is_writing_);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">int</span> total = size * <a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">if</span> (total &lt;= 0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* buf = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(buffer);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="comment">// This isn&#39;t very efficient, but memory is so fast compared to disk</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="comment">// that it is relatively unimportant, and very simple.</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; total; ++i)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    data_-&gt;<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(buf[i]);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}  <span class="comment">// namespace tesseract.</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="ttc" id="a01045_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01045_source.html#l00108">oldlist.cpp:108</a></div></div>
+<div class="ttc" id="a01267_html_a689189939684bc6f10754a77a4c6c569"><div class="ttname"><a href="a01267.html#a689189939684bc6f10754a77a4c6c569">tesseract::FileReader</a></div><div class="ttdeci">bool(* FileReader)(const STRING &amp;filename, GenericVector&lt; char &gt; *data)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00349">genericvector.h:349</a></div></div>
+<div class="ttc" id="a00830_html"><div class="ttname"><a href="a00830.html">genericvector.h</a></div></div>
+<div class="ttc" id="a00406_html_a6751521fd3eb461d81fc83ef93a0def3"><div class="ttname"><a href="a00406.html#a6751521fd3eb461d81fc83ef93a0def3">GenericVector::init_to_size</a></div><div class="ttdeci">void init_to_size(int size, T t)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00644">genericvector.h:644</a></div></div>
+<div class="ttc" id="a00626_html_ae3a7067d085e6cddc50d56b692d6b878"><div class="ttname"><a href="a00626.html#ae3a7067d085e6cddc50d56b692d6b878">tesseract::TFile::TFile</a></div><div class="ttdeci">TFile()</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00026">serialis.cpp:26</a></div></div>
+<div class="ttc" id="a00406_html_a980882b5ebc3e72fdedbdbe345196f21"><div class="ttname"><a href="a00406.html#a980882b5ebc3e72fdedbdbe345196f21">GenericVector::truncate</a></div><div class="ttdeci">void truncate(int size)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00130">genericvector.h:130</a></div></div>
+<div class="ttc" id="a00855_html"><div class="ttname"><a href="a00855.html">serialis.h</a></div></div>
+<div class="ttc" id="a00626_html_a9fecebb73dded838a8160b29066c3394"><div class="ttname"><a href="a00626.html#a9fecebb73dded838a8160b29066c3394">tesseract::TFile::FGets</a></div><div class="ttdeci">char * FGets(char *buffer, int buffer_size)</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00078">serialis.cpp:78</a></div></div>
+<div class="ttc" id="a00626_html_a2eac843874713c6b3660a70126377cd9"><div class="ttname"><a href="a00626.html#a2eac843874713c6b3660a70126377cd9">tesseract::TFile::OpenWrite</a></div><div class="ttdeci">void OpenWrite(GenericVector&lt; char &gt; *data)</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00107">serialis.cpp:107</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector&lt; char &gt;</a></div></div>
+<div class="ttc" id="a00626_html_a1c0ba65762bfcdee6e7348294a617079"><div class="ttname"><a href="a00626.html#a1c0ba65762bfcdee6e7348294a617079">tesseract::TFile::Rewind</a></div><div class="ttdeci">void Rewind()</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00102">serialis.cpp:102</a></div></div>
+<div class="ttc" id="a01268_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
+<div class="ttc" id="a00406_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00072">genericvector.h:72</a></div></div>
+<div class="ttc" id="a00626_html_ab6a5213231ecf64e7b585dbb37d9faf3"><div class="ttname"><a href="a00626.html#ab6a5213231ecf64e7b585dbb37d9faf3">tesseract::TFile::FWrite</a></div><div class="ttdeci">int FWrite(const void *buffer, int size, int count)</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00129">serialis.cpp:129</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a00626_html_a3979cde747d25d7590d9e89ec5c81b68"><div class="ttname"><a href="a00626.html#a3979cde747d25d7590d9e89ec5c81b68">tesseract::TFile::FRead</a></div><div class="ttdeci">int FRead(void *buffer, int size, int count)</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00089">serialis.cpp:89</a></div></div>
+<div class="ttc" id="a01267_html_a3a2334d9500f5b9f41f2f33f106f4171"><div class="ttname"><a href="a01267.html#a3a2334d9500f5b9f41f2f33f106f4171">tesseract::LoadDataFromFile</a></div><div class="ttdeci">bool LoadDataFromFile(const STRING &amp;filename, GenericVector&lt; char &gt; *data)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00356">genericvector.h:356</a></div></div>
+<div class="ttc" id="a00626_html_ad2dad347ebd0b7fc48c15dc20edbf77f"><div class="ttname"><a href="a00626.html#ad2dad347ebd0b7fc48c15dc20edbf77f">tesseract::TFile::CloseWrite</a></div><div class="ttdeci">bool CloseWrite(const STRING &amp;filename, FileWriter writer)</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00121">serialis.cpp:121</a></div></div>
+<div class="ttc" id="a00835_html_ac53c9cafaf7fe16f985994c49f6b0964"><div class="ttname"><a href="a00835.html#ac53c9cafaf7fe16f985994c49f6b0964">inT64</a></div><div class="ttdeci">long long int inT64</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00108">host.h:108</a></div></div>
+<div class="ttc" id="a00406_html_a0dc89fe2a365b04a61017f9d78c1a303"><div class="ttname"><a href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">GenericVector::push_back</a></div><div class="ttdeci">int push_back(T object)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00735">genericvector.h:735</a></div></div>
+<div class="ttc" id="a00626_html_aa8cddbeec3274ac9e8417de368fe5ecc"><div class="ttname"><a href="a00626.html#aa8cddbeec3274ac9e8417de368fe5ecc">tesseract::TFile::Open</a></div><div class="ttdeci">bool Open(const STRING &amp;filename, FileReader reader)</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00035">serialis.cpp:35</a></div></div>
+<div class="ttc" id="a01267_html_aaa09bed25d3e99223b82da2f1f64105a"><div class="ttname"><a href="a01267.html#aaa09bed25d3e99223b82da2f1f64105a">tesseract::SaveDataToFile</a></div><div class="ttdeci">bool SaveDataToFile(const GenericVector&lt; char &gt; &amp;data, const STRING &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00371">genericvector.h:371</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a01267_html_a2798105c0cfb0544a42004acf050eabd"><div class="ttname"><a href="a01267.html#a2798105c0cfb0544a42004acf050eabd">tesseract::FileWriter</a></div><div class="ttdeci">bool(* FileWriter)(const GenericVector&lt; char &gt; &amp;data, const STRING &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00352">genericvector.h:352</a></div></div>
+<div class="ttc" id="a00626_html_afe782f50bac840f49c13d1a6119ca16c"><div class="ttname"><a href="a00626.html#afe782f50bac840f49c13d1a6119ca16c">tesseract::TFile::~TFile</a></div><div class="ttdeci">~TFile()</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00030">serialis.cpp:30</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00854.html">host.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:22 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00854.html">serialis.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:55 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

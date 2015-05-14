@@ -1,9 +1,7 @@
 var a00391 =
 [
-    [ "FeatureBmp", "a00391.html#a0d5080129dc96d784078bfaf546c884c", null ],
-    [ "~FeatureBmp", "a00391.html#a12b61dea0424089d0e614a38e5ca1c26", null ],
-    [ "ComputeFeatureBitmap", "a00391.html#affa3be42707effce3cbb1df61af6f742", null ],
-    [ "ComputeFeatures", "a00391.html#a1dcb63cd05162261cbe576ab62eca4a6", null ],
-    [ "FeatureCnt", "a00391.html#a273c553c1e638392a85d354fb7e2cdf3", null ],
-    [ "conv_grid_size_", "a00391.html#adfb8ac24ffecf0cbb9da1ce5101d3b0a", null ]
+    [ "dir", "a00391.html#a712ac6a0a88d39821dddfa96c4579c61", null ],
+    [ "x", "a00391.html#ab257660c024e63223d8bb28259877066", null ],
+    [ "x_bucket", "a00391.html#a34e91695be379e28273a23bc0a06b2e1", null ],
+    [ "y", "a00391.html#a4cb4bc775b6f580aba236dfe812c12c1", null ]
 ];

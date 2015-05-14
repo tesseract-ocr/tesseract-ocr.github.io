@@ -1,13 +1,16 @@
 var a01147 =
 [
-    [ "BLACK_PIX", "a01147.html#a31503e4b0f23137edefe782ad5632878", null ],
-    [ "FLIP_COLOUR", "a01147.html#a29f11db4ed3af442549b1de233ac4739", null ],
-    [ "WHITE_PIX", "a01147.html#a5c91c3924c21f1e24a333317e8d08a74", null ],
-    [ "block_edges", "a01147.html#a5dbfbe6d87bf9d8f4c2cb616a7a3118a", null ],
-    [ "free_crackedges", "a01147.html#a19b3430c0ac6e770e54b8b52a9a991c5", null ],
-    [ "h_edge", "a01147.html#a06f8ee398cd3556fc0d40c5decd25745", null ],
-    [ "join_edges", "a01147.html#a6e23861c825d8a8e48c8b26d75e0b715", null ],
-    [ "line_edges", "a01147.html#ab24d6aa53a42392537afadfb6333b489", null ],
-    [ "make_margins", "a01147.html#a7265d5ee56fbab9229a8f39e28d38458", null ],
-    [ "v_edge", "a01147.html#a9f6f7cf3af410407129ae07523fde0db", null ]
+    [ "kCellSplitColumnThreshold", "a01147.html#a4b621a2aed2de5bbc9f60f5a2e1050a5", null ],
+    [ "kCellSplitRowThreshold", "a01147.html#a39a015a67ade7e0efecbb76e7b675720", null ],
+    [ "kGoodRowNumberOfColumnsLarge", "a01147.html#a043f4bae458f1871a3a49b10917b60ad", null ],
+    [ "kGoodRowNumberOfColumnsSmall", "a01147.html#a68558ee989aac7883a39814a36f1f592", null ],
+    [ "kGoodRowNumberOfColumnsSmallSize", "a01147.html#a7e35b09657599e52f423ee1e9de41b33", null ],
+    [ "kHorizontalSpacing", "a01147.html#a459c450e19dcfec134e92887f41bb9ac", null ],
+    [ "kLinedTableMinHorizontalLines", "a01147.html#a230bf7e7a8fb6b2c2b5501baf6291743", null ],
+    [ "kLinedTableMinVerticalLines", "a01147.html#acc82e2db65c1e3234222f38f46ab42d3", null ],
+    [ "kMarginFactor", "a01147.html#ab11424363f4f0ea43a9395a314790f90", null ],
+    [ "kMaxRowSize", "a01147.html#a81a11e8f02c3fb3a0bbbec62de19e1ad", null ],
+    [ "kMinFilledArea", "a01147.html#a787309c5a8b6594e5aed4adda5e15671", null ],
+    [ "kRequiredColumns", "a01147.html#a59250c62639c9045e10bd2e0ca53148b", null ],
+    [ "kVerticalSpacing", "a01147.html#a0420369bcc5ffea9087e2779a2dacdb6", null ]
 ];

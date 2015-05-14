@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/werdit.cpp Source File</title>
+<title>Tesseract: ccstruct/crakedge.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,16 +105,16 @@ $(document).ready(function(){initNavTree('a00743_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">werdit.cpp</div>  </div>
+<div class="title">crakedge.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00743.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        werdit.cpp  (Formerly wordit.c)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: An iterator for passing over all the words in a document.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:              Ray Smith</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:             Mon Apr 27 08:51:22 BST 1992</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:                                                crakedge.h      (Formerly: crkedge.h)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Sturctures for the Crack following edge detector.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:                                      Ray Smith</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:                                     Fri Mar 22 16:06:38 GMT 1991</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1992, Hewlett-Packard Ltd.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1991, Hewlett-Packard Ltd.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
@@ -127,71 +127,43 @@ $(document).ready(function(){initNavTree('a00743_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00744.html">werdit.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * make_pseudo_word</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Make all the blobs inside a selection into a single word.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * The returned PAGE_RES_IT* it points to the new word. After use, call</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * it-&gt;DeleteCurrentWord() to delete the fake word, and then</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * delete it to get rid of the iterator itself.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00744.html#a4033d1ec3632e2e780817fc5932f5951">   31</a></span>&#160;<a class="code" href="a00502.html">PAGE_RES_IT</a>* <a class="code" href="a00743.html#a4033d1ec3632e2e780817fc5932f5951">make_pseudo_word</a>(<a class="code" href="a00501.html">PAGE_RES</a>* page_res, <span class="keyword">const</span> <a class="code" href="a00609.html">TBOX</a>&amp; selection_box) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="a00502.html">PAGE_RES_IT</a> pr_it(page_res);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  C_BLOB_LIST new_blobs;               <span class="comment">// list of gathered blobs</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  C_BLOB_IT new_blob_it = &amp;new_blobs;  <span class="comment">// iterator</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="a00669.html">WERD_RES</a>* word_res = pr_it.<a class="code" href="a00502.html#ab84b4850200ba8802791c6197c113fd0">word</a>(); word_res != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;       word_res = pr_it.<a class="code" href="a00502.html#ab29005f235cc738eebafb7d9ed6fe70b">forward</a>()) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="a00667.html">WERD</a>* word = word_res-&gt;word;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (word-&gt;<a class="code" href="a00667.html#aa69bd49f9f7abd55efb5bb24c67307e1">bounding_box</a>().<a class="code" href="a00609.html#adcc7d2858ccb61cd715dbcff32bd5582">overlap</a>(selection_box)) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      C_BLOB_IT blob_it(word-&gt;<a class="code" href="a00667.html#a174baefaa99afbfdbf444e4199f3b529">cblob_list</a>());</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">for</span> (blob_it.mark_cycle_pt();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;           !blob_it.cycled_list(); blob_it.forward()) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="a00294.html">C_BLOB</a>* blob = blob_it.data();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (blob-&gt;<a class="code" href="a00294.html#a15c1a593d84585c26aebd7a7976f0283">bounding_box</a>().<a class="code" href="a00609.html#adcc7d2858ccb61cd715dbcff32bd5582">overlap</a>(selection_box)) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;          new_blob_it.add_after_then_move(<a class="code" href="a00294.html#abe4a0174938ec7e4d968382e8274c237">C_BLOB::deep_copy</a>(blob));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordflow">if</span> (!new_blobs.empty()) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="a00667.html">WERD</a>* pseudo_word = <span class="keyword">new</span> <a class="code" href="a00667.html">WERD</a>(&amp;new_blobs, 1, <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        word_res = pr_it.<a class="code" href="a00502.html#ae4c91c0bdc362a0cebcbc644cf6ef2bf">InsertSimpleCloneWord</a>(*word_res, pseudo_word);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="a00502.html">PAGE_RES_IT</a>* it = <span class="keyword">new</span> <a class="code" href="a00502.html">PAGE_RES_IT</a>(page_res);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">while</span> (it-&gt;<a class="code" href="a00502.html#ab84b4850200ba8802791c6197c113fd0">word</a>() != word_res &amp;&amp; it-&gt;<a class="code" href="a00502.html#ab84b4850200ba8802791c6197c113fd0">word</a>() != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) it-&gt;<a class="code" href="a00502.html#ab29005f235cc738eebafb7d9ed6fe70b">forward</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(it-&gt;<a class="code" href="a00502.html#ab84b4850200ba8802791c6197c113fd0">word</a>() == word_res);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> it;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="ttc" id="a00502_html_ab29005f235cc738eebafb7d9ed6fe70b"><div class="ttname"><a href="a00502.html#ab29005f235cc738eebafb7d9ed6fe70b">PAGE_RES_IT::forward</a></div><div class="ttdeci">WERD_RES * forward()</div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00713">pageres.h:713</a></div></div>
-<div class="ttc" id="a00667_html_aa69bd49f9f7abd55efb5bb24c67307e1"><div class="ttname"><a href="a00667.html#aa69bd49f9f7abd55efb5bb24c67307e1">WERD::bounding_box</a></div><div class="ttdeci">TBOX bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00826_source.html#l00163">werd.cpp:163</a></div></div>
-<div class="ttc" id="a00294_html_abe4a0174938ec7e4d968382e8274c237"><div class="ttname"><a href="a00294.html#abe4a0174938ec7e4d968382e8274c237">C_BLOB::deep_copy</a></div><div class="ttdeci">static C_BLOB * deep_copy(const C_BLOB *src)</div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00113">stepblob.h:113</a></div></div>
-<div class="ttc" id="a00744_html"><div class="ttname"><a href="a00744.html">werdit.h</a></div></div>
-<div class="ttc" id="a00501_html"><div class="ttname"><a href="a00501.html">PAGE_RES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00058">pageres.h:58</a></div></div>
-<div class="ttc" id="a00609_html_adcc7d2858ccb61cd715dbcff32bd5582"><div class="ttname"><a href="a00609.html#adcc7d2858ccb61cd715dbcff32bd5582">TBOX::overlap</a></div><div class="ttdeci">bool overlap(const TBOX &amp;box) const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00345">rect.h:345</a></div></div>
-<div class="ttc" id="a00667_html_a174baefaa99afbfdbf444e4199f3b529"><div class="ttname"><a href="a00667.html#a174baefaa99afbfdbf444e4199f3b529">WERD::cblob_list</a></div><div class="ttdeci">C_BLOB_LIST * cblob_list()</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00100">werd.h:100</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00667_html"><div class="ttname"><a href="a00667.html">WERD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00060">werd.h:60</a></div></div>
-<div class="ttc" id="a00502_html_ab84b4850200ba8802791c6197c113fd0"><div class="ttname"><a href="a00502.html#ab84b4850200ba8802791c6197c113fd0">PAGE_RES_IT::word</a></div><div class="ttdeci">WERD_RES * word() const </div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00733">pageres.h:733</a></div></div>
-<div class="ttc" id="a00609_html"><div class="ttname"><a href="a00609.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00030">rect.h:30</a></div></div>
-<div class="ttc" id="a00743_html_a4033d1ec3632e2e780817fc5932f5951"><div class="ttname"><a href="a00743.html#a4033d1ec3632e2e780817fc5932f5951">make_pseudo_word</a></div><div class="ttdeci">PAGE_RES_IT * make_pseudo_word(PAGE_RES *page_res, const TBOX &amp;selection_box)</div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00031">werdit.cpp:31</a></div></div>
-<div class="ttc" id="a00669_html"><div class="ttname"><a href="a00669.html">WERD_RES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00155">pageres.h:155</a></div></div>
-<div class="ttc" id="a00294_html_a15c1a593d84585c26aebd7a7976f0283"><div class="ttname"><a href="a00294.html#a15c1a593d84585c26aebd7a7976f0283">C_BLOB::bounding_box</a></div><div class="ttdeci">TBOX bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00822_source.html#l00250">stepblob.cpp:250</a></div></div>
-<div class="ttc" id="a00294_html"><div class="ttname"><a href="a00294.html">C_BLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00030">stepblob.h:30</a></div></div>
-<div class="ttc" id="a00502_html_ae4c91c0bdc362a0cebcbc644cf6ef2bf"><div class="ttname"><a href="a00502.html#ae4c91c0bdc362a0cebcbc644cf6ef2bf">PAGE_RES_IT::InsertSimpleCloneWord</a></div><div class="ttdeci">WERD_RES * InsertSimpleCloneWord(const WERD_RES &amp;clone_res, WERD *new_word)</div><div class="ttdef"><b>Definition:</b> <a href="a00791_source.html#l01263">pageres.cpp:1263</a></div></div>
-<div class="ttc" id="a00846_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00084">errcode.h:84</a></div></div>
-<div class="ttc" id="a00502_html"><div class="ttname"><a href="a00502.html">PAGE_RES_IT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00656">pageres.h:656</a></div></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           CRAKEDGE_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           CRAKEDGE_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00779.html">points.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00761.html">mod128.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00333.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00333.html">CRACKEDGE</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00333.html#ab722dba2da0e6295f22d5e70a93d28ab">   28</a></span>&#160;  <a class="code" href="a00333.html#ab722dba2da0e6295f22d5e70a93d28ab">CRACKEDGE</a>() {}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00333.html#ae7bcdb1f6f28f612a0ff4ace03b38165">   30</a></span>&#160;  <a class="code" href="a00412.html">ICOORD</a> <a class="code" href="a00333.html#ae7bcdb1f6f28f612a0ff4ace03b38165">pos</a>;                  <span class="comment">/*position of crack */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00333.html#a907cb1dc30d54151b7bd96a8ab90f207">   31</a></span>&#160;  <a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00333.html#a907cb1dc30d54151b7bd96a8ab90f207">stepx</a>;                  <span class="comment">//edge step</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00333.html#a25eed9381f5de431869fd4d61fdbd15d">   32</a></span>&#160;  <a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00333.html#a25eed9381f5de431869fd4d61fdbd15d">stepy</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00333.html#a9d7eda07653a7c0831d92630a1668dc3">   33</a></span>&#160;  <a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00333.html#a9d7eda07653a7c0831d92630a1668dc3">stepdir</a>;                <span class="comment">//chaincode</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00333.html#a22411a30eb2b7529ccb755dc3971b0d1">   34</a></span>&#160;  <a class="code" href="a00333.html">CRACKEDGE</a> *<a class="code" href="a00333.html#a22411a30eb2b7529ccb755dc3971b0d1">prev</a>;             <span class="comment">/*previous point */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00333.html#a65662bdae2f4b5a3b670791fa6d6d44a">   35</a></span>&#160;  <a class="code" href="a00333.html">CRACKEDGE</a> *<a class="code" href="a00333.html#a65662bdae2f4b5a3b670791fa6d6d44a">next</a>;             <span class="comment">/*next point */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00333_html_a25eed9381f5de431869fd4d61fdbd15d"><div class="ttname"><a href="a00333.html#a25eed9381f5de431869fd4d61fdbd15d">CRACKEDGE::stepy</a></div><div class="ttdeci">inT8 stepy</div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00032">crakedge.h:32</a></div></div>
+<div class="ttc" id="a00333_html_ab722dba2da0e6295f22d5e70a93d28ab"><div class="ttname"><a href="a00333.html#ab722dba2da0e6295f22d5e70a93d28ab">CRACKEDGE::CRACKEDGE</a></div><div class="ttdeci">CRACKEDGE()</div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00028">crakedge.h:28</a></div></div>
+<div class="ttc" id="a00333_html_a22411a30eb2b7529ccb755dc3971b0d1"><div class="ttname"><a href="a00333.html#a22411a30eb2b7529ccb755dc3971b0d1">CRACKEDGE::prev</a></div><div class="ttdeci">CRACKEDGE * prev</div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00034">crakedge.h:34</a></div></div>
+<div class="ttc" id="a00779_html"><div class="ttname"><a href="a00779.html">points.h</a></div></div>
+<div class="ttc" id="a00333_html_a9d7eda07653a7c0831d92630a1668dc3"><div class="ttname"><a href="a00333.html#a9d7eda07653a7c0831d92630a1668dc3">CRACKEDGE::stepdir</a></div><div class="ttdeci">inT8 stepdir</div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00033">crakedge.h:33</a></div></div>
+<div class="ttc" id="a00333_html_a65662bdae2f4b5a3b670791fa6d6d44a"><div class="ttname"><a href="a00333.html#a65662bdae2f4b5a3b670791fa6d6d44a">CRACKEDGE::next</a></div><div class="ttdeci">CRACKEDGE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00035">crakedge.h:35</a></div></div>
+<div class="ttc" id="a00761_html"><div class="ttname"><a href="a00761.html">mod128.h</a></div></div>
+<div class="ttc" id="a00412_html"><div class="ttname"><a href="a00412.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00030">points.h:30</a></div></div>
+<div class="ttc" id="a00835_html_a2ba4d271e85baf0d333318985cb3bced"><div class="ttname"><a href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a></div><div class="ttdeci">SIGNED char inT8</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00098">host.h:98</a></div></div>
+<div class="ttc" id="a00333_html_a907cb1dc30d54151b7bd96a8ab90f207"><div class="ttname"><a href="a00333.html#a907cb1dc30d54151b7bd96a8ab90f207">CRACKEDGE::stepx</a></div><div class="ttdeci">inT8 stepx</div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00031">crakedge.h:31</a></div></div>
+<div class="ttc" id="a00333_html"><div class="ttname"><a href="a00333.html">CRACKEDGE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00026">crakedge.h:26</a></div></div>
+<div class="ttc" id="a00333_html_ae7bcdb1f6f28f612a0ff4ace03b38165"><div class="ttname"><a href="a00333.html#ae7bcdb1f6f28f612a0ff4ace03b38165">CRACKEDGE::pos</a></div><div class="ttdeci">ICOORD pos</div><div class="ttdef"><b>Definition:</b> <a href="a00743_source.html#l00030">crakedge.h:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00743.html">werdit.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:19 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00743.html">crakedge.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:53 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

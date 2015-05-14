@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/ltrresultiterator.cpp File Reference</title>
+<title>Tesseract: ccmain/recogtraining.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,31 +105,46 @@ $(document).ready(function(){initNavTree('a00705.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">ltrresultiterator.cpp File Reference</div>  </div>
+<div class="title">recogtraining.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00706_source.html">ltrresultiterator.h</a>&quot;</code><br />
-<code>#include &quot;allheaders.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00792_source.html">pageres.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00878_source.html">strngs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00737_source.html">tesseractclass.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00718_source.html">tesseractclass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00736_source.html">boxread.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00673_source.html">control.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01031_source.html">cutil.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00835_source.html">host.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00792_source.html">ratngs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00707_source.html">reject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01060_source.html">stopper.h</a>&quot;</code><br />
 </div>
 <p><a href="a00705_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad7ffe56cad38dd6067797106e3d284d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#ad7ffe56cad38dd6067797106e3d284d5">tesseract::read_t</a> (<a class="el" href="a00486.html">PAGE_RES_IT</a> *page_res_it, <a class="el" href="a00591.html">TBOX</a> *tbox)</td></tr>
+<tr class="separator:ad7ffe56cad38dd6067797106e3d284d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abfaec7e51561d081ff6615aaad765883"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#abfaec7e51561d081ff6615aaad765883">tesseract::kMaxBoxEdgeDiff</a> = 2</td></tr>
+<tr class="separator:abfaec7e51561d081ff6615aaad765883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00705.html">ltrresultiterator.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00705.html">recogtraining.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -1,6 +1,5 @@
 var a01210 =
 [
-    [ "tessopt", "a01210.html#a810b696d632429d99dd1a92fbcfed32d", null ],
-    [ "tessoptarg", "a01210.html#ae2c7e7835346e9460d1534ecc3ba3f2f", null ],
-    [ "tessoptind", "a01210.html#aef382bc42a86adef688f3b7901cc9593", null ]
+    [ "kBufferSize", "a01210.html#a8b423a805589152d71009c594ad25ab3", null ],
+    [ "kMaxMsgSize", "a01210.html#a4a4ce82f9687ca37d149b0a62c5ed379", null ]
 ];

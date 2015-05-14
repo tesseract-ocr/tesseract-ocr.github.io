@@ -1,10 +1,20 @@
 var a00263 =
 [
-    [ "AmbigSpec", "a00263.html#aaa3a04113f5db03951771afa6423e7f4", null ],
-    [ "~AmbigSpec", "a00263.html#a5283933a9e7267b3505f5f18cf289f3e", null ],
-    [ "correct_fragments", "a00263.html#ad3a4b121b26cf829422700494aed91e4", null ],
-    [ "correct_ngram_id", "a00263.html#a879c6167dbfc54980bfeb5a15b32bf73", null ],
-    [ "type", "a00263.html#ae29644f82c6feac4df14b22368fa0873", null ],
-    [ "wrong_ngram", "a00263.html#a9d7f07e5b038c6d61acc9bb75ba7ef1b", null ],
-    [ "wrong_ngram_size", "a00263.html#a4cfb10d18b7c636f3afa5f223afa445e", null ]
+    [ "BAND", "a00263.html#ac2b00be53707f8444715702a75392af1", null ],
+    [ "in_maximal", "a00263.html#a7173b524ddd3e7bcf7812808424705b1", null ],
+    [ "in_minimal", "a00263.html#aa746e4ce9fd2d4bf747817b41c2dcb92", null ],
+    [ "in_nominal", "a00263.html#a6226fd93f501a049c2f73f3ab5522d14", null ],
+    [ "range_in_maximal", "a00263.html#aac9192ba0ee4c89acb662cc82bb4c8ee", null ],
+    [ "range_in_minimal", "a00263.html#a578258ad82b711b9e353dfc5ae30ee97", null ],
+    [ "range_in_nominal", "a00263.html#a1f8127ed0f4ce843a1afcbca20f18c1d", null ],
+    [ "range_overlaps_maximal", "a00263.html#aff405e9058254d48fe30f0c5ebb66d18", null ],
+    [ "range_overlaps_minimal", "a00263.html#a74bb13d391fc073f735ddd037f7abfbc", null ],
+    [ "range_overlaps_nominal", "a00263.html#a5d8832b6f0cbeff316b87449c3bed131", null ],
+    [ "set", "a00263.html#ace854fff9d7aad2a0559b0e4cfcdb3a0", null ],
+    [ "max", "a00263.html#a43903cc78c09b4fb397f39215eb15298", null ],
+    [ "max_max", "a00263.html#ab1b83612a8944a4768f4bd600edcb1a5", null ],
+    [ "max_min", "a00263.html#a2a8b392191a1707d17992df68bdb1f02", null ],
+    [ "min", "a00263.html#ac7e578bc33fce9baad3df2e3fc8f385a", null ],
+    [ "min_max", "a00263.html#a061d0f5a133d24b55e1b8354ba13e111", null ],
+    [ "min_min", "a00263.html#aef17516757129f0080473971bb56798b", null ]
 ];

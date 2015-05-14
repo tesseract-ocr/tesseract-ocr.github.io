@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00403.html','');});
+$(document).ready(function(){initNavTree('a00449.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,22 +106,38 @@ $(document).ready(function(){initNavTree('a00403.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::FontSpacingInfo Member List</div>  </div>
+<div class="title">tesseract::LangModel Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00403.html">tesseract::FontSpacingInfo</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00449.html">tesseract::LangModel</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00403.html#a0e42f25977778ec8265baf3d2464ee83">kerned_unichar_ids</a></td><td class="entry"><a class="el" href="a00403.html">tesseract::FontSpacingInfo</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00403.html#a1fe009a61bebff9d2aedd0fe3bae87bf">kerned_x_gaps</a></td><td class="entry"><a class="el" href="a00403.html">tesseract::FontSpacingInfo</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00403.html#a015b36bdb4c3d99db56030879c610243">x_gap_after</a></td><td class="entry"><a class="el" href="a00403.html">tesseract::FontSpacingInfo</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00403.html#ae6736366be0567a50def8284e9d8f8ca">x_gap_before</a></td><td class="entry"><a class="el" href="a00403.html">tesseract::FontSpacingInfo</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#a61071a0736427f808d7134aeeb456701">GetEdges</a>(CharAltList *alt_list, LangModEdge *parent_edge, int *edge_cnt)=0</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#aae119709c73d00d731c65588be763a1d">IsDigit</a>(char_32 ch)=0</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#ade13ad9a3c3f6bb19a1071aa20bffb4b">IsLeadingPunc</a>(char_32 ch)=0</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#a0235bd607e1d0cd00082661e0b71d495">IsTrailingPunc</a>(char_32 ch)=0</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#a8b2edb01fa6b82d7a0eba6fb28717494">IsValidSequence</a>(const char_32 *str, bool eow_flag, LangModEdge **edge_array=NULL)=0</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#abf2f207148aa4563bedc41dbd650bc10">LangModel</a>()</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#a99ff66ba44ba88d7b5e47ef779b4844d">Numeric</a>()</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#a877e0ae377a2c2b3b2950b497ff1b772">numeric_enabled_</a></td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#adf7be83dc2b85f86e126ca31ddf7e744">OOD</a>()</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#aafdf3a806f6fe7ffbe75d257ecbede56">ood_enabled_</a></td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#a3a8c70497813e15dbfc42f9990952b19">Punc</a>()</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#a70621f842de37a67dd00e7c5a2d97877">punc_enabled_</a></td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#a46178bf09d08aa9c8048adb0a8561b75">Root</a>()=0</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#a7612159b5eca3fd43eedfa9f68d3b79c">SetNumeric</a>(bool numeric)</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#a6c4a21482e846de85722a7208240da66">SetOOD</a>(bool ood)</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#ab467aec7089e513e1e891828c7f9b4d3">SetPunc</a>(bool punc_enabled)</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#af2d51a52e748886fca42fa6b6f3d2b78">SetWordList</a>(bool word_list)</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#aa62a12331a5be9099c7744b74eddeff2">word_list_enabled_</a></td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00449.html#abd7c96a934e736cd3487f6340a1d4433">WordList</a>()</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00449.html#afff28be0aa6c2451e8a0e32e7c88331f">~LangModel</a>()</td><td class="entry"><a class="el" href="a00449.html">tesseract::LangModel</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:52 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:27 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

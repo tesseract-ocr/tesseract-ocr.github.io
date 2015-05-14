@@ -1,5 +1,11 @@
 var a00828 =
 [
-    [ "ELISTIZE", "a00828.html#a7c9c6594de104bda28d30b82eb3f65a9", null ],
-    [ "kMaxAmbigStringSize", "a00828.html#ab53d9c070788c2f95cfffad2c0a30c8e", null ]
+    [ "CANTCONNECTPIPE", "a00828.html#a8ac4ab23551e75b7bc873beb0dd97aba", null ],
+    [ "CANTCREATEFILE", "a00828.html#a8b283b57759870a86209b00351f93288", null ],
+    [ "CANTMAKEPIPE", "a00828.html#a6425af614cf3eecaa20c3178668b45a9", null ],
+    [ "CANTOPENFILE", "a00828.html#a33ffba120713106d14f1e425559ac571", null ],
+    [ "EXECFAILED", "a00828.html#a5063f9c74b52faf2b3ac7ec8f840d9a6", null ],
+    [ "READFAILED", "a00828.html#a139149127690c995c57c3aa7975be782", null ],
+    [ "SELECTFAILED", "a00828.html#acb152f0afa6871eda23b333b0023c6dc", null ],
+    [ "WRITEFAILED", "a00828.html#ad73a61540983a1545d4afe04b04c6501", null ]
 ];

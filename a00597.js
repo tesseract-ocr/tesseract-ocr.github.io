@@ -1,6 +1,5 @@
 var a00597 =
 [
-    [ "SVSemaphore", "a00597.html#a7eb21152bfeffb6e2d78207269838058", null ],
-    [ "Signal", "a00597.html#aed4f0b877daff9550350035478a2356c", null ],
-    [ "Wait", "a00597.html#a83a06106c3881b8248fd907029583902", null ]
+    [ "TessBoxTextRenderer", "a00597.html#ac9fd39e28f62f675129b04238b845509", null ],
+    [ "AddImageHandler", "a00597.html#ac11897f8d8cd60e9f933e980f31a5a38", null ]
 ];

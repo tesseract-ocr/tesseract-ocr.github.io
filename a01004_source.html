@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/cube_utils.h Source File</title>
+<title>Tesseract: cube/lang_mod_edge.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,17 +105,17 @@ $(document).ready(function(){initNavTree('a01004_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">cube_utils.h</div>  </div>
+<div class="title">lang_mod_edge.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01004.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        cube_utils.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Cube Utilities Class</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        lang_mod_edge.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Language Model Edge Base Class</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2008</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2007</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *(C) Copyright 2008, Google Inc.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0(the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2008, Google Inc.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
@@ -127,102 +127,85 @@ $(document).ready(function(){initNavTree('a01004_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The CubeUtils class provides miscellaneous utility and helper functions</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// to the rest of the Cube Engine</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef CUBE_UTILS_H</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define CUBE_UTILS_H</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;allheaders.h&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01039.html">const.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00984.html">char_set.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00978.html">char_samp.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00351.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00351.html">CubeUtils</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="a00351.html#a432565e7aa410467dff8d89d0073052a">CubeUtils</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="a00351.html#a3c1af8e5f546426e1527fcdbb9c7e3c1">~CubeUtils</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// Converts a probability value to a cost by getting the -log() of the</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// probability value to a known base</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="a00351.html#a0983096f5ebcb35879a1e0e6038c32f8">Prob2Cost</a>(<span class="keywordtype">double</span> prob_val);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// Converts a cost to probability by getting the exp(-normalized cost)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="a00351.html#abe90a391bde5178077826ef3dc574d1d">Cost2Prob</a>(<span class="keywordtype">int</span> cost);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// Computes the length of a 32-bit char buffer</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="a00351.html#a88fe596e3dcadab7909c0bff64f61f59">StrLen</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// Compares two 32-bit char buffers</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="a00351.html#ad0ca280e451878dc769ce3e095c97ea0">StrCmp</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str1, <span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str2);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// Duplicates a 32-bit char buffer</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">static</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *<a class="code" href="a00351.html#a2cea16ea1fc9c8d1020c159617ed90e3">StrDup</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Creates a CharSamp from an Pix and a bounding box</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">static</span> <a class="code" href="a00311.html">CharSamp</a> *<a class="code" href="a00351.html#a6a9608a69634af76d33e9d514ac39cad">CharSampleFromPix</a>(Pix *pix,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                     <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> top, <span class="keywordtype">int</span> wid, <span class="keywordtype">int</span> hgt);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Creates a Pix from a CharSamp</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">static</span> Pix *<a class="code" href="a00351.html#a69f91bd3d7bc84afc582efe86cdfa2ed">PixFromCharSample</a>(<a class="code" href="a00311.html">CharSamp</a> *char_samp);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// read the contents of a file to a string</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00351.html#ac5c5bf284cd96f78f62f19938bec750a">ReadFileToString</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;file_name, <span class="keywordtype">string</span> *str);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// split a string into vectors using any of the specified delimiters</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00351.html#af7dea4521db1e7099c93606d0f5bf4a4">SplitStringUsing</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;delims,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                               vector&lt;string&gt; *str_vec);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// UTF-8 to UTF-32 convesion functions</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00351.html#a911ee12931d18c46e7db79c6758a91cc">UTF8ToUTF32</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *utf8_str, <a class="code" href="a01279.html#a5e51e225e3ac13c918ed9f77715fa041">string_32</a> *str32);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="a00351.html#a30c20693fc79e49a67c9694700f1d0b5">UTF32ToUTF8</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *utf32_str, <span class="keywordtype">string</span> *str);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Returns true if input word has either 1) all-one-case, or 2)</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// first character upper-case, and remaining characters lower-case.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// If char_set is not NULL, uses tesseract&#39;s unicharset functions</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// to determine case properties. Otherwise, uses C-locale-dependent</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// functions, which may be unreliable on non-ASCII characters.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="a00351.html#a0c67516e85144e0d736f30c21208aeda">IsCaseInvariant</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str32, <a class="code" href="a00314.html">CharSet</a> *char_set);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// Returns char_32 pointer to the lower-case-transformed version of</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// the input string or NULL on error. If char_set is NULL returns NULL.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// Return array must be freed by caller.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">static</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *<a class="code" href="a00351.html#ac051dbde8b019f824b1bd8ae8d69d10e">ToLower</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str32, <a class="code" href="a00314.html">CharSet</a> *char_set);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// Returns char_32 pointer to the upper-case-transformed version of</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// the input string or NULL on error. If char_set is NULL returns NULL.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Return array must be freed by caller.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">static</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *<a class="code" href="a00351.html#ac5f9453d9b30ec4343940ad428a4638d">ToUpper</a>(<span class="keyword">const</span> <a class="code" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *str32, <a class="code" href="a00314.html">CharSet</a> *char_set);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *GetImageData(Pix *pix,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                     <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> top, <span class="keywordtype">int</span> wid, <span class="keywordtype">int</span> hgt);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif  // CUBE_UTILS_H</span></div>
-<div class="ttc" id="a00351_html_a69f91bd3d7bc84afc582efe86cdfa2ed"><div class="ttname"><a href="a00351.html#a69f91bd3d7bc84afc582efe86cdfa2ed">tesseract::CubeUtils::PixFromCharSample</a></div><div class="ttdeci">static Pix * PixFromCharSample(CharSamp *char_samp)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00109">cube_utils.cpp:109</a></div></div>
-<div class="ttc" id="a00351_html_a0983096f5ebcb35879a1e0e6038c32f8"><div class="ttname"><a href="a00351.html#a0983096f5ebcb35879a1e0e6038c32f8">tesseract::CubeUtils::Prob2Cost</a></div><div class="ttdeci">static int Prob2Cost(double prob_val)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00035">cube_utils.cpp:35</a></div></div>
-<div class="ttc" id="a00351_html_a3c1af8e5f546426e1527fcdbb9c7e3c1"><div class="ttname"><a href="a00351.html#a3c1af8e5f546426e1527fcdbb9c7e3c1">tesseract::CubeUtils::~CubeUtils</a></div><div class="ttdeci">~CubeUtils()</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00031">cube_utils.cpp:31</a></div></div>
-<div class="ttc" id="a01039_html"><div class="ttname"><a href="a01039.html">const.h</a></div></div>
-<div class="ttc" id="a00351_html_ac5c5bf284cd96f78f62f19938bec750a"><div class="ttname"><a href="a00351.html#ac5c5bf284cd96f78f62f19938bec750a">tesseract::CubeUtils::ReadFileToString</a></div><div class="ttdeci">static bool ReadFileToString(const string &amp;file_name, string *str)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00177">cube_utils.cpp:177</a></div></div>
-<div class="ttc" id="a00351_html_ac051dbde8b019f824b1bd8ae8d69d10e"><div class="ttname"><a href="a00351.html#ac051dbde8b019f824b1bd8ae8d69d10e">tesseract::CubeUtils::ToLower</a></div><div class="ttdeci">static char_32 * ToLower(const char_32 *str32, CharSet *char_set)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00324">cube_utils.cpp:324</a></div></div>
-<div class="ttc" id="a00984_html"><div class="ttname"><a href="a00984.html">char_set.h</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00351_html_a911ee12931d18c46e7db79c6758a91cc"><div class="ttname"><a href="a00351.html#a911ee12931d18c46e7db79c6758a91cc">tesseract::CubeUtils::UTF8ToUTF32</a></div><div class="ttdeci">static void UTF8ToUTF32(const char *utf8_str, string_32 *str32)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00244">cube_utils.cpp:244</a></div></div>
-<div class="ttc" id="a00314_html"><div class="ttname"><a href="a00314.html">tesseract::CharSet</a></div><div class="ttdef"><b>Definition:</b> <a href="a00984_source.html#l00042">char_set.h:42</a></div></div>
-<div class="ttc" id="a00351_html_a432565e7aa410467dff8d89d0073052a"><div class="ttname"><a href="a00351.html#a432565e7aa410467dff8d89d0073052a">tesseract::CubeUtils::CubeUtils</a></div><div class="ttdeci">CubeUtils()</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00028">cube_utils.cpp:28</a></div></div>
-<div class="ttc" id="a00978_html"><div class="ttname"><a href="a00978.html">char_samp.h</a></div></div>
-<div class="ttc" id="a00351_html_abe90a391bde5178077826ef3dc574d1d"><div class="ttname"><a href="a00351.html#abe90a391bde5178077826ef3dc574d1d">tesseract::CubeUtils::Cost2Prob</a></div><div class="ttdeci">static double Cost2Prob(int cost)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00043">cube_utils.cpp:43</a></div></div>
-<div class="ttc" id="a00311_html"><div class="ttname"><a href="a00311.html">tesseract::CharSamp</a></div><div class="ttdef"><b>Definition:</b> <a href="a00978_source.html#l00039">char_samp.h:39</a></div></div>
-<div class="ttc" id="a00351_html_a88fe596e3dcadab7909c0bff64f61f59"><div class="ttname"><a href="a00351.html#a88fe596e3dcadab7909c0bff64f61f59">tesseract::CubeUtils::StrLen</a></div><div class="ttdeci">static int StrLen(const char_32 *str)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00048">cube_utils.cpp:48</a></div></div>
-<div class="ttc" id="a00351_html_a30c20693fc79e49a67c9694700f1d0b5"><div class="ttname"><a href="a00351.html#a30c20693fc79e49a67c9694700f1d0b5">tesseract::CubeUtils::UTF32ToUTF8</a></div><div class="ttdeci">static void UTF32ToUTF8(const char_32 *utf32_str, string *str)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00258">cube_utils.cpp:258</a></div></div>
-<div class="ttc" id="a00351_html_af7dea4521db1e7099c93606d0f5bf4a4"><div class="ttname"><a href="a00351.html#af7dea4521db1e7099c93606d0f5bf4a4">tesseract::CubeUtils::SplitStringUsing</a></div><div class="ttdeci">static void SplitStringUsing(const string &amp;str, const string &amp;delims, vector&lt; string &gt; *str_vec)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00210">cube_utils.cpp:210</a></div></div>
-<div class="ttc" id="a00351_html_ad0ca280e451878dc769ce3e095c97ea0"><div class="ttname"><a href="a00351.html#ad0ca280e451878dc769ce3e095c97ea0">tesseract::CubeUtils::StrCmp</a></div><div class="ttdeci">static int StrCmp(const char_32 *str1, const char_32 *str2)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00058">cube_utils.cpp:58</a></div></div>
-<div class="ttc" id="a01279_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01279.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00040">string_32.h:40</a></div></div>
-<div class="ttc" id="a00351_html"><div class="ttname"><a href="a00351.html">tesseract::CubeUtils</a></div><div class="ttdef"><b>Definition:</b> <a href="a01004_source.html#l00035">cube_utils.h:35</a></div></div>
-<div class="ttc" id="a00351_html_ac5f9453d9b30ec4343940ad428a4638d"><div class="ttname"><a href="a00351.html#ac5f9453d9b30ec4343940ad428a4638d">tesseract::CubeUtils::ToUpper</a></div><div class="ttdeci">static char_32 * ToUpper(const char_32 *str32, CharSet *char_set)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00357">cube_utils.cpp:357</a></div></div>
-<div class="ttc" id="a00351_html_a0c67516e85144e0d736f30c21208aeda"><div class="ttname"><a href="a00351.html#a0c67516e85144e0d736f30c21208aeda">tesseract::CubeUtils::IsCaseInvariant</a></div><div class="ttdeci">static bool IsCaseInvariant(const char_32 *str32, CharSet *char_set)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00270">cube_utils.cpp:270</a></div></div>
-<div class="ttc" id="a01279_html_a5e51e225e3ac13c918ed9f77715fa041"><div class="ttname"><a href="a01279.html#a5e51e225e3ac13c918ed9f77715fa041">tesseract::string_32</a></div><div class="ttdeci">basic_string&lt; char_32 &gt; string_32</div><div class="ttdef"><b>Definition:</b> <a href="a01021_source.html#l00041">string_32.h:41</a></div></div>
-<div class="ttc" id="a00351_html_a2cea16ea1fc9c8d1020c159617ed90e3"><div class="ttname"><a href="a00351.html#a2cea16ea1fc9c8d1020c159617ed90e3">tesseract::CubeUtils::StrDup</a></div><div class="ttdeci">static char_32 * StrDup(const char_32 *str)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00080">cube_utils.cpp:80</a></div></div>
-<div class="ttc" id="a00351_html_a6a9608a69634af76d33e9d514ac39cad"><div class="ttname"><a href="a00351.html#a6a9608a69634af76d33e9d514ac39cad">tesseract::CubeUtils::CharSampleFromPix</a></div><div class="ttdeci">static CharSamp * CharSampleFromPix(Pix *pix, int left, int top, int wid, int hgt)</div><div class="ttdef"><b>Definition:</b> <a href="a01003_source.html#l00092">cube_utils.cpp:92</a></div></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The LangModEdge abstracts an Edge in the language model trie</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// This is an abstract class that any Language Model Edge should inherit from</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// It provides methods for:</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// 1- Returns the class ID corresponding to the edge</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// 2- If the edge is a valid EndOfWord (EOW)</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// 3- If the edge is coming from a OutOfDictionary (OOF) state machine</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// 4- If the edge is a Terminal (has no children)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// 5- A Hash of the edge that will be used to retrieve the edge</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// quickly from the BeamSearch lattice</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// 6- If two edges are identcial</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// 7- Returns a verbal description of the edge (use by debuggers)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// 8- the language model cost of the edge (if any)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// 9- The string corresponding to this edge</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// 10- Getting and setting the &quot;Root&quot; status of the edge</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifndef LANG_MOD_EDGE_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define LANG_MOD_EDGE_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00992.html">cube_tuning_params.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00974.html">char_set.h</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00448.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00448.html">LangModEdge</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="a00448.html#a5c4257a3d783cdc89dee21741786bf6e">   45</a></span>&#160;   <a class="code" href="a00448.html#a5c4257a3d783cdc89dee21741786bf6e">LangModEdge</a>() {}</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00448.html#ac8d2c121e28ba3e7415f01b8de806528">   46</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="a00448.html#ac8d2c121e28ba3e7415f01b8de806528">~LangModEdge</a>() {}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// The string corresponding to this edge</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> * <a class="code" href="a00448.html#a4187741ff5fb8fced6176e83b16b928d">EdgeString</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Returns the class ID corresponding to the edge</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00448.html#a4caf57394d94e96f11d02a97293a443b">ClassID</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// If the edge is the root edge</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00448.html#acdcbac70bbb421c944e500da45563fe0">IsRoot</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Set the Root flag</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="a00448.html#a4dbb34a133e3ca37fb9c5190f2807848">SetRoot</a>(<span class="keywordtype">bool</span> flag) = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// If the edge is a valid EndOfWord (EOW)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00448.html#ab107cb811bdbfda4fbd7b2af0bfb505e">IsEOW</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// is the edge is coming from a OutOfDictionary (OOF) state machine</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00448.html#a24d556ce36d63307c9a7195a4da29e0c">IsOOD</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// Is the edge is a Terminal (has no children)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00448.html#a8041893a12c0805b34ea50c311460518">IsTerminal</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// Returns A hash of the edge that will be used to retrieve the edge</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00448.html#a04c2882fb2e15c7fd38050d3e9fd0020">Hash</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Are the two edges identcial?</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="a00448.html#ac1676b68bb4e4433fbe183d3f3322998">IsIdentical</a>(<a class="code" href="a00448.html">LangModEdge</a> *edge) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// a verbal description of the edge (use by debuggers)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">char</span> *<a class="code" href="a00448.html#ab5669c47ce83226077fbd3f8492e5bd2">Description</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// the language model cost of the edge (if any)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="a00448.html#a970086075acc5f211b53825db505ee1d">PathCost</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif  // LANG_MOD_EDGE_H</span></div>
+<div class="ttc" id="a00448_html_a8041893a12c0805b34ea50c311460518"><div class="ttname"><a href="a00448.html#a8041893a12c0805b34ea50c311460518">tesseract::LangModEdge::IsTerminal</a></div><div class="ttdeci">virtual bool IsTerminal() const =0</div></div>
+<div class="ttc" id="a00448_html_acdcbac70bbb421c944e500da45563fe0"><div class="ttname"><a href="a00448.html#acdcbac70bbb421c944e500da45563fe0">tesseract::LangModEdge::IsRoot</a></div><div class="ttdeci">virtual bool IsRoot() const =0</div></div>
+<div class="ttc" id="a00448_html_a4187741ff5fb8fced6176e83b16b928d"><div class="ttname"><a href="a00448.html#a4187741ff5fb8fced6176e83b16b928d">tesseract::LangModEdge::EdgeString</a></div><div class="ttdeci">virtual const char_32 * EdgeString() const =0</div></div>
+<div class="ttc" id="a00448_html_ac1676b68bb4e4433fbe183d3f3322998"><div class="ttname"><a href="a00448.html#ac1676b68bb4e4433fbe183d3f3322998">tesseract::LangModEdge::IsIdentical</a></div><div class="ttdeci">virtual bool IsIdentical(LangModEdge *edge) const =0</div></div>
+<div class="ttc" id="a00448_html_a970086075acc5f211b53825db505ee1d"><div class="ttname"><a href="a00448.html#a970086075acc5f211b53825db505ee1d">tesseract::LangModEdge::PathCost</a></div><div class="ttdeci">virtual int PathCost() const =0</div></div>
+<div class="ttc" id="a00448_html_a5c4257a3d783cdc89dee21741786bf6e"><div class="ttname"><a href="a00448.html#a5c4257a3d783cdc89dee21741786bf6e">tesseract::LangModEdge::LangModEdge</a></div><div class="ttdeci">LangModEdge()</div><div class="ttdef"><b>Definition:</b> <a href="a01004_source.html#l00045">lang_mod_edge.h:45</a></div></div>
+<div class="ttc" id="a00448_html_ac8d2c121e28ba3e7415f01b8de806528"><div class="ttname"><a href="a00448.html#ac8d2c121e28ba3e7415f01b8de806528">tesseract::LangModEdge::~LangModEdge</a></div><div class="ttdeci">virtual ~LangModEdge()</div><div class="ttdef"><b>Definition:</b> <a href="a01004_source.html#l00046">lang_mod_edge.h:46</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00448_html_ab5669c47ce83226077fbd3f8492e5bd2"><div class="ttname"><a href="a00448.html#ab5669c47ce83226077fbd3f8492e5bd2">tesseract::LangModEdge::Description</a></div><div class="ttdeci">virtual char * Description() const =0</div></div>
+<div class="ttc" id="a00448_html_a4caf57394d94e96f11d02a97293a443b"><div class="ttname"><a href="a00448.html#a4caf57394d94e96f11d02a97293a443b">tesseract::LangModEdge::ClassID</a></div><div class="ttdeci">virtual int ClassID() const =0</div></div>
+<div class="ttc" id="a01267_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01267.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01011_source.html#l00040">string_32.h:40</a></div></div>
+<div class="ttc" id="a00448_html_a24d556ce36d63307c9a7195a4da29e0c"><div class="ttname"><a href="a00448.html#a24d556ce36d63307c9a7195a4da29e0c">tesseract::LangModEdge::IsOOD</a></div><div class="ttdeci">virtual bool IsOOD() const =0</div></div>
+<div class="ttc" id="a00448_html_a04c2882fb2e15c7fd38050d3e9fd0020"><div class="ttname"><a href="a00448.html#a04c2882fb2e15c7fd38050d3e9fd0020">tesseract::LangModEdge::Hash</a></div><div class="ttdeci">virtual unsigned int Hash() const =0</div></div>
+<div class="ttc" id="a00974_html"><div class="ttname"><a href="a00974.html">char_set.h</a></div></div>
+<div class="ttc" id="a00448_html_ab107cb811bdbfda4fbd7b2af0bfb505e"><div class="ttname"><a href="a00448.html#ab107cb811bdbfda4fbd7b2af0bfb505e">tesseract::LangModEdge::IsEOW</a></div><div class="ttdeci">virtual bool IsEOW() const =0</div></div>
+<div class="ttc" id="a00448_html_a4dbb34a133e3ca37fb9c5190f2807848"><div class="ttname"><a href="a00448.html#a4dbb34a133e3ca37fb9c5190f2807848">tesseract::LangModEdge::SetRoot</a></div><div class="ttdeci">virtual void SetRoot(bool flag)=0</div></div>
+<div class="ttc" id="a00992_html"><div class="ttname"><a href="a00992.html">cube_tuning_params.h</a></div></div>
+<div class="ttc" id="a00448_html"><div class="ttname"><a href="a00448.html">tesseract::LangModEdge</a></div><div class="ttdef"><b>Definition:</b> <a href="a01004_source.html#l00043">lang_mod_edge.h:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01004.html">cube_utils.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01004.html">lang_mod_edge.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:00 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

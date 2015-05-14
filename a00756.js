@@ -1,4 +1,4 @@
 var a00756 =
 [
-    [ "kBoxClipTolerance", "a00756.html#a03af8c63d879bb74722a52f7bee8c5de", null ]
+    [ "EMPTY_LLSQ", "a00756.html#a39d4e21e57d29d2cbd0031886ba5822a", null ]
 ];

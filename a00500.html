@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::OutputBuffer Class Reference</title>
+<title>Tesseract: tesseract::ParamsTrainingHypothesis Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,32 +107,36 @@ $(document).ready(function(){initNavTree('a00500.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01885.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="a01864.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::OutputBuffer Class Reference</div>  </div>
+<div class="title">tesseract::ParamsTrainingHypothesis Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a01192_source.html">fileio.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00775_source.html">params_training_featdef.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af3bfbb2ecc084138ddb36d8f1d781323"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#af3bfbb2ecc084138ddb36d8f1d781323">OutputBuffer</a> (FILE *stream)</td></tr>
-<tr class="separator:af3bfbb2ecc084138ddb36d8f1d781323"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69aa56d60fee2d3d1f06fa03c2adb0f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#a69aa56d60fee2d3d1f06fa03c2adb0f5">OutputBuffer</a> (FILE *stream, size_t size)</td></tr>
-<tr class="separator:a69aa56d60fee2d3d1f06fa03c2adb0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b0c9f9ea7c448db7711893799410988"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#a7b0c9f9ea7c448db7711893799410988">~OutputBuffer</a> ()</td></tr>
-<tr class="separator:a7b0c9f9ea7c448db7711893799410988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95174ff7c876620fe0dcdef61654bcf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#a95174ff7c876620fe0dcdef61654bcf5">WriteString</a> (const string &amp;str)</td></tr>
-<tr class="separator:a95174ff7c876620fe0dcdef61654bcf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05b5465b1c270f9caa4ac2caee5aed4d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#a05b5465b1c270f9caa4ac2caee5aed4d">CloseFile</a> ()</td></tr>
-<tr class="separator:a05b5465b1c270f9caa4ac2caee5aed4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c30109a96767c1ee27c0b00065ad205"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#a1c30109a96767c1ee27c0b00065ad205">ParamsTrainingHypothesis</a> ()</td></tr>
+<tr class="separator:a1c30109a96767c1ee27c0b00065ad205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f8e977a94665eefcee06d769a28331"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#a00f8e977a94665eefcee06d769a28331">ParamsTrainingHypothesis</a> (const <a class="el" href="a00500.html">ParamsTrainingHypothesis</a> &amp;other)</td></tr>
+<tr class="separator:a00f8e977a94665eefcee06d769a28331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a20dd3bf8dc6796b69178d3fe350aef99"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">features</a> [<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">PTRAIN_NUM_FEATURE_TYPES</a>]</td></tr>
+<tr class="separator:a20dd3bf8dc6796b69178d3fe350aef99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dee966c19cad16f4eba3efc879f51b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00561.html">STRING</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#a5dee966c19cad16f4eba3efc879f51b3">str</a></td></tr>
+<tr class="separator:a5dee966c19cad16f4eba3efc879f51b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ed45d7e6b6631cf3eec38f4dc0fb35"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">cost</a></td></tr>
+<tr class="separator:ae7ed45d7e6b6631cf3eec38f4dc0fb35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a01192_source.html#l00086">86</a> of file <a class="el" href="a01192_source.html">fileio.h</a>.</p>
+<p>Definition at line <a class="el" href="a00775_source.html#l00106">106</a> of file <a class="el" href="a00775_source.html">params_training_featdef.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af3bfbb2ecc084138ddb36d8f1d781323"></a>
+<a class="anchor" id="a1c30109a96767c1ee27c0b00065ad205"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -140,135 +144,118 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::OutputBuffer::OutputBuffer </td>
+          <td class="memname">tesseract::ParamsTrainingHypothesis::ParamsTrainingHypothesis </td>
           <td>(</td>
-          <td class="paramtype">FILE *&#160;</td>
-          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00179">179</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  : stream_(stream) {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a00775_source.html#l00107">107</a> of file <a class="el" href="a00775_source.html">params_training_featdef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                             : <a class="code" href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">cost</a>(0.0) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    memset(<a class="code" href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">features</a>, 0, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>) * <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">PTRAIN_NUM_FEATURE_TYPES</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
+<div class="ttc" id="a00500_html_ae7ed45d7e6b6631cf3eec38f4dc0fb35"><div class="ttname"><a href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">tesseract::ParamsTrainingHypothesis::cost</a></div><div class="ttdeci">float cost</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00118">params_training_featdef.h:118</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">tesseract::PTRAIN_NUM_FEATURE_TYPES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00070">params_training_featdef.h:70</a></div></div>
+<div class="ttc" id="a00500_html_a20dd3bf8dc6796b69178d3fe350aef99"><div class="ttname"><a href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">tesseract::ParamsTrainingHypothesis::features</a></div><div class="ttdeci">float features[PTRAIN_NUM_FEATURE_TYPES]</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00116">params_training_featdef.h:116</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a69aa56d60fee2d3d1f06fa03c2adb0f5"></a>
+<a class="anchor" id="a00f8e977a94665eefcee06d769a28331"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tesseract::ParamsTrainingHypothesis::ParamsTrainingHypothesis </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00500.html">ParamsTrainingHypothesis</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00775_source.html#l00110">110</a> of file <a class="el" href="a00775_source.html">params_training_featdef.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    memcpy(<a class="code" href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">features</a>, other.features,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;           <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>) * <a class="code" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">PTRAIN_NUM_FEATURE_TYPES</a>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="a00500.html#a5dee966c19cad16f4eba3efc879f51b3">str</a> = other.str;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">cost</a> = other.cost;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
+<div class="ttc" id="a00500_html_a5dee966c19cad16f4eba3efc879f51b3"><div class="ttname"><a href="a00500.html#a5dee966c19cad16f4eba3efc879f51b3">tesseract::ParamsTrainingHypothesis::str</a></div><div class="ttdeci">STRING str</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00117">params_training_featdef.h:117</a></div></div>
+<div class="ttc" id="a00500_html_ae7ed45d7e6b6631cf3eec38f4dc0fb35"><div class="ttname"><a href="a00500.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35">tesseract::ParamsTrainingHypothesis::cost</a></div><div class="ttdeci">float cost</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00118">params_training_featdef.h:118</a></div></div>
+<div class="ttc" id="a01267_html_a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e"><div class="ttname"><a href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">tesseract::PTRAIN_NUM_FEATURE_TYPES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00070">params_training_featdef.h:70</a></div></div>
+<div class="ttc" id="a00500_html_a20dd3bf8dc6796b69178d3fe350aef99"><div class="ttname"><a href="a00500.html#a20dd3bf8dc6796b69178d3fe350aef99">tesseract::ParamsTrainingHypothesis::features</a></div><div class="ttdeci">float features[PTRAIN_NUM_FEATURE_TYPES]</div><div class="ttdef"><b>Definition:</b> <a href="a00775_source.html#l00116">params_training_featdef.h:116</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ae7ed45d7e6b6631cf3eec38f4dc0fb35"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::OutputBuffer::OutputBuffer </td>
-          <td>(</td>
-          <td class="paramtype">FILE *&#160;</td>
-          <td class="paramname"><em>stream</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname">float tesseract::ParamsTrainingHypothesis::cost</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00183">183</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  : stream_(stream) {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00775_source.html#l00118">118</a> of file <a class="el" href="a00775_source.html">params_training_featdef.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a7b0c9f9ea7c448db7711893799410988"></a>
+<a class="anchor" id="a20dd3bf8dc6796b69178d3fe350aef99"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::OutputBuffer::~OutputBuffer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">float tesseract::ParamsTrainingHypothesis::features[<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">PTRAIN_NUM_FEATURE_TYPES</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00187">187</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                            {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordflow">if</span> (stream_ != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    fclose(stream_);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00775_source.html#l00116">116</a> of file <a class="el" href="a00775_source.html">params_training_featdef.h</a>.</p>
+
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a05b5465b1c270f9caa4ac2caee5aed4d"></a>
+<a class="anchor" id="a5dee966c19cad16f4eba3efc879f51b3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::OutputBuffer::CloseFile </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00561.html">STRING</a> tesseract::ParamsTrainingHypothesis::str</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00197">197</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                             {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordtype">int</span> ret = fclose(stream_);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  stream_ = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keywordflow">return</span> ret == 0;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a95174ff7c876620fe0dcdef61654bcf5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::OutputBuffer::WriteString </td>
-          <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="a00775_source.html#l00117">117</a> of file <a class="el" href="a00775_source.html">params_training_featdef.h</a>.</p>
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00193">193</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                                                {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  fputs(str.c_str(), stream_);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
-</div><!-- fragment -->
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>training/<a class="el" href="a01192_source.html">fileio.h</a></li>
-<li>training/<a class="el" href="a01191_source.html">fileio.cpp</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>ccstruct/<a class="el" href="a00775_source.html">params_training_featdef.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00500.html">OutputBuffer</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00500.html">ParamsTrainingHypothesis</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:28 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

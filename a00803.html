@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/publictypes.cpp File Reference</title>
+<title>Tesseract: ccstruct/stepblob.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,51 +105,90 @@ $(document).ready(function(){initNavTree('a00803.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">publictypes.cpp File Reference</div>  </div>
+<div class="title">stepblob.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00804_source.html">publictypes.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00804_source.html">stepblob.h</a>&quot;</code><br />
+<code>#include &quot;allheaders.h&quot;</code><br />
 </div>
 <p><a href="a00803_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a80f70fd4c89248965b568cf106c08f2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a80f70fd4c89248965b568cf106c08f2b">RotateOutlineList</a> (const <a class="el" href="a00377.html">FCOORD</a> &amp;rotation, C_OUTLINE_LIST *outlines)</td></tr>
+<tr class="separator:a80f70fd4c89248965b568cf106c08f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a4b27326bbe97b4fd1dfb34232e1f488f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a4b27326bbe97b4fd1dfb34232e1f488f">kPolyBlockNames</a> []</td></tr>
-<tr class="separator:a4b27326bbe97b4fd1dfb34232e1f488f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a532c9f8a6c6371b621bbc5f40cc6da81"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00803.html#a532c9f8a6c6371b621bbc5f40cc6da81">kMaxPerimeterWidthRatio</a> = 8.0</td></tr>
+<tr class="separator:a532c9f8a6c6371b621bbc5f40cc6da81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a4b27326bbe97b4fd1dfb34232e1f488f"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a80f70fd4c89248965b568cf106c08f2b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* kPolyBlockNames[]</td>
+          <td class="memname">void RotateOutlineList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00377.html">FCOORD</a> &amp;&#160;</td>
+          <td class="paramname"><em>rotation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">C_OUTLINE_LIST *&#160;</td>
+          <td class="paramname"><em>outlines</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">  <span class="stringliteral">&quot;Unknown&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Flowing Text&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Heading Text&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Pullout Text&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Equation&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Inline Equation&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Table&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Vertical Text&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Caption Text&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Flowing Image&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Heading Image&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Pullout Image&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Horizontal Line&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Vertical Line&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;Noise&quot;</span>,</div>
-<div class="line">  <span class="stringliteral">&quot;&quot;</span>  </div>
-<div class="line">}</div>
-</div><!-- fragment --><p>String name for each block type. Keep in sync with PolyBlockType. </p>
 
-<p>Definition at line <a class="el" href="a00803_source.html#l00023">23</a> of file <a class="el" href="a00803_source.html">publictypes.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a00803_source.html#l00362">362</a> of file <a class="el" href="a00803_source.html">stepblob.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  C_OUTLINE_LIST new_outlines;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  C_OUTLINE_IT src_it(outlines);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  C_OUTLINE_IT dest_it(&amp;new_outlines);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordflow">while</span> (!src_it.empty()) {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <a class="code" href="a00290.html">C_OUTLINE</a>* old_outline = src_it.extract();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    src_it.forward();</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="a00290.html">C_OUTLINE</a>* new_outline = <span class="keyword">new</span> <a class="code" href="a00742.html#a33c25172cfe8e7ec617eb16413b61294">C_OUTLINE</a>(old_outline, rotation);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">if</span> (!old_outline-&gt;<a class="code" href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">child</a>()-&gt;empty()) {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;      <a class="code" href="a00803.html#a80f70fd4c89248965b568cf106c08f2b">RotateOutlineList</a>(rotation, old_outline-&gt;<a class="code" href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">child</a>());</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;      C_OUTLINE_IT child_it(new_outline-&gt;<a class="code" href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">child</a>());</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;      child_it.add_list_after(old_outline-&gt;<a class="code" href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">child</a>());</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keyword">delete</span> old_outline;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    dest_it.add_to_end(new_outline);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  src_it.add_list_after(&amp;new_outlines);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
+<div class="ttc" id="a00290_html_a87880b33bc69fa17ab37a93706ae8d84"><div class="ttname"><a href="a00290.html#a87880b33bc69fa17ab37a93706ae8d84">C_OUTLINE::child</a></div><div class="ttdeci">C_OUTLINE_LIST * child()</div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00106">coutln.h:106</a></div></div>
+<div class="ttc" id="a00742_html_a33c25172cfe8e7ec617eb16413b61294"><div class="ttname"><a href="a00742.html#a33c25172cfe8e7ec617eb16413b61294">C_OUTLINE</a></div><div class="ttdeci">class DLLSYM C_OUTLINE</div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00065">coutln.h:65</a></div></div>
+<div class="ttc" id="a00290_html"><div class="ttname"><a href="a00290.html">C_OUTLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00742_source.html#l00069">coutln.h:69</a></div></div>
+<div class="ttc" id="a00803_html_a80f70fd4c89248965b568cf106c08f2b"><div class="ttname"><a href="a00803.html#a80f70fd4c89248965b568cf106c08f2b">RotateOutlineList</a></div><div class="ttdeci">void RotateOutlineList(const FCOORD &amp;rotation, C_OUTLINE_LIST *outlines)</div><div class="ttdef"><b>Definition:</b> <a href="a00803_source.html#l00362">stepblob.cpp:362</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a532c9f8a6c6371b621bbc5f40cc6da81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double kMaxPerimeterWidthRatio = 8.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00803_source.html#l00029">29</a> of file <a class="el" href="a00803_source.html">stepblob.cpp</a>.</p>
 
 </div>
 </div>
@@ -158,8 +197,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00803.html">publictypes.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00803.html">stepblob.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

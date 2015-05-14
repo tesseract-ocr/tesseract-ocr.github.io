@@ -1,6 +1,6 @@
 var a01025 =
 [
-    [ "TessLangModel", "a00630.html", "a00630" ],
-    [ "kNumLiteralCnt", "a01025.html#a6b4a65d34133edfd1e49af29cb711767", null ],
-    [ "kStateCnt", "a01025.html#acc744c888b291dd541ba6fb60c76b0a9", null ]
+    [ "ExpandBitVector", "a01025.html#a74773bfbcc12095f8d32c11b28e2577d", null ],
+    [ "FreeBitVector", "a01025.html#adc1a7f52bb1fce0746e1e5725ad679f6", null ],
+    [ "NewBitVector", "a01025.html#a502314dc3ee4b178df067713b324b868", null ]
 ];

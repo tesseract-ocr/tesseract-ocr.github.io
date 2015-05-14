@@ -1,20 +1,10 @@
 var a01125 =
 [
-    [ "EXTERN", "a01125.html#a77366c1bd428629dc898e188bfd182a3", null ],
-    [ "capture_children", "a01125.html#a099676098c0d1c86ca9a2d1a479ad27d", null ],
-    [ "empty_buckets", "a01125.html#a448e1f9764807e5383235b51b2984ae1", null ],
-    [ "extract_edges", "a01125.html#a16ca13da58e65267e7e34355091ca891", null ],
-    [ "fill_buckets", "a01125.html#ad9597834f89a0acb1b78514a7a3feb6d", null ],
-    [ "outlines_to_blobs", "a01125.html#ae0cc26838f9973f097882b899b69b249", null ],
-    [ "edges_boxarea", "a01125.html#a5c8e12a7cab77678c5a40171e1ad7e40", null ],
-    [ "edges_childarea", "a01125.html#a1c3f12a33758ab5c83dde7fc3954ad06", null ],
-    [ "edges_children_count_limit", "a01125.html#a4411090594db829033b24025f4de29d9", null ],
-    [ "edges_children_fix", "a01125.html#a95fd6349e34702c3fcc3cd346c559d06", null ],
-    [ "edges_children_per_grandchild", "a01125.html#a283e485670cbdd564cbfffb1ff4cef2f", null ],
-    [ "edges_debug", "a01125.html#a4df127e52b28ef687af8128df96a54a7", null ],
-    [ "edges_max_children_layers", "a01125.html#a40dfeb7fc2006435e09a96fdda52a195", null ],
-    [ "edges_max_children_per_outline", "a01125.html#ab212bf226a60aa5a7737568cb9022b29", null ],
-    [ "edges_min_nonhole", "a01125.html#a9a6c4af6ab3a8a8ba517b15e2fa4311a", null ],
-    [ "edges_patharea_ratio", "a01125.html#ad9100fbb62368b53d9ab52a434378591", null ],
-    [ "edges_use_new_outline_complexity", "a01125.html#a5ee9ae16416593b6eae3ebcdfcf70fb1", null ]
+    [ "kMaxRectangularFraction", "a01125.html#ae6dc7638052b18db703d824259f9d39e", null ],
+    [ "kMaxRectangularGradient", "a01125.html#ac980c05231fe3f7a8cb4c7ed7f9b6516", null ],
+    [ "kMinColorDifference", "a01125.html#aa76be4c175875d95748cec9f9d5467e3", null ],
+    [ "kMinImageFindSize", "a01125.html#ad923bf9132f3e7cfd57199a3190c446c", null ],
+    [ "kMinRectangularFraction", "a01125.html#a1f21fe8acb13b4e1904e1d1157183d0d", null ],
+    [ "kRMSFitScaling", "a01125.html#a351af5b8ad4d2b3fd95e59d758f13e7a", null ],
+    [ "textord_tabfind_show_images", "a01125.html#a25f853a0cc782510d9943b1a3be4327d", null ]
 ];

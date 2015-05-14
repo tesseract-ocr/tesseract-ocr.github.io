@@ -1,5 +1,9 @@
 var a01216 =
 [
-    [ "SetPropertiesForInputFile", "a01216.html#a6ab186c9dc94d1896baf55e6a848e81a", null ],
-    [ "SetupBasicProperties", "a01216.html#a49e6f022ec033530161447502965fa3b", null ]
+    [ "fmax", "a01216.html#ac705d35734004d67c12286b1ab39f420", null ],
+    [ "isinf", "a01216.html#a2a266c767456556e5c0da234b602b18b", null ],
+    [ "isnan", "a01216.html#a2e1baae9134e580910322362dc23290e", null ],
+    [ "round", "a01216.html#a6ea10f4260b54a61665ead26cb995ba3", null ],
+    [ "VS2008_INCLUDE_MATHFIXT_H_", "a01216.html#aab021ef273d807b6c9e11946cf0a3c1c", null ],
+    [ "roundf", "a01216.html#ab07a4da26d604273a929cc442fadcedc", null ]
 ];

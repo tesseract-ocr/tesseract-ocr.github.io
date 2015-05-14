@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/mf.h File Reference</title>
+<title>Tesseract: classify/ocrfeatures.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,120 +105,338 @@ $(document).ready(function(){initNavTree('a00933.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">mf.h File Reference</div>  </div>
+<div class="title">ocrfeatures.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00945_source.html">ocrfeatures.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00751_source.html">blobs.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div>
 <p><a href="a00933_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00495.html">PARAM_DESC</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00382.html">FEATURE_STRUCT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00381.html">FEATURE_SET_STRUCT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00380.html">FEATURE_EXT_STRUCT</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a988007e06743db204d076f3c68161469"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a988007e06743db204d076f3c68161469">FEAT_NAME_SIZE</a>&#160;&#160;&#160;80</td></tr>
+<tr class="separator:a988007e06743db204d076f3c68161469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af670b92d0a3b0562bca5b53eb0fd10d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#af670b92d0a3b0562bca5b53eb0fd10d7">ILLEGAL_FEATURE_PARAM</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:af670b92d0a3b0562bca5b53eb0fd10d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab63ebb4f4faddf28b6ef934606284e98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#ab63ebb4f4faddf28b6ef934606284e98">ILLEGAL_NUM_FEATURES</a>&#160;&#160;&#160;1001</td></tr>
+<tr class="separator:ab63ebb4f4faddf28b6ef934606284e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab167eb0dd11bcdc485185da17528554e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#ab167eb0dd11bcdc485185da17528554e">StartParamDesc</a>(Name)&#160;&#160;&#160;const <a class="el" href="a00495.html">PARAM_DESC</a> Name[] = {</td></tr>
+<tr class="separator:ab167eb0dd11bcdc485185da17528554e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c9b19bf68ac985b694b63908c903ac7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a2c9b19bf68ac985b694b63908c903ac7">DefineParam</a>(Circular, NonEssential, Min, Max)</td></tr>
+<tr class="separator:a2c9b19bf68ac985b694b63908c903ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f96cc11dfea22b55b18b2e991be813"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a24f96cc11dfea22b55b18b2e991be813">EndParamDesc</a>&#160;&#160;&#160;};</td></tr>
+<tr class="separator:a24f96cc11dfea22b55b18b2e991be813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6998a902eeedeb654f5209cd390c69c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a6998a902eeedeb654f5209cd390c69c3">DefineFeature</a>(Name, NL, NC, SN, PN)</td></tr>
+<tr class="separator:a6998a902eeedeb654f5209cd390c69c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a29d1eef9328292867329303f9f60c5cb"><td class="memItemLeft" align="right" valign="top">typedef float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a29d1eef9328292867329303f9f60c5cb">MicroFeature</a> [<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa1c44793580a78fadeffdefc28065e682">MFCount</a>]</td></tr>
-<tr class="separator:a29d1eef9328292867329303f9f60c5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a0ae9eb66d190c70000f710f7c11977af"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977af">MF_PARAM_NAME</a> { <br />
-&#160;&#160;<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094">MFXPosition</a>, 
-<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695">MFYPosition</a>, 
-<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54">MFLength</a>, 
-<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436">MFDirection</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd">MFBulge1</a>, 
-<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1">MFBulge2</a>, 
-<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa1c44793580a78fadeffdefc28065e682">MFCount</a>
-<br />
- }</td></tr>
-<tr class="separator:a0ae9eb66d190c70000f710f7c11977af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56ac79f6f0f7b13cef8664a95e131380"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a56ac79f6f0f7b13cef8664a95e131380">FEATURE_DESC</a></td></tr>
+<tr class="separator:a56ac79f6f0f7b13cef8664a95e131380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19902c8e979ab51dbf6be841e4048f7d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00382.html">FEATURE_STRUCT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a></td></tr>
+<tr class="separator:a19902c8e979ab51dbf6be841e4048f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0c2f756ba2c7f34a21efbe13a49ac39"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00381.html">FEATURE_SET_STRUCT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a></td></tr>
+<tr class="separator:ac0c2f756ba2c7f34a21efbe13a49ac39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e78d165adc7a1b8c5bf790563265d97"><td class="memItemLeft" align="right" valign="top">typedef char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a4e78d165adc7a1b8c5bf790563265d97">CHAR_FEATURES</a></td></tr>
+<tr class="separator:a4e78d165adc7a1b8c5bf790563265d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea14501bb6c48419d06345ac1b3db14d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#aea14501bb6c48419d06345ac1b3db14d">FX_FUNC</a> )(<a class="el" href="a00590.html">TBLOB</a> *, const <a class="el" href="a00352.html">DENORM</a> &amp;, const <a class="el" href="a00352.html">DENORM</a> &amp;, const <a class="el" href="a00426.html">INT_FX_RESULT_STRUCT</a> &amp;)</td></tr>
+<tr class="separator:aea14501bb6c48419d06345ac1b3db14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a65d3fa9ad9b625a37b5b5a8254156bac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00945.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a65d3fa9ad9b625a37b5b5a8254156bac">ExtractMicros</a> (<a class="el" href="a00608.html">TBLOB</a> *Blob, const <a class="el" href="a00360.html">DENORM</a> &amp;cn_denorm)</td></tr>
-<tr class="separator:a65d3fa9ad9b625a37b5b5a8254156bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f4fe91126bd64e3c8dcd3327343639"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a09f4fe91126bd64e3c8dcd3327343639">AddFeature</a> (<a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a> FeatureSet, <a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a> Feature)</td></tr>
+<tr class="separator:a09f4fe91126bd64e3c8dcd3327343639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaf54a6410150ec74f66ec6621f1352f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#acaf54a6410150ec74f66ec6621f1352f">FreeFeature</a> (<a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a> Feature)</td></tr>
+<tr class="separator:acaf54a6410150ec74f66ec6621f1352f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b29c3d875eb9a2241385b1f1388b2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a72b29c3d875eb9a2241385b1f1388b2d">FreeFeatureSet</a> (<a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a> FeatureSet)</td></tr>
+<tr class="separator:a72b29c3d875eb9a2241385b1f1388b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a08c42617c8dd6a156c1c8d7fb2cbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a32a08c42617c8dd6a156c1c8d7fb2cbb">NewFeature</a> (const <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *FeatureDesc)</td></tr>
+<tr class="separator:a32a08c42617c8dd6a156c1c8d7fb2cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf1bcf73857cfc37fe8d667203bc875"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#acdf1bcf73857cfc37fe8d667203bc875">NewFeatureSet</a> (int NumFeatures)</td></tr>
+<tr class="separator:acdf1bcf73857cfc37fe8d667203bc875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb869be1d5f3f8ad1e42c81f10368923"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#acb869be1d5f3f8ad1e42c81f10368923">ReadFeature</a> (FILE *File, const <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *FeatureDesc)</td></tr>
+<tr class="separator:acb869be1d5f3f8ad1e42c81f10368923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbac3342338c1fb0f38aad20c3c324d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#adbac3342338c1fb0f38aad20c3c324d8">ReadFeatureSet</a> (FILE *File, const <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *FeatureDesc)</td></tr>
+<tr class="separator:adbac3342338c1fb0f38aad20c3c324d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c6381c6d081d068912cb786ff93c72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a32c6381c6d081d068912cb786ff93c72">WriteFeature</a> (FILE *File, <a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a> Feature)</td></tr>
+<tr class="separator:a32c6381c6d081d068912cb786ff93c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a2f4672497a1aa6d8378d083c0b70c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#a9a2f4672497a1aa6d8378d083c0b70c8">WriteFeatureSet</a> (FILE *File, <a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a> FeatureSet)</td></tr>
+<tr class="separator:a9a2f4672497a1aa6d8378d083c0b70c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a83ba5e85296ef3afee4785a89022b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00933.html#ae7a83ba5e85296ef3afee4785a89022b">WriteOldParamDesc</a> (FILE *File, const <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *FeatureDesc)</td></tr>
+<tr class="separator:ae7a83ba5e85296ef3afee4785a89022b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a29d1eef9328292867329303f9f60c5cb"></a>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a6998a902eeedeb654f5209cd390c69c3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef float MicroFeature[<a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa1c44793580a78fadeffdefc28065e682">MFCount</a>]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00933_source.html#l00033">33</a> of file <a class="el" href="a00933_source.html">mf.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="a0ae9eb66d190c70000f710f7c11977af"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00933.html#a0ae9eb66d190c70000f710f7c11977af">MF_PARAM_NAME</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<hr/>
- <h2>Include Files and Type Defines </h2>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094"></a>MFXPosition&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695"></a>MFYPosition&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54"></a>MFLength&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436"></a>MFDirection&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd"></a>MFBulge1&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1"></a>MFBulge2&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a0ae9eb66d190c70000f710f7c11977afa1c44793580a78fadeffdefc28065e682"></a>MFCount&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a00933_source.html#l00027">27</a> of file <a class="el" href="a00933_source.html">mf.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;             {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094">MFXPosition</a>, <a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695">MFYPosition</a>,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54">MFLength</a>, <a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436">MFDirection</a>, <a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd">MFBulge1</a>, <a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1">MFBulge2</a>,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa1c44793580a78fadeffdefc28065e682">MFCount</a>  <span class="comment">// For array sizes.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977af">MF_PARAM_NAME</a>;</div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695">MFYPosition</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00028">mf.h:28</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd">MFBulge1</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00029">mf.h:29</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54">MFLength</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00029">mf.h:29</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094">MFXPosition</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00028">mf.h:28</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977af"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977af">MF_PARAM_NAME</a></div><div class="ttdeci">MF_PARAM_NAME</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00027">mf.h:27</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa1c44793580a78fadeffdefc28065e682"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa1c44793580a78fadeffdefc28065e682">MFCount</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00030">mf.h:30</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436">MFDirection</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00029">mf.h:29</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1">MFBulge2</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00029">mf.h:29</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a65d3fa9ad9b625a37b5b5a8254156bac"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00945.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a> ExtractMicros </td>
+          <td class="memname">#define DefineFeature</td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00608.html">TBLOB</a> *&#160;</td>
-          <td class="paramname"><em>Blob</em>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Name, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00360.html">DENORM</a> &amp;&#160;</td>
-          <td class="paramname"><em>cn_denorm</em>&#160;</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NL, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NC, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">SN, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">PN&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="a00379.html">FEATURE_DESC_STRUCT</a> Name = {                              \</div>
+<div class="line">        ((NL) + (NC)), SN, PN};</div>
+<div class="ttc" id="a00379_html"><div class="ttname"><a href="a00379.html">FEATURE_DESC_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00056">ocrfeatures.h:56</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00933_source.html#l00107">107</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c9b19bf68ac985b694b63908c903ac7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DefineParam</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Circular, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NonEssential, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Min, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Max&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{Circular, NonEssential, Min, Max,                      \</div>
+<div class="line">        (Max) - (Min), (((Max) - (Min))/2.0), (((Max) + (Min))/2.0)},</div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00933_source.html#l00095">95</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a24f96cc11dfea22b55b18b2e991be813"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EndParamDesc&#160;&#160;&#160;};</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00099">99</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a988007e06743db204d076f3c68161469"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FEAT_NAME_SIZE&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00033">33</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af670b92d0a3b0562bca5b53eb0fd10d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ILLEGAL_FEATURE_PARAM&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00036">36</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab63ebb4f4faddf28b6ef934606284e98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ILLEGAL_NUM_FEATURES&#160;&#160;&#160;1001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00037">37</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab167eb0dd11bcdc485185da17528554e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define StartParamDesc</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Name</td><td>)</td>
+          <td>&#160;&#160;&#160;const <a class="el" href="a00495.html">PARAM_DESC</a> Name[] = {</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00092">92</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a4e78d165adc7a1b8c5bf790563265d97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef char* <a class="el" href="a00933.html#a4e78d165adc7a1b8c5bf790563265d97">CHAR_FEATURES</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00080">80</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19902c8e979ab51dbf6be841e4048f7d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="a00382.html">FEATURE_STRUCT</a>* <a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00067">67</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56ac79f6f0f7b13cef8664a95e131380"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a>* <a class="el" href="a00933.html#a56ac79f6f0f7b13cef8664a95e131380">FEATURE_DESC</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00061">61</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0c2f756ba2c7f34a21efbe13a49ac39"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="a00381.html">FEATURE_SET_STRUCT</a>* <a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00074">74</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea14501bb6c48419d06345ac1b3db14d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>(* FX_FUNC)(<a class="el" href="a00590.html">TBLOB</a> *, const <a class="el" href="a00352.html">DENORM</a> &amp;, const <a class="el" href="a00352.html">DENORM</a> &amp;, const <a class="el" href="a00426.html">INT_FX_RESULT_STRUCT</a> &amp;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00933_source.html#l00082">82</a> of file <a class="el" href="a00933_source.html">ocrfeatures.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a09f4fe91126bd64e3c8dcd3327343639"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> AddFeature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>&#160;</td>
+          <td class="paramname"><em>FeatureSet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a>&#160;</td>
+          <td class="paramname"><em>Feature</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -229,90 +447,516 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <hr/>
  <h2>Include Files and Type Defines </h2>
-<h2>Global Data Definitions and Declarations </h2>
-<h2>Private Code </h2>
+<h2>Public Code </h2>
 
-<p>Definition at line <a class="el" href="a00932_source.html#l00036">36</a> of file <a class="el" href="a00932_source.html">mf.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                                {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **     Parameters:</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **             Blob            blob to extract micro-features from</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **             denorm  control parameter to feature extractor.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **     Globals: none</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **     Operation: Call the old micro-feature extractor and then copy</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **             the features into the new format.  Then deallocate the</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **             old micro-features.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **     Return: Micro-features for Blob.</span></div>
+<p>Definition at line <a class="el" href="a00932_source.html#l00035">35</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                          {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **             FeatureSet      set of features to add Feature to</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **             Feature         feature to be added to FeatureSet</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **     Operation: Add a feature to a feature set.  If the feature set is</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **             already full, FALSE is returned to indicate that the</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **             feature could not be added to the set; otherwise, TRUE is</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **             returned.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **     Return: TRUE if feature added to set, FALSE if set is already full.</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **     History: Wed May 23 18:06:38 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **     History: Tue May 22 17:22:23 1990, DSJ, Created.</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">int</span> NumFeatures;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="a00469.html">MICROFEATURES</a> Features, OldFeatures;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="a00388.html">FEATURE_SET</a> FeatureSet;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a00389.html">FEATURE</a> Feature;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00935.html#acf6b2e47a8872409e85b7bfeee9961dc">MICROFEATURE</a> OldFeature;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  OldFeatures = <a class="code" href="a00938.html#a807f06b47c5b936507ee2895e1452afa">BlobMicroFeatures</a>(Blob, cn_denorm);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">if</span> (OldFeatures == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  NumFeatures = <a class="code" href="a01055.html#acd4ea858d7133e40518e0832ff9d94b2">count</a> (OldFeatures);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  FeatureSet = <a class="code" href="a00944.html#acdf1bcf73857cfc37fe8d667203bc875">NewFeatureSet</a> (NumFeatures);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  Features = OldFeatures;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="a01056.html#a2cf19ba78be6b54f66823d58f34f2a53">iterate</a>(Features) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    OldFeature = (<a class="code" href="a00935.html#acf6b2e47a8872409e85b7bfeee9961dc">MICROFEATURE</a>) <a class="code" href="a01056.html#a69547be764424f18b0be535400747978">first_node</a> (Features);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Feature = <a class="code" href="a00944.html#a32a08c42617c8dd6a156c1c8d7fb2cbb">NewFeature</a> (&amp;<a class="code" href="a00911.html#aa889ab53df925b2ccc5a2871eca3eff7">MicroFeatureDesc</a>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Feature-&gt;<a class="code" href="a00389.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[<a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436">MFDirection</a>] = OldFeature[<a class="code" href="a00935.html#ac815b03ec48abf99301f44140ff0b0a9">ORIENTATION</a>];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    Feature-&gt;<a class="code" href="a00389.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[<a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094">MFXPosition</a>] = OldFeature[<a class="code" href="a00935.html#aa14d8a5c035963734f527261a209c402">XPOSITION</a>];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Feature-&gt;<a class="code" href="a00389.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[<a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695">MFYPosition</a>] = OldFeature[<a class="code" href="a00935.html#ab4a43f7e9f215f0fb311fdb0f54fe1bf">YPOSITION</a>];</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Feature-&gt;<a class="code" href="a00389.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[<a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54">MFLength</a>] = OldFeature[<a class="code" href="a00935.html#aab9af949da5ae4ae116df014c0d22d1e">MFLENGTH</a>];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Bulge features are deprecated and should not be used.  Set to 0.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    Feature-&gt;<a class="code" href="a00389.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[<a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd">MFBulge1</a>] = 0.0f;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Feature-&gt;<a class="code" href="a00389.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[<a class="code" href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1">MFBulge2</a>] = 0.0f;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#ifndef _WIN32</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Assert that feature parameters are well defined.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> i;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; Feature-&gt;<a class="code" href="a00389.html#a1a034f275ff504afd63bd99643fae589">Type</a>-&gt;<a class="code" href="a00387.html#a0edbab02900ae01549f742582236eb6d">NumParams</a>; i++) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(!<a class="code" href="a01230.html#a2e1baae9134e580910322362dc23290e">isnan</a>(Feature-&gt;<a class="code" href="a00389.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[i]));</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="a00944.html#a09f4fe91126bd64e3c8dcd3327343639">AddFeature</a>(FeatureSet, Feature);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="a00934.html#afd75dd0b29a6b9bf0c5a31b3484bd0d9">FreeMicroFeatures</a>(OldFeatures);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">return</span> FeatureSet;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}                                <span class="comment">/* ExtractMicros */</span></div>
-<div class="ttc" id="a00911_html_aa889ab53df925b2ccc5a2871eca3eff7"><div class="ttname"><a href="a00911.html#aa889ab53df925b2ccc5a2871eca3eff7">MicroFeatureDesc</a></div><div class="ttdeci">const FEATURE_DESC_STRUCT MicroFeatureDesc</div></div>
-<div class="ttc" id="a01056_html_a69547be764424f18b0be535400747978"><div class="ttname"><a href="a01056.html#a69547be764424f18b0be535400747978">first_node</a></div><div class="ttdeci">#define first_node(l)</div><div class="ttdef"><b>Definition:</b> <a href="a01056_source.html#l00139">oldlist.h:139</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695">MFYPosition</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00028">mf.h:28</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd">MFBulge1</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00029">mf.h:29</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54">MFLength</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00029">mf.h:29</a></div></div>
-<div class="ttc" id="a00388_html"><div class="ttname"><a href="a00388.html">FEATURE_SET_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00069">ocrfeatures.h:69</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a01056_html_a2cf19ba78be6b54f66823d58f34f2a53"><div class="ttname"><a href="a01056.html#a2cf19ba78be6b54f66823d58f34f2a53">iterate</a></div><div class="ttdeci">#define iterate(l)</div><div class="ttdef"><b>Definition:</b> <a href="a01056_source.html#l00159">oldlist.h:159</a></div></div>
-<div class="ttc" id="a00935_html_acf6b2e47a8872409e85b7bfeee9961dc"><div class="ttname"><a href="a00935.html#acf6b2e47a8872409e85b7bfeee9961dc">MICROFEATURE</a></div><div class="ttdeci">FLOAT32 * MICROFEATURE</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00033">mfdefs.h:33</a></div></div>
-<div class="ttc" id="a00389_html_a1a034f275ff504afd63bd99643fae589"><div class="ttname"><a href="a00389.html#a1a034f275ff504afd63bd99643fae589">FEATURE_STRUCT::Type</a></div><div class="ttdeci">const FEATURE_DESC_STRUCT * Type</div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00064">ocrfeatures.h:64</a></div></div>
-<div class="ttc" id="a01055_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01055.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01055_source.html#l00108">oldlist.cpp:108</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094">MFXPosition</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00028">mf.h:28</a></div></div>
-<div class="ttc" id="a00935_html_ac815b03ec48abf99301f44140ff0b0a9"><div class="ttname"><a href="a00935.html#ac815b03ec48abf99301f44140ff0b0a9">ORIENTATION</a></div><div class="ttdeci">#define ORIENTATION</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00039">mfdefs.h:39</a></div></div>
-<div class="ttc" id="a00935_html_aa14d8a5c035963734f527261a209c402"><div class="ttname"><a href="a00935.html#aa14d8a5c035963734f527261a209c402">XPOSITION</a></div><div class="ttdeci">#define XPOSITION</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00036">mfdefs.h:36</a></div></div>
-<div class="ttc" id="a00387_html_a0edbab02900ae01549f742582236eb6d"><div class="ttname"><a href="a00387.html#a0edbab02900ae01549f742582236eb6d">FEATURE_DESC_STRUCT::NumParams</a></div><div class="ttdeci">uinT16 NumParams</div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00057">ocrfeatures.h:57</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436">MFDirection</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00029">mf.h:29</a></div></div>
-<div class="ttc" id="a00944_html_a09f4fe91126bd64e3c8dcd3327343639"><div class="ttname"><a href="a00944.html#a09f4fe91126bd64e3c8dcd3327343639">AddFeature</a></div><div class="ttdeci">BOOL8 AddFeature(FEATURE_SET FeatureSet, FEATURE Feature)</div><div class="ttdef"><b>Definition:</b> <a href="a00944_source.html#l00035">ocrfeatures.cpp:35</a></div></div>
-<div class="ttc" id="a01230_html_a2e1baae9134e580910322362dc23290e"><div class="ttname"><a href="a01230.html#a2e1baae9134e580910322362dc23290e">isnan</a></div><div class="ttdeci">#define isnan(x)</div><div class="ttdef"><b>Definition:</b> <a href="a01230_source.html#l00031">mathfix.h:31</a></div></div>
-<div class="ttc" id="a00935_html_ab4a43f7e9f215f0fb311fdb0f54fe1bf"><div class="ttname"><a href="a00935.html#ab4a43f7e9f215f0fb311fdb0f54fe1bf">YPOSITION</a></div><div class="ttdeci">#define YPOSITION</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00037">mfdefs.h:37</a></div></div>
-<div class="ttc" id="a00389_html_ace52f36cfcba955504f4a24f86a897b4"><div class="ttname"><a href="a00389.html#ace52f36cfcba955504f4a24f86a897b4">FEATURE_STRUCT::Params</a></div><div class="ttdeci">FLOAT32 Params[1]</div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00065">ocrfeatures.h:65</a></div></div>
-<div class="ttc" id="a00469_html"><div class="ttname"><a href="a00469.html">list_rec</a></div><div class="ttdef"><b>Definition:</b> <a href="a01056_source.html#l00127">oldlist.h:127</a></div></div>
-<div class="ttc" id="a00934_html_afd75dd0b29a6b9bf0c5a31b3484bd0d9"><div class="ttname"><a href="a00934.html#afd75dd0b29a6b9bf0c5a31b3484bd0d9">FreeMicroFeatures</a></div><div class="ttdeci">void FreeMicroFeatures(MICROFEATURES MicroFeatures)</div><div class="ttdef"><b>Definition:</b> <a href="a00934_source.html#l00045">mfdefs.cpp:45</a></div></div>
-<div class="ttc" id="a00938_html_a807f06b47c5b936507ee2895e1452afa"><div class="ttname"><a href="a00938.html#a807f06b47c5b936507ee2895e1452afa">BlobMicroFeatures</a></div><div class="ttdeci">MICROFEATURES BlobMicroFeatures(TBLOB *Blob, const DENORM &amp;cn_denorm)</div><div class="ttdef"><b>Definition:</b> <a href="a00938_source.html#l00062">mfx.cpp:62</a></div></div>
-<div class="ttc" id="a00944_html_acdf1bcf73857cfc37fe8d667203bc875"><div class="ttname"><a href="a00944.html#acdf1bcf73857cfc37fe8d667203bc875">NewFeatureSet</a></div><div class="ttdeci">FEATURE_SET NewFeatureSet(int NumFeatures)</div><div class="ttdef"><b>Definition:</b> <a href="a00944_source.html#l00126">ocrfeatures.cpp:126</a></div></div>
-<div class="ttc" id="a00389_html"><div class="ttname"><a href="a00389.html">FEATURE_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00945_source.html#l00063">ocrfeatures.h:63</a></div></div>
-<div class="ttc" id="a00944_html_a32a08c42617c8dd6a156c1c8d7fb2cbb"><div class="ttname"><a href="a00944.html#a32a08c42617c8dd6a156c1c8d7fb2cbb">NewFeature</a></div><div class="ttdeci">FEATURE NewFeature(const FEATURE_DESC_STRUCT *FeatureDesc)</div><div class="ttdef"><b>Definition:</b> <a href="a00944_source.html#l00102">ocrfeatures.cpp:102</a></div></div>
-<div class="ttc" id="a00933_html_a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1"><div class="ttname"><a href="a00933.html#a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1">MFBulge2</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00029">mf.h:29</a></div></div>
-<div class="ttc" id="a00935_html_aab9af949da5ae4ae116df014c0d22d1e"><div class="ttname"><a href="a00935.html#aab9af949da5ae4ae116df014c0d22d1e">MFLENGTH</a></div><div class="ttdeci">#define MFLENGTH</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00038">mfdefs.h:38</a></div></div>
-<div class="ttc" id="a00846_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00084">errcode.h:84</a></div></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">if</span> (FeatureSet-&gt;<a class="code" href="a00381.html#a154a6ca419f3f16fccf11b7217351570">NumFeatures</a> &gt;= FeatureSet-&gt;<a class="code" href="a00381.html#a929fdddbb7cb689f66b59e06d51aee46">MaxNumFeatures</a>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="a00932.html#acaf54a6410150ec74f66ec6621f1352f">FreeFeature</a>(Feature);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  FeatureSet-&gt;<a class="code" href="a00381.html#a4664d6a22a9d12f4011de4d877664c45">Features</a>[FeatureSet-&gt;<a class="code" href="a00381.html#a154a6ca419f3f16fccf11b7217351570">NumFeatures</a>++] = Feature;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}                                <span class="comment">/* AddFeature */</span></div>
+<div class="ttc" id="a00932_html_acaf54a6410150ec74f66ec6621f1352f"><div class="ttname"><a href="a00932.html#acaf54a6410150ec74f66ec6621f1352f">FreeFeature</a></div><div class="ttdeci">void FreeFeature(FEATURE Feature)</div><div class="ttdef"><b>Definition:</b> <a href="a00932_source.html#l00059">ocrfeatures.cpp:59</a></div></div>
+<div class="ttc" id="a00381_html_a154a6ca419f3f16fccf11b7217351570"><div class="ttname"><a href="a00381.html#a154a6ca419f3f16fccf11b7217351570">FEATURE_SET_STRUCT::NumFeatures</a></div><div class="ttdeci">uinT16 NumFeatures</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00070">ocrfeatures.h:70</a></div></div>
+<div class="ttc" id="a00381_html_a929fdddbb7cb689f66b59e06d51aee46"><div class="ttname"><a href="a00381.html#a929fdddbb7cb689f66b59e06d51aee46">FEATURE_SET_STRUCT::MaxNumFeatures</a></div><div class="ttdeci">uinT16 MaxNumFeatures</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00071">ocrfeatures.h:71</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00665_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00028">capi.h:28</a></div></div>
+<div class="ttc" id="a00381_html_a4664d6a22a9d12f4011de4d877664c45"><div class="ttname"><a href="a00381.html#a4664d6a22a9d12f4011de4d877664c45">FEATURE_SET_STRUCT::Features</a></div><div class="ttdeci">FEATURE Features[1]</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00072">ocrfeatures.h:72</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="acaf54a6410150ec74f66ec6621f1352f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FreeFeature </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a>&#160;</td>
+          <td class="paramname"><em>Feature</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00059">59</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                  {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> **             Feature         feature to be deallocated.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> **     Operation: Release the memory consumed by the specified feature.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> **     Return: none</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> **     History: Mon May 21 13:33:27 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span> (Feature) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="a00841.html#a204a6cd6de69d4bd7a73ca30e0a0f947">free_struct</a> (Feature, <span class="keyword">sizeof</span> (<a class="code" href="a00382.html">FEATURE_STRUCT</a>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      + <span class="keyword">sizeof</span> (<a class="code" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a>) * (Feature-&gt;<a class="code" href="a00382.html#a1a034f275ff504afd63bd99643fae589">Type</a>-&gt;<a class="code" href="a00379.html#a0edbab02900ae01549f742582236eb6d">NumParams</a> - 1),</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="stringliteral">&quot;sizeof(FEATURE_STRUCT)+sizeof(FLOAT32)*(NumParamsIn(Feature)-1)&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}                                <span class="comment">/* FreeFeature */</span></div>
+<div class="ttc" id="a00382_html_a1a034f275ff504afd63bd99643fae589"><div class="ttname"><a href="a00382.html#a1a034f275ff504afd63bd99643fae589">FEATURE_STRUCT::Type</a></div><div class="ttdeci">const FEATURE_DESC_STRUCT * Type</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00064">ocrfeatures.h:64</a></div></div>
+<div class="ttc" id="a00382_html"><div class="ttname"><a href="a00382.html">FEATURE_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00063">ocrfeatures.h:63</a></div></div>
+<div class="ttc" id="a00379_html_a0edbab02900ae01549f742582236eb6d"><div class="ttname"><a href="a00379.html#a0edbab02900ae01549f742582236eb6d">FEATURE_DESC_STRUCT::NumParams</a></div><div class="ttdeci">uinT16 NumParams</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00057">ocrfeatures.h:57</a></div></div>
+<div class="ttc" id="a00841_html_a204a6cd6de69d4bd7a73ca30e0a0f947"><div class="ttname"><a href="a00841.html#a204a6cd6de69d4bd7a73ca30e0a0f947">free_struct</a></div><div class="ttdeci">void free_struct(void *deadstruct, inT32, const char *)</div><div class="ttdef"><b>Definition:</b> <a href="a00841_source.html#l00043">memry.cpp:43</a></div></div>
+<div class="ttc" id="a00835_html_a6a3da5f1db8d485c0d2f5a7ba526c4a0"><div class="ttname"><a href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a></div><div class="ttdeci">float FLOAT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00111">host.h:111</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a72b29c3d875eb9a2241385b1f1388b2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FreeFeatureSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>&#160;</td>
+          <td class="paramname"><em>FeatureSet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00079">79</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                            {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> **             FeatureSet      set of features to be freed</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> **     Operation: Release the memory consumed by the specified feature</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> **             set.  This routine also frees the memory consumed by the</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> **             features contained in the set.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> **     Return: none</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> **     History: Mon May 21 13:59:46 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">if</span> (FeatureSet) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; FeatureSet-&gt;<a class="code" href="a00381.html#a154a6ca419f3f16fccf11b7217351570">NumFeatures</a>; i++)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <a class="code" href="a00932.html#acaf54a6410150ec74f66ec6621f1352f">FreeFeature</a>(FeatureSet-&gt;<a class="code" href="a00381.html#a4664d6a22a9d12f4011de4d877664c45">Features</a>[i]);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="a01040.html#ab462a857e5edf360ae4881bcc92a0bcf">memfree</a>(FeatureSet);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}                                <span class="comment">/* FreeFeatureSet */</span></div>
+<div class="ttc" id="a00932_html_acaf54a6410150ec74f66ec6621f1352f"><div class="ttname"><a href="a00932.html#acaf54a6410150ec74f66ec6621f1352f">FreeFeature</a></div><div class="ttdeci">void FreeFeature(FEATURE Feature)</div><div class="ttdef"><b>Definition:</b> <a href="a00932_source.html#l00059">ocrfeatures.cpp:59</a></div></div>
+<div class="ttc" id="a00381_html_a154a6ca419f3f16fccf11b7217351570"><div class="ttname"><a href="a00381.html#a154a6ca419f3f16fccf11b7217351570">FEATURE_SET_STRUCT::NumFeatures</a></div><div class="ttdeci">uinT16 NumFeatures</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00070">ocrfeatures.h:70</a></div></div>
+<div class="ttc" id="a01040_html_ab462a857e5edf360ae4881bcc92a0bcf"><div class="ttname"><a href="a01040.html#ab462a857e5edf360ae4881bcc92a0bcf">memfree</a></div><div class="ttdeci">void memfree(void *element)</div><div class="ttdef"><b>Definition:</b> <a href="a01040_source.html#l00030">freelist.cpp:30</a></div></div>
+<div class="ttc" id="a00381_html_a4664d6a22a9d12f4011de4d877664c45"><div class="ttname"><a href="a00381.html#a4664d6a22a9d12f4011de4d877664c45">FEATURE_SET_STRUCT::Features</a></div><div class="ttdeci">FEATURE Features[1]</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00072">ocrfeatures.h:72</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a32a08c42617c8dd6a156c1c8d7fb2cbb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a> NewFeature </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *&#160;</td>
+          <td class="paramname"><em>FeatureDesc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00102">102</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                           {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> **             FeatureDesc     description of feature to be created.</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> **     Operation: Allocate and return a new feature of the specified</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> **             type.</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> **     Return: New feature.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> **     History: Mon May 21 14:06:42 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="a00382.html">FEATURE</a> Feature;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  Feature = (<a class="code" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a>) <a class="code" href="a00841.html#a4f4e6728de23eb0530f9bdc8b3a114d3">alloc_struct</a> (<span class="keyword">sizeof</span> (<a class="code" href="a00382.html">FEATURE_STRUCT</a>) +</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    (FeatureDesc-&gt;<a class="code" href="a00379.html#a0edbab02900ae01549f742582236eb6d">NumParams</a> - 1) *</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">sizeof</span> (<a class="code" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a>),</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="stringliteral">&quot;sizeof(FEATURE_STRUCT)+sizeof(FLOAT32)*(NumParamsIn(Feature)-1)&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  Feature-&gt;<a class="code" href="a00382.html#a1a034f275ff504afd63bd99643fae589">Type</a> = FeatureDesc;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">return</span> (Feature);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}                                <span class="comment">/* NewFeature */</span></div>
+<div class="ttc" id="a00382_html_a1a034f275ff504afd63bd99643fae589"><div class="ttname"><a href="a00382.html#a1a034f275ff504afd63bd99643fae589">FEATURE_STRUCT::Type</a></div><div class="ttdeci">const FEATURE_DESC_STRUCT * Type</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00064">ocrfeatures.h:64</a></div></div>
+<div class="ttc" id="a00382_html"><div class="ttname"><a href="a00382.html">FEATURE_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00063">ocrfeatures.h:63</a></div></div>
+<div class="ttc" id="a00379_html_a0edbab02900ae01549f742582236eb6d"><div class="ttname"><a href="a00379.html#a0edbab02900ae01549f742582236eb6d">FEATURE_DESC_STRUCT::NumParams</a></div><div class="ttdeci">uinT16 NumParams</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00057">ocrfeatures.h:57</a></div></div>
+<div class="ttc" id="a00933_html_a19902c8e979ab51dbf6be841e4048f7d"><div class="ttname"><a href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a></div><div class="ttdeci">FEATURE_STRUCT * FEATURE</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00067">ocrfeatures.h:67</a></div></div>
+<div class="ttc" id="a00835_html_a6a3da5f1db8d485c0d2f5a7ba526c4a0"><div class="ttname"><a href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a></div><div class="ttdeci">float FLOAT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00111">host.h:111</a></div></div>
+<div class="ttc" id="a00841_html_a4f4e6728de23eb0530f9bdc8b3a114d3"><div class="ttname"><a href="a00841.html#a4f4e6728de23eb0530f9bdc8b3a114d3">alloc_struct</a></div><div class="ttdeci">void * alloc_struct(inT32 count, const char *)</div><div class="ttdef"><b>Definition:</b> <a href="a00841_source.html#l00039">memry.cpp:39</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="acdf1bcf73857cfc37fe8d667203bc875"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a> NewFeatureSet </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>NumFeatures</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00126">126</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                           {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"> **             NumFeatures     maximum # of features to be put in feature set</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"> **     Operation: Allocate and return a new feature set large enough to</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"> **             hold the specified number of features.</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"> **     Return: New feature set.</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"> **     History: Mon May 21 14:22:40 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="a00381.html">FEATURE_SET</a> FeatureSet;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  FeatureSet = (<a class="code" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>) <a class="code" href="a01038.html#a9bdc0885c33bbb5b062c77b1d90e2305">Emalloc</a> (<span class="keyword">sizeof</span> (<a class="code" href="a00381.html">FEATURE_SET_STRUCT</a>) +</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    (NumFeatures - 1) * <span class="keyword">sizeof</span> (<a class="code" href="a00382.html">FEATURE</a>));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  FeatureSet-&gt;<a class="code" href="a00381.html#a929fdddbb7cb689f66b59e06d51aee46">MaxNumFeatures</a> = NumFeatures;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  FeatureSet-&gt;<a class="code" href="a00381.html#a154a6ca419f3f16fccf11b7217351570">NumFeatures</a> = 0;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">return</span> (FeatureSet);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}                                <span class="comment">/* NewFeatureSet */</span></div>
+<div class="ttc" id="a00381_html_a154a6ca419f3f16fccf11b7217351570"><div class="ttname"><a href="a00381.html#a154a6ca419f3f16fccf11b7217351570">FEATURE_SET_STRUCT::NumFeatures</a></div><div class="ttdeci">uinT16 NumFeatures</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00070">ocrfeatures.h:70</a></div></div>
+<div class="ttc" id="a01038_html_a9bdc0885c33bbb5b062c77b1d90e2305"><div class="ttname"><a href="a01038.html#a9bdc0885c33bbb5b062c77b1d90e2305">Emalloc</a></div><div class="ttdeci">void * Emalloc(int Size)</div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00035">emalloc.cpp:35</a></div></div>
+<div class="ttc" id="a00381_html_a929fdddbb7cb689f66b59e06d51aee46"><div class="ttname"><a href="a00381.html#a929fdddbb7cb689f66b59e06d51aee46">FEATURE_SET_STRUCT::MaxNumFeatures</a></div><div class="ttdeci">uinT16 MaxNumFeatures</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00071">ocrfeatures.h:71</a></div></div>
+<div class="ttc" id="a00382_html"><div class="ttname"><a href="a00382.html">FEATURE_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00063">ocrfeatures.h:63</a></div></div>
+<div class="ttc" id="a00933_html_ac0c2f756ba2c7f34a21efbe13a49ac39"><div class="ttname"><a href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a></div><div class="ttdeci">FEATURE_SET_STRUCT * FEATURE_SET</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00074">ocrfeatures.h:74</a></div></div>
+<div class="ttc" id="a00381_html"><div class="ttname"><a href="a00381.html">FEATURE_SET_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00069">ocrfeatures.h:69</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="acb869be1d5f3f8ad1e42c81f10368923"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a> ReadFeature </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>File</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *&#160;</td>
+          <td class="paramname"><em>FeatureDesc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00149">149</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"> **             File            open text file to read feature from</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"> **             FeatureDesc     specifies type of feature to read from File</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"> **     Operation: Create a new feature of the specified type and read in</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment"> **             the value of its parameters from File.  The extra penalty</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"> **             for the feature is also computed by calling the appropriate</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"> **             function for the specified feature type.  The correct text</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"> **             representation for a feature is a list of N floats where</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"> **             N is the number of parameters in the feature.</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment"> **     Return: New feature read from File.</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment"> **     Exceptions: ILLEGAL_FEATURE_PARAM if text file doesn&#39;t match expected format</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"> **     History: Wed May 23 08:53:16 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <a class="code" href="a00382.html">FEATURE</a> Feature;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  Feature = <a class="code" href="a00932.html#a32a08c42617c8dd6a156c1c8d7fb2cbb">NewFeature</a> (FeatureDesc);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordflow">for</span> (i = 0; i &lt; Feature-&gt;<a class="code" href="a00382.html#a1a034f275ff504afd63bd99643fae589">Type</a>-&gt;<a class="code" href="a00379.html#a0edbab02900ae01549f742582236eb6d">NumParams</a>; i++) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00851.html#aa11dd049f17d50a5af65fbd245e705d0">tfscanf</a>(File, <span class="stringliteral">&quot;%f&quot;</span>, &amp;(Feature-&gt;<a class="code" href="a00382.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[i])) != 1)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a> (<a class="code" href="a00933.html#af670b92d0a3b0562bca5b53eb0fd10d7">ILLEGAL_FEATURE_PARAM</a>, <span class="stringliteral">&quot;Illegal feature parameter spec&quot;</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    assert (!<a class="code" href="a01216.html#a2e1baae9134e580910322362dc23290e">isnan</a>(Feature-&gt;<a class="code" href="a00382.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[i]));</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordflow">return</span> (Feature);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}                                <span class="comment">/* ReadFeature */</span></div>
+<div class="ttc" id="a00933_html_af670b92d0a3b0562bca5b53eb0fd10d7"><div class="ttname"><a href="a00933.html#af670b92d0a3b0562bca5b53eb0fd10d7">ILLEGAL_FEATURE_PARAM</a></div><div class="ttdeci">#define ILLEGAL_FEATURE_PARAM</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00036">ocrfeatures.h:36</a></div></div>
+<div class="ttc" id="a00382_html_a1a034f275ff504afd63bd99643fae589"><div class="ttname"><a href="a00382.html#a1a034f275ff504afd63bd99643fae589">FEATURE_STRUCT::Type</a></div><div class="ttdeci">const FEATURE_DESC_STRUCT * Type</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00064">ocrfeatures.h:64</a></div></div>
+<div class="ttc" id="a00382_html"><div class="ttname"><a href="a00382.html">FEATURE_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00063">ocrfeatures.h:63</a></div></div>
+<div class="ttc" id="a01034_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00032">danerror.cpp:32</a></div></div>
+<div class="ttc" id="a01216_html_a2e1baae9134e580910322362dc23290e"><div class="ttname"><a href="a01216.html#a2e1baae9134e580910322362dc23290e">isnan</a></div><div class="ttdeci">#define isnan(x)</div><div class="ttdef"><b>Definition:</b> <a href="a01216_source.html#l00031">mathfix.h:31</a></div></div>
+<div class="ttc" id="a00379_html_a0edbab02900ae01549f742582236eb6d"><div class="ttname"><a href="a00379.html#a0edbab02900ae01549f742582236eb6d">FEATURE_DESC_STRUCT::NumParams</a></div><div class="ttdeci">uinT16 NumParams</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00057">ocrfeatures.h:57</a></div></div>
+<div class="ttc" id="a00932_html_a32a08c42617c8dd6a156c1c8d7fb2cbb"><div class="ttname"><a href="a00932.html#a32a08c42617c8dd6a156c1c8d7fb2cbb">NewFeature</a></div><div class="ttdeci">FEATURE NewFeature(const FEATURE_DESC_STRUCT *FeatureDesc)</div><div class="ttdef"><b>Definition:</b> <a href="a00932_source.html#l00102">ocrfeatures.cpp:102</a></div></div>
+<div class="ttc" id="a00382_html_ace52f36cfcba955504f4a24f86a897b4"><div class="ttname"><a href="a00382.html#ace52f36cfcba955504f4a24f86a897b4">FEATURE_STRUCT::Params</a></div><div class="ttdeci">FLOAT32 Params[1]</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00065">ocrfeatures.h:65</a></div></div>
+<div class="ttc" id="a00851_html_aa11dd049f17d50a5af65fbd245e705d0"><div class="ttname"><a href="a00851.html#aa11dd049f17d50a5af65fbd245e705d0">tfscanf</a></div><div class="ttdeci">int tfscanf(FILE *stream, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="a00851_source.html#l00229">scanutils.cpp:229</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="adbac3342338c1fb0f38aad20c3c324d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a> ReadFeatureSet </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>File</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *&#160;</td>
+          <td class="paramname"><em>FeatureDesc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00181">181</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                                                               {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment"> **             File            open text file to read new feature set from</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment"> **             FeatureDesc     specifies type of feature to read from File</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment"> **     Operation: Create a new feature set of the specified type and read in</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"> **             the features from File.  The correct text representation</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment"> **             for a feature set is an integer which specifies the number (N)</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment"> **             of features in a set followed by a list of N feature</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment"> **             descriptions.</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment"> **     Return: New feature set read from File.</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment"> **     History: Wed May 23 09:17:31 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <a class="code" href="a00381.html">FEATURE_SET</a> FeatureSet;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordtype">int</span> NumFeatures;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00851.html#aa11dd049f17d50a5af65fbd245e705d0">tfscanf</a>(File, <span class="stringliteral">&quot;%d&quot;</span>, &amp;NumFeatures) != 1 || NumFeatures &lt; 0)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a>(<a class="code" href="a00933.html#ab63ebb4f4faddf28b6ef934606284e98">ILLEGAL_NUM_FEATURES</a>, <span class="stringliteral">&quot;Illegal number of features in set&quot;</span>);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  FeatureSet = <a class="code" href="a00932.html#acdf1bcf73857cfc37fe8d667203bc875">NewFeatureSet</a>(NumFeatures);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <span class="keywordflow">for</span> (i = 0; i &lt; NumFeatures; i++)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="a00932.html#a09f4fe91126bd64e3c8dcd3327343639">AddFeature</a>(FeatureSet, <a class="code" href="a00932.html#acb869be1d5f3f8ad1e42c81f10368923">ReadFeature</a> (File, FeatureDesc));</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordflow">return</span> (FeatureSet);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}                                <span class="comment">/* ReadFeatureSet */</span></div>
+<div class="ttc" id="a00932_html_acdf1bcf73857cfc37fe8d667203bc875"><div class="ttname"><a href="a00932.html#acdf1bcf73857cfc37fe8d667203bc875">NewFeatureSet</a></div><div class="ttdeci">FEATURE_SET NewFeatureSet(int NumFeatures)</div><div class="ttdef"><b>Definition:</b> <a href="a00932_source.html#l00126">ocrfeatures.cpp:126</a></div></div>
+<div class="ttc" id="a01034_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00032">danerror.cpp:32</a></div></div>
+<div class="ttc" id="a00932_html_a09f4fe91126bd64e3c8dcd3327343639"><div class="ttname"><a href="a00932.html#a09f4fe91126bd64e3c8dcd3327343639">AddFeature</a></div><div class="ttdeci">BOOL8 AddFeature(FEATURE_SET FeatureSet, FEATURE Feature)</div><div class="ttdef"><b>Definition:</b> <a href="a00932_source.html#l00035">ocrfeatures.cpp:35</a></div></div>
+<div class="ttc" id="a00381_html"><div class="ttname"><a href="a00381.html">FEATURE_SET_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00069">ocrfeatures.h:69</a></div></div>
+<div class="ttc" id="a00932_html_acb869be1d5f3f8ad1e42c81f10368923"><div class="ttname"><a href="a00932.html#acb869be1d5f3f8ad1e42c81f10368923">ReadFeature</a></div><div class="ttdeci">FEATURE ReadFeature(FILE *File, const FEATURE_DESC_STRUCT *FeatureDesc)</div><div class="ttdef"><b>Definition:</b> <a href="a00932_source.html#l00149">ocrfeatures.cpp:149</a></div></div>
+<div class="ttc" id="a00933_html_ab63ebb4f4faddf28b6ef934606284e98"><div class="ttname"><a href="a00933.html#ab63ebb4f4faddf28b6ef934606284e98">ILLEGAL_NUM_FEATURES</a></div><div class="ttdeci">#define ILLEGAL_NUM_FEATURES</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00037">ocrfeatures.h:37</a></div></div>
+<div class="ttc" id="a00851_html_aa11dd049f17d50a5af65fbd245e705d0"><div class="ttname"><a href="a00851.html#aa11dd049f17d50a5af65fbd245e705d0">tfscanf</a></div><div class="ttdeci">int tfscanf(FILE *stream, const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="a00851_source.html#l00229">scanutils.cpp:229</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a32c6381c6d081d068912cb786ff93c72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteFeature </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>File</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00933.html#a19902c8e979ab51dbf6be841e4048f7d">FEATURE</a>&#160;</td>
+          <td class="paramname"><em>Feature</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00212">212</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                               {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment"> **             File            open text file to write Feature to</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment"> **             Feature         feature to write out to File</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment"> **     Operation: Write a textual representation of Feature to File.</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment"> **             This representation is simply a list of the N parameters</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment"> **             of the feature, terminated with a newline.  It is assumed</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment"> **             that the ExtraPenalty field can be reconstructed from the</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment"> **             parameters of the feature.  It is also assumed that the</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment"> **             feature type information is specified or assumed elsewhere.</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"> **     Return: none</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment"> **     History: Wed May 23 09:28:18 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keywordflow">for</span> (i = 0; i &lt; Feature-&gt;<a class="code" href="a00382.html#a1a034f275ff504afd63bd99643fae589">Type</a>-&gt;<a class="code" href="a00379.html#a0edbab02900ae01549f742582236eb6d">NumParams</a>; i++) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#ifndef WIN32</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    assert(!<a class="code" href="a01216.html#a2e1baae9134e580910322362dc23290e">isnan</a>(Feature-&gt;<a class="code" href="a00382.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[i]));</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    fprintf(File, <span class="stringliteral">&quot; %g&quot;</span>, Feature-&gt;<a class="code" href="a00382.html#ace52f36cfcba955504f4a24f86a897b4">Params</a>[i]);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  fprintf(File, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}                                <span class="comment">/* WriteFeature */</span></div>
+<div class="ttc" id="a00382_html_a1a034f275ff504afd63bd99643fae589"><div class="ttname"><a href="a00382.html#a1a034f275ff504afd63bd99643fae589">FEATURE_STRUCT::Type</a></div><div class="ttdeci">const FEATURE_DESC_STRUCT * Type</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00064">ocrfeatures.h:64</a></div></div>
+<div class="ttc" id="a01216_html_a2e1baae9134e580910322362dc23290e"><div class="ttname"><a href="a01216.html#a2e1baae9134e580910322362dc23290e">isnan</a></div><div class="ttdeci">#define isnan(x)</div><div class="ttdef"><b>Definition:</b> <a href="a01216_source.html#l00031">mathfix.h:31</a></div></div>
+<div class="ttc" id="a00379_html_a0edbab02900ae01549f742582236eb6d"><div class="ttname"><a href="a00379.html#a0edbab02900ae01549f742582236eb6d">FEATURE_DESC_STRUCT::NumParams</a></div><div class="ttdeci">uinT16 NumParams</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00057">ocrfeatures.h:57</a></div></div>
+<div class="ttc" id="a00382_html_ace52f36cfcba955504f4a24f86a897b4"><div class="ttname"><a href="a00382.html#ace52f36cfcba955504f4a24f86a897b4">FEATURE_STRUCT::Params</a></div><div class="ttdeci">FLOAT32 Params[1]</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00065">ocrfeatures.h:65</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a9a2f4672497a1aa6d8378d083c0b70c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteFeatureSet </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>File</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00933.html#ac0c2f756ba2c7f34a21efbe13a49ac39">FEATURE_SET</a>&#160;</td>
+          <td class="paramname"><em>FeatureSet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00241">241</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                                         {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment"> **             File            open text file to write FeatureSet to</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment"> **             FeatureSet      feature set to write to File</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment"> **     Operation: Write a textual representation of FeatureSet to File.</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment"> **             This representation is an integer specifying the number of</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment"> **             features in the set, followed by a newline, followed by</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment"> **             text representations for each feature in the set.</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment"> **     Return: none</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment"> **     History: Wed May 23 10:06:03 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordflow">if</span> (FeatureSet) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    fprintf (File, <span class="stringliteral">&quot;%d\n&quot;</span>, FeatureSet-&gt;<a class="code" href="a00381.html#a154a6ca419f3f16fccf11b7217351570">NumFeatures</a>);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; FeatureSet-&gt;<a class="code" href="a00381.html#a154a6ca419f3f16fccf11b7217351570">NumFeatures</a>; i++)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <a class="code" href="a00932.html#a32c6381c6d081d068912cb786ff93c72">WriteFeature</a> (File, FeatureSet-&gt;<a class="code" href="a00381.html#a4664d6a22a9d12f4011de4d877664c45">Features</a>[i]);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}                                <span class="comment">/* WriteFeatureSet */</span></div>
+<div class="ttc" id="a00381_html_a154a6ca419f3f16fccf11b7217351570"><div class="ttname"><a href="a00381.html#a154a6ca419f3f16fccf11b7217351570">FEATURE_SET_STRUCT::NumFeatures</a></div><div class="ttdeci">uinT16 NumFeatures</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00070">ocrfeatures.h:70</a></div></div>
+<div class="ttc" id="a00932_html_a32c6381c6d081d068912cb786ff93c72"><div class="ttname"><a href="a00932.html#a32c6381c6d081d068912cb786ff93c72">WriteFeature</a></div><div class="ttdeci">void WriteFeature(FILE *File, FEATURE Feature)</div><div class="ttdef"><b>Definition:</b> <a href="a00932_source.html#l00212">ocrfeatures.cpp:212</a></div></div>
+<div class="ttc" id="a00381_html_a4664d6a22a9d12f4011de4d877664c45"><div class="ttname"><a href="a00381.html#a4664d6a22a9d12f4011de4d877664c45">FEATURE_SET_STRUCT::Features</a></div><div class="ttdeci">FEATURE Features[1]</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00072">ocrfeatures.h:72</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae7a83ba5e85296ef3afee4785a89022b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteOldParamDesc </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>File</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00379.html">FEATURE_DESC_STRUCT</a> *&#160;</td>
+          <td class="paramname"><em>FeatureDesc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00932_source.html#l00266">266</a> of file <a class="el" href="a00932_source.html">ocrfeatures.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment"> **             File            open text file to write FeatureDesc to</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment"> **             FeatureDesc     feature descriptor to write to File</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"> **     Operation: Write a textual representation of FeatureDesc to File</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"> **             in the old format (i.e. the format used by the clusterer).</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment"> **             This format is:</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="comment"> **                     Number of Params</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment"> **                     Description of Param 1</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment"> **                     ...</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment"> **     Return: none</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment"> **     History: Fri May 25 15:27:18 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  fprintf (File, <span class="stringliteral">&quot;%d\n&quot;</span>, FeatureDesc-&gt;<a class="code" href="a00379.html#a0edbab02900ae01549f742582236eb6d">NumParams</a>);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordflow">for</span> (i = 0; i &lt; FeatureDesc-&gt;<a class="code" href="a00379.html#a0edbab02900ae01549f742582236eb6d">NumParams</a>; i++) {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">if</span> (FeatureDesc-&gt;<a class="code" href="a00379.html#acc46f9f5b3cded3ca8e7de3e94407c58">ParamDesc</a>[i].<a class="code" href="a00495.html#a55807f1e0be0daba2a33380ea29b2f1d">Circular</a>)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      fprintf (File, <span class="stringliteral">&quot;circular &quot;</span>);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      fprintf (File, <span class="stringliteral">&quot;linear   &quot;</span>);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span> (FeatureDesc-&gt;<a class="code" href="a00379.html#acc46f9f5b3cded3ca8e7de3e94407c58">ParamDesc</a>[i].<a class="code" href="a00495.html#a6b9843466a3ddf33bfab18f85ca06501">NonEssential</a>)</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      fprintf (File, <span class="stringliteral">&quot;non-essential  &quot;</span>);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      fprintf (File, <span class="stringliteral">&quot;essential      &quot;</span>);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    fprintf (File, <span class="stringliteral">&quot;%f  %f\n&quot;</span>,</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      FeatureDesc-&gt;<a class="code" href="a00379.html#acc46f9f5b3cded3ca8e7de3e94407c58">ParamDesc</a>[i].<a class="code" href="a00495.html#a6445e8e433a99239e56c3218437f2695">Min</a>, FeatureDesc-&gt;<a class="code" href="a00379.html#acc46f9f5b3cded3ca8e7de3e94407c58">ParamDesc</a>[i].<a class="code" href="a00495.html#a73e76f946bbd324e60914a991d3343d1">Max</a>);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}                                <span class="comment">/* WriteOldParamDesc */</span></div>
+<div class="ttc" id="a00495_html_a6445e8e433a99239e56c3218437f2695"><div class="ttname"><a href="a00495.html#a6445e8e433a99239e56c3218437f2695">PARAM_DESC::Min</a></div><div class="ttdeci">FLOAT32 Min</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00049">ocrfeatures.h:49</a></div></div>
+<div class="ttc" id="a00379_html_a0edbab02900ae01549f742582236eb6d"><div class="ttname"><a href="a00379.html#a0edbab02900ae01549f742582236eb6d">FEATURE_DESC_STRUCT::NumParams</a></div><div class="ttdeci">uinT16 NumParams</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00057">ocrfeatures.h:57</a></div></div>
+<div class="ttc" id="a00379_html_acc46f9f5b3cded3ca8e7de3e94407c58"><div class="ttname"><a href="a00379.html#acc46f9f5b3cded3ca8e7de3e94407c58">FEATURE_DESC_STRUCT::ParamDesc</a></div><div class="ttdeci">const PARAM_DESC * ParamDesc</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00059">ocrfeatures.h:59</a></div></div>
+<div class="ttc" id="a00495_html_a6b9843466a3ddf33bfab18f85ca06501"><div class="ttname"><a href="a00495.html#a6b9843466a3ddf33bfab18f85ca06501">PARAM_DESC::NonEssential</a></div><div class="ttdeci">inT8 NonEssential</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00048">ocrfeatures.h:48</a></div></div>
+<div class="ttc" id="a00495_html_a55807f1e0be0daba2a33380ea29b2f1d"><div class="ttname"><a href="a00495.html#a55807f1e0be0daba2a33380ea29b2f1d">PARAM_DESC::Circular</a></div><div class="ttdeci">inT8 Circular</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00047">ocrfeatures.h:47</a></div></div>
+<div class="ttc" id="a00495_html_a73e76f946bbd324e60914a991d3343d1"><div class="ttname"><a href="a00495.html#a73e76f946bbd324e60914a991d3343d1">PARAM_DESC::Max</a></div><div class="ttdeci">FLOAT32 Max</div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00050">ocrfeatures.h:50</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -321,8 +965,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00933.html">mf.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:35 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00933.html">ocrfeatures.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

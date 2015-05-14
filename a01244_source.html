@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/drawfx.h Source File</title>
+<title>Tesseract: wordrec/olutil.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,59 +105,137 @@ $(document).ready(function(){initNavTree('a01244_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">drawfx.h</div>  </div>
+<div class="title">olutil.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01244.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        drawfx.h  (Formerly drawfx.h)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Draw things to do with feature extraction.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:              Ray Smith</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:             Mon Jan 27 11:02:16 GMT 1992</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1992, Hewlett-Packard Ltd.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           DRAWFX_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           DRAWFX_H</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00867.html">params.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a01220.html">scrollview.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <a class="code" href="a00867.html#a4de8a1a302b34b48cc9cabad1b611802">STRING_VAR_H</a> (<a class="code" href="a01244.html#aafd93dea58b33bc6c4245aaa39e8e9ee">fx_debugfile</a>, <a class="code" href="a01243.html#ab6aba1c8ae753116a3baeaf4a0603155">DEBUG_WIN_NAME</a>, <span class="stringliteral">&quot;Name of debugfile&quot;</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <a class="code" href="a00553.html">ScrollView</a>* <a class="code" href="a01244.html#a32821715e23d2e2666ba66b2a9d2ee8b">fx_win</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> FILE *<a class="code" href="a01244.html#a914f797563b0dc5f5d3f13f521e307a5">fx_debug</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01244.html#ae31e31904810bc4e3407c2f324cf7edb">create_fx_win</a>();  <span class="comment">//make features win</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01244.html#aa3294a99fe8ad4b74a1e8577b89e3eff">clear_fx_win</a>();  <span class="comment">//make features win</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01244.html#acb1c409d6a6de9cd0988e873ff68fd70">create_fxdebug_win</a>();  <span class="comment">//make gradients win</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a01244_html_ae31e31904810bc4e3407c2f324cf7edb"><div class="ttname"><a href="a01244.html#ae31e31904810bc4e3407c2f324cf7edb">create_fx_win</a></div><div class="ttdeci">void create_fx_win()</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00060">drawfx.cpp:60</a></div></div>
-<div class="ttc" id="a01244_html_acb1c409d6a6de9cd0988e873ff68fd70"><div class="ttname"><a href="a01244.html#acb1c409d6a6de9cd0988e873ff68fd70">create_fxdebug_win</a></div><div class="ttdeci">void create_fxdebug_win()</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00089">drawfx.cpp:89</a></div></div>
-<div class="ttc" id="a00867_html"><div class="ttname"><a href="a00867.html">params.h</a></div></div>
-<div class="ttc" id="a01244_html_aafd93dea58b33bc6c4245aaa39e8e9ee"><div class="ttname"><a href="a01244.html#aafd93dea58b33bc6c4245aaa39e8e9ee">fx_debugfile</a></div><div class="ttdeci">char * fx_debugfile</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00049">drawfx.cpp:49</a></div></div>
-<div class="ttc" id="a00867_html_a4de8a1a302b34b48cc9cabad1b611802"><div class="ttname"><a href="a00867.html#a4de8a1a302b34b48cc9cabad1b611802">STRING_VAR_H</a></div><div class="ttdeci">#define STRING_VAR_H(name, val, comment)</div><div class="ttdef"><b>Definition:</b> <a href="a00867_source.html#l00271">params.h:271</a></div></div>
-<div class="ttc" id="a01244_html_aa3294a99fe8ad4b74a1e8577b89e3eff"><div class="ttname"><a href="a01244.html#aa3294a99fe8ad4b74a1e8577b89e3eff">clear_fx_win</a></div><div class="ttdeci">void clear_fx_win()</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00073">drawfx.cpp:73</a></div></div>
-<div class="ttc" id="a01243_html_ab6aba1c8ae753116a3baeaf4a0603155"><div class="ttname"><a href="a01243.html#ab6aba1c8ae753116a3baeaf4a0603155">DEBUG_WIN_NAME</a></div><div class="ttdeci">#define DEBUG_WIN_NAME</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00038">drawfx.cpp:38</a></div></div>
-<div class="ttc" id="a01220_html"><div class="ttname"><a href="a01220.html">scrollview.h</a></div></div>
-<div class="ttc" id="a01244_html_a914f797563b0dc5f5d3f13f521e307a5"><div class="ttname"><a href="a01244.html#a914f797563b0dc5f5d3f13f521e307a5">fx_debug</a></div><div class="ttdeci">FILE * fx_debug</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00052">drawfx.cpp:52</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-<div class="ttc" id="a01244_html_a32821715e23d2e2666ba66b2a9d2ee8b"><div class="ttname"><a href="a01244.html#a32821715e23d2e2666ba66b2a9d2ee8b">fx_win</a></div><div class="ttdeci">ScrollView * fx_win</div><div class="ttdef"><b>Definition:</b> <a href="a01243_source.html#l00051">drawfx.cpp:51</a></div></div>
+<a href="a01244.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* -*-C-*-</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> ********************************************************************************</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * File:        olutil.c  (Formerly olutil.c)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description:</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Author:       Mark Seaman, OCR Technology</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Created:      Fri Oct 16 14:37:00 1987</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Modified:     Fri May 17 13:11:24 1991 (Mark Seaman) marks@hpgrlt</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Language:     C</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Package:      N/A</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Status:       Reusable Software Component</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * (c) Copyright 1987, Hewlett-Packard Company.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ** http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> ** Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> ** distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> ** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *********************************************************************************/</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">              I n c l u d e s</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01245.html">olutil.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01048.html">structures.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00732.html">blobs.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01029.html">const.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef __UNIX__</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/*----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">              F u n c t i o n s</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">----------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * correct_blob_order</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * Check to see if the blobs are in the correct order.  If they are not</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * then swap which outlines are attached to which blobs.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a01245.html#ac29e40d2a6a1a8a7a1eb317324262d86">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01244.html#ac29e40d2a6a1a8a7a1eb317324262d86">correct_blob_order</a>(<a class="code" href="a00590.html">TBLOB</a> *blob1, <a class="code" href="a00590.html">TBLOB</a> *blob2) { </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="a00629.html">TPOINT</a> origin1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="a00629.html">TPOINT</a> origin2;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *temp;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="a00731.html#a0464f690c04a9aeb7710a6df1c0ba1fb">blob_origin</a>(blob1, &amp;origin1); </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a00731.html#a0464f690c04a9aeb7710a6df1c0ba1fb">blob_origin</a>(blob2, &amp;origin2); </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (origin1.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> &gt; origin2.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    temp = blob2-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    blob2-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = blob1-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    blob1-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = temp;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> * eliminate_duplicate_outlines</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * Find and delete any duplicate outline records in this blob.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a01245.html#a1d3c90a38ea91d7baf73af2c77b03d7f">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01244.html#a1d3c90a38ea91d7baf73af2c77b03d7f">eliminate_duplicate_outlines</a>(<a class="code" href="a00590.html">TBLOB</a> *blob) { </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *outline;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *other_outline;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *last_outline;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">for</span> (outline = blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>; outline; outline = outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (last_outline = outline, other_outline = outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      other_outline;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    last_outline = other_outline, other_outline = other_outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a01245.html#a4bc2f1c0c8896eb6273a1e213280a446">same_outline_bounds</a> (outline, other_outline)) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        last_outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> = other_outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// This doesn&#39;t leak - the outlines share the EDGEPTs.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        other_outline-&gt;<a class="code" href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">delete</span> other_outline;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        other_outline = last_outline;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// If it is part of a cut, then it can&#39;t be a hole any more.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        outline-&gt;<a class="code" href="a00613.html#a8af6c63b0dca8a993397d2f5f0bc5723">is_hole</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/**********************************************************************</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> * setup_blob_outlines</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> * Set up each of the outlines in this blob.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> **********************************************************************/</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="a01245.html#ad4f4e346c4650affddae46c8df8299ce">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a01244.html#ad4f4e346c4650affddae46c8df8299ce">setup_blob_outlines</a>(<a class="code" href="a00590.html">TBLOB</a> *blob) { </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *outline;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">for</span> (outline = blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>; outline; outline = outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    outline-&gt;<a class="code" href="a00613.html#aacf6d56a8b92228f875e06d09c78eca5">ComputeBoundingBox</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="ttc" id="a01244_html_ac29e40d2a6a1a8a7a1eb317324262d86"><div class="ttname"><a href="a01244.html#ac29e40d2a6a1a8a7a1eb317324262d86">correct_blob_order</a></div><div class="ttdeci">void correct_blob_order(TBLOB *blob1, TBLOB *blob2)</div><div class="ttdef"><b>Definition:</b> <a href="a01244_source.html#l00046">olutil.cpp:46</a></div></div>
+<div class="ttc" id="a01048_html"><div class="ttname"><a href="a01048.html">structures.h</a></div></div>
+<div class="ttc" id="a00629_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00064">blobs.h:64</a></div></div>
+<div class="ttc" id="a00613_html_aacf6d56a8b92228f875e06d09c78eca5"><div class="ttname"><a href="a00613.html#aacf6d56a8b92228f875e06d09c78eca5">TESSLINE::ComputeBoundingBox</a></div><div class="ttdeci">void ComputeBoundingBox()</div><div class="ttdef"><b>Definition:</b> <a href="a00731_source.html#l00189">blobs.cpp:189</a></div></div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a01244_html_a1d3c90a38ea91d7baf73af2c77b03d7f"><div class="ttname"><a href="a01244.html#a1d3c90a38ea91d7baf73af2c77b03d7f">eliminate_duplicate_outlines</a></div><div class="ttdeci">void eliminate_duplicate_outlines(TBLOB *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01244_source.html#l00067">olutil.cpp:67</a></div></div>
+<div class="ttc" id="a01244_html_ad4f4e346c4650affddae46c8df8299ce"><div class="ttname"><a href="a01244.html#ad4f4e346c4650affddae46c8df8299ce">setup_blob_outlines</a></div><div class="ttdeci">void setup_blob_outlines(TBLOB *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01244_source.html#l00096">olutil.cpp:96</a></div></div>
+<div class="ttc" id="a00613_html_a0ab1e26b1dae548f0bd3c096c6183b18"><div class="ttname"><a href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">TESSLINE::loop</a></div><div class="ttdeci">EDGEPT * loop</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00189">blobs.h:189</a></div></div>
+<div class="ttc" id="a00590_html"><div class="ttname"><a href="a00590.html">TBLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00193">blobs.h:193</a></div></div>
+<div class="ttc" id="a00731_html_a0464f690c04a9aeb7710a6df1c0ba1fb"><div class="ttname"><a href="a00731.html#a0464f690c04a9aeb7710a6df1c0ba1fb">blob_origin</a></div><div class="ttdeci">void blob_origin(TBLOB *blob, TPOINT *origin)</div><div class="ttdef"><b>Definition:</b> <a href="a00731_source.html#l00867">blobs.cpp:867</a></div></div>
+<div class="ttc" id="a00629_html"><div class="ttname"><a href="a00629.html">TPOINT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00050">blobs.h:50</a></div></div>
+<div class="ttc" id="a01245_html_a4bc2f1c0c8896eb6273a1e213280a446"><div class="ttname"><a href="a01245.html#a4bc2f1c0c8896eb6273a1e213280a446">same_outline_bounds</a></div><div class="ttdeci">#define same_outline_bounds(outline, other_outline)</div><div class="ttdef"><b>Definition:</b> <a href="a01245_source.html#l00054">olutil.h:54</a></div></div>
+<div class="ttc" id="a00732_html"><div class="ttname"><a href="a00732.html">blobs.h</a></div></div>
+<div class="ttc" id="a00613_html_a8af6c63b0dca8a993397d2f5f0bc5723"><div class="ttname"><a href="a00613.html#a8af6c63b0dca8a993397d2f5f0bc5723">TESSLINE::is_hole</a></div><div class="ttdeci">bool is_hole</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00188">blobs.h:188</a></div></div>
+<div class="ttc" id="a01029_html"><div class="ttname"><a href="a01029.html">const.h</a></div></div>
+<div class="ttc" id="a00613_html"><div class="ttname"><a href="a00613.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00127">blobs.h:127</a></div></div>
+<div class="ttc" id="a00613_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00190">blobs.h:190</a></div></div>
+<div class="ttc" id="a01245_html"><div class="ttname"><a href="a01245.html">olutil.h</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01244.html">drawfx.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:32 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01244.html">olutil.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:06 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

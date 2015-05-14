@@ -1,11 +1,7 @@
 var a00847 =
 [
-    [ "CANTCONNECTPIPE", "a00847.html#a8ac4ab23551e75b7bc873beb0dd97aba", null ],
-    [ "CANTCREATEFILE", "a00847.html#a8b283b57759870a86209b00351f93288", null ],
-    [ "CANTMAKEPIPE", "a00847.html#a6425af614cf3eecaa20c3178668b45a9", null ],
-    [ "CANTOPENFILE", "a00847.html#a33ffba120713106d14f1e425559ac571", null ],
-    [ "EXECFAILED", "a00847.html#a5063f9c74b52faf2b3ac7ec8f840d9a6", null ],
-    [ "READFAILED", "a00847.html#a139149127690c995c57c3aa7975be782", null ],
-    [ "SELECTFAILED", "a00847.html#acb152f0afa6871eda23b333b0023c6dc", null ],
-    [ "WRITEFAILED", "a00847.html#ad73a61540983a1545d4afe04b04c6501", null ]
+    [ "EQUAL", "a00847.html#a214c717b2e51e1993a749ac99df7de58", null ],
+    [ "MINUS", "a00847.html#a5381a445a1e4bdc36460151d82eed95a", null ],
+    [ "PLUS", "a00847.html#a0ea7ff5947c5f5430a29fdd98391eb2a", null ],
+    [ "GlobalParams", "a00847.html#a71a3243019391d3a438fd279c07cef87", null ]
 ];

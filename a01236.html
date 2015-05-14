@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: vs2010/tesshelper.py File Reference</title>
+<title>Tesseract: wordrec/lm_consistency.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,68 +105,36 @@ $(document).ready(function(){initNavTree('a01236.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">tesshelper.py File Reference</div>  </div>
+<div class="title">lm_consistency.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="a01051_source.html">dawg.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01055_source.html">dict.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00835_source.html">host.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00792_source.html">ratngs.h</a>&quot;</code><br />
+</div>
 <p><a href="a01236_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01281"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html">tesshelper</a></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00459.html">tesseract::LMConsistencyInfo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a0b348510d747b862b7bb21aaeaf958ab"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a0b348510d747b862b7bb21aaeaf958ab">tesshelper.getProjectfiles</a></td></tr>
-<tr class="separator:a0b348510d747b862b7bb21aaeaf958ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c175bb46c2ffdea6498219d2dc0f510"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a6c175bb46c2ffdea6498219d2dc0f510">tesshelper.getTessLibFiles</a></td></tr>
-<tr class="separator:a6c175bb46c2ffdea6498219d2dc0f510"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2908abfd1dafcf3f548b74e0dcac9285"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a2908abfd1dafcf3f548b74e0dcac9285">tesshelper.tessCompare</a></td></tr>
-<tr class="separator:a2908abfd1dafcf3f548b74e0dcac9285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82a21c3a99af450944af2939460dc0e4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a82a21c3a99af450944af2939460dc0e4">tesshelper.tessReport</a></td></tr>
-<tr class="separator:a82a21c3a99af450944af2939460dc0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00382be205d9716290d472e0e190c98f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a00382be205d9716290d472e0e190c98f">tesshelper.copyIncludes</a></td></tr>
-<tr class="separator:a00382be205d9716290d472e0e190c98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28925c697a45bb517a88ded613b2abfc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a28925c697a45bb517a88ded613b2abfc">tesshelper.tessCopy</a></td></tr>
-<tr class="separator:a28925c697a45bb517a88ded613b2abfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c5d345d0daf349965a9caa593f13238"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a7c5d345d0daf349965a9caa593f13238">tesshelper.tessClean</a></td></tr>
-<tr class="separator:a7c5d345d0daf349965a9caa593f13238"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ea26cb79883defa9fccc953b8c79ac7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a7ea26cb79883defa9fccc953b8c79ac7">tesshelper.validateTessDir</a></td></tr>
-<tr class="separator:a7ea26cb79883defa9fccc953b8c79ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adefe93eccdf00dc4525cb2b1efc2140b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#adefe93eccdf00dc4525cb2b1efc2140b">tesshelper.validateDir</a></td></tr>
-<tr class="separator:adefe93eccdf00dc4525cb2b1efc2140b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3289289260aadf937a86c7b6c8c5ca37"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a3289289260aadf937a86c7b6c8c5ca37">tesshelper.main</a></td></tr>
-<tr class="separator:a3289289260aadf937a86c7b6c8c5ca37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ab9fb53e8dd2e2c30c8a20f2277397bcb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#ab9fb53e8dd2e2c30c8a20f2277397bcb">tesshelper.epilogStr</a> = r&quot;&quot;</td></tr>
-<tr class="separator:ab9fb53e8dd2e2c30c8a20f2277397bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c113fa519ceca1ba01a4d79ea266845"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a5c113fa519ceca1ba01a4d79ea266845">tesshelper.VERSION</a> = &quot;1.0 %s&quot;</td></tr>
-<tr class="separator:a5c113fa519ceca1ba01a4d79ea266845"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a983db4e3e817e34993a0223f08c6e4e2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a983db4e3e817e34993a0223f08c6e4e2">tesshelper.PROJ_SUBDIR</a> = r&quot;vs2008\libtesseract&quot;</td></tr>
-<tr class="separator:a983db4e3e817e34993a0223f08c6e4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e985f3e62e489f5c3ba5ffb78eed31"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#ad9e985f3e62e489f5c3ba5ffb78eed31">tesshelper.PROJFILE</a> = &quot;libtesseract.vcproj&quot;</td></tr>
-<tr class="separator:ad9e985f3e62e489f5c3ba5ffb78eed31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40e33d13eaad5cb31ad4d3c95ed0e4d0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a40e33d13eaad5cb31ad4d3c95ed0e4d0">tesshelper.NEWHEADERS_FILENAME</a> = &quot;newheaders.txt&quot;</td></tr>
-<tr class="separator:a40e33d13eaad5cb31ad4d3c95ed0e4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a4f23ce377dda55a297cd3a9af0b077"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a0a4f23ce377dda55a297cd3a9af0b077">tesshelper.NEWSOURCES_FILENAME</a> = &quot;newsources.txt&quot;</td></tr>
-<tr class="separator:a0a4f23ce377dda55a297cd3a9af0b077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0df3bfb39a112c0915b70b0db23985d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01281.html#a0df3bfb39a112c0915b70b0db23985d7">tesshelper.fileNodeTemplate</a> = \</td></tr>
-<tr class="separator:a0df3bfb39a112c0915b70b0db23985d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a5945898d232e1adecd1190672f72f3b.html">vs2010</a></li><li class="navelem"><a class="el" href="a01236.html">tesshelper.py</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01236.html">lm_consistency.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

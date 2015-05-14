@@ -1,16 +1,14 @@
 var a00460 =
 [
-    [ "LangModEdge", "a00460.html#a5c4257a3d783cdc89dee21741786bf6e", null ],
-    [ "~LangModEdge", "a00460.html#ac8d2c121e28ba3e7415f01b8de806528", null ],
-    [ "ClassID", "a00460.html#a4caf57394d94e96f11d02a97293a443b", null ],
-    [ "Description", "a00460.html#ab5669c47ce83226077fbd3f8492e5bd2", null ],
-    [ "EdgeString", "a00460.html#a4187741ff5fb8fced6176e83b16b928d", null ],
-    [ "Hash", "a00460.html#a04c2882fb2e15c7fd38050d3e9fd0020", null ],
-    [ "IsEOW", "a00460.html#ab107cb811bdbfda4fbd7b2af0bfb505e", null ],
-    [ "IsIdentical", "a00460.html#ac1676b68bb4e4433fbe183d3f3322998", null ],
-    [ "IsOOD", "a00460.html#a24d556ce36d63307c9a7195a4da29e0c", null ],
-    [ "IsRoot", "a00460.html#acdcbac70bbb421c944e500da45563fe0", null ],
-    [ "IsTerminal", "a00460.html#a8041893a12c0805b34ea50c311460518", null ],
-    [ "PathCost", "a00460.html#a970086075acc5f211b53825db505ee1d", null ],
-    [ "SetRoot", "a00460.html#a4dbb34a133e3ca37fb9c5190f2807848", null ]
+    [ "LMPainPoints", "a00460.html#a5b6ea6ae60163adfa2bd732ff07fa3dd", null ],
+    [ "~LMPainPoints", "a00460.html#a81ba58b077270160d08b82b918161350", null ],
+    [ "Clear", "a00460.html#ac6c10a66889f86b203ae6ed9941df087", null ],
+    [ "Deque", "a00460.html#af1b5c2478722e1161f8940539410c0ad", null ],
+    [ "GenerateForBlamer", "a00460.html#a6aeef62411292aa08ed3c995fbed0897", null ],
+    [ "GenerateFromAmbigs", "a00460.html#ae57974e3fb1531675e967f79883645f8", null ],
+    [ "GenerateFromPath", "a00460.html#a8489e28beba45729566cad142f6d8c12", null ],
+    [ "GenerateInitial", "a00460.html#a64102af07ada2de84d92418e92dd370a", null ],
+    [ "GeneratePainPoint", "a00460.html#a0dfc50854f8354543fd67a2447287e33", null ],
+    [ "HasPainPoints", "a00460.html#a5a39e105fa8d4652bddc3bb1d6cb0ba9", null ],
+    [ "RemapForSplit", "a00460.html#a4abf43f1384872660cf5a93453da4da0", null ]
 ];

@@ -1,7 +1,13 @@
 var a01127 =
 [
-    [ "MINEDGELENGTH", "a01127.html#ac4de85ebe649ec1bd29042d93ec87019", null ],
-    [ "check_path_legal", "a01127.html#adeed8a1cb243009aa6867ff637eb8677", null ],
-    [ "complete_edge", "a01127.html#affa66849c6f718f217c84b000407944b", null ],
-    [ "loop_bounding_box", "a01127.html#a47f9609e31d14519392c829137d72d8a", null ]
+    [ "kCrackSpacing", "a01127.html#a67e1606288499ff9e08833b9c2a1ded8", null ],
+    [ "kLineFindGridSize", "a01127.html#acbcf973384ce439c1b3ab4decf0c383c", null ],
+    [ "kMaxLineResidue", "a01127.html#ab97d7447e46667c618a568b97b96bb3c", null ],
+    [ "kMaxNonLineDensity", "a01127.html#a88f852ceee95241622ec0f837dbfeff8", null ],
+    [ "kMaxStaveHeight", "a01127.html#a40e2e4747be3bc8a6358a023e2e3a001", null ],
+    [ "kMinLineLengthFraction", "a01127.html#ab1ecce6329628c52853d15330697b9a5", null ],
+    [ "kMinMusicPixelFraction", "a01127.html#a064746ea8b34175e6f12ce364c8d6414", null ],
+    [ "kMinThickLineWidth", "a01127.html#a8109c0293738c5b8a499baf96e6191e2", null ],
+    [ "kThickLengthMultiple", "a01127.html#a6978c95cbd05d6aef11ca4b7850a1a6b", null ],
+    [ "kThinLineFraction", "a01127.html#af5a3375be81da4b1d09d654fed77617a", null ]
 ];

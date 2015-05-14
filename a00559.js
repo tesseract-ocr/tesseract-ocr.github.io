@@ -1,11 +1,7 @@
 var a00559 =
 [
-    [ "SegSearchPending", "a00559.html#aa25423483985a25d7f38c8ee7fd5b29c", null ],
-    [ "Clear", "a00559.html#a21598105a138d606f621f91f5e086cea", null ],
-    [ "IsRowJustClassified", "a00559.html#a9749079251dad0177508c67c11fa8459", null ],
-    [ "RevisitWholeColumn", "a00559.html#abda14f8d57c4fd0050ca079ac586722e", null ],
-    [ "SetBlobClassified", "a00559.html#a00662dca6ca6068f7edc69bab99c7110", null ],
-    [ "SetColumnClassified", "a00559.html#a9be804fe4294a716ea9b1f48dbfb1758", null ],
-    [ "SingleRow", "a00559.html#adbfc06f6fc57f49497e578037d0b4151", null ],
-    [ "WorkToDo", "a00559.html#a632e64b7ef8579f9aa070bb5fbb70ea7", null ]
+    [ "AvgVariance", "a00559.html#aec33c119c63aad5cd1c4e75c6afe2968", null ],
+    [ "CoVariance", "a00559.html#a1a87c66cfa2a256ff9b13d5858bf9650", null ],
+    [ "Max", "a00559.html#a6f553b49759c072107a7c1c5606bbc72", null ],
+    [ "Min", "a00559.html#ae03871d16f8d02e97e24401324565ab5", null ]
 ];

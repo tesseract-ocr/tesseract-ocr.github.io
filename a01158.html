@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: textord/tablerecog.h File Reference</title>
+<title>Tesseract: textord/tordmain.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,36 +105,561 @@ $(document).ready(function(){initNavTree('a01158.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">tablerecog.h File Reference</div>  </div>
+<div class="title">tordmain.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01116_source.html">colpartitiongrid.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00849_source.html">genericvector.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00765_source.html">ocrblock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00730_source.html">blobbox.h</a>&quot;</code><br />
 </div>
 <p><a href="a01158_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00583.html">tesseract::StructuredTable</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00605.html">tesseract::TableRecognizer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae3f42ba83c3fdc41b4efb434b075dece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01158.html#ae3f42ba83c3fdc41b4efb434b075dece">make_blocks_from_blobs</a> (<a class="el" href="a00590.html">TBLOB</a> *tessblobs, const char *filename, <a class="el" href="a00412.html">ICOORD</a> page_tr, <a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> do_shift, BLOCK_LIST *blocks)</td></tr>
+<tr class="separator:ae3f42ba83c3fdc41b4efb434b075dece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741e546e0ade9bf78395d663731a4b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01158.html#a741e546e0ade9bf78395d663731a4b64">SetBlobStrokeWidth</a> (Pix *pix, <a class="el" href="a00279.html">BLOBNBOX</a> *blob)</td></tr>
+<tr class="separator:a741e546e0ade9bf78395d663731a4b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f7c51950d2ac0dd9968df80de0a577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01158.html#a24f7c51950d2ac0dd9968df80de0a577">assign_blobs_to_blocks2</a> (Pix *pix, BLOCK_LIST *blocks, TO_BLOCK_LIST *port_blocks)</td></tr>
+<tr class="separator:a24f7c51950d2ac0dd9968df80de0a577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e965c0f16e32fa7bc0f1e33d412ca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01158.html#ab5e965c0f16e32fa7bc0f1e33d412ca5">textord_page</a> (<a class="el" href="a00412.html">ICOORD</a> page_tr, BLOCK_LIST *blocks, TO_BLOCK_LIST *land_blocks, TO_BLOCK_LIST *port_blocks, <a class="el" href="a00607.html">tesseract::Tesseract</a> *)</td></tr>
+<tr class="separator:ab5e965c0f16e32fa7bc0f1e33d412ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e9891e741722335a7a19c561f5580f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01158.html#a76e9891e741722335a7a19c561f5580f">tweak_row_baseline</a> (<a class="el" href="a00525.html">ROW</a> *row, double blshift_maxshift, double blshift_xfraction)</td></tr>
+<tr class="separator:a76e9891e741722335a7a19c561f5580f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a468e4fe0f28b1a8c1ac7162bf83f1a91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01158.html#a468e4fe0f28b1a8c1ac7162bf83f1a91">blob_y_order</a> (void *item1, void *item2)</td></tr>
+<tr class="separator:a468e4fe0f28b1a8c1ac7162bf83f1a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a24f7c51950d2ac0dd9968df80de0a577"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void assign_blobs_to_blocks2 </td>
+          <td>(</td>
+          <td class="paramtype">Pix *&#160;</td>
+          <td class="paramname"><em>pix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BLOCK_LIST *&#160;</td>
+          <td class="paramname"><em>blocks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TO_BLOCK_LIST *&#160;</td>
+          <td class="paramname"><em>port_blocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01157_source.html#l00153">153</a> of file <a class="el" href="a01157_source.html">tordmain.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                                         {  <span class="comment">// output list</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <a class="code" href="a00280.html">BLOCK</a> *block;                  <span class="comment">// current block</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="a00279.html">BLOBNBOX</a> *newblob;             <span class="comment">// created blob</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <a class="code" href="a00289.html">C_BLOB</a> *blob;                  <span class="comment">// current blob</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  BLOCK_IT block_it = blocks;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  C_BLOB_IT blob_it;             <span class="comment">// iterator</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  BLOBNBOX_IT port_box_it;       <span class="comment">// iterator</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                 <span class="comment">// destination iterator</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  TO_BLOCK_IT port_block_it = port_blocks;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="a00627.html">TO_BLOCK</a> *port_block;          <span class="comment">// created block</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordflow">for</span> (block_it.mark_cycle_pt(); !block_it.cycled_list(); block_it.forward()) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    block = block_it.data();</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    port_block = <span class="keyword">new</span> <a class="code" href="a00627.html">TO_BLOCK</a>(block);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">// Convert the good outlines to block-&gt;blob_list</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    port_box_it.set_to_list(&amp;port_block-&gt;<a class="code" href="a00627.html#a5dd67c54162a6b60b0fd11500d4a3025">blobs</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    blob_it.set_to_list(block-&gt;<a class="code" href="a00280.html#a23196fe0d7230572b44aa77031a1d72a">blob_list</a>());</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">for</span> (blob_it.mark_cycle_pt(); !blob_it.cycled_list(); blob_it.forward()) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      blob = blob_it.extract();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      newblob = <span class="keyword">new</span> <a class="code" href="a00279.html">BLOBNBOX</a>(blob);  <span class="comment">// Convert blob to BLOBNBOX.</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      <a class="code" href="a01157.html#a741e546e0ade9bf78395d663731a4b64">SetBlobStrokeWidth</a>(pix, newblob);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      port_box_it.add_after_then_move(newblob);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// Put the rejected outlines in block-&gt;noise_blobs, which allows them to</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// be reconsidered and sorted back into rows and recover outlines mistakenly</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">// rejected.</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    port_box_it.set_to_list(&amp;port_block-&gt;<a class="code" href="a00627.html#aa6a3757d385e79ab76f34afb6e8fc684">noise_blobs</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    blob_it.set_to_list(block-&gt;<a class="code" href="a00280.html#a08f23fffc748fbb0e7ae8804b7c0c90e">reject_blobs</a>());</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">for</span> (blob_it.mark_cycle_pt(); !blob_it.cycled_list(); blob_it.forward()) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      blob = blob_it.extract();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      newblob = <span class="keyword">new</span> <a class="code" href="a00279.html">BLOBNBOX</a>(blob);  <span class="comment">// Convert blob to BLOBNBOX.</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <a class="code" href="a01157.html#a741e546e0ade9bf78395d663731a4b64">SetBlobStrokeWidth</a>(pix, newblob);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      port_box_it.add_after_then_move(newblob);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    port_block_it.add_after_then_move(port_block);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+<div class="ttc" id="a00627_html"><div class="ttname"><a href="a00627.html">TO_BLOCK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00679">blobbox.h:679</a></div></div>
+<div class="ttc" id="a00280_html_a08f23fffc748fbb0e7ae8804b7c0c90e"><div class="ttname"><a href="a00280.html#a08f23fffc748fbb0e7ae8804b7c0c90e">BLOCK::reject_blobs</a></div><div class="ttdeci">C_BLOB_LIST * reject_blobs()</div><div class="ttdef"><b>Definition:</b> <a href="a00765_source.html#l00135">ocrblock.h:135</a></div></div>
+<div class="ttc" id="a00279_html"><div class="ttname"><a href="a00279.html">BLOBNBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00128">blobbox.h:128</a></div></div>
+<div class="ttc" id="a00627_html_aa6a3757d385e79ab76f34afb6e8fc684"><div class="ttname"><a href="a00627.html#aa6a3757d385e79ab76f34afb6e8fc684">TO_BLOCK::noise_blobs</a></div><div class="ttdeci">BLOBNBOX_LIST noise_blobs</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00761">blobbox.h:761</a></div></div>
+<div class="ttc" id="a00280_html_a23196fe0d7230572b44aa77031a1d72a"><div class="ttname"><a href="a00280.html#a23196fe0d7230572b44aa77031a1d72a">BLOCK::blob_list</a></div><div class="ttdeci">C_BLOB_LIST * blob_list()</div><div class="ttdoc">get blobs </div><div class="ttdef"><b>Definition:</b> <a href="a00765_source.html#l00132">ocrblock.h:132</a></div></div>
+<div class="ttc" id="a00627_html_a5dd67c54162a6b60b0fd11500d4a3025"><div class="ttname"><a href="a00627.html#a5dd67c54162a6b60b0fd11500d4a3025">TO_BLOCK::blobs</a></div><div class="ttdeci">BLOBNBOX_LIST blobs</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00759">blobbox.h:759</a></div></div>
+<div class="ttc" id="a00289_html"><div class="ttname"><a href="a00289.html">C_BLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00030">stepblob.h:30</a></div></div>
+<div class="ttc" id="a01157_html_a741e546e0ade9bf78395d663731a4b64"><div class="ttname"><a href="a01157.html#a741e546e0ade9bf78395d663731a4b64">SetBlobStrokeWidth</a></div><div class="ttdeci">void SetBlobStrokeWidth(Pix *pix, BLOBNBOX *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01157_source.html#l00053">tordmain.cpp:53</a></div></div>
+<div class="ttc" id="a00280_html"><div class="ttname"><a href="a00280.html">BLOCK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00765_source.html#l00030">ocrblock.h:30</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a468e4fe0f28b1a8c1ac7162bf83f1a91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> blob_y_order </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>item2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01157_source.html#l00830">830</a> of file <a class="el" href="a01157_source.html">tordmain.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                                {</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                                 <span class="comment">//converted ptr</span></div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;  <a class="code" href="a00279.html">BLOBNBOX</a> *blob1 = *(<a class="code" href="a00279.html">BLOBNBOX</a> **) item1;</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                                 <span class="comment">//converted ptr</span></div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;  <a class="code" href="a00279.html">BLOBNBOX</a> *blob2 = *(<a class="code" href="a00279.html">BLOBNBOX</a> **) item2;</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;  <span class="keywordflow">if</span> (blob1-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> () &gt; blob2-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> ())</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (blob1-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> () &lt;</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    blob2-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> ())</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;  <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;    <span class="keywordflow">if</span> (blob1-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> () &lt; blob2-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> ())</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;      <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (blob1-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> () &gt;</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;      blob2-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> ())</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;      <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;  }</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;}</div>
+<div class="ttc" id="a00591_html_a4451d237f1cd18c4982d63fe36a11fc3"><div class="ttname"><a href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">TBOX::bottom</a></div><div class="ttdeci">inT16 bottom() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00061">rect.h:61</a></div></div>
+<div class="ttc" id="a00279_html"><div class="ttname"><a href="a00279.html">BLOBNBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00128">blobbox.h:128</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00279_html_a7b97b8bc16b1473a28f9c44011522f4e"><div class="ttname"><a href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">BLOBNBOX::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00212">blobbox.h:212</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae3f42ba83c3fdc41b4efb434b075dece"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_blocks_from_blobs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>tessblobs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00412.html">ICOORD</a>&#160;</td>
+          <td class="paramname"><em>page_tr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td>
+          <td class="paramname"><em>do_shift</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BLOCK_LIST *&#160;</td>
+          <td class="paramname"><em>blocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a741e546e0ade9bf78395d663731a4b64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetBlobStrokeWidth </td>
+          <td>(</td>
+          <td class="paramtype">Pix *&#160;</td>
+          <td class="paramname"><em>pix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00279.html">BLOBNBOX</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01157_source.html#l00053">53</a> of file <a class="el" href="a01157_source.html">tordmain.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                  {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Cut the blob rectangle into a Pix.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">int</span> pix_height = pixGetHeight(pix);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; box = blob-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">int</span> width = box.<a class="code" href="a00591.html#af95494a2ccacc70cc2b83820b2948619">width</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">int</span> height = box.<a class="code" href="a00591.html#a8379d4bbc72bdbb1f069fc14790e632d">height</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  Box* blob_pix_box = boxCreate(box.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>(), pix_height - box.<a class="code" href="a00591.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a>(),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                width, height);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  Pix* pix_blob = pixClipRectangle(pix, blob_pix_box, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  boxDestroy(&amp;blob_pix_box);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  Pix* dist_pix = pixDistanceFunction(pix_blob, 4, 8, L_BOUNDARY_BG);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  pixDestroy(&amp;pix_blob);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// Compute the stroke widths.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a>* data = pixGetData(dist_pix);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">int</span> wpl = pixGetWpl(dist_pix);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// Horizontal width of stroke.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="a00560.html">STATS</a> h_stats(0, width + 1);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; ++y) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a>* pixels = data + y*wpl;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> prev_pixel = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> pixel = GET_DATA_BYTE(pixels, 0);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 1; x &lt; width; ++x) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordtype">int</span> next_pixel = GET_DATA_BYTE(pixels, x);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="comment">// We are looking for a pixel that is equal to its vertical neighbours,</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="comment">// yet greater than its left neighbour.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">if</span> (prev_pixel &lt; pixel &amp;&amp;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          (y == 0 || pixel == GET_DATA_BYTE(pixels - wpl, x - 1)) &amp;&amp;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;          (y == height - 1 || pixel == GET_DATA_BYTE(pixels + wpl, x - 1))) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (pixel &gt; next_pixel) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          <span class="comment">// Single local max, so an odd width.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;          h_stats.add(pixel * 2 - 1, 1);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pixel == next_pixel &amp;&amp; x + 1 &lt; width &amp;&amp;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                 pixel &gt; GET_DATA_BYTE(pixels, x + 1)) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          <span class="comment">// Double local max, so an even width.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;          h_stats.add(pixel * 2, 1);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      prev_pixel = pixel;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      pixel = next_pixel;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">// Vertical width of stroke.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="a00560.html">STATS</a> v_stats(0, height + 1);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; ++x) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">int</span> prev_pixel = 0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">int</span> pixel = GET_DATA_BYTE(data, x);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 1; y &lt; height; ++y) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <a class="code" href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a>* pixels = data + y*wpl;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keywordtype">int</span> next_pixel = GET_DATA_BYTE(pixels, x);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="comment">// We are looking for a pixel that is equal to its horizontal neighbours,</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="comment">// yet greater than its upper neighbour.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keywordflow">if</span> (prev_pixel &lt; pixel &amp;&amp;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;          (x == 0 || pixel == GET_DATA_BYTE(pixels - wpl, x - 1)) &amp;&amp;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          (x == width - 1 || pixel == GET_DATA_BYTE(pixels - wpl, x + 1))) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (pixel &gt; next_pixel) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;          <span class="comment">// Single local max, so an odd width.</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;          v_stats.add(pixel * 2 - 1, 1);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pixel == next_pixel &amp;&amp; y + 1 &lt; height &amp;&amp;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                 pixel &gt; GET_DATA_BYTE(pixels + wpl, x)) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;          <span class="comment">// Double local max, so an even width.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;          v_stats.add(pixel * 2, 1);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      prev_pixel = pixel;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      pixel = next_pixel;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  pixDestroy(&amp;dist_pix);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="comment">// Store the horizontal and vertical width in the blob, keeping both</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="comment">// widths if there is enough information, otherwse only the one with</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">// the most samples.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">// If there are insufficent samples, store zero, rather than using</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="comment">// 2*area/perimeter, as the numbers that gives do not match the numbers</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="comment">// from the distance method.</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">if</span> (h_stats.get_total() &gt;= (width + height) / 4) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    blob-&gt;<a class="code" href="a00279.html#ab8e3703ad9c72b61dedafb61c4b32358">set_horz_stroke_width</a>(h_stats.ile(0.5f));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span> (v_stats.get_total() &gt;= (width + height) / 4)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      blob-&gt;<a class="code" href="a00279.html#aeb808226b8dd08e875eb3cf38a61a6d5">set_vert_stroke_width</a>(v_stats.ile(0.5f));</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      blob-&gt;<a class="code" href="a00279.html#aeb808226b8dd08e875eb3cf38a61a6d5">set_vert_stroke_width</a>(0.0f);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (v_stats.get_total() &gt;= (width + height) / 4 ||</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        v_stats.get_total() &gt; h_stats.get_total()) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      blob-&gt;<a class="code" href="a00279.html#ab8e3703ad9c72b61dedafb61c4b32358">set_horz_stroke_width</a>(0.0f);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      blob-&gt;<a class="code" href="a00279.html#aeb808226b8dd08e875eb3cf38a61a6d5">set_vert_stroke_width</a>(v_stats.ile(0.5f));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      blob-&gt;<a class="code" href="a00279.html#ab8e3703ad9c72b61dedafb61c4b32358">set_horz_stroke_width</a>(h_stats.get_total() &gt; 2 ? h_stats.ile(0.5f)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                                          : 0.0f);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      blob-&gt;<a class="code" href="a00279.html#aeb808226b8dd08e875eb3cf38a61a6d5">set_vert_stroke_width</a>(0.0f);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00591_html_a8379d4bbc72bdbb1f069fc14790e632d"><div class="ttname"><a href="a00591.html#a8379d4bbc72bdbb1f069fc14790e632d">TBOX::height</a></div><div class="ttdeci">inT16 height() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00104">rect.h:104</a></div></div>
+<div class="ttc" id="a00279_html_a7b97b8bc16b1473a28f9c44011522f4e"><div class="ttname"><a href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">BLOBNBOX::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00212">blobbox.h:212</a></div></div>
+<div class="ttc" id="a00279_html_ab8e3703ad9c72b61dedafb61c4b32358"><div class="ttname"><a href="a00279.html#ab8e3703ad9c72b61dedafb61c4b32358">BLOBNBOX::set_horz_stroke_width</a></div><div class="ttdeci">void set_horz_stroke_width(float width)</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00322">blobbox.h:322</a></div></div>
+<div class="ttc" id="a00835_html_afc8530b39ebe0b6df1e19159d2508d15"><div class="ttname"><a href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a></div><div class="ttdeci">unsigned int uinT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00103">host.h:103</a></div></div>
+<div class="ttc" id="a00279_html_aeb808226b8dd08e875eb3cf38a61a6d5"><div class="ttname"><a href="a00279.html#aeb808226b8dd08e875eb3cf38a61a6d5">BLOBNBOX::set_vert_stroke_width</a></div><div class="ttdeci">void set_vert_stroke_width(float width)</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00328">blobbox.h:328</a></div></div>
+<div class="ttc" id="a00591_html_adf92e9fdac1bdf11c10d1c4d1178791a"><div class="ttname"><a href="a00591.html#adf92e9fdac1bdf11c10d1c4d1178791a">TBOX::top</a></div><div class="ttdeci">inT16 top() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00054">rect.h:54</a></div></div>
+<div class="ttc" id="a00560_html"><div class="ttname"><a href="a00560.html">STATS</a></div><div class="ttdef"><b>Definition:</b> <a href="a00802_source.html#l00033">statistc.h:33</a></div></div>
+<div class="ttc" id="a00591_html_af95494a2ccacc70cc2b83820b2948619"><div class="ttname"><a href="a00591.html#af95494a2ccacc70cc2b83820b2948619">TBOX::width</a></div><div class="ttdeci">inT16 width() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00111">rect.h:111</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab5e965c0f16e32fa7bc0f1e33d412ca5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void textord_page </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00412.html">ICOORD</a>&#160;</td>
+          <td class="paramname"><em>page_tr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BLOCK_LIST *&#160;</td>
+          <td class="paramname"><em>blocks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TO_BLOCK_LIST *&#160;</td>
+          <td class="paramname"><em>land_blocks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TO_BLOCK_LIST *&#160;</td>
+          <td class="paramname"><em>port_blocks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00607.html">tesseract::Tesseract</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a76e9891e741722335a7a19c561f5580f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tweak_row_baseline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00525.html">ROW</a> *&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>blshift_maxshift</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>blshift_xfraction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01157_source.html#l00717">717</a> of file <a class="el" href="a01157_source.html">tordmain.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                                                  {</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;  <a class="code" href="a00591.html">TBOX</a> blob_box;                 <span class="comment">//bounding box</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;  <a class="code" href="a00289.html">C_BLOB</a> *blob;                  <span class="comment">//current blob</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;  <a class="code" href="a00649.html">WERD</a> *word;                    <span class="comment">//current word</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> blob_count;              <span class="comment">//no of blobs</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> src_index;               <span class="comment">//source segment</span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> dest_index;              <span class="comment">//destination segment</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> *xstarts;                <span class="comment">//spline segments</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;  <span class="keywordtype">double</span> *coeffs;                <span class="comment">//spline coeffs</span></div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;  <span class="keywordtype">float</span> ydiff;                   <span class="comment">//baseline error</span></div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;  <span class="keywordtype">float</span> x_centre;                <span class="comment">//centre of blob</span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                                 <span class="comment">//words of row</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;  WERD_IT word_it = row-&gt;<a class="code" href="a00525.html#ac9d07f978420b3564bf5508ad294fb70">word_list</a> ();</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;  C_BLOB_IT blob_it;             <span class="comment">//blob iterator</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;  blob_count = 0;</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;  <span class="keywordflow">for</span> (word_it.mark_cycle_pt (); !word_it.cycled_list (); word_it.forward ()) {</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    word = word_it.data ();      <span class="comment">//current word</span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                                 <span class="comment">//get total blobs</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    blob_count += word-&gt;<a class="code" href="a00649.html#a174baefaa99afbfdbf444e4199f3b529">cblob_list</a> ()-&gt;length ();</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;  }</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;  <span class="keywordflow">if</span> (blob_count == 0)</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;  xstarts =</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    (<a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> *) <a class="code" href="a00841.html#a4c14b091498fb7866a1dd0af51a591fe">alloc_mem</a> ((blob_count + row-&gt;baseline.segments + 1) *</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <span class="keyword">sizeof</span> (<a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>));</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;  coeffs =</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    (<span class="keywordtype">double</span> *) <a class="code" href="a00841.html#a4c14b091498fb7866a1dd0af51a591fe">alloc_mem</a> ((blob_count + row-&gt;baseline.segments) * 3 *</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <span class="keyword">sizeof</span> (double));</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;  src_index = 0;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;  dest_index = 0;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;  xstarts[0] = row-&gt;baseline.xcoords[0];</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;  <span class="keywordflow">for</span> (word_it.mark_cycle_pt (); !word_it.cycled_list (); word_it.forward ()) {</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    word = word_it.data ();      <span class="comment">//current word</span></div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                                 <span class="comment">//blobs in word</span></div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    blob_it.set_to_list (word-&gt;<a class="code" href="a00649.html#a174baefaa99afbfdbf444e4199f3b529">cblob_list</a> ());</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <span class="keywordflow">for</span> (blob_it.mark_cycle_pt (); !blob_it.cycled_list ();</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    blob_it.forward ()) {</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;      blob = blob_it.data ();</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;      blob_box = blob-&gt;<a class="code" href="a00289.html#a15c1a593d84585c26aebd7a7976f0283">bounding_box</a> ();</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;      x_centre = (blob_box.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> () + blob_box.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> ()) / 2.0;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;      ydiff = blob_box.<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> () - row-&gt;<a class="code" href="a00525.html#a097b3543fa3ca5768eb50033d4c4db9c">base_line</a> (x_centre);</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;      <span class="keywordflow">if</span> (ydiff &lt; 0)</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        ydiff = -ydiff / row-&gt;<a class="code" href="a00525.html#a2954f94ec4eefe1e3729912e5b8ea779">x_height</a> ();</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        ydiff = ydiff / row-&gt;<a class="code" href="a00525.html#a2954f94ec4eefe1e3729912e5b8ea779">x_height</a> ();</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;      <span class="keywordflow">if</span> (ydiff &lt; blshift_maxshift</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        &amp;&amp; blob_box.<a class="code" href="a00591.html#a8379d4bbc72bdbb1f069fc14790e632d">height</a> () / row-&gt;<a class="code" href="a00525.html#a2954f94ec4eefe1e3729912e5b8ea779">x_height</a> () &gt; blshift_xfraction) {</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        <span class="keywordflow">if</span> (xstarts[dest_index] &gt;= x_centre)</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;          xstarts[dest_index] = blob_box.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> ();</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;        coeffs[dest_index * 3] = 0;</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        coeffs[dest_index * 3 + 1] = 0;</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        coeffs[dest_index * 3 + 2] = blob_box.<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> ();</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <span class="comment">//shift it</span></div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        dest_index++;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        xstarts[dest_index] = blob_box.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () + 1;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;      }</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        <span class="keywordflow">if</span> (xstarts[dest_index] &lt;= x_centre) {</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;          <span class="keywordflow">while</span> (row-&gt;baseline.xcoords[src_index + 1] &lt;= x_centre</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;          &amp;&amp; src_index &lt; row-&gt;<a class="code" href="a00925.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>.segments - 1) {</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            <span class="keywordflow">if</span> (row-&gt;baseline.xcoords[src_index + 1] &gt;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            xstarts[dest_index]) {</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;              coeffs[dest_index * 3] =</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#aa9ab5e8947242fa1de50d9863165e032">a</a>;</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;              coeffs[dest_index * 3 + 1] =</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#a58eae9f9c9aa7b738c5493b8da560747">b</a>;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;              coeffs[dest_index * 3 + 2] =</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#a7f5483bdd3103b7f4a732c8fbc0faa91">c</a>;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;              dest_index++;</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;              xstarts[dest_index] =</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                row-&gt;baseline.xcoords[src_index + 1];</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            }</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            src_index++;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;          }</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;          coeffs[dest_index * 3] =</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#aa9ab5e8947242fa1de50d9863165e032">a</a>;</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;          coeffs[dest_index * 3 + 1] =</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#a58eae9f9c9aa7b738c5493b8da560747">b</a>;</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;          coeffs[dest_index * 3 + 2] =</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#a7f5483bdd3103b7f4a732c8fbc0faa91">c</a>;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;          dest_index++;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;          xstarts[dest_index] = row-&gt;baseline.xcoords[src_index + 1];</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        }</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;      }</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    }</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;  }</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;  <span class="keywordflow">while</span> (src_index &lt; row-&gt;<a class="code" href="a00925.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>.segments</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    &amp;&amp; row-&gt;baseline.xcoords[src_index + 1] &lt;= xstarts[dest_index])</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;    src_index++;</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;  <span class="keywordflow">while</span> (src_index &lt; row-&gt;<a class="code" href="a00925.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>.segments) {</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    coeffs[dest_index * 3] = row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#aa9ab5e8947242fa1de50d9863165e032">a</a>;</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    coeffs[dest_index * 3 + 1] = row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#a58eae9f9c9aa7b738c5493b8da560747">b</a>;</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    coeffs[dest_index * 3 + 2] = row-&gt;baseline.quadratics[src_index].<a class="code" href="a00518.html#a7f5483bdd3103b7f4a732c8fbc0faa91">c</a>;</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    dest_index++;</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    src_index++;</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    xstarts[dest_index] = row-&gt;baseline.xcoords[src_index];</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;  }</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                                 <span class="comment">//turn to spline</span></div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;  row-&gt;baseline = <a class="code" href="a00517.html">QSPLINE</a> (dest_index, xstarts, coeffs);</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;  <a class="code" href="a00841.html#a9ef1862b8e026e23eef238af032858e4">free_mem</a>(xstarts);</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;  <a class="code" href="a00841.html#a9ef1862b8e026e23eef238af032858e4">free_mem</a>(coeffs);</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;}</div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00649_html_a174baefaa99afbfdbf444e4199f3b529"><div class="ttname"><a href="a00649.html#a174baefaa99afbfdbf444e4199f3b529">WERD::cblob_list</a></div><div class="ttdeci">C_BLOB_LIST * cblob_list()</div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00100">werd.h:100</a></div></div>
+<div class="ttc" id="a00591_html_a4451d237f1cd18c4982d63fe36a11fc3"><div class="ttname"><a href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">TBOX::bottom</a></div><div class="ttdeci">inT16 bottom() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00061">rect.h:61</a></div></div>
+<div class="ttc" id="a00925_html_a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23"><div class="ttname"><a href="a00925.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a></div><div class="ttdef"><b>Definition:</b> <a href="a00925_source.html#l00062">mfoutline.h:62</a></div></div>
+<div class="ttc" id="a00518_html_a58eae9f9c9aa7b738c5493b8da560747"><div class="ttname"><a href="a00518.html#a58eae9f9c9aa7b738c5493b8da560747">QUAD_COEFFS::b</a></div><div class="ttdeci">float b</div><div class="ttdef"><b>Definition:</b> <a href="a00788_source.html#l00059">quadratc.h:59</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00591_html_a8379d4bbc72bdbb1f069fc14790e632d"><div class="ttname"><a href="a00591.html#a8379d4bbc72bdbb1f069fc14790e632d">TBOX::height</a></div><div class="ttdeci">inT16 height() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00104">rect.h:104</a></div></div>
+<div class="ttc" id="a00841_html_a4c14b091498fb7866a1dd0af51a591fe"><div class="ttname"><a href="a00841.html#a4c14b091498fb7866a1dd0af51a591fe">alloc_mem</a></div><div class="ttdeci">void * alloc_mem(inT32 count)</div><div class="ttdef"><b>Definition:</b> <a href="a00841_source.html#l00047">memry.cpp:47</a></div></div>
+<div class="ttc" id="a00525_html_a2954f94ec4eefe1e3729912e5b8ea779"><div class="ttname"><a href="a00525.html#a2954f94ec4eefe1e3729912e5b8ea779">ROW::x_height</a></div><div class="ttdeci">float x_height() const </div><div class="ttdef"><b>Definition:</b> <a href="a00769_source.html#l00061">ocrrow.h:61</a></div></div>
+<div class="ttc" id="a00289_html_a15c1a593d84585c26aebd7a7976f0283"><div class="ttname"><a href="a00289.html#a15c1a593d84585c26aebd7a7976f0283">C_BLOB::bounding_box</a></div><div class="ttdeci">TBOX bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00803_source.html#l00250">stepblob.cpp:250</a></div></div>
+<div class="ttc" id="a00591_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00075">rect.h:75</a></div></div>
+<div class="ttc" id="a00518_html_aa9ab5e8947242fa1de50d9863165e032"><div class="ttname"><a href="a00518.html#aa9ab5e8947242fa1de50d9863165e032">QUAD_COEFFS::a</a></div><div class="ttdeci">double a</div><div class="ttdef"><b>Definition:</b> <a href="a00788_source.html#l00058">quadratc.h:58</a></div></div>
+<div class="ttc" id="a00525_html_ac9d07f978420b3564bf5508ad294fb70"><div class="ttname"><a href="a00525.html#ac9d07f978420b3564bf5508ad294fb70">ROW::word_list</a></div><div class="ttdeci">WERD_LIST * word_list()</div><div class="ttdef"><b>Definition:</b> <a href="a00769_source.html#l00052">ocrrow.h:52</a></div></div>
+<div class="ttc" id="a00517_html"><div class="ttname"><a href="a00517.html">QSPLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00790_source.html#l00031">quspline.h:31</a></div></div>
+<div class="ttc" id="a00649_html"><div class="ttname"><a href="a00649.html">WERD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00060">werd.h:60</a></div></div>
+<div class="ttc" id="a00525_html_a097b3543fa3ca5768eb50033d4c4db9c"><div class="ttname"><a href="a00525.html#a097b3543fa3ca5768eb50033d4c4db9c">ROW::base_line</a></div><div class="ttdeci">float base_line(float xpos) const </div><div class="ttdef"><b>Definition:</b> <a href="a00769_source.html#l00056">ocrrow.h:56</a></div></div>
+<div class="ttc" id="a00841_html_a9ef1862b8e026e23eef238af032858e4"><div class="ttname"><a href="a00841.html#a9ef1862b8e026e23eef238af032858e4">free_mem</a></div><div class="ttdeci">void free_mem(void *oldchunk)</div><div class="ttdef"><b>Definition:</b> <a href="a00841_source.html#l00055">memry.cpp:55</a></div></div>
+<div class="ttc" id="a00289_html"><div class="ttname"><a href="a00289.html">C_BLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00030">stepblob.h:30</a></div></div>
+<div class="ttc" id="a00518_html_a7f5483bdd3103b7f4a732c8fbc0faa91"><div class="ttname"><a href="a00518.html#a7f5483bdd3103b7f4a732c8fbc0faa91">QUAD_COEFFS::c</a></div><div class="ttdeci">float c</div><div class="ttdef"><b>Definition:</b> <a href="a00788_source.html#l00060">quadratc.h:60</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01158.html">tablerecog.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:37 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01158.html">tordmain.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

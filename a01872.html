@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00467.html','');});
+$(document).ready(function(){initNavTree('a00528.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,20 +106,41 @@ $(document).ready(function(){initNavTree('a00467.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::LineFinder Member List</div>  </div>
+<div class="title">tesseract::RowScratchRegisters Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00467.html">tesseract::LineFinder</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00528.html">tesseract::RowScratchRegisters</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00467.html#a9d00a88e3c4d6e1b9c7b28c3f6825b88">ConvertBoxaToBlobs</a>(int image_width, int image_height, Boxa **boxes, C_BLOB_LIST *blobs)</td><td class="entry"><a class="el" href="a00467.html">tesseract::LineFinder</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00467.html#a3a72521c00cb7725b2282b7b3cc6e6b9">FindAndRemoveLines</a>(int resolution, bool debug, Pix *pix, int *vertical_x, int *vertical_y, Pix **pix_music_mask, TabVector_LIST *v_lines, TabVector_LIST *h_lines)</td><td class="entry"><a class="el" href="a00467.html">tesseract::LineFinder</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a6bd11d00c7e46e5546f5a3a9e8e80bb9">AddBodyLine</a>(const ParagraphModel *model)</td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#ac661ad034b57b7f5a2886c9976933b1b">AddStartLine</a>(const ParagraphModel *model)</td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a1b995f3649381c72ba904b0b628d7fd7">AlignsideIndent</a>(tesseract::ParagraphJustification just) const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#a0d7b1cca6b735498a9286b1842e55f92">AppendDebugHeaderFields</a>(GenericVector&lt; STRING &gt; *header)</td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a57cc3690c4f6306a3af08421f8b7f006">AppendDebugInfo</a>(const ParagraphTheory &amp;theory, GenericVector&lt; STRING &gt; *dbg) const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#ab4b4ba0ceb0dc647802c7dfb45021797">DiscardNonMatchingHypotheses</a>(const SetOfModels &amp;models)</td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a799dffc5a36821b0751fec9de5bfe8c7">GetLineType</a>() const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#af265196fd27d3180187e3caec659d80c">GetLineType</a>(const ParagraphModel *model) const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#af7939bb6dda65342551cf0f958ffe285">Init</a>(const RowInfo &amp;row)</td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#a880a72675fbddb983dfd23b8c0dc6177">lindent_</a></td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a5980c9d63c4c7fde05f13eade2356838">lmargin_</a></td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#a2734f261fcc7d1c69ce511dd0a57f818">NonNullHypotheses</a>(SetOfModels *models) const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a56b066d9f536e64951140317d060b637">OffsideIndent</a>(tesseract::ParagraphJustification just) const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#a7a86a2a63937c6b9976d275bd42360fb">ri_</a></td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a03b35da914e3dffa0454959f2a642432">rindent_</a></td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#a36b06387969774ec5a66e496ade5561b">rmargin_</a></td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a4444df7bef80fb2baa7f94dcc848eab3">SetBodyLine</a>()</td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#a5ac1cfb79119ecac5dcc7f292714b58e">SetStartLine</a>()</td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a4b5abb3df8a610b52476ae463c4a900f">SetUnknown</a>()</td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#ae97c077ce2f7231d098ad4c36ed397bc">StartHypotheses</a>(SetOfModels *models) const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a286be9e6a0dbff4773e63908e47128bd">StrongHypotheses</a>(SetOfModels *models) const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00528.html#abca09d3b4538c40ba7da907dd41fff79">UniqueBodyHypothesis</a>() const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00528.html#a6ff04cb924366a9448613f454b3543fe">UniqueStartHypothesis</a>() const </td><td class="entry"><a class="el" href="a00528.html">tesseract::RowScratchRegisters</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:52 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:28 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

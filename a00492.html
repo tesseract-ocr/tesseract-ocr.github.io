@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::ObjectCache&lt; T &gt; Class Template Reference</title>
+<title>Tesseract: tesseract::ParagraphModelSmearer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,220 +106,53 @@ $(document).ready(function(){initNavTree('a00492.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01884.html">List of all members</a>  </div>
+<a href="a01859.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::ObjectCache&lt; T &gt; Class Template Reference</div>  </div>
+<div class="title">tesseract::ParagraphModelSmearer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00864_source.html">object_cache.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00700_source.html">paragraphs_internal.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a153b0d9a90b9aea49c81374f5128a97a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00492.html#a153b0d9a90b9aea49c81374f5128a97a">ObjectCache</a> ()</td></tr>
-<tr class="separator:a153b0d9a90b9aea49c81374f5128a97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae507d729381a4e324dbca64e27b4cb3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00492.html#ae507d729381a4e324dbca64e27b4cb3c">~ObjectCache</a> ()</td></tr>
-<tr class="separator:ae507d729381a4e324dbca64e27b4cb3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f828bca3c24ea2e95a1d63df7e4e12c"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00492.html#a5f828bca3c24ea2e95a1d63df7e4e12c">Get</a> (<a class="el" href="a00578.html">STRING</a> id, <a class="el" href="a00633.html">TessResultCallback</a>&lt; T * &gt; *loader)</td></tr>
-<tr class="separator:a5f828bca3c24ea2e95a1d63df7e4e12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31ae6031a99c62b24f1cae1c9fda8538"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00492.html#a31ae6031a99c62b24f1cae1c9fda8538">Free</a> (T *t)</td></tr>
-<tr class="separator:a31ae6031a99c62b24f1cae1c9fda8538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a671e7f823cf9734eb93ff1eb1874bea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00492.html#a671e7f823cf9734eb93ff1eb1874bea5">DeleteUnusedObjects</a> ()</td></tr>
-<tr class="separator:a671e7f823cf9734eb93ff1eb1874bea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42b97ade9478b6198e94bae46b8de969"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00492.html#a42b97ade9478b6198e94bae46b8de969">ParagraphModelSmearer</a> (<a class="el" href="a00406.html">GenericVector</a>&lt; <a class="el" href="a00528.html">RowScratchRegisters</a> &gt; *rows, int row_start, int row_end, <a class="el" href="a00493.html">ParagraphTheory</a> *theory)</td></tr>
+<tr class="separator:a42b97ade9478b6198e94bae46b8de969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5865041cc00c68c5cb2235e35c31b31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00492.html#ad5865041cc00c68c5cb2235e35c31b31">Smear</a> ()</td></tr>
+<tr class="separator:ad5865041cc00c68c5cb2235e35c31b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T&gt;<br />
-class tesseract::ObjectCache&lt; T &gt;</h3>
-
-
-<p>Definition at line <a class="el" href="a00864_source.html#l00035">35</a> of file <a class="el" href="a00864_source.html">object_cache.h</a>.</p>
+<div class="textblock">
+<p>Definition at line <a class="el" href="a00700_source.html#l00234">234</a> of file <a class="el" href="a00700_source.html">paragraphs_internal.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a153b0d9a90b9aea49c81374f5128a97a"></a>
+<a class="anchor" id="a42b97ade9478b6198e94bae46b8de969"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00492.html">tesseract::ObjectCache</a>&lt; T &gt;::<a class="el" href="a00492.html">ObjectCache</a> </td>
+          <td class="memname">tesseract::ParagraphModelSmearer::ParagraphModelSmearer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00864_source.html#l00037">37</a> of file <a class="el" href="a00864_source.html">object_cache.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ae507d729381a4e324dbca64e27b4cb3c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00492.html">tesseract::ObjectCache</a>&lt; T &gt;::~<a class="el" href="a00492.html">ObjectCache</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00864_source.html#l00038">38</a> of file <a class="el" href="a00864_source.html">object_cache.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                 {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mu_.<a class="code" href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">Lock</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cache_.<a class="code" href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); i++) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">if</span> (cache_[i].<a class="code" href="a01055.html#acd4ea858d7133e40518e0832ff9d94b2">count</a> &gt; 0) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;ObjectCache(%p)::~ObjectCache(): WARNING! LEAK! object %p &quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="stringliteral">&quot;still has count %d (id %s)\n&quot;</span>,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keyword">this</span>, cache_[i].<span class="keywordtype">object</span>, cache_[i].<a class="code" href="a01055.html#acd4ea858d7133e40518e0832ff9d94b2">count</a>,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                cache_[i].<span class="keywordtype">id</span>.<span class="keywordtype">string</span>());</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">delete</span> cache_[i].object;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        cache_[i].object = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    mu_.<a class="code" href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">Unlock</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
-<div class="ttc" id="a00416_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00072">genericvector.h:72</a></div></div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00301_html_a9b593dd73dc2510c71739841e37ee17c"><div class="ttname"><a href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">tesseract::CCUtilMutex::Lock</a></div><div class="ttdeci">void Lock()</div><div class="ttdef"><b>Definition:</b> <a href="a00836_source.html#l00035">ccutil.cpp:35</a></div></div>
-<div class="ttc" id="a01055_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01055.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01055_source.html#l00108">oldlist.cpp:108</a></div></div>
-<div class="ttc" id="a00301_html_a0cc750edb4d5b9baca124ebee032c09b"><div class="ttname"><a href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">tesseract::CCUtilMutex::Unlock</a></div><div class="ttdeci">void Unlock()</div><div class="ttdef"><b>Definition:</b> <a href="a00836_source.html#l00043">ccutil.cpp:43</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a671e7f823cf9734eb93ff1eb1874bea5"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="a00492.html">tesseract::ObjectCache</a>&lt; T &gt;::DeleteUnusedObjects </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00864_source.html#l00100">100</a> of file <a class="el" href="a00864_source.html">object_cache.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                             {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    mu_.<a class="code" href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">Lock</a>();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = cache_.<a class="code" href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>() - 1; i &gt;= 0; i--) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keywordflow">if</span> (cache_[i].<a class="code" href="a01055.html#acd4ea858d7133e40518e0832ff9d94b2">count</a> &lt;= 0) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">delete</span> cache_[i].object;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        cache_.<a class="code" href="a00416.html#a3fd37a240a42f1c3052e8d28614d3702">remove</a>(i);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    mu_.<a class="code" href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">Unlock</a>();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
-<div class="ttc" id="a00416_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00072">genericvector.h:72</a></div></div>
-<div class="ttc" id="a00301_html_a9b593dd73dc2510c71739841e37ee17c"><div class="ttname"><a href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">tesseract::CCUtilMutex::Lock</a></div><div class="ttdeci">void Lock()</div><div class="ttdef"><b>Definition:</b> <a href="a00836_source.html#l00035">ccutil.cpp:35</a></div></div>
-<div class="ttc" id="a01055_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01055.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01055_source.html#l00108">oldlist.cpp:108</a></div></div>
-<div class="ttc" id="a00301_html_a0cc750edb4d5b9baca124ebee032c09b"><div class="ttname"><a href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">tesseract::CCUtilMutex::Unlock</a></div><div class="ttdeci">void Unlock()</div><div class="ttdef"><b>Definition:</b> <a href="a00836_source.html#l00043">ccutil.cpp:43</a></div></div>
-<div class="ttc" id="a00416_html_a3fd37a240a42f1c3052e8d28614d3702"><div class="ttname"><a href="a00416.html#a3fd37a240a42f1c3052e8d28614d3702">GenericVector::remove</a></div><div class="ttdeci">void remove(int index)</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00704">genericvector.h:704</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a31ae6031a99c62b24f1cae1c9fda8538"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="a00492.html">tesseract::ObjectCache</a>&lt; T &gt;::Free </td>
-          <td>(</td>
-          <td class="paramtype">T *&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00864_source.html#l00086">86</a> of file <a class="el" href="a00864_source.html">object_cache.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                  {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (t == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    mu_.<a class="code" href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">Lock</a>();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cache_.<a class="code" href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); i++) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">if</span> (cache_[i].<span class="keywordtype">object</span> == t) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        --cache_[i].count;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        mu_.<a class="code" href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">Unlock</a>();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    mu_.<a class="code" href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">Unlock</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
-<div class="ttc" id="a00416_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00072">genericvector.h:72</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00301_html_a9b593dd73dc2510c71739841e37ee17c"><div class="ttname"><a href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">tesseract::CCUtilMutex::Lock</a></div><div class="ttdeci">void Lock()</div><div class="ttdef"><b>Definition:</b> <a href="a00836_source.html#l00035">ccutil.cpp:35</a></div></div>
-<div class="ttc" id="a00301_html_a0cc750edb4d5b9baca124ebee032c09b"><div class="ttname"><a href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">tesseract::CCUtilMutex::Unlock</a></div><div class="ttdeci">void Unlock()</div><div class="ttdef"><b>Definition:</b> <a href="a00836_source.html#l00043">ccutil.cpp:43</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a5f828bca3c24ea2e95a1d63df7e4e12c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T* <a class="el" href="a00492.html">tesseract::ObjectCache</a>&lt; T &gt;::Get </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00578.html">STRING</a>&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
+          <td class="paramtype"><a class="el" href="a00406.html">GenericVector</a>&lt; <a class="el" href="a00528.html">RowScratchRegisters</a> &gt; *&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00633.html">TessResultCallback</a>&lt; T * &gt; *&#160;</td>
-          <td class="paramname"><em>loader</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row_end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00493.html">ParagraphTheory</a> *&#160;</td>
+          <td class="paramname"><em>theory</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -327,57 +160,159 @@ template&lt;typename T&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00864_source.html#l00060">60</a> of file <a class="el" href="a00864_source.html">object_cache.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                          {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    T *retval = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    mu_.<a class="code" href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">Lock</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cache_.<a class="code" href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); i++) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == cache_[i].<span class="keywordtype">id</span>) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        retval = cache_[i].object;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (cache_[i].<span class="keywordtype">object</span> != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          cache_[i].count++;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        mu_.<a class="code" href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">Unlock</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">delete</span> loader;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    cache_.<a class="code" href="a00416.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(ReferenceCount());</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ReferenceCount &amp;<a class="code" href="a01280.html#a42e422a84ae8cc850bac5f48b7b6c5ef">rc</a> = cache_.<a class="code" href="a00416.html#a6e6d6497a6f7dd999b6d591c15354167">back</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    rc.id = id;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    retval = rc.object = loader-&gt;<a class="code" href="a00633.html#a39d8dd30710ee089410c230aa79fd333">Run</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    rc.count = (retval != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) ? 1 : 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    mu_.<a class="code" href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">Unlock</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
-<div class="ttc" id="a00416_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00072">genericvector.h:72</a></div></div>
-<div class="ttc" id="a00416_html_a0dc89fe2a365b04a61017f9d78c1a303"><div class="ttname"><a href="a00416.html#a0dc89fe2a365b04a61017f9d78c1a303">GenericVector::push_back</a></div><div class="ttdeci">int push_back(T object)</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00737">genericvector.h:737</a></div></div>
-<div class="ttc" id="a00416_html_a6e6d6497a6f7dd999b6d591c15354167"><div class="ttname"><a href="a00416.html#a6e6d6497a6f7dd999b6d591c15354167">GenericVector::back</a></div><div class="ttdeci">T &amp; back() const </div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00668">genericvector.h:668</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00301_html_a9b593dd73dc2510c71739841e37ee17c"><div class="ttname"><a href="a00301.html#a9b593dd73dc2510c71739841e37ee17c">tesseract::CCUtilMutex::Lock</a></div><div class="ttdeci">void Lock()</div><div class="ttdef"><b>Definition:</b> <a href="a00836_source.html#l00035">ccutil.cpp:35</a></div></div>
-<div class="ttc" id="a00301_html_a0cc750edb4d5b9baca124ebee032c09b"><div class="ttname"><a href="a00301.html#a0cc750edb4d5b9baca124ebee032c09b">tesseract::CCUtilMutex::Unlock</a></div><div class="ttdeci">void Unlock()</div><div class="ttdef"><b>Definition:</b> <a href="a00836_source.html#l00043">ccutil.cpp:43</a></div></div>
-<div class="ttc" id="a01280_html_a42e422a84ae8cc850bac5f48b7b6c5ef"><div class="ttname"><a href="a01280.html#a42e422a84ae8cc850bac5f48b7b6c5ef">tesseract-c_api-demo.rc</a></div><div class="ttdeci">tuple rc</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00066">tesseract-c_api-demo.py:66</a></div></div>
-<div class="ttc" id="a00633_html_a39d8dd30710ee089410c230aa79fd333"><div class="ttname"><a href="a00633.html#a39d8dd30710ee089410c230aa79fd333">TessResultCallback::Run</a></div><div class="ttdeci">virtual R Run()=0</div></div>
+<p>Definition at line <a class="el" href="a00698_source.html#l01309">1309</a> of file <a class="el" href="a00698_source.html">paragraphs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;        : theory_(theory), rows_(rows), row_start_(row_start),</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;          row_end_(row_end) {</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;  <span class="keywordflow">if</span> (!AcceptableRowArgs(0, 0, __func__, rows, row_start, row_end)) {</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    row_start_ = 0;</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;    row_end_ = 0;</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;  }</div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;  <a class="code" href="a01267.html#a5616e4c6a53be12ea0d684b1f0fb8485">SetOfModels</a> no_models;</div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = row_start - 1; row &lt;= row_end; row++) {</div>
+<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;    open_models_.push_back(no_models);</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;  }</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;}</div>
+<div class="ttc" id="a01267_html_a5616e4c6a53be12ea0d684b1f0fb8485"><div class="ttname"><a href="a01267.html#a5616e4c6a53be12ea0d684b1f0fb8485">tesseract::SetOfModels</a></div><div class="ttdeci">GenericVectorEqEq&lt; const ParagraphModel * &gt; SetOfModels</div><div class="ttdef"><b>Definition:</b> <a href="a00700_source.html#l00094">paragraphs_internal.h:94</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>ccutil/<a class="el" href="a00864_source.html">object_cache.h</a></li>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad5865041cc00c68c5cb2235e35c31b31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ParagraphModelSmearer::Smear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00698_source.html#l01356">1356</a> of file <a class="el" href="a00698_source.html">paragraphs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;                                  {</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;  CalculateOpenModels(row_start_, row_end_);</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;  <span class="comment">// For each row which we&#39;re unsure about (that is, it is LT_UNKNOWN or</span></div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;  <span class="comment">// we have multiple LT_START hypotheses), see if there&#39;s a model that</span></div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;  <span class="comment">// was recently used (an &quot;open&quot; model) which might model it well.</span></div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = row_start_; i &lt; row_end_; i++) {</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    RowScratchRegisters &amp;row = (*rows_)[i];</div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    <span class="keywordflow">if</span> (row.ri_-&gt;num_words == 0)</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;    <span class="comment">// Step One:</span></div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;    <span class="comment">//   Figure out if there are &quot;open&quot; models which are left-alined or</span></div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;    <span class="comment">//   right-aligned.  This is important for determining whether the</span></div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;    <span class="comment">//   &quot;first&quot; word in a row would fit at the &quot;end&quot; of the previous row.</span></div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    <span class="keywordtype">bool</span> left_align_open = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    <span class="keywordtype">bool</span> right_align_open = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> m = 0; m &lt; OpenModels(i).<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); m++) {</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;      <span class="keywordflow">switch</span> (OpenModels(i)[m]-&gt;justification()) {</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">JUSTIFICATION_LEFT</a>: left_align_open = <span class="keyword">true</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">JUSTIFICATION_RIGHT</a>: right_align_open = <span class="keyword">true</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;        <span class="keywordflow">default</span>: left_align_open = right_align_open = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;      }</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;    }</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;    <span class="comment">// Step Two:</span></div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    <span class="comment">//   Use that knowledge to figure out if this row is likely to</span></div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    <span class="comment">//   start a paragraph.</span></div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    <span class="keywordtype">bool</span> likely_start;</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;    <span class="keywordflow">if</span> (i == 0) {</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;      likely_start = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;      <span class="keywordflow">if</span> ((left_align_open &amp;&amp; right_align_open) ||</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;          (!left_align_open &amp;&amp; !right_align_open)) {</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;        likely_start = <a class="code" href="a01267.html#ac154ce339833f35931ef5b2e57d47a2a">LikelyParagraphStart</a>((*rows_)[i - 1], row,</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;                                            <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">JUSTIFICATION_LEFT</a>) ||</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;                       <a class="code" href="a01267.html#ac154ce339833f35931ef5b2e57d47a2a">LikelyParagraphStart</a>((*rows_)[i - 1], row,</div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;                                            <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">JUSTIFICATION_RIGHT</a>);</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (left_align_open) {</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;        likely_start = <a class="code" href="a01267.html#ac154ce339833f35931ef5b2e57d47a2a">LikelyParagraphStart</a>((*rows_)[i - 1], row,</div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;                                            <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">JUSTIFICATION_LEFT</a>);</div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;        likely_start = <a class="code" href="a01267.html#ac154ce339833f35931ef5b2e57d47a2a">LikelyParagraphStart</a>((*rows_)[i - 1], row,</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;                                            <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">JUSTIFICATION_RIGHT</a>);</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;      }</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;    }</div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;</div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;    <span class="comment">// Step Three:</span></div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;    <span class="comment">//   If this text line seems like an obvious first line of an</span></div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;    <span class="comment">//   open model, or an obvious continuation of an existing</span></div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;    <span class="comment">//   modelled paragraph, mark it up.</span></div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;    <span class="keywordflow">if</span> (likely_start) {</div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;      <span class="comment">// Add Start Hypotheses for all Open models that fit.</span></div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> m = 0; m &lt; OpenModels(i).<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); m++) {</div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="a01267.html#a8f44dde2641dd1047debf38c4429dc2b">ValidFirstLine</a>(rows_, i, OpenModels(i)[m])) {</div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;          row.AddStartLine(OpenModels(i)[m]);</div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;        }</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;      }</div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;      <span class="comment">// Add relevant body line hypotheses.</span></div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;      <a class="code" href="a01267.html#a5616e4c6a53be12ea0d684b1f0fb8485">SetOfModels</a> last_line_models;</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;      <span class="keywordflow">if</span> (i &gt; 0) {</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;        (*rows_)[i - 1].StrongHypotheses(&amp;last_line_models);</div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;        theory_-&gt;<a class="code" href="a00493.html#a33e212251fa9eb84dd8270c7f238ff61">NonCenteredModels</a>(&amp;last_line_models);</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;      }</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> m = 0; m &lt; last_line_models.size(); m++) {</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;        <span class="keyword">const</span> <a class="code" href="a00491.html">ParagraphModel</a> *model = last_line_models[m];</div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="a01267.html#a7933d5b144ff81c13320bfb6f32e0264">ValidBodyLine</a>(rows_, i, model))</div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;          row.AddBodyLine(model);</div>
+<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;      }</div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    }</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;</div>
+<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;    <span class="comment">// Step Four:</span></div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;    <span class="comment">//   If we&#39;re still quite unsure about this line, go through all</span></div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;    <span class="comment">//   models in our theory and see if this row could be the start</span></div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;    <span class="comment">//   of any of our  models.</span></div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;    <span class="keywordflow">if</span> (row.GetLineType() == <a class="code" href="a01267.html#af86c486b511cb293ee45a39233f99bd4a5dc9805a3ad0a4c99b98ff282e36d204">LT_UNKNOWN</a> ||</div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;        (row.GetLineType() == <a class="code" href="a01267.html#af86c486b511cb293ee45a39233f99bd4a350c14d666e61e3ad1310244edde8537">LT_START</a> &amp;&amp; !row.UniqueStartHypothesis())) {</div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;      <a class="code" href="a01267.html#a5616e4c6a53be12ea0d684b1f0fb8485">SetOfModels</a> all_models;</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;      theory_-&gt;<a class="code" href="a00493.html#a33e212251fa9eb84dd8270c7f238ff61">NonCenteredModels</a>(&amp;all_models);</div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> m = 0; m &lt; all_models.size(); m++) {</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="a01267.html#a8f44dde2641dd1047debf38c4429dc2b">ValidFirstLine</a>(rows_, i, all_models[m])) {</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;          row.AddStartLine(all_models[m]);</div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;        }</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;      }</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;    }</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;    <span class="comment">// Step Five:</span></div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;    <span class="comment">//   Since we may have updated the hypotheses about this row, we need</span></div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;    <span class="comment">//   to recalculate the Open models for the rest of rows[i + 1, row_end)</span></div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;    <span class="keywordflow">if</span> (row.GetLineType() != <a class="code" href="a01267.html#af86c486b511cb293ee45a39233f99bd4a5dc9805a3ad0a4c99b98ff282e36d204">LT_UNKNOWN</a>) {</div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;      CalculateOpenModels(i + 1, row_end_);</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;    }</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;  }</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;}</div>
+<div class="ttc" id="a00493_html_a33e212251fa9eb84dd8270c7f238ff61"><div class="ttname"><a href="a00493.html#a33e212251fa9eb84dd8270c7f238ff61">tesseract::ParagraphTheory::NonCenteredModels</a></div><div class="ttdeci">void NonCenteredModels(SetOfModels *models)</div><div class="ttdef"><b>Definition:</b> <a href="a00698_source.html#l01250">paragraphs.cpp:1250</a></div></div>
+<div class="ttc" id="a01267_html_a8f44dde2641dd1047debf38c4429dc2b"><div class="ttname"><a href="a01267.html#a8f44dde2641dd1047debf38c4429dc2b">tesseract::ValidFirstLine</a></div><div class="ttdeci">bool ValidFirstLine(const GenericVector&lt; RowScratchRegisters &gt; *rows, int row, const ParagraphModel *model)</div><div class="ttdef"><b>Definition:</b> <a href="a00698_source.html#l01266">paragraphs.cpp:1266</a></div></div>
+<div class="ttc" id="a00491_html"><div class="ttname"><a href="a00491.html">ParagraphModel</a></div><div class="ttdef"><b>Definition:</b> <a href="a00767_source.html#l00114">ocrpara.h:114</a></div></div>
+<div class="ttc" id="a01267_html_ac154ce339833f35931ef5b2e57d47a2a"><div class="ttname"><a href="a01267.html#ac154ce339833f35931ef5b2e57d47a2a">tesseract::LikelyParagraphStart</a></div><div class="ttdeci">bool LikelyParagraphStart(const RowScratchRegisters &amp;before, const RowScratchRegisters &amp;after)</div><div class="ttdef"><b>Definition:</b> <a href="a00698_source.html#l01672">paragraphs.cpp:1672</a></div></div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">tesseract::JUSTIFICATION_RIGHT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00240">publictypes.h:240</a></div></div>
+<div class="ttc" id="a00406_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00072">genericvector.h:72</a></div></div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">tesseract::JUSTIFICATION_LEFT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00238">publictypes.h:238</a></div></div>
+<div class="ttc" id="a01267_html_af86c486b511cb293ee45a39233f99bd4a350c14d666e61e3ad1310244edde8537"><div class="ttname"><a href="a01267.html#af86c486b511cb293ee45a39233f99bd4a350c14d666e61e3ad1310244edde8537">tesseract::LT_START</a></div><div class="ttdef"><b>Definition:</b> <a href="a00700_source.html#l00055">paragraphs_internal.h:55</a></div></div>
+<div class="ttc" id="a01267_html_af86c486b511cb293ee45a39233f99bd4a5dc9805a3ad0a4c99b98ff282e36d204"><div class="ttname"><a href="a01267.html#af86c486b511cb293ee45a39233f99bd4a5dc9805a3ad0a4c99b98ff282e36d204">tesseract::LT_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="a00700_source.html#l00057">paragraphs_internal.h:57</a></div></div>
+<div class="ttc" id="a01267_html_a7933d5b144ff81c13320bfb6f32e0264"><div class="ttname"><a href="a01267.html#a7933d5b144ff81c13320bfb6f32e0264">tesseract::ValidBodyLine</a></div><div class="ttdeci">bool ValidBodyLine(const GenericVector&lt; RowScratchRegisters &gt; *rows, int row, const ParagraphModel *model)</div><div class="ttdef"><b>Definition:</b> <a href="a00698_source.html#l01277">paragraphs.cpp:1277</a></div></div>
+<div class="ttc" id="a01267_html_a5616e4c6a53be12ea0d684b1f0fb8485"><div class="ttname"><a href="a01267.html#a5616e4c6a53be12ea0d684b1f0fb8485">tesseract::SetOfModels</a></div><div class="ttdeci">GenericVectorEqEq&lt; const ParagraphModel * &gt; SetOfModels</div><div class="ttdef"><b>Definition:</b> <a href="a00700_source.html#l00094">paragraphs_internal.h:94</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ccmain/<a class="el" href="a00700_source.html">paragraphs_internal.h</a></li>
+<li>ccmain/<a class="el" href="a00698_source.html">paragraphs.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00492.html">ObjectCache</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00492.html">ParagraphModelSmearer</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:28 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

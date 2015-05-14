@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::TessLangModEdge Class Reference</title>
+<title>Tesseract: TPOINT Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,252 +107,40 @@ $(document).ready(function(){initNavTree('a00629.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a01939.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="a01701.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::TessLangModEdge Class Reference</div>  </div>
+<div class="title">TPOINT Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for tesseract::TessLangModEdge:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00629.png" usemap="#tesseract::TessLangModEdge_map" alt=""/>
-  <map id="tesseract::TessLangModEdge_map" name="tesseract::TessLangModEdge_map">
-<area href="a00460.html" alt="tesseract::LangModEdge" shape="rect" coords="0,0,177,24"/>
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a00732_source.html">blobs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeb799d029fdc3119ae22a47650a2ff77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#aeb799d029fdc3119ae22a47650a2ff77">TessLangModEdge</a> (<a class="el" href="a00347.html">CubeRecoContext</a> *cntxt, const <a class="el" href="a00354.html">Dawg</a> *edge_array, <a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge, int class_id)</td></tr>
-<tr class="separator:aeb799d029fdc3119ae22a47650a2ff77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3b0d8597710212d865000ba682caa24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#ab3b0d8597710212d865000ba682caa24">TessLangModEdge</a> (<a class="el" href="a00347.html">CubeRecoContext</a> *cntxt, const <a class="el" href="a00354.html">Dawg</a> *edge_array, <a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> start_edge_idx, <a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> end_edge_idx, int class_id)</td></tr>
-<tr class="separator:ab3b0d8597710212d865000ba682caa24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b5deab93dc548decea6cf7eb45b322f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a2b5deab93dc548decea6cf7eb45b322f">TessLangModEdge</a> (<a class="el" href="a00347.html">CubeRecoContext</a> *cntxt, int class_id)</td></tr>
-<tr class="separator:a2b5deab93dc548decea6cf7eb45b322f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c81c716bb431d27dace7b3393a29de2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a7c81c716bb431d27dace7b3393a29de2">~TessLangModEdge</a> ()</td></tr>
-<tr class="separator:a7c81c716bb431d27dace7b3393a29de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa75488be8ff611064bebeb37e92b8f04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#aa75488be8ff611064bebeb37e92b8f04">IsRoot</a> () const </td></tr>
-<tr class="separator:aa75488be8ff611064bebeb37e92b8f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64afc00f99afbcab63045f00fd6d5e8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a64afc00f99afbcab63045f00fd6d5e8e">SetRoot</a> (bool flag)</td></tr>
-<tr class="separator:a64afc00f99afbcab63045f00fd6d5e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4deba2b471003b762420549f2d3429f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a4deba2b471003b762420549f2d3429f0">IsOOD</a> () const </td></tr>
-<tr class="separator:a4deba2b471003b762420549f2d3429f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07bf4e741d906e20c3393b3ab9c3efa6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a07bf4e741d906e20c3393b3ab9c3efa6">IsNumber</a> () const </td></tr>
-<tr class="separator:a07bf4e741d906e20c3393b3ab9c3efa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52a6e1e833effcd67eca6e64b94f82d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a52a6e1e833effcd67eca6e64b94f82d0">IsEOW</a> () const </td></tr>
-<tr class="separator:a52a6e1e833effcd67eca6e64b94f82d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f65636973a798f7202400f9cefd7bef"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00354.html">Dawg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a0f65636973a798f7202400f9cefd7bef">GetDawg</a> () const </td></tr>
-<tr class="separator:a0f65636973a798f7202400f9cefd7bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5969c8d614bcb3c156e9c429705082ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a5969c8d614bcb3c156e9c429705082ba">StartEdge</a> () const </td></tr>
-<tr class="separator:a5969c8d614bcb3c156e9c429705082ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d51be9e2c08d55de7a1c25335b87424"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a2d51be9e2c08d55de7a1c25335b87424">EndEdge</a> () const </td></tr>
-<tr class="separator:a2d51be9e2c08d55de7a1c25335b87424"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ed7c476cfb97479db4dacda2fe8568b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a4ed7c476cfb97479db4dacda2fe8568b">EdgeMask</a> () const </td></tr>
-<tr class="separator:a4ed7c476cfb97479db4dacda2fe8568b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a872d377b48f3fb4568da3ff0b0bf08ec"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a872d377b48f3fb4568da3ff0b0bf08ec">EdgeString</a> () const </td></tr>
-<tr class="separator:a872d377b48f3fb4568da3ff0b0bf08ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a447e17adb7eb6bf7b3539c1c9eccdedc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a447e17adb7eb6bf7b3539c1c9eccdedc">ClassID</a> () const </td></tr>
-<tr class="separator:a447e17adb7eb6bf7b3539c1c9eccdedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee915ede33083546da8f7297320ffcc2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#aee915ede33083546da8f7297320ffcc2">PathCost</a> () const </td></tr>
-<tr class="separator:aee915ede33083546da8f7297320ffcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a220cad69528d5fce2324caac791a32ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a220cad69528d5fce2324caac791a32ee">SetEdgeMask</a> (<a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_mask)</td></tr>
-<tr class="separator:a220cad69528d5fce2324caac791a32ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeb3f0bc4521df5410589e0aafd08db0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#afeb3f0bc4521df5410589e0aafd08db0">SetDawg</a> (<a class="el" href="a00354.html">Dawg</a> *dawg)</td></tr>
-<tr class="separator:afeb3f0bc4521df5410589e0aafd08db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba6d2c02ad5801e5b52cc5c79e46023"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a4ba6d2c02ad5801e5b52cc5c79e46023">SetStartEdge</a> (<a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_idx)</td></tr>
-<tr class="separator:a4ba6d2c02ad5801e5b52cc5c79e46023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed8e3503ce0b836c88f198e9e8f960de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#aed8e3503ce0b836c88f198e9e8f960de">SetEndEdge</a> (<a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> edge_idx)</td></tr>
-<tr class="separator:aed8e3503ce0b836c88f198e9e8f960de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94dce03e7d18eed6a36a4f30c3502b6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a94dce03e7d18eed6a36a4f30c3502b6a">IsTerminal</a> () const </td></tr>
-<tr class="separator:a94dce03e7d18eed6a36a4f30c3502b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb0c443e2db6fd0591c50dc04c543f0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#aeb0c443e2db6fd0591c50dc04c543f0c">SignalCnt</a> () const </td></tr>
-<tr class="separator:aeb0c443e2db6fd0591c50dc04c543f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16d9ff6f651b2038ed95d88e897affc7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a16d9ff6f651b2038ed95d88e897affc7">SignalWgt</a> (int signal) const </td></tr>
-<tr class="separator:a16d9ff6f651b2038ed95d88e897affc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b2f096bd25dbf71a57c1763977a905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#aa1b2f096bd25dbf71a57c1763977a905">SetSignalWgt</a> (int signal, double wgt)</td></tr>
-<tr class="separator:aa1b2f096bd25dbf71a57c1763977a905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacf5bc7245539bc429ac73d1d4a5097a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#aacf5bc7245539bc429ac73d1d4a5097a">Signal</a> (int signal)</td></tr>
-<tr class="separator:aacf5bc7245539bc429ac73d1d4a5097a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae367533c2d2ce667cc357091042a9d1f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#ae367533c2d2ce667cc357091042a9d1f">Hash</a> () const </td></tr>
-<tr class="separator:ae367533c2d2ce667cc357091042a9d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a633a1c6915324d903a7b8d85da7110ce"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a633a1c6915324d903a7b8d85da7110ce">Description</a> () const </td></tr>
-<tr class="separator:a633a1c6915324d903a7b8d85da7110ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b88e84c764ce800071e3d8b37d24693"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a1b88e84c764ce800071e3d8b37d24693">IsIdentical</a> (<a class="el" href="a00460.html">LangModEdge</a> *lang_mod_edge) const </td></tr>
-<tr class="separator:a1b88e84c764ce800071e3d8b37d24693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00460"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00460')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00460.html">tesseract::LangModEdge</a></td></tr>
-<tr class="memitem:a5c4257a3d783cdc89dee21741786bf6e inherit pub_methods_a00460"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00460.html#a5c4257a3d783cdc89dee21741786bf6e">LangModEdge</a> ()</td></tr>
-<tr class="separator:a5c4257a3d783cdc89dee21741786bf6e inherit pub_methods_a00460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8d2c121e28ba3e7415f01b8de806528 inherit pub_methods_a00460"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00460.html#ac8d2c121e28ba3e7415f01b8de806528">~LangModEdge</a> ()</td></tr>
-<tr class="separator:ac8d2c121e28ba3e7415f01b8de806528 inherit pub_methods_a00460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae904cdd453d9303892c367c8f358c028"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#ae904cdd453d9303892c367c8f358c028">TPOINT</a> ()</td></tr>
+<tr class="separator:ae904cdd453d9303892c367c8f358c028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bd52027648e2b99bcfb2fba652c63a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a16bd52027648e2b99bcfb2fba652c63a">TPOINT</a> (<a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> vx, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> vy)</td></tr>
+<tr class="separator:a16bd52027648e2b99bcfb2fba652c63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac733ed1df90b1f9e1d30175ee580d039"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#ac733ed1df90b1f9e1d30175ee580d039">TPOINT</a> (const <a class="el" href="a00412.html">ICOORD</a> &amp;ic)</td></tr>
+<tr class="separator:ac733ed1df90b1f9e1d30175ee580d039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a693993c398a5095f45776ccc41fd629b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a693993c398a5095f45776ccc41fd629b">operator+=</a> (const <a class="el" href="a00629.html">TPOINT</a> &amp;other)</td></tr>
+<tr class="separator:a693993c398a5095f45776ccc41fd629b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a627d77cda5c1a93bd9a79b089b2e1550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a627d77cda5c1a93bd9a79b089b2e1550">operator/=</a> (int divisor)</td></tr>
+<tr class="separator:a627d77cda5c1a93bd9a79b089b2e1550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae25d25a5c98f6d0a040cd6e04f623c56"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#ae25d25a5c98f6d0a040cd6e04f623c56">CreateChildren</a> (<a class="el" href="a00347.html">CubeRecoContext</a> *cntxt, const <a class="el" href="a00354.html">Dawg</a> *edges, <a class="el" href="a01061.html#ac76aca11806fd7167c274dc45b7f7fe8">NODE_REF</a> edge_reg, <a class="el" href="a00460.html">LangModEdge</a> **lm_edges)</td></tr>
-<tr class="separator:ae25d25a5c98f6d0a040cd6e04f623c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:aa9c98655c3a2a0437821e5a3d3418b0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a></td></tr>
+<tr class="separator:aa9c98655c3a2a0437821e5a3d3418b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d62f015b74612e43975e439a096039c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00629.html#a6d62f015b74612e43975e439a096039c">y</a></td></tr>
+<tr class="separator:a6d62f015b74612e43975e439a096039c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a01023_source.html#l00068">68</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
+<p>Definition at line <a class="el" href="a00732_source.html#l00050">50</a> of file <a class="el" href="a00732_source.html">blobs.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aeb799d029fdc3119ae22a47650a2ff77"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::TessLangModEdge::TessLangModEdge </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00347.html">CubeRecoContext</a> *&#160;</td>
-          <td class="paramname"><em>cntxt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00354.html">Dawg</a> *&#160;</td>
-          <td class="paramname"><em>edge_array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td>
-          <td class="paramname"><em>edge</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>class_id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01022_source.html#l00041">41</a> of file <a class="el" href="a01022_source.html">tess_lang_mod_edge.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                       {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  root_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  cntxt_ = cntxt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  dawg_ = dawg;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  start_edge_ = edge_idx;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  end_edge_ = edge_idx;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  edge_mask_ = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  class_id_ = class_id;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  str_ = cntxt_-&gt;<a class="code" href="a00347.html#ab9c6b5f85ef4baa38ad8ef9c949b8dee">CharacterSet</a>()-&gt;<a class="code" href="a00314.html#a7fd13e0ab7d7f0e963d05023287c634a">ClassString</a>(class_id);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  path_cost_ = Cost();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
-<div class="ttc" id="a00347_html_ab9c6b5f85ef4baa38ad8ef9c949b8dee"><div class="ttname"><a href="a00347.html#ab9c6b5f85ef4baa38ad8ef9c949b8dee">tesseract::CubeRecoContext::CharacterSet</a></div><div class="ttdeci">CharSet * CharacterSet() const </div><div class="ttdef"><b>Definition:</b> <a href="a00695_source.html#l00058">cube_reco_context.h:58</a></div></div>
-<div class="ttc" id="a00314_html_a7fd13e0ab7d7f0e963d05023287c634a"><div class="ttname"><a href="a00314.html#a7fd13e0ab7d7f0e963d05023287c634a">tesseract::CharSet::ClassString</a></div><div class="ttdeci">const char_32 * ClassString(int class_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00984_source.html#l00104">char_set.h:104</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ab3b0d8597710212d865000ba682caa24"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::TessLangModEdge::TessLangModEdge </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00347.html">CubeRecoContext</a> *&#160;</td>
-          <td class="paramname"><em>cntxt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00354.html">Dawg</a> *&#160;</td>
-          <td class="paramname"><em>edge_array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td>
-          <td class="paramname"><em>start_edge_idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td>
-          <td class="paramname"><em>end_edge_idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>class_id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01022_source.html#l00055">55</a> of file <a class="el" href="a01022_source.html">tess_lang_mod_edge.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                               {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  root_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  cntxt_ = cntxt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  dawg_ = dawg;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  start_edge_ = start_edge_idx;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  end_edge_ = end_edge_idx;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  edge_mask_ = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  class_id_ = class_id;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  str_ = cntxt_-&gt;<a class="code" href="a00347.html#ab9c6b5f85ef4baa38ad8ef9c949b8dee">CharacterSet</a>()-&gt;<a class="code" href="a00314.html#a7fd13e0ab7d7f0e963d05023287c634a">ClassString</a>(class_id);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  path_cost_ = Cost();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="ttc" id="a00347_html_ab9c6b5f85ef4baa38ad8ef9c949b8dee"><div class="ttname"><a href="a00347.html#ab9c6b5f85ef4baa38ad8ef9c949b8dee">tesseract::CubeRecoContext::CharacterSet</a></div><div class="ttdeci">CharSet * CharacterSet() const </div><div class="ttdef"><b>Definition:</b> <a href="a00695_source.html#l00058">cube_reco_context.h:58</a></div></div>
-<div class="ttc" id="a00314_html_a7fd13e0ab7d7f0e963d05023287c634a"><div class="ttname"><a href="a00314.html#a7fd13e0ab7d7f0e963d05023287c634a">tesseract::CharSet::ClassString</a></div><div class="ttdeci">const char_32 * ClassString(int class_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00984_source.html#l00104">char_set.h:104</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a2b5deab93dc548decea6cf7eb45b322f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::TessLangModEdge::TessLangModEdge </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00347.html">CubeRecoContext</a> *&#160;</td>
-          <td class="paramname"><em>cntxt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>class_id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01022_source.html#l00028">28</a> of file <a class="el" href="a01022_source.html">tess_lang_mod_edge.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                     {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  root_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  cntxt_ = cntxt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  dawg_ = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  start_edge_ = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  end_edge_ = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  edge_mask_ = 0;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  class_id_ = class_id;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  str_ = cntxt_-&gt;<a class="code" href="a00347.html#ab9c6b5f85ef4baa38ad8ef9c949b8dee">CharacterSet</a>()-&gt;<a class="code" href="a00314.html#a7fd13e0ab7d7f0e963d05023287c634a">ClassString</a>(class_id);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  path_cost_ = Cost();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00347_html_ab9c6b5f85ef4baa38ad8ef9c949b8dee"><div class="ttname"><a href="a00347.html#ab9c6b5f85ef4baa38ad8ef9c949b8dee">tesseract::CubeRecoContext::CharacterSet</a></div><div class="ttdeci">CharSet * CharacterSet() const </div><div class="ttdef"><b>Definition:</b> <a href="a00695_source.html#l00058">cube_reco_context.h:58</a></div></div>
-<div class="ttc" id="a00314_html_a7fd13e0ab7d7f0e963d05023287c634a"><div class="ttname"><a href="a00314.html#a7fd13e0ab7d7f0e963d05023287c634a">tesseract::CharSet::ClassString</a></div><div class="ttdeci">const char_32 * ClassString(int class_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00984_source.html#l00104">char_set.h:104</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a7c81c716bb431d27dace7b3393a29de2"></a>
+<a class="anchor" id="ae904cdd453d9303892c367c8f358c028"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -360,7 +148,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::TessLangModEdge::~TessLangModEdge </td>
+          <td class="memname">TPOINT::TPOINT </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -373,13 +161,85 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01023_source.html#l00077">77</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{}</div>
+<p>Definition at line <a class="el" href="a00732_source.html#l00051">51</a> of file <a class="el" href="a00732_source.html">blobs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;: <a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>(0), <a class="code" href="a00629.html#a6d62f015b74612e43975e439a096039c">y</a>(0) {}</div>
+<div class="ttc" id="a00629_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00064">blobs.h:64</a></div></div>
+<div class="ttc" id="a00629_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00629.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00065">blobs.h:65</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a16bd52027648e2b99bcfb2fba652c63a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TPOINT::TPOINT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>vx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>vy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00732_source.html#l00052">52</a> of file <a class="el" href="a00732_source.html">blobs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;: <a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>(vx), <a class="code" href="a00629.html#a6d62f015b74612e43975e439a096039c">y</a>(vy) {}</div>
+<div class="ttc" id="a00629_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00064">blobs.h:64</a></div></div>
+<div class="ttc" id="a00629_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00629.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00065">blobs.h:65</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac733ed1df90b1f9e1d30175ee580d039"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TPOINT::TPOINT </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00412.html">ICOORD</a> &amp;&#160;</td>
+          <td class="paramname"><em>ic</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00732_source.html#l00053">53</a> of file <a class="el" href="a00732_source.html">blobs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;: <a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>(ic.<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a>()), <a class="code" href="a00629.html#a6d62f015b74612e43975e439a096039c">y</a>(ic.<a class="code" href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a>()) {}</div>
+<div class="ttc" id="a00629_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00064">blobs.h:64</a></div></div>
+<div class="ttc" id="a00629_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00629.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00065">blobs.h:65</a></div></div>
+<div class="ttc" id="a00412_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00412.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00052">points.h:52</a></div></div>
+<div class="ttc" id="a00412_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00412.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00056">points.h:56</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a447e17adb7eb6bf7b3539c1c9eccdedc"></a>
+<a class="anchor" id="a693993c398a5095f45776ccc41fd629b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -387,537 +247,10 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int tesseract::TessLangModEdge::ClassID </td>
+          <td class="memname">void TPOINT::operator+= </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#a4caf57394d94e96f11d02a97293a443b">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00102">102</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{ <span class="keywordflow">return</span> class_id_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ae25d25a5c98f6d0a040cd6e04f623c56"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::TessLangModEdge::CreateChildren </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00347.html">CubeRecoContext</a> *&#160;</td>
-          <td class="paramname"><em>cntxt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="a00354.html">Dawg</a> *&#160;</td>
-          <td class="paramname"><em>edges</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a01061.html#ac76aca11806fd7167c274dc45b7f7fe8">NODE_REF</a>&#160;</td>
-          <td class="paramname"><em>edge_reg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00460.html">LangModEdge</a> **&#160;</td>
-          <td class="paramname"><em>lm_edges</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01022_source.html#l00104">104</a> of file <a class="el" href="a01022_source.html">tess_lang_mod_edge.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                              {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">int</span> edge_cnt = 0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="a01279.html#a5084886f7cd9adefa73d03111d92f593">NodeChildVector</a> vec;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  dawg-&gt;unichar_ids_of(parent_node, &amp;vec, <span class="keyword">false</span>);  <span class="comment">// find all children</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vec.size(); ++i) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">const</span> NodeChild &amp;child = vec[i];</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (child.unichar_id == INVALID_UNICHAR_ID) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    edge_array[edge_cnt] =</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <span class="keyword">new</span> <a class="code" href="a00629.html#aeb799d029fdc3119ae22a47650a2ff77">TessLangModEdge</a>(cntxt, dawg, child.edge_ref, child.unichar_id);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (edge_array[edge_cnt] != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) edge_cnt++;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordflow">return</span> edge_cnt;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="ttc" id="a01279_html_a5084886f7cd9adefa73d03111d92f593"><div class="ttname"><a href="a01279.html#a5084886f7cd9adefa73d03111d92f593">tesseract::NodeChildVector</a></div><div class="ttdeci">GenericVector&lt; NodeChild &gt; NodeChildVector</div><div class="ttdef"><b>Definition:</b> <a href="a01061_source.html#l00067">dawg.h:67</a></div></div>
-<div class="ttc" id="a00629_html_aeb799d029fdc3119ae22a47650a2ff77"><div class="ttname"><a href="a00629.html#aeb799d029fdc3119ae22a47650a2ff77">tesseract::TessLangModEdge::TessLangModEdge</a></div><div class="ttdeci">TessLangModEdge(CubeRecoContext *cntxt, const Dawg *edge_array, EDGE_REF edge, int class_id)</div><div class="ttdef"><b>Definition:</b> <a href="a01022_source.html#l00041">tess_lang_mod_edge.cpp:41</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a633a1c6915324d903a7b8d85da7110ce"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * tesseract::TessLangModEdge::Description </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#ab5669c47ce83226077fbd3f8492e5bd2">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01022_source.html#l00069">69</a> of file <a class="el" href="a01022_source.html">tess_lang_mod_edge.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                         {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">char</span> *char_ptr = <span class="keyword">new</span> <span class="keywordtype">char</span>[256];</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (!char_ptr) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">char</span> dawg_str[256];</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">char</span> edge_str[32];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">if</span> (dawg_ == (Dawg *)<a class="code" href="a01023.html#a98e51b44460bd2ee6ff9f6daa36d6e31">DAWG_OOD</a>) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    strcpy(dawg_str, <span class="stringliteral">&quot;OOD&quot;</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dawg_ == (Dawg *)<a class="code" href="a01023.html#af631a733de822313c5960a48010bd9b1">DAWG_NUMBER</a>) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    strcpy(dawg_str, <span class="stringliteral">&quot;NUM&quot;</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dawg_-&gt;<a class="code" href="a00354.html#a1a9e92e426883774c82a688e32bf2434">permuter</a>() == <a class="code" href="a00811.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a>) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    strcpy(dawg_str, <span class="stringliteral">&quot;Main&quot;</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dawg_-&gt;<a class="code" href="a00354.html#a1a9e92e426883774c82a688e32bf2434">permuter</a>() == <a class="code" href="a00811.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca5e293e54fa687876197992131e779d54">USER_DAWG_PERM</a>) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    strcpy(dawg_str, <span class="stringliteral">&quot;User&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dawg_-&gt;<a class="code" href="a00354.html#a1a9e92e426883774c82a688e32bf2434">permuter</a>() == <a class="code" href="a00811.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca40f46ca413dfd53f7d7938c9fc305d04">DOC_DAWG_PERM</a>) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    strcpy(dawg_str, <span class="stringliteral">&quot;Doc&quot;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    strcpy(dawg_str, <span class="stringliteral">&quot;N/A&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  sprintf(edge_str, <span class="stringliteral">&quot;%d&quot;</span>, static_cast&lt;int&gt;(start_edge_));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01023.html#a680e3c8191626f4d0f9d67dba22e0adb">IsLeadingPuncEdge</a>(edge_mask_)) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    strcat(edge_str, <span class="stringliteral">&quot;-LP&quot;</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01023.html#a46f74755a19dec523c5eba795fd9b79d">IsTrailingPuncEdge</a>(edge_mask_)) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    strcat(edge_str, <span class="stringliteral">&quot;-TP&quot;</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  sprintf(char_ptr, <span class="stringliteral">&quot;%s(%s)%s, Wtd Dawg Cost=%d&quot;</span>,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;          dawg_str, edge_str, <a class="code" href="a00629.html#a52a6e1e833effcd67eca6e64b94f82d0">IsEOW</a>() ? <span class="stringliteral">&quot;-EOW-&quot;</span> : <span class="stringliteral">&quot;&quot;</span>, path_cost_);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">return</span> char_ptr;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="ttc" id="a00811_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca40f46ca413dfd53f7d7938c9fc305d04"><div class="ttname"><a href="a00811.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca40f46ca413dfd53f7d7938c9fc305d04">DOC_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00250">ratngs.h:250</a></div></div>
-<div class="ttc" id="a01023_html_a680e3c8191626f4d0f9d67dba22e0adb"><div class="ttname"><a href="a01023.html#a680e3c8191626f4d0f9d67dba22e0adb">IsLeadingPuncEdge</a></div><div class="ttdeci">#define IsLeadingPuncEdge(edge_mask)</div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00054">tess_lang_mod_edge.h:54</a></div></div>
-<div class="ttc" id="a01023_html_a46f74755a19dec523c5eba795fd9b79d"><div class="ttname"><a href="a01023.html#a46f74755a19dec523c5eba795fd9b79d">IsTrailingPuncEdge</a></div><div class="ttdeci">#define IsTrailingPuncEdge(edge_mask)</div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00056">tess_lang_mod_edge.h:56</a></div></div>
-<div class="ttc" id="a00811_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1"><div class="ttname"><a href="a00811.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca616bdbcaed7dd414823b303af5c8b1f1">SYSTEM_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00249">ratngs.h:249</a></div></div>
-<div class="ttc" id="a00629_html_a52a6e1e833effcd67eca6e64b94f82d0"><div class="ttname"><a href="a00629.html#a52a6e1e833effcd67eca6e64b94f82d0">tesseract::TessLangModEdge::IsEOW</a></div><div class="ttdeci">bool IsEOW() const </div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00093">tess_lang_mod_edge.h:93</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a01023_html_a98e51b44460bd2ee6ff9f6daa36d6e31"><div class="ttname"><a href="a01023.html#a98e51b44460bd2ee6ff9f6daa36d6e31">DAWG_OOD</a></div><div class="ttdeci">#define DAWG_OOD</div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00064">tess_lang_mod_edge.h:64</a></div></div>
-<div class="ttc" id="a00811_html_a18e2c75cefe9e5b78e8ce41aa5fa25bca5e293e54fa687876197992131e779d54"><div class="ttname"><a href="a00811.html#a18e2c75cefe9e5b78e8ce41aa5fa25bca5e293e54fa687876197992131e779d54">USER_DAWG_PERM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00811_source.html#l00251">ratngs.h:251</a></div></div>
-<div class="ttc" id="a01023_html_af631a733de822313c5960a48010bd9b1"><div class="ttname"><a href="a01023.html#af631a733de822313c5960a48010bd9b1">DAWG_NUMBER</a></div><div class="ttdeci">#define DAWG_NUMBER</div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00065">tess_lang_mod_edge.h:65</a></div></div>
-<div class="ttc" id="a00354_html_a1a9e92e426883774c82a688e32bf2434"><div class="ttname"><a href="a00354.html#a1a9e92e426883774c82a688e32bf2434">tesseract::Dawg::permuter</a></div><div class="ttdeci">PermuterType permuter() const </div><div class="ttdef"><b>Definition:</b> <a href="a01061_source.html#l00129">dawg.h:129</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a4ed7c476cfb97479db4dacda2fe8568b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> tesseract::TessLangModEdge::EdgeMask </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00100">100</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{ <span class="keywordflow">return</span> edge_mask_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a872d377b48f3fb4568da3ff0b0bf08ec"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a01279.html#aea2c6172b0ca77907e29cd018595b425">char_32</a>* tesseract::TessLangModEdge::EdgeString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#a4187741ff5fb8fced6176e83b16b928d">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00101">101</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;{ <span class="keywordflow">return</span> str_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a2d51be9e2c08d55de7a1c25335b87424"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> tesseract::TessLangModEdge::EndEdge </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00099">99</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{ <span class="keywordflow">return</span> end_edge_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a0f65636973a798f7202400f9cefd7bef"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00354.html">Dawg</a>* tesseract::TessLangModEdge::GetDawg </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00097">97</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{ <span class="keywordflow">return</span> dawg_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ae367533c2d2ce667cc357091042a9d1f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int tesseract::TessLangModEdge::Hash </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#a04c2882fb2e15c7fd38050d3e9fd0020">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00178">178</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                   {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(((start_edge_ | end_edge_) ^</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      ((reinterpret_cast&lt;uintptr_t&gt;(dawg_)))) ^</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      ((<span class="keywordtype">unsigned</span> int)edge_mask_) ^</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      class_id_);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a52a6e1e833effcd67eca6e64b94f82d0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::TessLangModEdge::IsEOW </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#ab107cb811bdbfda4fbd7b2af0bfb505e">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00093">93</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                            {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00629.html#a94dce03e7d18eed6a36a4f30c3502b6a">IsTerminal</a>() || (dawg_-&gt;<a class="code" href="a00354.html#a4b81cd795923fc21e8a0f9ea9a1f8626">end_of_word</a>(end_edge_) != 0));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
-<div class="ttc" id="a00354_html_a4b81cd795923fc21e8a0f9ea9a1f8626"><div class="ttname"><a href="a00354.html#a4b81cd795923fc21e8a0f9ea9a1f8626">tesseract::Dawg::end_of_word</a></div><div class="ttdeci">virtual bool end_of_word(EDGE_REF edge_ref) const =0</div></div>
-<div class="ttc" id="a00629_html_a94dce03e7d18eed6a36a4f30c3502b6a"><div class="ttname"><a href="a00629.html#a94dce03e7d18eed6a36a4f30c3502b6a">tesseract::TessLangModEdge::IsTerminal</a></div><div class="ttdeci">bool IsTerminal() const </div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00112">tess_lang_mod_edge.h:112</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a1b88e84c764ce800071e3d8b37d24693"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::TessLangModEdge::IsIdentical </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00460.html">LangModEdge</a> *&#160;</td>
-          <td class="paramname"><em>lang_mod_edge</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#ac1676b68bb4e4433fbe183d3f3322998">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00189">189</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                                            {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">return</span> (class_id_ ==</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        reinterpret_cast&lt;TessLangModEdge *&gt;(lang_mod_edge)-&gt;class_id_ &amp;&amp;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        str_ == reinterpret_cast&lt;TessLangModEdge *&gt;(lang_mod_edge)-&gt;str_ &amp;&amp;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        dawg_ == reinterpret_cast&lt;TessLangModEdge *&gt;(lang_mod_edge)-&gt;dawg_ &amp;&amp;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        start_edge_ ==</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        reinterpret_cast&lt;TessLangModEdge *&gt;(lang_mod_edge)-&gt;start_edge_ &amp;&amp;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        end_edge_ ==</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        reinterpret_cast&lt;TessLangModEdge *&gt;(lang_mod_edge)-&gt;end_edge_ &amp;&amp;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        edge_mask_ ==</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        reinterpret_cast&lt;TessLangModEdge *&gt;(lang_mod_edge)-&gt;edge_mask_);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a07bf4e741d906e20c3393b3ab9c3efa6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::TessLangModEdge::IsNumber </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00089">89</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                               {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> (dawg_ == (Dawg *)<a class="code" href="a01023.html#af631a733de822313c5960a48010bd9b1">DAWG_NUMBER</a>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
-<div class="ttc" id="a01023_html_af631a733de822313c5960a48010bd9b1"><div class="ttname"><a href="a01023.html#af631a733de822313c5960a48010bd9b1">DAWG_NUMBER</a></div><div class="ttdeci">#define DAWG_NUMBER</div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00065">tess_lang_mod_edge.h:65</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a4deba2b471003b762420549f2d3429f0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::TessLangModEdge::IsOOD </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#a24d556ce36d63307c9a7195a4da29e0c">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00085">85</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                            {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> (dawg_ == (Dawg *)<a class="code" href="a01023.html#a98e51b44460bd2ee6ff9f6daa36d6e31">DAWG_OOD</a>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
-<div class="ttc" id="a01023_html_a98e51b44460bd2ee6ff9f6daa36d6e31"><div class="ttname"><a href="a01023.html#a98e51b44460bd2ee6ff9f6daa36d6e31">DAWG_OOD</a></div><div class="ttdeci">#define DAWG_OOD</div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00064">tess_lang_mod_edge.h:64</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aa75488be8ff611064bebeb37e92b8f04"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::TessLangModEdge::IsRoot </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#acdcbac70bbb421c944e500da45563fe0">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00080">80</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                             {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> root_;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a94dce03e7d18eed6a36a4f30c3502b6a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool tesseract::TessLangModEdge::IsTerminal </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#a8041893a12c0805b34ea50c311460518">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00112">112</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                 {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00629.html#a4deba2b471003b762420549f2d3429f0">IsOOD</a>() || <a class="code" href="a00629.html#a07bf4e741d906e20c3393b3ab9c3efa6">IsNumber</a>() || <a class="code" href="a01023.html#a46f74755a19dec523c5eba795fd9b79d">IsTrailingPuncEdge</a>(start_edge_) ||</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            dawg_-&gt;<a class="code" href="a00354.html#ae68706a55d86637dec1da9615effb659">next_node</a>(end_edge_) == 0);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
-<div class="ttc" id="a01023_html_a46f74755a19dec523c5eba795fd9b79d"><div class="ttname"><a href="a01023.html#a46f74755a19dec523c5eba795fd9b79d">IsTrailingPuncEdge</a></div><div class="ttdeci">#define IsTrailingPuncEdge(edge_mask)</div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00056">tess_lang_mod_edge.h:56</a></div></div>
-<div class="ttc" id="a00629_html_a4deba2b471003b762420549f2d3429f0"><div class="ttname"><a href="a00629.html#a4deba2b471003b762420549f2d3429f0">tesseract::TessLangModEdge::IsOOD</a></div><div class="ttdeci">bool IsOOD() const </div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00085">tess_lang_mod_edge.h:85</a></div></div>
-<div class="ttc" id="a00629_html_a07bf4e741d906e20c3393b3ab9c3efa6"><div class="ttname"><a href="a00629.html#a07bf4e741d906e20c3393b3ab9c3efa6">tesseract::TessLangModEdge::IsNumber</a></div><div class="ttdeci">bool IsNumber() const </div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00089">tess_lang_mod_edge.h:89</a></div></div>
-<div class="ttc" id="a00354_html_ae68706a55d86637dec1da9615effb659"><div class="ttname"><a href="a00354.html#ae68706a55d86637dec1da9615effb659">tesseract::Dawg::next_node</a></div><div class="ttdeci">virtual NODE_REF next_node(EDGE_REF edge_ref) const =0</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aee915ede33083546da8f7297320ffcc2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::TessLangModEdge::PathCost </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#a970086075acc5f211b53825db505ee1d">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00103">103</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{ <span class="keywordflow">return</span> path_cost_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="afeb3f0bc4521df5410589e0aafd08db0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::TessLangModEdge::SetDawg </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00354.html">Dawg</a> *&#160;</td>
-          <td class="paramname"><em>dawg</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="a00629.html">TPOINT</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -928,12 +261,17 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01023_source.html#l00105">105</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{ dawg_ = dawg; }</div>
+<p>Definition at line <a class="el" href="a00732_source.html#l00055">55</a> of file <a class="el" href="a00732_source.html">blobs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                       {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> += other.<a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="a00629.html#a6d62f015b74612e43975e439a096039c">y</a> += other.<a class="code" href="a00629.html#a6d62f015b74612e43975e439a096039c">y</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="ttc" id="a00629_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00064">blobs.h:64</a></div></div>
+<div class="ttc" id="a00629_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00629.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00065">blobs.h:65</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a220cad69528d5fce2324caac791a32ee"></a>
+<a class="anchor" id="a627d77cda5c1a93bd9a79b089b2e1550"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -941,146 +279,10 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tesseract::TessLangModEdge::SetEdgeMask </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td>
-          <td class="paramname"><em>edge_mask</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00104">104</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{ edge_mask_ = edge_mask; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aed8e3503ce0b836c88f198e9e8f960de"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::TessLangModEdge::SetEndEdge </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td>
-          <td class="paramname"><em>edge_idx</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00107">107</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{ end_edge_ = edge_idx; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a64afc00f99afbcab63045f00fd6d5e8e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::TessLangModEdge::SetRoot </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>flag</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="a00460.html#a4dbb34a133e3ca37fb9c5190f2807848">tesseract::LangModEdge</a>.</p>
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00083">83</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{ root_ = flag; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aa1b2f096bd25dbf71a57c1763977a905"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::TessLangModEdge::SetSignalWgt </td>
+          <td class="memname">void TPOINT::operator/= </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>signal</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>wgt</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00144">144</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                            {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    CubeTuningParams *params =</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keyword">reinterpret_cast&lt;</span>CubeTuningParams *<span class="keyword">&gt;</span>(cntxt_-&gt;<a class="code" href="a00347.html#addac767dbdf8405f9026848a17561556">Params</a>());</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (params != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">switch</span> (signal) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;          params-&gt;SetOODWgt(wgt);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          params-&gt;SetNumWgt(wgt);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00347_html_addac767dbdf8405f9026848a17561556"><div class="ttname"><a href="a00347.html#addac767dbdf8405f9026848a17561556">tesseract::CubeRecoContext::Params</a></div><div class="ttdeci">TuningParams * Params() const </div><div class="ttdef"><b>Definition:</b> <a href="a00695_source.html#l00064">cube_reco_context.h:64</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a4ba6d2c02ad5801e5b52cc5c79e46023"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void tesseract::TessLangModEdge::SetStartEdge </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a>&#160;</td>
-          <td class="paramname"><em>edge_idx</em></td><td>)</td>
+          <td class="paramname"><em>divisor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1091,164 +293,55 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01023_source.html#l00106">106</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{ start_edge_ = edge_idx; }</div>
+<p>Definition at line <a class="el" href="a00732_source.html#l00059">59</a> of file <a class="el" href="a00732_source.html">blobs.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                               {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">x</a> /= divisor;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="a00629.html#a6d62f015b74612e43975e439a096039c">y</a> /= divisor;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
+<div class="ttc" id="a00629_html_aa9c98655c3a2a0437821e5a3d3418b0f"><div class="ttname"><a href="a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f">TPOINT::x</a></div><div class="ttdeci">inT16 x</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00064">blobs.h:64</a></div></div>
+<div class="ttc" id="a00629_html_a6d62f015b74612e43975e439a096039c"><div class="ttname"><a href="a00629.html#a6d62f015b74612e43975e439a096039c">TPOINT::y</a></div><div class="ttdeci">inT16 y</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00065">blobs.h:65</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="aacf5bc7245539bc429ac73d1d4a5097a"></a>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa9c98655c3a2a0437821e5a3d3418b0f"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int tesseract::TessLangModEdge::Signal </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>signal</em></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> TPOINT::x</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01023_source.html#l00161">161</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                         {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">switch</span> (signal) {</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="a00629.html#a4deba2b471003b762420549f2d3429f0">IsOOD</a>() ? <a class="code" href="a00992.html#a7d98e096ee6e9bda7836df456b6b25e6">MIN_PROB_COST</a> : 0;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="a00629.html#a07bf4e741d906e20c3393b3ab9c3efa6">IsNumber</a>() ? <a class="code" href="a00992.html#a7d98e096ee6e9bda7836df456b6b25e6">MIN_PROB_COST</a> : 0;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  }</div>
-<div class="ttc" id="a00629_html_a4deba2b471003b762420549f2d3429f0"><div class="ttname"><a href="a00629.html#a4deba2b471003b762420549f2d3429f0">tesseract::TessLangModEdge::IsOOD</a></div><div class="ttdeci">bool IsOOD() const </div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00085">tess_lang_mod_edge.h:85</a></div></div>
-<div class="ttc" id="a00629_html_a07bf4e741d906e20c3393b3ab9c3efa6"><div class="ttname"><a href="a00629.html#a07bf4e741d906e20c3393b3ab9c3efa6">tesseract::TessLangModEdge::IsNumber</a></div><div class="ttdeci">bool IsNumber() const </div><div class="ttdef"><b>Definition:</b> <a href="a01023_source.html#l00089">tess_lang_mod_edge.h:89</a></div></div>
-<div class="ttc" id="a00992_html_a7d98e096ee6e9bda7836df456b6b25e6"><div class="ttname"><a href="a00992.html#a7d98e096ee6e9bda7836df456b6b25e6">MIN_PROB_COST</a></div><div class="ttdeci">#define MIN_PROB_COST</div><div class="ttdef"><b>Definition:</b> <a href="a00992_source.html#l00026">cube_const.h:26</a></div></div>
-</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00732_source.html#l00064">64</a> of file <a class="el" href="a00732_source.html">blobs.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="aeb0c443e2db6fd0591c50dc04c543f0c"></a>
+<a class="anchor" id="a6d62f015b74612e43975e439a096039c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int tesseract::TessLangModEdge::SignalCnt </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="memname"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> TPOINT::y</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01023_source.html#l00120">120</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                               {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a16d9ff6f651b2038ed95d88e897affc7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double tesseract::TessLangModEdge::SignalWgt </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>signal</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="a00732_source.html#l00065">65</a> of file <a class="el" href="a00732_source.html">blobs.h</a>.</p>
 
-<p>Definition at line <a class="el" href="a01023_source.html#l00125">125</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                            {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    CubeTuningParams *params =</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">reinterpret_cast&lt;</span>CubeTuningParams *<span class="keyword">&gt;</span>(cntxt_-&gt;<a class="code" href="a00347.html#addac767dbdf8405f9026848a17561556">Params</a>());</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (params != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <span class="keywordflow">switch</span> (signal) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;          <span class="keywordflow">return</span> params-&gt;OODWgt();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;          <span class="keywordflow">return</span> params-&gt;NumWgt();</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;          <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00347_html_addac767dbdf8405f9026848a17561556"><div class="ttname"><a href="a00347.html#addac767dbdf8405f9026848a17561556">tesseract::CubeRecoContext::Params</a></div><div class="ttdeci">TuningParams * Params() const </div><div class="ttdef"><b>Definition:</b> <a href="a00695_source.html#l00064">cube_reco_context.h:64</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a5969c8d614bcb3c156e9c429705082ba"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01061.html#a178eb445f9820b58d062f0c988a6f54f">EDGE_REF</a> tesseract::TessLangModEdge::StartEdge </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01023_source.html#l00098">98</a> of file <a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{ <span class="keywordflow">return</span> start_edge_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>cube/<a class="el" href="a01023_source.html">tess_lang_mod_edge.h</a></li>
-<li>cube/<a class="el" href="a01022_source.html">tess_lang_mod_edge.cpp</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>ccstruct/<a class="el" href="a00732_source.html">blobs.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00629.html">TessLangModEdge</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:56 for Tesseract by
+    <li class="navelem"><a class="el" href="a00629.html">TPOINT</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:22 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

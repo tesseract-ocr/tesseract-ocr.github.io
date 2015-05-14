@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/pagesegmain.cpp File Reference</title>
+<title>Tesseract: ccmain/tessedit.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,51 +105,43 @@ $(document).ready(function(){initNavTree('a00714.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">pagesegmain.cpp File Reference</div>  </div>
+<div class="title">tessedit.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;unistd.h&gt;</code><br />
-<code>#include &quot;allheaders.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00749_source.html">blobbox.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00753_source.html">blread.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01112_source.html">colfind.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00701_source.html">equationdetect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01136_source.html">imagefind.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01138_source.html">linefind.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01140_source.html">makerow.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00709_source.html">osdetect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01160_source.html">tabvector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00737_source.html">tesseractclass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00739_source.html">tessvars.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01164_source.html">textord.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01168_source.html">tordmain.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01175_source.html">wordseg.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00704_source.html">pgedit.h</a>&quot;</code><br />
 </div>
 <p><a href="a00714_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a406162a590788c2b370a74745eb376f1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a406162a590788c2b370a74745eb376f1">tesseract::kDefaultResolution</a> = 300</td></tr>
-<tr class="memdesc:a406162a590788c2b370a74745eb376f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default resolution used if input in not believable.  <a href="#a406162a590788c2b370a74745eb376f1">More...</a><br /></td></tr>
-<tr class="separator:a406162a590788c2b370a74745eb376f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7c9e75ad6da750ae79b8dff6c8f30cd"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#ac7c9e75ad6da750ae79b8dff6c8f30cd">tesseract::kMaxCircleErosions</a> = 8</td></tr>
-<tr class="separator:ac7c9e75ad6da750ae79b8dff6c8f30cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace69a2060bddda087f147f5555fd400c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00376.html">ETEXT_DESC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00714.html#ace69a2060bddda087f147f5555fd400c">global_monitor</a></td></tr>
+<tr class="separator:ace69a2060bddda087f147f5555fd400c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ace69a2060bddda087f147f5555fd400c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00376.html">ETEXT_DESC</a>* global_monitor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00713_source.html#l00043">43</a> of file <a class="el" href="a00713_source.html">tessedit.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00714.html">pagesegmain.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00714.html">tessedit.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

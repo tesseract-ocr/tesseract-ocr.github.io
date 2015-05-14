@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00555.html','');});
+$(document).ready(function(){initNavTree('a00608.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,28 +106,25 @@ $(document).ready(function(){initNavTree('a00555.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::SearchColumn Member List</div>  </div>
+<div class="title">tesseract::TesseractCubeCombiner Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00555.html">tesseract::SearchColumn</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00608.html">tesseract::TesseractCubeCombiner</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00555.html#aeafc059d37b9d71c97efb1350787c97b">AddNode</a>(LangModEdge *edge, int score, SearchNode *parent, CubeRecoContext *cntxt)</td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00555.html#a9d1c018b6c1d473b483e11e330071589">BestNode</a>()</td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00555.html#abd8a49bd16e8d6ae3c3d92dd296ec8f6">ColIdx</a>() const </td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00555.html#a98a8b0188debb17fb07eea6ec96660d4">FreeHashTable</a>()</td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00555.html#a9a102cd86f201dee6abc1f90f5a5ef1e">NodeCount</a>() const </td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00555.html#a57c10b151d3565c752c80bbf225cb834">Nodes</a>() const </td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00555.html#af59882506aaf9becbfa8bfeff325a08f">Prune</a>()</td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00555.html#acd04ea89962103de43b999cdb9ad3f9b">SearchColumn</a>(int col_idx, int max_node_cnt)</td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00555.html#a5aa407d2e7553e6dab9cc7910b8a7807">Sort</a>()</td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00555.html#ad9a2868e392eaf136264de6e40787453">~SearchColumn</a>()</td><td class="entry"><a class="el" href="a00555.html">tesseract::SearchColumn</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00608.html#ab1690445d6285ffc5d59740f964acd50">CombineResults</a>(WERD_RES *tess_res, CubeObject *cube_obj)</td><td class="entry"><a class="el" href="a00608.html">tesseract::TesseractCubeCombiner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00608.html#aa1f466ab6c3aadf222554c55d1ec6d72">CombineResults</a>(WERD_RES *tess_res, CubeObject *cube_obj, WordAltList *alt_list)</td><td class="entry"><a class="el" href="a00608.html">tesseract::TesseractCubeCombiner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00608.html#af8c2aa49c97d12ecff81c4bf59290eaf">ComputeCombinerFeatures</a>(const string &amp;tess_res, int tess_confidence, CubeObject *cube_obj, WordAltList *cube_alt_list, vector&lt; double &gt; *features, bool *agreement)</td><td class="entry"><a class="el" href="a00608.html">tesseract::TesseractCubeCombiner</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00608.html#a3de63e254e7fcb9b11368aae332b7cbd">LoadCombinerNet</a>()</td><td class="entry"><a class="el" href="a00608.html">tesseract::TesseractCubeCombiner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00608.html#ae4632ce85e2828fc21a908638c362b80">TesseractCubeCombiner</a>(CubeRecoContext *cube_cntxt)</td><td class="entry"><a class="el" href="a00608.html">tesseract::TesseractCubeCombiner</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00608.html#ab252cffb22f7047e21236e07b6038362">ValidWord</a>(const string &amp;str)</td><td class="entry"><a class="el" href="a00608.html">tesseract::TesseractCubeCombiner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00608.html#aaa055f1f3d7f072c6b59fdf1abf2b32d">~TesseractCubeCombiner</a>()</td><td class="entry"><a class="el" href="a00608.html">tesseract::TesseractCubeCombiner</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:31 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

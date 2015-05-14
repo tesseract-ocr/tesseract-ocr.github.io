@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::ScoredFont Struct Reference</title>
+<title>Tesseract: tesseract::ShiroRekhaSplitter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,35 +106,141 @@ $(document).ready(function(){initNavTree('a00549.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="a01904.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="a01885.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::ScoredFont Struct Reference</div>  </div>
+<div class="title">tesseract::ShiroRekhaSplitter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00768_source.html">fontinfo.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a01110_source.html">devanagari_processing.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ab44f3b6e26668478841a5b8c45332601"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a> { <a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">NO_SPLIT</a> = 0, 
+<a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503">MINIMAL_SPLIT</a>, 
+<a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a8835ad2cdb469808d2aa1d4c8546426c">MAXIMAL_SPLIT</a>
+ }</td></tr>
+<tr class="separator:ab44f3b6e26668478841a5b8c45332601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21065237ba46f294f0e6b7fad2b124aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a21065237ba46f294f0e6b7fad2b124aa">ScoredFont</a> ()</td></tr>
-<tr class="separator:a21065237ba46f294f0e6b7fad2b124aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9d38b486e108861ae139963c27ed7d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#af9d38b486e108861ae139963c27ed7d5">ScoredFont</a> (int font_id, <a class="el" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a> classifier_score)</td></tr>
-<tr class="separator:af9d38b486e108861ae139963c27ed7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09814382ca566884157cceab9076fff2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a09814382ca566884157cceab9076fff2">ShiroRekhaSplitter</a> ()</td></tr>
+<tr class="separator:a09814382ca566884157cceab9076fff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018fa239787df6051031ac4627e442cb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a018fa239787df6051031ac4627e442cb">~ShiroRekhaSplitter</a> ()</td></tr>
+<tr class="separator:a018fa239787df6051031ac4627e442cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e6f7d06927c5742be73589cb3eefcf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a28e6f7d06927c5742be73589cb3eefcf">Split</a> (bool split_for_pageseg)</td></tr>
+<tr class="separator:a28e6f7d06927c5742be73589cb3eefcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfcc88be2d166b396f760d10ae29f18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a8bfcc88be2d166b396f760d10ae29f18">Clear</a> ()</td></tr>
+<tr class="separator:a8bfcc88be2d166b396f760d10ae29f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90146104b2c9a136fdd873036cb95230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a90146104b2c9a136fdd873036cb95230">RefreshSegmentationWithNewBlobs</a> (C_BLOB_LIST *new_blobs)</td></tr>
+<tr class="separator:a90146104b2c9a136fdd873036cb95230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a229080f42f90343d63344f6929aa5d92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a229080f42f90343d63344f6929aa5d92">HasDifferentSplitStrategies</a> () const </td></tr>
+<tr class="separator:a229080f42f90343d63344f6929aa5d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd88c63b5a9baa3895a58f33d2a7acd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#aacd88c63b5a9baa3895a58f33d2a7acd">set_segmentation_block_list</a> (BLOCK_LIST *block_list)</td></tr>
+<tr class="separator:aacd88c63b5a9baa3895a58f33d2a7acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a033b1bcb655e0d91c725ed01724363"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a4a033b1bcb655e0d91c725ed01724363">set_global_xheight</a> (int xheight)</td></tr>
+<tr class="separator:a4a033b1bcb655e0d91c725ed01724363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831a7f055639bd4f53e9f08c7e08668c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a831a7f055639bd4f53e9f08c7e08668c">set_perform_close</a> (bool perform)</td></tr>
+<tr class="separator:a831a7f055639bd4f53e9f08c7e08668c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6b17e8a21495616114a4e66b6887d4"><td class="memItemLeft" align="right" valign="top">Pix *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a7a6b17e8a21495616114a4e66b6887d4">splitted_image</a> ()</td></tr>
+<tr class="separator:a7a6b17e8a21495616114a4e66b6887d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef511d3502b7ea23cde356ef6454f064"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#aef511d3502b7ea23cde356ef6454f064">set_orig_pix</a> (Pix *pix)</td></tr>
+<tr class="separator:aef511d3502b7ea23cde356ef6454f064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4eb1fbd0c2d2cdc9a9645a5c9a8a873"><td class="memItemLeft" align="right" valign="top">Pix *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#ad4eb1fbd0c2d2cdc9a9645a5c9a8a873">orig_pix</a> ()</td></tr>
+<tr class="separator:ad4eb1fbd0c2d2cdc9a9645a5c9a8a873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacb26796a046bf732715e0345e877d5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#aacb26796a046bf732715e0345e877d5f">ocr_split_strategy</a> () const </td></tr>
+<tr class="separator:aacb26796a046bf732715e0345e877d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44bb8fab378ac431093b9f4f130cdd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#af44bb8fab378ac431093b9f4f130cdd0">set_ocr_split_strategy</a> (<a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a> strategy)</td></tr>
+<tr class="separator:af44bb8fab378ac431093b9f4f130cdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7bfde52e79bf593dd45e5caca76338e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#aa7bfde52e79bf593dd45e5caca76338e">pageseg_split_strategy</a> () const </td></tr>
+<tr class="separator:aa7bfde52e79bf593dd45e5caca76338e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0642f05ce987bf3ee444d48c643a5483"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a0642f05ce987bf3ee444d48c643a5483">set_pageseg_split_strategy</a> (<a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a> strategy)</td></tr>
+<tr class="separator:a0642f05ce987bf3ee444d48c643a5483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7674add82837279c8e74a0522b6837fd"><td class="memItemLeft" align="right" valign="top">BLOCK_LIST *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a7674add82837279c8e74a0522b6837fd">segmentation_block_list</a> ()</td></tr>
+<tr class="separator:a7674add82837279c8e74a0522b6837fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60692d8c95f1ed1505adbd2554ece53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#ac60692d8c95f1ed1505adbd2554ece53">DumpDebugImage</a> (const char *filename) const </td></tr>
+<tr class="separator:ac60692d8c95f1ed1505adbd2554ece53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aacc1e7844b50c1a84b863f1453cb7d38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#aacc1e7844b50c1a84b863f1453cb7d38">fontinfo_id</a></td></tr>
-<tr class="separator:aacc1e7844b50c1a84b863f1453cb7d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad03e205dba387002d5248f1307833587"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#ad03e205dba387002d5248f1307833587">score</a></td></tr>
-<tr class="separator:ad03e205dba387002d5248f1307833587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a99f3f8f96a8b7bfe08ce2b19c8052a6c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#a99f3f8f96a8b7bfe08ce2b19c8052a6c">GetModeHeight</a> (Pix *pix)</td></tr>
+<tr class="separator:a99f3f8f96a8b7bfe08ce2b19c8052a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ac973904ee08ed3d33aa15afc9dc2a903"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">kUnspecifiedXheight</a> = -1</td></tr>
+<tr class="separator:ac973904ee08ed3d33aa15afc9dc2a903"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00768_source.html#l00038">38</a> of file <a class="el" href="a00768_source.html">fontinfo.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a21065237ba46f294f0e6b7fad2b124aa"></a>
+<p>Definition at line <a class="el" href="a01110_source.html#l00065">65</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="ab44f3b6e26668478841a5b8c45332601"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">tesseract::ShiroRekhaSplitter::SplitStrategy</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a"></a>NO_SPLIT&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503"></a>MINIMAL_SPLIT&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab44f3b6e26668478841a5b8c45332601a8835ad2cdb469808d2aa1d4c8546426c"></a>MAXIMAL_SPLIT&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00067">67</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                     {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">NO_SPLIT</a> = 0,   <span class="comment">// No splitting is performed for the phase.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503">MINIMAL_SPLIT</a>,  <span class="comment">// Blobs are split minimally.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a8835ad2cdb469808d2aa1d4c8546426c">MAXIMAL_SPLIT</a>   <span class="comment">// Blobs are split maximally.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  };</div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601a8835ad2cdb469808d2aa1d4c8546426c"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601a8835ad2cdb469808d2aa1d4c8546426c">tesseract::ShiroRekhaSplitter::MAXIMAL_SPLIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00070">devanagari_processing.h:70</a></div></div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">tesseract::ShiroRekhaSplitter::NO_SPLIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00068">devanagari_processing.h:68</a></div></div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503">tesseract::ShiroRekhaSplitter::MINIMAL_SPLIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00069">devanagari_processing.h:69</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a09814382ca566884157cceab9076fff2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tesseract::ShiroRekhaSplitter::ShiroRekhaSplitter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01109_source.html#l00040">40</a> of file <a class="el" href="a01109_source.html">devanagari_processing.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                       {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  orig_pix_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  segmentation_block_list_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  splitted_image_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  global_xheight_ = <a class="code" href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">kUnspecifiedXheight</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  perform_close_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  debug_image_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  pageseg_split_strategy_ = <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">NO_SPLIT</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  ocr_split_strategy_ = <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">NO_SPLIT</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">tesseract::ShiroRekhaSplitter::NO_SPLIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00068">devanagari_processing.h:68</a></div></div>
+<div class="ttc" id="a00549_html_ac973904ee08ed3d33aa15afc9dc2a903"><div class="ttname"><a href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">tesseract::ShiroRekhaSplitter::kUnspecifiedXheight</a></div><div class="ttdeci">static const int kUnspecifiedXheight</div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00102">devanagari_processing.h:102</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a018fa239787df6051031ac4627e442cb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -142,7 +248,187 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::ScoredFont::ScoredFont </td>
+          <td class="memname">tesseract::ShiroRekhaSplitter::~ShiroRekhaSplitter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01109_source.html#l00051">51</a> of file <a class="el" href="a01109_source.html">devanagari_processing.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a00549.html#a8bfcc88be2d166b396f760d10ae29f18">Clear</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="a00549_html_a8bfcc88be2d166b396f760d10ae29f18"><div class="ttname"><a href="a00549.html#a8bfcc88be2d166b396f760d10ae29f18">tesseract::ShiroRekhaSplitter::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> <a href="a01109_source.html#l00055">devanagari_processing.cpp:55</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a8bfcc88be2d166b396f760d10ae29f18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::Clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01109_source.html#l00055">55</a> of file <a class="el" href="a01109_source.html">devanagari_processing.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                               {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  pixDestroy(&amp;orig_pix_);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  pixDestroy(&amp;splitted_image_);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  pageseg_split_strategy_ = <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">NO_SPLIT</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  ocr_split_strategy_ = <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">NO_SPLIT</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  pixDestroy(&amp;debug_image_);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  segmentation_block_list_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  global_xheight_ = <a class="code" href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">kUnspecifiedXheight</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  perform_close_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">tesseract::ShiroRekhaSplitter::NO_SPLIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00068">devanagari_processing.h:68</a></div></div>
+<div class="ttc" id="a00549_html_ac973904ee08ed3d33aa15afc9dc2a903"><div class="ttname"><a href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">tesseract::ShiroRekhaSplitter::kUnspecifiedXheight</a></div><div class="ttdeci">static const int kUnspecifiedXheight</div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00102">devanagari_processing.h:102</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac60692d8c95f1ed1505adbd2554ece53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::DumpDebugImage </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01109_source.html#l00067">67</a> of file <a class="el" href="a01109_source.html">devanagari_processing.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  pixWrite(<a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>, debug_image_, IFF_PNG);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="ttc" id="a01268_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a99f3f8f96a8b7bfe08ce2b19c8052a6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::ShiroRekhaSplitter::GetModeHeight </td>
+          <td>(</td>
+          <td class="paramtype">Pix *&#160;</td>
+          <td class="paramname"><em>pix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01109_source.html#l00412">412</a> of file <a class="el" href="a01109_source.html">devanagari_processing.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                                              {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  Boxa* boxa = pixConnComp(pix, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 8);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  <a class="code" href="a00560.html">STATS</a> heights(0, pixGetHeight(pix));</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  heights.clear();</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; boxaGetCount(boxa); ++i) {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    Box* box = boxaGetBox(boxa, i, L_CLONE);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">if</span> (box-&gt;h &gt;= 3 || box-&gt;w &gt;= 3) {</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;      heights.add(box-&gt;h, 1);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    }</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    boxDestroy(&amp;box);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;  }</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;  boxaDestroy(&amp;boxa);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  <span class="keywordflow">return</span> heights.mode();</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;}</div>
+<div class="ttc" id="a00560_html"><div class="ttname"><a href="a00560.html">STATS</a></div><div class="ttdef"><b>Definition:</b> <a href="a00802_source.html#l00033">statistc.h:33</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a229080f42f90343d63344f6929aa5d92"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tesseract::ShiroRekhaSplitter::HasDifferentSplitStrategies </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00091">91</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                           {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> pageseg_split_strategy_ != ocr_split_strategy_;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aacb26796a046bf732715e0345e877d5f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a> tesseract::ShiroRekhaSplitter::ocr_split_strategy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00128">128</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                           {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> ocr_split_strategy_;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad4eb1fbd0c2d2cdc9a9645a5c9a8a873"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Pix* tesseract::ShiroRekhaSplitter::orig_pix </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -155,14 +441,14 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00768_source.html#l00039">39</a> of file <a class="el" href="a00768_source.html">fontinfo.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;: <a class="code" href="a00549.html#aacc1e7844b50c1a84b863f1453cb7d38">fontinfo_id</a>(-1), <a class="code" href="a00549.html#ad03e205dba387002d5248f1307833587">score</a>(0) {}</div>
-<div class="ttc" id="a00549_html_aacc1e7844b50c1a84b863f1453cb7d38"><div class="ttname"><a href="a00549.html#aacc1e7844b50c1a84b863f1453cb7d38">tesseract::ScoredFont::fontinfo_id</a></div><div class="ttdeci">inT32 fontinfo_id</div><div class="ttdef"><b>Definition:</b> <a href="a00768_source.html#l00045">fontinfo.h:45</a></div></div>
-<div class="ttc" id="a00549_html_ad03e205dba387002d5248f1307833587"><div class="ttname"><a href="a00549.html#ad03e205dba387002d5248f1307833587">tesseract::ScoredFont::score</a></div><div class="ttdeci">uinT16 score</div><div class="ttdef"><b>Definition:</b> <a href="a00768_source.html#l00047">fontinfo.h:47</a></div></div>
+<p>Definition at line <a class="el" href="a01110_source.html#l00124">124</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                  {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> orig_pix_;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="af9d38b486e108861ae139963c27ed7d5"></a>
+<a class="anchor" id="aa7bfde52e79bf593dd45e5caca76338e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -170,21 +456,10 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::ScoredFont::ScoredFont </td>
+          <td class="memname"><a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a> tesseract::ShiroRekhaSplitter::pageseg_split_strategy </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>font_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a>&#160;</td>
-          <td class="paramname"><em>classifier_score</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -194,52 +469,458 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00768_source.html#l00040">40</a> of file <a class="el" href="a00768_source.html">fontinfo.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      : <a class="code" href="a00549.html#aacc1e7844b50c1a84b863f1453cb7d38">fontinfo_id</a>(font_id), <a class="code" href="a00549.html#ad03e205dba387002d5248f1307833587">score</a>(classifier_score) {}</div>
-<div class="ttc" id="a00549_html_aacc1e7844b50c1a84b863f1453cb7d38"><div class="ttname"><a href="a00549.html#aacc1e7844b50c1a84b863f1453cb7d38">tesseract::ScoredFont::fontinfo_id</a></div><div class="ttdeci">inT32 fontinfo_id</div><div class="ttdef"><b>Definition:</b> <a href="a00768_source.html#l00045">fontinfo.h:45</a></div></div>
-<div class="ttc" id="a00549_html_ad03e205dba387002d5248f1307833587"><div class="ttname"><a href="a00549.html#ad03e205dba387002d5248f1307833587">tesseract::ScoredFont::score</a></div><div class="ttdeci">uinT16 score</div><div class="ttdef"><b>Definition:</b> <a href="a00768_source.html#l00047">fontinfo.h:47</a></div></div>
+<p>Definition at line <a class="el" href="a01110_source.html#l00136">136</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                               {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> pageseg_split_strategy_;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a90146104b2c9a136fdd873036cb95230"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::RefreshSegmentationWithNewBlobs </td>
+          <td>(</td>
+          <td class="paramtype">C_BLOB_LIST *&#160;</td>
+          <td class="paramname"><em>new_blobs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01109_source.html#l00358">358</a> of file <a class="el" href="a01109_source.html">devanagari_processing.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                            {</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  <span class="comment">// The segmentation block list must have been specified.</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(segmentation_block_list_);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01109.html#ad6b4d3ded1df0799766c874662d63050">devanagari_split_debuglevel</a> &gt; 0) {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Before refreshing blobs:\n&quot;</span>);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="a00764.html#a7f48b20c8959347726c816b94b3c47f5">PrintSegmentationStats</a>(segmentation_block_list_);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;New Blobs found: %d\n&quot;</span>, new_blobs-&gt;length());</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  C_BLOB_LIST not_found_blobs;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  <a class="code" href="a00764.html#af0a18fdb19dd9d4ebe9e73b864c2fad5">RefreshWordBlobsFromNewBlobs</a>(segmentation_block_list_,</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                               new_blobs,</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                               ((<a class="code" href="a01109.html#a9687e850f464694be20c21d93e891801">devanagari_split_debugimage</a> &amp;&amp; debug_image_) ?</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                                &amp;not_found_blobs : <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>));</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01109.html#ad6b4d3ded1df0799766c874662d63050">devanagari_split_debuglevel</a> &gt; 0) {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;After refreshing blobs:\n&quot;</span>);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="a00764.html#a7f48b20c8959347726c816b94b3c47f5">PrintSegmentationStats</a>(segmentation_block_list_);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  }</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01109.html#a9687e850f464694be20c21d93e891801">devanagari_split_debugimage</a> &amp;&amp; debug_image_) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="comment">// Plot out the original blobs for which no match was found in the new</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">// all_blobs list.</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    C_BLOB_IT not_found_it(&amp;not_found_blobs);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">for</span> (not_found_it.mark_cycle_pt(); !not_found_it.cycled_list();</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;         not_found_it.forward()) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;      <a class="code" href="a00289.html">C_BLOB</a>* not_found = not_found_it.data();</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;      <a class="code" href="a00591.html">TBOX</a> not_found_box = not_found-&gt;<a class="code" href="a00289.html#a15c1a593d84585c26aebd7a7976f0283">bounding_box</a>();</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;      Box* box_to_plot = GetBoxForTBOX(not_found_box);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;      pixRenderBoxArb(debug_image_, box_to_plot, 1, 255, 0, 255);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;      boxDestroy(&amp;box_to_plot);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="comment">// Plot out the blobs unused from all blobs.</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    C_BLOB_IT all_blobs_it(new_blobs);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordflow">for</span> (all_blobs_it.mark_cycle_pt(); !all_blobs_it.cycled_list();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;         all_blobs_it.forward()) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;      <a class="code" href="a00289.html">C_BLOB</a>* a_blob = all_blobs_it.data();</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;      Box* box_to_plot = GetBoxForTBOX(a_blob-&gt;<a class="code" href="a00289.html#a15c1a593d84585c26aebd7a7976f0283">bounding_box</a>());</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;      pixRenderBoxArb(debug_image_, box_to_plot, 3, 0, 127, 0);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;      boxDestroy(&amp;box_to_plot);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  }</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a01109_html_ad6b4d3ded1df0799766c874662d63050"><div class="ttname"><a href="a01109.html#ad6b4d3ded1df0799766c874662d63050">devanagari_split_debuglevel</a></div><div class="ttdeci">int devanagari_split_debuglevel</div><div class="ttdef"><b>Definition:</b> <a href="a01109_source.html#l00033">devanagari_processing.cpp:33</a></div></div>
+<div class="ttc" id="a00764_html_a7f48b20c8959347726c816b94b3c47f5"><div class="ttname"><a href="a00764.html#a7f48b20c8959347726c816b94b3c47f5">PrintSegmentationStats</a></div><div class="ttdeci">void PrintSegmentationStats(BLOCK_LIST *block_list)</div><div class="ttdef"><b>Definition:</b> <a href="a00764_source.html#l00399">ocrblock.cpp:399</a></div></div>
+<div class="ttc" id="a01109_html_a9687e850f464694be20c21d93e891801"><div class="ttname"><a href="a01109.html#a9687e850f464694be20c21d93e891801">devanagari_split_debugimage</a></div><div class="ttdeci">bool devanagari_split_debugimage</div><div class="ttdef"><b>Definition:</b> <a href="a01109_source.html#l00036">devanagari_processing.cpp:36</a></div></div>
+<div class="ttc" id="a00764_html_af0a18fdb19dd9d4ebe9e73b864c2fad5"><div class="ttname"><a href="a00764.html#af0a18fdb19dd9d4ebe9e73b864c2fad5">RefreshWordBlobsFromNewBlobs</a></div><div class="ttdeci">void RefreshWordBlobsFromNewBlobs(BLOCK_LIST *block_list, C_BLOB_LIST *new_blobs, C_BLOB_LIST *not_found_blobs)</div><div class="ttdef"><b>Definition:</b> <a href="a00764_source.html#l00467">ocrblock.cpp:467</a></div></div>
+<div class="ttc" id="a00289_html_a15c1a593d84585c26aebd7a7976f0283"><div class="ttname"><a href="a00289.html#a15c1a593d84585c26aebd7a7976f0283">C_BLOB::bounding_box</a></div><div class="ttdeci">TBOX bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00803_source.html#l00250">stepblob.cpp:250</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00289_html"><div class="ttname"><a href="a00289.html">C_BLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00804_source.html#l00030">stepblob.h:30</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a7674add82837279c8e74a0522b6837fd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLOCK_LIST* tesseract::ShiroRekhaSplitter::segmentation_block_list </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00144">144</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                        {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> segmentation_block_list_;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4a033b1bcb655e0d91c725ed01724363"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::set_global_xheight </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xheight</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00104">104</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                       {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    global_xheight_ = xheight;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af44bb8fab378ac431093b9f4f130cdd0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::set_ocr_split_strategy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a>&#160;</td>
+          <td class="paramname"><em>strategy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00132">132</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                                      {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    ocr_split_strategy_ = strategy;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aef511d3502b7ea23cde356ef6454f064"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::set_orig_pix </td>
+          <td>(</td>
+          <td class="paramtype">Pix *&#160;</td>
+          <td class="paramname"><em>pix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01109_source.html#l00072">72</a> of file <a class="el" href="a01109_source.html">devanagari_processing.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                              {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (orig_pix_) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    pixDestroy(&amp;orig_pix_);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  orig_pix_ = pixClone(pix);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0642f05ce987bf3ee444d48c643a5483"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::set_pageseg_split_strategy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a>&#160;</td>
+          <td class="paramname"><em>strategy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00140">140</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                                          {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    pageseg_split_strategy_ = strategy;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a831a7f055639bd4f53e9f08c7e08668c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::set_perform_close </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>perform</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00108">108</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                       {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    perform_close_ = perform;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aacd88c63b5a9baa3895a58f33d2a7acd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::ShiroRekhaSplitter::set_segmentation_block_list </td>
+          <td>(</td>
+          <td class="paramtype">BLOCK_LIST *&#160;</td>
+          <td class="paramname"><em>block_list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00098">98</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                           {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    segmentation_block_list_ = block_list;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a28e6f7d06927c5742be73589cb3eefcf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tesseract::ShiroRekhaSplitter::Split </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>split_for_pageseg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01109_source.html#l00084">84</a> of file <a class="el" href="a01109_source.html">devanagari_processing.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                     {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601">SplitStrategy</a> split_strategy = split_for_pageseg ? pageseg_split_strategy_ :</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      ocr_split_strategy_;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">if</span> (split_strategy == <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">NO_SPLIT</a>) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;  <span class="comment">// Nothing to do.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(split_strategy == <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503">MINIMAL_SPLIT</a> ||</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;              split_strategy == <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601a8835ad2cdb469808d2aa1d4c8546426c">MAXIMAL_SPLIT</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(orig_pix_);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01109.html#ad6b4d3ded1df0799766c874662d63050">devanagari_split_debuglevel</a> &gt; 0) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Splitting shiro-rekha ...\n&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Split strategy = %s\n&quot;</span>,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            split_strategy == <a class="code" href="a00549.html#ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503">MINIMAL_SPLIT</a> ? <span class="stringliteral">&quot;Minimal&quot;</span> : <span class="stringliteral">&quot;Maximal&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Initial pageseg available = %s\n&quot;</span>,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            segmentation_block_list_ ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// Create a copy of original image to store the splitting output.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  pixDestroy(&amp;splitted_image_);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  splitted_image_ = pixCopy(<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, orig_pix_);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// Initialize debug image if required.</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01109.html#a9687e850f464694be20c21d93e891801">devanagari_split_debugimage</a>) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    pixDestroy(&amp;debug_image_);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    debug_image_ = pixConvertTo32(orig_pix_);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// Determine all connected components in the input image. A close operation</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// may be required prior to this, depending on the current settings.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  Pix* pix_for_ccs = pixClone(orig_pix_);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordflow">if</span> (perform_close_ &amp;&amp; global_xheight_ != <a class="code" href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">kUnspecifiedXheight</a> &amp;&amp;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      !segmentation_block_list_) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a01109.html#ad6b4d3ded1df0799766c874662d63050">devanagari_split_debuglevel</a> &gt; 0) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Performing a global close operation..\n&quot;</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// A global measure is available for xheight, but no local information</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// exists.</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    pixDestroy(&amp;pix_for_ccs);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    pix_for_ccs = pixCopy(<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, orig_pix_);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    PerformClose(pix_for_ccs, global_xheight_);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  Pixa* ccs;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  Boxa* tmp_boxa = pixConnComp(pix_for_ccs, &amp;ccs, 8);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  boxaDestroy(&amp;tmp_boxa);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  pixDestroy(&amp;pix_for_ccs);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="comment">// Iterate over all connected components. Get their bounding boxes and clip</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="comment">// out the image regions corresponding to these boxes from the original image.</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="comment">// Conditionally run splitting on each of them.</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  Boxa* regions_to_clear = boxaCreate(0);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pixaGetCount(ccs); ++i) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    Box* box = ccs-&gt;boxa-&gt;box[i];</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    Pix* word_pix = pixClipRectangle(orig_pix_, box, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(word_pix);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">int</span> xheight = GetXheightForCC(box);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">if</span> (xheight == <a class="code" href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">kUnspecifiedXheight</a> &amp;&amp; segmentation_block_list_ &amp;&amp;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="a01109.html#a9687e850f464694be20c21d93e891801">devanagari_split_debugimage</a>) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      pixRenderBoxArb(debug_image_, box, 1, 255, 0, 0);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// If some xheight measure is available, attempt to pre-eliminate small</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// blobs from the shiro-rekha process. This is primarily to save the CCs</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// corresponding to punctuation marks/small dots etc which are part of</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// larger graphemes.</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (xheight == <a class="code" href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">kUnspecifiedXheight</a> ||</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        (box-&gt;w &gt; xheight / 3 &amp;&amp; box-&gt;h &gt; xheight / 2)) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      SplitWordShiroRekha(split_strategy, word_pix, xheight,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                          box-&gt;x, box-&gt;y, regions_to_clear);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="a01109.html#ad6b4d3ded1df0799766c874662d63050">devanagari_split_debuglevel</a> &gt; 0) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;CC dropped from splitting: %d,%d (%d, %d)\n&quot;</span>,</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;              box-&gt;x, box-&gt;y, box-&gt;w, box-&gt;h);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    pixDestroy(&amp;word_pix);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="comment">// Actually clear the boxes now.</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; boxaGetCount(regions_to_clear); ++i) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    Box* box = boxaGetBox(regions_to_clear, i, L_CLONE);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    pixClearInRect(splitted_image_, box);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    boxDestroy(&amp;box);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  boxaDestroy(&amp;regions_to_clear);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  pixaDestroy(&amp;ccs);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01109.html#a9687e850f464694be20c21d93e891801">devanagari_split_debugimage</a>) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="a00549.html#ac60692d8c95f1ed1505adbd2554ece53">DumpDebugImage</a>(split_for_pageseg ? <span class="stringliteral">&quot;pageseg_split_debug.png&quot;</span> :</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                   <span class="stringliteral">&quot;ocr_split_debug.png&quot;</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601">tesseract::ShiroRekhaSplitter::SplitStrategy</a></div><div class="ttdeci">SplitStrategy</div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00067">devanagari_processing.h:67</a></div></div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601a8835ad2cdb469808d2aa1d4c8546426c"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601a8835ad2cdb469808d2aa1d4c8546426c">tesseract::ShiroRekhaSplitter::MAXIMAL_SPLIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00070">devanagari_processing.h:70</a></div></div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601a1ca815839c8e78def404b329ba79697a">tesseract::ShiroRekhaSplitter::NO_SPLIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00068">devanagari_processing.h:68</a></div></div>
+<div class="ttc" id="a00549_html_ac60692d8c95f1ed1505adbd2554ece53"><div class="ttname"><a href="a00549.html#ac60692d8c95f1ed1505adbd2554ece53">tesseract::ShiroRekhaSplitter::DumpDebugImage</a></div><div class="ttdeci">void DumpDebugImage(const char *filename) const </div><div class="ttdef"><b>Definition:</b> <a href="a01109_source.html#l00067">devanagari_processing.cpp:67</a></div></div>
+<div class="ttc" id="a01109_html_ad6b4d3ded1df0799766c874662d63050"><div class="ttname"><a href="a01109.html#ad6b4d3ded1df0799766c874662d63050">devanagari_split_debuglevel</a></div><div class="ttdeci">int devanagari_split_debuglevel</div><div class="ttdef"><b>Definition:</b> <a href="a01109_source.html#l00033">devanagari_processing.cpp:33</a></div></div>
+<div class="ttc" id="a01109_html_a9687e850f464694be20c21d93e891801"><div class="ttname"><a href="a01109.html#a9687e850f464694be20c21d93e891801">devanagari_split_debugimage</a></div><div class="ttdeci">bool devanagari_split_debugimage</div><div class="ttdef"><b>Definition:</b> <a href="a01109_source.html#l00036">devanagari_processing.cpp:36</a></div></div>
+<div class="ttc" id="a00549_html_ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503"><div class="ttname"><a href="a00549.html#ab44f3b6e26668478841a5b8c45332601abb20813b04f412bb19593e228c343503">tesseract::ShiroRekhaSplitter::MINIMAL_SPLIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00069">devanagari_processing.h:69</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00549_html_ac973904ee08ed3d33aa15afc9dc2a903"><div class="ttname"><a href="a00549.html#ac973904ee08ed3d33aa15afc9dc2a903">tesseract::ShiroRekhaSplitter::kUnspecifiedXheight</a></div><div class="ttdeci">static const int kUnspecifiedXheight</div><div class="ttdef"><b>Definition:</b> <a href="a01110_source.html#l00102">devanagari_processing.h:102</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a7a6b17e8a21495616114a4e66b6887d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Pix* tesseract::ShiroRekhaSplitter::splitted_image </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01110_source.html#l00115">115</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> splitted_image_;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aacc1e7844b50c1a84b863f1453cb7d38"></a>
+<a class="anchor" id="ac973904ee08ed3d33aa15afc9dc2a903"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> tesseract::ScoredFont::fontinfo_id</td>
+          <td class="memname">const int tesseract::ShiroRekhaSplitter::kUnspecifiedXheight = -1</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00768_source.html#l00045">45</a> of file <a class="el" href="a00768_source.html">fontinfo.h</a>.</p>
+<p>Definition at line <a class="el" href="a01110_source.html#l00102">102</a> of file <a class="el" href="a01110_source.html">devanagari_processing.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad03e205dba387002d5248f1307833587"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00854.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a> tesseract::ScoredFont::score</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00768_source.html#l00047">47</a> of file <a class="el" href="a00768_source.html">fontinfo.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>ccstruct/<a class="el" href="a00768_source.html">fontinfo.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>textord/<a class="el" href="a01110_source.html">devanagari_processing.h</a></li>
+<li>textord/<a class="el" href="a01109_source.html">devanagari_processing.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00549.html">ScoredFont</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00549.html">ShiroRekhaSplitter</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:28 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

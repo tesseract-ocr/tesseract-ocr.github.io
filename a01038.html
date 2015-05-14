@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cutil/callcpp.h File Reference</title>
+<title>Tesseract: cutil/emalloc.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,605 +105,33 @@ $(document).ready(function(){initNavTree('a01038.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">callcpp.h File Reference</div>  </div>
+<div class="title">emalloc.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;assert.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00854_source.html">host.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00885_source.html">unichar.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01039_source.html">emalloc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01035_source.html">danerror.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div>
 <p><a href="a01038_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a17bc059e437838f094a5a25c2d5ab88f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88f">C_COL</a> { <br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fac1e9bce8242f443c54c7405223d616cd">Black</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab548046646b36c12aa6ba841de500094">White</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fad3163c1fcda01965b692ec2c3122b743">Red</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fabf28513245738599d13e3ce36bd16c82">Yellow</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fad0784a3f969fe736e8b271a5a161d106">Green</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab0d4738f9c7f12049e52aa4e868bdc8b">Cyan</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88faf5e09dd1da4088464f264b7a3118bff8">Blue</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab5059a620e2c7dc57556b1e275c2f9bc">Magenta</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab3c6aec12b4d5e7cdb91281dbf6c27d0">Aquamarine</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa644433b52df481deeef66a6fe3deb037">Dark_SLATE_BLUE</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9fa6d53c45b7fb6db47d3fc2af0b9c39">Light_BLUE</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa3fa96111d2529661c60184c366d466f5">Medium_BLUE</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab632cd7b67d93f20c7f27d0ce4d7c675">Midnight_BLUE</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa84ee6eb9d9a531c99457f1b622ec584e">Navy_BLUE</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa7899ac7335c28b6b66c9b870693feaa1">Sky_BLUE</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa71bcdd9057dc4f0f22045ebf5906220e">Slate_BLUE</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa47e8c10037e9b9adf3c265437656a1b5">Steel_BLUE</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa78210c1cfb1a74e4146a438ee328c907">Coral</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa99c15c8b7e6b048d571778c871622d38">Brown</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab9761f86de80e7d79de75e618ad2e1ba">Sandy_BROWN</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa4fe767077a795c957f76faf02f3ca765">Gold</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa6240b68cc483b6d44a9383204bed1f91">GoldENROD</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fae77a7ac04fab8876043f2118549fb46b">Dark_GREEN</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88facdf3b10fe18df6090ab217b33613f331">Dark_OLIVE_GREEN</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa284e8c0fab8e99e4601d53fb4d79b1b7">Forest_GREEN</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa40abb9e8826be5426194cbf745a852ba">Lime_GREEN</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa5c98c19f7558c42bc632a868cbe5b2d1">Pale_GREEN</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fafd28bd110d78a17b17dd8391f8cffc24">Yellow_GREEN</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa69c24a813480351b86a26858981187c3">Light_GREY</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88faccfaaf062be00983f7a77411bcf657ab">Dark_SLATE_GREY</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9f53c94a240db40d0c3870cefad1317e">Dim_GREY</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa068417ac670c285e34e6e63a898e129b">Grey</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab6fc7f99e35efc06ce9b29c62295d8ab">Khaki</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fafd16b2466230f91a7376ffc13d6182d6">Maroon</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa96c2b9b8ecc4d6cb96f43dcd27947bb4">Orange</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa2a4b392d52ff5f8074a7ddded3984e75">Orchid</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa500fa51afdd48f15c4176c234835c182">Pink</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9c05314e65fbb3aa4605f979158358b8">Plum</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fac3627e6c55b1aef1f2049e08e5d6ee49">Indian_RED</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab8329ea44434adc7fa432e0a5007043a">Orange_RED</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88facbba1e61e869f875e62cb782096c3110">Violet_RED</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa4b28c0d9a9aa5872f8509d9b33b10fc4">Salmon</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab492a96cd2b9bb37c81b8451a42889d9">Tan</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa8540ca1912a4f869948072ff13f53c84">Turqoise</a>, 
-<br />
-&#160;&#160;<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa7f98b50ab087b92e463d9c87cee54671">Dark_TURQUOISE</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa94a3ee3884eb2af70a2d764a4f06e79d">Violet</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa47c15e444694b07b9596bae2f383482d">Wheat</a>, 
-<a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa10fd33e926d9f142cbaa1515b0fd1097">Green_YELLOW</a>
-<br />
- }</td></tr>
-<tr class="separator:a17bc059e437838f094a5a25c2d5ab88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a21679e7fec2d69db23107348fa13c153"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a21679e7fec2d69db23107348fa13c153">cprintf</a> (const char *format,...)</td></tr>
-<tr class="separator:a21679e7fec2d69db23107348fa13c153"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34ec4ea9e8e6a9d755e3c7e5e6820583"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00553.html">ScrollView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a34ec4ea9e8e6a9d755e3c7e5e6820583">c_create_window</a> (const char *<a class="el" href="a01193.html#a7a9cea5d64cc51921ff09beb042eee4d">name</a>, <a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> xpos, <a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> ypos, <a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> xsize, <a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> ysize, double xmin, double xmax, double ymin, double ymax)</td></tr>
-<tr class="separator:a34ec4ea9e8e6a9d755e3c7e5e6820583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48077e4a1f221a9febc643bdb5b4e8fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a48077e4a1f221a9febc643bdb5b4e8fe">c_line_color_index</a> (void *win, <a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88f">C_COL</a> index)</td></tr>
-<tr class="separator:a48077e4a1f221a9febc643bdb5b4e8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a411da919a36d0da4caf6a6775a66cea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a411da919a36d0da4caf6a6775a66cea4">c_move</a> (void *win, double x, double y)</td></tr>
-<tr class="separator:a411da919a36d0da4caf6a6775a66cea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1985867f80140c430e3fa0d8d7430a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a1985867f80140c430e3fa0d8d7430a44">c_draw</a> (void *win, double x, double y)</td></tr>
-<tr class="separator:a1985867f80140c430e3fa0d8d7430a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac91d916a53eb48572d9937d0d93b558c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#ac91d916a53eb48572d9937d0d93b558c">c_make_current</a> (void *win)</td></tr>
-<tr class="separator:ac91d916a53eb48572d9937d0d93b558c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdb928ca6fcb1a387ca1fa91f88130dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#afdb928ca6fcb1a387ca1fa91f88130dc">c_clear_window</a> (void *win)</td></tr>
-<tr class="separator:afdb928ca6fcb1a387ca1fa91f88130dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51dc37eb580fe7f758275685e5ce0d59"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a51dc37eb580fe7f758275685e5ce0d59">window_wait</a> (<a class="el" href="a00553.html">ScrollView</a> *win)</td></tr>
-<tr class="separator:a51dc37eb580fe7f758275685e5ce0d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95354c25cd275636280a1dc4af21bc0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a95354c25cd275636280a1dc4af21bc0b">reverse32</a> (void *ptr)</td></tr>
-<tr class="separator:a95354c25cd275636280a1dc4af21bc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf36cd9c9d2510b97c231987f0c3c344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#adf36cd9c9d2510b97c231987f0c3c344">reverse16</a> (void *ptr)</td></tr>
-<tr class="separator:adf36cd9c9d2510b97c231987f0c3c344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bdc0885c33bbb5b062c77b1d90e2305"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a9bdc0885c33bbb5b062c77b1d90e2305">Emalloc</a> (int Size)</td></tr>
+<tr class="separator:a9bdc0885c33bbb5b062c77b1d90e2305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bd9b4f7899f8798018497faa3b12eed"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#a2bd9b4f7899f8798018497faa3b12eed">Erealloc</a> (void *ptr, int size)</td></tr>
+<tr class="separator:a2bd9b4f7899f8798018497faa3b12eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af846576ae65dc13e49ddc616e17baa27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01038.html#af846576ae65dc13e49ddc616e17baa27">Efree</a> (void *ptr)</td></tr>
+<tr class="separator:af846576ae65dc13e49ddc616e17baa27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88f">C_COL</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fac1e9bce8242f443c54c7405223d616cd"></a>Black&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab548046646b36c12aa6ba841de500094"></a>White&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fad3163c1fcda01965b692ec2c3122b743"></a>Red&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fabf28513245738599d13e3ce36bd16c82"></a>Yellow&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fad0784a3f969fe736e8b271a5a161d106"></a>Green&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab0d4738f9c7f12049e52aa4e868bdc8b"></a>Cyan&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88faf5e09dd1da4088464f264b7a3118bff8"></a>Blue&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab5059a620e2c7dc57556b1e275c2f9bc"></a>Magenta&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab3c6aec12b4d5e7cdb91281dbf6c27d0"></a>Aquamarine&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa644433b52df481deeef66a6fe3deb037"></a>Dark_SLATE_BLUE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa9fa6d53c45b7fb6db47d3fc2af0b9c39"></a>Light_BLUE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa3fa96111d2529661c60184c366d466f5"></a>Medium_BLUE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab632cd7b67d93f20c7f27d0ce4d7c675"></a>Midnight_BLUE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa84ee6eb9d9a531c99457f1b622ec584e"></a>Navy_BLUE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa7899ac7335c28b6b66c9b870693feaa1"></a>Sky_BLUE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa71bcdd9057dc4f0f22045ebf5906220e"></a>Slate_BLUE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa47e8c10037e9b9adf3c265437656a1b5"></a>Steel_BLUE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa78210c1cfb1a74e4146a438ee328c907"></a>Coral&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa99c15c8b7e6b048d571778c871622d38"></a>Brown&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab9761f86de80e7d79de75e618ad2e1ba"></a>Sandy_BROWN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa4fe767077a795c957f76faf02f3ca765"></a>Gold&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa6240b68cc483b6d44a9383204bed1f91"></a>GoldENROD&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fae77a7ac04fab8876043f2118549fb46b"></a>Dark_GREEN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88facdf3b10fe18df6090ab217b33613f331"></a>Dark_OLIVE_GREEN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa284e8c0fab8e99e4601d53fb4d79b1b7"></a>Forest_GREEN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa40abb9e8826be5426194cbf745a852ba"></a>Lime_GREEN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa5c98c19f7558c42bc632a868cbe5b2d1"></a>Pale_GREEN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fafd28bd110d78a17b17dd8391f8cffc24"></a>Yellow_GREEN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa69c24a813480351b86a26858981187c3"></a>Light_GREY&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88faccfaaf062be00983f7a77411bcf657ab"></a>Dark_SLATE_GREY&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa9f53c94a240db40d0c3870cefad1317e"></a>Dim_GREY&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa068417ac670c285e34e6e63a898e129b"></a>Grey&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab6fc7f99e35efc06ce9b29c62295d8ab"></a>Khaki&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fafd16b2466230f91a7376ffc13d6182d6"></a>Maroon&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa96c2b9b8ecc4d6cb96f43dcd27947bb4"></a>Orange&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa2a4b392d52ff5f8074a7ddded3984e75"></a>Orchid&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa500fa51afdd48f15c4176c234835c182"></a>Pink&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa9c05314e65fbb3aa4605f979158358b8"></a>Plum&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fac3627e6c55b1aef1f2049e08e5d6ee49"></a>Indian_RED&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab8329ea44434adc7fa432e0a5007043a"></a>Orange_RED&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88facbba1e61e869f875e62cb782096c3110"></a>Violet_RED&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa4b28c0d9a9aa5872f8509d9b33b10fc4"></a>Salmon&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fab492a96cd2b9bb37c81b8451a42889d9"></a>Tan&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa8540ca1912a4f869948072ff13f53c84"></a>Turqoise&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa7f98b50ab087b92e463d9c87cee54671"></a>Dark_TURQUOISE&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa94a3ee3884eb2af70a2d764a4f06e79d"></a>Violet&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa47c15e444694b07b9596bae2f383482d"></a>Wheat&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a17bc059e437838f094a5a25c2d5ab88fa10fd33e926d9f142cbaa1515b0fd1097"></a>Green_YELLOW&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a01038_source.html#l00032">32</a> of file <a class="el" href="a01038_source.html">callcpp.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;             {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fac1e9bce8242f443c54c7405223d616cd">Black</a>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab548046646b36c12aa6ba841de500094">White</a>,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fad3163c1fcda01965b692ec2c3122b743">Red</a>,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fabf28513245738599d13e3ce36bd16c82">Yellow</a>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fad0784a3f969fe736e8b271a5a161d106">Green</a>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab0d4738f9c7f12049e52aa4e868bdc8b">Cyan</a>,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88faf5e09dd1da4088464f264b7a3118bff8">Blue</a>,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab5059a620e2c7dc57556b1e275c2f9bc">Magenta</a>,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab3c6aec12b4d5e7cdb91281dbf6c27d0">Aquamarine</a>,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa644433b52df481deeef66a6fe3deb037">Dark_SLATE_BLUE</a>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9fa6d53c45b7fb6db47d3fc2af0b9c39">Light_BLUE</a>,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa3fa96111d2529661c60184c366d466f5">Medium_BLUE</a>,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab632cd7b67d93f20c7f27d0ce4d7c675">Midnight_BLUE</a>,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa84ee6eb9d9a531c99457f1b622ec584e">Navy_BLUE</a>,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa7899ac7335c28b6b66c9b870693feaa1">Sky_BLUE</a>,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa71bcdd9057dc4f0f22045ebf5906220e">Slate_BLUE</a>,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa47e8c10037e9b9adf3c265437656a1b5">Steel_BLUE</a>,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa78210c1cfb1a74e4146a438ee328c907">Coral</a>,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa99c15c8b7e6b048d571778c871622d38">Brown</a>,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab9761f86de80e7d79de75e618ad2e1ba">Sandy_BROWN</a>,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa4fe767077a795c957f76faf02f3ca765">Gold</a>,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa6240b68cc483b6d44a9383204bed1f91">GoldENROD</a>,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fae77a7ac04fab8876043f2118549fb46b">Dark_GREEN</a>,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88facdf3b10fe18df6090ab217b33613f331">Dark_OLIVE_GREEN</a>,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa284e8c0fab8e99e4601d53fb4d79b1b7">Forest_GREEN</a>,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa40abb9e8826be5426194cbf745a852ba">Lime_GREEN</a>,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa5c98c19f7558c42bc632a868cbe5b2d1">Pale_GREEN</a>,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fafd28bd110d78a17b17dd8391f8cffc24">Yellow_GREEN</a>,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa69c24a813480351b86a26858981187c3">Light_GREY</a>,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88faccfaaf062be00983f7a77411bcf657ab">Dark_SLATE_GREY</a>,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9f53c94a240db40d0c3870cefad1317e">Dim_GREY</a>,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa068417ac670c285e34e6e63a898e129b">Grey</a>,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab6fc7f99e35efc06ce9b29c62295d8ab">Khaki</a>,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fafd16b2466230f91a7376ffc13d6182d6">Maroon</a>,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa96c2b9b8ecc4d6cb96f43dcd27947bb4">Orange</a>,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa2a4b392d52ff5f8074a7ddded3984e75">Orchid</a>,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa500fa51afdd48f15c4176c234835c182">Pink</a>,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9c05314e65fbb3aa4605f979158358b8">Plum</a>,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fac3627e6c55b1aef1f2049e08e5d6ee49">Indian_RED</a>,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab8329ea44434adc7fa432e0a5007043a">Orange_RED</a>,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88facbba1e61e869f875e62cb782096c3110">Violet_RED</a>,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa4b28c0d9a9aa5872f8509d9b33b10fc4">Salmon</a>,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab492a96cd2b9bb37c81b8451a42889d9">Tan</a>,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa8540ca1912a4f869948072ff13f53c84">Turqoise</a>,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa7f98b50ab087b92e463d9c87cee54671">Dark_TURQUOISE</a>,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa94a3ee3884eb2af70a2d764a4f06e79d">Violet</a>,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa47c15e444694b07b9596bae2f383482d">Wheat</a>,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa10fd33e926d9f142cbaa1515b0fd1097">Green_YELLOW</a></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <a class="code" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88f">C_COL</a>;                         <span class="comment">/*starbase colours */</span></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab9761f86de80e7d79de75e618ad2e1ba"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab9761f86de80e7d79de75e618ad2e1ba">Sandy_BROWN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00052">callcpp.h:52</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab492a96cd2b9bb37c81b8451a42889d9"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab492a96cd2b9bb37c81b8451a42889d9">Tan</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00075">callcpp.h:75</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa6240b68cc483b6d44a9383204bed1f91"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa6240b68cc483b6d44a9383204bed1f91">GoldENROD</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00054">callcpp.h:54</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa78210c1cfb1a74e4146a438ee328c907"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa78210c1cfb1a74e4146a438ee328c907">Coral</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00050">callcpp.h:50</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa47c15e444694b07b9596bae2f383482d"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa47c15e444694b07b9596bae2f383482d">Wheat</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00079">callcpp.h:79</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88faccfaaf062be00983f7a77411bcf657ab"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88faccfaaf062be00983f7a77411bcf657ab">Dark_SLATE_GREY</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00062">callcpp.h:62</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa284e8c0fab8e99e4601d53fb4d79b1b7"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa284e8c0fab8e99e4601d53fb4d79b1b7">Forest_GREEN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00057">callcpp.h:57</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa3fa96111d2529661c60184c366d466f5"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa3fa96111d2529661c60184c366d466f5">Medium_BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00044">callcpp.h:44</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa4fe767077a795c957f76faf02f3ca765"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa4fe767077a795c957f76faf02f3ca765">Gold</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00053">callcpp.h:53</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa5c98c19f7558c42bc632a868cbe5b2d1"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa5c98c19f7558c42bc632a868cbe5b2d1">Pale_GREEN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00059">callcpp.h:59</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa500fa51afdd48f15c4176c234835c182"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa500fa51afdd48f15c4176c234835c182">Pink</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00069">callcpp.h:69</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab3c6aec12b4d5e7cdb91281dbf6c27d0"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab3c6aec12b4d5e7cdb91281dbf6c27d0">Aquamarine</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00041">callcpp.h:41</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa4b28c0d9a9aa5872f8509d9b33b10fc4"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa4b28c0d9a9aa5872f8509d9b33b10fc4">Salmon</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00074">callcpp.h:74</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa69c24a813480351b86a26858981187c3"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa69c24a813480351b86a26858981187c3">Light_GREY</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00061">callcpp.h:61</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab0d4738f9c7f12049e52aa4e868bdc8b"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab0d4738f9c7f12049e52aa4e868bdc8b">Cyan</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00038">callcpp.h:38</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab8329ea44434adc7fa432e0a5007043a"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab8329ea44434adc7fa432e0a5007043a">Orange_RED</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00072">callcpp.h:72</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa84ee6eb9d9a531c99457f1b622ec584e"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa84ee6eb9d9a531c99457f1b622ec584e">Navy_BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00046">callcpp.h:46</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa47e8c10037e9b9adf3c265437656a1b5"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa47e8c10037e9b9adf3c265437656a1b5">Steel_BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00049">callcpp.h:49</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa9fa6d53c45b7fb6db47d3fc2af0b9c39"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9fa6d53c45b7fb6db47d3fc2af0b9c39">Light_BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00043">callcpp.h:43</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa644433b52df481deeef66a6fe3deb037"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa644433b52df481deeef66a6fe3deb037">Dark_SLATE_BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00042">callcpp.h:42</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88facdf3b10fe18df6090ab217b33613f331"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88facdf3b10fe18df6090ab217b33613f331">Dark_OLIVE_GREEN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00056">callcpp.h:56</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88facbba1e61e869f875e62cb782096c3110"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88facbba1e61e869f875e62cb782096c3110">Violet_RED</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00073">callcpp.h:73</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88f"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88f">C_COL</a></div><div class="ttdeci">C_COL</div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00032">callcpp.h:32</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fabf28513245738599d13e3ce36bd16c82"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fabf28513245738599d13e3ce36bd16c82">Yellow</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00036">callcpp.h:36</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa96c2b9b8ecc4d6cb96f43dcd27947bb4"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa96c2b9b8ecc4d6cb96f43dcd27947bb4">Orange</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00067">callcpp.h:67</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fafd16b2466230f91a7376ffc13d6182d6"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fafd16b2466230f91a7376ffc13d6182d6">Maroon</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00066">callcpp.h:66</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa9f53c94a240db40d0c3870cefad1317e"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9f53c94a240db40d0c3870cefad1317e">Dim_GREY</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00063">callcpp.h:63</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fad3163c1fcda01965b692ec2c3122b743"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fad3163c1fcda01965b692ec2c3122b743">Red</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00035">callcpp.h:35</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fac1e9bce8242f443c54c7405223d616cd"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fac1e9bce8242f443c54c7405223d616cd">Black</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00033">callcpp.h:33</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa10fd33e926d9f142cbaa1515b0fd1097"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa10fd33e926d9f142cbaa1515b0fd1097">Green_YELLOW</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00080">callcpp.h:80</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa40abb9e8826be5426194cbf745a852ba"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa40abb9e8826be5426194cbf745a852ba">Lime_GREEN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00058">callcpp.h:58</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa71bcdd9057dc4f0f22045ebf5906220e"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa71bcdd9057dc4f0f22045ebf5906220e">Slate_BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00048">callcpp.h:48</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fafd28bd110d78a17b17dd8391f8cffc24"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fafd28bd110d78a17b17dd8391f8cffc24">Yellow_GREEN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00060">callcpp.h:60</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fad0784a3f969fe736e8b271a5a161d106"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fad0784a3f969fe736e8b271a5a161d106">Green</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00037">callcpp.h:37</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fac3627e6c55b1aef1f2049e08e5d6ee49"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fac3627e6c55b1aef1f2049e08e5d6ee49">Indian_RED</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00071">callcpp.h:71</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab5059a620e2c7dc57556b1e275c2f9bc"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab5059a620e2c7dc57556b1e275c2f9bc">Magenta</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00040">callcpp.h:40</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa068417ac670c285e34e6e63a898e129b"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa068417ac670c285e34e6e63a898e129b">Grey</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00064">callcpp.h:64</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa9c05314e65fbb3aa4605f979158358b8"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa9c05314e65fbb3aa4605f979158358b8">Plum</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00070">callcpp.h:70</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab548046646b36c12aa6ba841de500094"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab548046646b36c12aa6ba841de500094">White</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00034">callcpp.h:34</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab6fc7f99e35efc06ce9b29c62295d8ab"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab6fc7f99e35efc06ce9b29c62295d8ab">Khaki</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00065">callcpp.h:65</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fab632cd7b67d93f20c7f27d0ce4d7c675"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fab632cd7b67d93f20c7f27d0ce4d7c675">Midnight_BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00045">callcpp.h:45</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa7899ac7335c28b6b66c9b870693feaa1"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa7899ac7335c28b6b66c9b870693feaa1">Sky_BLUE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00047">callcpp.h:47</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa2a4b392d52ff5f8074a7ddded3984e75"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa2a4b392d52ff5f8074a7ddded3984e75">Orchid</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00068">callcpp.h:68</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa8540ca1912a4f869948072ff13f53c84"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa8540ca1912a4f869948072ff13f53c84">Turqoise</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00076">callcpp.h:76</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fae77a7ac04fab8876043f2118549fb46b"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fae77a7ac04fab8876043f2118549fb46b">Dark_GREEN</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00055">callcpp.h:55</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88faf5e09dd1da4088464f264b7a3118bff8"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88faf5e09dd1da4088464f264b7a3118bff8">Blue</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00039">callcpp.h:39</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa99c15c8b7e6b048d571778c871622d38"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa99c15c8b7e6b048d571778c871622d38">Brown</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00051">callcpp.h:51</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa94a3ee3884eb2af70a2d764a4f06e79d"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa94a3ee3884eb2af70a2d764a4f06e79d">Violet</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00078">callcpp.h:78</a></div></div>
-<div class="ttc" id="a01038_html_a17bc059e437838f094a5a25c2d5ab88fa7f98b50ab087b92e463d9c87cee54671"><div class="ttname"><a href="a01038.html#a17bc059e437838f094a5a25c2d5ab88fa7f98b50ab087b92e463d9c87cee54671">Dark_TURQUOISE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01038_source.html#l00077">callcpp.h:77</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="afdb928ca6fcb1a387ca1fa91f88130dc"></a>
+<a class="anchor" id="af846576ae65dc13e49ddc616e17baa27"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void c_clear_window </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01037_source.html#l00104">104</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                               {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="a00553.html">ScrollView</a>* window = (<a class="code" href="a00553.html">ScrollView</a>*) win;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  window-&gt;<a class="code" href="a00553.html#a5386b0da16d7cbdd33044e53b95313ac">Clear</a>();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-<div class="ttc" id="a00553_html_a5386b0da16d7cbdd33044e53b95313ac"><div class="ttname"><a href="a00553.html#a5386b0da16d7cbdd33044e53b95313ac">ScrollView::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00595">scrollview.cpp:595</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a34ec4ea9e8e6a9d755e3c7e5e6820583"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00553.html">ScrollView</a>* c_create_window </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
-          <td class="paramname"><em>xpos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
-          <td class="paramname"><em>ypos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
-          <td class="paramname"><em>xsize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
-          <td class="paramname"><em>ysize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>xmin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>xmax</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>ymin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>ymax</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01037_source.html#l00055">55</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                       {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="a00553.html">ScrollView</a>(<a class="code" href="a01193.html#a7a9cea5d64cc51921ff09beb042eee4d">name</a>, xpos, ypos, xsize, ysize, xmax - xmin, ymax - ymin, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="ttc" id="a01193_html_a7a9cea5d64cc51921ff09beb042eee4d"><div class="ttname"><a href="a01193.html#a7a9cea5d64cc51921ff09beb042eee4d">name</a></div><div class="ttdeci">name_table name</div><div class="ttdef"><b>Definition:</b> <a href="a01193_source.html#l00308">GlyphLessFont.c:308</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a1985867f80140c430e3fa0d8d7430a44"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void c_draw </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01037_source.html#l00088">88</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                      {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <a class="code" href="a00553.html">ScrollView</a>* window = (<a class="code" href="a00553.html">ScrollView</a>*) win;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  window-&gt;<a class="code" href="a00553.html#a101de80a4722fe821969f61f6e7303a6">DrawTo</a>((<span class="keywordtype">int</span>) x, (<span class="keywordtype">int</span>) y);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="ttc" id="a00553_html_a101de80a4722fe821969f61f6e7303a6"><div class="ttname"><a href="a00553.html#a101de80a4722fe821969f61f6e7303a6">ScrollView::DrawTo</a></div><div class="ttdeci">void DrawTo(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00531">scrollview.cpp:531</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a48077e4a1f221a9febc643bdb5b4e8fe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void c_line_color_index </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a01038.html#a17bc059e437838f094a5a25c2d5ab88f">C_COL</a>&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01037_source.html#l00070">70</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                     {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; <span class="comment">// The colors are the same as the SV ones except that SV has COLOR:NONE --&gt; offset of 1</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; <a class="code" href="a00553.html">ScrollView</a>* window = (<a class="code" href="a00553.html">ScrollView</a>*) win;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; window-&gt;<a class="code" href="a00553.html#a79855c525ec660b452382e9813d2edb5">Pen</a>((<a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a>) (index + 1));</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="ttc" id="a00553_html_a79855c525ec660b452382e9813d2edb5"><div class="ttname"><a href="a00553.html#a79855c525ec660b452382e9813d2edb5">ScrollView::Pen</a></div><div class="ttdeci">void Pen(Color color)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00726">scrollview.cpp:726</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a></div><div class="ttdeci">Color</div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00105">scrollview.h:105</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ac91d916a53eb48572d9937d0d93b558c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void c_make_current </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01037_source.html#l00097">97</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                               {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="a00553.html">ScrollView</a>* window = (<a class="code" href="a00553.html">ScrollView</a>*) win;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  window-&gt;<a class="code" href="a00553.html#a0830a51981a20c8700b5ec49137e46e9">Update</a>();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-<div class="ttc" id="a00553_html_a0830a51981a20c8700b5ec49137e46e9"><div class="ttname"><a href="a00553.html#a0830a51981a20c8700b5ec49137e46e9">ScrollView::Update</a></div><div class="ttdeci">static void Update()</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00715">scrollview.cpp:715</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a411da919a36d0da4caf6a6775a66cea4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void c_move </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01037_source.html#l00079">79</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                      {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="a00553.html">ScrollView</a>* window = (<a class="code" href="a00553.html">ScrollView</a>*) win;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  window-&gt;<a class="code" href="a00553.html#a730b182e350dfe37b0986d7f0591fee5">SetCursor</a>((<span class="keywordtype">int</span>) x, (<span class="keywordtype">int</span>) y);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="ttc" id="a00553_html_a730b182e350dfe37b0986d7f0591fee5"><div class="ttname"><a href="a00553.html#a730b182e350dfe37b0986d7f0591fee5">ScrollView::SetCursor</a></div><div class="ttdeci">void SetCursor(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00525">scrollview.cpp:525</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a21679e7fec2d69db23107348fa13c153"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cprintf </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>format</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01037_source.html#l00040">40</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  va_list args;                  <span class="comment">//variable args</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">char</span> msg[1000];</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  va_start(args, format);  <span class="comment">//variable list</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  vsprintf(msg, format, args);  <span class="comment">//Format into msg</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  va_end(args);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a> (<span class="stringliteral">&quot;%s&quot;</span>, msg);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="a00883_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00883.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00031">tprintf.h:31</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="adf36cd9c9d2510b97c231987f0c3c344"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void reverse16 </td>
+          <td class="memname">void Efree </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>ptr</em></td><td>)</td>
@@ -712,84 +140,118 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01037_source.html#l00140">140</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                          {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordtype">char</span> tmp;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordtype">char</span> *cptr = (<span class="keywordtype">char</span> *) ptr;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  tmp = *cptr;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  *cptr = *(cptr + 1);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  *(cptr + 1) = tmp;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a01038_source.html#l00085">85</a> of file <a class="el" href="a01038_source.html">emalloc.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                      { </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">if</span> (ptr == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a> (<a class="code" href="a01039.html#af4b3c6a2833ca7c3f531746c2937e3a8">ILLEGALMALLOCREQUEST</a>, <span class="stringliteral">&quot;Attempted to free NULL ptr&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  free(ptr); </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}                                <span class="comment">/* Efree */</span></div>
+<div class="ttc" id="a01034_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00032">danerror.cpp:32</a></div></div>
+<div class="ttc" id="a01039_html_af4b3c6a2833ca7c3f531746c2937e3a8"><div class="ttname"><a href="a01039.html#af4b3c6a2833ca7c3f531746c2937e3a8">ILLEGALMALLOCREQUEST</a></div><div class="ttdeci">#define ILLEGALMALLOCREQUEST</div><div class="ttdef"><b>Definition:</b> <a href="a01039_source.html#l00028">emalloc.h:28</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a95354c25cd275636280a1dc4af21bc0b"></a>
+<a class="anchor" id="a9bdc0885c33bbb5b062c77b1d90e2305"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void reverse32 </td>
+          <td class="memname">void* Emalloc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<hr/>
+ <h2>Include Files and Type Defines </h2>
+<h2>Public Code </h2>
+
+<p>Definition at line <a class="el" href="a01038_source.html#l00035">35</a> of file <a class="el" href="a01038_source.html">emalloc.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **                                                     Parameters:</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **                                                     Size</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">              number of bytes of memory to be allocated</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">**                                                      Globals: none</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">**                                                      Operation:</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">**                                                      This routine attempts to allocate the specified number of</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">**                                                      bytes.  If the memory can be allocated, a pointer to the</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">**                                                      memory is returned.  If the memory cannot be allocated, or</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">**                                                      if the allocation request is negative or zero,</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">**                                                      an error is trapped.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">**                                                      Return: Pointer to allocated memory.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">**                                                      Exceptions: NOTENOUGHMEMORY</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">              unable to allocate Size bytes</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">**                                                      ILLEGALMALLOCREQUEST</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">              negative or zero request size</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">**                                                      History: 4/3/89, DSJ, Created.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> *Buffer;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">if</span> (Size &lt;= 0)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a> (<a class="code" href="a01039.html#af4b3c6a2833ca7c3f531746c2937e3a8">ILLEGALMALLOCREQUEST</a>, <span class="stringliteral">&quot;Illegal malloc request size&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  Buffer = (<span class="keywordtype">void</span> *) malloc (Size);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">if</span> (Buffer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a> (<a class="code" href="a01039.html#a33c9be2e27c6832c275df3c2745e039b">NOTENOUGHMEMORY</a>, <span class="stringliteral">&quot;Not enough memory&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> (Buffer);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}                                <span class="comment">/* Emalloc */</span></div>
+<div class="ttc" id="a01039_html_a33c9be2e27c6832c275df3c2745e039b"><div class="ttname"><a href="a01039.html#a33c9be2e27c6832c275df3c2745e039b">NOTENOUGHMEMORY</a></div><div class="ttdeci">#define NOTENOUGHMEMORY</div><div class="ttdef"><b>Definition:</b> <a href="a01039_source.html#l00027">emalloc.h:27</a></div></div>
+<div class="ttc" id="a01034_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00032">danerror.cpp:32</a></div></div>
+<div class="ttc" id="a01039_html_af4b3c6a2833ca7c3f531746c2937e3a8"><div class="ttname"><a href="a01039.html#af4b3c6a2833ca7c3f531746c2937e3a8">ILLEGALMALLOCREQUEST</a></div><div class="ttdeci">#define ILLEGALMALLOCREQUEST</div><div class="ttdef"><b>Definition:</b> <a href="a01039_source.html#l00028">emalloc.h:28</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2bd9b4f7899f8798018497faa3b12eed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Erealloc </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>ptr</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"><em>ptr</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01037_source.html#l00127">127</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                          {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordtype">char</span> tmp;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordtype">char</span> *cptr = (<span class="keywordtype">char</span> *) ptr;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  tmp = *cptr;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  *cptr = *(cptr + 3);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  *(cptr + 3) = tmp;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  tmp = *(cptr + 1);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  *(cptr + 1) = *(cptr + 2);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  *(cptr + 2) = tmp;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a51dc37eb580fe7f758275685e5ce0d59"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">char window_wait </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00553.html">ScrollView</a> *&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01037_source.html#l00111">111</a> of file <a class="el" href="a01037_source.html">callcpp.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                  {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="a00584.html">SVEvent</a>* ev;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// Wait till an input or click event (all others are thrown away)</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordtype">char</span> ret = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0">SVEventType</a> ev_type = <a class="code" href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0a6eec81ed585bda7ff47ec38918cb2a0e">SVET_ANY</a>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    ev = win-&gt;<a class="code" href="a00553.html#a0b820b3fe7a2ce083da0784e9339a1ad">AwaitEvent</a>(<a class="code" href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0a6eec81ed585bda7ff47ec38918cb2a0e">SVET_ANY</a>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    ev_type = ev-&gt;<a class="code" href="a00584.html#a5bf8585bd1901b9103eb2783f8afe508">type</a>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (ev_type == <a class="code" href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0aee5f6202613f111d11fc310ccba2fa25">SVET_INPUT</a>)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      ret = ev-&gt;<a class="code" href="a00584.html#a6e0de466c57df117c731bfb4db68fc79">parameter</a>[0];</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">delete</span> ev;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  } <span class="keywordflow">while</span> (ev_type != <a class="code" href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0aee5f6202613f111d11fc310ccba2fa25">SVET_INPUT</a> &amp;&amp; ev_type != <a class="code" href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0a2afe407abe8c055c45765b85d20e7946">SVET_CLICK</a>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="ttc" id="a01220_html_a3688a0cf2f95d10a57e095222ccfe9a0a6eec81ed585bda7ff47ec38918cb2a0e"><div class="ttname"><a href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0a6eec81ed585bda7ff47ec38918cb2a0e">SVET_ANY</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00056">scrollview.h:56</a></div></div>
-<div class="ttc" id="a01220_html_a3688a0cf2f95d10a57e095222ccfe9a0a2afe407abe8c055c45765b85d20e7946"><div class="ttname"><a href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0a2afe407abe8c055c45765b85d20e7946">SVET_CLICK</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00048">scrollview.h:48</a></div></div>
-<div class="ttc" id="a00553_html_a0b820b3fe7a2ce083da0784e9339a1ad"><div class="ttname"><a href="a00553.html#a0b820b3fe7a2ce083da0784e9339a1ad">ScrollView::AwaitEvent</a></div><div class="ttdeci">SVEvent * AwaitEvent(SVEventType type)</div><div class="ttdef"><b>Definition:</b> <a href="a01219_source.html#l00449">scrollview.cpp:449</a></div></div>
-<div class="ttc" id="a00584_html"><div class="ttname"><a href="a00584.html">SVEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00061">scrollview.h:61</a></div></div>
-<div class="ttc" id="a01220_html_a3688a0cf2f95d10a57e095222ccfe9a0"><div class="ttname"><a href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0">SVEventType</a></div><div class="ttdeci">SVEventType</div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00045">scrollview.h:45</a></div></div>
-<div class="ttc" id="a01220_html_a3688a0cf2f95d10a57e095222ccfe9a0aee5f6202613f111d11fc310ccba2fa25"><div class="ttname"><a href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0aee5f6202613f111d11fc310ccba2fa25">SVET_INPUT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00050">scrollview.h:50</a></div></div>
-<div class="ttc" id="a00584_html_a6e0de466c57df117c731bfb4db68fc79"><div class="ttname"><a href="a00584.html#a6e0de466c57df117c731bfb4db68fc79">SVEvent::parameter</a></div><div class="ttdeci">char * parameter</div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00071">scrollview.h:71</a></div></div>
-<div class="ttc" id="a00584_html_a5bf8585bd1901b9103eb2783f8afe508"><div class="ttname"><a href="a00584.html#a5bf8585bd1901b9103eb2783f8afe508">SVEvent::type</a></div><div class="ttdeci">SVEventType type</div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00064">scrollview.h:64</a></div></div>
+<p>Definition at line <a class="el" href="a01038_source.html#l00070">70</a> of file <a class="el" href="a01038_source.html">emalloc.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> *Buffer;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">if</span> (size &lt; 0 || (size == 0 &amp;&amp; ptr == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>))</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a> (<a class="code" href="a01039.html#af4b3c6a2833ca7c3f531746c2937e3a8">ILLEGALMALLOCREQUEST</a>, <span class="stringliteral">&quot;Illegal realloc request size&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  Buffer = (<span class="keywordtype">void</span> *) realloc (ptr, size);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">if</span> (Buffer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; size != 0)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a> (<a class="code" href="a01039.html#a33c9be2e27c6832c275df3c2745e039b">NOTENOUGHMEMORY</a>, <span class="stringliteral">&quot;Not enough memory&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">return</span> (Buffer);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}                                <span class="comment">/* Erealloc */</span></div>
+<div class="ttc" id="a01039_html_a33c9be2e27c6832c275df3c2745e039b"><div class="ttname"><a href="a01039.html#a33c9be2e27c6832c275df3c2745e039b">NOTENOUGHMEMORY</a></div><div class="ttdeci">#define NOTENOUGHMEMORY</div><div class="ttdef"><b>Definition:</b> <a href="a01039_source.html#l00027">emalloc.h:27</a></div></div>
+<div class="ttc" id="a01034_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01034.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01034_source.html#l00032">danerror.cpp:32</a></div></div>
+<div class="ttc" id="a01039_html_af4b3c6a2833ca7c3f531746c2937e3a8"><div class="ttname"><a href="a01039.html#af4b3c6a2833ca7c3f531746c2937e3a8">ILLEGALMALLOCREQUEST</a></div><div class="ttdeci">#define ILLEGALMALLOCREQUEST</div><div class="ttdef"><b>Definition:</b> <a href="a01039_source.html#l00028">emalloc.h:28</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -798,8 +260,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01038.html">callcpp.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01038.html">emalloc.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -1,5 +1,5 @@
 var a01215 =
 [
-    [ "SetPropertiesForInputFile", "a01215.html#a6ab186c9dc94d1896baf55e6a848e81a", null ],
-    [ "SetupBasicProperties", "a01215.html#a49e6f022ec033530161447502965fa3b", null ]
+    [ "tz", "a01215.html#a3bfc1a7825ae0ff40896f92d1af0685a", null ],
+    [ "gettimeofday", "a01215.html#adf30830f5265e55035171c301eb9c3fb", null ]
 ];

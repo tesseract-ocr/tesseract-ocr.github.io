@@ -1,10 +1,10 @@
 var a01135 =
 [
-    [ "kMaxRectangularFraction", "a01135.html#ae6dc7638052b18db703d824259f9d39e", null ],
-    [ "kMaxRectangularGradient", "a01135.html#ac980c05231fe3f7a8cb4c7ed7f9b6516", null ],
-    [ "kMinColorDifference", "a01135.html#aa76be4c175875d95748cec9f9d5467e3", null ],
-    [ "kMinImageFindSize", "a01135.html#ad923bf9132f3e7cfd57199a3190c446c", null ],
-    [ "kMinRectangularFraction", "a01135.html#a1f21fe8acb13b4e1904e1d1157183d0d", null ],
-    [ "kRMSFitScaling", "a01135.html#a351af5b8ad4d2b3fd95e59d758f13e7a", null ],
-    [ "textord_tabfind_show_images", "a01135.html#a25f853a0cc782510d9943b1a3be4327d", null ]
+    [ "EXTERN", "a01135.html#a77366c1bd428629dc898e188bfd182a3", null ],
+    [ "check_pitch_sync", "a01135.html#a91659398c9bdb3c1c6067f4e4da6a2ef", null ],
+    [ "ELISTIZE", "a01135.html#a26975786a1392176204c4e32c9f03f76", null ],
+    [ "make_illegal_segment", "a01135.html#aff9ef2e9550a83b95b85a9a8791231f6", null ],
+    [ "pitsync_fake_depth", "a01135.html#a7907a67f9518caf8fce64037817b9aa7", null ],
+    [ "pitsync_joined_edge", "a01135.html#a0d941a59238ff3b7bcca1077af788d43", null ],
+    [ "pitsync_offset_freecut_fraction", "a01135.html#a201f09b12d0d0715ec71b1f198126156", null ]
 ];

@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00318.html','');});
+$(document).ready(function(){initNavTree('a00366.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,26 +106,30 @@ $(document).ready(function(){initNavTree('a00318.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">CLASS_STRUCT Member List</div>  </div>
+<div class="title">ELIST Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00318.html">CLASS_STRUCT</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00366.html">ELIST</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00318.html#a9947adddf6eef29142b46074950703f6">CLASS_STRUCT</a>()</td><td class="entry"><a class="el" href="a00318.html">CLASS_STRUCT</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00318.html#ac5524279d10e5bafe306355d72309b69">Configurations</a></td><td class="entry"><a class="el" href="a00318.html">CLASS_STRUCT</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00318.html#a42fd551c9f2ee48e5873ae7308df64b4">font_set</a></td><td class="entry"><a class="el" href="a00318.html">CLASS_STRUCT</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00318.html#a35830ba1f40d31ef5bb3ad9d4e4596dc">MaxNumConfigs</a></td><td class="entry"><a class="el" href="a00318.html">CLASS_STRUCT</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00318.html#ae5646d21fd1609343ad276deac642757">MaxNumProtos</a></td><td class="entry"><a class="el" href="a00318.html">CLASS_STRUCT</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00318.html#a452c42efe7ec87439ef16f1e51d57f2c">NumConfigs</a></td><td class="entry"><a class="el" href="a00318.html">CLASS_STRUCT</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00318.html#aed122893fec98b9ebccee234bbb00292">NumProtos</a></td><td class="entry"><a class="el" href="a00318.html">CLASS_STRUCT</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00318.html#add1a2c4f7b02eb438c377242495013ef">Prototypes</a></td><td class="entry"><a class="el" href="a00318.html">CLASS_STRUCT</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00366.html#af61dc70c4e992e1c05c843c0d541db80">add_sorted</a>(int comparator(const void *, const void *), bool unique, ELIST_LINK *new_link)</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00366.html#a01af0288f3fadb4d222a03f3fe7c6811">add_sorted_and_find</a>(int comparator(const void *, const void *), bool unique, ELIST_LINK *new_link)</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00366.html#aec667b2b89d45695712f041bc3e09198">assign_to_sublist</a>(ELIST_ITERATOR *start_it, ELIST_ITERATOR *end_it)</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00366.html#ae37e11e80a427b1ea5c43321d7f8af56">ELIST</a>()</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00366.html#a4aec179a718fd9e202aa2075bfaa5709">ELIST_ITERATOR</a> class</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00366.html#a7788b6c4e4b9623e43c58fe3b2976edd">empty</a>() const </td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00366.html#a9e3110796c3e5189fa846b44122176ac">internal_clear</a>(void(*zapper)(ELIST_LINK *))</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00366.html#a575eb2690055500a718e5ea8c6740de3">internal_deep_copy</a>(ELIST_LINK *(*copier)(ELIST_LINK *), const ELIST *list)</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00366.html#a571dfff8a1c0cef0f0120708a1b32185">length</a>() const </td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00366.html#a8bd9cf7457dd6a17a68860b77abd379a">shallow_copy</a>(ELIST *from_list)</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00366.html#abbe9f968d190bf5bf261e13af7bfc543">singleton</a>() const </td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00366.html#a82eb75fa241c49b6ccdc92d96f810ece">sort</a>(int comparator(const void *, const void *))</td><td class="entry"><a class="el" href="a00366.html">ELIST</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:44 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:19 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

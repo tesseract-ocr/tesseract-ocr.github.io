@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/hashfn.h File Reference</title>
+<title>Tesseract: ccutil/scanutils.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,56 +105,69 @@ $(document).ready(function(){initNavTree('a00852.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">hashfn.h File Reference</div>  </div>
+<div class="title">scanutils.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;hash_map&gt;</code><br />
-<code>#include &lt;hash_set&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
 </div>
 <p><a href="a00852_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00568.html">SmartPtr&lt; T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ad96e771600f96c946d7af67015765444"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00852.html#ad96e771600f96c946d7af67015765444">unordered_map</a>&#160;&#160;&#160;hash_map</td></tr>
-<tr class="separator:ad96e771600f96c946d7af67015765444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29712c9a8a48f7ca2973414457fc627a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00852.html#a29712c9a8a48f7ca2973414457fc627a">unordered_set</a>&#160;&#160;&#160;hash_set</td></tr>
-<tr class="separator:a29712c9a8a48f7ca2973414457fc627a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa11dd049f17d50a5af65fbd245e705d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00852.html#aa11dd049f17d50a5af65fbd245e705d0">tfscanf</a> (FILE *stream, const char *format,...)</td></tr>
+<tr class="separator:aa11dd049f17d50a5af65fbd245e705d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ad96e771600f96c946d7af67015765444"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aa11dd049f17d50a5af65fbd245e705d0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define unordered_map&#160;&#160;&#160;hash_map</td>
+          <td class="memname">int tfscanf </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00852_source.html#l00053">53</a> of file <a class="el" href="a00852_source.html">hashfn.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a29712c9a8a48f7ca2973414457fc627a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">#define unordered_set&#160;&#160;&#160;hash_set</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>fscanf variant to ensure correct reading regardless of locale.</p>
+<p>tfscanf parse a file stream according to the given format. See the fscanf manpage for more information, as this function attempts to mimic its behavior.</p>
+<dl class="section note"><dt>Note</dt><dd>Note that scientific floating-point notation is not supported. </dd></dl>
 
-<p>Definition at line <a class="el" href="a00852_source.html#l00054">54</a> of file <a class="el" href="a00852_source.html">hashfn.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00851_source.html#l00229">229</a> of file <a class="el" href="a00851_source.html">scanutils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                                   {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  va_list ap;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="keywordtype">int</span> rv;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  va_start(ap, format);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  rv = tvfscanf(stream, format, ap);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  va_end(ap);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">return</span> rv;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -162,8 +175,8 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00852.html">hashfn.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00852.html">scanutils.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

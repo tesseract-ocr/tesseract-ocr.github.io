@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/mfdefs.h Source File</title>
+<title>Tesseract: classify/outfeat.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('a00935_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">mfdefs.h</div>  </div>
+<div class="title">outfeat.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00935.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:    mfdefs.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:     Definition of micro-features</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **     Filename:    outfeat.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **     Purpose:     Definition of outline features.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **     Author:      Dan Johnson</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:     Mon Jan 22 08:42:13 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **     History:     11/13/90, DSJ, Created.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **     (c) Copyright Hewlett-Packard Company, 1988.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -125,52 +125,55 @@ $(document).ready(function(){initNavTree('a00935_source.html','');});
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> ** See the License for the specific language governing permissions and</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> ** limitations under the License.</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef   MFDEFS_H</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define   MFDEFS_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef   OUTFEAT_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define   OUTFEAT_H</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01056.html">oldlist.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01067.html">matchdefs.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/* definition of a list of micro-features */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00935.html#a3fdd61e86cfc2b48248239e49fd1befe">   28</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00469.html">LIST</a> <a class="code" href="a00935.html#a3fdd61e86cfc2b48248239e49fd1befe">MICROFEATURES</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/* definition of structure of micro-features */</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00935.html#a91b4d8b8bc76e243410f648f487b9a1a">   31</a></span>&#160;<span class="preprocessor">#define MFSIZE        6</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00935.html#a6aff904923717a4c878871a7b3c51f59">   32</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> <a class="code" href="a00935.html#a6aff904923717a4c878871a7b3c51f59">MFBLOCK</a>[<a class="code" href="a00935.html#a91b4d8b8bc76e243410f648f487b9a1a">MFSIZE</a>];</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00935.html#acf6b2e47a8872409e85b7bfeee9961dc">   33</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> *<a class="code" href="a00935.html#acf6b2e47a8872409e85b7bfeee9961dc">MICROFEATURE</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00933.html">ocrfeatures.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00901.html">fpoint.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00925.html">mfoutline.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00935.html#ab73697b859e4921472c6cf1de43267a1">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00935.html#ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6">   29</a></span>&#160;  <a class="code" href="a00935.html#ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6">OutlineFeatX</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a00935.html#ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379">   30</a></span>&#160;  <a class="code" href="a00935.html#ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379">OutlineFeatY</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="a00935.html#ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741">   31</a></span>&#160;  <a class="code" href="a00935.html#ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741">OutlineFeatLength</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00935.html#ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb">   32</a></span>&#160;  <a class="code" href="a00935.html#ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb">OutlineFeatDir</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <a class="code" href="a00935.html#ab73697b859e4921472c6cf1de43267a1">OUTLINE_FEAT_PARAM_NAME</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* definitions of individual micro-feature parameters */</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a00935.html#aa14d8a5c035963734f527261a209c402">   36</a></span>&#160;<span class="preprocessor">#define XPOSITION     0</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00935.html#ab4a43f7e9f215f0fb311fdb0f54fe1bf">   37</a></span>&#160;<span class="preprocessor">#define YPOSITION     1</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="a00935.html#aab9af949da5ae4ae116df014c0d22d1e">   38</a></span>&#160;<span class="preprocessor">#define MFLENGTH      2</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00935.html#ac815b03ec48abf99301f44140ff0b0a9">   39</a></span>&#160;<span class="preprocessor">#define ORIENTATION     3</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00935.html#ad1464eb110ea01416a6590990ef70292">   40</a></span>&#160;<span class="preprocessor">#define FIRSTBULGE      4</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00935.html#af4886ef7009ef75f6e3a13ff562feb27">   41</a></span>&#160;<span class="preprocessor">#define SECONDBULGE     5</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/* macros for accessing micro-feature lists */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00935.html#a73241e8fe18f28077a7158303e7a126f">   48</a></span>&#160;<span class="preprocessor">#define NextFeatureOf(L)  ( (MICROFEATURE) first_node ( L ) )</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<a class="code" href="a00935.html#acf6b2e47a8872409e85b7bfeee9961dc">MICROFEATURE</a> <a class="code" href="a00935.html#a10606897d42fff8ca71fb36795bd581e">NewMicroFeature</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00935.html#afd75dd0b29a6b9bf0c5a31b3484bd0d9">FreeMicroFeatures</a>(<a class="code" href="a00469.html">MICROFEATURES</a> MicroFeatures);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00935_html_afd75dd0b29a6b9bf0c5a31b3484bd0d9"><div class="ttname"><a href="a00935.html#afd75dd0b29a6b9bf0c5a31b3484bd0d9">FreeMicroFeatures</a></div><div class="ttdeci">void FreeMicroFeatures(MICROFEATURES MicroFeatures)</div><div class="ttdef"><b>Definition:</b> <a href="a00934_source.html#l00045">mfdefs.cpp:45</a></div></div>
-<div class="ttc" id="a01056_html"><div class="ttname"><a href="a01056.html">oldlist.h</a></div></div>
-<div class="ttc" id="a00935_html_acf6b2e47a8872409e85b7bfeee9961dc"><div class="ttname"><a href="a00935.html#acf6b2e47a8872409e85b7bfeee9961dc">MICROFEATURE</a></div><div class="ttdeci">FLOAT32 * MICROFEATURE</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00033">mfdefs.h:33</a></div></div>
-<div class="ttc" id="a00935_html_a91b4d8b8bc76e243410f648f487b9a1a"><div class="ttname"><a href="a00935.html#a91b4d8b8bc76e243410f648f487b9a1a">MFSIZE</a></div><div class="ttdeci">#define MFSIZE</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00031">mfdefs.h:31</a></div></div>
-<div class="ttc" id="a01067_html"><div class="ttname"><a href="a01067.html">matchdefs.h</a></div></div>
-<div class="ttc" id="a00935_html_a3fdd61e86cfc2b48248239e49fd1befe"><div class="ttname"><a href="a00935.html#a3fdd61e86cfc2b48248239e49fd1befe">MICROFEATURES</a></div><div class="ttdeci">LIST MICROFEATURES</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00028">mfdefs.h:28</a></div></div>
-<div class="ttc" id="a00935_html_a6aff904923717a4c878871a7b3c51f59"><div class="ttname"><a href="a00935.html#a6aff904923717a4c878871a7b3c51f59">MFBLOCK</a></div><div class="ttdeci">FLOAT32 MFBLOCK[MFSIZE]</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00032">mfdefs.h:32</a></div></div>
-<div class="ttc" id="a00935_html_a10606897d42fff8ca71fb36795bd581e"><div class="ttname"><a href="a00935.html#a10606897d42fff8ca71fb36795bd581e">NewMicroFeature</a></div><div class="ttdeci">MICROFEATURE NewMicroFeature()</div><div class="ttdef"><b>Definition:</b> <a href="a00934_source.html#l00029">mfdefs.cpp:29</a></div></div>
-<div class="ttc" id="a00469_html"><div class="ttname"><a href="a00469.html">list_rec</a></div><div class="ttdef"><b>Definition:</b> <a href="a01056_source.html#l00127">oldlist.h:127</a></div></div>
-<div class="ttc" id="a00854_html_a6a3da5f1db8d485c0d2f5a7ba526c4a0"><div class="ttname"><a href="a00854.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a></div><div class="ttdeci">float FLOAT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00111">host.h:111</a></div></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00935.html#ac29e72cf5bfbadc9a7b2490ffdda297f">   35</a></span>&#160;<span class="preprocessor">#define MAX_OUTLINE_FEATURES  (100)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/*---------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">          Privat Function Prototypes</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">----------------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00935.html#a7a23f0f713121c5a61e7f96df94d6ced">AddOutlineFeatureToSet</a>(<a class="code" href="a00399.html">FPOINT</a> *Start,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                            <a class="code" href="a00399.html">FPOINT</a> *End,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                            <a class="code" href="a00381.html">FEATURE_SET</a> FeatureSet);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00935.html#a46e551093fc5d100adbb071067948bd9">ConvertToOutlineFeatures</a>(<a class="code" href="a00457.html">MFOUTLINE</a> Outline, <a class="code" href="a00381.html">FEATURE_SET</a> FeatureSet);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00935.html#a31e740a46d077ad41735bbd17b0bef34">NormalizeOutlineX</a>(<a class="code" href="a00381.html">FEATURE_SET</a> FeatureSet);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00901_html"><div class="ttname"><a href="a00901.html">fpoint.h</a></div></div>
+<div class="ttc" id="a00935_html_ab73697b859e4921472c6cf1de43267a1"><div class="ttname"><a href="a00935.html#ab73697b859e4921472c6cf1de43267a1">OUTLINE_FEAT_PARAM_NAME</a></div><div class="ttdeci">OUTLINE_FEAT_PARAM_NAME</div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00028">outfeat.h:28</a></div></div>
+<div class="ttc" id="a00935_html_ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb"><div class="ttname"><a href="a00935.html#ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb">OutlineFeatDir</a></div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00032">outfeat.h:32</a></div></div>
+<div class="ttc" id="a00935_html_ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379"><div class="ttname"><a href="a00935.html#ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379">OutlineFeatY</a></div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00030">outfeat.h:30</a></div></div>
+<div class="ttc" id="a00399_html"><div class="ttname"><a href="a00399.html">FPOINT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00901_source.html#l00029">fpoint.h:29</a></div></div>
+<div class="ttc" id="a00935_html_a31e740a46d077ad41735bbd17b0bef34"><div class="ttname"><a href="a00935.html#a31e740a46d077ad41735bbd17b0bef34">NormalizeOutlineX</a></div><div class="ttdeci">void NormalizeOutlineX(FEATURE_SET FeatureSet)</div><div class="ttdef"><b>Definition:</b> <a href="a00934_source.html#l00155">outfeat.cpp:155</a></div></div>
+<div class="ttc" id="a00935_html_ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741"><div class="ttname"><a href="a00935.html#ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741">OutlineFeatLength</a></div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00031">outfeat.h:31</a></div></div>
+<div class="ttc" id="a00935_html_a7a23f0f713121c5a61e7f96df94d6ced"><div class="ttname"><a href="a00935.html#a7a23f0f713121c5a61e7f96df94d6ced">AddOutlineFeatureToSet</a></div><div class="ttdeci">void AddOutlineFeatureToSet(FPOINT *Start, FPOINT *End, FEATURE_SET FeatureSet)</div><div class="ttdef"><b>Definition:</b> <a href="a00934_source.html#l00078">outfeat.cpp:78</a></div></div>
+<div class="ttc" id="a00381_html"><div class="ttname"><a href="a00381.html">FEATURE_SET_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00933_source.html#l00069">ocrfeatures.h:69</a></div></div>
+<div class="ttc" id="a00935_html_ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6"><div class="ttname"><a href="a00935.html#ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6">OutlineFeatX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00935_source.html#l00029">outfeat.h:29</a></div></div>
+<div class="ttc" id="a00925_html"><div class="ttname"><a href="a00925.html">mfoutline.h</a></div></div>
+<div class="ttc" id="a00457_html"><div class="ttname"><a href="a00457.html">list_rec</a></div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00127">oldlist.h:127</a></div></div>
+<div class="ttc" id="a00933_html"><div class="ttname"><a href="a00933.html">ocrfeatures.h</a></div></div>
+<div class="ttc" id="a00935_html_a46e551093fc5d100adbb071067948bd9"><div class="ttname"><a href="a00935.html#a46e551093fc5d100adbb071067948bd9">ConvertToOutlineFeatures</a></div><div class="ttdeci">void ConvertToOutlineFeatures(MFOUTLINE Outline, FEATURE_SET FeatureSet)</div><div class="ttdef"><b>Definition:</b> <a href="a00934_source.html#l00111">outfeat.cpp:111</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00935.html">mfdefs.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:26 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00935.html">outfeat.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:59 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

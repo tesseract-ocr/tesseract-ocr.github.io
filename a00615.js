@@ -1,5 +1,5 @@
 var a00615 =
 [
-    [ "TessBoxTextRenderer", "a00615.html#ac9fd39e28f62f675129b04238b845509", null ],
-    [ "AddImageHandler", "a00615.html#ac11897f8d8cd60e9f933e980f31a5a38", null ]
+    [ "~TessResultCallback", "a00615.html#ab74d98aa5b7c0e7e5655537b68f1c047", null ],
+    [ "Run", "a00615.html#a39d8dd30710ee089410c230aa79fd333", null ]
 ];

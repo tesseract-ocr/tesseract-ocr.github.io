@@ -1,20 +1,10 @@
 var a00470 =
 [
-    [ "LLSQ", "a00470.html#ae5fcf7b887f023364e62be5a591175a4", null ],
-    [ "add", "a00470.html#aa439294be0539828cf042f8941125b3c", null ],
-    [ "add", "a00470.html#a9a52d110b019972ea2d6009352c4c592", null ],
-    [ "add", "a00470.html#ae06248347a9cea5045ff8d5b92d76962", null ],
-    [ "c", "a00470.html#af66af81c0276216acfa659178189019f", null ],
-    [ "clear", "a00470.html#a9f7b92005193802bc03539a6ae48a27a", null ],
-    [ "count", "a00470.html#ae9282d47723a9741da7fa97cd5fd8025", null ],
-    [ "covariance", "a00470.html#a36d6bf1e469425fc4f9b97521aee481e", null ],
-    [ "m", "a00470.html#ad3aed3a5a46cf180dd80893c1034aa9e", null ],
-    [ "mean_point", "a00470.html#ac786685f62b271ca20aa719a8a03aa3d", null ],
-    [ "pearson", "a00470.html#a8537176180a1cd3ff9c3b1f97d1ffb78", null ],
-    [ "remove", "a00470.html#a2fc29873c4ec3ae881a26c54813d36ff", null ],
-    [ "rms", "a00470.html#adb169c39429f6f206130e463c557af67", null ],
-    [ "rms_orth", "a00470.html#af047401ce847d873866f6018d15d4a95", null ],
-    [ "vector_fit", "a00470.html#a1e15590443e86960c79ae5785f850d6d", null ],
-    [ "x_variance", "a00470.html#a27994b02b1ea16d8e3a6c951c90205dd", null ],
-    [ "y_variance", "a00470.html#a3e386f3db4343cca32ac4a4f028c6ea4", null ]
+    [ "Direction", "a00470.html#a2b987163e368c4d0a3c4d027b5619665", null ],
+    [ "ExtremityMark", "a00470.html#a1889d11373e03ec731d4f444b2a7c8ed", null ],
+    [ "Hidden", "a00470.html#a6c6f4bc040c7147dce9a63516758ad5d", null ],
+    [ "Padding", "a00470.html#a79168a392a03af2c73eff389ec17abe0", null ],
+    [ "Point", "a00470.html#a2b633b56b9a1a71a23551e387b7c8af4", null ],
+    [ "PreviousDirection", "a00470.html#a47d3c4465ab5bb663d77c507cfebc18a", null ],
+    [ "Slope", "a00470.html#a75770cf1960863e6937f2ca578ede6ef", null ]
 ];

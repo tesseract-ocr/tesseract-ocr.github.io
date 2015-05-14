@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::InputBuffer Class Reference</title>
+<title>Tesseract: tesseract::IntGrid Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,79 +107,135 @@ $(document).ready(function(){initNavTree('a00435.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a01850.html">List of all members</a>  </div>
+<a href="a01826.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::InputBuffer Class Reference</div>  </div>
+<div class="title">tesseract::IntGrid Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a01192_source.html">fileio.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a01092_source.html">bbgrid.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for tesseract::IntGrid:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00435.png" usemap="#tesseract::IntGrid_map" alt=""/>
+  <map id="tesseract::IntGrid_map" name="tesseract::IntGrid_map">
+<area href="a00409.html" alt="tesseract::GridBase" shape="rect" coords="0,0,121,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a14bbf8f4be142330141d33443aa3839b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a14bbf8f4be142330141d33443aa3839b">InputBuffer</a> (FILE *stream)</td></tr>
-<tr class="separator:a14bbf8f4be142330141d33443aa3839b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e7961cdc461d079f01b9215115eb468"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a6e7961cdc461d079f01b9215115eb468">InputBuffer</a> (FILE *stream, size_t size)</td></tr>
-<tr class="separator:a6e7961cdc461d079f01b9215115eb468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a780708058546af7d6a19c1d7b572d951"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a780708058546af7d6a19c1d7b572d951">~InputBuffer</a> ()</td></tr>
-<tr class="separator:a780708058546af7d6a19c1d7b572d951"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84d399d89cd3c8ba685b8001242b6fea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a84d399d89cd3c8ba685b8001242b6fea">ReadLine</a> (string *out)</td></tr>
-<tr class="separator:a84d399d89cd3c8ba685b8001242b6fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a942f7c87ff92c87ceb821dfeff4d4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a4a942f7c87ff92c87ceb821dfeff4d4e">Read</a> (string *out)</td></tr>
-<tr class="separator:a4a942f7c87ff92c87ceb821dfeff4d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2f13cd7b1a2bedcdf9faa6fc4a87d2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ab2f13cd7b1a2bedcdf9faa6fc4a87d2d">CloseFile</a> ()</td></tr>
-<tr class="separator:ab2f13cd7b1a2bedcdf9faa6fc4a87d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad035d5cf48ebae7e0befe040cd5581ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ad035d5cf48ebae7e0befe040cd5581ff">IntGrid</a> ()</td></tr>
+<tr class="separator:ad035d5cf48ebae7e0befe040cd5581ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d4b4775fa833798b14d7a17968ec76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a93d4b4775fa833798b14d7a17968ec76">IntGrid</a> (int <a class="el" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00412.html">ICOORD</a> &amp;<a class="el" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00412.html">ICOORD</a> &amp;<a class="el" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
+<tr class="separator:a93d4b4775fa833798b14d7a17968ec76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d9a594271d2056482c0a12cedcda3d0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a3d9a594271d2056482c0a12cedcda3d0">~IntGrid</a> ()</td></tr>
+<tr class="separator:a3d9a594271d2056482c0a12cedcda3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f8aae7fd3be5e1f041e499906dd057f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a5f8aae7fd3be5e1f041e499906dd057f">Init</a> (int <a class="el" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00412.html">ICOORD</a> &amp;<a class="el" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00412.html">ICOORD</a> &amp;<a class="el" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
+<tr class="separator:a5f8aae7fd3be5e1f041e499906dd057f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46dc23ed91af648648515010a1b1c988"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a46dc23ed91af648648515010a1b1c988">Clear</a> ()</td></tr>
+<tr class="separator:a46dc23ed91af648648515010a1b1c988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1389d68ae52483114b995117280db18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#ad1389d68ae52483114b995117280db18">Rotate</a> (const <a class="el" href="a00377.html">FCOORD</a> &amp;rotation)</td></tr>
+<tr class="separator:ad1389d68ae52483114b995117280db18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2412b6a04f710d91a050d8f92d3e3c25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00435.html">IntGrid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a2412b6a04f710d91a050d8f92d3e3c25">NeighbourhoodSum</a> () const </td></tr>
+<tr class="separator:a2412b6a04f710d91a050d8f92d3e3c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993a05924433985cb3084e691679bb84"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a> (int grid_x, int grid_y) const </td></tr>
+<tr class="separator:a993a05924433985cb3084e691679bb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02baa9ac4108665b5f33a9bbf3c4546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#aa02baa9ac4108665b5f33a9bbf3c4546">SetGridCell</a> (int grid_x, int grid_y, int value)</td></tr>
+<tr class="separator:aa02baa9ac4108665b5f33a9bbf3c4546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af48643ce60c1d55c1ddc7cc42d84cc79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#af48643ce60c1d55c1ddc7cc42d84cc79">RectMostlyOverThreshold</a> (const <a class="el" href="a00591.html">TBOX</a> &amp;rect, int threshold) const </td></tr>
+<tr class="separator:af48643ce60c1d55c1ddc7cc42d84cc79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73c52b6333d511c72d77fb167b799f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#aa73c52b6333d511c72d77fb167b799f1">AnyZeroInRect</a> (const <a class="el" href="a00591.html">TBOX</a> &amp;rect) const </td></tr>
+<tr class="separator:aa73c52b6333d511c72d77fb167b799f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576f01a677601b22dbc56c47267a8ee7"><td class="memItemLeft" align="right" valign="top">Pix *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00435.html#a576f01a677601b22dbc56c47267a8ee7">ThresholdToPix</a> (int threshold) const </td></tr>
+<tr class="separator:a576f01a677601b22dbc56c47267a8ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00409"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00409')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00409.html">tesseract::GridBase</a></td></tr>
+<tr class="memitem:ac1ea91a905041f0fa896bec740903a77 inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#ac1ea91a905041f0fa896bec740903a77">GridBase</a> ()</td></tr>
+<tr class="separator:ac1ea91a905041f0fa896bec740903a77 inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52bfcebedaa848425b8e2d228df559b6 inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a52bfcebedaa848425b8e2d228df559b6">GridBase</a> (int <a class="el" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00412.html">ICOORD</a> &amp;<a class="el" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00412.html">ICOORD</a> &amp;<a class="el" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
+<tr class="separator:a52bfcebedaa848425b8e2d228df559b6 inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ee16480a8ca444d7847850ac0115813 inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a7ee16480a8ca444d7847850ac0115813">~GridBase</a> ()</td></tr>
+<tr class="separator:a7ee16480a8ca444d7847850ac0115813 inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e23ba0f9d310510c9a2b3a38f11e683 inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a9e23ba0f9d310510c9a2b3a38f11e683">Init</a> (int <a class="el" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, const <a class="el" href="a00412.html">ICOORD</a> &amp;<a class="el" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>, const <a class="el" href="a00412.html">ICOORD</a> &amp;<a class="el" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>)</td></tr>
+<tr class="separator:a9e23ba0f9d310510c9a2b3a38f11e683 inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff2cee730084711205977b5fcb4901e inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a> () const </td></tr>
+<tr class="separator:afff2cee730084711205977b5fcb4901e inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a38ea995b9d65f8b67d66d5501a5b80 inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a> () const </td></tr>
+<tr class="separator:a0a38ea995b9d65f8b67d66d5501a5b80 inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e6b230c150180d009ef1f317e642f2 inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a07e6b230c150180d009ef1f317e642f2">gridheight</a> () const </td></tr>
+<tr class="separator:a07e6b230c150180d009ef1f317e642f2 inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20b2cb8eb2bf52871d5260c04949cce inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00412.html">ICOORD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a> () const </td></tr>
+<tr class="separator:ad20b2cb8eb2bf52871d5260c04949cce inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94e147841b6a4fae0b28e7e872685a5 inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00412.html">ICOORD</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a> () const </td></tr>
+<tr class="separator:aa94e147841b6a4fae0b28e7e872685a5 inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb158bba184d657c51257b98eea9f8f inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a> (int x, int y, int *grid_x, int *grid_y) const </td></tr>
+<tr class="separator:a9cb158bba184d657c51257b98eea9f8f inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6349387c9d98fae34cf247b12cdc5a00 inherit pub_methods_a00409"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a6349387c9d98fae34cf247b12cdc5a00">ClipGridCoords</a> (int *x, int *y) const </td></tr>
+<tr class="separator:a6349387c9d98fae34cf247b12cdc5a00 inherit pub_methods_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_a00409"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00409')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a00409.html">tesseract::GridBase</a></td></tr>
+<tr class="memitem:a0758dd90d5ce47e504a4148f4cda33f3 inherit pro_attribs_a00409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a></td></tr>
+<tr class="separator:a0758dd90d5ce47e504a4148f4cda33f3 inherit pro_attribs_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a429c00f7b3ea66cfd63a75cfa2c1b43d inherit pro_attribs_a00409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a></td></tr>
+<tr class="separator:a429c00f7b3ea66cfd63a75cfa2c1b43d inherit pro_attribs_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70ca33c0676a296720fea5ddc0aa5cc inherit pro_attribs_a00409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#ae70ca33c0676a296720fea5ddc0aa5cc">gridheight_</a></td></tr>
+<tr class="separator:ae70ca33c0676a296720fea5ddc0aa5cc inherit pro_attribs_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcda3a0efeed2a95fc777fc7127898a6 inherit pro_attribs_a00409"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#adcda3a0efeed2a95fc777fc7127898a6">gridbuckets_</a></td></tr>
+<tr class="separator:adcda3a0efeed2a95fc777fc7127898a6 inherit pro_attribs_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f09e93ec22c3f7a245eb6611309d8d6 inherit pro_attribs_a00409"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00412.html">ICOORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#a5f09e93ec22c3f7a245eb6611309d8d6">bleft_</a></td></tr>
+<tr class="separator:a5f09e93ec22c3f7a245eb6611309d8d6 inherit pro_attribs_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac348165d112922b3d956f924405012cd inherit pro_attribs_a00409"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00412.html">ICOORD</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00409.html#ac348165d112922b3d956f924405012cd">tright_</a></td></tr>
+<tr class="separator:ac348165d112922b3d956f924405012cd inherit pro_attribs_a00409"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a01192_source.html#l00058">58</a> of file <a class="el" href="a01192_source.html">fileio.h</a>.</p>
+<p>Definition at line <a class="el" href="a01092_source.html#l00097">97</a> of file <a class="el" href="a01092_source.html">bbgrid.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a14bbf8f4be142330141d33443aa3839b"></a>
+<a class="anchor" id="ad035d5cf48ebae7e0befe040cd5581ff"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::InputBuffer::InputBuffer </td>
+          <td class="memname">tesseract::IntGrid::IntGrid </td>
           <td>(</td>
-          <td class="paramtype">FILE *&#160;</td>
-          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00135">135</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  : stream_(stream) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    fseek(stream_, 0, SEEK_END);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    filesize_ = ftell(stream_);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    fseek(stream_, 0, SEEK_SET);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a01091_source.html#l00066">66</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                 {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  grid_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a6e7961cdc461d079f01b9215115eb468"></a>
+<a class="anchor" id="a93d4b4775fa833798b14d7a17968ec76"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::InputBuffer::InputBuffer </td>
+          <td class="memname">tesseract::IntGrid::IntGrid </td>
           <td>(</td>
-          <td class="paramtype">FILE *&#160;</td>
-          <td class="paramname"><em>stream</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gridsize</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00412.html">ICOORD</a> &amp;&#160;</td>
+          <td class="paramname"><em>bleft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00412.html">ICOORD</a> &amp;&#160;</td>
+          <td class="paramname"><em>tright</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -189,45 +245,89 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00142">142</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  : stream_(stream) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    fseek(stream_, 0, SEEK_END);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    filesize_ = ftell(stream_);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    fseek(stream_, 0, SEEK_SET);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a01091_source.html#l00070">70</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  : grid_(<a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="a00435.html#a5f8aae7fd3be5e1f041e499906dd057f">Init</a>(<a class="code" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, bleft, tright);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="ttc" id="a00409_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00409.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00063">bbgrid.h:63</a></div></div>
+<div class="ttc" id="a00435_html_a5f8aae7fd3be5e1f041e499906dd057f"><div class="ttname"><a href="a00435.html#a5f8aae7fd3be5e1f041e499906dd057f">tesseract::IntGrid::Init</a></div><div class="ttdeci">void Init(int gridsize, const ICOORD &amp;bleft, const ICOORD &amp;tright)</div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00082">bbgrid.cpp:82</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a780708058546af7d6a19c1d7b572d951"></a>
+<a class="anchor" id="a3d9a594271d2056482c0a12cedcda3d0"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::InputBuffer::~InputBuffer </td>
+          <td class="memname">tesseract::IntGrid::~IntGrid </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00149">149</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                          {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">if</span> (stream_ != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    fclose(stream_);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
+<p>Definition at line <a class="el" href="a01091_source.html#l00075">75</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                  {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">if</span> (grid_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">delete</span> [] grid_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab2f13cd7b1a2bedcdf9faa6fc4a87d2d"></a>
+<a class="anchor" id="aa73c52b6333d511c72d77fb167b799f1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::InputBuffer::CloseFile </td>
+          <td class="memname">bool tesseract::IntGrid::AnyZeroInRect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00591.html">TBOX</a> &amp;&#160;</td>
+          <td class="paramname"><em>rect</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01091_source.html#l00178">178</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                                  {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordtype">int</span> min_x, min_y, max_x, max_y;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a>(rect.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>(), rect.<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a>(), &amp;min_x, &amp;min_y);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <a class="code" href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a>(rect.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>(), rect.<a class="code" href="a00591.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a>(), &amp;max_x, &amp;max_y);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = min_y; y &lt;= max_y; ++y) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = min_x; x &lt;= max_x; ++x) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(x, y) == 0)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="ttc" id="a00435_html_a993a05924433985cb3084e691679bb84"><div class="ttname"><a href="a00435.html#a993a05924433985cb3084e691679bb84">tesseract::IntGrid::GridCellValue</a></div><div class="ttdeci">int GridCellValue(int grid_x, int grid_y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00120">bbgrid.h:120</a></div></div>
+<div class="ttc" id="a00591_html_a4451d237f1cd18c4982d63fe36a11fc3"><div class="ttname"><a href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">TBOX::bottom</a></div><div class="ttdeci">inT16 bottom() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00061">rect.h:61</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00591_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00075">rect.h:75</a></div></div>
+<div class="ttc" id="a00409_html_a9cb158bba184d657c51257b98eea9f8f"><div class="ttname"><a href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">tesseract::GridBase::GridCoords</a></div><div class="ttdeci">void GridCoords(int x, int y, int *grid_x, int *grid_y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00054">bbgrid.cpp:54</a></div></div>
+<div class="ttc" id="a00591_html_adf92e9fdac1bdf11c10d1c4d1178791a"><div class="ttname"><a href="a00591.html#adf92e9fdac1bdf11c10d1c4d1178791a">TBOX::top</a></div><div class="ttdeci">inT16 top() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00054">rect.h:54</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a46dc23ed91af648648515010a1b1c988"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::IntGrid::Clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -235,74 +335,367 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00169">169</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                            {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">int</span> ret = fclose(stream_);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  stream_ = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">return</span> ret == 0;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
+<p>Definition at line <a class="el" href="a01091_source.html#l00091">91</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="a00409.html#adcda3a0efeed2a95fc777fc7127898a6">gridbuckets_</a>; ++i) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    grid_[i] = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="ttc" id="a00409_html_adcda3a0efeed2a95fc777fc7127898a6"><div class="ttname"><a href="a00409.html#adcda3a0efeed2a95fc777fc7127898a6">tesseract::GridBase::gridbuckets_</a></div><div class="ttdeci">int gridbuckets_</div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00089">bbgrid.h:89</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a4a942f7c87ff92c87ceb821dfeff4d4e"></a>
+<a class="anchor" id="a993a05924433985cb3084e691679bb84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tesseract::IntGrid::GridCellValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grid_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grid_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01092_source.html#l00120">120</a> of file <a class="el" href="a01092_source.html">bbgrid.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                  {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="a00409.html#a6349387c9d98fae34cf247b12cdc5a00">ClipGridCoords</a>(&amp;grid_x, &amp;grid_y);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> grid_[grid_y * <a class="code" href="a00409.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a> + grid_x];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  }</div>
+<div class="ttc" id="a00409_html_a6349387c9d98fae34cf247b12cdc5a00"><div class="ttname"><a href="a00409.html#a6349387c9d98fae34cf247b12cdc5a00">tesseract::GridBase::ClipGridCoords</a></div><div class="ttdeci">void ClipGridCoords(int *x, int *y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00061">bbgrid.cpp:61</a></div></div>
+<div class="ttc" id="a00409_html_a429c00f7b3ea66cfd63a75cfa2c1b43d"><div class="ttname"><a href="a00409.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">tesseract::GridBase::gridwidth_</a></div><div class="ttdeci">int gridwidth_</div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00087">bbgrid.h:87</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5f8aae7fd3be5e1f041e499906dd057f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::InputBuffer::Read </td>
+          <td class="memname">void tesseract::IntGrid::Init </td>
           <td>(</td>
-          <td class="paramtype">string *&#160;</td>
-          <td class="paramname"><em>out</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gridsize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00412.html">ICOORD</a> &amp;&#160;</td>
+          <td class="paramname"><em>bleft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00412.html">ICOORD</a> &amp;&#160;</td>
+          <td class="paramname"><em>tright</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01091_source.html#l00082">82</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                                          {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="a00409.html#a9e23ba0f9d310510c9a2b3a38f11e683">GridBase::Init</a>(<a class="code" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>, bleft, tright);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span> (grid_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">delete</span> [] grid_;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  grid_ = <span class="keyword">new</span> <span class="keywordtype">int</span>[<a class="code" href="a00409.html#adcda3a0efeed2a95fc777fc7127898a6">gridbuckets_</a>];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <a class="code" href="a00435.html#a46dc23ed91af648648515010a1b1c988">Clear</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="ttc" id="a00409_html_a9e23ba0f9d310510c9a2b3a38f11e683"><div class="ttname"><a href="a00409.html#a9e23ba0f9d310510c9a2b3a38f11e683">tesseract::GridBase::Init</a></div><div class="ttdeci">void Init(int gridsize, const ICOORD &amp;bleft, const ICOORD &amp;tright)</div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00042">bbgrid.cpp:42</a></div></div>
+<div class="ttc" id="a00435_html_a46dc23ed91af648648515010a1b1c988"><div class="ttname"><a href="a00435.html#a46dc23ed91af648648515010a1b1c988">tesseract::IntGrid::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00091">bbgrid.cpp:91</a></div></div>
+<div class="ttc" id="a00409_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00409.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00063">bbgrid.h:63</a></div></div>
+<div class="ttc" id="a00409_html_adcda3a0efeed2a95fc777fc7127898a6"><div class="ttname"><a href="a00409.html#adcda3a0efeed2a95fc777fc7127898a6">tesseract::GridBase::gridbuckets_</a></div><div class="ttdeci">int gridbuckets_</div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00089">bbgrid.h:89</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2412b6a04f710d91a050d8f92d3e3c25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00435.html">IntGrid</a> * tesseract::IntGrid::NeighbourhoodSum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01091_source.html#l00136">136</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                         {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="a00435.html#ad035d5cf48ebae7e0befe040cd5581ff">IntGrid</a>* sumgrid = <span class="keyword">new</span> <a class="code" href="a00435.html#ad035d5cf48ebae7e0befe040cd5581ff">IntGrid</a>(<a class="code" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>(), <a class="code" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>(), <a class="code" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>());</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; <a class="code" href="a00409.html#a07e6b230c150180d009ef1f317e642f2">gridheight</a>(); ++y) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code" href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a>(); ++x) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      <span class="keywordtype">int</span> cell_count = 0;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> yoffset = -1; yoffset &lt;= 1; ++yoffset) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> xoffset = -1; xoffset &lt;= 1; ++xoffset) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;          <span class="keywordtype">int</span> grid_x = x + xoffset;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;          <span class="keywordtype">int</span> grid_y = y + yoffset;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;          <a class="code" href="a00409.html#a6349387c9d98fae34cf247b12cdc5a00">ClipGridCoords</a>(&amp;grid_x, &amp;grid_y);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;          cell_count += <a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(grid_x, grid_y);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(x, y) &gt; 1)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        sumgrid-&gt;SetGridCell(x, y, cell_count);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">return</span> sumgrid;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="ttc" id="a00435_html_a993a05924433985cb3084e691679bb84"><div class="ttname"><a href="a00435.html#a993a05924433985cb3084e691679bb84">tesseract::IntGrid::GridCellValue</a></div><div class="ttdeci">int GridCellValue(int grid_x, int grid_y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00120">bbgrid.h:120</a></div></div>
+<div class="ttc" id="a00409_html_a0a38ea995b9d65f8b67d66d5501a5b80"><div class="ttname"><a href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">tesseract::GridBase::gridwidth</a></div><div class="ttdeci">int gridwidth() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00066">bbgrid.h:66</a></div></div>
+<div class="ttc" id="a00409_html_aa94e147841b6a4fae0b28e7e872685a5"><div class="ttname"><a href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tesseract::GridBase::tright</a></div><div class="ttdeci">const ICOORD &amp; tright() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00075">bbgrid.h:75</a></div></div>
+<div class="ttc" id="a00409_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00409.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00063">bbgrid.h:63</a></div></div>
+<div class="ttc" id="a00409_html_ad20b2cb8eb2bf52871d5260c04949cce"><div class="ttname"><a href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">tesseract::GridBase::bleft</a></div><div class="ttdeci">const ICOORD &amp; bleft() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00072">bbgrid.h:72</a></div></div>
+<div class="ttc" id="a00409_html_a07e6b230c150180d009ef1f317e642f2"><div class="ttname"><a href="a00409.html#a07e6b230c150180d009ef1f317e642f2">tesseract::GridBase::gridheight</a></div><div class="ttdeci">int gridheight() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00069">bbgrid.h:69</a></div></div>
+<div class="ttc" id="a00435_html_ad035d5cf48ebae7e0befe040cd5581ff"><div class="ttname"><a href="a00435.html#ad035d5cf48ebae7e0befe040cd5581ff">tesseract::IntGrid::IntGrid</a></div><div class="ttdeci">IntGrid()</div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00066">bbgrid.cpp:66</a></div></div>
+<div class="ttc" id="a00409_html_a6349387c9d98fae34cf247b12cdc5a00"><div class="ttname"><a href="a00409.html#a6349387c9d98fae34cf247b12cdc5a00">tesseract::GridBase::ClipGridCoords</a></div><div class="ttdeci">void ClipGridCoords(int *x, int *y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00061">bbgrid.cpp:61</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af48643ce60c1d55c1ddc7cc42d84cc79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tesseract::IntGrid::RectMostlyOverThreshold </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00591.html">TBOX</a> &amp;&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>threshold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01091_source.html#l00158">158</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordtype">int</span> min_x, min_y, max_x, max_y;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a>(rect.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>(), rect.<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a>(), &amp;min_x, &amp;min_y);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a>(rect.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>(), rect.<a class="code" href="a00591.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a>(), &amp;max_x, &amp;max_y);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">int</span> total_area = 0;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = min_y; y &lt;= max_y; ++y) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = min_x; x &lt;= max_x; ++x) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keywordtype">int</span> value = <a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(x, y);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <span class="keywordflow">if</span> (value &gt; threshold) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="a00591.html">TBOX</a> cell_box(x * <a class="code" href="a00409.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a>, y * gridsize_,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                      (x + 1) * gridsize_, (y + 1) * gridsize_);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        cell_box &amp;= rect;  <span class="comment">// This is in-place box intersection.</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        total_area += cell_box.<a class="code" href="a00591.html#a46fca3df91dc271b30b69531e9d8178a">area</a>();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordflow">return</span> total_area * 2 &gt; rect.<a class="code" href="a00591.html#a46fca3df91dc271b30b69531e9d8178a">area</a>();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="ttc" id="a00435_html_a993a05924433985cb3084e691679bb84"><div class="ttname"><a href="a00435.html#a993a05924433985cb3084e691679bb84">tesseract::IntGrid::GridCellValue</a></div><div class="ttdeci">int GridCellValue(int grid_x, int grid_y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00120">bbgrid.h:120</a></div></div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00591_html_a4451d237f1cd18c4982d63fe36a11fc3"><div class="ttname"><a href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">TBOX::bottom</a></div><div class="ttdeci">inT16 bottom() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00061">rect.h:61</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00591_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00075">rect.h:75</a></div></div>
+<div class="ttc" id="a00591_html_a46fca3df91dc271b30b69531e9d8178a"><div class="ttname"><a href="a00591.html#a46fca3df91dc271b30b69531e9d8178a">TBOX::area</a></div><div class="ttdeci">inT32 area() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00118">rect.h:118</a></div></div>
+<div class="ttc" id="a00409_html_a9cb158bba184d657c51257b98eea9f8f"><div class="ttname"><a href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">tesseract::GridBase::GridCoords</a></div><div class="ttdeci">void GridCoords(int x, int y, int *grid_x, int *grid_y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00054">bbgrid.cpp:54</a></div></div>
+<div class="ttc" id="a00591_html_adf92e9fdac1bdf11c10d1c4d1178791a"><div class="ttname"><a href="a00591.html#adf92e9fdac1bdf11c10d1c4d1178791a">TBOX::top</a></div><div class="ttdeci">inT16 top() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00054">rect.h:54</a></div></div>
+<div class="ttc" id="a00409_html_a0758dd90d5ce47e504a4148f4cda33f3"><div class="ttname"><a href="a00409.html#a0758dd90d5ce47e504a4148f4cda33f3">tesseract::GridBase::gridsize_</a></div><div class="ttdeci">int gridsize_</div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00086">bbgrid.h:86</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad1389d68ae52483114b995117280db18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::IntGrid::Rotate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00377.html">FCOORD</a> &amp;&#160;</td>
+          <td class="paramname"><em>rotation</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01191_source.html#l00155">155</a> of file <a class="el" href="a01191_source.html">fileio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                  {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">char</span> buf[BUFSIZ+1];</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">int</span> l;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">while</span>((l = fread(buf, 1, BUFSIZ, stream_)) &gt; 0) {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span>(ferror(stream_)) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      clearerr(stream_);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    buf[l] = 0;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    out-&gt;append(buf);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a01091_source.html#l00103">103</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                           {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(rotation.<a class="code" href="a00377.html#a9edadbfc357c730f62fa3c92677b0d58">x</a>() == 0.0f || rotation.<a class="code" href="a00377.html#a397f7ce997b246df18e7bd5a20cc422e">y</a>() == 0.0f);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <a class="code" href="a00412.html">ICOORD</a> old_bleft(<a class="code" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>());</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="a00412.html">ICOORD</a> old_tright(<a class="code" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>());</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">int</span> old_width = <a class="code" href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">int</span> old_height = <a class="code" href="a00409.html#a07e6b230c150180d009ef1f317e642f2">gridheight</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <a class="code" href="a00591.html">TBOX</a> box(<a class="code" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>(), <a class="code" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  box.rotate(rotation);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">int</span>* old_grid = grid_;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  grid_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="a00435.html#a5f8aae7fd3be5e1f041e499906dd057f">Init</a>(<a class="code" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>(), box.botleft(), box.topright());</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="comment">// Iterate over the old grid, copying data to the rotated position in the new.</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">int</span> oldi = 0;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="a00377.html">FCOORD</a> x_step(rotation);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  x_step *= <a class="code" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> oldy = 0; oldy &lt; old_height; ++oldy) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="a00377.html">FCOORD</a> line_pos(old_bleft.x(), old_bleft.y() + <a class="code" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>() * oldy);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    line_pos.<a class="code" href="a00377.html#a81ca9ea0cac4cd8c1bca0314e29bb28d">rotate</a>(rotation);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> oldx = 0; oldx &lt; old_width; ++oldx, line_pos += x_step, ++oldi) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <span class="keywordtype">int</span> grid_x, grid_y;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <a class="code" href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a>(static_cast&lt;int&gt;(line_pos.x() + 0.5),</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                 <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(line_pos.y() + 0.5),</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 &amp;grid_x, &amp;grid_y);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      grid_[grid_y * <a class="code" href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a>() + grid_x] = old_grid[oldi];</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">delete</span> [] old_grid;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="ttc" id="a00409_html_a0a38ea995b9d65f8b67d66d5501a5b80"><div class="ttname"><a href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">tesseract::GridBase::gridwidth</a></div><div class="ttdeci">int gridwidth() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00066">bbgrid.h:66</a></div></div>
+<div class="ttc" id="a00409_html_aa94e147841b6a4fae0b28e7e872685a5"><div class="ttname"><a href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tesseract::GridBase::tright</a></div><div class="ttdeci">const ICOORD &amp; tright() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00075">bbgrid.h:75</a></div></div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00409_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00409.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00063">bbgrid.h:63</a></div></div>
+<div class="ttc" id="a00435_html_a5f8aae7fd3be5e1f041e499906dd057f"><div class="ttname"><a href="a00435.html#a5f8aae7fd3be5e1f041e499906dd057f">tesseract::IntGrid::Init</a></div><div class="ttdeci">void Init(int gridsize, const ICOORD &amp;bleft, const ICOORD &amp;tright)</div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00082">bbgrid.cpp:82</a></div></div>
+<div class="ttc" id="a00409_html_ad20b2cb8eb2bf52871d5260c04949cce"><div class="ttname"><a href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">tesseract::GridBase::bleft</a></div><div class="ttdeci">const ICOORD &amp; bleft() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00072">bbgrid.h:72</a></div></div>
+<div class="ttc" id="a00409_html_a07e6b230c150180d009ef1f317e642f2"><div class="ttname"><a href="a00409.html#a07e6b230c150180d009ef1f317e642f2">tesseract::GridBase::gridheight</a></div><div class="ttdeci">int gridheight() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00069">bbgrid.h:69</a></div></div>
+<div class="ttc" id="a00377_html_a397f7ce997b246df18e7bd5a20cc422e"><div class="ttname"><a href="a00377.html#a397f7ce997b246df18e7bd5a20cc422e">FCOORD::y</a></div><div class="ttdeci">float y() const </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00212">points.h:212</a></div></div>
+<div class="ttc" id="a00412_html"><div class="ttname"><a href="a00412.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00030">points.h:30</a></div></div>
+<div class="ttc" id="a00377_html_a9edadbfc357c730f62fa3c92677b0d58"><div class="ttname"><a href="a00377.html#a9edadbfc357c730f62fa3c92677b0d58">FCOORD::x</a></div><div class="ttdeci">float x() const </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00209">points.h:209</a></div></div>
+<div class="ttc" id="a00377_html_a81ca9ea0cac4cd8c1bca0314e29bb28d"><div class="ttname"><a href="a00377.html#a81ca9ea0cac4cd8c1bca0314e29bb28d">FCOORD::rotate</a></div><div class="ttdeci">void rotate(const FCOORD vec)</div><div class="ttdef"><b>Definition:</b> <a href="a00755_source.html#l00471">ipoints.h:471</a></div></div>
+<div class="ttc" id="a00409_html_a9cb158bba184d657c51257b98eea9f8f"><div class="ttname"><a href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">tesseract::GridBase::GridCoords</a></div><div class="ttdeci">void GridCoords(int x, int y, int *grid_x, int *grid_y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01091_source.html#l00054">bbgrid.cpp:54</a></div></div>
+<div class="ttc" id="a00377_html"><div class="ttname"><a href="a00377.html">FCOORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00189">points.h:189</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a84d399d89cd3c8ba685b8001242b6fea"></a>
+<a class="anchor" id="aa02baa9ac4108665b5f33a9bbf3c4546"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::IntGrid::SetGridCell </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grid_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grid_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01092_source.html#l00124">124</a> of file <a class="el" href="a01092_source.html">bbgrid.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                                      {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(grid_x &gt;= 0 &amp;&amp; grid_x &lt; <a class="code" href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a>());</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(grid_y &gt;= 0 &amp;&amp; grid_y &lt; <a class="code" href="a00409.html#a07e6b230c150180d009ef1f317e642f2">gridheight</a>());</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    grid_[grid_y * <a class="code" href="a00409.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a> + grid_x] = value;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  }</div>
+<div class="ttc" id="a00409_html_a0a38ea995b9d65f8b67d66d5501a5b80"><div class="ttname"><a href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">tesseract::GridBase::gridwidth</a></div><div class="ttdeci">int gridwidth() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00066">bbgrid.h:66</a></div></div>
+<div class="ttc" id="a00409_html_a07e6b230c150180d009ef1f317e642f2"><div class="ttname"><a href="a00409.html#a07e6b230c150180d009ef1f317e642f2">tesseract::GridBase::gridheight</a></div><div class="ttdeci">int gridheight() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00069">bbgrid.h:69</a></div></div>
+<div class="ttc" id="a00409_html_a429c00f7b3ea66cfd63a75cfa2c1b43d"><div class="ttname"><a href="a00409.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">tesseract::GridBase::gridwidth_</a></div><div class="ttdeci">int gridwidth_</div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00087">bbgrid.h:87</a></div></div>
+<div class="ttc" id="a00827_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00084">errcode.h:84</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a576f01a677601b22dbc56c47267a8ee7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::InputBuffer::ReadLine </td>
+          <td class="memname">Pix * tesseract::IntGrid::ThresholdToPix </td>
           <td>(</td>
-          <td class="paramtype">string *&#160;</td>
-          <td class="paramname"><em>out</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="a01091_source.html#l00194">194</a> of file <a class="el" href="a01091_source.html">bbgrid.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                                                {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  Pix* pix = pixCreate(<a class="code" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>().x() - <a class="code" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>().x(),</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                       <a class="code" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>().y() - <a class="code" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>().y(), 1);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordtype">int</span> cellsize = <a class="code" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; <a class="code" href="a00409.html#a07e6b230c150180d009ef1f317e642f2">gridheight</a>(); ++y) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code" href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a>(); ++x) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(x, y) &gt; threshold &amp;&amp;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;          <a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(x - 1, y) &gt; 0 &amp;&amp; <a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(x + 1, y) &gt; 0 &amp;&amp;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;              <a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(x, y - 1) &gt; 0 &amp;&amp; <a class="code" href="a00435.html#a993a05924433985cb3084e691679bb84">GridCellValue</a>(x, y + 1) &gt; 0) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        pixRasterop(pix, x * cellsize, <a class="code" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>().y() - ((y + 1) * cellsize),</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    cellsize, cellsize, PIX_SET, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 0, 0);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keywordflow">return</span> pix;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
+<div class="ttc" id="a00435_html_a993a05924433985cb3084e691679bb84"><div class="ttname"><a href="a00435.html#a993a05924433985cb3084e691679bb84">tesseract::IntGrid::GridCellValue</a></div><div class="ttdeci">int GridCellValue(int grid_x, int grid_y) const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00120">bbgrid.h:120</a></div></div>
+<div class="ttc" id="a00409_html_a0a38ea995b9d65f8b67d66d5501a5b80"><div class="ttname"><a href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">tesseract::GridBase::gridwidth</a></div><div class="ttdeci">int gridwidth() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00066">bbgrid.h:66</a></div></div>
+<div class="ttc" id="a00409_html_aa94e147841b6a4fae0b28e7e872685a5"><div class="ttname"><a href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tesseract::GridBase::tright</a></div><div class="ttdeci">const ICOORD &amp; tright() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00075">bbgrid.h:75</a></div></div>
+<div class="ttc" id="a00409_html_afff2cee730084711205977b5fcb4901e"><div class="ttname"><a href="a00409.html#afff2cee730084711205977b5fcb4901e">tesseract::GridBase::gridsize</a></div><div class="ttdeci">int gridsize() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00063">bbgrid.h:63</a></div></div>
+<div class="ttc" id="a00409_html_ad20b2cb8eb2bf52871d5260c04949cce"><div class="ttname"><a href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">tesseract::GridBase::bleft</a></div><div class="ttdeci">const ICOORD &amp; bleft() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00072">bbgrid.h:72</a></div></div>
+<div class="ttc" id="a00409_html_a07e6b230c150180d009ef1f317e642f2"><div class="ttname"><a href="a00409.html#a07e6b230c150180d009ef1f317e642f2">tesseract::GridBase::gridheight</a></div><div class="ttdeci">int gridheight() const </div><div class="ttdef"><b>Definition:</b> <a href="a01092_source.html#l00069">bbgrid.h:69</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>training/<a class="el" href="a01192_source.html">fileio.h</a></li>
-<li>training/<a class="el" href="a01191_source.html">fileio.cpp</a></li>
+<li>textord/<a class="el" href="a01092_source.html">bbgrid.h</a></li>
+<li>textord/<a class="el" href="a01091_source.html">bbgrid.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00435.html">InputBuffer</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:52 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00435.html">IntGrid</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:27 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

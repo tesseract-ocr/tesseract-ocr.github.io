@@ -1,23 +1,13 @@
 var a00309 =
 [
-    [ "CharClassifier", "a00309.html#a08c3672c2062828c840d830c7a16639b", null ],
-    [ "~CharClassifier", "a00309.html#afac874bedbc52b288b5e064bed170dce", null ],
-    [ "CaseSensitive", "a00309.html#ac985e2cf1310211262590b0952ab2fa9", null ],
-    [ "CharCost", "a00309.html#aa447f4775f256d36dab382f1bbb7b56c", null ],
-    [ "Classify", "a00309.html#ae133c2172d9bc6ae1726ae9a436755f1", null ],
-    [ "FeatureExtractor", "a00309.html#ae68e84dfd759cb08e82d2cee97abd3b2", null ],
-    [ "Fold", "a00309.html#a38059a0e194a7e1ab1099f15bb0c4a87", null ],
-    [ "Init", "a00309.html#a64532c78a06560da1fb9ed7d54d9309f", null ],
-    [ "LoadFoldingSets", "a00309.html#ada1bba5a3763258805be98302083eb8e", null ],
-    [ "SetCaseSensitive", "a00309.html#a5480d01debdf57b4d2d2189c2c499e2d", null ],
-    [ "SetLearnParam", "a00309.html#ab2c1ff04d245d64d7900afefae9ef842", null ],
-    [ "Train", "a00309.html#a3ee7b00c9999051a92426b6de0bc7e5d", null ],
-    [ "case_sensitive_", "a00309.html#aaabb1acf1d7ebcd2b66e1f9796cc49dc", null ],
-    [ "char_set_", "a00309.html#afbe25062436573d4a3b8c9e9936f6013", null ],
-    [ "feat_extract_", "a00309.html#ab8e30443f3f9a1d1e9ca5640608a47a8", null ],
-    [ "fold_set_cnt_", "a00309.html#aa00adf41e98123f259e463b037908db7", null ],
-    [ "fold_set_len_", "a00309.html#a883ce8cb0ee930611abcd061153a3be2", null ],
-    [ "fold_sets_", "a00309.html#ad7acb8330f63320bb636c66d31b815dc", null ],
-    [ "init_", "a00309.html#ac5b9df929e2570650b263f0a1504125b", null ],
-    [ "params_", "a00309.html#af2e7491d921d252957ae0ea4cdaf9aff", null ]
+    [ "CharSet", "a00309.html#a8007ad7fa4bd3d5d788f3a4770e21c62", null ],
+    [ "~CharSet", "a00309.html#a8763a05033a659db7c55454b04b00b2b", null ],
+    [ "ClassCount", "a00309.html#abfcdf381a241c375ad4c0f77747afb6c", null ],
+    [ "ClassID", "a00309.html#aea651f4514338d320e195c6780ffcda5", null ],
+    [ "ClassID", "a00309.html#a593e81eaa6ab9ba3ffb954a4f6e78ec7", null ],
+    [ "ClassString", "a00309.html#a7fd13e0ab7d7f0e963d05023287c634a", null ],
+    [ "InternalUnicharset", "a00309.html#a5d8fd3fba22c4d32bb00c673e2998211", null ],
+    [ "SharedUnicharset", "a00309.html#adb295f91609709b44fad3d74388021f6", null ],
+    [ "UnicharID", "a00309.html#a37d5d5844da23aab5d346779ca477d03", null ],
+    [ "UnicharID", "a00309.html#afd7c313da9dd674405ec11ebf162089f", null ]
 ];

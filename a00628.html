@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::TessHOcrRenderer Class Reference</title>
+<title>Tesseract: TO_ROW Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,72 +107,150 @@ $(document).ready(function(){initNavTree('a00628.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="a01938.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="a01700.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::TessHOcrRenderer Class Reference</div>  </div>
+<div class="title">TO_ROW Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00687_source.html">renderer.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00730_source.html">blobbox.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for tesseract::TessHOcrRenderer:</div>
+Inheritance diagram for TO_ROW:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00628.png" usemap="#tesseract::TessHOcrRenderer_map" alt=""/>
-  <map id="tesseract::TessHOcrRenderer_map" name="tesseract::TessHOcrRenderer_map">
-<area href="a00639.html" alt="tesseract::TessResultRenderer" shape="rect" coords="0,0,182,24"/>
+  <img src="a00628.png" usemap="#TO_ROW_map" alt=""/>
+  <map id="TO_ROW_map" name="TO_ROW_map">
+<area href="a00369.html" alt="ELIST2_LINK" shape="rect" coords="0,0,86,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c6a1ec7ca443265eb0f9f899a3222b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a3c6a1ec7ca443265eb0f9f899a3222b6">TessHOcrRenderer</a> (const char *outputbase, bool font_info)</td></tr>
-<tr class="separator:a3c6a1ec7ca443265eb0f9f899a3222b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91faa97e7113b7ebdd2b0c6ab01f17da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a91faa97e7113b7ebdd2b0c6ab01f17da">TessHOcrRenderer</a> (const char *outputbase)</td></tr>
-<tr class="separator:a91faa97e7113b7ebdd2b0c6ab01f17da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00639"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00639')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00639.html">tesseract::TessResultRenderer</a></td></tr>
-<tr class="memitem:ab54195c235a6c1639253a778c6cc2944 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#ab54195c235a6c1639253a778c6cc2944">~TessResultRenderer</a> ()</td></tr>
-<tr class="separator:ab54195c235a6c1639253a778c6cc2944 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2af504390bed60b8b8041a978cf6962 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#af2af504390bed60b8b8041a978cf6962">insert</a> (<a class="el" href="a00639.html">TessResultRenderer</a> *<a class="el" href="a00639.html#a8b986f7eee3c6892faa6f070a102b0b1">next</a>)</td></tr>
-<tr class="separator:af2af504390bed60b8b8041a978cf6962 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b986f7eee3c6892faa6f070a102b0b1 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00639.html">TessResultRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#a8b986f7eee3c6892faa6f070a102b0b1">next</a> ()</td></tr>
-<tr class="separator:a8b986f7eee3c6892faa6f070a102b0b1 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f910e5251ee7ebd65f69072b358b445 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#a8f910e5251ee7ebd65f69072b358b445">BeginDocument</a> (const char *<a class="el" href="a00639.html#abc6c2169b2c37d5963163cdd0a21df77">title</a>)</td></tr>
-<tr class="separator:a8f910e5251ee7ebd65f69072b358b445 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48121964cc38c7b33bc7e555a7b41423 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#a48121964cc38c7b33bc7e555a7b41423">AddImage</a> (<a class="el" href="a00614.html">TessBaseAPI</a> *api)</td></tr>
-<tr class="separator:a48121964cc38c7b33bc7e555a7b41423 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64def5e1f46676190e5af46f23adab88 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#a64def5e1f46676190e5af46f23adab88">EndDocument</a> ()</td></tr>
-<tr class="separator:a64def5e1f46676190e5af46f23adab88 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cdb745d5ebc40448f41e426c086f278 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#a1cdb745d5ebc40448f41e426c086f278">file_extension</a> () const </td></tr>
-<tr class="separator:a1cdb745d5ebc40448f41e426c086f278 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc6c2169b2c37d5963163cdd0a21df77 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#abc6c2169b2c37d5963163cdd0a21df77">title</a> () const </td></tr>
-<tr class="separator:abc6c2169b2c37d5963163cdd0a21df77 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349cd9f8e3f298f2fb67055d39bde954 inherit pub_methods_a00639"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#a349cd9f8e3f298f2fb67055d39bde954">imagenum</a> () const </td></tr>
-<tr class="separator:a349cd9f8e3f298f2fb67055d39bde954 inherit pub_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97938fde595d8b6cf55ebd65cb94c232"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a97938fde595d8b6cf55ebd65cb94c232">TO_ROW</a> ()</td></tr>
+<tr class="separator:a97938fde595d8b6cf55ebd65cb94c232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99721b51dd782d8a9951d6f07d3bcc19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a99721b51dd782d8a9951d6f07d3bcc19">TO_ROW</a> (<a class="el" href="a00279.html">BLOBNBOX</a> *blob, float top, float bottom, float row_size)</td></tr>
+<tr class="separator:a99721b51dd782d8a9951d6f07d3bcc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d0d51396a6ad29e5275051900ed655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a44d0d51396a6ad29e5275051900ed655">print</a> () const </td></tr>
+<tr class="separator:a44d0d51396a6ad29e5275051900ed655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b13776064db8791dd9d9f8cd9749ee"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a99b13776064db8791dd9d9f8cd9749ee">max_y</a> () const </td></tr>
+<tr class="separator:a99b13776064db8791dd9d9f8cd9749ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad00c86bd684bd454b57bc3bf2b9d0680"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#ad00c86bd684bd454b57bc3bf2b9d0680">min_y</a> () const </td></tr>
+<tr class="separator:ad00c86bd684bd454b57bc3bf2b9d0680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695c5bd88c3e527b066e84b785dbab36"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a695c5bd88c3e527b066e84b785dbab36">mean_y</a> () const </td></tr>
+<tr class="separator:a695c5bd88c3e527b066e84b785dbab36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aea8d905e2f034e7c7e75195b81fac9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a5aea8d905e2f034e7c7e75195b81fac9">initial_min_y</a> () const </td></tr>
+<tr class="separator:a5aea8d905e2f034e7c7e75195b81fac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51cc690153d9cabdc8217e2ac336d414"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a51cc690153d9cabdc8217e2ac336d414">line_m</a> () const </td></tr>
+<tr class="separator:a51cc690153d9cabdc8217e2ac336d414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22dc07e392af85d9ce625efdd13c6627"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a22dc07e392af85d9ce625efdd13c6627">line_c</a> () const </td></tr>
+<tr class="separator:a22dc07e392af85d9ce625efdd13c6627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6271a66037a1ba15368e1bf3ef4a8d51"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a6271a66037a1ba15368e1bf3ef4a8d51">line_error</a> () const </td></tr>
+<tr class="separator:a6271a66037a1ba15368e1bf3ef4a8d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81a46c8d6026c157c152778aa9d1ab58"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a81a46c8d6026c157c152778aa9d1ab58">parallel_c</a> () const </td></tr>
+<tr class="separator:a81a46c8d6026c157c152778aa9d1ab58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57d80c8359f9fa5fec3497f995e7177"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#aa57d80c8359f9fa5fec3497f995e7177">parallel_error</a> () const </td></tr>
+<tr class="separator:aa57d80c8359f9fa5fec3497f995e7177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75977d78697308fc64cbd42f056b9bd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#ad75977d78697308fc64cbd42f056b9bd">believability</a> () const </td></tr>
+<tr class="separator:ad75977d78697308fc64cbd42f056b9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78743484af3c62d5cff686a0b99c52a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#ae78743484af3c62d5cff686a0b99c52a">intercept</a> () const </td></tr>
+<tr class="separator:ae78743484af3c62d5cff686a0b99c52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0173e9da64e4f2d29f01da14c3a053ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a0173e9da64e4f2d29f01da14c3a053ee">add_blob</a> (<a class="el" href="a00279.html">BLOBNBOX</a> *blob, float top, float bottom, float row_size)</td></tr>
+<tr class="separator:a0173e9da64e4f2d29f01da14c3a053ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a342f76a0a1b31c8964b170a3faba25e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a342f76a0a1b31c8964b170a3faba25e8">insert_blob</a> (<a class="el" href="a00279.html">BLOBNBOX</a> *blob)</td></tr>
+<tr class="separator:a342f76a0a1b31c8964b170a3faba25e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39cee94572e70d35179c27cdf21a3022"><td class="memItemLeft" align="right" valign="top">BLOBNBOX_LIST *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a39cee94572e70d35179c27cdf21a3022">blob_list</a> ()</td></tr>
+<tr class="separator:a39cee94572e70d35179c27cdf21a3022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10818e7d801044a4d569466fa1d5f841"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a10818e7d801044a4d569466fa1d5f841">set_line</a> (float new_m, float new_c, float new_error)</td></tr>
+<tr class="separator:a10818e7d801044a4d569466fa1d5f841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a448dbcbfc8d6c3c9c5e8c2fb127fd9d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a448dbcbfc8d6c3c9c5e8c2fb127fd9d9">set_parallel_line</a> (float gradient, float new_c, float new_error)</td></tr>
+<tr class="separator:a448dbcbfc8d6c3c9c5e8c2fb127fd9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5bfd657e97c2fed2cf6153eca0e98a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a5a5bfd657e97c2fed2cf6153eca0e98a">set_limits</a> (float new_min, float new_max)</td></tr>
+<tr class="separator:a5a5bfd657e97c2fed2cf6153eca0e98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7353024e690e20451d7027a6b13abc8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a7353024e690e20451d7027a6b13abc8f">compute_vertical_projection</a> ()</td></tr>
+<tr class="separator:a7353024e690e20451d7027a6b13abc8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f5d23b0e66150cf3044a7cb3b87b21"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a35f5d23b0e66150cf3044a7cb3b87b21">rep_chars_marked</a> () const </td></tr>
+<tr class="separator:a35f5d23b0e66150cf3044a7cb3b87b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee798180ebcd28b1d1667673e3ddb15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a3ee798180ebcd28b1d1667673e3ddb15">clear_rep_chars_marked</a> ()</td></tr>
+<tr class="separator:a3ee798180ebcd28b1d1667673e3ddb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3a6f3c6a3a9dfe5a01182375a7adbb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#adf3a6f3c6a3a9dfe5a01182375a7adbb">num_repeated_sets</a> () const </td></tr>
+<tr class="separator:adf3a6f3c6a3a9dfe5a01182375a7adbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c6b27400b2a5ff3ff9f9f9b4b43d69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a38c6b27400b2a5ff3ff9f9f9b4b43d69">set_num_repeated_sets</a> (int num_sets)</td></tr>
+<tr class="separator:a38c6b27400b2a5ff3ff9f9f9b4b43d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00369"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00369')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00369.html">ELIST2_LINK</a></td></tr>
+<tr class="memitem:a2a14fc7a515dec2edcb34179562f4a84 inherit pub_methods_a00369"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00369.html#a2a14fc7a515dec2edcb34179562f4a84">ELIST2_LINK</a> ()</td></tr>
+<tr class="separator:a2a14fc7a515dec2edcb34179562f4a84 inherit pub_methods_a00369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fdc625cf6856d8893733fbf0eb6f18 inherit pub_methods_a00369"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00369.html#a72fdc625cf6856d8893733fbf0eb6f18">ELIST2_LINK</a> (const <a class="el" href="a00369.html">ELIST2_LINK</a> &amp;)</td></tr>
+<tr class="separator:a72fdc625cf6856d8893733fbf0eb6f18 inherit pub_methods_a00369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8405b0dd69c6c60c989c6c84f126aa61 inherit pub_methods_a00369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00369.html#a8405b0dd69c6c60c989c6c84f126aa61">operator=</a> (const <a class="el" href="a00369.html">ELIST2_LINK</a> &amp;)</td></tr>
+<tr class="separator:a8405b0dd69c6c60c989c6c84f126aa61 inherit pub_methods_a00369"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:adca58d8c3b35c7fd313c959a4e9b73b4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#adca58d8c3b35c7fd313c959a4e9b73b4">BeginDocumentHandler</a> ()</td></tr>
-<tr class="separator:adca58d8c3b35c7fd313c959a4e9b73b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98aa55df283b5b8a6d8a27ab901dc6b1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a98aa55df283b5b8a6d8a27ab901dc6b1">AddImageHandler</a> (<a class="el" href="a00614.html">TessBaseAPI</a> *api)</td></tr>
-<tr class="separator:a98aa55df283b5b8a6d8a27ab901dc6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca6363ea0bc8ad28e3464b386071e2f1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#aca6363ea0bc8ad28e3464b386071e2f1">EndDocumentHandler</a> ()</td></tr>
-<tr class="separator:aca6363ea0bc8ad28e3464b386071e2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_a00639"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a00639')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a00639.html">tesseract::TessResultRenderer</a></td></tr>
-<tr class="memitem:af05c5f7be48946d521660f05323417e7 inherit pro_methods_a00639"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#af05c5f7be48946d521660f05323417e7">TessResultRenderer</a> (const char *outputbase, const char *extension)</td></tr>
-<tr class="separator:af05c5f7be48946d521660f05323417e7 inherit pro_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d903a379bfc1467618b8ee616ba64b6 inherit pro_methods_a00639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a> (const char *s)</td></tr>
-<tr class="separator:a9d903a379bfc1467618b8ee616ba64b6 inherit pro_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfd158aaf385d1410d65ec01d1a62145 inherit pro_methods_a00639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00639.html#adfd158aaf385d1410d65ec01d1a62145">AppendData</a> (const char *s, int len)</td></tr>
-<tr class="separator:adfd158aaf385d1410d65ec01d1a62145 inherit pro_methods_a00639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a07c3198cd3d6f647c6ab9ab1f0849c27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a07c3198cd3d6f647c6ab9ab1f0849c27">merged</a></td></tr>
+<tr class="separator:a07c3198cd3d6f647c6ab9ab1f0849c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ff791a1040472676085babab439e43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a28ff791a1040472676085babab439e43">all_caps</a></td></tr>
+<tr class="separator:a28ff791a1040472676085babab439e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15e16917be6a2151f255c2f92f06b1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#ac15e16917be6a2151f255c2f92f06b1b">used_dm_model</a></td></tr>
+<tr class="separator:ac15e16917be6a2151f255c2f92f06b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe749f42dd6d01b95947aca3a5eb665b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#afe749f42dd6d01b95947aca3a5eb665b">projection_left</a></td></tr>
+<tr class="separator:afe749f42dd6d01b95947aca3a5eb665b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dc57d9873f96b1c93270549c874aab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#af5dc57d9873f96b1c93270549c874aab">projection_right</a></td></tr>
+<tr class="separator:af5dc57d9873f96b1c93270549c874aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86c03914f286e37cbbc30e341cf6c253"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00730.html#a4c698e96e1ebeb67e13f584c524fd154">PITCH_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a86c03914f286e37cbbc30e341cf6c253">pitch_decision</a></td></tr>
+<tr class="separator:a86c03914f286e37cbbc30e341cf6c253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08041181b248c640984261653189212a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a08041181b248c640984261653189212a">fixed_pitch</a></td></tr>
+<tr class="separator:a08041181b248c640984261653189212a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44717f4659bb58f0f49ec20399db029"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#ab44717f4659bb58f0f49ec20399db029">fp_space</a></td></tr>
+<tr class="separator:ab44717f4659bb58f0f49ec20399db029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903374c27e6052f9441a54be25bcd235"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a903374c27e6052f9441a54be25bcd235">fp_nonsp</a></td></tr>
+<tr class="separator:a903374c27e6052f9441a54be25bcd235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129c37c4cc8d85b7f49a8fcdbcf5f928"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a129c37c4cc8d85b7f49a8fcdbcf5f928">pr_space</a></td></tr>
+<tr class="separator:a129c37c4cc8d85b7f49a8fcdbcf5f928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323c76c41077d4ada275cc5e2e979a52"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a323c76c41077d4ada275cc5e2e979a52">pr_nonsp</a></td></tr>
+<tr class="separator:a323c76c41077d4ada275cc5e2e979a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54a1cf2bfa1478d255a8b79f51ca8e59"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a54a1cf2bfa1478d255a8b79f51ca8e59">spacing</a></td></tr>
+<tr class="separator:a54a1cf2bfa1478d255a8b79f51ca8e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819d94a95b9aab802acbcba097c67b2b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a819d94a95b9aab802acbcba097c67b2b">xheight</a></td></tr>
+<tr class="separator:a819d94a95b9aab802acbcba097c67b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aef46f37d01ec2bdc7ea6edd724ef50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a6aef46f37d01ec2bdc7ea6edd724ef50">xheight_evidence</a></td></tr>
+<tr class="separator:a6aef46f37d01ec2bdc7ea6edd724ef50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf8bf7f0f335788e106955b8142f832a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#acf8bf7f0f335788e106955b8142f832a">ascrise</a></td></tr>
+<tr class="separator:acf8bf7f0f335788e106955b8142f832a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc50308b9a0cd5c73184de33971c55a8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#acc50308b9a0cd5c73184de33971c55a8">descdrop</a></td></tr>
+<tr class="separator:acc50308b9a0cd5c73184de33971c55a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f4bcbb07931b5db5274a1207af9ec2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a19f4bcbb07931b5db5274a1207af9ec2">body_size</a></td></tr>
+<tr class="separator:a19f4bcbb07931b5db5274a1207af9ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a367426f5c71d28b9f0dccc95c52d8319"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a367426f5c71d28b9f0dccc95c52d8319">min_space</a></td></tr>
+<tr class="separator:a367426f5c71d28b9f0dccc95c52d8319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c51b5da241ad493dfbb297b613dcda0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a8c51b5da241ad493dfbb297b613dcda0">max_nonspace</a></td></tr>
+<tr class="separator:a8c51b5da241ad493dfbb297b613dcda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3892ca7926a063f551c4fed5d0e9ef8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a3892ca7926a063f551c4fed5d0e9ef8f">space_threshold</a></td></tr>
+<tr class="separator:a3892ca7926a063f551c4fed5d0e9ef8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fca8cf6eb34357e616e056a483e98d5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a9fca8cf6eb34357e616e056a483e98d5">kern_size</a></td></tr>
+<tr class="separator:a9fca8cf6eb34357e616e056a483e98d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15ca7af4b650c4089de86ecf8b6f6b2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#af15ca7af4b650c4089de86ecf8b6f6b2">space_size</a></td></tr>
+<tr class="separator:af15ca7af4b650c4089de86ecf8b6f6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c01f889dc8031cfd19c45069d49aed"><td class="memItemLeft" align="right" valign="top">WERD_LIST&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a93c01f889dc8031cfd19c45069d49aed">rep_words</a></td></tr>
+<tr class="separator:a93c01f889dc8031cfd19c45069d49aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90aca184dd67683af2f14903ddabf7c2"><td class="memItemLeft" align="right" valign="top">ICOORDELT_LIST&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a90aca184dd67683af2f14903ddabf7c2">char_cells</a></td></tr>
+<tr class="separator:a90aca184dd67683af2f14903ddabf7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a611050c4612df0ccd0f2d64ca0005b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00517.html">QSPLINE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a></td></tr>
+<tr class="separator:a611050c4612df0ccd0f2d64ca0005b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a0910989c04549a96689f72c72baf91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00560.html">STATS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#a3a0910989c04549a96689f72c72baf91">projection</a></td></tr>
+<tr class="separator:a3a0910989c04549a96689f72c72baf91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ab8d51dc0bcfd678e08c91bc28de0b255"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00628.html#ab8d51dc0bcfd678e08c91bc28de0b255">kErrorWeight</a> = 3</td></tr>
+<tr class="separator:ab8d51dc0bcfd678e08c91bc28de0b255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Renders tesseract output into an hocr text string </p>
-
-<p>Definition at line <a class="el" href="a00687_source.html#l00151">151</a> of file <a class="el" href="a00687_source.html">renderer.h</a>.</p>
+<div class="textblock">
+<p>Definition at line <a class="el" href="a00730_source.html#l00530">530</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3c6a1ec7ca443265eb0f9f899a3222b6"></a>
+<a class="anchor" id="a97938fde595d8b6cf55ebd65cb94c232"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -180,16 +258,723 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::TessHOcrRenderer::TessHOcrRenderer </td>
+          <td class="memname">TO_ROW::TO_ROW </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>outputbase</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00535">535</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;             {</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;      clear();</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    }                            <span class="comment">//empty</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a99721b51dd782d8a9951d6f07d3bcc19"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TO_ROW::TO_ROW </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00279.html">BLOBNBOX</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>font_info</em>&#160;</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>row_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00729_source.html#l00682">682</a> of file <a class="el" href="a00729_source.html">blobbox.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;  {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;  clear();</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;  y_min = bottom;</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;  y_max = top;</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;  initial_y_min = bottom;</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;  <span class="keywordtype">float</span> diff;                    <span class="comment">//in size</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;  BLOBNBOX_IT it = &amp;blobs;       <span class="comment">//list of blobs</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;  it.add_to_end (blob);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;  diff = top - bottom - row_size;</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;  <span class="keywordflow">if</span> (diff &gt; 0) {</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    y_max -= diff / 2;</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    y_min += diff / 2;</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;  }</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                                 <span class="comment">//very small object</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((top - bottom) * 3 &lt; row_size) {</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    diff = row_size / 3 + bottom - top;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    y_max += diff / 2;</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    y_min -= diff / 2;</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;  }</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0173e9da64e4f2d29f01da14c3a053ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TO_ROW::add_blob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00279.html">BLOBNBOX</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>row_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00729_source.html#l00726">726</a> of file <a class="el" href="a00729_source.html">blobbox.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                       {</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;  <span class="keywordtype">float</span> allowed;                 <span class="comment">//allowed expansion</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;  <span class="keywordtype">float</span> available;               <span class="comment">//expansion</span></div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;  BLOBNBOX_IT it = &amp;blobs;       <span class="comment">//list of blobs</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;  it.add_to_end (blob);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;  allowed = row_size + y_min - y_max;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;  <span class="keywordflow">if</span> (allowed &gt; 0) {</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    available = top &gt; y_max ? top - y_max : 0;</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <span class="keywordflow">if</span> (bottom &lt; y_min)</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                 <span class="comment">//total available</span></div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        available += y_min - bottom;</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <span class="keywordflow">if</span> (available &gt; 0) {</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;      available += available;    <span class="comment">//do it gradually</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;      <span class="keywordflow">if</span> (available &lt; allowed)</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        available = allowed;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;      <span class="keywordflow">if</span> (bottom &lt; y_min)</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        y_min -= (y_min - bottom) * allowed / available;</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;      <span class="keywordflow">if</span> (top &gt; y_max)</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        y_max += (top - y_max) * allowed / available;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    }</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;  }</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad75977d78697308fc64cbd42f056b9bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::believability </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00572">572</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                                {  <span class="comment">//baseline goodness</span></div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;      <span class="keywordflow">return</span> credibility;</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a39cee94572e70d35179c27cdf21a3022"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLOBNBOX_LIST* TO_ROW::blob_list </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00586">586</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                               {  <span class="comment">//get list</span></div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;      <span class="keywordflow">return</span> &amp;blobs;</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3ee798180ebcd28b1d1667673e3ddb15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TO_ROW::clear_rep_chars_marked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00621">621</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                                  {</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;      num_repeated_sets_ = -1;</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a7353024e690e20451d7027a6b13abc8f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TO_ROW::compute_vertical_projection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00729_source.html#l00789">789</a> of file <a class="el" href="a00729_source.html">blobbox.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                                         {  <span class="comment">//project whole row</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;  <a class="code" href="a00591.html">TBOX</a> row_box;                   <span class="comment">//bound of row</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;  <a class="code" href="a00279.html">BLOBNBOX</a> *blob;                <span class="comment">//current blob</span></div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;  <a class="code" href="a00591.html">TBOX</a> blob_box;                  <span class="comment">//bounding box</span></div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;  BLOBNBOX_IT blob_it = <a class="code" href="a00628.html#a39cee94572e70d35179c27cdf21a3022">blob_list</a> ();</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  <span class="keywordflow">if</span> (blob_it.empty ())</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  row_box = blob_it.data ()-&gt;bounding_box ();</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;  <span class="keywordflow">for</span> (blob_it.mark_cycle_pt (); !blob_it.cycled_list (); blob_it.forward ())</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    row_box += blob_it.data ()-&gt;bounding_box ();</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;  <a class="code" href="a00628.html#a3a0910989c04549a96689f72c72baf91">projection</a>.<a class="code" href="a00560.html#abcad6a546e1a1851730bc32f17b154ee">set_range</a> (row_box.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> () - <a class="code" href="a00729.html#a01dbc51856714fc0f1871d2eb3c03a5e">PROJECTION_MARGIN</a>,</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    row_box.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () + <a class="code" href="a00729.html#a01dbc51856714fc0f1871d2eb3c03a5e">PROJECTION_MARGIN</a>);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;  <a class="code" href="a00628.html#afe749f42dd6d01b95947aca3a5eb665b">projection_left</a> = row_box.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> () - <a class="code" href="a00729.html#a01dbc51856714fc0f1871d2eb3c03a5e">PROJECTION_MARGIN</a>;</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;  <a class="code" href="a00628.html#af5dc57d9873f96b1c93270549c874aab">projection_right</a> = row_box.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () + <a class="code" href="a00729.html#a01dbc51856714fc0f1871d2eb3c03a5e">PROJECTION_MARGIN</a>;</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;  <span class="keywordflow">for</span> (blob_it.mark_cycle_pt (); !blob_it.cycled_list (); blob_it.forward ()) {</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    blob = blob_it.data();</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keywordflow">if</span> (blob-&gt;<a class="code" href="a00279.html#a483f44541a4dd818f02225c92f030e07">cblob</a>() != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;      <a class="code" href="a00729.html#a127cbd896383554910521dc8e03fd9ef">vertical_cblob_projection</a>(blob-&gt;<a class="code" href="a00279.html#a483f44541a4dd818f02225c92f030e07">cblob</a>(), &amp;<a class="code" href="a00628.html#a3a0910989c04549a96689f72c72baf91">projection</a>);</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;  }</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;}</div>
+<div class="ttc" id="a00628_html_a39cee94572e70d35179c27cdf21a3022"><div class="ttname"><a href="a00628.html#a39cee94572e70d35179c27cdf21a3022">TO_ROW::blob_list</a></div><div class="ttdeci">BLOBNBOX_LIST * blob_list()</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00586">blobbox.h:586</a></div></div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00628_html_af5dc57d9873f96b1c93270549c874aab"><div class="ttname"><a href="a00628.html#af5dc57d9873f96b1c93270549c874aab">TO_ROW::projection_right</a></div><div class="ttdeci">inT16 projection_right</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00636">blobbox.h:636</a></div></div>
+<div class="ttc" id="a00279_html"><div class="ttname"><a href="a00279.html">BLOBNBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00128">blobbox.h:128</a></div></div>
+<div class="ttc" id="a00628_html_a3a0910989c04549a96689f72c72baf91"><div class="ttname"><a href="a00628.html#a3a0910989c04549a96689f72c72baf91">TO_ROW::projection</a></div><div class="ttdeci">STATS projection</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00658">blobbox.h:658</a></div></div>
+<div class="ttc" id="a00729_html_a01dbc51856714fc0f1871d2eb3c03a5e"><div class="ttname"><a href="a00729.html#a01dbc51856714fc0f1871d2eb3c03a5e">PROJECTION_MARGIN</a></div><div class="ttdeci">#define PROJECTION_MARGIN</div><div class="ttdef"><b>Definition:</b> <a href="a00729_source.html#l00031">blobbox.cpp:31</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00591_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00075">rect.h:75</a></div></div>
+<div class="ttc" id="a00628_html_afe749f42dd6d01b95947aca3a5eb665b"><div class="ttname"><a href="a00628.html#afe749f42dd6d01b95947aca3a5eb665b">TO_ROW::projection_left</a></div><div class="ttdeci">inT16 projection_left</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00635">blobbox.h:635</a></div></div>
+<div class="ttc" id="a00729_html_a127cbd896383554910521dc8e03fd9ef"><div class="ttname"><a href="a00729.html#a127cbd896383554910521dc8e03fd9ef">vertical_cblob_projection</a></div><div class="ttdeci">void vertical_cblob_projection(C_BLOB *blob, STATS *stats)</div><div class="ttdef"><b>Definition:</b> <a href="a00729_source.html#l00861">blobbox.cpp:861</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00279_html_a483f44541a4dd818f02225c92f030e07"><div class="ttname"><a href="a00279.html#a483f44541a4dd818f02225c92f030e07">BLOBNBOX::cblob</a></div><div class="ttdeci">C_BLOB * cblob() const </div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00250">blobbox.h:250</a></div></div>
+<div class="ttc" id="a00560_html_abcad6a546e1a1851730bc32f17b154ee"><div class="ttname"><a href="a00560.html#abcad6a546e1a1851730bc32f17b154ee">STATS::set_range</a></div><div class="ttdeci">bool set_range(inT32 min_bucket_value, inT32 max_bucket_value_plus_1)</div><div class="ttdef"><b>Definition:</b> <a href="a00801_source.html#l00062">statistc.cpp:62</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5aea8d905e2f034e7c7e75195b81fac9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::initial_min_y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00554">554</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                                {</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;      <span class="keywordflow">return</span> initial_y_min;</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a342f76a0a1b31c8964b170a3faba25e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TO_ROW::insert_blob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00279.html">BLOBNBOX</a> *&#160;</td>
+          <td class="paramname"><em>blob</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00729_source.html#l00762">762</a> of file <a class="el" href="a00729_source.html">blobbox.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                          {</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;  BLOBNBOX_IT it = &amp;blobs;       <span class="comment">//list of blobs</span></div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;  <span class="keywordflow">if</span> (it.empty ())</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    it.add_before_then_move (blob);</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;  <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    it.mark_cycle_pt ();</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="keywordflow">while</span> (!it.cycled_list ()</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;      &amp;&amp; it.data ()-&gt;bounding_box ().left () &lt;=</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;      blob-&gt;<a class="code" href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a> ())</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;      it.forward ();</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="keywordflow">if</span> (it.cycled_list ())</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;      it.add_to_end (blob);</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;      it.add_before_stay_put (blob);</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;  }</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;}</div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a00279_html_a7b97b8bc16b1473a28f9c44011522f4e"><div class="ttname"><a href="a00279.html#a7b97b8bc16b1473a28f9c44011522f4e">BLOBNBOX::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00212">blobbox.h:212</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae78743484af3c62d5cff686a0b99c52a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::intercept </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00575">575</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                            {  <span class="comment">//real parallel_c</span></div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;      <span class="keywordflow">return</span> y_origin;</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a22dc07e392af85d9ce625efdd13c6627"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::line_c </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00560">560</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                         {</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;      <span class="keywordflow">return</span> c;</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a6271a66037a1ba15368e1bf3ef4a8d51"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::line_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00563">563</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                             {</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;      <span class="keywordflow">return</span> error;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a51cc690153d9cabdc8217e2ac336d414"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::line_m </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00557">557</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                         {  <span class="comment">//access to line fit</span></div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;      <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a99b13776064db8791dd9d9f8cd9749ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::max_y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00545">545</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                        {  <span class="comment">//access function</span></div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;      <span class="keywordflow">return</span> y_max;</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a695c5bd88c3e527b066e84b785dbab36"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::mean_y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00551">551</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                         {</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;      <span class="keywordflow">return</span> (y_min + y_max) / 2.0f;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad00c86bd684bd454b57bc3bf2b9d0680"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::min_y </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00548">548</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                        {</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;      <span class="keywordflow">return</span> y_min;</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="adf3a6f3c6a3a9dfe5a01182375a7adbb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TO_ROW::num_repeated_sets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00624">624</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                                  {</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;      <span class="keywordflow">return</span> num_repeated_sets_;</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a81a46c8d6026c157c152778aa9d1ab58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::parallel_c </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00566">566</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                             {</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;      <span class="keywordflow">return</span> para_c;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa57d80c8359f9fa5fec3497f995e7177"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::parallel_error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00569">569</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                                 {</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;      <span class="keywordflow">return</span> para_error;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a44d0d51396a6ad29e5275051900ed655"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TO_ROW::print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00729_source.html#l00710">710</a> of file <a class="el" href="a00729_source.html">blobbox.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                         {</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;pitch=%d, fp=%g, fps=%g, fpns=%g, prs=%g, prns=%g,&quot;</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;          <span class="stringliteral">&quot; spacing=%g xh=%g y_origin=%g xev=%d, asc=%g, desc=%g,&quot;</span></div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;          <span class="stringliteral">&quot; body=%g, minsp=%d maxnsp=%d, thr=%d kern=%g sp=%g\n&quot;</span>,</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;          <a class="code" href="a00628.html#a86c03914f286e37cbbc30e341cf6c253">pitch_decision</a>, <a class="code" href="a00628.html#a08041181b248c640984261653189212a">fixed_pitch</a>, <a class="code" href="a00628.html#ab44717f4659bb58f0f49ec20399db029">fp_space</a>, <a class="code" href="a00628.html#a903374c27e6052f9441a54be25bcd235">fp_nonsp</a>, <a class="code" href="a00628.html#a129c37c4cc8d85b7f49a8fcdbcf5f928">pr_space</a>, <a class="code" href="a00628.html#a323c76c41077d4ada275cc5e2e979a52">pr_nonsp</a>,</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;          <a class="code" href="a00628.html#a54a1cf2bfa1478d255a8b79f51ca8e59">spacing</a>, <a class="code" href="a00628.html#a819d94a95b9aab802acbcba097c67b2b">xheight</a>, y_origin, <a class="code" href="a00628.html#a6aef46f37d01ec2bdc7ea6edd724ef50">xheight_evidence</a>, <a class="code" href="a00628.html#acf8bf7f0f335788e106955b8142f832a">ascrise</a>, <a class="code" href="a00628.html#acc50308b9a0cd5c73184de33971c55a8">descdrop</a>,</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;          <a class="code" href="a00628.html#a19f4bcbb07931b5db5274a1207af9ec2">body_size</a>, <a class="code" href="a00628.html#a367426f5c71d28b9f0dccc95c52d8319">min_space</a>, <a class="code" href="a00628.html#a8c51b5da241ad493dfbb297b613dcda0">max_nonspace</a>, <a class="code" href="a00628.html#a3892ca7926a063f551c4fed5d0e9ef8f">space_threshold</a>, <a class="code" href="a00628.html#a9fca8cf6eb34357e616e056a483e98d5">kern_size</a>,</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;          <a class="code" href="a00628.html#af15ca7af4b650c4089de86ecf8b6f6b2">space_size</a>);</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;}</div>
+<div class="ttc" id="a00628_html_acf8bf7f0f335788e106955b8142f832a"><div class="ttname"><a href="a00628.html#acf8bf7f0f335788e106955b8142f832a">TO_ROW::ascrise</a></div><div class="ttdeci">float ascrise</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00646">blobbox.h:646</a></div></div>
+<div class="ttc" id="a00628_html_a8c51b5da241ad493dfbb297b613dcda0"><div class="ttname"><a href="a00628.html#a8c51b5da241ad493dfbb297b613dcda0">TO_ROW::max_nonspace</a></div><div class="ttdeci">inT32 max_nonspace</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00651">blobbox.h:651</a></div></div>
+<div class="ttc" id="a00628_html_a819d94a95b9aab802acbcba097c67b2b"><div class="ttname"><a href="a00628.html#a819d94a95b9aab802acbcba097c67b2b">TO_ROW::xheight</a></div><div class="ttdeci">float xheight</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00644">blobbox.h:644</a></div></div>
+<div class="ttc" id="a00628_html_a19f4bcbb07931b5db5274a1207af9ec2"><div class="ttname"><a href="a00628.html#a19f4bcbb07931b5db5274a1207af9ec2">TO_ROW::body_size</a></div><div class="ttdeci">float body_size</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00648">blobbox.h:648</a></div></div>
+<div class="ttc" id="a00628_html_af15ca7af4b650c4089de86ecf8b6f6b2"><div class="ttname"><a href="a00628.html#af15ca7af4b650c4089de86ecf8b6f6b2">TO_ROW::space_size</a></div><div class="ttdeci">float space_size</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00654">blobbox.h:654</a></div></div>
+<div class="ttc" id="a00628_html_a903374c27e6052f9441a54be25bcd235"><div class="ttname"><a href="a00628.html#a903374c27e6052f9441a54be25bcd235">TO_ROW::fp_nonsp</a></div><div class="ttdeci">float fp_nonsp</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00640">blobbox.h:640</a></div></div>
+<div class="ttc" id="a00628_html_a129c37c4cc8d85b7f49a8fcdbcf5f928"><div class="ttname"><a href="a00628.html#a129c37c4cc8d85b7f49a8fcdbcf5f928">TO_ROW::pr_space</a></div><div class="ttdeci">float pr_space</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00641">blobbox.h:641</a></div></div>
+<div class="ttc" id="a00628_html_ab44717f4659bb58f0f49ec20399db029"><div class="ttname"><a href="a00628.html#ab44717f4659bb58f0f49ec20399db029">TO_ROW::fp_space</a></div><div class="ttdeci">float fp_space</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00639">blobbox.h:639</a></div></div>
+<div class="ttc" id="a00628_html_a86c03914f286e37cbbc30e341cf6c253"><div class="ttname"><a href="a00628.html#a86c03914f286e37cbbc30e341cf6c253">TO_ROW::pitch_decision</a></div><div class="ttdeci">PITCH_TYPE pitch_decision</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00637">blobbox.h:637</a></div></div>
+<div class="ttc" id="a00628_html_acc50308b9a0cd5c73184de33971c55a8"><div class="ttname"><a href="a00628.html#acc50308b9a0cd5c73184de33971c55a8">TO_ROW::descdrop</a></div><div class="ttdeci">float descdrop</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00647">blobbox.h:647</a></div></div>
+<div class="ttc" id="a00628_html_a3892ca7926a063f551c4fed5d0e9ef8f"><div class="ttname"><a href="a00628.html#a3892ca7926a063f551c4fed5d0e9ef8f">TO_ROW::space_threshold</a></div><div class="ttdeci">inT32 space_threshold</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00652">blobbox.h:652</a></div></div>
+<div class="ttc" id="a00628_html_a9fca8cf6eb34357e616e056a483e98d5"><div class="ttname"><a href="a00628.html#a9fca8cf6eb34357e616e056a483e98d5">TO_ROW::kern_size</a></div><div class="ttdeci">float kern_size</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00653">blobbox.h:653</a></div></div>
+<div class="ttc" id="a00628_html_a6aef46f37d01ec2bdc7ea6edd724ef50"><div class="ttname"><a href="a00628.html#a6aef46f37d01ec2bdc7ea6edd724ef50">TO_ROW::xheight_evidence</a></div><div class="ttdeci">int xheight_evidence</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00645">blobbox.h:645</a></div></div>
+<div class="ttc" id="a00628_html_a367426f5c71d28b9f0dccc95c52d8319"><div class="ttname"><a href="a00628.html#a367426f5c71d28b9f0dccc95c52d8319">TO_ROW::min_space</a></div><div class="ttdeci">inT32 min_space</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00650">blobbox.h:650</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00628_html_a08041181b248c640984261653189212a"><div class="ttname"><a href="a00628.html#a08041181b248c640984261653189212a">TO_ROW::fixed_pitch</a></div><div class="ttdeci">float fixed_pitch</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00638">blobbox.h:638</a></div></div>
+<div class="ttc" id="a00628_html_a54a1cf2bfa1478d255a8b79f51ca8e59"><div class="ttname"><a href="a00628.html#a54a1cf2bfa1478d255a8b79f51ca8e59">TO_ROW::spacing</a></div><div class="ttdeci">float spacing</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00643">blobbox.h:643</a></div></div>
+<div class="ttc" id="a00628_html_a323c76c41077d4ada275cc5e2e979a52"><div class="ttname"><a href="a00628.html#a323c76c41077d4ada275cc5e2e979a52">TO_ROW::pr_nonsp</a></div><div class="ttdeci">float pr_nonsp</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00642">blobbox.h:642</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a35f5d23b0e66150cf3044a7cb3b87b21"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TO_ROW::rep_chars_marked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00618">618</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                                  {</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;      <span class="keywordflow">return</span> num_repeated_sets_ != -1;</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5a5bfd657e97c2fed2cf6153eca0e98a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TO_ROW::set_limits </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>new_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>new_max</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -199,20 +984,20 @@ Protected Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00686_source.html#l00135">135</a> of file <a class="el" href="a00686_source.html">renderer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    : <a class="code" href="a00639.html#af05c5f7be48946d521660f05323417e7">TessResultRenderer</a>(outputbase, <span class="stringliteral">&quot;hocr&quot;</span>) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    font_info_ = font_info;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="ttc" id="a00639_html_af05c5f7be48946d521660f05323417e7"><div class="ttname"><a href="a00639.html#af05c5f7be48946d521660f05323417e7">tesseract::TessResultRenderer::TessResultRenderer</a></div><div class="ttdeci">TessResultRenderer(const char *outputbase, const char *extension)</div><div class="ttdef"><b>Definition:</b> <a href="a00686_source.html#l00016">renderer.cpp:16</a></div></div>
+<p>Definition at line <a class="el" href="a00730_source.html#l00609">609</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                                   {  <span class="comment">//top of row</span></div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;      y_min = new_min;</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;      y_max = new_max;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a91faa97e7113b7ebdd2b0c6ab01f17da"></a>
+<a class="anchor" id="a10818e7d801044a4d569466fa1d5f841"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -220,30 +1005,46 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::TessHOcrRenderer::TessHOcrRenderer </td>
+          <td class="memname">void TO_ROW::set_line </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>outputbase</em></td><td>)</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>new_m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>new_c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>new_error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00686_source.html#l00130">130</a> of file <a class="el" href="a00686_source.html">renderer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    : <a class="code" href="a00639.html#af05c5f7be48946d521660f05323417e7">TessResultRenderer</a>(outputbase, <span class="stringliteral">&quot;hocr&quot;</span>) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    font_info_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="ttc" id="a00639_html_af05c5f7be48946d521660f05323417e7"><div class="ttname"><a href="a00639.html#af05c5f7be48946d521660f05323417e7">tesseract::TessResultRenderer::TessResultRenderer</a></div><div class="ttdeci">TessResultRenderer(const char *outputbase, const char *extension)</div><div class="ttdef"><b>Definition:</b> <a href="a00686_source.html#l00016">renderer.cpp:16</a></div></div>
+<p>Definition at line <a class="el" href="a00730_source.html#l00590">590</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                                   {</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;      m = new_m;</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;      c = new_c;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;      error = new_error;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a98aa55df283b5b8a6d8a27ab901dc6b1"></a>
+<a class="anchor" id="a38c6b27400b2a5ff3ff9f9f9b4b43d69"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -251,40 +1052,28 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::TessHOcrRenderer::AddImageHandler </td>
+          <td class="memname">void TO_ROW::set_num_repeated_sets </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00614.html">TessBaseAPI</a> *&#160;</td>
-          <td class="paramname"><em>api</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_sets</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="a00639.html#a3e49719af05d5681bfa19755a8ef4909">tesseract::TessResultRenderer</a>.</p>
-
-<p>Definition at line <a class="el" href="a00686_source.html#l00172">172</a> of file <a class="el" href="a00686_source.html">renderer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                                       {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">char</span>* hocr = <a class="code" href="a01280.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>-&gt;GetHOCRText(<a class="code" href="a00639.html#a349cd9f8e3f298f2fb67055d39bde954">imagenum</a>());</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="keywordflow">if</span> (hocr == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <a class="code" href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(hocr);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">delete</span>[] hocr;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="ttc" id="a01280_html_a6e5e62fdd18584223572e5cbaa9a1d1d"><div class="ttname"><a href="a01280.html#a6e5e62fdd18584223572e5cbaa9a1d1d">tesseract-c_api-demo.api</a></div><div class="ttdeci">tuple api</div><div class="ttdef"><b>Definition:</b> <a href="a00964_source.html#l00065">tesseract-c_api-demo.py:65</a></div></div>
-<div class="ttc" id="a00639_html_a9d903a379bfc1467618b8ee616ba64b6"><div class="ttname"><a href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">tesseract::TessResultRenderer::AppendString</a></div><div class="ttdeci">void AppendString(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="a00686_source.html#l00083">renderer.cpp:83</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00639_html_a349cd9f8e3f298f2fb67055d39bde954"><div class="ttname"><a href="a00639.html#a349cd9f8e3f298f2fb67055d39bde954">tesseract::TessResultRenderer::imagenum</a></div><div class="ttdeci">int imagenum() const </div><div class="ttdef"><b>Definition:</b> <a href="a00687_source.html#l00091">renderer.h:91</a></div></div>
+<p>Definition at line <a class="el" href="a00730_source.html#l00627">627</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                                             {</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;      num_repeated_sets_ = num_sets;</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="adca58d8c3b35c7fd313c959a4e9b73b4"></a>
+<a class="anchor" id="a448dbcbfc8d6c3c9c5e8c2fb127fd9d9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -292,54 +1081,191 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::TessHOcrRenderer::BeginDocumentHandler </td>
+          <td class="memname">void TO_ROW::set_parallel_line </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gradient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>new_c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>new_error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="a00639.html#a2a48aa4490470f080289215d885458d8">tesseract::TessResultRenderer</a>.</p>
-
-<p>Definition at line <a class="el" href="a00686_source.html#l00140">140</a> of file <a class="el" href="a00686_source.html">renderer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                            {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <a class="code" href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\n&quot;</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="stringliteral">&quot;&lt;!DOCTYPE html PUBLIC \&quot;-//W3C//DTD XHTML 1.0 Transitional//EN\&quot;\n&quot;</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="stringliteral">&quot;    \&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\&quot;&gt;\n&quot;</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="stringliteral">&quot;&lt;html xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot; xml:lang=\&quot;en\&quot; &quot;</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="stringliteral">&quot;lang=\&quot;en\&quot;&gt;\n &lt;head&gt;\n  &lt;title&gt;\n&quot;</span>);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(<a class="code" href="a00639.html#abc6c2169b2c37d5963163cdd0a21df77">title</a>());</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <span class="stringliteral">&quot;&lt;/title&gt;\n&quot;</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      <span class="stringliteral">&quot;&lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text/html;&quot;</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <span class="stringliteral">&quot;charset=utf-8\&quot; /&gt;\n&quot;</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="stringliteral">&quot;  &lt;meta name=&#39;ocr-system&#39; content=&#39;tesseract &quot;</span> <a class="code" href="a00682.html#a1010f99edacb96c8fe0dbcb59c37978c">TESSERACT_VERSION_STR</a></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;              <span class="stringliteral">&quot;&#39; /&gt;\n&quot;</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="stringliteral">&quot;  &lt;meta name=&#39;ocr-capabilities&#39; content=&#39;ocr_page ocr_carea ocr_par&quot;</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="stringliteral">&quot; ocr_line ocrx_word&quot;</span>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordflow">if</span> (font_info_)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <span class="stringliteral">&quot; ocrp_lang ocrp_dir ocrp_font ocrp_fsize ocrp_wconf&quot;</span>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <a class="code" href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="stringliteral">&quot;&#39;/&gt;\n&quot;</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      <span class="stringliteral">&quot;&lt;/head&gt;\n&lt;body&gt;\n&quot;</span>);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
-<div class="ttc" id="a00682_html_a1010f99edacb96c8fe0dbcb59c37978c"><div class="ttname"><a href="a00682.html#a1010f99edacb96c8fe0dbcb59c37978c">TESSERACT_VERSION_STR</a></div><div class="ttdeci">#define TESSERACT_VERSION_STR</div><div class="ttdef"><b>Definition:</b> <a href="a00682_source.html#l00023">baseapi.h:23</a></div></div>
-<div class="ttc" id="a00639_html_a9d903a379bfc1467618b8ee616ba64b6"><div class="ttname"><a href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">tesseract::TessResultRenderer::AppendString</a></div><div class="ttdeci">void AppendString(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="a00686_source.html#l00083">renderer.cpp:83</a></div></div>
-<div class="ttc" id="a00639_html_abc6c2169b2c37d5963163cdd0a21df77"><div class="ttname"><a href="a00639.html#abc6c2169b2c37d5963163cdd0a21df77">tesseract::TessResultRenderer::title</a></div><div class="ttdeci">const char * title() const </div><div class="ttdef"><b>Definition:</b> <a href="a00687_source.html#l00080">renderer.h:80</a></div></div>
+<p>Definition at line <a class="el" href="a00730_source.html#l00598">598</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                                            {</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;      para_c = new_c;</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;      para_error = new_error;</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;      credibility =</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        (float) (blobs.length () - <a class="code" href="a00628.html#ab8d51dc0bcfd678e08c91bc28de0b255">kErrorWeight</a> * new_error);</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;      y_origin = (float) (new_c / sqrt (1 + gradient * gradient));</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;      <span class="comment">//real intercept</span></div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    }</div>
+<div class="ttc" id="a00628_html_ab8d51dc0bcfd678e08c91bc28de0b255"><div class="ttname"><a href="a00628.html#ab8d51dc0bcfd678e08c91bc28de0b255">TO_ROW::kErrorWeight</a></div><div class="ttdeci">static const int kErrorWeight</div><div class="ttdef"><b>Definition:</b> <a href="a00730_source.html#l00533">blobbox.h:533</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="aca6363ea0bc8ad28e3464b386071e2f1"></a>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a28ff791a1040472676085babab439e43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> TO_ROW::all_caps</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00633">633</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf8bf7f0f335788e106955b8142f832a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::ascrise</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00646">646</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a611050c4612df0ccd0f2d64ca0005b9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00517.html">QSPLINE</a> TO_ROW::baseline</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00657">657</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19f4bcbb07931b5db5274a1207af9ec2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::body_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00648">648</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a90aca184dd67683af2f14903ddabf7c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ICOORDELT_LIST TO_ROW::char_cells</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00656">656</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc50308b9a0cd5c73184de33971c55a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::descdrop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00647">647</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08041181b248c640984261653189212a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::fixed_pitch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00638">638</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a903374c27e6052f9441a54be25bcd235"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::fp_nonsp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00640">640</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab44717f4659bb58f0f49ec20399db029"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::fp_space</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00639">639</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9fca8cf6eb34357e616e056a483e98d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::kern_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00653">653</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8d51dc0bcfd678e08c91bc28de0b255"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -347,42 +1273,255 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool tesseract::TessHOcrRenderer::EndDocumentHandler </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">const int TO_ROW::kErrorWeight = 3</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="a00639.html#adf36cb4fc4481e35e5d114e7673aff88">tesseract::TessResultRenderer</a>.</p>
+<p>Definition at line <a class="el" href="a00730_source.html#l00533">533</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
 
-<p>Definition at line <a class="el" href="a00686_source.html#l00166">166</a> of file <a class="el" href="a00686_source.html">renderer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                          {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(<span class="stringliteral">&quot; &lt;/body&gt;\n&lt;/html&gt;\n&quot;</span>);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
-<div class="ttc" id="a00639_html_a9d903a379bfc1467618b8ee616ba64b6"><div class="ttname"><a href="a00639.html#a9d903a379bfc1467618b8ee616ba64b6">tesseract::TessResultRenderer::AppendString</a></div><div class="ttdeci">void AppendString(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="a00686_source.html#l00083">renderer.cpp:83</a></div></div>
-</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a8c51b5da241ad493dfbb297b613dcda0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> TO_ROW::max_nonspace</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00651">651</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a07c3198cd3d6f647c6ab9ab1f0849c27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> TO_ROW::merged</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00632">632</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a367426f5c71d28b9f0dccc95c52d8319"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> TO_ROW::min_space</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00650">650</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a86c03914f286e37cbbc30e341cf6c253"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00730.html#a4c698e96e1ebeb67e13f584c524fd154">PITCH_TYPE</a> TO_ROW::pitch_decision</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00637">637</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a323c76c41077d4ada275cc5e2e979a52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::pr_nonsp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00642">642</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a129c37c4cc8d85b7f49a8fcdbcf5f928"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::pr_space</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00641">641</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a0910989c04549a96689f72c72baf91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00560.html">STATS</a> TO_ROW::projection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00658">658</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe749f42dd6d01b95947aca3a5eb665b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> TO_ROW::projection_left</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00635">635</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5dc57d9873f96b1c93270549c874aab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> TO_ROW::projection_right</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00636">636</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93c01f889dc8031cfd19c45069d49aed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WERD_LIST TO_ROW::rep_words</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00655">655</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af15ca7af4b650c4089de86ecf8b6f6b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::space_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00654">654</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3892ca7926a063f551c4fed5d0e9ef8f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> TO_ROW::space_threshold</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00652">652</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54a1cf2bfa1478d255a8b79f51ca8e59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::spacing</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00643">643</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac15e16917be6a2151f255c2f92f06b1b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> TO_ROW::used_dm_model</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00634">634</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a819d94a95b9aab802acbcba097c67b2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float TO_ROW::xheight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00644">644</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6aef46f37d01ec2bdc7ea6edd724ef50"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TO_ROW::xheight_evidence</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00730_source.html#l00645">645</a> of file <a class="el" href="a00730_source.html">blobbox.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>api/<a class="el" href="a00687_source.html">renderer.h</a></li>
-<li>api/<a class="el" href="a00686_source.html">renderer.cpp</a></li>
+<li>ccstruct/<a class="el" href="a00730_source.html">blobbox.h</a></li>
+<li>ccstruct/<a class="el" href="a00729_source.html">blobbox.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00628.html">TessHOcrRenderer</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:56 for Tesseract by
+    <li class="navelem"><a class="el" href="a00628.html">TO_ROW</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:22 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

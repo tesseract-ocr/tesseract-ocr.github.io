@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/chop.h File Reference</title>
+<title>Tesseract: wordrec/lm_state.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,83 +105,63 @@ $(document).ready(function(){initNavTree('a01240.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">chop.h File Reference</div>  </div>
+<div class="title">lm_state.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00848_source.html">genericheap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00857_source.html">kdpair.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00817_source.html">seam.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01222_source.html">associate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00823_source.html">elst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01051_source.html">dawg.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01236_source.html">lm_consistency.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00759_source.html">matrix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00792_source.html">ratngs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01060_source.html">stopper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00859_source.html">strngs.h</a>&quot;</code><br />
 </div>
 <p><a href="a01240_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:acddb2ccb7be3d768d16abfd230d468eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01240.html#acddb2ccb7be3d768d16abfd230d468eb">MAX_NUM_POINTS</a>&#160;&#160;&#160;50</td></tr>
-<tr class="separator:acddb2ccb7be3d768d16abfd230d468eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00451.html">tesseract::LanguageModelDawgInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00452.html">tesseract::LanguageModelNgramInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00647.html">tesseract::ViterbiStateEntry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00453.html">tesseract::LanguageModelState</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to store information maintained by various language model components.  <a href="a00453.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00270.html">tesseract::BestChoiceBundle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bundle together all the things pertaining to the best choice/state.  <a href="a00270.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a5354bdfdcb4ce492d853ef15269e7bd8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00452.html">tesseract::KDPairInc</a><br class="typebreak" />
-&lt; float, <a class="el" href="a00372.html">EDGEPT</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01240.html#a5354bdfdcb4ce492d853ef15269e7bd8">PointPair</a></td></tr>
-<tr class="separator:a5354bdfdcb4ce492d853ef15269e7bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cc41609737c8b3fe2ee7c5cfd9aee19"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00415.html">tesseract::GenericHeap</a><br class="typebreak" />
-&lt; <a class="el" href="a01240.html#a5354bdfdcb4ce492d853ef15269e7bd8">PointPair</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01240.html#a2cc41609737c8b3fe2ee7c5cfd9aee19">PointHeap</a></td></tr>
-<tr class="separator:a2cc41609737c8b3fe2ee7c5cfd9aee19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87cc64ed462a40c9c210a8bab7cb9b87"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a87cc64ed462a40c9c210a8bab7cb9b87">tesseract::LanguageModelFlagsType</a></td></tr>
+<tr class="memdesc:a87cc64ed462a40c9c210a8bab7cb9b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for expressing various language model flags.  <a href="#a87cc64ed462a40c9c210a8bab7cb9b87">More...</a><br /></td></tr>
+<tr class="separator:a87cc64ed462a40c9c210a8bab7cb9b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a897f98148e8c084774a0c00f774da30a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a897f98148e8c084774a0c00f774da30a">tesseract::ELISTIZEH</a> (ViterbiStateEntry)</td></tr>
+<tr class="separator:a897f98148e8c084774a0c00f774da30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="acddb2ccb7be3d768d16abfd230d468eb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_NUM_POINTS&#160;&#160;&#160;50</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01240_source.html#l00039">39</a> of file <a class="el" href="a01240_source.html">chop.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a2cc41609737c8b3fe2ee7c5cfd9aee19"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="a00415.html">tesseract::GenericHeap</a>&lt;<a class="el" href="a01240.html#a5354bdfdcb4ce492d853ef15269e7bd8">PointPair</a>&gt; <a class="el" href="a01240.html#a2cc41609737c8b3fe2ee7c5cfd9aee19">PointHeap</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01240_source.html#l00042">42</a> of file <a class="el" href="a01240_source.html">chop.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5354bdfdcb4ce492d853ef15269e7bd8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="a00452.html">tesseract::KDPairInc</a>&lt;float, <a class="el" href="a00372.html">EDGEPT</a>*&gt; <a class="el" href="a01240.html#a5354bdfdcb4ce492d853ef15269e7bd8">PointPair</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01240_source.html#l00041">41</a> of file <a class="el" href="a01240_source.html">chop.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01240.html">chop.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01240.html">lm_state.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

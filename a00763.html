@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/detlinefit.cpp File Reference</title>
+<title>Tesseract: ccstruct/normalis.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,40 +105,97 @@ $(document).ready(function(){initNavTree('a00763.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">detlinefit.cpp File Reference</div>  </div>
+<div class="title">normalis.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00764_source.html">detlinefit.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00821_source.html">statistc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00862_source.html">ndminx.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00883_source.html">tprintf.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00835_source.html">host.h</a>&quot;</code><br />
 </div>
 <p><a href="a00763_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00352.html">DENORM</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ad3e7916f0120e26e7b4e0f830784194a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#ad3e7916f0120e26e7b4e0f830784194a">tesseract::NormalizationMode</a> { <a class="el" href="a01267.html#ad3e7916f0120e26e7b4e0f830784194aa643bd757ce3d9647d68aae97256d0233">tesseract::NM_BASELINE</a> = -3, 
+<a class="el" href="a01267.html#ad3e7916f0120e26e7b4e0f830784194aa856806160022221f012f954a60601b74">tesseract::NM_CHAR_ISOTROPIC</a> = -2, 
+<a class="el" href="a01267.html#ad3e7916f0120e26e7b4e0f830784194aa81bec0cd85211e03befb611fa7003180">tesseract::NM_CHAR_ANISOTROPIC</a> = -1
+ }</td></tr>
+<tr class="separator:ad3e7916f0120e26e7b4e0f830784194a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:acd4677fe72e83fad95bf289ca8b832b6"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#acd4677fe72e83fad95bf289ca8b832b6">tesseract::kNumEndPoints</a> = 3</td></tr>
-<tr class="separator:acd4677fe72e83fad95bf289ca8b832b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57f300af8f4caf9869661dcb82500c27"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a57f300af8f4caf9869661dcb82500c27">tesseract::kMinPointsForErrorCount</a> = 16</td></tr>
-<tr class="separator:a57f300af8f4caf9869661dcb82500c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ba0e3d5b910c72cb63e939e6cb426d3"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a0ba0e3d5b910c72cb63e939e6cb426d3">tesseract::kMaxRealDistance</a> = 2.0</td></tr>
-<tr class="separator:a0ba0e3d5b910c72cb63e939e6cb426d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0751b110da1f0bbd3068aa0d7eac955"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#af0751b110da1f0bbd3068aa0d7eac955">kBlnCellHeight</a> = 256</td></tr>
+<tr class="separator:af0751b110da1f0bbd3068aa0d7eac955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af974e6755e636c8bc7cbe57e3bcbdd73"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#af974e6755e636c8bc7cbe57e3bcbdd73">kBlnXHeight</a> = 128</td></tr>
+<tr class="separator:af974e6755e636c8bc7cbe57e3bcbdd73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe10ce41bf7240ae8a053dea471d6ed5"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#abe10ce41bf7240ae8a053dea471d6ed5">kBlnBaselineOffset</a> = 64</td></tr>
+<tr class="separator:abe10ce41bf7240ae8a053dea471d6ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="abe10ce41bf7240ae8a053dea471d6ed5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kBlnBaselineOffset = 64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00763_source.html#l00029">29</a> of file <a class="el" href="a00763_source.html">normalis.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af0751b110da1f0bbd3068aa0d7eac955"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kBlnCellHeight = 256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00763_source.html#l00027">27</a> of file <a class="el" href="a00763_source.html">normalis.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af974e6755e636c8bc7cbe57e3bcbdd73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kBlnXHeight = 128</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00763_source.html#l00028">28</a> of file <a class="el" href="a00763_source.html">normalis.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00763.html">detlinefit.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00763.html">normalis.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

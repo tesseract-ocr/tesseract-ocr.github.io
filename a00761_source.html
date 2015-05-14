@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/coutln.h Source File</title>
+<title>Tesseract: ccstruct/mod128.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,14 +105,14 @@ $(document).ready(function(){initNavTree('a00761_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">coutln.h</div>  </div>
+<div class="title">mod128.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00761.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:                                                coutln.c      (Formerly:  coutline.c)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Code for the C_OUTLINE class.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        mod128.h  (Formerly dir128.h)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Header for class which implements modulo arithmetic.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:                                      Ray Smith</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:                                     Mon Oct 07 16:01:57 BST 1991</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:                                     Tue Mar 26 17:48:13 GMT 1991</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 1991, Hewlett-Packard Ltd.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
@@ -127,344 +127,93 @@ $(document).ready(function(){initNavTree('a00761_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           COUTLN_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           COUTLN_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef           MOD128_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define           MOD128_H</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00762.html">crakedge.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00780.html">mod128.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00833.html">bits16.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00813.html">rect.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00747.html">blckerr.h</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a01220.html">scrollview.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span><a class="code" href="a00360.html">DENORM</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00761.html#a19d14ec91d9d1960d7c43d6b7df9afca">   32</a></span>&#160;<span class="preprocessor">#define INTERSECTING    MAX_INT16//no winding number</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                 <span class="comment">//mask to get step</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00761.html#a1eb00979f787f2ee951889ea9ab8c772">   35</a></span>&#160;<span class="preprocessor">#define STEP_MASK       3</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00761.html#a2eecf9690392754a783bc842b1f45fd2">   37</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="a00761.html#a2eecf9690392754a783bc842b1f45fd2">C_OUTLINE_FLAGS</a></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="a00761.html#a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a">   39</a></span>&#160;  <a class="code" href="a00761.html#a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a">COUT_INVERSE</a>                   <span class="comment">//White on black blob</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Simple struct to hold the 3 values needed to compute a more precise edge</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// position and direction. The offset_numerator is the difference between the</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// grey threshold and the mean pixel value. pixel_diff is the difference between</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// the pixels in the edge. Consider the following row of pixels: p1 p2 p3 p4 p5</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Say the image was thresholded  at threshold t, making p1, p2, p3 black</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// and p4, p5 white (p1, p2, p3 &lt; t, and p4, p5 &gt;= t), but suppose that</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// max(p[i+1] - p[i]) is p3 - p2. Then the extrapolated position of the edge,</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// based on the maximum gradient, is at the crack between p2 and p3 plus the</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// offset (t - (p2+p3)/2)/(p3 - p2). We store the pixel difference p3-p2</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// denominator in pixel_diff and the offset numerator, relative to the original</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// binary edge (t - (p2+p3)/2) - (p3 -p2) in offset_numerator.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// The sign of offset_numerator and pixel_diff are manipulated to ensure</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// that the pixel_diff, which will be used as a weight, is always positive.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// The direction stores the quantized feature direction for the given step</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// computed from the edge gradient. (Using binary_angle_plus_pi.)</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// If the pixel_diff is zero, it means that the direction of the gradient</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// is in conflict with the step direction, so this step is to be ignored.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="a00371.html">   59</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a00371.html">EdgeOffset</a> {</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00371.html#adef90a7e51a6ba7753ff828120cf3955">   60</a></span>&#160;  <a class="code" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00371.html#adef90a7e51a6ba7753ff828120cf3955">offset_numerator</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a00371.html#a80d6034815dbfd56756dd21520e3f252">   61</a></span>&#160;  <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> <a class="code" href="a00371.html#a80d6034815dbfd56756dd21520e3f252">pixel_diff</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="a00371.html#a0fdfea2264e164be61236ae6e7d74717">   62</a></span>&#160;  <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> <a class="code" href="a00371.html#a0fdfea2264e164be61236ae6e7d74717">direction</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00761.html#a33c25172cfe8e7ec617eb16413b61294">   65</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <a class="code" href="a00295.html">C_OUTLINE</a>;          <span class="comment">//forward declaration</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">struct </span>Pix;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<a class="code" href="a00842.html#a6cf5144252ef24ea7bb5e0da1e698a0b">ELISTIZEH</a> (<a class="code" href="a00295.html">C_OUTLINE</a>)</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="a00295.html">   69</a></span>&#160;class <a class="code" href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <a class="code" href="a00295.html">C_OUTLINE</a>:public <a class="code" href="a00379.html">ELIST_LINK</a> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00295.html#abf2cc6e2c887e631f63f3b3726c863de">   71</a></span>&#160;  <a class="code" href="a00295.html#abf2cc6e2c887e631f63f3b3726c863de">C_OUTLINE</a>() {  <span class="comment">//empty constructor</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      steps = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      offsets = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="a00761.html#a33c25172cfe8e7ec617eb16413b61294">C_OUTLINE</a>(                     <span class="comment">//constructor</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;              <a class="code" href="a00341.html">CRACKEDGE</a> *startpt,  <span class="comment">//from edge detector</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              <a class="code" href="a00425.html">ICOORD</a> bot_left,     <span class="comment">//bounding box //length of loop</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              <a class="code" href="a00425.html">ICOORD</a> top_right,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;              <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> length);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="a00761.html#a33c25172cfe8e7ec617eb16413b61294">C_OUTLINE</a>(<a class="code" href="a00425.html">ICOORD</a> startpt,    <span class="comment">//start of loop</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              <a class="code" href="a00363.html">DIR128</a> *new_steps,  <span class="comment">//steps in loop</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;              <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> length);     <span class="comment">//length of loop</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                 <span class="comment">//outline to copy</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="a00761.html#a33c25172cfe8e7ec617eb16413b61294">C_OUTLINE</a>(<a class="code" href="a00295.html">C_OUTLINE</a> *srcline, <a class="code" href="a00385.html">FCOORD</a> rotation);  <span class="comment">//and rotate</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Build a fake outline, given just a bounding box and append to the list.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> FakeOutline(<span class="keyword">const</span> <a class="code" href="a00609.html">TBOX</a>&amp; box, C_OUTLINE_LIST* outlines);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00295.html#a8676545f2b66d2434fe37445bdcd2933">   89</a></span>&#160;    <a class="code" href="a00295.html#a8676545f2b66d2434fe37445bdcd2933">~C_OUTLINE</a> () {              <span class="comment">//destructor</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">if</span> (steps != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="a00860.html#a9ef1862b8e026e23eef238af032858e4">free_mem</a>(steps);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      steps = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keyword">delete</span> [] offsets;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="a00295.html#a2baf0e6c55d9776ec014ba9c7e26c83f">   96</a></span>&#160;    <a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> <a class="code" href="a00295.html#a2baf0e6c55d9776ec014ba9c7e26c83f">flag</a>(                               <span class="comment">//test flag</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;               <a class="code" href="a00761.html#a2eecf9690392754a783bc842b1f45fd2">C_OUTLINE_FLAGS</a> mask)<span class="keyword"> const </span>{  <span class="comment">//flag to test</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">return</span> flags.bit (mask);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="a00295.html#aa8fde2528d2db2c24376be3b891f773c">  100</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00295.html#aa8fde2528d2db2c24376be3b891f773c">set_flag</a>(                       <span class="comment">//set flag value</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                  <a class="code" href="a00761.html#a2eecf9690392754a783bc842b1f45fd2">C_OUTLINE_FLAGS</a> mask,  <span class="comment">//flag to test</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                  <a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> value) {         <span class="comment">//value to set</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      flags.set_bit (mask, value);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="a00295.html#a87880b33bc69fa17ab37a93706ae8d84">  106</a></span>&#160;    C_OUTLINE_LIST *<a class="code" href="a00295.html#a87880b33bc69fa17ab37a93706ae8d84">child</a>() {  <span class="comment">//get child list</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keywordflow">return</span> &amp;children;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                 <span class="comment">//access function</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="a00295.html#a6481db8e9c00281f20f45df48d499679">  111</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="a00609.html">TBOX</a> &amp;<a class="code" href="a00295.html#a6481db8e9c00281f20f45df48d499679">bounding_box</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="keywordflow">return</span> box;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="a00295.html#a7a19e572d11e3880a37a2f08e248dee5">  114</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00295.html#a7a19e572d11e3880a37a2f08e248dee5">set_step</a>(                    <span class="comment">//set a step</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> stepindex,    <span class="comment">//index of step</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                  <a class="code" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> stepdir) {     <span class="comment">//chain code</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="keywordtype">int</span> shift = stepindex%4 * 2;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> mask = 3 &lt;&lt; shift;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      steps[stepindex/4] = ((stepdir &lt;&lt; shift) &amp; mask) |</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                           (steps[stepindex/4] &amp; ~mask);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      <span class="comment">//squeeze 4 into byte</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="a00295.html#a3b0a5f6ba449e20bbb5c53eef2fa61df">  123</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00295.html#a3b0a5f6ba449e20bbb5c53eef2fa61df">set_step</a>(                    <span class="comment">//set a step</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> stepindex,    <span class="comment">//index of step</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                  <a class="code" href="a00363.html">DIR128</a> stepdir) {   <span class="comment">//direction</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                 <span class="comment">//clean it</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      <a class="code" href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> chaindir = stepdir.<a class="code" href="a00363.html#a20420b3fa5c0968a2ebb0763c7e43c2f">get_dir</a>() &gt;&gt; (<a class="code" href="a00780.html#a657b731308eeb83f8a113f73968e1d4a">DIRBITS</a> - 2);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                 <span class="comment">//difference</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      set_step(stepindex, chaindir);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <span class="comment">//squeeze 4 into byte</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="a00295.html#afb87d87d3d48e964937b068f55f3ca3a">  133</a></span>&#160;    <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> <a class="code" href="a00295.html#afb87d87d3d48e964937b068f55f3ca3a">pathlength</a>()<span class="keyword"> const </span>{  <span class="comment">//get path length</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="keywordflow">return</span> stepcount;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// Return step at a given index as a DIR128.</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="a00295.html#af87ac65deb8447e6415957dd050d79bd">  137</a></span>&#160;    <a class="code" href="a00363.html">DIR128</a> <a class="code" href="a00295.html#af87ac65deb8447e6415957dd050d79bd">step_dir</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00363.html">DIR128</a>((<a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>)(((steps[index/4] &gt;&gt; (index%4 * 2)) &amp; <a class="code" href="a00761.html#a1eb00979f787f2ee951889ea9ab8c772">STEP_MASK</a>) &lt;&lt;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                      (<a class="code" href="a00780.html#a657b731308eeb83f8a113f73968e1d4a">DIRBITS</a> - 2)));</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// Return the step vector for the given outline position.</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="a00295.html#aea43094f29c8fc05632b449b45b66072">  142</a></span>&#160;    <a class="code" href="a00425.html">ICOORD</a> <a class="code" href="a00295.html#aea43094f29c8fc05632b449b45b66072">step</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{ <span class="comment">// index of step</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <span class="keywordflow">return</span> step_coords[chain_code(index)];</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                 <span class="comment">// get start position</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="a00295.html#a0f9fef7d74691bbcf45faa2272600500">  146</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="a00425.html">ICOORD</a> &amp;<a class="code" href="a00295.html#a0f9fef7d74691bbcf45faa2272600500">start_pos</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      <span class="keywordflow">return</span> start;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// Returns the position at the given index on the outline.</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">// NOT to be used lightly, as it has to iterate the outline to find out.</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="a00295.html#a5e3d80aede6a5701d07bfe42213fc783">  151</a></span>&#160;    <a class="code" href="a00425.html">ICOORD</a> <a class="code" href="a00295.html#a5e3d80aede6a5701d07bfe42213fc783">position_at_index</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <a class="code" href="a00425.html">ICOORD</a> pos = start;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; index; ++i)</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        pos += step(i);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="keywordflow">return</span> pos;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// Returns the sub-pixel accurate position given the integer position pos</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// at the given index on the outline. pos may be a return value of</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// position_at_index, or computed by repeatedly adding step to the</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// start_pos() in the usual way.</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="a00295.html#a24cb67fffde9453f84f49477fd8e2340">  161</a></span>&#160;    <a class="code" href="a00385.html">FCOORD</a> <a class="code" href="a00295.html#a24cb67fffde9453f84f49477fd8e2340">sub_pixel_pos_at_index</a>(<span class="keyword">const</span> <a class="code" href="a00425.html">ICOORD</a>&amp; pos, <span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="keyword">const</span> <a class="code" href="a00425.html">ICOORD</a>&amp; step_to_next(step(index));</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <a class="code" href="a00385.html">FCOORD</a> f_pos(pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a>() + step_to_next.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a>() / 2.0f,</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                   pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a>() + step_to_next.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a>() / 2.0f);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keywordflow">if</span> (offsets != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; offsets[index].pixel_diff &gt; 0) {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordtype">float</span> offset = offsets[index].offset_numerator;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        offset /= offsets[index].pixel_diff;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span> (step_to_next.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a>() != 0)</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;          f_pos.<a class="code" href="a00385.html#ad1e9f0d2a1f054f70b6f3036db6afcc0">set_y</a>(f_pos.y() + offset);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;          f_pos.set_x(f_pos.x() + offset);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      <span class="keywordflow">return</span> f_pos;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// Returns the step direction for the given index or -1 if there is none.</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="a00295.html#a078ccf813b6e40841ba27109f882f8bc">  176</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00295.html#a078ccf813b6e40841ba27109f882f8bc">direction_at_index</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">if</span> (offsets != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; offsets[index].pixel_diff &gt; 0)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> offsets[index].direction;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// Returns the edge strength for the given index.</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">// If there are no recorded edge strengths, returns 1 (assuming the image</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// is binary). Returns 0 if the gradient direction conflicts with the</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// step direction, indicating that this position could be skipped.</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="a00295.html#a83cfe59f946875d73725db32ea3ab654">  185</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00295.html#a83cfe59f946875d73725db32ea3ab654">edge_strength_at_index</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="keywordflow">if</span> (offsets != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">return</span> offsets[index].pixel_diff;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// Return the step as a chain code (0-3) related to the standard feature</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// direction of binary_angle_plus_pi by:</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// chain_code * 64 = feature direction.</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="a00295.html#ae46a8e47f6a505862388f50cb7cb6e87">  193</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00295.html#ae46a8e47f6a505862388f50cb7cb6e87">chain_code</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{  <span class="comment">// index of step</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">return</span> (steps[index / 4] &gt;&gt; (index % 4 * 2)) &amp; <a class="code" href="a00761.html#a1eb00979f787f2ee951889ea9ab8c772">STEP_MASK</a>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> area() <span class="keyword">const</span>;  <span class="comment">// Returns area of self and 1st level children.</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> perimeter() <span class="keyword">const</span>;  <span class="comment">// Total perimeter of self and 1st level children.</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> outer_area() <span class="keyword">const</span>;  <span class="comment">// Returns area of self only.</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> count_transitions(                   <span class="comment">//count maxima</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                            <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> threshold);  <span class="comment">//size threshold</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> operator&lt; (            <span class="comment">//containment test</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <span class="keyword">const</span> <a class="code" href="a00295.html">C_OUTLINE</a> &amp; other) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="a00295.html#a1bbba97895b105d8ab33a62438c42b1d">  205</a></span>&#160;    <a class="code" href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> operator&gt; (            <span class="comment">//containment test</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <a class="code" href="a00295.html">C_OUTLINE</a> &amp; other)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      <span class="keywordflow">return</span> other &lt; *<span class="keyword">this</span>;      <span class="comment">//use the &lt; to do it</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> winding_number(                       <span class="comment">//get winding number</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                         <a class="code" href="a00425.html">ICOORD</a> testpt) <span class="keyword">const</span>;  <span class="comment">//around this point</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                 <span class="comment">//get direction</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> turn_direction() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a01055.html#ade6fcdcd343af2f9b32c79583a5a0637">reverse</a>();  <span class="comment">//reverse direction</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">void</span> move(                    <span class="comment">// reposition outline</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;              <span class="keyword">const</span> <a class="code" href="a00425.html">ICOORD</a> vec);  <span class="comment">// by vector</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// Returns true if *this and its children are legally nested.</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">// The outer area of a child should have the opposite sign to the</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// parent. If not, it means we have discarded an outline in between</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// (probably due to excessive length).</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">bool</span> IsLegallyNested() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">// If this outline is smaller than the given min_size, delete this and</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">// remove from its list, via *it, after checking that *it points to this.</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// Otherwise, if any children of this are too small, delete them.</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// On entry, *it must be an iterator pointing to this. If this gets deleted</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// then this is extracted from *it, so an iteration can continue.</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">void</span> RemoveSmallRecursive(<span class="keywordtype">int</span> min_size, C_OUTLINE_IT* it);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// Adds sub-pixel resolution EdgeOffsets for the outline if the supplied</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">// pix is 8-bit. Does nothing otherwise.</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">void</span> ComputeEdgeOffsets(<span class="keywordtype">int</span> threshold, Pix* pix);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// Adds sub-pixel resolution EdgeOffsets for the outline using only</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// a binary image source.</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">void</span> ComputeBinaryOffsets();</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">// Renders the outline to the given pix, with left and top being</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">// the coords of the upper-left corner of the pix.</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordtype">void</span> render(<span class="keywordtype">int</span> left, <span class="keywordtype">int</span> top, Pix* pix) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">// Renders just the outline to the given pix (no fill), with left and top</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">// being the coords of the upper-left corner of the pix.</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a01265.html#a7ee7085b157e15b1651947b1e121f9b5">render_outline</a>(<span class="keywordtype">int</span> left, <span class="keywordtype">int</span> top, Pix* pix) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">    #ifndef GRAPHICS_DISABLED</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">void</span> plot(                       <span class="comment">//draw one</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;              <a class="code" href="a00553.html">ScrollView</a>* window,         <span class="comment">//window to draw in</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;              <a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a> colour) <span class="keyword">const</span>;  <span class="comment">//colour to draw it</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// Draws the outline in the given colour, normalized using the given denorm,</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// making use of sub-pixel accurate information if available.</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordtype">void</span> plot_normed(<span class="keyword">const</span> <a class="code" href="a00360.html">DENORM</a>&amp; denorm, <a class="code" href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a> colour,</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                     <a class="code" href="a00553.html">ScrollView</a>* window) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">    #endif  // GRAPHICS_DISABLED</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="a00295.html">C_OUTLINE</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="a00295.html">C_OUTLINE</a>&amp; source);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="a00295.html#aae5feeba94ae0da9e9ce1068d5e53a56">  259</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="a00295.html">C_OUTLINE</a>* <a class="code" href="a00295.html#aae5feeba94ae0da9e9ce1068d5e53a56">deep_copy</a>(<span class="keyword">const</span> <a class="code" href="a00295.html">C_OUTLINE</a>* src) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <a class="code" href="a00295.html">C_OUTLINE</a>* outline = <span class="keyword">new</span> <a class="code" href="a00761.html#a33c25172cfe8e7ec617eb16413b61294">C_OUTLINE</a>;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      *outline = *src;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      <span class="keywordflow">return</span> outline;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">static</span> <a class="code" href="a00425.html">ICOORD</a> chain_step(<span class="keywordtype">int</span> chaindir);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">// The maximum length of any outline. The stepcount is stored as 16 bits,</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">// but it is probably not a good idea to increase this constant by much</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">// and switch to 32 bits, as it plays an important role in keeping huge</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">// outlines invisible, which prevents bad speed behavior.</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="a00295.html#a93c5b58f16e4584cd8dbc7c2ef8c174a">  271</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kMaxOutlineLength = 16000;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// Helper for ComputeBinaryOffsets. Increments pos, dir_counts, pos_totals</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// by the step, increment, and vertical step ? x : y position * increment</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// at step s Mod stepcount respectively. Used to add or subtract the</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">// direction and position to/from accumulators of a small neighbourhood.</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">void</span> increment_step(<span class="keywordtype">int</span> s, <span class="keywordtype">int</span> increment, <a class="code" href="a00425.html">ICOORD</a>* pos, <span class="keywordtype">int</span>* dir_counts,</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                        <span class="keywordtype">int</span>* pos_totals) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordtype">int</span> step_mem()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (stepcount+3) / 4; }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="a00609.html">TBOX</a> box;                    <span class="comment">// bounding box</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="a00425.html">ICOORD</a> start;                <span class="comment">// start coord</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> stepcount;             <span class="comment">// no of steps</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="a00275.html">BITS16</a> flags;                <span class="comment">// flags about outline</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a> *steps;                <span class="comment">// step array</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="a00371.html">EdgeOffset</a>* offsets;         <span class="comment">// Higher precision edge.</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    C_OUTLINE_LIST children;     <span class="comment">// child elements</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keyword">static</span> <a class="code" href="a00425.html">ICOORD</a> step_coords[4];</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;};</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00295_html_a7a19e572d11e3880a37a2f08e248dee5"><div class="ttname"><a href="a00295.html#a7a19e572d11e3880a37a2f08e248dee5">C_OUTLINE::set_step</a></div><div class="ttdeci">void set_step(inT16 stepindex, inT8 stepdir)</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00114">coutln.h:114</a></div></div>
-<div class="ttc" id="a00854_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00102">host.h:102</a></div></div>
-<div class="ttc" id="a00371_html_adef90a7e51a6ba7753ff828120cf3955"><div class="ttname"><a href="a00371.html#adef90a7e51a6ba7753ff828120cf3955">EdgeOffset::offset_numerator</a></div><div class="ttdeci">inT8 offset_numerator</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00060">coutln.h:60</a></div></div>
-<div class="ttc" id="a00295_html_a078ccf813b6e40841ba27109f882f8bc"><div class="ttname"><a href="a00295.html#a078ccf813b6e40841ba27109f882f8bc">C_OUTLINE::direction_at_index</a></div><div class="ttdeci">int direction_at_index(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00176">coutln.h:176</a></div></div>
-<div class="ttc" id="a00295_html_aa8fde2528d2db2c24376be3b891f773c"><div class="ttname"><a href="a00295.html#aa8fde2528d2db2c24376be3b891f773c">C_OUTLINE::set_flag</a></div><div class="ttdeci">void set_flag(C_OUTLINE_FLAGS mask, BOOL8 value)</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00100">coutln.h:100</a></div></div>
-<div class="ttc" id="a00295_html_abf2cc6e2c887e631f63f3b3726c863de"><div class="ttname"><a href="a00295.html#abf2cc6e2c887e631f63f3b3726c863de">C_OUTLINE::C_OUTLINE</a></div><div class="ttdeci">C_OUTLINE()</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00071">coutln.h:71</a></div></div>
-<div class="ttc" id="a00761_html_a1eb00979f787f2ee951889ea9ab8c772"><div class="ttname"><a href="a00761.html#a1eb00979f787f2ee951889ea9ab8c772">STEP_MASK</a></div><div class="ttdeci">#define STEP_MASK</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00035">coutln.h:35</a></div></div>
-<div class="ttc" id="a00295_html_a8676545f2b66d2434fe37445bdcd2933"><div class="ttname"><a href="a00295.html#a8676545f2b66d2434fe37445bdcd2933">C_OUTLINE::~C_OUTLINE</a></div><div class="ttdeci">~C_OUTLINE()</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00089">coutln.h:89</a></div></div>
-<div class="ttc" id="a00761_html_a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a"><div class="ttname"><a href="a00761.html#a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a">COUT_INVERSE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00039">coutln.h:39</a></div></div>
-<div class="ttc" id="a00854_html_a2ba4d271e85baf0d333318985cb3bced"><div class="ttname"><a href="a00854.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a></div><div class="ttdeci">SIGNED char inT8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00098">host.h:98</a></div></div>
-<div class="ttc" id="a00747_html"><div class="ttname"><a href="a00747.html">blckerr.h</a></div></div>
-<div class="ttc" id="a00295_html_a0f9fef7d74691bbcf45faa2272600500"><div class="ttname"><a href="a00295.html#a0f9fef7d74691bbcf45faa2272600500">C_OUTLINE::start_pos</a></div><div class="ttdeci">const ICOORD &amp; start_pos() const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00146">coutln.h:146</a></div></div>
-<div class="ttc" id="a00842_html_a6cf5144252ef24ea7bb5e0da1e698a0b"><div class="ttname"><a href="a00842.html#a6cf5144252ef24ea7bb5e0da1e698a0b">ELISTIZEH</a></div><div class="ttdeci">#define ELISTIZEH(CLASSNAME)</div><div class="ttdef"><b>Definition:</b> <a href="a00842_source.html#l00981">elst.h:981</a></div></div>
-<div class="ttc" id="a00762_html"><div class="ttname"><a href="a00762.html">crakedge.h</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00379_html"><div class="ttname"><a href="a00379.html">ELIST_LINK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00842_source.html#l00084">elst.h:84</a></div></div>
-<div class="ttc" id="a00295_html_afb87d87d3d48e964937b068f55f3ca3a"><div class="ttname"><a href="a00295.html#afb87d87d3d48e964937b068f55f3ca3a">C_OUTLINE::pathlength</a></div><div class="ttdeci">inT32 pathlength() const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00133">coutln.h:133</a></div></div>
-<div class="ttc" id="a00341_html"><div class="ttname"><a href="a00341.html">CRACKEDGE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00762_source.html#l00026">crakedge.h:26</a></div></div>
-<div class="ttc" id="a00275_html"><div class="ttname"><a href="a00275.html">BITS16</a></div><div class="ttdef"><b>Definition:</b> <a href="a00833_source.html#l00025">bits16.h:25</a></div></div>
-<div class="ttc" id="a00363_html"><div class="ttname"><a href="a00363.html">DIR128</a></div><div class="ttdef"><b>Definition:</b> <a href="a00780_source.html#l00029">mod128.h:29</a></div></div>
-<div class="ttc" id="a00609_html"><div class="ttname"><a href="a00609.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00030">rect.h:30</a></div></div>
-<div class="ttc" id="a00295_html_a3b0a5f6ba449e20bbb5c53eef2fa61df"><div class="ttname"><a href="a00295.html#a3b0a5f6ba449e20bbb5c53eef2fa61df">C_OUTLINE::set_step</a></div><div class="ttdeci">void set_step(inT16 stepindex, DIR128 stepdir)</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00123">coutln.h:123</a></div></div>
-<div class="ttc" id="a00761_html_a33c25172cfe8e7ec617eb16413b61294"><div class="ttname"><a href="a00761.html#a33c25172cfe8e7ec617eb16413b61294">C_OUTLINE</a></div><div class="ttdeci">class DLLSYM C_OUTLINE</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00065">coutln.h:65</a></div></div>
-<div class="ttc" id="a00425_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00056">points.h:56</a></div></div>
-<div class="ttc" id="a00295_html"><div class="ttname"><a href="a00295.html">C_OUTLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00069">coutln.h:69</a></div></div>
-<div class="ttc" id="a00295_html_ae46a8e47f6a505862388f50cb7cb6e87"><div class="ttname"><a href="a00295.html#ae46a8e47f6a505862388f50cb7cb6e87">C_OUTLINE::chain_code</a></div><div class="ttdeci">int chain_code(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00193">coutln.h:193</a></div></div>
-<div class="ttc" id="a00295_html_a24cb67fffde9453f84f49477fd8e2340"><div class="ttname"><a href="a00295.html#a24cb67fffde9453f84f49477fd8e2340">C_OUTLINE::sub_pixel_pos_at_index</a></div><div class="ttdeci">FCOORD sub_pixel_pos_at_index(const ICOORD &amp;pos, int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00161">coutln.h:161</a></div></div>
-<div class="ttc" id="a00385_html_ad1e9f0d2a1f054f70b6f3036db6afcc0"><div class="ttname"><a href="a00385.html#ad1e9f0d2a1f054f70b6f3036db6afcc0">FCOORD::set_y</a></div><div class="ttdeci">void set_y(float yin)</div><div class="ttdoc">rewrite function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00220">points.h:220</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a00761_html_a2eecf9690392754a783bc842b1f45fd2"><div class="ttname"><a href="a00761.html#a2eecf9690392754a783bc842b1f45fd2">C_OUTLINE_FLAGS</a></div><div class="ttdeci">C_OUTLINE_FLAGS</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00037">coutln.h:37</a></div></div>
-<div class="ttc" id="a00295_html_a6481db8e9c00281f20f45df48d499679"><div class="ttname"><a href="a00295.html#a6481db8e9c00281f20f45df48d499679">C_OUTLINE::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00111">coutln.h:111</a></div></div>
-<div class="ttc" id="a01265_html_a7ee7085b157e15b1651947b1e121f9b5"><div class="ttname"><a href="a01265.html#a7ee7085b157e15b1651947b1e121f9b5">render_outline</a></div><div class="ttdeci">void render_outline(void *window, TESSLINE *outline, C_COL color)</div><div class="ttdef"><b>Definition:</b> <a href="a01265_source.html#l00124">render.cpp:124</a></div></div>
-<div class="ttc" id="a00371_html_a0fdfea2264e164be61236ae6e7d74717"><div class="ttname"><a href="a00371.html#a0fdfea2264e164be61236ae6e7d74717">EdgeOffset::direction</a></div><div class="ttdeci">uinT8 direction</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00062">coutln.h:62</a></div></div>
-<div class="ttc" id="a00371_html_a80d6034815dbfd56756dd21520e3f252"><div class="ttname"><a href="a00371.html#a80d6034815dbfd56756dd21520e3f252">EdgeOffset::pixel_diff</a></div><div class="ttdeci">uinT8 pixel_diff</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00061">coutln.h:61</a></div></div>
-<div class="ttc" id="a00425_html"><div class="ttname"><a href="a00425.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00030">points.h:30</a></div></div>
-<div class="ttc" id="a00813_html"><div class="ttname"><a href="a00813.html">rect.h</a></div></div>
-<div class="ttc" id="a00295_html_a2baf0e6c55d9776ec014ba9c7e26c83f"><div class="ttname"><a href="a00295.html#a2baf0e6c55d9776ec014ba9c7e26c83f">C_OUTLINE::flag</a></div><div class="ttdeci">BOOL8 flag(C_OUTLINE_FLAGS mask) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00096">coutln.h:96</a></div></div>
-<div class="ttc" id="a01220_html"><div class="ttname"><a href="a01220.html">scrollview.h</a></div></div>
-<div class="ttc" id="a00854_html_a7712a7e28433d0ade59219a129549b6f"><div class="ttname"><a href="a00854.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a></div><div class="ttdeci">unsigned char BOOL8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00113">host.h:113</a></div></div>
-<div class="ttc" id="a00295_html_af87ac65deb8447e6415957dd050d79bd"><div class="ttname"><a href="a00295.html#af87ac65deb8447e6415957dd050d79bd">C_OUTLINE::step_dir</a></div><div class="ttdeci">DIR128 step_dir(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00137">coutln.h:137</a></div></div>
-<div class="ttc" id="a00295_html_a83cfe59f946875d73725db32ea3ab654"><div class="ttname"><a href="a00295.html#a83cfe59f946875d73725db32ea3ab654">C_OUTLINE::edge_strength_at_index</a></div><div class="ttdeci">int edge_strength_at_index(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00185">coutln.h:185</a></div></div>
-<div class="ttc" id="a00425_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00425.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00052">points.h:52</a></div></div>
-<div class="ttc" id="a00833_html"><div class="ttname"><a href="a00833.html">bits16.h</a></div></div>
-<div class="ttc" id="a00868_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00868.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00868_source.html#l00025">platform.h:25</a></div></div>
-<div class="ttc" id="a00360_html"><div class="ttname"><a href="a00360.html">DENORM</a></div><div class="ttdef"><b>Definition:</b> <a href="a00782_source.html#l00052">normalis.h:52</a></div></div>
-<div class="ttc" id="a00295_html_aea43094f29c8fc05632b449b45b66072"><div class="ttname"><a href="a00295.html#aea43094f29c8fc05632b449b45b66072">C_OUTLINE::step</a></div><div class="ttdeci">ICOORD step(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00142">coutln.h:142</a></div></div>
-<div class="ttc" id="a00854_html_a458fe97f82495945f8071bb3c18d1783"><div class="ttname"><a href="a00854.html#a458fe97f82495945f8071bb3c18d1783">uinT8</a></div><div class="ttdeci">unsigned char uinT8</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00099">host.h:99</a></div></div>
-<div class="ttc" id="a00295_html_a5e3d80aede6a5701d07bfe42213fc783"><div class="ttname"><a href="a00295.html#a5e3d80aede6a5701d07bfe42213fc783">C_OUTLINE::position_at_index</a></div><div class="ttdeci">ICOORD position_at_index(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00151">coutln.h:151</a></div></div>
-<div class="ttc" id="a00295_html_a87880b33bc69fa17ab37a93706ae8d84"><div class="ttname"><a href="a00295.html#a87880b33bc69fa17ab37a93706ae8d84">C_OUTLINE::child</a></div><div class="ttdeci">C_OUTLINE_LIST * child()</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00106">coutln.h:106</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-<div class="ttc" id="a00363_html_a20420b3fa5c0968a2ebb0763c7e43c2f"><div class="ttname"><a href="a00363.html#a20420b3fa5c0968a2ebb0763c7e43c2f">DIR128::get_dir</a></div><div class="ttdeci">inT8 get_dir() const </div><div class="ttdef"><b>Definition:</b> <a href="a00780_source.html#l00077">mod128.h:77</a></div></div>
-<div class="ttc" id="a00860_html_a9ef1862b8e026e23eef238af032858e4"><div class="ttname"><a href="a00860.html#a9ef1862b8e026e23eef238af032858e4">free_mem</a></div><div class="ttdeci">void free_mem(void *oldchunk)</div><div class="ttdef"><b>Definition:</b> <a href="a00860_source.html#l00055">memry.cpp:55</a></div></div>
-<div class="ttc" id="a00780_html"><div class="ttname"><a href="a00780.html">mod128.h</a></div></div>
-<div class="ttc" id="a00780_html_a657b731308eeb83f8a113f73968e1d4a"><div class="ttname"><a href="a00780.html#a657b731308eeb83f8a113f73968e1d4a">DIRBITS</a></div><div class="ttdeci">#define DIRBITS</div><div class="ttdef"><b>Definition:</b> <a href="a00780_source.html#l00026">mod128.h:26</a></div></div>
-<div class="ttc" id="a00553_html_a100504544a5423a94222149ee9ed0fe8"><div class="ttname"><a href="a00553.html#a100504544a5423a94222149ee9ed0fe8">ScrollView::Color</a></div><div class="ttdeci">Color</div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00105">scrollview.h:105</a></div></div>
-<div class="ttc" id="a00385_html"><div class="ttname"><a href="a00385.html">FCOORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00189">points.h:189</a></div></div>
-<div class="ttc" id="a01055_html_ade6fcdcd343af2f9b32c79583a5a0637"><div class="ttname"><a href="a01055.html#ade6fcdcd343af2f9b32c79583a5a0637">reverse</a></div><div class="ttdeci">LIST reverse(LIST list)</div><div class="ttdef"><b>Definition:</b> <a href="a01055_source.html#l00357">oldlist.cpp:357</a></div></div>
-<div class="ttc" id="a00371_html"><div class="ttname"><a href="a00371.html">EdgeOffset</a></div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00059">coutln.h:59</a></div></div>
-<div class="ttc" id="a00295_html_aae5feeba94ae0da9e9ce1068d5e53a56"><div class="ttname"><a href="a00295.html#aae5feeba94ae0da9e9ce1068d5e53a56">C_OUTLINE::deep_copy</a></div><div class="ttdeci">static C_OUTLINE * deep_copy(const C_OUTLINE *src)</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00259">coutln.h:259</a></div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include          &quot;<a class="code" href="a00779.html">points.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">   25</a></span>&#160;<span class="preprocessor">#define MODULUS       128        </span><span class="comment">/*range of directions */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00761.html#a657b731308eeb83f8a113f73968e1d4a">   26</a></span>&#160;<span class="preprocessor">#define DIRBITS       7          //no of bits used</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a00761.html#a73610b3264640201a811ce96e3ffaad9">   27</a></span>&#160;<span class="preprocessor">#define DIRSCALE      1000       //length of vector</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="a00355.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a> <a class="code" href="a00355.html">DIR128</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="a00355.html#a28b0ddf2d5d91eec6939c6a243b5e466">   32</a></span>&#160;    <a class="code" href="a00355.html#a28b0ddf2d5d91eec6939c6a243b5e466">DIR128</a>() {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }                            <span class="comment">//empty constructor</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00355.html#a2b4cb07b98110d5d8b46dd9581c571e5">   35</a></span>&#160;    <a class="code" href="a00355.html#a2b4cb07b98110d5d8b46dd9581c571e5">DIR128</a>(                <span class="comment">//constructor</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;           <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> value) {  <span class="comment">//value to assign</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      value %= <a class="code" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a>;          <span class="comment">//modulo arithmetic</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keywordflow">if</span> (value &lt; 0)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        value += <a class="code" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a>;        <span class="comment">//done properly</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      dir = (<a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a>) value;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="a00355.html">DIR128</a>(<span class="keyword">const</span> <a class="code" href="a00377.html">FCOORD</a> fc);  <span class="comment">//quantize vector</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00355.html#ae2d7d5b99f4dede0045c8a7e2b9f221b">   44</a></span>&#160;    <a class="code" href="a00355.html">DIR128</a> &amp; operator= (         <span class="comment">//assign of inT16</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> value) {               <span class="comment">//value to assign</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      value %= <a class="code" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a>;          <span class="comment">//modulo arithmetic</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordflow">if</span> (value &lt; 0)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        value += <a class="code" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a>;        <span class="comment">//done properly</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      dir = (<a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a>) value;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00355.html#aec5839707c95489e991d4a8d2d96a6ed">   52</a></span>&#160;    <a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00755.html#ad7ef7709c4047ce463a3ff3d61c0d965">operator- </a>(             <span class="comment">//subtraction</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keyword">const</span> <a class="code" href="a00355.html">DIR128</a> &amp; minus) <span class="keyword">const</span><span class="comment">//for signed result</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                 <span class="comment">//result</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> result = dir - minus.dir;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">if</span> (result &gt; <a class="code" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a> / 2)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        result -= <a class="code" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a>;       <span class="comment">//get in range</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result &lt; -<a class="code" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a> / 2)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        result += <a class="code" href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">return</span> (<a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a>) result;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a00355.html#a88ad5868d31e3769802964a2b2c618e2">   64</a></span>&#160;    <a class="code" href="a00355.html">DIR128</a> <a class="code" href="a00755.html#afb03632aa6602c5193bf4af7964e6751">operator+ </a>(           <span class="comment">//addition</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keyword">const</span> <a class="code" href="a00355.html">DIR128</a> &amp; add) <span class="keyword">const</span>  <span class="comment">//of itself</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <a class="code" href="a00355.html">DIR128</a> result;             <span class="comment">//sum</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      result = dir + add.dir;    <span class="comment">//let = do the work</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="a00355.html#ad438ee7fc1e5b9e4b76c83cdeabf61f6">   72</a></span>&#160;    <a class="code" href="a00355.html">DIR128</a> &amp; <a class="code" href="a00755.html#a7bdc2726e11ac29db02c5152d33ed9bd">operator+= </a>(        <span class="comment">//same as +</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> <a class="code" href="a00355.html">DIR128</a> &amp; add) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      *<span class="keyword">this</span> = dir + add.dir;     <span class="comment">//let = do the work</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="a00355.html#a20420b3fa5c0968a2ebb0763c7e43c2f">   77</a></span>&#160;    <a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> <a class="code" href="a00355.html#a20420b3fa5c0968a2ebb0763c7e43c2f">get_dir</a>()<span class="keyword"> const </span>{  <span class="comment">//access function</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">return</span> dir;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="a00412.html">ICOORD</a> vector() <span class="keyword">const</span>;  <span class="comment">//turn to vector</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a> dir;                    <span class="comment">//a direction</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00849_html_ab90d161af4ce92c48d61bb06c325308f"><div class="ttname"><a href="a00849.html#ab90d161af4ce92c48d61bb06c325308f">DLLSYM</a></div><div class="ttdeci">#define DLLSYM</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00025">platform.h:25</a></div></div>
+<div class="ttc" id="a00755_html_a7bdc2726e11ac29db02c5152d33ed9bd"><div class="ttname"><a href="a00755.html#a7bdc2726e11ac29db02c5152d33ed9bd">operator+=</a></div><div class="ttdeci">ICOORD &amp; operator+=(ICOORD &amp;op1, const ICOORD &amp;op2)</div><div class="ttdef"><b>Definition:</b> <a href="a00755_source.html#l00086">ipoints.h:86</a></div></div>
+<div class="ttc" id="a00755_html_afb03632aa6602c5193bf4af7964e6751"><div class="ttname"><a href="a00755.html#afb03632aa6602c5193bf4af7964e6751">operator+</a></div><div class="ttdeci">ICOORD operator+(const ICOORD &amp;op1, const ICOORD &amp;op2)</div><div class="ttdef"><b>Definition:</b> <a href="a00755_source.html#l00068">ipoints.h:68</a></div></div>
+<div class="ttc" id="a00779_html"><div class="ttname"><a href="a00779.html">points.h</a></div></div>
+<div class="ttc" id="a00355_html"><div class="ttname"><a href="a00355.html">DIR128</a></div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00029">mod128.h:29</a></div></div>
+<div class="ttc" id="a00761_html_a9bc1fe94bf8c1b9aaef3dade106b6304"><div class="ttname"><a href="a00761.html#a9bc1fe94bf8c1b9aaef3dade106b6304">MODULUS</a></div><div class="ttdeci">#define MODULUS</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00025">mod128.h:25</a></div></div>
+<div class="ttc" id="a00355_html_a2b4cb07b98110d5d8b46dd9581c571e5"><div class="ttname"><a href="a00355.html#a2b4cb07b98110d5d8b46dd9581c571e5">DIR128::DIR128</a></div><div class="ttdeci">DIR128(inT16 value)</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00035">mod128.h:35</a></div></div>
+<div class="ttc" id="a00755_html_ad7ef7709c4047ce463a3ff3d61c0d965"><div class="ttname"><a href="a00755.html#ad7ef7709c4047ce463a3ff3d61c0d965">operator-</a></div><div class="ttdeci">ICOORD operator-(const ICOORD &amp;src)</div><div class="ttdef"><b>Definition:</b> <a href="a00755_source.html#l00050">ipoints.h:50</a></div></div>
+<div class="ttc" id="a00412_html"><div class="ttname"><a href="a00412.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00030">points.h:30</a></div></div>
+<div class="ttc" id="a00355_html_a20420b3fa5c0968a2ebb0763c7e43c2f"><div class="ttname"><a href="a00355.html#a20420b3fa5c0968a2ebb0763c7e43c2f">DIR128::get_dir</a></div><div class="ttdeci">inT8 get_dir() const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00077">mod128.h:77</a></div></div>
+<div class="ttc" id="a00835_html_a2ba4d271e85baf0d333318985cb3bced"><div class="ttname"><a href="a00835.html#a2ba4d271e85baf0d333318985cb3bced">inT8</a></div><div class="ttdeci">SIGNED char inT8</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00098">host.h:98</a></div></div>
+<div class="ttc" id="a00355_html_a28b0ddf2d5d91eec6939c6a243b5e466"><div class="ttname"><a href="a00355.html#a28b0ddf2d5d91eec6939c6a243b5e466">DIR128::DIR128</a></div><div class="ttdeci">DIR128()</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00032">mod128.h:32</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00377_html"><div class="ttname"><a href="a00377.html">FCOORD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00189">points.h:189</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00761.html">coutln.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:20 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00761.html">mod128.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:53 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

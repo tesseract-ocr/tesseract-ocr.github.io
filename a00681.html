@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: api/baseapi.cpp File Reference</title>
+<title>Tesseract: ccmain/equationdetect.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,123 +105,121 @@ $(document).ready(function(){initNavTree('a00681.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">baseapi.cpp File Reference</div>  </div>
+<div class="title">equationdetect.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;dirent.h&gt;</code><br />
-<code>#include &lt;libgen.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &lt;iterator&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
-<code>#include &quot;allheaders.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00682_source.html">baseapi.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00899_source.html">blobclass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00728_source.html">resultiterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00707_source.html">mutableiterator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00742_source.html">thresholder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00737_source.html">tesseractclass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00792_source.html">pageres.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00718_source.html">paragraphs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00739_source.html">tessvars.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00692_source.html">control.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01065_source.html">dict.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00723_source.html">pgedit.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00721_source.html">paramsd.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00711_source.html">output.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00851_source.html">globaloc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01052_source.html">globals.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01126_source.html">edgblob.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00701_source.html">equationdetect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00731_source.html">tessbox.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01140_source.html">makerow.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00790_source.html">otsuthr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00709_source.html">osdetect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00687_source.html">renderer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00878_source.html">strngs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01096_source.html">openclwrapper.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;float.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00682_source.html">equationdetect.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01092_source.html">bbgrid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00882_source.html">classify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01104_source.html">colpartition.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01106_source.html">colpartitiongrid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01108_source.html">colpartitionset.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00834_source.html">helpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00792_source.html">ratngs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00718_source.html">tesseractclass.h</a>&quot;</code><br />
 </div>
 <p><a href="a00681_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00613.html">tesseract::TESS_CHAR</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a94bf40501f379eb684323383a926162c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a94bf40501f379eb684323383a926162c">tesseract::CubeAPITest</a> (Boxa *boxa_blocks, Pixa *pixa_blocks, Boxa *boxa_words, Pixa *pixa_words, const <a class="el" href="a00385.html">FCOORD</a> &amp;reskew, Pix *page_pix, <a class="el" href="a00501.html">PAGE_RES</a> *page_res)</td></tr>
-<tr class="separator:a94bf40501f379eb684323383a926162c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a920259f2171a834a4e379e8a6a8460c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00608.html">TBLOB</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a920259f2171a834a4e379e8a6a8460c5">tesseract::make_tesseract_blob</a> (float <a class="el" href="a00937.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>, float xheight, float descender, float ascender, bool numeric_mode, Pix *pix)</td></tr>
-<tr class="separator:a920259f2171a834a4e379e8a6a8460c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91558c5771a593a5c2e3e62e9ad8e822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00578.html">STRING</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a91558c5771a593a5c2e3e62e9ad8e822">tesseract::HOcrEscape</a> (const char *text)</td></tr>
-<tr class="separator:a91558c5771a593a5c2e3e62e9ad8e822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aff6897e170c358d7672413b3c221de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a1aff6897e170c358d7672413b3c221de">tesseract::IsTextOrEquationType</a> (<a class="el" href="a00785.html#a03566528a98c079dafeebf00502f2b60">PolyBlockType</a> type)</td></tr>
+<tr class="separator:a1aff6897e170c358d7672413b3c221de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe260b66ccf11a3f3346ba282f315c49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#afe260b66ccf11a3f3346ba282f315c49">tesseract::IsLeftIndented</a> (const EquationDetect::IndentType type)</td></tr>
+<tr class="separator:afe260b66ccf11a3f3346ba282f315c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a161b61eb46383ddad93473fb3d8749"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a8a161b61eb46383ddad93473fb3d8749">tesseract::IsRightIndented</a> (const EquationDetect::IndentType type)</td></tr>
+<tr class="separator:a8a161b61eb46383ddad93473fb3d8749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad341e2a0385debc2342a18dfa9e5b3ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00681.html#ad341e2a0385debc2342a18dfa9e5b3ec">stream_filelist</a> = <a class="el" href="a01041.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td></tr>
-<tr class="separator:ad341e2a0385debc2342a18dfa9e5b3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11307fd919d7a9313500b04cfc1a8e3d"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a11307fd919d7a9313500b04cfc1a8e3d">tesseract::kMinRectSize</a> = 10</td></tr>
-<tr class="separator:a11307fd919d7a9313500b04cfc1a8e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1083ed81b6adbb6930e87d0c58671e26"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a1083ed81b6adbb6930e87d0c58671e26">tesseract::kTesseractReject</a> = '~'</td></tr>
-<tr class="separator:a1083ed81b6adbb6930e87d0c58671e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99bec48b41ccb504c28851dbe5b1f106"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a99bec48b41ccb504c28851dbe5b1f106">tesseract::kUNLVReject</a> = '~'</td></tr>
-<tr class="separator:a99bec48b41ccb504c28851dbe5b1f106"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7e73b761f145b66ffcc7585ed69d940"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#af7e73b761f145b66ffcc7585ed69d940">tesseract::kUNLVSuspect</a> = '^'</td></tr>
-<tr class="separator:af7e73b761f145b66ffcc7585ed69d940"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ba7b8d4b2132f72118c62fba346ffd0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a3ba7b8d4b2132f72118c62fba346ffd0">tesseract::kInputFile</a> = &quot;noname.tif&quot;</td></tr>
-<tr class="separator:a3ba7b8d4b2132f72118c62fba346ffd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46ecbfaef9e549b16cd97fee9d4614d2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a46ecbfaef9e549b16cd97fee9d4614d2">tesseract::kOldVarsFile</a> = &quot;failed_vars.txt&quot;</td></tr>
-<tr class="separator:a46ecbfaef9e549b16cd97fee9d4614d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e35711780f8c0254a2dd64071ef2b6b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a3e35711780f8c0254a2dd64071ef2b6b">tesseract::kMaxIntSize</a> = 22</td></tr>
-<tr class="separator:a3e35711780f8c0254a2dd64071ef2b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af670abba9a6fc5f36a04b8650e53d1b7"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#af670abba9a6fc5f36a04b8650e53d1b7">tesseract::kMinCredibleResolution</a> = 70</td></tr>
-<tr class="memdesc:af670abba9a6fc5f36a04b8650e53d1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum believable resolution.  <a href="#af670abba9a6fc5f36a04b8650e53d1b7">More...</a><br /></td></tr>
-<tr class="separator:af670abba9a6fc5f36a04b8650e53d1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ce8daeb42d63f39924c0a342e2cfdf4"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a8ce8daeb42d63f39924c0a342e2cfdf4">tesseract::kMaxCredibleResolution</a> = 2400</td></tr>
-<tr class="separator:a8ce8daeb42d63f39924c0a342e2cfdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa46d9454c58be9a34a7a91737d553900"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aa46d9454c58be9a34a7a91737d553900">tesseract::kNumbersPerBlob</a> = 5</td></tr>
-<tr class="separator:aa46d9454c58be9a34a7a91737d553900"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a929cce152875849d022496470235b437"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a929cce152875849d022496470235b437">tesseract::kBytesPerNumber</a> = 5</td></tr>
-<tr class="separator:a929cce152875849d022496470235b437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada8c39277dfe2d8bd85135eaa66f9047"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#ada8c39277dfe2d8bd85135eaa66f9047">tesseract::kBytesPerBlob</a> = kNumbersPerBlob * (kBytesPerNumber + 1) + 1</td></tr>
-<tr class="separator:ada8c39277dfe2d8bd85135eaa66f9047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a294e870871cf3fb0928cbd5686346b3d"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a294e870871cf3fb0928cbd5686346b3d">tesseract::kBytesPerBoxFileLine</a> = (kBytesPerNumber + 1) * kNumbersPerBlob + 1</td></tr>
-<tr class="separator:a294e870871cf3fb0928cbd5686346b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6007ea2fe11067865156fb804c36079e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a6007ea2fe11067865156fb804c36079e">tesseract::kBytesPer64BitNumber</a> = 20</td></tr>
-<tr class="separator:a6007ea2fe11067865156fb804c36079e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a688dc51b653c642009af87c6d9b9dea2"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a688dc51b653c642009af87c6d9b9dea2">tesseract::kMaxBytesPerLine</a></td></tr>
-<tr class="separator:a688dc51b653c642009af87c6d9b9dea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa62cc25480d6eee8b1bb2ef4a1f8fc3"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#afa62cc25480d6eee8b1bb2ef4a1f8fc3">tesseract::kUniChs</a> []</td></tr>
-<tr class="separator:afa62cc25480d6eee8b1bb2ef4a1f8fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e0c7c50e2e05e503a51b8c33d35ade6"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a7e0c7c50e2e05e503a51b8c33d35ade6">tesseract::kLatinChs</a> []</td></tr>
-<tr class="separator:a7e0c7c50e2e05e503a51b8c33d35ade6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3821a15abf7ddbf050f01af5138a7ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00681.html#ab3821a15abf7ddbf050f01af5138a7ec">equationdetect_save_bi_image</a> = false</td></tr>
+<tr class="separator:ab3821a15abf7ddbf050f01af5138a7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a58c01b3dc1775eb9566e7151be8389"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00681.html#a6a58c01b3dc1775eb9566e7151be8389">equationdetect_save_spt_image</a> = false</td></tr>
+<tr class="separator:a6a58c01b3dc1775eb9566e7151be8389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4a2fdf13d6975e77cffaa102f74b37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00681.html#a5c4a2fdf13d6975e77cffaa102f74b37">equationdetect_save_seed_image</a> = false</td></tr>
+<tr class="separator:a5c4a2fdf13d6975e77cffaa102f74b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6fcc8bf72a1d8f1162e2dfb30d30d2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00681.html#ad6fcc8bf72a1d8f1162e2dfb30d30d2f">equationdetect_save_merged_image</a> = false</td></tr>
+<tr class="separator:ad6fcc8bf72a1d8f1162e2dfb30d30d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad996502770c51cc260e4d66db9543bcc"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#ad996502770c51cc260e4d66db9543bcc">tesseract::kMathDigitDensityTh1</a> = 0.25</td></tr>
+<tr class="separator:ad996502770c51cc260e4d66db9543bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a82022958d051af0fb624095c3ada00"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a2a82022958d051af0fb624095c3ada00">tesseract::kMathDigitDensityTh2</a> = 0.1</td></tr>
+<tr class="separator:a2a82022958d051af0fb624095c3ada00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad64e658be002902d7a5b0dd98ab0fe35"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#ad64e658be002902d7a5b0dd98ab0fe35">tesseract::kMathItalicDensityTh</a> = 0.5</td></tr>
+<tr class="separator:ad64e658be002902d7a5b0dd98ab0fe35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a51423879204a025d373c6ae40fba5"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a07a51423879204a025d373c6ae40fba5">tesseract::kUnclearDensityTh</a> = 0.25</td></tr>
+<tr class="separator:a07a51423879204a025d373c6ae40fba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113f000461790e1cd1c397f382814da5"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a113f000461790e1cd1c397f382814da5">tesseract::kSeedBlobsCountTh</a> = 10</td></tr>
+<tr class="separator:a113f000461790e1cd1c397f382814da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a5ac6fad51e61e88df309fb704d8ebc"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a1a5ac6fad51e61e88df309fb704d8ebc">tesseract::kLeftIndentAlignmentCountTh</a> = 1</td></tr>
+<tr class="separator:a1a5ac6fad51e61e88df309fb704d8ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="ad341e2a0385debc2342a18dfa9e5b3ec"></a>
+<a class="anchor" id="ab3821a15abf7ddbf050f01af5138a7ec"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool stream_filelist = <a class="el" href="a01041.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td>
+          <td class="memname">bool equationdetect_save_bi_image = false</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>"Stream a filelist from stdin" </p>
+<p>"Save input bi image" </p>
 
-<p>Definition at line <a class="el" href="a00681_source.html#l00081">81</a> of file <a class="el" href="a00681_source.html">baseapi.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a00681_source.html#l00048">48</a> of file <a class="el" href="a00681_source.html">equationdetect.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6fcc8bf72a1d8f1162e2dfb30d30d2f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool equationdetect_save_merged_image = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Save the merged image" </p>
+
+<p>Definition at line <a class="el" href="a00681_source.html#l00051">51</a> of file <a class="el" href="a00681_source.html">equationdetect.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c4a2fdf13d6975e77cffaa102f74b37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool equationdetect_save_seed_image = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Save the seed image" </p>
+
+<p>Definition at line <a class="el" href="a00681_source.html#l00050">50</a> of file <a class="el" href="a00681_source.html">equationdetect.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a58c01b3dc1775eb9566e7151be8389"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool equationdetect_save_spt_image = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>"Save special character image" </p>
+
+<p>Definition at line <a class="el" href="a00681_source.html#l00049">49</a> of file <a class="el" href="a00681_source.html">equationdetect.cpp</a>.</p>
 
 </div>
 </div>
@@ -230,8 +228,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_0188a3e6da905bc60aceb35bf790b8c9.html">api</a></li><li class="navelem"><a class="el" href="a00681.html">baseapi.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:32 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00681.html">equationdetect.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

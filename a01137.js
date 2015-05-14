@@ -1,13 +1,13 @@
 var a01137 =
 [
-    [ "kCrackSpacing", "a01137.html#a67e1606288499ff9e08833b9c2a1ded8", null ],
-    [ "kLineFindGridSize", "a01137.html#acbcf973384ce439c1b3ab4decf0c383c", null ],
-    [ "kMaxLineResidue", "a01137.html#ab97d7447e46667c618a568b97b96bb3c", null ],
-    [ "kMaxNonLineDensity", "a01137.html#a88f852ceee95241622ec0f837dbfeff8", null ],
-    [ "kMaxStaveHeight", "a01137.html#a40e2e4747be3bc8a6358a023e2e3a001", null ],
-    [ "kMinLineLengthFraction", "a01137.html#ab1ecce6329628c52853d15330697b9a5", null ],
-    [ "kMinMusicPixelFraction", "a01137.html#a064746ea8b34175e6f12ce364c8d6414", null ],
-    [ "kMinThickLineWidth", "a01137.html#a8109c0293738c5b8a499baf96e6191e2", null ],
-    [ "kThickLengthMultiple", "a01137.html#a6978c95cbd05d6aef11ca4b7850a1a6b", null ],
-    [ "kThinLineFraction", "a01137.html#af5a3375be81da4b1d09d654fed77617a", null ]
+    [ "BLACK_PIX", "a01137.html#a31503e4b0f23137edefe782ad5632878", null ],
+    [ "FLIP_COLOUR", "a01137.html#a29f11db4ed3af442549b1de233ac4739", null ],
+    [ "WHITE_PIX", "a01137.html#a5c91c3924c21f1e24a333317e8d08a74", null ],
+    [ "block_edges", "a01137.html#a5dbfbe6d87bf9d8f4c2cb616a7a3118a", null ],
+    [ "free_crackedges", "a01137.html#a19b3430c0ac6e770e54b8b52a9a991c5", null ],
+    [ "h_edge", "a01137.html#a06f8ee398cd3556fc0d40c5decd25745", null ],
+    [ "join_edges", "a01137.html#a6e23861c825d8a8e48c8b26d75e0b715", null ],
+    [ "line_edges", "a01137.html#ab24d6aa53a42392537afadfb6333b489", null ],
+    [ "make_margins", "a01137.html#a7265d5ee56fbab9229a8f39e28d38458", null ],
+    [ "v_edge", "a01137.html#a9f6f7cf3af410407129ae07523fde0db", null ]
 ];

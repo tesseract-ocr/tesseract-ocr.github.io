@@ -1,7 +1,7 @@
 var a00373 =
 [
-    [ "Element", "a00373.html#a1c187e4f62dbffd8b6507a5047827e6a", null ],
-    [ "Element", "a00373.html#ad552c8989a8556000930a28b3d2b61d0", null ],
-    [ "key", "a00373.html#a39b02be409ba976a5dc45ec311f00324", null ],
-    [ "value", "a00373.html#a0a18d0f92607def78bc23cb009f528bd", null ]
+    [ "EquationDetectBase", "a00373.html#a3b2301eba9ed77a87db61b404aadfd09", null ],
+    [ "~EquationDetectBase", "a00373.html#a4fc19c3b0dc2f209d4dd93b9f2ac48e3", null ],
+    [ "FindEquationParts", "a00373.html#a4f11f002edacf57f9e8b10103e0288a7", null ],
+    [ "LabelSpecialText", "a00373.html#ab7c9fe443312c3c0771368d8d43f577b", null ]
 ];

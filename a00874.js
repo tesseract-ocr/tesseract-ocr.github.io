@@ -1,6 +1,5 @@
 var a00874 =
 [
-    [ "GenericVector", "a00416.html", "a00416" ],
-    [ "TFile", "a00644.html", "a00644" ],
-    [ "QUOTE_IT", "a00874.html#adc858fd865cb4f529784fbc52d4d2b87", null ]
+    [ "ksizeofUniversalAmbigsFile", "a00874.html#a8742cbbb6031c12951c7091b0442f210", null ],
+    [ "kUniversalAmbigsFile", "a00874.html#a1db7c000b76e98b727b59279c886795c", null ]
 ];

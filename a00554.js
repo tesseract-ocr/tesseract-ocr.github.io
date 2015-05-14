@@ -1,26 +1,9 @@
 var a00554 =
 [
-    [ "SEAM", "a00554.html#ae3fc86b3222b3dbb31ed6ac77d22dd58", null ],
-    [ "SEAM", "a00554.html#a5c061c4c184baa874d5458274050c628", null ],
-    [ "ApplySeam", "a00554.html#a199bd57b0526d30315f34c4e4a712726", null ],
-    [ "bounding_box", "a00554.html#a243b76ca6e0415289e469561b39d1e9e", null ],
-    [ "CombineableWith", "a00554.html#a1c225c11b9076abef2ad779e9e1b3634", null ],
-    [ "CombineWith", "a00554.html#affaf98ec5d3d492a28bd69d9b8c411a0", null ],
-    [ "ContainedByBlob", "a00554.html#a4bf3272489c656ae3d71a1cf63ea4ac0", null ],
-    [ "Finalize", "a00554.html#ad5bab10c7a45d0470daf7d945b46b459", null ],
-    [ "FindBlobWidth", "a00554.html#a8ca3bdf1c8e7ab2b18a72a0269550ff3", null ],
-    [ "FullPriority", "a00554.html#a9bcd8f629df62b0cb2fceb0857bd56d8", null ],
-    [ "HasAnySplits", "a00554.html#a41ce876dfd04bd1dcf738b71ad7e0b67", null ],
-    [ "Hide", "a00554.html#a2983ad8507dd7cd6df53f2e7f16d727a", null ],
-    [ "IsHealthy", "a00554.html#a4ddb6a8805d8ae5f064930a3ea3abead", null ],
-    [ "Mark", "a00554.html#a8c56107bed53514c4fef86cc92bedf30", null ],
-    [ "OverlappingSplits", "a00554.html#a8e0820a84e29addff6df208201d7602d", null ],
-    [ "PrepareToInsertSeam", "a00554.html#a83c13f63d3cb285b2018d479c38d38cb", null ],
-    [ "Print", "a00554.html#af88597219e1c74af266ec26027caef2f", null ],
-    [ "priority", "a00554.html#a92b8d39bffb93b008c3e8e7bff5caf74", null ],
-    [ "Reveal", "a00554.html#aa350aba88335a9b641a12b08f92a036f", null ],
-    [ "set_priority", "a00554.html#a3338e20862a591a34cedcc8bb1f20ccf", null ],
-    [ "SharesPosition", "a00554.html#aa170cfb46464c60b948e7d60649a8f80", null ],
-    [ "UndoSeam", "a00554.html#a25be4bf22515cb1d52c633e6a8b8c453", null ],
-    [ "UsesPoint", "a00554.html#a0450c272e42ec81100860fca185f0071", null ]
+    [ "SortPair", "a00555.html", "a00555" ],
+    [ "SortHelper", "a00554.html#a75727b521fe47303bafd1931ac7df857", null ],
+    [ "Add", "a00554.html#a2844aee5a8b3f6f90835033fd2a049d0", null ],
+    [ "MaxCount", "a00554.html#ae3b338e17717ea13a51e453b529a858b", null ],
+    [ "SortByCount", "a00554.html#a05890a598111521d5e37e0888665b3eb", null ],
+    [ "SortByValue", "a00554.html#ab292cf216cbf832150365c9e261aff65", null ]
 ];

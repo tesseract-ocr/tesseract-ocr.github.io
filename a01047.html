@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cutil/efio.h File Reference</title>
+<title>Tesseract: cutil/structures.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,59 +105,43 @@ $(document).ready(function(){initNavTree('a01047.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">efio.h File Reference</div>  </div>
+<div class="title">structures.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01048_source.html">structures.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div>
 <p><a href="a01047_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a57448c70d638b35c9a0c595d44d649fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01047.html#a57448c70d638b35c9a0c595d44d649fe">FOPENERROR</a>&#160;&#160;&#160;3000</td></tr>
-<tr class="separator:a57448c70d638b35c9a0c595d44d649fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1a07e904724c29e89b04235a34ded950"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01047.html#a1a07e904724c29e89b04235a34ded950">Efopen</a> (const char *Name, const char *Mode)</td></tr>
-<tr class="separator:a1a07e904724c29e89b04235a34ded950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa899a27883049fc4f690a5675e83af3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01047.html#aa899a27883049fc4f690a5675e83af3b">makestructure</a> (<a class="el" href="a01048.html#a1720db1e3ca45ac13e92fac8565266cb">new_cell</a>, <a class="el" href="a01048.html#a541a0e089f0f59e7e59680063765f7e4">free_cell</a>, <a class="el" href="a00457.html">list_rec</a>)</td></tr>
+<tr class="separator:aa899a27883049fc4f690a5675e83af3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a57448c70d638b35c9a0c595d44d649fe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FOPENERROR&#160;&#160;&#160;3000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<hr/>
- <h2>Include Files and Type Defines </h2>
-
-<p>Definition at line <a class="el" href="a01047_source.html#l00026">26</a> of file <a class="el" href="a01047_source.html">efio.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a1a07e904724c29e89b04235a34ded950"></a>
+<a class="anchor" id="aa899a27883049fc4f690a5675e83af3b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FILE* Efopen </td>
+          <td class="memname">makestructure </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>Name</em>, </td>
+          <td class="paramtype"><a class="el" href="a01048.html#a1720db1e3ca45ac13e92fac8565266cb">new_cell</a>&#160;</td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>Mode</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="a01048.html#a541a0e089f0f59e7e59680063765f7e4">free_cell</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00457.html">list_rec</a>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -166,48 +150,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<hr/>
- <h2>Public Function Prototype </h2>
-<hr/>
- <h2>Public Code </h2>
 
-<p>Definition at line <a class="el" href="a01046_source.html#l00032">32</a> of file <a class="el" href="a01046_source.html">efio.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                 { </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **     Parameters:</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **             Name    name of file to be opened</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **             Mode    mode to be used to open file</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **     Globals:</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **             None</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **     Operation:</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **             This routine attempts to open the specified file in the</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **             specified mode.  If the file can be opened, a pointer to</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **             the open file is returned.  If the file cannot be opened,</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **             an error is trapped.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **     Return:</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **             Pointer to open file.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> **     Exceptions:</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **             FOPENERROR              unable to open specified file</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> **     History:</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> **             5/21/89, DSJ, Created.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  FILE *File;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">char</span> ErrorMessage[<a class="code" href="a01046.html#ab228b4d07c6e54586d2d8f81a2179490">MAXERRORMESSAGE</a>];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  File = fopen (Name, Mode);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (File == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    sprintf (ErrorMessage, <span class="stringliteral">&quot;Unable to open %s&quot;</span>, Name);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="a01044.html#a480942fa88232bda23e9809e5afa9f25">DoError</a>(<a class="code" href="a01047.html#a57448c70d638b35c9a0c595d44d649fe">FOPENERROR</a>, ErrorMessage); </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> (File);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}                                <span class="comment">/* Efopen */</span></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a01044_html_a480942fa88232bda23e9809e5afa9f25"><div class="ttname"><a href="a01044.html#a480942fa88232bda23e9809e5afa9f25">DoError</a></div><div class="ttdeci">void DoError(int Error, const char *Message)</div><div class="ttdef"><b>Definition:</b> <a href="a01044_source.html#l00032">danerror.cpp:32</a></div></div>
-<div class="ttc" id="a01047_html_a57448c70d638b35c9a0c595d44d649fe"><div class="ttname"><a href="a01047.html#a57448c70d638b35c9a0c595d44d649fe">FOPENERROR</a></div><div class="ttdeci">#define FOPENERROR</div><div class="ttdef"><b>Definition:</b> <a href="a01047_source.html#l00026">efio.h:26</a></div></div>
-<div class="ttc" id="a01046_html_ab228b4d07c6e54586d2d8f81a2179490"><div class="ttname"><a href="a01046.html#ab228b4d07c6e54586d2d8f81a2179490">MAXERRORMESSAGE</a></div><div class="ttdeci">#define MAXERRORMESSAGE</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00026">efio.cpp:26</a></div></div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -215,8 +158,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01047.html">efio.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:36 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_84a385896be4bab540c27bf35d0c584a.html">cutil</a></li><li class="navelem"><a class="el" href="a01047.html">structures.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:10 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

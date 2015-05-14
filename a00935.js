@@ -1,16 +1,13 @@
 var a00935 =
 [
-    [ "FIRSTBULGE", "a00935.html#ad1464eb110ea01416a6590990ef70292", null ],
-    [ "MFLENGTH", "a00935.html#aab9af949da5ae4ae116df014c0d22d1e", null ],
-    [ "MFSIZE", "a00935.html#a91b4d8b8bc76e243410f648f487b9a1a", null ],
-    [ "NextFeatureOf", "a00935.html#a73241e8fe18f28077a7158303e7a126f", null ],
-    [ "ORIENTATION", "a00935.html#ac815b03ec48abf99301f44140ff0b0a9", null ],
-    [ "SECONDBULGE", "a00935.html#af4886ef7009ef75f6e3a13ff562feb27", null ],
-    [ "XPOSITION", "a00935.html#aa14d8a5c035963734f527261a209c402", null ],
-    [ "YPOSITION", "a00935.html#ab4a43f7e9f215f0fb311fdb0f54fe1bf", null ],
-    [ "MFBLOCK", "a00935.html#a6aff904923717a4c878871a7b3c51f59", null ],
-    [ "MICROFEATURE", "a00935.html#acf6b2e47a8872409e85b7bfeee9961dc", null ],
-    [ "MICROFEATURES", "a00935.html#a3fdd61e86cfc2b48248239e49fd1befe", null ],
-    [ "FreeMicroFeatures", "a00935.html#afd75dd0b29a6b9bf0c5a31b3484bd0d9", null ],
-    [ "NewMicroFeature", "a00935.html#a10606897d42fff8ca71fb36795bd581e", null ]
+    [ "MAX_OUTLINE_FEATURES", "a00935.html#ac29e72cf5bfbadc9a7b2490ffdda297f", null ],
+    [ "OUTLINE_FEAT_PARAM_NAME", "a00935.html#ab73697b859e4921472c6cf1de43267a1", [
+      [ "OutlineFeatX", "a00935.html#ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6", null ],
+      [ "OutlineFeatY", "a00935.html#ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379", null ],
+      [ "OutlineFeatLength", "a00935.html#ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741", null ],
+      [ "OutlineFeatDir", "a00935.html#ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb", null ]
+    ] ],
+    [ "AddOutlineFeatureToSet", "a00935.html#a7a23f0f713121c5a61e7f96df94d6ced", null ],
+    [ "ConvertToOutlineFeatures", "a00935.html#a46e551093fc5d100adbb071067948bd9", null ],
+    [ "NormalizeOutlineX", "a00935.html#a31e740a46d077ad41735bbd17b0bef34", null ]
 ];

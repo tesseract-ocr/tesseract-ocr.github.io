@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::NeuralNet::WeightedNode Struct Reference</title>
+<title>Tesseract: api/pdfrenderer.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,9 +70,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,64 +105,48 @@ $(document).ready(function(){initNavTree('a00666.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="a01881.html">List of all members</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::NeuralNet::WeightedNode Struct Reference</div>  </div>
+<div class="title">pdfrenderer.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a01089_source.html">neural_net.h</a>&gt;</code></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00663_source.html">baseapi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00668_source.html">renderer.h</a>&quot;</code><br />
+<code>#include &quot;math.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00859_source.html">strngs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00994_source.html">cube_utils.h</a>&quot;</code><br />
+<code>#include &quot;allheaders.h&quot;</code><br />
+</div>
+<p><a href="a00666_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a472e041ee5d3bf6f9480601e59710232"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00489.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00666.html#a472e041ee5d3bf6f9480601e59710232">input_node</a></td></tr>
-<tr class="separator:a472e041ee5d3bf6f9480601e59710232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2569c3963eb755c45d64e48edd07583f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00666.html#a2569c3963eb755c45d64e48edd07583f">input_weight</a></td></tr>
-<tr class="separator:a2569c3963eb755c45d64e48edd07583f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a92a443b3e7dd7304662027b7dab51d7e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a92a443b3e7dd7304662027b7dab51d7e">tesseract::prec</a> (double x)</td></tr>
+<tr class="separator:a92a443b3e7dd7304662027b7dab51d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4256401241be9abaaa094a8b2fc40b0e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a4256401241be9abaaa094a8b2fc40b0e">tesseract::dist2</a> (int x1, int y1, int x2, int y2)</td></tr>
+<tr class="separator:a4256401241be9abaaa094a8b2fc40b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a104d9315c6c58735b86487f6f8755d99"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a104d9315c6c58735b86487f6f8755d99">tesseract::kBasicBufSize</a> = 2048</td></tr>
+<tr class="separator:a104d9315c6c58735b86487f6f8755d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c95ea145ce7d0db58639be88772beae"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a6c95ea145ce7d0db58639be88772beae">tesseract::kCharWidth</a> = 2</td></tr>
+<tr class="separator:a6c95ea145ce7d0db58639be88772beae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="a01089_source.html#l00046">46</a> of file <a class="el" href="a01089_source.html">neural_net.h</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a472e041ee5d3bf6f9480601e59710232"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00489.html">Node</a>* tesseract::NeuralNet::WeightedNode::input_node</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01089_source.html#l00047">47</a> of file <a class="el" href="a01089_source.html">neural_net.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2569c3963eb755c45d64e48edd07583f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float tesseract::NeuralNet::WeightedNode::input_weight</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01089_source.html#l00048">48</a> of file <a class="el" href="a01089_source.html">neural_net.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>neural_networks/runtime/<a class="el" href="a01089_source.html">neural_net.h</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00487.html">NeuralNet</a></li><li class="navelem"><a class="el" href="a00666.html">WeightedNode</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_0188a3e6da905bc60aceb35bf790b8c9.html">api</a></li><li class="navelem"><a class="el" href="a00666.html">pdfrenderer.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

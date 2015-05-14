@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00557.html','');});
+$(document).ready(function(){initNavTree('a00610.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,22 +106,35 @@ $(document).ready(function(){initNavTree('a00557.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::SearchNodeHashTable Member List</div>  </div>
+<div class="title">tesseract::TessHOcrRenderer Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00557.html">tesseract::SearchNodeHashTable</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00610.html">tesseract::TessHOcrRenderer</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00557.html#aae7833296f799fb4577fe1d25ee76f28">Insert</a>(LangModEdge *lang_mod_edge, SearchNode *srch_node)</td><td class="entry"><a class="el" href="a00557.html">tesseract::SearchNodeHashTable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00557.html#a2f437ed6409f38572913c64bf45b1249">Lookup</a>(LangModEdge *lang_mod_edge, SearchNode *parent_node)</td><td class="entry"><a class="el" href="a00557.html">tesseract::SearchNodeHashTable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00557.html#a562bdd5876b9292deb9584e8c4ad4ab4">SearchNodeHashTable</a>()</td><td class="entry"><a class="el" href="a00557.html">tesseract::SearchNodeHashTable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00557.html#a6101916ebcbb560f6f2f2382aa9dab6d">~SearchNodeHashTable</a>()</td><td class="entry"><a class="el" href="a00557.html">tesseract::SearchNodeHashTable</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#a48121964cc38c7b33bc7e555a7b41423">AddImage</a>(TessBaseAPI *api)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00610.html#a98aa55df283b5b8a6d8a27ab901dc6b1">AddImageHandler</a>(TessBaseAPI *api)</td><td class="entry"><a class="el" href="a00610.html">tesseract::TessHOcrRenderer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#adfd158aaf385d1410d65ec01d1a62145">AppendData</a>(const char *s, int len)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#a9d903a379bfc1467618b8ee616ba64b6">AppendString</a>(const char *s)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#a8f910e5251ee7ebd65f69072b358b445">BeginDocument</a>(const char *title)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00610.html#adca58d8c3b35c7fd313c959a4e9b73b4">BeginDocumentHandler</a>()</td><td class="entry"><a class="el" href="a00610.html">tesseract::TessHOcrRenderer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#a64def5e1f46676190e5af46f23adab88">EndDocument</a>()</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00610.html#aca6363ea0bc8ad28e3464b386071e2f1">EndDocumentHandler</a>()</td><td class="entry"><a class="el" href="a00610.html">tesseract::TessHOcrRenderer</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#a1cdb745d5ebc40448f41e426c086f278">file_extension</a>() const </td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#a349cd9f8e3f298f2fb67055d39bde954">imagenum</a>() const </td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#af2af504390bed60b8b8041a978cf6962">insert</a>(TessResultRenderer *next)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#a8b986f7eee3c6892faa6f070a102b0b1">next</a>()</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00610.html#a3c6a1ec7ca443265eb0f9f899a3222b6">TessHOcrRenderer</a>(const char *outputbase, bool font_info)</td><td class="entry"><a class="el" href="a00610.html">tesseract::TessHOcrRenderer</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00610.html#a91faa97e7113b7ebdd2b0c6ab01f17da">TessHOcrRenderer</a>(const char *outputbase)</td><td class="entry"><a class="el" href="a00610.html">tesseract::TessHOcrRenderer</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#af05c5f7be48946d521660f05323417e7">TessResultRenderer</a>(const char *outputbase, const char *extension)</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00621.html#abc6c2169b2c37d5963163cdd0a21df77">title</a>() const </td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00621.html#ab54195c235a6c1639253a778c6cc2944">~TessResultRenderer</a>()</td><td class="entry"><a class="el" href="a00621.html">tesseract::TessResultRenderer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:53 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:31 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: cube/search_column.h Source File</title>
+<title>Tesseract: cube/word_altlist.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,12 +105,12 @@ $(document).ready(function(){initNavTree('a01017_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">search_column.h</div>  </div>
+<div class="title">word_altlist.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01017.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        search_column.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Beam Search Column Class</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        word_altlist.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Implementation of the Word Alternate List Class</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2008</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
@@ -127,98 +127,130 @@ $(document).ready(function(){initNavTree('a01017_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The SearchColumn class abstracts a column in the lattice that is created</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// by the BeamSearch during the recognition process</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// The class holds the lattice nodes. New nodes are added by calls to AddNode</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// made from the BeamSearch</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// The class maintains a hash table of the nodes to be able to lookup nodes</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// quickly using their lang_mod_edge. This is needed to merge similar paths</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// in the lattice</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01018.html">word_altlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00652.html#aed7544a93d45d94e50095caba8e0dcf0">   23</a></span>&#160;<a class="code" href="a00652.html#aed7544a93d45d94e50095caba8e0dcf0">WordAltList::WordAltList</a>(<span class="keywordtype">int</span> max_alt)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    : <a class="code" href="a00259.html">AltList</a>(max_alt) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  word_alt_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef SEARCH_COLUMN_H</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define SEARCH_COLUMN_H</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01019.html">search_node.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01014.html">lang_mod_edge.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00695.html">cube_reco_context.h</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00555.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00555.html">SearchColumn</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="a00555.html#acd04ea89962103de43b999cdb9ad3f9b">SearchColumn</a>(<span class="keywordtype">int</span> col_idx, <span class="keywordtype">int</span> max_node_cnt);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a00555.html#ad9a2868e392eaf136264de6e40787453">~SearchColumn</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// Accessor functions</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="a00555.html#abd8a49bd16e8d6ae3c3d92dd296ec8f6">   42</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="a00555.html#abd8a49bd16e8d6ae3c3d92dd296ec8f6">ColIdx</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> col_idx_; }</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00555.html#a9a102cd86f201dee6abc1f90f5a5ef1e">   43</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="a00555.html#a9a102cd86f201dee6abc1f90f5a5ef1e">NodeCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> node_cnt_; }</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00555.html#a57c10b151d3565c752c80bbf225cb834">   44</a></span>&#160;  <span class="keyword">inline</span> <a class="code" href="a00556.html">SearchNode</a> **<a class="code" href="a00555.html#a57c10b151d3565c752c80bbf225cb834">Nodes</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> node_array_; }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Prune the nodes if necessary. Pruning is done such that a max</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// number of nodes is kept, i.e., the beam width</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00555.html#af59882506aaf9becbfa8bfeff325a08f">Prune</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="a00556.html">SearchNode</a> *<a class="code" href="a00555.html#aeafc059d37b9d71c97efb1350787c97b">AddNode</a>(<a class="code" href="a00460.html">LangModEdge</a> *edge, <span class="keywordtype">int</span> score,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                      <a class="code" href="a00556.html">SearchNode</a> *parent, <a class="code" href="a00347.html">CubeRecoContext</a> *cntxt);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Returns the node with the least cost</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a00556.html">SearchNode</a> *<a class="code" href="a00555.html#a9d1c018b6c1d473b483e11e330071589">BestNode</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// Sort the lattice nodes. Needed for visualization</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00555.html#a5aa407d2e7553e6dab9cc7910b8a7807">Sort</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// Free up the Hash Table. Added to be called by the Beam Search after</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// a column is pruned to reduce memory foot print</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a00555.html#a98a8b0188debb17fb07eea6ec96660d4">   57</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="a00555.html#a98a8b0188debb17fb07eea6ec96660d4">FreeHashTable</a>() {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (node_hash_table_ != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keyword">delete</span> node_hash_table_;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      node_hash_table_ = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kNodeAllocChunk = 1024;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> kScoreBins = 1024;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span> init_;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> min_cost_;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">int</span> max_cost_;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">int</span> max_node_cnt_;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> node_cnt_;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> col_idx_;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> score_bins_[kScoreBins];</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="a00556.html">SearchNode</a> **node_array_;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="a00557.html">SearchNodeHashTable</a> *node_hash_table_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// Free node array and hash table</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> Cleanup();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Create hash table</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">bool</span> Init();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a00652.html#af020c489d5502728fa9ab73f67bb20b0">   28</a></span>&#160;<a class="code" href="a00652.html#af020c489d5502728fa9ab73f67bb20b0">WordAltList::~WordAltList</a>() {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">if</span> (word_alt_ != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 0; alt_idx &lt; <a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordflow">if</span> (word_alt_[alt_idx] != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">delete</span> []word_alt_[alt_idx];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">delete</span> []word_alt_;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    word_alt_ = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="a00652.html#a5ea326591aae2390151765f15d93a954">   43</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00652.html#a5ea326591aae2390151765f15d93a954">WordAltList::Insert</a>(<a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *word_str, <span class="keywordtype">int</span> cost, <span class="keywordtype">void</span> *tag) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">if</span> (word_alt_ == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    word_alt_ = <span class="keyword">new</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a>*[<a class="code" href="a00259.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a>];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> = <span class="keyword">new</span> <span class="keywordtype">int</span>[<a class="code" href="a00259.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a>];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a> = <span class="keyword">new</span> <span class="keywordtype">void</span> *[<a class="code" href="a00259.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a>];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (word_alt_ == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    memset(<a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>, 0, <a class="code" href="a00259.html#af2feccb6f1085ac6c1884a0440c47578">max_alt_</a> * <span class="keyword">sizeof</span>(*<a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// check if alt already exists</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 0; alt_idx &lt; <a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00343.html#ad0ca280e451878dc769ce3e095c97ea0">CubeUtils::StrCmp</a>(word_str, word_alt_[alt_idx]) == 0) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// update the cost if we have a lower one</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (cost &lt; <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx]) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx] = cost;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt_idx] = tag;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// determine length of alternate</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">int</span> len = <a class="code" href="a00343.html#a88fe596e3dcadab7909c0bff64f61f59">CubeUtils::StrLen</a>(word_str);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  word_alt_[<a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>] = <span class="keyword">new</span> <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a>[len + 1];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">if</span> (word_alt_[<a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>] == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">if</span> (len &gt; 0) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    memcpy(word_alt_[<a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>], word_str, len * <span class="keyword">sizeof</span>(*word_str));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  word_alt_[<a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>][len] = 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[<a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>] = cost;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[<a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>] = tag;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif  // SEARCH_COLUMN_H</span></div>
-<div class="ttc" id="a00555_html_a9d1c018b6c1d473b483e11e330071589"><div class="ttname"><a href="a00555.html#a9d1c018b6c1d473b483e11e330071589">tesseract::SearchColumn::BestNode</a></div><div class="ttdeci">SearchNode * BestNode()</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00217">search_column.cpp:217</a></div></div>
-<div class="ttc" id="a01019_html"><div class="ttname"><a href="a01019.html">search_node.h</a></div></div>
-<div class="ttc" id="a00556_html"><div class="ttname"><a href="a00556.html">tesseract::SearchNode</a></div><div class="ttdef"><b>Definition:</b> <a href="a01019_source.html#l00035">search_node.h:35</a></div></div>
-<div class="ttc" id="a00347_html"><div class="ttname"><a href="a00347.html">tesseract::CubeRecoContext</a></div><div class="ttdef"><b>Definition:</b> <a href="a00695_source.html#l00043">cube_reco_context.h:43</a></div></div>
-<div class="ttc" id="a00555_html_af59882506aaf9becbfa8bfeff325a08f"><div class="ttname"><a href="a00555.html#af59882506aaf9becbfa8bfeff325a08f">tesseract::SearchColumn::Prune</a></div><div class="ttdeci">void Prune()</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00077">search_column.cpp:77</a></div></div>
-<div class="ttc" id="a00555_html_acd04ea89962103de43b999cdb9ad3f9b"><div class="ttname"><a href="a00555.html#acd04ea89962103de43b999cdb9ad3f9b">tesseract::SearchColumn::SearchColumn</a></div><div class="ttdeci">SearchColumn(int col_idx, int max_node_cnt)</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00025">search_column.cpp:25</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00555_html_ad9a2868e392eaf136264de6e40787453"><div class="ttname"><a href="a00555.html#ad9a2868e392eaf136264de6e40787453">tesseract::SearchColumn::~SearchColumn</a></div><div class="ttdeci">~SearchColumn()</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00052">search_column.cpp:52</a></div></div>
-<div class="ttc" id="a00555_html"><div class="ttname"><a href="a00555.html">tesseract::SearchColumn</a></div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00037">search_column.h:37</a></div></div>
-<div class="ttc" id="a00555_html_a98a8b0188debb17fb07eea6ec96660d4"><div class="ttname"><a href="a00555.html#a98a8b0188debb17fb07eea6ec96660d4">tesseract::SearchColumn::FreeHashTable</a></div><div class="ttdeci">void FreeHashTable()</div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00057">search_column.h:57</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00555_html_a5aa407d2e7553e6dab9cc7910b8a7807"><div class="ttname"><a href="a00555.html#a5aa407d2e7553e6dab9cc7910b8a7807">tesseract::SearchColumn::Sort</a></div><div class="ttdeci">void Sort()</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00125">search_column.cpp:125</a></div></div>
-<div class="ttc" id="a00695_html"><div class="ttname"><a href="a00695.html">cube_reco_context.h</a></div></div>
-<div class="ttc" id="a01014_html"><div class="ttname"><a href="a01014.html">lang_mod_edge.h</a></div></div>
-<div class="ttc" id="a00555_html_a57c10b151d3565c752c80bbf225cb834"><div class="ttname"><a href="a00555.html#a57c10b151d3565c752c80bbf225cb834">tesseract::SearchColumn::Nodes</a></div><div class="ttdeci">SearchNode ** Nodes() const </div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00044">search_column.h:44</a></div></div>
-<div class="ttc" id="a00557_html"><div class="ttname"><a href="a00557.html">tesseract::SearchNodeHashTable</a></div><div class="ttdef"><b>Definition:</b> <a href="a01019_source.html#l00109">search_node.h:109</a></div></div>
-<div class="ttc" id="a00555_html_aeafc059d37b9d71c97efb1350787c97b"><div class="ttname"><a href="a00555.html#aeafc059d37b9d71c97efb1350787c97b">tesseract::SearchColumn::AddNode</a></div><div class="ttdeci">SearchNode * AddNode(LangModEdge *edge, int score, SearchNode *parent, CubeRecoContext *cntxt)</div><div class="ttdef"><b>Definition:</b> <a href="a01016_source.html#l00133">search_column.cpp:133</a></div></div>
-<div class="ttc" id="a00460_html"><div class="ttname"><a href="a00460.html">tesseract::LangModEdge</a></div><div class="ttdef"><b>Definition:</b> <a href="a01014_source.html#l00043">lang_mod_edge.h:43</a></div></div>
-<div class="ttc" id="a00555_html_abd8a49bd16e8d6ae3c3d92dd296ec8f6"><div class="ttname"><a href="a00555.html#abd8a49bd16e8d6ae3c3d92dd296ec8f6">tesseract::SearchColumn::ColIdx</a></div><div class="ttdeci">int ColIdx() const </div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00042">search_column.h:42</a></div></div>
-<div class="ttc" id="a00555_html_a9a102cd86f201dee6abc1f90f5a5ef1e"><div class="ttname"><a href="a00555.html#a9a102cd86f201dee6abc1f90f5a5ef1e">tesseract::SearchColumn::NodeCount</a></div><div class="ttdeci">int NodeCount() const </div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00043">search_column.h:43</a></div></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>++;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="a00652.html#a95f2cdc000e6a4a605326f2b12faac23">   92</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00652.html#a95f2cdc000e6a4a605326f2b12faac23">WordAltList::Sort</a>() {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 0; alt_idx &lt; <a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt = alt_idx + 1; alt &lt; <a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt++) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx] &gt; <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt]) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *pchTemp = word_alt_[alt_idx];</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        word_alt_[alt_idx] = word_alt_[alt];</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        word_alt_[alt] = pchTemp;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">int</span> temp = <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx];</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx] = <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt] = temp;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> *tag = <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt_idx];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt_idx] = <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt];</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">alt_tag_</a>[alt] = tag;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="a00652.html#a98be76081103c8732f07836d1278da63">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00652.html#a98be76081103c8732f07836d1278da63">WordAltList::PrintDebug</a>() {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> alt_idx = 0; alt_idx &lt; <a class="code" href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">alt_cnt_</a>; alt_idx++) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="a01267.html#aea2c6172b0ca77907e29cd018595b425">char_32</a> *word_32 = word_alt_[alt_idx];</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">string</span> word_str;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="a00343.html#a30c20693fc79e49a67c9694700f1d0b5">CubeUtils::UTF32ToUTF8</a>(word_32, &amp;word_str);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> num_unichars = <a class="code" href="a00343.html#a88fe596e3dcadab7909c0bff64f61f59">CubeUtils::StrLen</a>(word_32);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Alt[%d]=%s (cost=%d, num_unichars=%d); unichars=&quot;</span>, alt_idx,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            word_str.c_str(), <a class="code" href="a00259.html#afad648f9ceb847661f71cab87c00e208">alt_cost_</a>[alt_idx], num_unichars);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_unichars; ++i)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      fprintf(stderr, <span class="stringliteral">&quot;%d &quot;</span>, word_32[i]);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}  <span class="comment">// namespace tesseract</span></div>
+<div class="ttc" id="a00343_html_ad0ca280e451878dc769ce3e095c97ea0"><div class="ttname"><a href="a00343.html#ad0ca280e451878dc769ce3e095c97ea0">tesseract::CubeUtils::StrCmp</a></div><div class="ttdeci">static int StrCmp(const char_32 *str1, const char_32 *str2)</div><div class="ttdef"><b>Definition:</b> <a href="a00993_source.html#l00066">cube_utils.cpp:66</a></div></div>
+<div class="ttc" id="a00259_html_af2feccb6f1085ac6c1884a0440c47578"><div class="ttname"><a href="a00259.html#af2feccb6f1085ac6c1884a0440c47578">tesseract::AltList::max_alt_</a></div><div class="ttdeci">int max_alt_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00051">altlist.h:51</a></div></div>
+<div class="ttc" id="a00652_html_aed7544a93d45d94e50095caba8e0dcf0"><div class="ttname"><a href="a00652.html#aed7544a93d45d94e50095caba8e0dcf0">tesseract::WordAltList::WordAltList</a></div><div class="ttdeci">WordAltList(int max_alt)</div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00023">word_altlist.cpp:23</a></div></div>
+<div class="ttc" id="a00259_html_a9c30e8b6c8fd2346184b0180ff5af4d6"><div class="ttname"><a href="a00259.html#a9c30e8b6c8fd2346184b0180ff5af4d6">tesseract::AltList::alt_tag_</a></div><div class="ttdeci">void ** alt_tag_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00057">altlist.h:57</a></div></div>
+<div class="ttc" id="a00259_html"><div class="ttname"><a href="a00259.html">tesseract::AltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00030">altlist.h:30</a></div></div>
+<div class="ttc" id="a00259_html_a5a4e150fef9c9beb9cfbf6529cf8b467"><div class="ttname"><a href="a00259.html#a5a4e150fef9c9beb9cfbf6529cf8b467">tesseract::AltList::alt_cnt_</a></div><div class="ttdeci">int alt_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00053">altlist.h:53</a></div></div>
+<div class="ttc" id="a00652_html_a98be76081103c8732f07836d1278da63"><div class="ttname"><a href="a00652.html#a98be76081103c8732f07836d1278da63">tesseract::WordAltList::PrintDebug</a></div><div class="ttdeci">void PrintDebug()</div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00112">word_altlist.cpp:112</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a01018_html"><div class="ttname"><a href="a01018.html">word_altlist.h</a></div></div>
+<div class="ttc" id="a00259_html_afad648f9ceb847661f71cab87c00e208"><div class="ttname"><a href="a00259.html#afad648f9ceb847661f71cab87c00e208">tesseract::AltList::alt_cost_</a></div><div class="ttdeci">int * alt_cost_</div><div class="ttdef"><b>Definition:</b> <a href="a00956_source.html#l00055">altlist.h:55</a></div></div>
+<div class="ttc" id="a00652_html_a5ea326591aae2390151765f15d93a954"><div class="ttname"><a href="a00652.html#a5ea326591aae2390151765f15d93a954">tesseract::WordAltList::Insert</a></div><div class="ttdeci">bool Insert(char_32 *char_ptr, int cost, void *tag=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00043">word_altlist.cpp:43</a></div></div>
+<div class="ttc" id="a00652_html_a95f2cdc000e6a4a605326f2b12faac23"><div class="ttname"><a href="a00652.html#a95f2cdc000e6a4a605326f2b12faac23">tesseract::WordAltList::Sort</a></div><div class="ttdeci">void Sort()</div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00092">word_altlist.cpp:92</a></div></div>
+<div class="ttc" id="a01267_html_aea2c6172b0ca77907e29cd018595b425"><div class="ttname"><a href="a01267.html#aea2c6172b0ca77907e29cd018595b425">tesseract::char_32</a></div><div class="ttdeci">signed int char_32</div><div class="ttdef"><b>Definition:</b> <a href="a01011_source.html#l00040">string_32.h:40</a></div></div>
+<div class="ttc" id="a00652_html_af020c489d5502728fa9ab73f67bb20b0"><div class="ttname"><a href="a00652.html#af020c489d5502728fa9ab73f67bb20b0">tesseract::WordAltList::~WordAltList</a></div><div class="ttdeci">~WordAltList()</div><div class="ttdef"><b>Definition:</b> <a href="a01017_source.html#l00028">word_altlist.cpp:28</a></div></div>
+<div class="ttc" id="a00343_html_a88fe596e3dcadab7909c0bff64f61f59"><div class="ttname"><a href="a00343.html#a88fe596e3dcadab7909c0bff64f61f59">tesseract::CubeUtils::StrLen</a></div><div class="ttdeci">static int StrLen(const char_32 *str)</div><div class="ttdef"><b>Definition:</b> <a href="a00993_source.html#l00054">cube_utils.cpp:54</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00343_html_a30c20693fc79e49a67c9694700f1d0b5"><div class="ttname"><a href="a00343.html#a30c20693fc79e49a67c9694700f1d0b5">tesseract::CubeUtils::UTF32ToUTF8</a></div><div class="ttdeci">static void UTF32ToUTF8(const char_32 *utf32_str, string *str)</div><div class="ttdef"><b>Definition:</b> <a href="a00993_source.html#l00282">cube_utils.cpp:282</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01017.html">search_column.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_452bf2a1f165afdc57f378d186bca8c8.html">cube</a></li><li class="navelem"><a class="el" href="a01017.html">word_altlist.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:01 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

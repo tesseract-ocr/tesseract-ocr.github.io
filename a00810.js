@@ -1,15 +1,18 @@
 var a00810 =
 [
-    [ "ELISTIZE", "a00810.html#a313e6afdfa324c95ca6c0257835bb507", null ],
-    [ "ELISTIZE", "a00810.html#a4c50b223ed74d9c03fa7ee8566688208", null ],
-    [ "EqualIgnoringCaseAndTerminalPunct", "a00810.html#a98992670ff5a4da6695f318643d48ca4", null ],
-    [ "FindMatchingChoice", "a00810.html#ae7d10d7f2ebc33a80d4c2ec84996e121", null ],
-    [ "print_ratings_list", "a00810.html#a2de5b7d5a020bb9823091dbece4ea36e", null ],
-    [ "ScriptPosToString", "a00810.html#a9a75fa73a4d69a48bdf5918c1949c976", null ],
-    [ "kMaxBaselineDrift", "a00810.html#a3655904b6e0f4d2c677ebebeae93a092", null ],
-    [ "kMaxDropCapBottom", "a00810.html#abea898c2813372b2ddd7f70ecdce4b08", null ],
-    [ "kMaxOverlapDenominator", "a00810.html#a4a83ca234ca4d4ee248cbfdc9b36bb30", null ],
-    [ "kMinSubscriptOffset", "a00810.html#a1375174ce0d252af5207f03bfdb0b898", null ],
-    [ "kMinSuperscriptOffset", "a00810.html#a322c161fa1101b0e31ce4094c6c2935b", null ],
-    [ "kMinXHeightMatch", "a00810.html#a534f356c4262f863f5fe371d5f034749", null ]
+    [ "UnicharIdArrayUtils", "a00640.html", null ],
+    [ "AmbigSpec", "a00260.html", "a00260" ],
+    [ "UnicharAmbigs", "a00638.html", "a00638" ],
+    [ "MAX_AMBIG_SIZE", "a00810.html#a66b35d22667233a1566433c6dd864463", null ],
+    [ "UnicharAmbigsVector", "a00810.html#aa63fceec9a01c185fac83c0e7d04fe08", null ],
+    [ "UnicharIdVector", "a00810.html#a3dad1b2dad5ed3069bdb4c971116b9c5", null ],
+    [ "AmbigType", "a00810.html#aa13017f5f891a1f9f95074bf26a5b222", [
+      [ "NOT_AMBIG", "a00810.html#aa13017f5f891a1f9f95074bf26a5b222af40a6c3f3fbd83ba09a6607f534349dc", null ],
+      [ "REPLACE_AMBIG", "a00810.html#aa13017f5f891a1f9f95074bf26a5b222a4de7fc7ae32fd87a4c53e4b6bf3322de", null ],
+      [ "DEFINITE_AMBIG", "a00810.html#aa13017f5f891a1f9f95074bf26a5b222a36712914249ab1d96c4f395c06bc7009", null ],
+      [ "SIMILAR_AMBIG", "a00810.html#aa13017f5f891a1f9f95074bf26a5b222aba0a03f0cccfdd9e45817623613dd740", null ],
+      [ "CASE_AMBIG", "a00810.html#aa13017f5f891a1f9f95074bf26a5b222a29c650e9672a75e50491fc10c0f07ec5", null ],
+      [ "AMBIG_TYPE_COUNT", "a00810.html#aa13017f5f891a1f9f95074bf26a5b222a79854db5a6d73c698dd9b003f426918f", null ]
+    ] ],
+    [ "ELISTIZEH", "a00810.html#aad9b817c74cee6bd76a4912e7f54ff7b", null ]
 ];

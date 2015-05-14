@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/werd.h File Reference</title>
+<title>Tesseract: ccutil/errcode.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,196 +106,143 @@ $(document).ready(function(){initNavTree('a00827.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">werd.h File Reference</div>  </div>
+<div class="title">errcode.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00867_source.html">params.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00833_source.html">bits16.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00844_source.html">elst2.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00878_source.html">strngs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00747_source.html">blckerr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00823_source.html">stepblob.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00788_source.html">ocrrow.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00835_source.html">host.h</a>&quot;</code><br />
 </div>
 <p><a href="a00827_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00667.html">WERD</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html">ERRCODE</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3676a4fc46e338b904a93510be6f562b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a3676a4fc46e338b904a93510be6f562b">NO_ABORT_CODE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a3676a4fc46e338b904a93510be6f562b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9115a70e6be8541b95c0a7261efd6f72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a9115a70e6be8541b95c0a7261efd6f72">LIST_ABORT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a9115a70e6be8541b95c0a7261efd6f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac21ab893bcc2d6bd68bd9e3bfdbd366"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#aac21ab893bcc2d6bd68bd9e3bfdbd366">MEMORY_ABORT</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:aac21ab893bcc2d6bd68bd9e3bfdbd366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add42da420d8595d84a59a1a913d2a4ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#add42da420d8595d84a59a1a913d2a4ea">FILE_ABORT</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:add42da420d8595d84a59a1a913d2a4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b5079228b0b5c79c163c89334c9c8f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a6b5079228b0b5c79c163c89334c9c8f3">LOC_UNUSED0</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a6b5079228b0b5c79c163c89334c9c8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af821f94fc1a208befcfba6704e80cdfa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#af821f94fc1a208befcfba6704e80cdfa">LOC_UNUSED1</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:af821f94fc1a208befcfba6704e80cdfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604f61763b5827f1ddd08fd83e0207de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a604f61763b5827f1ddd08fd83e0207de">LOC_UNUSED2</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a604f61763b5827f1ddd08fd83e0207de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd85a50a52096b8ffb27aa183fc35d5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#afd85a50a52096b8ffb27aa183fc35d5c">LOC_INIT</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:afd85a50a52096b8ffb27aa183fc35d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf3e2234e6e986629417e519a3e75e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a6cf3e2234e6e986629417e519a3e75e5">LOC_EDGE_PROG</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a6cf3e2234e6e986629417e519a3e75e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a305ddc4b344c74288d9503715849fcb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a305ddc4b344c74288d9503715849fcb7">LOC_TEXT_ORD_ROWS</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a305ddc4b344c74288d9503715849fcb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c302c9a3ba67897009ea264f458cb63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a6c302c9a3ba67897009ea264f458cb63">LOC_TEXT_ORD_WORDS</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a6c302c9a3ba67897009ea264f458cb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9f98e30983b3c080e7fa3a439592a00"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#aa9f98e30983b3c080e7fa3a439592a00">LOC_PASS1</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:aa9f98e30983b3c080e7fa3a439592a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d964b84a183d7d9c1b7d205358ca74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a01d964b84a183d7d9c1b7d205358ca74">LOC_PASS2</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a01d964b84a183d7d9c1b7d205358ca74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f145da3d27aa025f220becb27879db7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a8f145da3d27aa025f220becb27879db7">LOC_FUZZY_SPACE</a>&#160;&#160;&#160;14</td></tr>
+<tr class="separator:a8f145da3d27aa025f220becb27879db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2566a0d57e097555b339d08379ac0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a6b2566a0d57e097555b339d08379ac0d">LOC_MM_ADAPT</a>&#160;&#160;&#160;21</td></tr>
+<tr class="separator:a6b2566a0d57e097555b339d08379ac0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035b82243d07c39f12fcd8bf45a47493"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a035b82243d07c39f12fcd8bf45a47493">LOC_DOC_BLK_REJ</a>&#160;&#160;&#160;22</td></tr>
+<tr class="separator:a035b82243d07c39f12fcd8bf45a47493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab54db69aaf3fd317086ea2ee52ffa5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#aab54db69aaf3fd317086ea2ee52ffa5d">LOC_WRITE_RESULTS</a>&#160;&#160;&#160;23</td></tr>
+<tr class="separator:aab54db69aaf3fd317086ea2ee52ffa5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65561e7d9e920830efc5621836e0034"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#ae65561e7d9e920830efc5621836e0034">LOC_ADAPTIVE</a>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:ae65561e7d9e920830efc5621836e0034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2547c1ff4f32e0726fd745c388e50aa0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a2547c1ff4f32e0726fd745c388e50aa0">SUBLOC_NORM</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a2547c1ff4f32e0726fd745c388e50aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad647a33244550ffb318471d9936d0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#abad647a33244550ffb318471d9936d0a">SUBLOC_FIX_XHT</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:abad647a33244550ffb318471d9936d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af08dfdd36f5d31547eba1a9ea43d52b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#af08dfdd36f5d31547eba1a9ea43d52b9">SUBSUBLOC_OTHER</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:af08dfdd36f5d31547eba1a9ea43d52b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a13ef51ac14385e8bee7ff749d397df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a4a13ef51ac14385e8bee7ff749d397df">SUBSUBLOC_TESS</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a4a13ef51ac14385e8bee7ff749d397df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe706f26e15d2cca06f97f38f994e478"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#afe706f26e15d2cca06f97f38f994e478">SUBSUBLOC_NN</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:afe706f26e15d2cca06f97f38f994e478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a603f4063a6b9403d81caa245a583b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a>(x)</td></tr>
+<tr class="separator:a93a603f4063a6b9403d81caa245a583b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe8bbb786aa8dc37aaf7112dc3f32426"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#afe8bbb786aa8dc37aaf7112dc3f32426">ASSERT_HOST_MSG</a>(x, msg...)</td></tr>
+<tr class="separator:afe8bbb786aa8dc37aaf7112dc3f32426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ad6968adbf8f2cc44adf333ec96efb0be"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0be">WERD_FLAGS</a> { <br />
-&#160;&#160;<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea8741ef3078614d5d00f0898b2dbd5bd7">W_SEGMENTED</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beafb8a30718938e1e273e054e550fefac5">W_ITALIC</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea2191ec3a46510d8a5879e97df8a44c37">W_BOLD</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2">W_BOL</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce">W_EOL</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea81d9f266977ff9be129e4de409a124ed">W_NORMALIZED</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea3f41a0c5d64002c322177a4243a13aae">W_SCRIPT_HAS_XHEIGHT</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea8c3664a200b620de34a3cb691cb1e71c">W_SCRIPT_IS_LATIN</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e">W_DONT_CHOP</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaa20dcde8552519bb81c4206b0e57a8ce">W_REP_CHAR</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea3580884b5b0335502fb928db4a0a2024">W_FUZZY_SP</a>, 
-<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea675eadd051ea82d1f288751799bfa31c">W_FUZZY_NON</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaecff222839a9a16c19d63463bfeb9ca7">W_INVERSE</a>
-<br />
+<tr class="memitem:a8a3a2e51383909b357fcdf8eda803637"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637">TessErrorLogCode</a> { <a class="el" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a488607ea6c5f90b63a063b953af1e078">DBG</a> = -1, 
+<a class="el" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a13d4c6d048f76d5b02c6f1b70323e770">TESSLOG</a> = 0, 
+<a class="el" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a5e74e236a50519c41cbbcecea29add63">TESSEXIT</a> = 1, 
+<a class="el" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a> = 2
  }</td></tr>
-<tr class="separator:ad6968adbf8f2cc44adf333ec96efb0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d51e432a32c55ab6c02df47f4ca62c4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4">DISPLAY_FLAGS</a> { <br />
-&#160;&#160;<a class="el" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a5847cc6ed455e6638b3c070319cd2d89">DF_BOX</a>, 
-<a class="el" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a45d1d55c62ce1c09d56ccabf1ec023d4">DF_TEXT</a>, 
-<a class="el" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4af1487bbfe08f15ec84246120ce6d9006">DF_POLYGONAL</a>, 
-<a class="el" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a39949203c336436f1958a9967d94a94c">DF_EDGE_STEP</a>, 
-<br />
-&#160;&#160;<a class="el" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a014cb64174a13f7fabae61cb8db58577">DF_BN_POLYGONAL</a>, 
-<a class="el" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a9a4b9fb96c286e337e19f8d7d978a429">DF_BLAMER</a>
-<br />
- }</td></tr>
-<tr class="separator:a6d51e432a32c55ab6c02df47f4ca62c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a8a3a2e51383909b357fcdf8eda803637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8a8c04307eb98f244554d5b2eb97ec56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a8a8c04307eb98f244554d5b2eb97ec56">word_comparator</a> (const void *word1p, const void *word2p)</td></tr>
-<tr class="separator:a8a8c04307eb98f244554d5b2eb97ec56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc45d1c7b7602898f2c7edc72cbcd37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a5bc45d1c7b7602898f2c7edc72cbcd37">signal_exit</a> (int signal_code)</td></tr>
+<tr class="separator:a5bc45d1c7b7602898f2c7edc72cbcd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae281080023125653d85cd946e95f626c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#ae281080023125653d85cd946e95f626c">set_global_loc_code</a> (int loc_code)</td></tr>
+<tr class="separator:ae281080023125653d85cd946e95f626c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d586caeb936d763514af2bbba8cab6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a87d586caeb936d763514af2bbba8cab6">set_global_subloc_code</a> (int loc_code)</td></tr>
+<tr class="separator:a87d586caeb936d763514af2bbba8cab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683cb64eb69da4200257e0468b4347a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a683cb64eb69da4200257e0468b4347a0">set_global_subsubloc_code</a> (int loc_code)</td></tr>
+<tr class="separator:a683cb64eb69da4200257e0468b4347a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a006fcbc9264ebdb76b55e7fa3b20695a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00374.html">ERRCODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00827.html#a006fcbc9264ebdb76b55e7fa3b20695a">ASSERT_FAILED</a> = &quot;Assert failed&quot;</td></tr>
+<tr class="separator:a006fcbc9264ebdb76b55e7fa3b20695a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="a6d51e432a32c55ab6c02df47f4ca62c4"></a>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a93a603f4063a6b9403d81caa245a583b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4">DISPLAY_FLAGS</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a6d51e432a32c55ab6c02df47f4ca62c4a5847cc6ed455e6638b3c070319cd2d89"></a>DF_BOX&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a6d51e432a32c55ab6c02df47f4ca62c4a45d1d55c62ce1c09d56ccabf1ec023d4"></a>DF_TEXT&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a6d51e432a32c55ab6c02df47f4ca62c4af1487bbfe08f15ec84246120ce6d9006"></a>DF_POLYGONAL&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a6d51e432a32c55ab6c02df47f4ca62c4a39949203c336436f1958a9967d94a94c"></a>DF_EDGE_STEP&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a6d51e432a32c55ab6c02df47f4ca62c4a014cb64174a13f7fabae61cb8db58577"></a>DF_BN_POLYGONAL&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a6d51e432a32c55ab6c02df47f4ca62c4a9a4b9fb96c286e337e19f8d7d978a429"></a>DF_BLAMER&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a00827_source.html#l00047">47</a> of file <a class="el" href="a00827_source.html">werd.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">/* Display flags bit number allocations */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a5847cc6ed455e6638b3c070319cd2d89">DF_BOX</a>,                        <span class="comment">//&lt; Bounding box</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a45d1d55c62ce1c09d56ccabf1ec023d4">DF_TEXT</a>,                       <span class="comment">//&lt; Correct ascii</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4af1487bbfe08f15ec84246120ce6d9006">DF_POLYGONAL</a>,                  <span class="comment">//&lt; Polyg approx</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a39949203c336436f1958a9967d94a94c">DF_EDGE_STEP</a>,                  <span class="comment">//&lt; Edge steps</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a014cb64174a13f7fabae61cb8db58577">DF_BN_POLYGONAL</a>,               <span class="comment">//&lt; BL normalisd polyapx</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a9a4b9fb96c286e337e19f8d7d978a429">DF_BLAMER</a>                      <span class="comment">//&lt; Blamer information</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
-<div class="ttc" id="a00827_html_a6d51e432a32c55ab6c02df47f4ca62c4a9a4b9fb96c286e337e19f8d7d978a429"><div class="ttname"><a href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a9a4b9fb96c286e337e19f8d7d978a429">DF_BLAMER</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00055">werd.h:55</a></div></div>
-<div class="ttc" id="a00827_html_a6d51e432a32c55ab6c02df47f4ca62c4a45d1d55c62ce1c09d56ccabf1ec023d4"><div class="ttname"><a href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a45d1d55c62ce1c09d56ccabf1ec023d4">DF_TEXT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00051">werd.h:51</a></div></div>
-<div class="ttc" id="a00827_html_a6d51e432a32c55ab6c02df47f4ca62c4a5847cc6ed455e6638b3c070319cd2d89"><div class="ttname"><a href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a5847cc6ed455e6638b3c070319cd2d89">DF_BOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00050">werd.h:50</a></div></div>
-<div class="ttc" id="a00827_html_a6d51e432a32c55ab6c02df47f4ca62c4a014cb64174a13f7fabae61cb8db58577"><div class="ttname"><a href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a014cb64174a13f7fabae61cb8db58577">DF_BN_POLYGONAL</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00054">werd.h:54</a></div></div>
-<div class="ttc" id="a00827_html_a6d51e432a32c55ab6c02df47f4ca62c4a39949203c336436f1958a9967d94a94c"><div class="ttname"><a href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4a39949203c336436f1958a9967d94a94c">DF_EDGE_STEP</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00053">werd.h:53</a></div></div>
-<div class="ttc" id="a00827_html_a6d51e432a32c55ab6c02df47f4ca62c4af1487bbfe08f15ec84246120ce6d9006"><div class="ttname"><a href="a00827.html#a6d51e432a32c55ab6c02df47f4ca62c4af1487bbfe08f15ec84246120ce6d9006">DF_POLYGONAL</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00052">werd.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0be"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0be">WERD_FLAGS</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0bea8741ef3078614d5d00f0898b2dbd5bd7"></a>W_SEGMENTED&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0beafb8a30718938e1e273e054e550fefac5"></a>W_ITALIC&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0bea2191ec3a46510d8a5879e97df8a44c37"></a>W_BOLD&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2"></a>W_BOL&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce"></a>W_EOL&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0bea81d9f266977ff9be129e4de409a124ed"></a>W_NORMALIZED&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0bea3f41a0c5d64002c322177a4243a13aae"></a>W_SCRIPT_HAS_XHEIGHT&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0bea8c3664a200b620de34a3cb691cb1e71c"></a>W_SCRIPT_IS_LATIN&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e"></a>W_DONT_CHOP&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0beaa20dcde8552519bb81c4206b0e57a8ce"></a>W_REP_CHAR&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0bea3580884b5b0335502fb928db4a0a2024"></a>W_FUZZY_SP&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0bea675eadd051ea82d1f288751799bfa31c"></a>W_FUZZY_NON&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="ad6968adbf8f2cc44adf333ec96efb0beaecff222839a9a16c19d63463bfeb9ca7"></a>W_INVERSE&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="a00827_source.html#l00030">30</a> of file <a class="el" href="a00827_source.html">werd.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea8741ef3078614d5d00f0898b2dbd5bd7">W_SEGMENTED</a>,                   <span class="comment">//&lt; correctly segmented</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beafb8a30718938e1e273e054e550fefac5">W_ITALIC</a>,                      <span class="comment">//&lt; italic text</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea2191ec3a46510d8a5879e97df8a44c37">W_BOLD</a>,                        <span class="comment">//&lt; bold text</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2">W_BOL</a>,                         <span class="comment">//&lt; start of line</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce">W_EOL</a>,                         <span class="comment">//&lt; end of line</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea81d9f266977ff9be129e4de409a124ed">W_NORMALIZED</a>,                  <span class="comment">//&lt; flags</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea3f41a0c5d64002c322177a4243a13aae">W_SCRIPT_HAS_XHEIGHT</a>,          <span class="comment">//&lt; x-height concept makes sense.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea8c3664a200b620de34a3cb691cb1e71c">W_SCRIPT_IS_LATIN</a>,             <span class="comment">//&lt; Special case latin for y. splitting.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e">W_DONT_CHOP</a>,                   <span class="comment">//&lt; fixed pitch chopped</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaa20dcde8552519bb81c4206b0e57a8ce">W_REP_CHAR</a>,                    <span class="comment">//&lt; repeated character</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea3580884b5b0335502fb928db4a0a2024">W_FUZZY_SP</a>,                    <span class="comment">//&lt; fuzzy space</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea675eadd051ea82d1f288751799bfa31c">W_FUZZY_NON</a>,                   <span class="comment">//&lt; fuzzy nonspace</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaecff222839a9a16c19d63463bfeb9ca7">W_INVERSE</a>                      <span class="comment">//&lt; white on black</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0beaecff222839a9a16c19d63463bfeb9ca7"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaecff222839a9a16c19d63463bfeb9ca7">W_INVERSE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00044">werd.h:44</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaff21d7c8c8992120fff35942408a00d2">W_BOL</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00035">werd.h:35</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0bea81d9f266977ff9be129e4de409a124ed"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea81d9f266977ff9be129e4de409a124ed">W_NORMALIZED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00037">werd.h:37</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0bea3f41a0c5d64002c322177a4243a13aae"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea3f41a0c5d64002c322177a4243a13aae">W_SCRIPT_HAS_XHEIGHT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00038">werd.h:38</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0beaa20dcde8552519bb81c4206b0e57a8ce"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beaa20dcde8552519bb81c4206b0e57a8ce">W_REP_CHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00041">werd.h:41</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea62efb985a62d85e014ee5ab039dd50ce">W_EOL</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00036">werd.h:36</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0bea3580884b5b0335502fb928db4a0a2024"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea3580884b5b0335502fb928db4a0a2024">W_FUZZY_SP</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00042">werd.h:42</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0bea2191ec3a46510d8a5879e97df8a44c37"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea2191ec3a46510d8a5879e97df8a44c37">W_BOLD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00034">werd.h:34</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0beafb8a30718938e1e273e054e550fefac5"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beafb8a30718938e1e273e054e550fefac5">W_ITALIC</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00033">werd.h:33</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0bea8741ef3078614d5d00f0898b2dbd5bd7"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea8741ef3078614d5d00f0898b2dbd5bd7">W_SEGMENTED</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00032">werd.h:32</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0beac5f734536428e7e43dffe5c87d72d14e">W_DONT_CHOP</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00040">werd.h:40</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0bea8c3664a200b620de34a3cb691cb1e71c"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea8c3664a200b620de34a3cb691cb1e71c">W_SCRIPT_IS_LATIN</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00039">werd.h:39</a></div></div>
-<div class="ttc" id="a00827_html_ad6968adbf8f2cc44adf333ec96efb0bea675eadd051ea82d1f288751799bfa31c"><div class="ttname"><a href="a00827.html#ad6968adbf8f2cc44adf333ec96efb0bea675eadd051ea82d1f288751799bfa31c">W_FUZZY_NON</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00043">werd.h:43</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a8a8c04307eb98f244554d5b2eb97ec56"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int word_comparator </td>
+          <td class="memname">#define ASSERT_HOST</td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>word1p</em>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (!(x))                                        \</div>
+<div class="line">  {                                                                     <a class="code" href="a00827.html#a006fcbc9264ebdb76b55e7fa3b20695a">\</a></div>
+<div class="line"><a class="code" href="a00827.html#a006fcbc9264ebdb76b55e7fa3b20695a">    ASSERT_FAILED</a>.<a class="code" href="a00374.html#abc4cc64aad0ddb74c02523b69c95a1c1">error</a>(#x, <a class="code" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a>, <span class="stringliteral">&quot;in file %s, line %d&quot;</span>,               \</div>
+<div class="line">                        __FILE__, __LINE__);                            \</div>
+<div class="line">  }</div>
+<div class="ttc" id="a00374_html_abc4cc64aad0ddb74c02523b69c95a1c1"><div class="ttname"><a href="a00374.html#abc4cc64aad0ddb74c02523b69c95a1c1">ERRCODE::error</a></div><div class="ttdeci">void error(const char *caller, TessErrorLogCode action, const char *format,...) const </div><div class="ttdef"><b>Definition:</b> <a href="a00826_source.html#l00040">errcode.cpp:40</a></div></div>
+<div class="ttc" id="a00827_html_a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096"><div class="ttname"><a href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00030">errcode.h:30</a></div></div>
+<div class="ttc" id="a00827_html_a006fcbc9264ebdb76b55e7fa3b20695a"><div class="ttname"><a href="a00827.html#a006fcbc9264ebdb76b55e7fa3b20695a">ASSERT_FAILED</a></div><div class="ttdeci">const ERRCODE ASSERT_FAILED</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00082">errcode.h:82</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00827_source.html#l00084">84</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe8bbb786aa8dc37aaf7112dc3f32426"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASSERT_HOST_MSG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>word2p</em>&#160;</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msg...&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -304,19 +251,501 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="a00826.html#a8a8c04307eb98f244554d5b2eb97ec56">word_comparator()</a></p>
-<p>word comparator used to sort a word list so that words are in increasing order of left edge. </p>
-
-<p>Definition at line <a class="el" href="a00826_source.html#l00397">397</a> of file <a class="el" href="a00826_source.html">werd.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                                                            {</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  <a class="code" href="a00667.html">WERD</a> *word1 = *(<a class="code" href="a00667.html">WERD</a> **)word1p;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <a class="code" href="a00667.html">WERD</a> *word2 = *(<a class="code" href="a00667.html">WERD</a> **)word2p;</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keywordflow">return</span> word1-&gt;<a class="code" href="a00667.html#aa69bd49f9f7abd55efb5bb24c67307e1">bounding_box</a>().<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a>() - word2-&gt;<a class="code" href="a00667.html#aa69bd49f9f7abd55efb5bb24c67307e1">bounding_box</a>().<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a>();</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
-<div class="ttc" id="a00667_html_aa69bd49f9f7abd55efb5bb24c67307e1"><div class="ttname"><a href="a00667.html#aa69bd49f9f7abd55efb5bb24c67307e1">WERD::bounding_box</a></div><div class="ttdeci">TBOX bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00826_source.html#l00163">werd.cpp:163</a></div></div>
-<div class="ttc" id="a00609_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00609.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00068">rect.h:68</a></div></div>
-<div class="ttc" id="a00667_html"><div class="ttname"><a href="a00667.html">WERD</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00060">werd.h:60</a></div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (!(x))                            \</div>
+<div class="line">  {                                                                     <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">\</a></div>
+<div class="line"><a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">    tprintf</a>(msg);                                                       <a class="code" href="a00827.html#a006fcbc9264ebdb76b55e7fa3b20695a">\</a></div>
+<div class="line"><a class="code" href="a00827.html#a006fcbc9264ebdb76b55e7fa3b20695a">    ASSERT_FAILED</a>.<a class="code" href="a00374.html#abc4cc64aad0ddb74c02523b69c95a1c1">error</a>(#x, <a class="code" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a>, <span class="stringliteral">&quot;in file %s, line %d&quot;</span>,               \</div>
+<div class="line">                        __FILE__, __LINE__);                            \</div>
+<div class="line">  }</div>
+<div class="ttc" id="a00374_html_abc4cc64aad0ddb74c02523b69c95a1c1"><div class="ttname"><a href="a00374.html#abc4cc64aad0ddb74c02523b69c95a1c1">ERRCODE::error</a></div><div class="ttdeci">void error(const char *caller, TessErrorLogCode action, const char *format,...) const </div><div class="ttdef"><b>Definition:</b> <a href="a00826_source.html#l00040">errcode.cpp:40</a></div></div>
+<div class="ttc" id="a00827_html_a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096"><div class="ttname"><a href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00030">errcode.h:30</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00827_html_a006fcbc9264ebdb76b55e7fa3b20695a"><div class="ttname"><a href="a00827.html#a006fcbc9264ebdb76b55e7fa3b20695a">ASSERT_FAILED</a></div><div class="ttdeci">const ERRCODE ASSERT_FAILED</div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00082">errcode.h:82</a></div></div>
 </div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00827_source.html#l00098">98</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="add42da420d8595d84a59a1a913d2a4ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FILE_ABORT&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00037">37</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9115a70e6be8541b95c0a7261efd6f72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LIST_ABORT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00035">35</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae65561e7d9e920830efc5621836e0034"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_ADAPTIVE&#160;&#160;&#160;24</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00055">55</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a035b82243d07c39f12fcd8bf45a47493"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_DOC_BLK_REJ&#160;&#160;&#160;22</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00053">53</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6cf3e2234e6e986629417e519a3e75e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_EDGE_PROG&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00044">44</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f145da3d27aa025f220becb27879db7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_FUZZY_SPACE&#160;&#160;&#160;14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00050">50</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afd85a50a52096b8ffb27aa183fc35d5c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_INIT&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00043">43</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b2566a0d57e097555b339d08379ac0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_MM_ADAPT&#160;&#160;&#160;21</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00052">52</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa9f98e30983b3c080e7fa3a439592a00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_PASS1&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00047">47</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a01d964b84a183d7d9c1b7d205358ca74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_PASS2&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00048">48</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a305ddc4b344c74288d9503715849fcb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_TEXT_ORD_ROWS&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00045">45</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c302c9a3ba67897009ea264f458cb63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_TEXT_ORD_WORDS&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00046">46</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b5079228b0b5c79c163c89334c9c8f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_UNUSED0&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00040">40</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af821f94fc1a208befcfba6704e80cdfa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_UNUSED1&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00041">41</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a604f61763b5827f1ddd08fd83e0207de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_UNUSED2&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00042">42</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aab54db69aaf3fd317086ea2ee52ffa5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOC_WRITE_RESULTS&#160;&#160;&#160;23</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00054">54</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac21ab893bcc2d6bd68bd9e3bfdbd366"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MEMORY_ABORT&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00036">36</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3676a4fc46e338b904a93510be6f562b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NO_ABORT_CODE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00034">34</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abad647a33244550ffb318471d9936d0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUBLOC_FIX_XHT&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00060">60</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2547c1ff4f32e0726fd745c388e50aa0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUBLOC_NORM&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00059">59</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe706f26e15d2cca06f97f38f994e478"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUBSUBLOC_NN&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00067">67</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af08dfdd36f5d31547eba1a9ea43d52b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUBSUBLOC_OTHER&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00065">65</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a13ef51ac14385e8bee7ff749d397df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUBSUBLOC_TESS&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00066">66</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="a8a3a2e51383909b357fcdf8eda803637"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637">TessErrorLogCode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a8a3a2e51383909b357fcdf8eda803637a488607ea6c5f90b63a063b953af1e078"></a>DBG&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a8a3a2e51383909b357fcdf8eda803637a13d4c6d048f76d5b02c6f1b70323e770"></a>TESSLOG&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a8a3a2e51383909b357fcdf8eda803637a5e74e236a50519c41cbbcecea29add63"></a>TESSEXIT&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096"></a>ABORT&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00026">26</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                      {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a488607ea6c5f90b63a063b953af1e078">DBG</a> =     -1,           <span class="comment">/*log without alert */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a13d4c6d048f76d5b02c6f1b70323e770">TESSLOG</a> =  0,            <span class="comment">/*alert user */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a5e74e236a50519c41cbbcecea29add63">TESSEXIT</a> = 1,            <span class="comment">/*exit after erro */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a> =    2            <span class="comment">/*abort after error */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="ttc" id="a00827_html_a8a3a2e51383909b357fcdf8eda803637a13d4c6d048f76d5b02c6f1b70323e770"><div class="ttname"><a href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a13d4c6d048f76d5b02c6f1b70323e770">TESSLOG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00028">errcode.h:28</a></div></div>
+<div class="ttc" id="a00827_html_a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096"><div class="ttname"><a href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a781ad2788df9e25c59a70894c7832096">ABORT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00030">errcode.h:30</a></div></div>
+<div class="ttc" id="a00827_html_a8a3a2e51383909b357fcdf8eda803637a488607ea6c5f90b63a063b953af1e078"><div class="ttname"><a href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a488607ea6c5f90b63a063b953af1e078">DBG</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00027">errcode.h:27</a></div></div>
+<div class="ttc" id="a00827_html_a8a3a2e51383909b357fcdf8eda803637a5e74e236a50519c41cbbcecea29add63"><div class="ttname"><a href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a5e74e236a50519c41cbbcecea29add63">TESSEXIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00029">errcode.h:29</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ae281080023125653d85cd946e95f626c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_global_loc_code </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>loc_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00831_source.html#l00079">79</a> of file <a class="el" href="a00831_source.html">globaloc.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                       {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// global_loc_code = loc_code;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a87d586caeb936d763514af2bbba8cab6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_global_subloc_code </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>loc_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00831_source.html#l00085">85</a> of file <a class="el" href="a00831_source.html">globaloc.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                          {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// global_subloc_code = loc_code;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a683cb64eb69da4200257e0468b4347a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_global_subsubloc_code </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>loc_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00831_source.html#l00091">91</a> of file <a class="el" href="a00831_source.html">globaloc.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                             {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// global_subsubloc_code = loc_code;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5bc45d1c7b7602898f2c7edc72cbcd37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void signal_exit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>signal_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00831_source.html#l00052">52</a> of file <a class="el" href="a00831_source.html">globaloc.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                  {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Received signal %d!\n&quot;</span>, signal_code);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#ifdef __linux__</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifndef ANDROID</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">int</span> thread_id = syscall(SYS_gettid) % <a class="code" href="a00831.html#a7cee35bb97ed614515b3bb6372080d4c">kMaxNumThreadPixes</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">int</span> thread_id = gettid() % <a class="code" href="a00831.html#a7cee35bb97ed614515b3bb6372080d4c">kMaxNumThreadPixes</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00831.html#af3f7f916e4b3d4c42757d05c8b21647d">global_crash_pixes</a>[thread_id] != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Crash caused by image with resolution %d\n&quot;</span>,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            pixGetYRes(<a class="code" href="a00831.html#af3f7f916e4b3d4c42757d05c8b21647d">global_crash_pixes</a>[thread_id]));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;&lt;Cut here&gt;\n&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    pixWriteStreamPng(stderr, <a class="code" href="a00831.html#af3f7f916e4b3d4c42757d05c8b21647d">global_crash_pixes</a>[thread_id], 0.0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;\n&lt;End cut&gt;\n&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// Raise an uncaught signal, so as to get a useful stack trace.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">raise</span>(SIGILL);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  abort();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="ttc" id="a00831_html_af3f7f916e4b3d4c42757d05c8b21647d"><div class="ttname"><a href="a00831.html#af3f7f916e4b3d4c42757d05c8b21647d">global_crash_pixes</a></div><div class="ttdeci">Pix * global_crash_pixes[kMaxNumThreadPixes]</div><div class="ttdef"><b>Definition:</b> <a href="a00831_source.html#l00032">globaloc.cpp:32</a></div></div>
+<div class="ttc" id="a00831_html_a7cee35bb97ed614515b3bb6372080d4c"><div class="ttname"><a href="a00831.html#a7cee35bb97ed614515b3bb6372080d4c">kMaxNumThreadPixes</a></div><div class="ttdeci">const int kMaxNumThreadPixes</div><div class="ttdef"><b>Definition:</b> <a href="a00831_source.html#l00030">globaloc.cpp:30</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a006fcbc9264ebdb76b55e7fa3b20695a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a00374.html">ERRCODE</a> ASSERT_FAILED = &quot;Assert failed&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00827_source.html#l00082">82</a> of file <a class="el" href="a00827_source.html">errcode.h</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -324,8 +753,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00827.html">werd.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00827.html">errcode.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

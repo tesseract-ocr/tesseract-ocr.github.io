@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/genblob.h File Reference</title>
+<title>Tesseract: ccstruct/otsuthr.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,64 +105,41 @@ $(document).ready(function(){initNavTree('a00770.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">genblob.h File Reference</div>  </div>
+<div class="title">otsuthr.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="a00771_source.html">otsuthr.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;allheaders.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00834_source.html">helpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01086_source.html">openclwrapper.h</a>&quot;</code><br />
+</div>
 <p><a href="a00770_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adf90dfe481e3980859ab92739b51caa6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00770.html#adf90dfe481e3980859ab92739b51caa6">c_blob_comparator</a> (const void *blob1p, const void *blob2p)</td></tr>
-<tr class="separator:adf90dfe481e3980859ab92739b51caa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a865a6eb28d729e208b513acbe716f22d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a865a6eb28d729e208b513acbe716f22d">tesseract::OtsuThreshold</a> (Pix *src_pix, int left, int top, int width, int height, int **thresholds, int **hi_values)</td></tr>
+<tr class="separator:a865a6eb28d729e208b513acbe716f22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6601a260946a730407fc6ef4f69d8725"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a6601a260946a730407fc6ef4f69d8725">tesseract::HistogramRect</a> (Pix *src_pix, int channel, int left, int top, int width, int height, int *histogram)</td></tr>
+<tr class="separator:a6601a260946a730407fc6ef4f69d8725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38847c682089329f7cec83a5bcb714b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#aa38847c682089329f7cec83a5bcb714b">tesseract::OtsuStats</a> (const int *histogram, int *H_out, int *omega0_out)</td></tr>
+<tr class="separator:aa38847c682089329f7cec83a5bcb714b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="adf90dfe481e3980859ab92739b51caa6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int c_blob_comparator </td>
-          <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>blob1p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>blob2p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00769_source.html#l00030">30</a> of file <a class="el" href="a00769_source.html">genblob.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                       {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="a00294.html">C_BLOB</a> *blob1 = *(<a class="code" href="a00294.html">C_BLOB</a> **) blob1p;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="a00294.html">C_BLOB</a> *blob2 = *(<a class="code" href="a00294.html">C_BLOB</a> **) blob2p;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span> blob1-&gt;<a class="code" href="a00294.html#a15c1a593d84585c26aebd7a7976f0283">bounding_box</a> ().<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a> () - blob2-&gt;<a class="code" href="a00294.html#a15c1a593d84585c26aebd7a7976f0283">bounding_box</a> ().<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a> ();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="ttc" id="a00609_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00609.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00068">rect.h:68</a></div></div>
-<div class="ttc" id="a00294_html_a15c1a593d84585c26aebd7a7976f0283"><div class="ttname"><a href="a00294.html#a15c1a593d84585c26aebd7a7976f0283">C_BLOB::bounding_box</a></div><div class="ttdeci">TBOX bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00822_source.html#l00250">stepblob.cpp:250</a></div></div>
-<div class="ttc" id="a00294_html"><div class="ttname"><a href="a00294.html">C_BLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00030">stepblob.h:30</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00770.html">genblob.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00770.html">otsuthr.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

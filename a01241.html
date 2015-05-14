@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: wordrec/chopper.cpp File Reference</title>
+<title>Tesseract: wordrec/makechop.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,80 +105,64 @@ $(document).ready(function(){initNavTree('a01241.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">chopper.cpp File Reference</div>  </div>
+<div class="title">makechop.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a01242_source.html">chopper.h</a>&quot;</code><br />
-<code>#include &quot;assert.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01238_source.html">associate.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00751_source.html">blobs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01038_source.html">callcpp.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01039_source.html">const.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01246_source.html">findseam.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01051_source.html">freelist.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01052_source.html">globals.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01266_source.html">render.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00792_source.html">pageres.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00817_source.html">seam.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01070_source.html">stopper.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01058_source.html">structures.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00889_source.html">unicharset.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01271_source.html">wordrec.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01242_source.html">makechop.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01254_source.html">render.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01048_source.html">structures.h</a>&quot;</code><br />
 </div>
 <p><a href="a01241_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">preserve_outline_tree</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Copy the list of outlines. </p>
-</div></td></tr>
-<tr class="memitem:a0a3b9f61e193c679c40344dad4267e3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a0a3b9f61e193c679c40344dad4267e3d">preserve_outline</a> (<a class="el" href="a00372.html">EDGEPT</a> *start)</td></tr>
-<tr class="separator:a0a3b9f61e193c679c40344dad4267e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2a51913c75408354ffd6e5344c30389"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#af2a51913c75408354ffd6e5344c30389">preserve_outline_tree</a> (<a class="el" href="a00631.html">TESSLINE</a> *srcline)</td></tr>
-<tr class="separator:af2a51913c75408354ffd6e5344c30389"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">restore_outline_tree</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Copy the list of outlines. </p>
-</div></td></tr>
-<tr class="memitem:aca09efda43c5297643be6ba8706ceb83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00372.html">EDGEPT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#aca09efda43c5297643be6ba8706ceb83">restore_outline</a> (<a class="el" href="a00372.html">EDGEPT</a> *start)</td></tr>
-<tr class="separator:aca09efda43c5297643be6ba8706ceb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a426bc9c96107b36d173f86d8a74f9e8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a426bc9c96107b36d173f86d8a74f9e8c">restore_outline_tree</a> (<a class="el" href="a00631.html">TESSLINE</a> *srcline)</td></tr>
-<tr class="separator:a426bc9c96107b36d173f86d8a74f9e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">any_shared_split_points</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Return true if any of the splits share a point with this one. </p>
-</div></td></tr>
-<tr class="memitem:a9a0430f1c62268bf762a58a97c56acd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a9a0430f1c62268bf762a58a97c56acd7">any_shared_split_points</a> (const <a class="el" href="a00416.html">GenericVector</a>&lt; <a class="el" href="a00554.html">SEAM</a> * &gt; &amp;seams, <a class="el" href="a00554.html">SEAM</a> *seam)</td></tr>
-<tr class="separator:a9a0430f1c62268bf762a58a97c56acd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">check_blob</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><dl class="section return"><dt>Returns</dt><dd>true if blob has a non whole outline. </dd></dl>
-</div></td></tr>
-<tr class="memitem:adde6889c67dfb8661a9911b56bc05c96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#adde6889c67dfb8661a9911b56bc05c96">check_blob</a> (<a class="el" href="a00608.html">TBLOB</a> *blob)</td></tr>
-<tr class="separator:adde6889c67dfb8661a9911b56bc05c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e8e9f6cb587b621054e6ff626a46a23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a8e8e9f6cb587b621054e6ff626a46a23">total_containment</a> (<a class="el" href="a00608.html">TBLOB</a> *blob1, <a class="el" href="a00608.html">TBLOB</a> *blob2)</td></tr>
-<tr class="separator:a8e8e9f6cb587b621054e6ff626a46a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ead1c1a4df9b2c0861e9da84f4c3079"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a0ead1c1a4df9b2c0861e9da84f4c3079">apply_seam</a> (<a class="el" href="a00590.html">TBLOB</a> *blob, <a class="el" href="a00590.html">TBLOB</a> *other_blob, bool italic_blob, <a class="el" href="a00537.html">SEAM</a> *seam)</td></tr>
+<tr class="separator:a0ead1c1a4df9b2c0861e9da84f4c3079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a407d2116f0a53e5d7cb11d4dcdc489a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a> (<a class="el" href="a00590.html">TBLOB</a> *blob, <a class="el" href="a00590.html">TBLOB</a> *other_blob, bool italic_blob, const <a class="el" href="a00629.html">TPOINT</a> &amp;location)</td></tr>
+<tr class="separator:a407d2116f0a53e5d7cb11d4dcdc489a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed0ab664f9d3f136e7aa438ab6c4db5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a4ed0ab664f9d3f136e7aa438ab6c4db5">make_double_split</a> (<a class="el" href="a00590.html">TBLOB</a> *blob, <a class="el" href="a00590.html">TBLOB</a> *other_blob, bool italic_blob, <a class="el" href="a00537.html">SEAM</a> *seam)</td></tr>
+<tr class="separator:a4ed0ab664f9d3f136e7aa438ab6c4db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a503883850fa5d77ae8b47baf76c541ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a> (<a class="el" href="a00613.html">TESSLINE</a> *outlines, <a class="el" href="a00800.html#a8caa4994d858ff69cd340ac6f89731cb">SPLIT</a> *split)</td></tr>
+<tr class="separator:a503883850fa5d77ae8b47baf76c541ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96dc4a90b556cbe0dab2eceb5ae65ffd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#a96dc4a90b556cbe0dab2eceb5ae65ffd">make_split_blobs</a> (<a class="el" href="a00590.html">TBLOB</a> *blob, <a class="el" href="a00590.html">TBLOB</a> *other_blob, bool italic_blob, <a class="el" href="a00537.html">SEAM</a> *seam)</td></tr>
+<tr class="separator:a96dc4a90b556cbe0dab2eceb5ae65ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd14bd93bb49f7ab009cb45665b4dc43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#afd14bd93bb49f7ab009cb45665b4dc43">make_triple_split</a> (<a class="el" href="a00590.html">TBLOB</a> *blob, <a class="el" href="a00590.html">TBLOB</a> *other_blob, bool italic_blob, <a class="el" href="a00537.html">SEAM</a> *seam)</td></tr>
+<tr class="separator:afd14bd93bb49f7ab009cb45665b4dc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6a78540c9d1b2be89f28016c2aa408f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#aa6a78540c9d1b2be89f28016c2aa408f">undo_seam</a> (<a class="el" href="a00590.html">TBLOB</a> *blob, <a class="el" href="a00590.html">TBLOB</a> *other_blob, <a class="el" href="a00537.html">SEAM</a> *seam)</td></tr>
+<tr class="separator:aa6a78540c9d1b2be89f28016c2aa408f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac5cbbe57b200218a324936bd098f948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01241.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a> (<a class="el" href="a00590.html">TBLOB</a> *blob, <a class="el" href="a00800.html#a8caa4994d858ff69cd340ac6f89731cb">SPLIT</a> *split)</td></tr>
+<tr class="separator:aac5cbbe57b200218a324936bd098f948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a9a0430f1c62268bf762a58a97c56acd7"></a>
+<a class="anchor" id="a0ead1c1a4df9b2c0861e9da84f4c3079"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int any_shared_split_points </td>
+          <td class="memname">void apply_seam </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00416.html">GenericVector</a>&lt; <a class="el" href="a00554.html">SEAM</a> * &gt; &amp;&#160;</td>
-          <td class="paramname"><em>seams</em>, </td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00554.html">SEAM</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>other_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>italic_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00537.html">SEAM</a> *&#160;</td>
           <td class="paramname"><em>seam</em>&#160;</td>
         </tr>
         <tr>
@@ -189,225 +173,60 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01241_source.html#l00282">282</a> of file <a class="el" href="a01241_source.html">chopper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                                                           {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <span class="keywordtype">int</span> length;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keywordtype">int</span> index;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  length = seams.<a class="code" href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>();</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keywordflow">for</span> (index = 0; index &lt; length; index++)</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">if</span> (seam-&gt;<a class="code" href="a00554.html#aa170cfb46464c60b948e7d60649a8f80">SharesPosition</a>(*seams[index])) <span class="keywordflow">return</span> <a class="code" href="a00684.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00684.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
-<div class="ttc" id="a00416_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00072">genericvector.h:72</a></div></div>
-<div class="ttc" id="a00684_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00684.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00684_source.html#l00029">capi.h:29</a></div></div>
-<div class="ttc" id="a00554_html_aa170cfb46464c60b948e7d60649a8f80"><div class="ttname"><a href="a00554.html#aa170cfb46464c60b948e7d60649a8f80">SEAM::SharesPosition</a></div><div class="ttdeci">bool SharesPosition(const SEAM &amp;other) const </div><div class="ttdef"><b>Definition:</b> <a href="a00817_source.html#l00090">seam.h:90</a></div></div>
-<div class="ttc" id="a00684_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="a00684.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="a00684_source.html#l00028">capi.h:28</a></div></div>
+<p>Definition at line <a class="el" href="a01241_source.html#l00052">52</a> of file <a class="el" href="a01241_source.html">makechop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                                              {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">if</span> (seam-&gt;<a class="code" href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">split1</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="a00731.html#a2ab5e3b619507b26900a73919b165970">divide_blobs</a>(blob, other_blob, italic_blob, seam-&gt;<a class="code" href="a00537.html#a2aef4ae98d20b8fe613cb645c9ced8f9">location</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (seam-&gt;<a class="code" href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">split2</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="a01241.html#a96dc4a90b556cbe0dab2eceb5ae65ffd">make_split_blobs</a>(blob, other_blob, italic_blob, seam);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (seam-&gt;<a class="code" href="a00537.html#a136389fc1622fbc9fc85fd45a264db06">split3</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="a01241.html#a4ed0ab664f9d3f136e7aa438ab6c4db5">make_double_split</a>(blob, other_blob, italic_blob, seam);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="a01241.html#afd14bd93bb49f7ab009cb45665b4dc43">make_triple_split</a>(blob, other_blob, italic_blob, seam);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="ttc" id="a00537_html_a2aef4ae98d20b8fe613cb645c9ced8f9"><div class="ttname"><a href="a00537.html#a2aef4ae98d20b8fe613cb645c9ced8f9">SEAM::location</a></div><div class="ttdeci">TPOINT location</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00066">seam.h:66</a></div></div>
+<div class="ttc" id="a00537_html_a5d6d0e267b811e07fa1bb33aa4d362f2"><div class="ttname"><a href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">SEAM::split2</a></div><div class="ttdeci">SPLIT * split2</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00068">seam.h:68</a></div></div>
+<div class="ttc" id="a00537_html_a83e8fa8204e6bfc47739b6717c7734f0"><div class="ttname"><a href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">SEAM::split1</a></div><div class="ttdeci">SPLIT * split1</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00067">seam.h:67</a></div></div>
+<div class="ttc" id="a01241_html_afd14bd93bb49f7ab009cb45665b4dc43"><div class="ttname"><a href="a01241.html#afd14bd93bb49f7ab009cb45665b4dc43">make_triple_split</a></div><div class="ttdeci">void make_triple_split(TBLOB *blob, TBLOB *other_blob, bool italic_blob, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00151">makechop.cpp:151</a></div></div>
+<div class="ttc" id="a01241_html_a4ed0ab664f9d3f136e7aa438ab6c4db5"><div class="ttname"><a href="a01241.html#a4ed0ab664f9d3f136e7aa438ab6c4db5">make_double_split</a></div><div class="ttdeci">void make_double_split(TBLOB *blob, TBLOB *other_blob, bool italic_blob, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00093">makechop.cpp:93</a></div></div>
+<div class="ttc" id="a00537_html_a136389fc1622fbc9fc85fd45a264db06"><div class="ttname"><a href="a00537.html#a136389fc1622fbc9fc85fd45a264db06">SEAM::split3</a></div><div class="ttdeci">SPLIT * split3</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00069">seam.h:69</a></div></div>
+<div class="ttc" id="a01241_html_a96dc4a90b556cbe0dab2eceb5ae65ffd"><div class="ttname"><a href="a01241.html#a96dc4a90b556cbe0dab2eceb5ae65ffd">make_split_blobs</a></div><div class="ttdeci">void make_split_blobs(TBLOB *blob, TBLOB *other_blob, bool italic_blob, SEAM *seam)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00135">makechop.cpp:135</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00731_html_a2ab5e3b619507b26900a73919b165970"><div class="ttname"><a href="a00731.html#a2ab5e3b619507b26900a73919b165970">divide_blobs</a></div><div class="ttdeci">void divide_blobs(TBLOB *blob, TBLOB *other_blob, bool italic_blob, const TPOINT &amp;location)</div><div class="ttdef"><b>Definition:</b> <a href="a00731_source.html#l00929">blobs.cpp:929</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="adde6889c67dfb8661a9911b56bc05c96"></a>
+<a class="anchor" id="a407d2116f0a53e5d7cb11d4dcdc489a0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int check_blob </td>
+          <td class="memname">void form_two_blobs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00608.html">TBLOB</a> *&#160;</td>
-          <td class="paramname"><em>blob</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01241_source.html#l00298">298</a> of file <a class="el" href="a01241_source.html">chopper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                            {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <a class="code" href="a00631.html">TESSLINE</a> *outline;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <a class="code" href="a00372.html">EDGEPT</a> *edgept;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <span class="keywordflow">for</span> (outline = blob-&gt;<a class="code" href="a00608.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>; outline != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; outline = outline-&gt;<a class="code" href="a00631.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    edgept = outline-&gt;<a class="code" href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a>;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      <span class="keywordflow">if</span> (edgept == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      edgept = edgept-&gt;<a class="code" href="a00372.html#a196f7786194752f89e364a586d24884d">next</a>;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">while</span> (edgept != outline-&gt;<a class="code" href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a>);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (edgept == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
-<div class="ttc" id="a00608_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00608.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00377">blobs.h:377</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00631_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00631.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00258">blobs.h:258</a></div></div>
-<div class="ttc" id="a00372_html_a196f7786194752f89e364a586d24884d"><div class="ttname"><a href="a00372.html#a196f7786194752f89e364a586d24884d">EDGEPT::next</a></div><div class="ttdeci">EDGEPT * next</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00169">blobs.h:169</a></div></div>
-<div class="ttc" id="a00372_html"><div class="ttname"><a href="a00372.html">EDGEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00076">blobs.h:76</a></div></div>
-<div class="ttc" id="a00631_html"><div class="ttname"><a href="a00631.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00180">blobs.h:180</a></div></div>
-<div class="ttc" id="a00631_html_a0ab1e26b1dae548f0bd3c096c6183b18"><div class="ttname"><a href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">TESSLINE::loop</a></div><div class="ttdeci">EDGEPT * loop</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00257">blobs.h:257</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a0a3b9f61e193c679c40344dad4267e3d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void preserve_outline </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00372.html">EDGEPT</a> *&#160;</td>
-          <td class="paramname"><em>start</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01241_source.html#l00067">67</a> of file <a class="el" href="a01241_source.html">chopper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                     {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="a00372.html">EDGEPT</a> *srcpt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (start == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  srcpt = start;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    srcpt-&gt;<a class="code" href="a00372.html#a7f92d543e033519df214c028e8737991">flags</a>[1] = 1;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    srcpt = srcpt-&gt;<a class="code" href="a00372.html#a196f7786194752f89e364a586d24884d">next</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">while</span> (srcpt != start);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  srcpt-&gt;<a class="code" href="a00372.html#a7f92d543e033519df214c028e8737991">flags</a>[1] = 2;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00372_html_a196f7786194752f89e364a586d24884d"><div class="ttname"><a href="a00372.html#a196f7786194752f89e364a586d24884d">EDGEPT::next</a></div><div class="ttdeci">EDGEPT * next</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00169">blobs.h:169</a></div></div>
-<div class="ttc" id="a00372_html_a7f92d543e033519df214c028e8737991"><div class="ttname"><a href="a00372.html#a7f92d543e033519df214c028e8737991">EDGEPT::flags</a></div><div class="ttdeci">char flags[EDGEPTFLAGS]</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00168">blobs.h:168</a></div></div>
-<div class="ttc" id="a00372_html"><div class="ttname"><a href="a00372.html">EDGEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00076">blobs.h:76</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="af2a51913c75408354ffd6e5344c30389"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void preserve_outline_tree </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00631.html">TESSLINE</a> *&#160;</td>
-          <td class="paramname"><em>srcline</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01241_source.html#l00083">83</a> of file <a class="el" href="a01241_source.html">chopper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                              {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="a00631.html">TESSLINE</a> *outline;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">for</span> (outline = srcline; outline != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; outline = outline-&gt;<a class="code" href="a00631.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="a01241.html#a0a3b9f61e193c679c40344dad4267e3d">preserve_outline</a> (outline-&gt;<a class="code" href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00631_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00631.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00258">blobs.h:258</a></div></div>
-<div class="ttc" id="a01241_html_a0a3b9f61e193c679c40344dad4267e3d"><div class="ttname"><a href="a01241.html#a0a3b9f61e193c679c40344dad4267e3d">preserve_outline</a></div><div class="ttdeci">void preserve_outline(EDGEPT *start)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00067">chopper.cpp:67</a></div></div>
-<div class="ttc" id="a00631_html"><div class="ttname"><a href="a00631.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00180">blobs.h:180</a></div></div>
-<div class="ttc" id="a00631_html_a0ab1e26b1dae548f0bd3c096c6183b18"><div class="ttname"><a href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">TESSLINE::loop</a></div><div class="ttdeci">EDGEPT * loop</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00257">blobs.h:257</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aca09efda43c5297643be6ba8706ceb83"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00372.html">EDGEPT</a>* restore_outline </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00372.html">EDGEPT</a> *&#160;</td>
-          <td class="paramname"><em>start</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01241_source.html#l00097">97</a> of file <a class="el" href="a01241_source.html">chopper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                       {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="a00372.html">EDGEPT</a> *srcpt;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="a00372.html">EDGEPT</a> *real_start;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">if</span> (start == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  srcpt = start;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (srcpt-&gt;<a class="code" href="a00372.html#a7f92d543e033519df214c028e8737991">flags</a>[1] == 2)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    srcpt = srcpt-&gt;<a class="code" href="a00372.html#a196f7786194752f89e364a586d24884d">next</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">while</span> (srcpt != start);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  real_start = srcpt;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    srcpt = srcpt-&gt;<a class="code" href="a00372.html#a196f7786194752f89e364a586d24884d">next</a>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (srcpt-&gt;<a class="code" href="a00372.html#a8326da8daf597bcdc5a05064a37cbbb1">prev</a>-&gt;<a class="code" href="a00372.html#a7f92d543e033519df214c028e8737991">flags</a>[1] == 0) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <a class="code" href="a00818.html#ada6ba0f2954768ab4b7d9d2cf165dee0">remove_edgept</a>(srcpt-&gt;<a class="code" href="a00372.html#a8326da8daf597bcdc5a05064a37cbbb1">prev</a>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordflow">while</span> (srcpt != real_start);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordflow">return</span> real_start;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="ttc" id="a00372_html_a8326da8daf597bcdc5a05064a37cbbb1"><div class="ttname"><a href="a00372.html#a8326da8daf597bcdc5a05064a37cbbb1">EDGEPT::prev</a></div><div class="ttdeci">EDGEPT * prev</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00170">blobs.h:170</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00372_html_a196f7786194752f89e364a586d24884d"><div class="ttname"><a href="a00372.html#a196f7786194752f89e364a586d24884d">EDGEPT::next</a></div><div class="ttdeci">EDGEPT * next</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00169">blobs.h:169</a></div></div>
-<div class="ttc" id="a00372_html_a7f92d543e033519df214c028e8737991"><div class="ttname"><a href="a00372.html#a7f92d543e033519df214c028e8737991">EDGEPT::flags</a></div><div class="ttdeci">char flags[EDGEPTFLAGS]</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00168">blobs.h:168</a></div></div>
-<div class="ttc" id="a00372_html"><div class="ttname"><a href="a00372.html">EDGEPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00076">blobs.h:76</a></div></div>
-<div class="ttc" id="a00818_html_ada6ba0f2954768ab4b7d9d2cf165dee0"><div class="ttname"><a href="a00818.html#ada6ba0f2954768ab4b7d9d2cf165dee0">remove_edgept</a></div><div class="ttdeci">void remove_edgept(EDGEPT *point)</div><div class="ttdef"><b>Definition:</b> <a href="a00818_source.html#l00203">split.cpp:203</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a426bc9c96107b36d173f86d8a74f9e8c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void restore_outline_tree </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00631.html">TESSLINE</a> *&#160;</td>
-          <td class="paramname"><em>srcline</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01241_source.html#l00123">123</a> of file <a class="el" href="a01241_source.html">chopper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                             {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="a00631.html">TESSLINE</a> *outline;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordflow">for</span> (outline = srcline; outline != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; outline = outline-&gt;<a class="code" href="a00631.html#a0fb224d43ea53a791f0957fa92793bef">next</a>) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    outline-&gt;<a class="code" href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a> = <a class="code" href="a01241.html#aca09efda43c5297643be6ba8706ceb83">restore_outline</a> (outline-&gt;<a class="code" href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a>);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    outline-&gt;<a class="code" href="a00631.html#a6eddfefc04de79fe19712d90925de2fb">start</a> = outline-&gt;<a class="code" href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a>-&gt;<a class="code" href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">pos</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-<div class="ttc" id="a00631_html_a6eddfefc04de79fe19712d90925de2fb"><div class="ttname"><a href="a00631.html#a6eddfefc04de79fe19712d90925de2fb">TESSLINE::start</a></div><div class="ttdeci">TPOINT start</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00255">blobs.h:255</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00631_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00631.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00258">blobs.h:258</a></div></div>
-<div class="ttc" id="a00372_html_adee462d390e637a8393ba373c8d2a1bb"><div class="ttname"><a href="a00372.html#adee462d390e637a8393ba373c8d2a1bb">EDGEPT::pos</a></div><div class="ttdeci">TPOINT pos</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00163">blobs.h:163</a></div></div>
-<div class="ttc" id="a00631_html"><div class="ttname"><a href="a00631.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00180">blobs.h:180</a></div></div>
-<div class="ttc" id="a00631_html_a0ab1e26b1dae548f0bd3c096c6183b18"><div class="ttname"><a href="a00631.html#a0ab1e26b1dae548f0bd3c096c6183b18">TESSLINE::loop</a></div><div class="ttdeci">EDGEPT * loop</div><div class="ttdef"><b>Definition:</b> <a href="a00751_source.html#l00257">blobs.h:257</a></div></div>
-<div class="ttc" id="a01241_html_aca09efda43c5297643be6ba8706ceb83"><div class="ttname"><a href="a01241.html#aca09efda43c5297643be6ba8706ceb83">restore_outline</a></div><div class="ttdeci">EDGEPT * restore_outline(EDGEPT *start)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00097">chopper.cpp:97</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a8e8e9f6cb587b621054e6ff626a46a23"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> total_containment </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00608.html">TBLOB</a> *&#160;</td>
-          <td class="paramname"><em>blob1</em>, </td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00608.html">TBLOB</a> *&#160;</td>
-          <td class="paramname"><em>blob2</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>other_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>italic_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00629.html">TPOINT</a> &amp;&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -417,15 +236,362 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01241_source.html#l00656">656</a> of file <a class="el" href="a01241_source.html">chopper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                                                    {</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;  <a class="code" href="a00609.html">TBOX</a> box1 = blob1-&gt;<a class="code" href="a00608.html#a8f1f8f110170fe12cf8147d504cd0ea2">bounding_box</a>();</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;  <a class="code" href="a00609.html">TBOX</a> box2 = blob2-&gt;<a class="code" href="a00608.html#a8f1f8f110170fe12cf8147d504cd0ea2">bounding_box</a>();</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;  <span class="keywordflow">return</span> box1.<a class="code" href="a00609.html#a5d4e2c5f91b791e94d4c94e513180632">contains</a>(box2) || box2.<a class="code" href="a00609.html#a5d4e2c5f91b791e94d4c94e513180632">contains</a>(box1);</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;}</div>
-<div class="ttc" id="a00608_html_a8f1f8f110170fe12cf8147d504cd0ea2"><div class="ttname"><a href="a00608.html#a8f1f8f110170fe12cf8147d504cd0ea2">TBLOB::bounding_box</a></div><div class="ttdeci">TBOX bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00750_source.html#l00482">blobs.cpp:482</a></div></div>
-<div class="ttc" id="a00609_html"><div class="ttname"><a href="a00609.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00030">rect.h:30</a></div></div>
-<div class="ttc" id="a00609_html_a5d4e2c5f91b791e94d4c94e513180632"><div class="ttname"><a href="a00609.html#a5d4e2c5f91b791e94d4c94e513180632">TBOX::contains</a></div><div class="ttdeci">bool contains(const FCOORD pt) const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00323">rect.h:323</a></div></div>
+<p>Definition at line <a class="el" href="a01241_source.html#l00074">74</a> of file <a class="el" href="a01241_source.html">makechop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                            {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="a01244.html#ad4f4e346c4650affddae46c8df8299ce">setup_blob_outlines</a>(blob);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="a00731.html#a2ab5e3b619507b26900a73919b165970">divide_blobs</a>(blob, other_blob, italic_blob, location);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="a01244.html#a1d3c90a38ea91d7baf73af2c77b03d7f">eliminate_duplicate_outlines</a>(blob);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="a01244.html#a1d3c90a38ea91d7baf73af2c77b03d7f">eliminate_duplicate_outlines</a>(other_blob);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="a01244.html#ac29e40d2a6a1a8a7a1eb317324262d86">correct_blob_order</a>(blob, other_blob);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="ttc" id="a01244_html_ac29e40d2a6a1a8a7a1eb317324262d86"><div class="ttname"><a href="a01244.html#ac29e40d2a6a1a8a7a1eb317324262d86">correct_blob_order</a></div><div class="ttdeci">void correct_blob_order(TBLOB *blob1, TBLOB *blob2)</div><div class="ttdef"><b>Definition:</b> <a href="a01244_source.html#l00046">olutil.cpp:46</a></div></div>
+<div class="ttc" id="a01244_html_a1d3c90a38ea91d7baf73af2c77b03d7f"><div class="ttname"><a href="a01244.html#a1d3c90a38ea91d7baf73af2c77b03d7f">eliminate_duplicate_outlines</a></div><div class="ttdeci">void eliminate_duplicate_outlines(TBLOB *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01244_source.html#l00067">olutil.cpp:67</a></div></div>
+<div class="ttc" id="a01244_html_ad4f4e346c4650affddae46c8df8299ce"><div class="ttname"><a href="a01244.html#ad4f4e346c4650affddae46c8df8299ce">setup_blob_outlines</a></div><div class="ttdeci">void setup_blob_outlines(TBLOB *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01244_source.html#l00096">olutil.cpp:96</a></div></div>
+<div class="ttc" id="a00731_html_a2ab5e3b619507b26900a73919b165970"><div class="ttname"><a href="a00731.html#a2ab5e3b619507b26900a73919b165970">divide_blobs</a></div><div class="ttdeci">void divide_blobs(TBLOB *blob, TBLOB *other_blob, bool italic_blob, const TPOINT &amp;location)</div><div class="ttdef"><b>Definition:</b> <a href="a00731_source.html#l00929">blobs.cpp:929</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4ed0ab664f9d3f136e7aa438ab6c4db5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_double_split </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>other_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>italic_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00537.html">SEAM</a> *&#160;</td>
+          <td class="paramname"><em>seam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01241_source.html#l00093">93</a> of file <a class="el" href="a01241_source.html">makechop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                   {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a>(blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>, seam-&gt;<a class="code" href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">split1</a>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a>(blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>, seam-&gt;<a class="code" href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">split2</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="a01241.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a>(blob, other_blob, italic_blob, seam-&gt;<a class="code" href="a00537.html#a2aef4ae98d20b8fe613cb645c9ced8f9">location</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="ttc" id="a00537_html_a2aef4ae98d20b8fe613cb645c9ced8f9"><div class="ttname"><a href="a00537.html#a2aef4ae98d20b8fe613cb645c9ced8f9">SEAM::location</a></div><div class="ttdeci">TPOINT location</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00066">seam.h:66</a></div></div>
+<div class="ttc" id="a00537_html_a5d6d0e267b811e07fa1bb33aa4d362f2"><div class="ttname"><a href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">SEAM::split2</a></div><div class="ttdeci">SPLIT * split2</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00068">seam.h:68</a></div></div>
+<div class="ttc" id="a00537_html_a83e8fa8204e6bfc47739b6717c7734f0"><div class="ttname"><a href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">SEAM::split1</a></div><div class="ttdeci">SPLIT * split1</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00067">seam.h:67</a></div></div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a01241_html_a407d2116f0a53e5d7cb11d4dcdc489a0"><div class="ttname"><a href="a01241.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a></div><div class="ttdeci">void form_two_blobs(TBLOB *blob, TBLOB *other_blob, bool italic_blob, const TPOINT &amp;location)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00074">makechop.cpp:74</a></div></div>
+<div class="ttc" id="a01241_html_a503883850fa5d77ae8b47baf76c541ae"><div class="ttname"><a href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a></div><div class="ttdeci">void make_single_split(TESSLINE *outlines, SPLIT *split)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00107">makechop.cpp:107</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a503883850fa5d77ae8b47baf76c541ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_single_split </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00613.html">TESSLINE</a> *&#160;</td>
+          <td class="paramname"><em>outlines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00800.html#a8caa4994d858ff69cd340ac6f89731cb">SPLIT</a> *&#160;</td>
+          <td class="paramname"><em>split</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01241_source.html#l00107">107</a> of file <a class="el" href="a01241_source.html">makechop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                         {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  assert (outlines != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <a class="code" href="a00799.html#ac76a475de30b432aa78727bd6b93a729">split_outline</a> (split-&gt;<a class="code" href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">point1</a>, split-&gt;<a class="code" href="a00557.html#adb5ec4152eddde15c1996133177a9a58">point2</a>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">while</span> (outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    outlines = outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> = <span class="keyword">new</span> <a class="code" href="a00613.html">TESSLINE</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>-&gt;<a class="code" href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a> = split-&gt;<a class="code" href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">point1</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>-&gt;<a class="code" href="a00613.html#aacf6d56a8b92228f875e06d09c78eca5">ComputeBoundingBox</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  outlines = outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> = <span class="keyword">new</span> <a class="code" href="a00613.html">TESSLINE</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>-&gt;<a class="code" href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a> = split-&gt;<a class="code" href="a00557.html#adb5ec4152eddde15c1996133177a9a58">point2</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>-&gt;<a class="code" href="a00613.html#aacf6d56a8b92228f875e06d09c78eca5">ComputeBoundingBox</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  outlines-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="ttc" id="a00799_html_ac76a475de30b432aa78727bd6b93a729"><div class="ttname"><a href="a00799.html#ac76a475de30b432aa78727bd6b93a729">split_outline</a></div><div class="ttdeci">void split_outline(EDGEPT *join_point1, EDGEPT *join_point2)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00171">split.cpp:171</a></div></div>
+<div class="ttc" id="a00613_html_aacf6d56a8b92228f875e06d09c78eca5"><div class="ttname"><a href="a00613.html#aacf6d56a8b92228f875e06d09c78eca5">TESSLINE::ComputeBoundingBox</a></div><div class="ttdeci">void ComputeBoundingBox()</div><div class="ttdef"><b>Definition:</b> <a href="a00731_source.html#l00189">blobs.cpp:189</a></div></div>
+<div class="ttc" id="a00613_html_a0ab1e26b1dae548f0bd3c096c6183b18"><div class="ttname"><a href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">TESSLINE::loop</a></div><div class="ttdeci">EDGEPT * loop</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00189">blobs.h:189</a></div></div>
+<div class="ttc" id="a00557_html_a2451170e7785bb495c0dd3d96fc71167"><div class="ttname"><a href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">split_record::point1</a></div><div class="ttdeci">EDGEPT * point1</div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00039">split.h:39</a></div></div>
+<div class="ttc" id="a00613_html"><div class="ttname"><a href="a00613.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00127">blobs.h:127</a></div></div>
+<div class="ttc" id="a00613_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00190">blobs.h:190</a></div></div>
+<div class="ttc" id="a00557_html_adb5ec4152eddde15c1996133177a9a58"><div class="ttname"><a href="a00557.html#adb5ec4152eddde15c1996133177a9a58">split_record::point2</a></div><div class="ttdeci">EDGEPT * point2</div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00040">split.h:40</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a96dc4a90b556cbe0dab2eceb5ae65ffd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_split_blobs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>other_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>italic_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00537.html">SEAM</a> *&#160;</td>
+          <td class="paramname"><em>seam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01241_source.html#l00135">135</a> of file <a class="el" href="a01241_source.html">makechop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                  {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a>(blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>, seam-&gt;<a class="code" href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">split1</a>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <a class="code" href="a01241.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a> (blob, other_blob, italic_blob, seam-&gt;<a class="code" href="a00537.html#a2aef4ae98d20b8fe613cb645c9ced8f9">location</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="ttc" id="a00537_html_a2aef4ae98d20b8fe613cb645c9ced8f9"><div class="ttname"><a href="a00537.html#a2aef4ae98d20b8fe613cb645c9ced8f9">SEAM::location</a></div><div class="ttdeci">TPOINT location</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00066">seam.h:66</a></div></div>
+<div class="ttc" id="a00537_html_a83e8fa8204e6bfc47739b6717c7734f0"><div class="ttname"><a href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">SEAM::split1</a></div><div class="ttdeci">SPLIT * split1</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00067">seam.h:67</a></div></div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a01241_html_a407d2116f0a53e5d7cb11d4dcdc489a0"><div class="ttname"><a href="a01241.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a></div><div class="ttdeci">void form_two_blobs(TBLOB *blob, TBLOB *other_blob, bool italic_blob, const TPOINT &amp;location)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00074">makechop.cpp:74</a></div></div>
+<div class="ttc" id="a01241_html_a503883850fa5d77ae8b47baf76c541ae"><div class="ttname"><a href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a></div><div class="ttdeci">void make_single_split(TESSLINE *outlines, SPLIT *split)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00107">makechop.cpp:107</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afd14bd93bb49f7ab009cb45665b4dc43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_triple_split </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>other_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>italic_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00537.html">SEAM</a> *&#160;</td>
+          <td class="paramname"><em>seam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01241_source.html#l00151">151</a> of file <a class="el" href="a01241_source.html">makechop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                   {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a>(blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>, seam-&gt;<a class="code" href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">split1</a>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <a class="code" href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a>(blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>, seam-&gt;<a class="code" href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">split2</a>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a>(blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>, seam-&gt;<a class="code" href="a00537.html#a136389fc1622fbc9fc85fd45a264db06">split3</a>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="a01241.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a>(blob, other_blob, italic_blob, seam-&gt;<a class="code" href="a00537.html#a2aef4ae98d20b8fe613cb645c9ced8f9">location</a>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
+<div class="ttc" id="a00537_html_a2aef4ae98d20b8fe613cb645c9ced8f9"><div class="ttname"><a href="a00537.html#a2aef4ae98d20b8fe613cb645c9ced8f9">SEAM::location</a></div><div class="ttdeci">TPOINT location</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00066">seam.h:66</a></div></div>
+<div class="ttc" id="a00537_html_a5d6d0e267b811e07fa1bb33aa4d362f2"><div class="ttname"><a href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">SEAM::split2</a></div><div class="ttdeci">SPLIT * split2</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00068">seam.h:68</a></div></div>
+<div class="ttc" id="a00537_html_a83e8fa8204e6bfc47739b6717c7734f0"><div class="ttname"><a href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">SEAM::split1</a></div><div class="ttdeci">SPLIT * split1</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00067">seam.h:67</a></div></div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a00537_html_a136389fc1622fbc9fc85fd45a264db06"><div class="ttname"><a href="a00537.html#a136389fc1622fbc9fc85fd45a264db06">SEAM::split3</a></div><div class="ttdeci">SPLIT * split3</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00069">seam.h:69</a></div></div>
+<div class="ttc" id="a01241_html_a407d2116f0a53e5d7cb11d4dcdc489a0"><div class="ttname"><a href="a01241.html#a407d2116f0a53e5d7cb11d4dcdc489a0">form_two_blobs</a></div><div class="ttdeci">void form_two_blobs(TBLOB *blob, TBLOB *other_blob, bool italic_blob, const TPOINT &amp;location)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00074">makechop.cpp:74</a></div></div>
+<div class="ttc" id="a01241_html_a503883850fa5d77ae8b47baf76c541ae"><div class="ttname"><a href="a01241.html#a503883850fa5d77ae8b47baf76c541ae">make_single_split</a></div><div class="ttdeci">void make_single_split(TESSLINE *outlines, SPLIT *split)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00107">makechop.cpp:107</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa6a78540c9d1b2be89f28016c2aa408f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void undo_seam </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>other_blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00537.html">SEAM</a> *&#160;</td>
+          <td class="paramname"><em>seam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01241_source.html#l00168">168</a> of file <a class="el" href="a01241_source.html">makechop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                           {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *outline;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordflow">if</span> (!seam)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span>;                      <span class="comment">/* Append other blob outlines */</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordflow">if</span> (blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = other_blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    other_blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  outline = blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordflow">while</span> (outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    outline = outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  outline-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> = other_blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  other_blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keyword">delete</span> other_blob;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordflow">if</span> (seam-&gt;<a class="code" href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">split1</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (seam-&gt;<a class="code" href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">split2</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="a01241.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a> (blob, seam-&gt;<a class="code" href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">split1</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (seam-&gt;<a class="code" href="a00537.html#a136389fc1622fbc9fc85fd45a264db06">split3</a> == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="a01241.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a> (blob, seam-&gt;<a class="code" href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">split1</a>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="a01241.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a> (blob, seam-&gt;<a class="code" href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">split2</a>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="a01241.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a> (blob, seam-&gt;<a class="code" href="a00537.html#a136389fc1622fbc9fc85fd45a264db06">split3</a>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="a01241.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a> (blob, seam-&gt;<a class="code" href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">split2</a>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="a01241.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a> (blob, seam-&gt;<a class="code" href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">split1</a>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <a class="code" href="a01244.html#ad4f4e346c4650affddae46c8df8299ce">setup_blob_outlines</a>(blob);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <a class="code" href="a01244.html#a1d3c90a38ea91d7baf73af2c77b03d7f">eliminate_duplicate_outlines</a>(blob);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="ttc" id="a00537_html_a5d6d0e267b811e07fa1bb33aa4d362f2"><div class="ttname"><a href="a00537.html#a5d6d0e267b811e07fa1bb33aa4d362f2">SEAM::split2</a></div><div class="ttdeci">SPLIT * split2</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00068">seam.h:68</a></div></div>
+<div class="ttc" id="a00537_html_a83e8fa8204e6bfc47739b6717c7734f0"><div class="ttname"><a href="a00537.html#a83e8fa8204e6bfc47739b6717c7734f0">SEAM::split1</a></div><div class="ttdeci">SPLIT * split1</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00067">seam.h:67</a></div></div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a01244_html_a1d3c90a38ea91d7baf73af2c77b03d7f"><div class="ttname"><a href="a01244.html#a1d3c90a38ea91d7baf73af2c77b03d7f">eliminate_duplicate_outlines</a></div><div class="ttdeci">void eliminate_duplicate_outlines(TBLOB *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01244_source.html#l00067">olutil.cpp:67</a></div></div>
+<div class="ttc" id="a01244_html_ad4f4e346c4650affddae46c8df8299ce"><div class="ttname"><a href="a01244.html#ad4f4e346c4650affddae46c8df8299ce">setup_blob_outlines</a></div><div class="ttdeci">void setup_blob_outlines(TBLOB *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01244_source.html#l00096">olutil.cpp:96</a></div></div>
+<div class="ttc" id="a00537_html_a136389fc1622fbc9fc85fd45a264db06"><div class="ttname"><a href="a00537.html#a136389fc1622fbc9fc85fd45a264db06">SEAM::split3</a></div><div class="ttdeci">SPLIT * split3</div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00069">seam.h:69</a></div></div>
+<div class="ttc" id="a00613_html"><div class="ttname"><a href="a00613.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00127">blobs.h:127</a></div></div>
+<div class="ttc" id="a01241_html_aac5cbbe57b200218a324936bd098f948"><div class="ttname"><a href="a01241.html#aac5cbbe57b200218a324936bd098f948">undo_single_split</a></div><div class="ttdeci">void undo_single_split(TBLOB *blob, SPLIT *split)</div><div class="ttdef"><b>Definition:</b> <a href="a01241_source.html#l00211">makechop.cpp:211</a></div></div>
+<div class="ttc" id="a00613_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00190">blobs.h:190</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aac5cbbe57b200218a324936bd098f948"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void undo_single_split </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00590.html">TBLOB</a> *&#160;</td>
+          <td class="paramname"><em>blob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00800.html#a8caa4994d858ff69cd340ac6f89731cb">SPLIT</a> *&#160;</td>
+          <td class="paramname"><em>split</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01241_source.html#l00211">211</a> of file <a class="el" href="a01241_source.html">makechop.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                                  {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *outline1;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <a class="code" href="a00613.html">TESSLINE</a> *outline2;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="comment">/* Modify edge points */</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  <a class="code" href="a00799.html#a3c66a2f04c0878b8982e04d5a3d29e04">unsplit_outlines</a> (split-&gt;<a class="code" href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">point1</a>, split-&gt;<a class="code" href="a00557.html#adb5ec4152eddde15c1996133177a9a58">point2</a>);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  outline1 = <span class="keyword">new</span> <a class="code" href="a00613.html">TESSLINE</a>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  outline1-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> = blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = outline1;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  outline1-&gt;<a class="code" href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a> = split-&gt;<a class="code" href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">point1</a>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  outline2 = <span class="keyword">new</span> <a class="code" href="a00613.html">TESSLINE</a>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  outline2-&gt;<a class="code" href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">next</a> = blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  blob-&gt;<a class="code" href="a00590.html#a3c9282cad4102157d214bcc6311cda07">outlines</a> = outline2;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  outline2-&gt;<a class="code" href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">loop</a> = split-&gt;<a class="code" href="a00557.html#adb5ec4152eddde15c1996133177a9a58">point2</a>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="ttc" id="a00590_html_a3c9282cad4102157d214bcc6311cda07"><div class="ttname"><a href="a00590.html#a3c9282cad4102157d214bcc6311cda07">TBLOB::outlines</a></div><div class="ttdeci">TESSLINE * outlines</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00284">blobs.h:284</a></div></div>
+<div class="ttc" id="a00613_html_a0ab1e26b1dae548f0bd3c096c6183b18"><div class="ttname"><a href="a00613.html#a0ab1e26b1dae548f0bd3c096c6183b18">TESSLINE::loop</a></div><div class="ttdeci">EDGEPT * loop</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00189">blobs.h:189</a></div></div>
+<div class="ttc" id="a00557_html_a2451170e7785bb495c0dd3d96fc71167"><div class="ttname"><a href="a00557.html#a2451170e7785bb495c0dd3d96fc71167">split_record::point1</a></div><div class="ttdeci">EDGEPT * point1</div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00039">split.h:39</a></div></div>
+<div class="ttc" id="a00613_html"><div class="ttname"><a href="a00613.html">TESSLINE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00127">blobs.h:127</a></div></div>
+<div class="ttc" id="a00799_html_a3c66a2f04c0878b8982e04d5a3d29e04"><div class="ttname"><a href="a00799.html#a3c66a2f04c0878b8982e04d5a3d29e04">unsplit_outlines</a></div><div class="ttdeci">void unsplit_outlines(EDGEPT *p1, EDGEPT *p2)</div><div class="ttdef"><b>Definition:</b> <a href="a00799_source.html#l00206">split.cpp:206</a></div></div>
+<div class="ttc" id="a00613_html_a0fb224d43ea53a791f0957fa92793bef"><div class="ttname"><a href="a00613.html#a0fb224d43ea53a791f0957fa92793bef">TESSLINE::next</a></div><div class="ttdeci">TESSLINE * next</div><div class="ttdef"><b>Definition:</b> <a href="a00732_source.html#l00190">blobs.h:190</a></div></div>
+<div class="ttc" id="a00557_html_adb5ec4152eddde15c1996133177a9a58"><div class="ttname"><a href="a00557.html#adb5ec4152eddde15c1996133177a9a58">split_record::point2</a></div><div class="ttdeci">EDGEPT * point2</div><div class="ttdef"><b>Definition:</b> <a href="a00800_source.html#l00040">split.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -434,8 +600,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01241.html">chopper.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:38 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_ba4bb289b690eb5701761ce82ce44895.html">wordrec</a></li><li class="navelem"><a class="el" href="a01241.html">makechop.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

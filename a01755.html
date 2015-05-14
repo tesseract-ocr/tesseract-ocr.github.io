@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00265.html','');});
+$(document).ready(function(){initNavTree('a00308.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,25 +106,26 @@ $(document).ready(function(){initNavTree('a00265.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::AssociateUtils Member List</div>  </div>
+<div class="title">tesseract::CharSampSet Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00265.html">tesseract::AssociateUtils</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00308.html">tesseract::CharSampSet</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00265.html#a3ee6888a09d72d761762afd0b9089ca2">ComputeOutlineLength</a>(float rating_cert_scale, const BLOB_CHOICE &amp;b)</td><td class="entry"><a class="el" href="a00265.html">tesseract::AssociateUtils</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00265.html#a1fe52344b8d1256836abd247d8d5c3e2">ComputeRating</a>(float rating_cert_scale, float cert, int width)</td><td class="entry"><a class="el" href="a00265.html">tesseract::AssociateUtils</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00265.html#addbd0b3d90043ef77d53523d3591dd59">ComputeStats</a>(int col, int row, const AssociateStats *parent_stats, int parent_path_length, bool fixed_pitch, float max_char_wh_ratio, WERD_RES *word_res, bool debug, AssociateStats *stats)</td><td class="entry"><a class="el" href="a00265.html">tesseract::AssociateUtils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00265.html#a541c5e136929e994469c7c51ac40b2b7">FixedPitchGapCost</a>(float norm_gap, bool end_pos)</td><td class="entry"><a class="el" href="a00265.html">tesseract::AssociateUtils</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00265.html#ad70d4139f63f9d5048faa8407058523f">FixedPitchWidthCost</a>(float norm_width, float right_gap, bool end_pos, float max_char_wh_ratio)</td><td class="entry"><a class="el" href="a00265.html">tesseract::AssociateUtils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00265.html#a3bbebfa62ab6a7838649af61e9ef965f">kMaxFixedPitchCharAspectRatio</a></td><td class="entry"><a class="el" href="a00265.html">tesseract::AssociateUtils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00265.html#aa6ed9abceac9a721db5d174ff0e7c119">kMinGap</a></td><td class="entry"><a class="el" href="a00265.html">tesseract::AssociateUtils</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00308.html#ab43b1f39a5db126d4e554f43e858353d">Add</a>(CharSamp *char_samp)</td><td class="entry"><a class="el" href="a00308.html">tesseract::CharSampSet</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00308.html#a86ed83f376692acdde8eb3a80eb96d70">CharSampSet</a>()</td><td class="entry"><a class="el" href="a00308.html">tesseract::CharSampSet</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00308.html#a9f791908e4be116483130e4dcd61f784">CreateCharDumpFile</a>(string file_name)</td><td class="entry"><a class="el" href="a00308.html">tesseract::CharSampSet</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00308.html#a5ec1cca06ffee6d552c9a622d69239ad">EnumSamples</a>(string file_name, CharSampEnum *enumerator)</td><td class="entry"><a class="el" href="a00308.html">tesseract::CharSampSet</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00308.html#a55579e630b48a3c8258f2e2c00af1143">FromCharDumpFile</a>(string file_name)</td><td class="entry"><a class="el" href="a00308.html">tesseract::CharSampSet</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00308.html#a462d6d9f406445d88eacf08a2564a94c">SampleCount</a>() const </td><td class="entry"><a class="el" href="a00308.html">tesseract::CharSampSet</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00308.html#aa63a4baf00b2ed6523ffc8c6cfc5a8ca">Samples</a>() const </td><td class="entry"><a class="el" href="a00308.html">tesseract::CharSampSet</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00308.html#a068ef020d9868f214c4feda160f0828d">~CharSampSet</a>()</td><td class="entry"><a class="el" href="a00308.html">tesseract::CharSampSet</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:49 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:24 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

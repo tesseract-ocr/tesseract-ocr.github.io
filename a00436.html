@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::InputFileBuffer Class Reference</title>
+<title>Tesseract: tesseract::IntParam Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,36 +107,71 @@ $(document).ready(function(){initNavTree('a00436.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="a01851.html">List of all members</a>  </div>
+<a href="a01827.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::InputFileBuffer Class Reference</div>  </div>
+<div class="title">tesseract::IntParam Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a01087_source.html">input_file_buffer.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00848_source.html">params.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for tesseract::IntParam:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00436.png" usemap="#tesseract::IntParam_map" alt=""/>
+  <map id="tesseract::IntParam_map" name="tesseract::IntParam_map">
+<area href="a00494.html" alt="tesseract::Param" shape="rect" coords="0,0,118,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aed86a5afb385810d1d0da8e437fc68f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#aed86a5afb385810d1d0da8e437fc68f9">InputFileBuffer</a> (const string &amp;file_name)</td></tr>
-<tr class="separator:aed86a5afb385810d1d0da8e437fc68f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a111129fbf564c909312d69593b5c4b67"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#a111129fbf564c909312d69593b5c4b67">~InputFileBuffer</a> ()</td></tr>
-<tr class="separator:a111129fbf564c909312d69593b5c4b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcb0987952457dda43b6234a598e0f49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#abcb0987952457dda43b6234a598e0f49">Read</a> (void *buffer, int bytes_to_read)</td></tr>
-<tr class="separator:abcb0987952457dda43b6234a598e0f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a592336f7308bece05ace46b6c791637c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#a592336f7308bece05ace46b6c791637c">IntParam</a> (<a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> value, const char *name, const char *comment, bool init, <a class="el" href="a00501.html">ParamsVectors</a> *vec)</td></tr>
+<tr class="separator:a592336f7308bece05ace46b6c791637c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4f9aac376c17d43c2656558e4168af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#a0f4f9aac376c17d43c2656558e4168af">~IntParam</a> ()</td></tr>
+<tr class="separator:a0f4f9aac376c17d43c2656558e4168af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad2337b5e4227af23fcb9ddc554faa15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#aad2337b5e4227af23fcb9ddc554faa15">operator inT32</a> () const </td></tr>
+<tr class="separator:aad2337b5e4227af23fcb9ddc554faa15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8471820a2d5ec9fed122ea5cee56d89a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#a8471820a2d5ec9fed122ea5cee56d89a">operator=</a> (<a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> value)</td></tr>
+<tr class="separator:a8471820a2d5ec9fed122ea5cee56d89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e01c6f94727a60ccebd322637b7f883"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#a0e01c6f94727a60ccebd322637b7f883">set_value</a> (<a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> value)</td></tr>
+<tr class="separator:a0e01c6f94727a60ccebd322637b7f883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1063b5fc04b28043c416263053bf9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#a6e1063b5fc04b28043c416263053bf9b">ResetToDefault</a> ()</td></tr>
+<tr class="separator:a6e1063b5fc04b28043c416263053bf9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00494"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00494')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="a00494.html">tesseract::Param</a></td></tr>
+<tr class="memitem:a444e54c9b76cb5353d96da157835ecdc inherit pub_methods_a00494"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a444e54c9b76cb5353d96da157835ecdc">~Param</a> ()</td></tr>
+<tr class="separator:a444e54c9b76cb5353d96da157835ecdc inherit pub_methods_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b3f28bb0864ffe9f71e35511f80a886 inherit pub_methods_a00494"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a7b3f28bb0864ffe9f71e35511f80a886">name_str</a> () const </td></tr>
+<tr class="separator:a7b3f28bb0864ffe9f71e35511f80a886 inherit pub_methods_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b9d335f5757386b20e12444d3defb1 inherit pub_methods_a00494"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a95b9d335f5757386b20e12444d3defb1">info_str</a> () const </td></tr>
+<tr class="separator:a95b9d335f5757386b20e12444d3defb1 inherit pub_methods_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224ae6f9910c15118cf9be6603b60d0f inherit pub_methods_a00494"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a224ae6f9910c15118cf9be6603b60d0f">is_init</a> () const </td></tr>
+<tr class="separator:a224ae6f9910c15118cf9be6603b60d0f inherit pub_methods_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdecb1a38923ad78a94d23c03f85cfb3 inherit pub_methods_a00494"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#abdecb1a38923ad78a94d23c03f85cfb3">is_debug</a> () const </td></tr>
+<tr class="separator:abdecb1a38923ad78a94d23c03f85cfb3 inherit pub_methods_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a847b6a99ba076a6fce1492ab0f433944 inherit pub_methods_a00494"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a847b6a99ba076a6fce1492ab0f433944">constraint_ok</a> (<a class="el" href="a01267.html#a0fc9989588ecf8f236da49b58f96a6c5">SetParamConstraint</a> constraint) const </td></tr>
+<tr class="separator:a847b6a99ba076a6fce1492ab0f433944 inherit pub_methods_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a9003010ef2e0de7572e35b30a0b492b2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#a9003010ef2e0de7572e35b30a0b492b2">file_name_</a></td></tr>
-<tr class="separator:a9003010ef2e0de7572e35b30a0b492b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fb7e7fd1323146252c8cb33c2cc2090"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">fp_</a></td></tr>
-<tr class="separator:a5fb7e7fd1323146252c8cb33c2cc2090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_a00494"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_a00494')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="a00494.html">tesseract::Param</a></td></tr>
+<tr class="memitem:a7d2b3a9b8108f1c1b973f4f498114482 inherit pro_methods_a00494"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a7d2b3a9b8108f1c1b973f4f498114482">Param</a> (const char *name, const char *comment, bool init)</td></tr>
+<tr class="separator:a7d2b3a9b8108f1c1b973f4f498114482 inherit pro_methods_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a00494"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00494')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="a00494.html">tesseract::Param</a></td></tr>
+<tr class="memitem:a4b6738dba276ac5d1cb46b4848b93849 inherit pro_attribs_a00494"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a4b6738dba276ac5d1cb46b4848b93849">name_</a></td></tr>
+<tr class="separator:a4b6738dba276ac5d1cb46b4848b93849 inherit pro_attribs_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738bc32b75735560ca5ce00f34f000ed inherit pro_attribs_a00494"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a738bc32b75735560ca5ce00f34f000ed">info_</a></td></tr>
+<tr class="separator:a738bc32b75735560ca5ce00f34f000ed inherit pro_attribs_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a414ce3507bf8bbeb057f836f27224552 inherit pro_attribs_a00494"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a414ce3507bf8bbeb057f836f27224552">init_</a></td></tr>
+<tr class="separator:a414ce3507bf8bbeb057f836f27224552 inherit pro_attribs_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77bba96272c09429b905beae0791f586 inherit pro_attribs_a00494"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00494.html#a77bba96272c09429b905beae0791f586">debug_</a></td></tr>
+<tr class="separator:a77bba96272c09429b905beae0791f586 inherit pro_attribs_a00494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a01087_source.html#l00019">19</a> of file <a class="el" href="a01087_source.html">input_file_buffer.h</a>.</p>
+<p>Definition at line <a class="el" href="a00848_source.html#l00143">143</a> of file <a class="el" href="a00848_source.html">params.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aed86a5afb385810d1d0da8e437fc68f9"></a>
+<a class="anchor" id="a592336f7308bece05ace46b6c791637c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -144,78 +179,34 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tesseract::InputFileBuffer::InputFileBuffer </td>
+          <td class="memname">tesseract::IntParam::IntParam </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>file_name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01086_source.html#l00013">13</a> of file <a class="el" href="a01086_source.html">input_file_buffer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  : <a class="code" href="a00436.html#a9003010ef2e0de7572e35b30a0b492b2">file_name_</a>(file_name) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">fp_</a> = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00436_html_a5fb7e7fd1323146252c8cb33c2cc2090"><div class="ttname"><a href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">tesseract::InputFileBuffer::fp_</a></div><div class="ttdeci">FILE * fp_</div><div class="ttdef"><b>Definition:</b> <a href="a01087_source.html#l00027">input_file_buffer.h:27</a></div></div>
-<div class="ttc" id="a00436_html_a9003010ef2e0de7572e35b30a0b492b2"><div class="ttname"><a href="a00436.html#a9003010ef2e0de7572e35b30a0b492b2">tesseract::InputFileBuffer::file_name_</a></div><div class="ttdeci">string file_name_</div><div class="ttdef"><b>Definition:</b> <a href="a01087_source.html#l00026">input_file_buffer.h:26</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a111129fbf564c909312d69593b5c4b67"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tesseract::InputFileBuffer::~InputFileBuffer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01086_source.html#l00019">19</a> of file <a class="el" href="a01086_source.html">input_file_buffer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                  {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">fp_</a> != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    fclose(<a class="code" href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">fp_</a>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00436_html_a5fb7e7fd1323146252c8cb33c2cc2090"><div class="ttname"><a href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">tesseract::InputFileBuffer::fp_</a></div><div class="ttdeci">FILE * fp_</div><div class="ttdef"><b>Definition:</b> <a href="a01087_source.html#l00027">input_file_buffer.h:27</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="abcb0987952457dda43b6234a598e0f49"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int tesseract::InputFileBuffer::Read </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
+          <td class="paramtype"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bytes_to_read</em>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>comment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00501.html">ParamsVectors</a> *&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -223,27 +214,25 @@ Protected Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01086_source.html#l00026">26</a> of file <a class="el" href="a01086_source.html">input_file_buffer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                         {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">// open the file if necessary</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">fp_</a> == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">fp_</a> = fopen(<a class="code" href="a00436.html#a9003010ef2e0de7572e35b30a0b492b2">file_name_</a>.c_str(), <span class="stringliteral">&quot;rb&quot;</span>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">fp_</a> == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">return</span> fread(buffer, 1, bytes_to_read, <a class="code" href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">fp_</a>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00436_html_a5fb7e7fd1323146252c8cb33c2cc2090"><div class="ttname"><a href="a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090">tesseract::InputFileBuffer::fp_</a></div><div class="ttdeci">FILE * fp_</div><div class="ttdef"><b>Definition:</b> <a href="a01087_source.html#l00027">input_file_buffer.h:27</a></div></div>
-<div class="ttc" id="a00436_html_a9003010ef2e0de7572e35b30a0b492b2"><div class="ttname"><a href="a00436.html#a9003010ef2e0de7572e35b30a0b492b2">tesseract::InputFileBuffer::file_name_</a></div><div class="ttdeci">string file_name_</div><div class="ttdef"><b>Definition:</b> <a href="a01087_source.html#l00026">input_file_buffer.h:26</a></div></div>
+<p>Definition at line <a class="el" href="a00848_source.html#l00145">145</a> of file <a class="el" href="a00848_source.html">params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                : <a class="code" href="a00494.html#a7d2b3a9b8108f1c1b973f4f498114482">Param</a>(name, comment, init) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    value_ = value;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    default_ = value;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    params_vec_ = &amp;(vec-&gt;int_params);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    vec-&gt;int_params.push_back(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  }</div>
+<div class="ttc" id="a00494_html_a7d2b3a9b8108f1c1b973f4f498114482"><div class="ttname"><a href="a00494.html#a7d2b3a9b8108f1c1b973f4f498114482">tesseract::Param::Param</a></div><div class="ttdeci">Param(const char *name, const char *comment, bool init)</div><div class="ttdef"><b>Definition:</b> <a href="a00848_source.html#l00132">params.h:132</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a9003010ef2e0de7572e35b30a0b492b2"></a>
+<a class="anchor" id="a0f4f9aac376c17d43c2656558e4168af"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -251,21 +240,26 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string tesseract::InputFileBuffer::file_name_</td>
+          <td class="memname">tesseract::IntParam::~IntParam </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01087_source.html#l00026">26</a> of file <a class="el" href="a01087_source.html">input_file_buffer.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00848_source.html#l00152">152</a> of file <a class="el" href="a00848_source.html">params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{ ParamUtils::RemoveParam&lt;IntParam&gt;(<span class="keyword">this</span>, params_vec_); }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a5fb7e7fd1323146252c8cb33c2cc2090"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aad2337b5e4227af23fcb9ddc554faa15"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -273,31 +267,116 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">FILE* tesseract::InputFileBuffer::fp_</td>
+          <td class="memname">tesseract::IntParam::operator <a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01087_source.html#l00027">27</a> of file <a class="el" href="a01087_source.html">input_file_buffer.h</a>.</p>
+<p>Definition at line <a class="el" href="a00848_source.html#l00153">153</a> of file <a class="el" href="a00848_source.html">params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{ <span class="keywordflow">return</span> value_; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a8471820a2d5ec9fed122ea5cee56d89a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::IntParam::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="a00848_source.html#l00154">154</a> of file <a class="el" href="a00848_source.html">params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{ value_ = value; }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>neural_networks/runtime/<a class="el" href="a01087_source.html">input_file_buffer.h</a></li>
-<li>neural_networks/runtime/<a class="el" href="a01086_source.html">input_file_buffer.cpp</a></li>
+<a class="anchor" id="a6e1063b5fc04b28043c416263053bf9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::IntParam::ResetToDefault </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00848_source.html#l00156">156</a> of file <a class="el" href="a00848_source.html">params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                        {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    value_ = default_;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a0e01c6f94727a60ccebd322637b7f883"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tesseract::IntParam::set_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00848_source.html#l00155">155</a> of file <a class="el" href="a00848_source.html">params.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{ value_ = value; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>ccutil/<a class="el" href="a00848_source.html">params.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00436.html">InputFileBuffer</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:52 for Tesseract by
+    <li class="navelem"><a class="el" href="a01267.html">tesseract</a></li><li class="navelem"><a class="el" href="a00436.html">IntParam</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:27 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

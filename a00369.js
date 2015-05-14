@@ -1,10 +1,8 @@
 var a00369 =
 [
-    [ "CostFunc", "a00369.html#a08565a87060ccedd0aebe4d7f04fb9f7", null ],
-    [ "DPPoint", "a00369.html#accb15b0c3db492fa4813a606feabcf59", null ],
-    [ "AddLocalCost", "a00369.html#a7f0dbb492e4a02c9da32017583e1463d", null ],
-    [ "best_prev", "a00369.html#a3490b0893fac51b2277f7393ee935806", null ],
-    [ "CostWithVariance", "a00369.html#a4d01fa4702020ea2e3cbd89f754fc9e5", null ],
-    [ "Pathlength", "a00369.html#ad44b4643e9979a626c138af8a3cd4fa7", null ],
-    [ "total_cost", "a00369.html#a6a288c5d399800d39c2e5e662b442679", null ]
+    [ "ELIST2_LINK", "a00369.html#a2a14fc7a515dec2edcb34179562f4a84", null ],
+    [ "ELIST2_LINK", "a00369.html#a72fdc625cf6856d8893733fbf0eb6f18", null ],
+    [ "operator=", "a00369.html#a8405b0dd69c6c60c989c6c84f126aa61", null ],
+    [ "ELIST2", "a00369.html#a675e52dd37b993134914ede7fee232ca", null ],
+    [ "ELIST2_ITERATOR", "a00369.html#af7728b876c6dd33bccd65730b0732cca", null ]
 ];

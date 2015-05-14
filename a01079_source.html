@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: java/com/google/scrollview/ui/SVEmptyMenuItem.java Source File</title>
+<title>Tesseract: neural_networks/runtime/neural_net.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,60 +105,315 @@ $(document).ready(function(){initNavTree('a01079_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">SVEmptyMenuItem.java</div>  </div>
+<div class="title">neural_net.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a01079.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright 2007 Google Inc. All Rights Reserved.</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); You may not</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// use this file except in compliance with the License. You may obtain a copy of</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// applicable law or agreed to in writing, software distributed under the</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// OF ANY KIND, either express or implied. See the License for the specific</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// language governing permissions and limitations under the License.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">package </span>com.google.scrollview.ui;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> <a class="code" href="a01273.html">com</a>.<a class="code" href="a01274.html">google</a>.<a class="code" href="a01275.html">scrollview</a>.<a class="code" href="a00552.html">ScrollView</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> <a class="code" href="a01273.html">com</a>.<a class="code" href="a01274.html">google</a>.<a class="code" href="a01275.html">scrollview</a>.<a class="code" href="a01276.html">events</a>.<a class="code" href="a00585.html">SVEvent</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> <a class="code" href="a01273.html">com</a>.<a class="code" href="a01274.html">google</a>.<a class="code" href="a01275.html">scrollview</a>.<a class="code" href="a01276.html">events</a>.<a class="code" href="a00588.html">SVEventType</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">import</span> javax.swing.JMenuItem;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span>SVEmptyMenuItem <span class="keyword">extends</span> SVAbstractMenuItem {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  SVEmptyMenuItem(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, String <a class="code" href="a01193.html#a7a9cea5d64cc51921ff09beb042eee4d">name</a>) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    super(<span class="keywordtype">id</span>, name, <span class="keyword">new</span> JMenuItem(name));</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  @Override</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span> <span class="keywordtype">void</span> performAction(SVWindow window, <a class="code" href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0">SVEventType</a> eventType) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// Send an event indicating that someone clicked on an entry.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// Value will be null here.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="a00584.html">SVEvent</a> svme =</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">new</span> <a class="code" href="a00584.html">SVEvent</a>(eventType, window, <span class="keywordtype">id</span>, getValue());</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="a00553.html">ScrollView</a>.addMessage(svme);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="ttc" id="a01273_html"><div class="ttname"><a href="a01273.html">com</a></div></div>
-<div class="ttc" id="a00588_html"><div class="ttname"><a href="a00588.html">com.google.scrollview.events.SVEventType</a></div><div class="ttdef"><b>Definition:</b> <a href="a01075_source.html#l00020">SVEventType.java:20</a></div></div>
-<div class="ttc" id="a00584_html"><div class="ttname"><a href="a00584.html">SVEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00061">scrollview.h:61</a></div></div>
-<div class="ttc" id="a01276_html"><div class="ttname"><a href="a01276.html">com.google.scrollview.events</a></div><div class="ttdef"><b>Definition:</b> <a href="a01073_source.html#l00011">SVEvent.java:11</a></div></div>
-<div class="ttc" id="a01220_html_a3688a0cf2f95d10a57e095222ccfe9a0"><div class="ttname"><a href="a01220.html#a3688a0cf2f95d10a57e095222ccfe9a0">SVEventType</a></div><div class="ttdeci">SVEventType</div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00045">scrollview.h:45</a></div></div>
-<div class="ttc" id="a01275_html"><div class="ttname"><a href="a01275.html">com.google.scrollview</a></div></div>
-<div class="ttc" id="a00552_html"><div class="ttname"><a href="a00552.html">com.google.scrollview.ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01076_source.html#l00032">ScrollView.java:32</a></div></div>
-<div class="ttc" id="a01193_html_a7a9cea5d64cc51921ff09beb042eee4d"><div class="ttname"><a href="a01193.html#a7a9cea5d64cc51921ff09beb042eee4d">name</a></div><div class="ttdeci">name_table name</div><div class="ttdef"><b>Definition:</b> <a href="a01193_source.html#l00308">GlyphLessFont.c:308</a></div></div>
-<div class="ttc" id="a00553_html"><div class="ttname"><a href="a00553.html">ScrollView</a></div><div class="ttdef"><b>Definition:</b> <a href="a01220_source.html#l00102">scrollview.h:102</a></div></div>
-<div class="ttc" id="a01274_html"><div class="ttname"><a href="a01274.html">com.google</a></div></div>
-<div class="ttc" id="a00585_html"><div class="ttname"><a href="a00585.html">com.google.scrollview.events.SVEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="a01073_source.html#l00021">SVEvent.java:21</a></div></div>
+<a href="a01079.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright 2008 Google Inc.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// All Rights Reserved.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Author: ahmadab@google.com (Ahmad Abdulkader)</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// neural_net.h: Declarations of a class for an object that</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// represents an arbitrary network of neurons</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef NEURAL_NET_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define NEURAL_NET_H</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01081.html">neuron.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a01077.html">input_file_buffer.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01267.html">tesseract</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">// Minimum input range below which we set the input weight to zero</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> kMinInputRange = 1e-6f;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="a00473.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00473.html">NeuralNet</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="a00473.html#acad221017f155837c316063a76ee3a22">NeuralNet</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="a00473.html#a0a0f8a13c536da068fad17a12b39c7b6">~NeuralNet</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// create a net object from a file. Uses stdio</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">static</span> <a class="code" href="a00473.html">NeuralNet</a> *<a class="code" href="a00473.html#aacdfeca9c810f9d8beb9438b35a8b93a">FromFile</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> file_name);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// create a net object from an input buffer</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">static</span> <a class="code" href="a00473.html">NeuralNet</a> *<a class="code" href="a00473.html#a4bae9fde3b2be515197283b1008bf14c">FromInputBuffer</a>(<a class="code" href="a00423.html">InputFileBuffer</a> *ib);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Different flavors of feed forward function</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type&gt; <span class="keywordtype">bool</span> <a class="code" href="a00473.html#a4c89b7940883fa30fc0bdf84ea678a42">FeedForward</a>(<span class="keyword">const</span> Type *inputs,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                              Type *outputs);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Compute the output of a specific output node.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// This function is useful for application that are interested in a single</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// output of the net and do not want to waste time on the rest</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type&gt; <span class="keywordtype">bool</span> <a class="code" href="a00473.html#a3dc0a81f7c0588aee8aed7e93884d0ea">GetNetOutput</a>(<span class="keyword">const</span> Type *inputs,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                               <span class="keywordtype">int</span> output_id,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                               Type *output);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Accessor functions</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="a00473.html#ae28208349e3d4ad72d1013fc319adc42">   40</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00473.html#ae28208349e3d4ad72d1013fc319adc42">in_cnt</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="a00473.html#a5f1f4f6112ccabd23612ac70df4ddd23">   41</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00473.html#a5f1f4f6112ccabd23612ac70df4ddd23">out_cnt</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="a00473.html#a3e1f6cb07479e2e6d9fcb11625a715c1">out_cnt_</a>; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">struct </span>Node;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// A node-weight pair</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00648.html">   46</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="a00648.html">WeightedNode</a> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00648.html#a472e041ee5d3bf6f9480601e59710232">   47</a></span>&#160;      <a class="code" href="a00475.html">Node</a> *<a class="code" href="a00648.html#a472e041ee5d3bf6f9480601e59710232">input_node</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00648.html#a2569c3963eb755c45d64e48edd07583f">   48</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="a00648.html#a2569c3963eb755c45d64e48edd07583f">input_weight</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// node struct used for fast feedforward in</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Read only nets</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00475.html">   52</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="a00475.html">Node</a> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="a00475.html#a5d439cbb4c5fe79c99947974b45dac23">   53</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="a00475.html#a5d439cbb4c5fe79c99947974b45dac23">out</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="a00475.html#ac44e32f79ad3e94f8daf9e4bc8fba3d0">   54</a></span>&#160;      <span class="keywordtype">float</span> <a class="code" href="a00475.html#ac44e32f79ad3e94f8daf9e4bc8fba3d0">bias</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="a00475.html#a6a029f34191d8aa8c06ad77a35e852cb">   55</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="a00475.html#a6a029f34191d8aa8c06ad77a35e852cb">fan_in_cnt</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a00475.html#adf7ec31c578849d8c7b1b95b6a612a6e">   56</a></span>&#160;      <a class="code" href="a00648.html">WeightedNode</a> *<a class="code" href="a00475.html#adf7ec31c578849d8c7b1b95b6a612a6e">inputs</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    };</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Read-Only flag (no training: On by default)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// will presumeably be set to false by</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// the inherting TrainableNeuralNet class</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="a00473.html#a680ddffcb4d92f115e1a7b8221811a81">   61</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00473.html#a680ddffcb4d92f115e1a7b8221811a81">read_only_</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// input count</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00473.html#a3f9506819852a7c66e83775f92f95610">   63</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// output count</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00473.html#a3e1f6cb07479e2e6d9fcb11625a715c1">   65</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00473.html#a3e1f6cb07479e2e6d9fcb11625a715c1">out_cnt_</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Total neuron count (including inputs)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="a00473.html#a3772cb00bf4f74adf163fc5705bf1f0d">   67</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00473.html#a3772cb00bf4f74adf163fc5705bf1f0d">neuron_cnt_</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// count of unique weights</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="a00473.html#ae260161c01b9d853d9d7ddf114d72ea9">   69</a></span>&#160;    <span class="keywordtype">int</span>  <a class="code" href="a00473.html#ae260161c01b9d853d9d7ddf114d72ea9">wts_cnt_</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Neuron vector</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="a00473.html#a4ff353ff0ba717e12507c6a1a909363f">   71</a></span>&#160;    <a class="code" href="a00474.html">Neuron</a> *<a class="code" href="a00473.html#a4ff353ff0ba717e12507c6a1a909363f">neurons_</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// size of allocated weight chunk (in weights)</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// This is basically the size of the biggest network</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// that I have trained. However, the class will allow</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// a bigger sized net if desired</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="a00473.html#ace41d563521f6f0c07a29f212aec3bab">   76</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="a00473.html#ace41d563521f6f0c07a29f212aec3bab">kWgtChunkSize</a> = 0x10000;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Magic number expected at the beginning of the NN</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// binary file</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="a00473.html#ab145f57d5e1244f16a4f6c00a60f01f1">   79</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="a00473.html#ab145f57d5e1244f16a4f6c00a60f01f1">kNetSignature</a> = 0xFEFEABD0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// count of allocated wgts in the last chunk</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="a00473.html#aaba48ba8a449a805ef8802ea3308d69d">   81</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00473.html#aaba48ba8a449a805ef8802ea3308d69d">alloc_wgt_cnt_</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// vector of weights buffers</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="a00473.html#aa7b901ea43bae46e569d68f476c7b318">   83</a></span>&#160;    vector&lt;vector&lt;float&gt; *&gt;<a class="code" href="a00473.html#aa7b901ea43bae46e569d68f476c7b318">wts_vec_</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Is the net an auto-encoder type</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="a00473.html#a6cc1b21c513a3bbd8de7d5435c649048">   85</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00473.html#a6cc1b21c513a3bbd8de7d5435c649048">auto_encoder_</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// vector of input max values</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="a00473.html#acc363035dc53cc103d2cadaa54333efa">   87</a></span>&#160;    vector&lt;float&gt; <a class="code" href="a00473.html#acc363035dc53cc103d2cadaa54333efa">inputs_max_</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// vector of input min values</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00473.html#aa05bfd6191232cf25b79752fd1a38117">   89</a></span>&#160;    vector&lt;float&gt; <a class="code" href="a00473.html#aa05bfd6191232cf25b79752fd1a38117">inputs_min_</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// vector of input mean values</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="a00473.html#a45298b08d5c9e41901911b99f0e172ca">   91</a></span>&#160;    vector&lt;float&gt; <a class="code" href="a00473.html#a45298b08d5c9e41901911b99f0e172ca">inputs_mean_</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// vector of input standard deviation values</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="a00473.html#a8d03fb672b6283010bbd32135303b60a">   93</a></span>&#160;    vector&lt;float&gt; <a class="code" href="a00473.html#a8d03fb672b6283010bbd32135303b60a">inputs_std_dev_</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// vector of input offsets used by fast read-only</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// feedforward function</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="a00473.html#a769b5db25072f73c1f7c57fe6d2142c0">   96</a></span>&#160;    vector&lt;Node&gt; <a class="code" href="a00473.html#a769b5db25072f73c1f7c57fe6d2142c0">fast_nodes_</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Network Initialization function</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00473.html#a46a5af1940cf873c8cddb2c91e14b121">Init</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Clears all neurons</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="a00473.html#a63cb2029e14bf27406aa69417128a0bc">  100</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00473.html#a63cb2029e14bf27406aa69417128a0bc">Clear</a>() {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> node = 0; node &lt; <a class="code" href="a00473.html#a3772cb00bf4f74adf163fc5705bf1f0d">neuron_cnt_</a>; node++) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        neurons_[node].<a class="code" href="a00474.html#a54f61762c8e4573804bea699ff7b9311">Clear</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Reads the net from an input buffer</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="a00473.html#a20678924e5cfc8418c51d1199d89b778">  106</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> ReadBuffType&gt; <span class="keywordtype">bool</span> <a class="code" href="a00473.html#a20678924e5cfc8418c51d1199d89b778">ReadBinary</a>(ReadBuffType *input_buff) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="comment">// Init vars</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <a class="code" href="a00473.html#a46a5af1940cf873c8cddb2c91e14b121">Init</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="comment">// is this an autoencoder</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> read_val;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> auto_encode;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="comment">// read and verify signature</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;read_val, <span class="keyword">sizeof</span>(read_val)) != <span class="keyword">sizeof</span>(read_val)) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="keywordflow">if</span> (read_val != kNetSignature) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;auto_encode, <span class="keyword">sizeof</span>(auto_encode)) !=</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;          <span class="keyword">sizeof</span>(auto_encode)) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      auto_encoder_ = auto_encode;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      <span class="comment">// read and validate total # of nodes</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;read_val, <span class="keyword">sizeof</span>(read_val)) != <span class="keyword">sizeof</span>(read_val)) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      neuron_cnt_ = read_val;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <span class="keywordflow">if</span> (neuron_cnt_ &lt;= 0) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <span class="comment">// set the size of the neurons vector</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      neurons_ = <span class="keyword">new</span> <a class="code" href="a00474.html">Neuron</a>[<a class="code" href="a00473.html#a3772cb00bf4f74adf163fc5705bf1f0d">neuron_cnt_</a>];</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="keywordflow">if</span> (neurons_ == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="comment">// read &amp; validate inputs</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;read_val, <span class="keyword">sizeof</span>(read_val)) != <span class="keyword">sizeof</span>(read_val)) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      in_cnt_ = read_val;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="keywordflow">if</span> (in_cnt_ &lt;= 0) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <span class="comment">// read outputs</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;read_val, <span class="keyword">sizeof</span>(read_val)) != <span class="keyword">sizeof</span>(read_val)) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      out_cnt_ = read_val;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      <span class="keywordflow">if</span> (out_cnt_ &lt;= 0) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="comment">// set neuron ids and types</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx = 0; idx &lt; <a class="code" href="a00473.html#a3772cb00bf4f74adf163fc5705bf1f0d">neuron_cnt_</a>; idx++) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        neurons_[idx].<a class="code" href="a00474.html#a29d8526568d7b1a5df75065712e03868">set_id</a>(idx);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">// input type</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> (idx &lt; in_cnt_) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;          neurons_[idx].<a class="code" href="a00474.html#af4e0f355208188f9d6017166153d18f9">set_node_type</a>(<a class="code" href="a00474.html#aaca04e8e86b6305b6ef5cafa97a69cccabf08baf29ab216392a1f0ad5c439d220">Neuron::Input</a>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idx &gt;= (neuron_cnt_ - out_cnt_)) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;          neurons_[idx].<a class="code" href="a00474.html#af4e0f355208188f9d6017166153d18f9">set_node_type</a>(<a class="code" href="a00474.html#aaca04e8e86b6305b6ef5cafa97a69ccca7763743f69f362cb5e9f885457389f14">Neuron::Output</a>);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;          neurons_[idx].<a class="code" href="a00474.html#af4e0f355208188f9d6017166153d18f9">set_node_type</a>(<a class="code" href="a00474.html#aaca04e8e86b6305b6ef5cafa97a69ccca98cb3df28d5382cccc5471de1a31cc45">Neuron::Hidden</a>);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="comment">// read the connections</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> node_idx = 0; node_idx &lt; <a class="code" href="a00473.html#a3772cb00bf4f74adf163fc5705bf1f0d">neuron_cnt_</a>; node_idx++) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="comment">// read fanout</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;read_val, <span class="keyword">sizeof</span>(read_val)) != <span class="keyword">sizeof</span>(read_val)) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">// read the neuron&#39;s info</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordtype">int</span> fan_out_cnt = read_val;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> fan_out_idx = 0; fan_out_idx &lt; fan_out_cnt; fan_out_idx++) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;          <span class="comment">// read the neuron id</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;read_val, <span class="keyword">sizeof</span>(read_val)) != <span class="keyword">sizeof</span>(read_val)) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;          }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;          <span class="comment">// create the connection</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;          <span class="keywordflow">if</span> (!<a class="code" href="a00473.html#a3cec386f2524f71f6ff8221badeaa5d0">SetConnection</a>(node_idx, read_val)) {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;          }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <span class="comment">// read all the neurons&#39; fan-in connections</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> node_idx = 0; node_idx &lt; <a class="code" href="a00473.html#a3772cb00bf4f74adf163fc5705bf1f0d">neuron_cnt_</a>; node_idx++) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment">// read</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> (!neurons_[node_idx].<a class="code" href="a00473.html#a20678924e5cfc8418c51d1199d89b778">ReadBinary</a>(input_buff)) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      <span class="comment">// size input stats vector to expected input size</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      inputs_mean_.resize(in_cnt_);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      inputs_std_dev_.resize(in_cnt_);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      inputs_min_.resize(in_cnt_);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      inputs_max_.resize(in_cnt_);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      <span class="comment">// read stats</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;(inputs_mean_.front()),</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          <span class="keyword">sizeof</span>(inputs_mean_[0]) * <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>) !=</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;          <span class="keyword">sizeof</span>(inputs_mean_[0]) * <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;(inputs_std_dev_.front()),</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;          <span class="keyword">sizeof</span>(inputs_std_dev_[0]) * <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>) !=</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;          <span class="keyword">sizeof</span>(inputs_std_dev_[0]) * <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;(inputs_min_.front()),</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;          <span class="keyword">sizeof</span>(inputs_min_[0]) * <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>) !=</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;          <span class="keyword">sizeof</span>(inputs_min_[0]) * <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <span class="keywordflow">if</span> (input_buff-&gt;Read(&amp;(inputs_max_.front()),</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;          <span class="keyword">sizeof</span>(inputs_max_[0]) * <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>) !=</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;          <span class="keyword">sizeof</span>(inputs_max_[0]) * <a class="code" href="a00473.html#a3f9506819852a7c66e83775f92f95610">in_cnt_</a>) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <span class="comment">// create a readonly version for fast feedforward</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      <span class="keywordflow">if</span> (read_only_) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="a00473.html#adf52a77999cb8e51a6fa5d4932321a3d">CreateFastNet</a>();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// creates a connection between two nodes</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00473.html#a3cec386f2524f71f6ff8221badeaa5d0">SetConnection</a>(<span class="keywordtype">int</span> from, <span class="keywordtype">int</span> to);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">// Create a read only version of the net that</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// has faster feedforward performance</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00473.html#adf52a77999cb8e51a6fa5d4932321a3d">CreateFastNet</a>();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// internal function to allocate a new set of weights</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// Centralized weight allocation attempts to increase</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// weights locality of reference making it more cache friendly</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">float</span> *<a class="code" href="a00473.html#a1d4b0e33730cd9ee86916938251719cc">AllocWgt</a>(<span class="keywordtype">int</span> wgt_cnt);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">// different flavors read-only feedforward function</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type&gt; <span class="keywordtype">bool</span> <a class="code" href="a00473.html#aa186b29234d2d35e0c8afb52877c04ea">FastFeedForward</a>(<span class="keyword">const</span> Type *inputs,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                                  Type *outputs);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// Compute the output of a specific output node.</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// This function is useful for application that are interested in a single</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// output of the net and do not want to waste time on the rest</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">// This is the fast-read-only version of this function</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Type&gt; <span class="keywordtype">bool</span> <a class="code" href="a00473.html#a1275c0785ed2bd9725dd39820d4f5fab">FastGetNetOutput</a>(<span class="keyword">const</span> Type *inputs,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                                   <span class="keywordtype">int</span> output_id,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                                   Type *output);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;};</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#endif  // NEURAL_NET_H__</span></div>
+<div class="ttc" id="a00473_html_a8d03fb672b6283010bbd32135303b60a"><div class="ttname"><a href="a00473.html#a8d03fb672b6283010bbd32135303b60a">tesseract::NeuralNet::inputs_std_dev_</a></div><div class="ttdeci">vector&lt; float &gt; inputs_std_dev_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00093">neural_net.h:93</a></div></div>
+<div class="ttc" id="a00648_html_a2569c3963eb755c45d64e48edd07583f"><div class="ttname"><a href="a00648.html#a2569c3963eb755c45d64e48edd07583f">tesseract::NeuralNet::WeightedNode::input_weight</a></div><div class="ttdeci">float input_weight</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00048">neural_net.h:48</a></div></div>
+<div class="ttc" id="a00475_html_ac44e32f79ad3e94f8daf9e4bc8fba3d0"><div class="ttname"><a href="a00475.html#ac44e32f79ad3e94f8daf9e4bc8fba3d0">tesseract::NeuralNet::Node::bias</a></div><div class="ttdeci">float bias</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00054">neural_net.h:54</a></div></div>
+<div class="ttc" id="a00423_html"><div class="ttname"><a href="a00423.html">tesseract::InputFileBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="a01077_source.html#l00019">input_file_buffer.h:19</a></div></div>
+<div class="ttc" id="a00473_html_aa186b29234d2d35e0c8afb52877c04ea"><div class="ttname"><a href="a00473.html#aa186b29234d2d35e0c8afb52877c04ea">tesseract::NeuralNet::FastFeedForward</a></div><div class="ttdeci">bool FastFeedForward(const Type *inputs, Type *outputs)</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00052">neural_net.cpp:52</a></div></div>
+<div class="ttc" id="a00473_html_a3f9506819852a7c66e83775f92f95610"><div class="ttname"><a href="a00473.html#a3f9506819852a7c66e83775f92f95610">tesseract::NeuralNet::in_cnt_</a></div><div class="ttdeci">int in_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00063">neural_net.h:63</a></div></div>
+<div class="ttc" id="a00473_html_a20678924e5cfc8418c51d1199d89b778"><div class="ttname"><a href="a00473.html#a20678924e5cfc8418c51d1199d89b778">tesseract::NeuralNet::ReadBinary</a></div><div class="ttdeci">bool ReadBinary(ReadBuffType *input_buff)</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00106">neural_net.h:106</a></div></div>
+<div class="ttc" id="a00473_html_aacdfeca9c810f9d8beb9438b35a8b93a"><div class="ttname"><a href="a00473.html#aacdfeca9c810f9d8beb9438b35a8b93a">tesseract::NeuralNet::FromFile</a></div><div class="ttdeci">static NeuralNet * FromFile(const string file_name)</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00204">neural_net.cpp:204</a></div></div>
+<div class="ttc" id="a00474_html_aaca04e8e86b6305b6ef5cafa97a69cccabf08baf29ab216392a1f0ad5c439d220"><div class="ttname"><a href="a00474.html#aaca04e8e86b6305b6ef5cafa97a69cccabf08baf29ab216392a1f0ad5c439d220">tesseract::Neuron::Input</a></div><div class="ttdef"><b>Definition:</b> <a href="a01081_source.html#l00029">neuron.h:29</a></div></div>
+<div class="ttc" id="a00474_html_a54f61762c8e4573804bea699ff7b9311"><div class="ttname"><a href="a00474.html#a54f61762c8e4573804bea699ff7b9311">tesseract::Neuron::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> <a href="a01081_source.html#l00037">neuron.h:37</a></div></div>
+<div class="ttc" id="a00474_html_aaca04e8e86b6305b6ef5cafa97a69ccca7763743f69f362cb5e9f885457389f14"><div class="ttname"><a href="a00474.html#aaca04e8e86b6305b6ef5cafa97a69ccca7763743f69f362cb5e9f885457389f14">tesseract::Neuron::Output</a></div><div class="ttdef"><b>Definition:</b> <a href="a01081_source.html#l00031">neuron.h:31</a></div></div>
+<div class="ttc" id="a00475_html"><div class="ttname"><a href="a00475.html">tesseract::NeuralNet::Node</a></div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00052">neural_net.h:52</a></div></div>
+<div class="ttc" id="a00473_html_ae28208349e3d4ad72d1013fc319adc42"><div class="ttname"><a href="a00473.html#ae28208349e3d4ad72d1013fc319adc42">tesseract::NeuralNet::in_cnt</a></div><div class="ttdeci">int in_cnt() const </div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00040">neural_net.h:40</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00473_html_ae260161c01b9d853d9d7ddf114d72ea9"><div class="ttname"><a href="a00473.html#ae260161c01b9d853d9d7ddf114d72ea9">tesseract::NeuralNet::wts_cnt_</a></div><div class="ttdeci">int wts_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00069">neural_net.h:69</a></div></div>
+<div class="ttc" id="a00473_html_a1275c0785ed2bd9725dd39820d4f5fab"><div class="ttname"><a href="a00473.html#a1275c0785ed2bd9725dd39820d4f5fab">tesseract::NeuralNet::FastGetNetOutput</a></div><div class="ttdeci">bool FastGetNetOutput(const Type *inputs, int output_id, Type *output)</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00231">neural_net.cpp:231</a></div></div>
+<div class="ttc" id="a00473_html_aaba48ba8a449a805ef8802ea3308d69d"><div class="ttname"><a href="a00473.html#aaba48ba8a449a805ef8802ea3308d69d">tesseract::NeuralNet::alloc_wgt_cnt_</a></div><div class="ttdeci">int alloc_wgt_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00081">neural_net.h:81</a></div></div>
+<div class="ttc" id="a00474_html_aaca04e8e86b6305b6ef5cafa97a69ccca98cb3df28d5382cccc5471de1a31cc45"><div class="ttname"><a href="a00474.html#aaca04e8e86b6305b6ef5cafa97a69ccca98cb3df28d5382cccc5471de1a31cc45">tesseract::Neuron::Hidden</a></div><div class="ttdef"><b>Definition:</b> <a href="a01081_source.html#l00030">neuron.h:30</a></div></div>
+<div class="ttc" id="a00473_html_ab145f57d5e1244f16a4f6c00a60f01f1"><div class="ttname"><a href="a00473.html#ab145f57d5e1244f16a4f6c00a60f01f1">tesseract::NeuralNet::kNetSignature</a></div><div class="ttdeci">static const unsigned int kNetSignature</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00079">neural_net.h:79</a></div></div>
+<div class="ttc" id="a00473_html_ace41d563521f6f0c07a29f212aec3bab"><div class="ttname"><a href="a00473.html#ace41d563521f6f0c07a29f212aec3bab">tesseract::NeuralNet::kWgtChunkSize</a></div><div class="ttdeci">static const int kWgtChunkSize</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00076">neural_net.h:76</a></div></div>
+<div class="ttc" id="a00473_html_acc363035dc53cc103d2cadaa54333efa"><div class="ttname"><a href="a00473.html#acc363035dc53cc103d2cadaa54333efa">tesseract::NeuralNet::inputs_max_</a></div><div class="ttdeci">vector&lt; float &gt; inputs_max_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00087">neural_net.h:87</a></div></div>
+<div class="ttc" id="a00473_html_a46a5af1940cf873c8cddb2c91e14b121"><div class="ttname"><a href="a00473.html#a46a5af1940cf873c8cddb2c91e14b121">tesseract::NeuralNet::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00034">neural_net.cpp:34</a></div></div>
+<div class="ttc" id="a01081_html"><div class="ttname"><a href="a01081.html">neuron.h</a></div></div>
+<div class="ttc" id="a00473_html_adf52a77999cb8e51a6fa5d4932321a3d"><div class="ttname"><a href="a00473.html#adf52a77999cb8e51a6fa5d4932321a3d">tesseract::NeuralNet::CreateFastNet</a></div><div class="ttdeci">bool CreateFastNet()</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00124">neural_net.cpp:124</a></div></div>
+<div class="ttc" id="a00473_html_a3e1f6cb07479e2e6d9fcb11625a715c1"><div class="ttname"><a href="a00473.html#a3e1f6cb07479e2e6d9fcb11625a715c1">tesseract::NeuralNet::out_cnt_</a></div><div class="ttdeci">int out_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00065">neural_net.h:65</a></div></div>
+<div class="ttc" id="a00474_html_a29d8526568d7b1a5df75065712e03868"><div class="ttname"><a href="a00474.html#a29d8526568d7b1a5df75065712e03868">tesseract::Neuron::set_id</a></div><div class="ttdeci">void set_id(int id)</div><div class="ttdef"><b>Definition:</b> <a href="a01081_source.html#l00111">neuron.h:111</a></div></div>
+<div class="ttc" id="a00473_html_a3772cb00bf4f74adf163fc5705bf1f0d"><div class="ttname"><a href="a00473.html#a3772cb00bf4f74adf163fc5705bf1f0d">tesseract::NeuralNet::neuron_cnt_</a></div><div class="ttdeci">int neuron_cnt_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00067">neural_net.h:67</a></div></div>
+<div class="ttc" id="a00475_html_a5d439cbb4c5fe79c99947974b45dac23"><div class="ttname"><a href="a00475.html#a5d439cbb4c5fe79c99947974b45dac23">tesseract::NeuralNet::Node::out</a></div><div class="ttdeci">float out</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00053">neural_net.h:53</a></div></div>
+<div class="ttc" id="a00474_html_af4e0f355208188f9d6017166153d18f9"><div class="ttname"><a href="a00474.html#af4e0f355208188f9d6017166153d18f9">tesseract::Neuron::set_node_type</a></div><div class="ttdeci">void set_node_type(NeuronTypes type)</div><div class="ttdef"><b>Definition:</b> <a href="a01080_source.html#l00062">neuron.cpp:62</a></div></div>
+<div class="ttc" id="a00474_html"><div class="ttname"><a href="a00474.html">tesseract::Neuron</a></div><div class="ttdef"><b>Definition:</b> <a href="a01081_source.html#l00024">neuron.h:24</a></div></div>
+<div class="ttc" id="a00473_html_a4c89b7940883fa30fc0bdf84ea678a42"><div class="ttname"><a href="a00473.html#a4c89b7940883fa30fc0bdf84ea678a42">tesseract::NeuralNet::FeedForward</a></div><div class="ttdeci">bool FeedForward(const Type *inputs, Type *outputs)</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00079">neural_net.cpp:79</a></div></div>
+<div class="ttc" id="a00473_html_a5f1f4f6112ccabd23612ac70df4ddd23"><div class="ttname"><a href="a00473.html#a5f1f4f6112ccabd23612ac70df4ddd23">tesseract::NeuralNet::out_cnt</a></div><div class="ttdeci">int out_cnt() const </div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00041">neural_net.h:41</a></div></div>
+<div class="ttc" id="a00473_html_a1d4b0e33730cd9ee86916938251719cc"><div class="ttname"><a href="a00473.html#a1d4b0e33730cd9ee86916938251719cc">tesseract::NeuralNet::AllocWgt</a></div><div class="ttdeci">float * AllocWgt(int wgt_cnt)</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00189">neural_net.cpp:189</a></div></div>
+<div class="ttc" id="a00475_html_adf7ec31c578849d8c7b1b95b6a612a6e"><div class="ttname"><a href="a00475.html#adf7ec31c578849d8c7b1b95b6a612a6e">tesseract::NeuralNet::Node::inputs</a></div><div class="ttdeci">WeightedNode * inputs</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00056">neural_net.h:56</a></div></div>
+<div class="ttc" id="a00473_html_a3cec386f2524f71f6ff8221badeaa5d0"><div class="ttname"><a href="a00473.html#a3cec386f2524f71f6ff8221badeaa5d0">tesseract::NeuralNet::SetConnection</a></div><div class="ttdeci">bool SetConnection(int from, int to)</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00112">neural_net.cpp:112</a></div></div>
+<div class="ttc" id="a00473_html_a4bae9fde3b2be515197283b1008bf14c"><div class="ttname"><a href="a00473.html#a4bae9fde3b2be515197283b1008bf14c">tesseract::NeuralNet::FromInputBuffer</a></div><div class="ttdeci">static NeuralNet * FromInputBuffer(InputFileBuffer *ib)</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00213">neural_net.cpp:213</a></div></div>
+<div class="ttc" id="a00473_html_a769b5db25072f73c1f7c57fe6d2142c0"><div class="ttname"><a href="a00473.html#a769b5db25072f73c1f7c57fe6d2142c0">tesseract::NeuralNet::fast_nodes_</a></div><div class="ttdeci">vector&lt; Node &gt; fast_nodes_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00096">neural_net.h:96</a></div></div>
+<div class="ttc" id="a00648_html_a472e041ee5d3bf6f9480601e59710232"><div class="ttname"><a href="a00648.html#a472e041ee5d3bf6f9480601e59710232">tesseract::NeuralNet::WeightedNode::input_node</a></div><div class="ttdeci">Node * input_node</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00047">neural_net.h:47</a></div></div>
+<div class="ttc" id="a00473_html_a45298b08d5c9e41901911b99f0e172ca"><div class="ttname"><a href="a00473.html#a45298b08d5c9e41901911b99f0e172ca">tesseract::NeuralNet::inputs_mean_</a></div><div class="ttdeci">vector&lt; float &gt; inputs_mean_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00091">neural_net.h:91</a></div></div>
+<div class="ttc" id="a00473_html_a4ff353ff0ba717e12507c6a1a909363f"><div class="ttname"><a href="a00473.html#a4ff353ff0ba717e12507c6a1a909363f">tesseract::NeuralNet::neurons_</a></div><div class="ttdeci">Neuron * neurons_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00071">neural_net.h:71</a></div></div>
+<div class="ttc" id="a00473_html_acad221017f155837c316063a76ee3a22"><div class="ttname"><a href="a00473.html#acad221017f155837c316063a76ee3a22">tesseract::NeuralNet::NeuralNet</a></div><div class="ttdeci">NeuralNet()</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00015">neural_net.cpp:15</a></div></div>
+<div class="ttc" id="a00473_html_a6cc1b21c513a3bbd8de7d5435c649048"><div class="ttname"><a href="a00473.html#a6cc1b21c513a3bbd8de7d5435c649048">tesseract::NeuralNet::auto_encoder_</a></div><div class="ttdeci">bool auto_encoder_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00085">neural_net.h:85</a></div></div>
+<div class="ttc" id="a00473_html_aa7b901ea43bae46e569d68f476c7b318"><div class="ttname"><a href="a00473.html#aa7b901ea43bae46e569d68f476c7b318">tesseract::NeuralNet::wts_vec_</a></div><div class="ttdeci">vector&lt; vector&lt; float &gt; * &gt; wts_vec_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00083">neural_net.h:83</a></div></div>
+<div class="ttc" id="a00473_html_a3dc0a81f7c0588aee8aed7e93884d0ea"><div class="ttname"><a href="a00473.html#a3dc0a81f7c0588aee8aed7e93884d0ea">tesseract::NeuralNet::GetNetOutput</a></div><div class="ttdeci">bool GetNetOutput(const Type *inputs, int output_id, Type *output)</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00265">neural_net.cpp:265</a></div></div>
+<div class="ttc" id="a00473_html_a0a0f8a13c536da068fad17a12b39c7b6"><div class="ttname"><a href="a00473.html#a0a0f8a13c536da068fad17a12b39c7b6">tesseract::NeuralNet::~NeuralNet</a></div><div class="ttdeci">virtual ~NeuralNet()</div><div class="ttdef"><b>Definition:</b> <a href="a01078_source.html#l00019">neural_net.cpp:19</a></div></div>
+<div class="ttc" id="a00473_html_aa05bfd6191232cf25b79752fd1a38117"><div class="ttname"><a href="a00473.html#aa05bfd6191232cf25b79752fd1a38117">tesseract::NeuralNet::inputs_min_</a></div><div class="ttdeci">vector&lt; float &gt; inputs_min_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00089">neural_net.h:89</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00473_html_a680ddffcb4d92f115e1a7b8221811a81"><div class="ttname"><a href="a00473.html#a680ddffcb4d92f115e1a7b8221811a81">tesseract::NeuralNet::read_only_</a></div><div class="ttdeci">bool read_only_</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00061">neural_net.h:61</a></div></div>
+<div class="ttc" id="a01077_html"><div class="ttname"><a href="a01077.html">input_file_buffer.h</a></div></div>
+<div class="ttc" id="a00473_html_a63cb2029e14bf27406aa69417128a0bc"><div class="ttname"><a href="a00473.html#a63cb2029e14bf27406aa69417128a0bc">tesseract::NeuralNet::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00100">neural_net.h:100</a></div></div>
+<div class="ttc" id="a00473_html"><div class="ttname"><a href="a00473.html">tesseract::NeuralNet</a></div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00022">neural_net.h:22</a></div></div>
+<div class="ttc" id="a00648_html"><div class="ttname"><a href="a00648.html">tesseract::NeuralNet::WeightedNode</a></div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00046">neural_net.h:46</a></div></div>
+<div class="ttc" id="a00475_html_a6a029f34191d8aa8c06ad77a35e852cb"><div class="ttname"><a href="a00475.html#a6a029f34191d8aa8c06ad77a35e852cb">tesseract::NeuralNet::Node::fan_in_cnt</a></div><div class="ttdeci">int fan_in_cnt</div><div class="ttdef"><b>Definition:</b> <a href="a01079_source.html#l00055">neural_net.h:55</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_93c6ba7fb77bae0709fae89c9c13b44a.html">java</a></li><li class="navelem"><a class="el" href="dir_8a22873406ddef3ffbbc0bacea2033ba.html">com</a></li><li class="navelem"><a class="el" href="dir_6f01889fa69585f5458dd2f93b8129fa.html">google</a></li><li class="navelem"><a class="el" href="dir_9dab79eb97c3c83eca86025a2e1a5568.html">scrollview</a></li><li class="navelem"><a class="el" href="dir_b26288421775315edf6b4822e50b3102.html">ui</a></li><li class="navelem"><a class="el" href="a01079.html">SVEmptyMenuItem.java</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:27 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_120c1c515d3fc0bafd36c83047b8615a.html">neural_networks</a></li><li class="navelem"><a class="el" href="dir_df8063111811a0146a85315f27a6abd6.html">runtime</a></li><li class="navelem"><a class="el" href="a01079.html">neural_net.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:01 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

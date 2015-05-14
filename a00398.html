@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: tesseract::FloatWordFeature Struct Reference</title>
+<title>Tesseract: FPCUTPT Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,39 +106,55 @@ $(document).ready(function(){initNavTree('a00398.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="a01831.html">List of all members</a>  </div>
+<a href="a01585.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">tesseract::FloatWordFeature Struct Reference</div>  </div>
+<div class="title">FPCUTPT Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00773_source.html">imagedata.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a01134_source.html">pithsync.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a819bc7ac848777c20328d51b20aecf73"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a819bc7ac848777c20328d51b20aecf73">FromWordFeatures</a> (const <a class="el" href="a00416.html">GenericVector</a>&lt; <a class="el" href="a00672.html">WordFeature</a> &gt; &amp;word_features, <a class="el" href="a00416.html">GenericVector</a>&lt; <a class="el" href="a00398.html">FloatWordFeature</a> &gt; *float_features)</td></tr>
-<tr class="separator:a819bc7ac848777c20328d51b20aecf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9031e32768652aacc6fb22c4b736168d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a9031e32768652aacc6fb22c4b736168d">SortByXBucket</a> (const void *, const void *)</td></tr>
-<tr class="separator:a9031e32768652aacc6fb22c4b736168d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a112b801da67b531be49c45527dd8c88d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a112b801da67b531be49c45527dd8c88d">FPCUTPT</a> ()</td></tr>
+<tr class="separator:a112b801da67b531be49c45527dd8c88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d31eb6ddd33791a8d52cd25791bdc8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a5d31eb6ddd33791a8d52cd25791bdc8d">setup</a> (<a class="el" href="a00398.html">FPCUTPT</a> cutpts[], <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> array_origin, <a class="el" href="a00560.html">STATS</a> *projection, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> zero_count, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> pitch, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> x, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> offset)</td></tr>
+<tr class="separator:a5d31eb6ddd33791a8d52cd25791bdc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8b03015ca9993673024a22a8dc904e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#ae8b03015ca9993673024a22a8dc904e1">assign</a> (<a class="el" href="a00398.html">FPCUTPT</a> cutpts[], <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> array_origin, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> x, <a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> faking, <a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> mid_cut, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> offset, <a class="el" href="a00560.html">STATS</a> *projection, float projection_scale, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> zero_count, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> pitch, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> pitch_error)</td></tr>
+<tr class="separator:ae8b03015ca9993673024a22a8dc904e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd1de9763c534dd1b1bfb34a71a40bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a4cd1de9763c534dd1b1bfb34a71a40bf">assign_cheap</a> (<a class="el" href="a00398.html">FPCUTPT</a> cutpts[], <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> array_origin, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> x, <a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> faking, <a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> mid_cut, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> offset, <a class="el" href="a00560.html">STATS</a> *projection, float projection_scale, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> zero_count, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> pitch, <a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> pitch_error)</td></tr>
+<tr class="separator:a4cd1de9763c534dd1b1bfb34a71a40bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bd6376f9b5ec6825df3fdb5a7db3d6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a4bd6376f9b5ec6825df3fdb5a7db3d6c">position</a> ()</td></tr>
+<tr class="separator:a4bd6376f9b5ec6825df3fdb5a7db3d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754e205021f03c913ca0aa5b277b1aac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a754e205021f03c913ca0aa5b277b1aac">cost_function</a> ()</td></tr>
+<tr class="separator:a754e205021f03c913ca0aa5b277b1aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14707a25df4ff0c1a5f4a1149d676c18"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a14707a25df4ff0c1a5f4a1149d676c18">squares</a> ()</td></tr>
+<tr class="separator:a14707a25df4ff0c1a5f4a1149d676c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa458ef97a2dfab2d805c5c58acbc2459"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#aa458ef97a2dfab2d805c5c58acbc2459">sum</a> ()</td></tr>
+<tr class="separator:aa458ef97a2dfab2d805c5c58acbc2459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b9cd3fd3e437486e6020d16580fe9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00398.html">FPCUTPT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#af9b9cd3fd3e437486e6020d16580fe9d">previous</a> ()</td></tr>
+<tr class="separator:af9b9cd3fd3e437486e6020d16580fe9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd4586d7d5bfcfc0d59c857c78bd1103"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#abd4586d7d5bfcfc0d59c857c78bd1103">cheap_cuts</a> () const </td></tr>
+<tr class="separator:abd4586d7d5bfcfc0d59c857c78bd1103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948343c0460bfe23f0e43c4ff3085813"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a948343c0460bfe23f0e43c4ff3085813">index</a> () const </td></tr>
+<tr class="separator:a948343c0460bfe23f0e43c4ff3085813"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ab257660c024e63223d8bb28259877066"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#ab257660c024e63223d8bb28259877066">x</a></td></tr>
-<tr class="separator:ab257660c024e63223d8bb28259877066"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cb4bc775b6f580aba236dfe812c12c1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a4cb4bc775b6f580aba236dfe812c12c1">y</a></td></tr>
-<tr class="separator:a4cb4bc775b6f580aba236dfe812c12c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a712ac6a0a88d39821dddfa96c4579c61"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a712ac6a0a88d39821dddfa96c4579c61">dir</a></td></tr>
-<tr class="separator:a712ac6a0a88d39821dddfa96c4579c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e91695be379e28273a23bc0a06b2e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a34e91695be379e28273a23bc0a06b2e1">x_bucket</a></td></tr>
-<tr class="separator:a34e91695be379e28273a23bc0a06b2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aac5202730ed2f48d40d4b5d6a35543"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">faked</a></td></tr>
+<tr class="separator:a1aac5202730ed2f48d40d4b5d6a35543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad85bb77d2c329c43abd41e854183f1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">terminal</a></td></tr>
+<tr class="separator:aad85bb77d2c329c43abd41e854183f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4700de0507676a547b49f7b5b0414b1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a></td></tr>
+<tr class="separator:a4700de0507676a547b49f7b5b0414b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="a00773_source.html#l00071">71</a> of file <a class="el" href="a00773_source.html">imagedata.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a819bc7ac848777c20328d51b20aecf73"></a>
+<p>Definition at line <a class="el" href="a01134_source.html#l00029">29</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a112b801da67b531be49c45527dd8c88d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -146,64 +162,95 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void tesseract::FloatWordFeature::FromWordFeatures </td>
+          <td class="memname">FPCUTPT::FPCUTPT </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00416.html">GenericVector</a>&lt; <a class="el" href="a00672.html">WordFeature</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>word_features</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00416.html">GenericVector</a>&lt; <a class="el" href="a00398.html">FloatWordFeature</a> &gt; *&#160;</td>
-          <td class="paramname"><em>float_features</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00772_source.html#l00085">85</a> of file <a class="el" href="a00772_source.html">imagedata.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                     {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; word_features.<a class="code" href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); ++i) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    FloatWordFeature f;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    f.x = word_features[i].x();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    f.y = word_features[i].y();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    f.dir = word_features[i].dir();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    f.x_bucket = 0;  <span class="comment">// Will set it later.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    float_features-&gt;<a class="code" href="a00416.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(f);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="ttc" id="a00416_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00416.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00072">genericvector.h:72</a></div></div>
-<div class="ttc" id="a00416_html_a0dc89fe2a365b04a61017f9d78c1a303"><div class="ttname"><a href="a00416.html#a0dc89fe2a365b04a61017f9d78c1a303">GenericVector::push_back</a></div><div class="ttdeci">int push_back(T object)</div><div class="ttdef"><b>Definition:</b> <a href="a00849_source.html#l00737">genericvector.h:737</a></div></div>
+<p>Definition at line <a class="el" href="a01134_source.html#l00032">32</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;              {  <span class="comment">//empty</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a9031e32768652aacc6fb22c4b736168d"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae8b03015ca9993673024a22a8dc904e1"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int tesseract::FloatWordFeature::SortByXBucket </td>
+          <td class="memname">void FPCUTPT::assign </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>v1</em>, </td>
+          <td class="paramtype"><a class="el" href="a00398.html">FPCUTPT</a>&#160;</td>
+          <td class="paramname"><em>cutpts</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>v2</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>array_origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td>
+          <td class="paramname"><em>faking</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td>
+          <td class="paramname"><em>mid_cut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00560.html">STATS</a> *&#160;</td>
+          <td class="paramname"><em>projection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>projection_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>zero_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>pitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>pitch_error</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -211,92 +258,639 @@ Public Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01133_source.html#l00098">98</a> of file <a class="el" href="a01133_source.html">pithsync.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                      {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00398.html#a948343c0460bfe23f0e43c4ff3085813">index</a>;                     <span class="comment">//test index</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">int</span> balance_index;             <span class="comment">//for balance factor</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> balance_count;           <span class="comment">//ding factor</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> r_index;                 <span class="comment">//test cut number</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="a00398.html">FPCUTPT</a> *segpt;                <span class="comment">//segment point</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> dist;                    <span class="comment">//from prev segment</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">double</span> sq_dist;                <span class="comment">//squared distance</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">double</span> mean;                   <span class="comment">//mean pitch</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">double</span> total;                  <span class="comment">//total dists</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">double</span> factor;                 <span class="comment">//cost function</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                 <span class="comment">//half of pitch</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> half_pitch = pitch / 2 - 1;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a> lead_flag;              <span class="comment">//new flag</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span> (half_pitch &gt; 31)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    half_pitch = 31;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (half_pitch &lt; 0)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    half_pitch = 0;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  lead_flag = 1 &lt;&lt; half_pitch;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  back_balance = cutpts[x - 1 - array_origin].back_balance &lt;&lt; 1;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  back_balance &amp;= lead_flag + lead_flag - 1;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordflow">if</span> (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (x) &gt; zero_count)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    back_balance |= 1;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  fwd_balance = cutpts[x - 1 - array_origin].fwd_balance &gt;&gt; 1;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">if</span> (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (x + half_pitch) &gt; zero_count)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    fwd_balance |= lead_flag;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  xpos = x;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  cost = <a class="code" href="a00835.html#a9adcee815220ec9db98062213806ed04">MAX_FLOAT32</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  pred = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <a class="code" href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">faked</a> = faking;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <a class="code" href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">terminal</a> = <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  region_index = 0;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> = <a class="code" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordflow">for</span> (index = x - pitch - pitch_error; index &lt;= x - pitch + pitch_error;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  index++) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (index &gt;= array_origin) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      segpt = &amp;cutpts[index - array_origin];</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      dist = x - segpt-&gt;xpos;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <span class="keywordflow">if</span> (!segpt-&gt;<a class="code" href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">terminal</a> &amp;&amp; segpt-&gt;<a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> &lt; <a class="code" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a>) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        balance_count = 0;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="a01155.html#a4947d03ccf04e88e01e038f5549e37de">textord_balance_factor</a> &gt; 0) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="a01155.html#ac49ca21c7dc420fa93fbc24dd37b56c7">textord_fast_pitch_test</a>) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            lead_flag = back_balance ^ segpt-&gt;fwd_balance;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            balance_count = 0;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">while</span> (lead_flag != 0) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;              balance_count++;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;              lead_flag &amp;= lead_flag - 1;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;          }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;          <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">for</span> (balance_index = 0;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;              index + balance_index &lt; x - balance_index;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;              balance_index++)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            balance_count +=</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (index + balance_index) &lt;=</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                zero_count) ^ (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (x -</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                balance_index)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                &lt;= zero_count);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;          }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;          balance_count =</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            (<a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>) (balance_count * <a class="code" href="a01155.html#a4947d03ccf04e88e01e038f5549e37de">textord_balance_factor</a> /</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            projection_scale);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        r_index = segpt-&gt;region_index + 1;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        total = segpt-&gt;mean_sum + dist;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        balance_count += offset;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        sq_dist =</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;          dist * dist + segpt-&gt;sq_sum + balance_count * balance_count;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        mean = total / r_index;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        factor = mean - pitch;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        factor *= factor;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        factor += sq_dist / (r_index) - mean * mean;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">if</span> (factor &lt; cost &amp;&amp; segpt-&gt;<a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> + <a class="code" href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">faked</a> &lt;= <a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a>) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;          cost = factor;         <span class="comment">//find least cost</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;          pred = segpt;          <span class="comment">//save path</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;          mean_sum = total;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;          sq_sum = sq_dist;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;          <a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> = segpt-&gt;<a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> + <a class="code" href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">faked</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;          mid_cuts = segpt-&gt;mid_cuts + mid_cut;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;          region_index = r_index;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="ttc" id="a00398_html_a1aac5202730ed2f48d40d4b5d6a35543"><div class="ttname"><a href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">FPCUTPT::faked</a></div><div class="ttdeci">BOOL8 faked</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00091">pithsync.h:91</a></div></div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00835_html_a3905e54374e49708219791e7d59c60fb"><div class="ttname"><a href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></div><div class="ttdeci">#define MAX_INT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00119">host.h:119</a></div></div>
+<div class="ttc" id="a00835_html_a9adcee815220ec9db98062213806ed04"><div class="ttname"><a href="a00835.html#a9adcee815220ec9db98062213806ed04">MAX_FLOAT32</a></div><div class="ttdeci">#define MAX_FLOAT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00124">host.h:124</a></div></div>
+<div class="ttc" id="a00398_html_a4700de0507676a547b49f7b5b0414b1b"><div class="ttname"><a href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">FPCUTPT::fake_count</a></div><div class="ttdeci">inT16 fake_count</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00093">pithsync.h:93</a></div></div>
+<div class="ttc" id="a00560_html_a4a3a320660e2092eeaa605df70bea8ea"><div class="ttname"><a href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">STATS::pile_count</a></div><div class="ttdeci">inT32 pile_count(inT32 value) const </div><div class="ttdef"><b>Definition:</b> <a href="a00802_source.html#l00078">statistc.h:78</a></div></div>
+<div class="ttc" id="a00398_html_aad85bb77d2c329c43abd41e854183f1d"><div class="ttname"><a href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">FPCUTPT::terminal</a></div><div class="ttdeci">BOOL8 terminal</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00092">pithsync.h:92</a></div></div>
+<div class="ttc" id="a01155_html_ac49ca21c7dc420fa93fbc24dd37b56c7"><div class="ttname"><a href="a01155.html#ac49ca21c7dc420fa93fbc24dd37b56c7">textord_fast_pitch_test</a></div><div class="ttdeci">EXTERN bool textord_fast_pitch_test</div><div class="ttdef"><b>Definition:</b> <a href="a01155_source.html#l00048">topitch.cpp:48</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00398_html"><div class="ttname"><a href="a00398.html">FPCUTPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00029">pithsync.h:29</a></div></div>
+<div class="ttc" id="a00835_html_afc8530b39ebe0b6df1e19159d2508d15"><div class="ttname"><a href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a></div><div class="ttdeci">unsigned int uinT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00103">host.h:103</a></div></div>
+<div class="ttc" id="a00398_html_a948343c0460bfe23f0e43c4ff3085813"><div class="ttname"><a href="a00398.html#a948343c0460bfe23f0e43c4ff3085813">FPCUTPT::index</a></div><div class="ttdeci">inT16 index() const </div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00087">pithsync.h:87</a></div></div>
+<div class="ttc" id="a01155_html_a4947d03ccf04e88e01e038f5549e37de"><div class="ttname"><a href="a01155.html#a4947d03ccf04e88e01e038f5549e37de">textord_balance_factor</a></div><div class="ttdeci">EXTERN double textord_balance_factor</div><div class="ttdef"><b>Definition:</b> <a href="a01155_source.html#l00059">topitch.cpp:59</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4cd1de9763c534dd1b1bfb34a71a40bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FPCUTPT::assign_cheap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00398.html">FPCUTPT</a>&#160;</td>
+          <td class="paramname"><em>cutpts</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>array_origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td>
+          <td class="paramname"><em>faking</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td>
+          <td class="paramname"><em>mid_cut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00560.html">STATS</a> *&#160;</td>
+          <td class="paramname"><em>projection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>projection_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>zero_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>pitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>pitch_error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01133_source.html#l00206">206</a> of file <a class="el" href="a01133_source.html">pithsync.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                            {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00398.html#a948343c0460bfe23f0e43c4ff3085813">index</a>;                     <span class="comment">//test index</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> balance_count;           <span class="comment">//ding factor</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> r_index;                 <span class="comment">//test cut number</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <a class="code" href="a00398.html">FPCUTPT</a> *segpt;                <span class="comment">//segment point</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> dist;                    <span class="comment">//from prev segment</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordtype">double</span> sq_dist;                <span class="comment">//squared distance</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keywordtype">double</span> mean;                   <span class="comment">//mean pitch</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordtype">double</span> total;                  <span class="comment">//total dists</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">double</span> factor;                 <span class="comment">//cost function</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                 <span class="comment">//half of pitch</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> half_pitch = pitch / 2 - 1;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <a class="code" href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a> lead_flag;              <span class="comment">//new flag</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span> (half_pitch &gt; 31)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    half_pitch = 31;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (half_pitch &lt; 0)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    half_pitch = 0;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  lead_flag = 1 &lt;&lt; half_pitch;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  back_balance = cutpts[x - 1 - array_origin].back_balance &lt;&lt; 1;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  back_balance &amp;= lead_flag + lead_flag - 1;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordflow">if</span> (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (x) &gt; zero_count)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    back_balance |= 1;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  fwd_balance = cutpts[x - 1 - array_origin].fwd_balance &gt;&gt; 1;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordflow">if</span> (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (x + half_pitch) &gt; zero_count)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    fwd_balance |= lead_flag;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  xpos = x;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  cost = <a class="code" href="a00835.html#a9adcee815220ec9db98062213806ed04">MAX_FLOAT32</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  pred = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <a class="code" href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">faked</a> = faking;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <a class="code" href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">terminal</a> = <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  region_index = 0;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> = <a class="code" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  index = x - pitch;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keywordflow">if</span> (index &gt;= array_origin) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    segpt = &amp;cutpts[index - array_origin];</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    dist = x - segpt-&gt;xpos;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (!segpt-&gt;<a class="code" href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">terminal</a> &amp;&amp; segpt-&gt;<a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> &lt; <a class="code" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a>) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      balance_count = 0;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a01155.html#a4947d03ccf04e88e01e038f5549e37de">textord_balance_factor</a> &gt; 0) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        lead_flag = back_balance ^ segpt-&gt;fwd_balance;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        balance_count = 0;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">while</span> (lead_flag != 0) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;          balance_count++;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;          lead_flag &amp;= lead_flag - 1;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        balance_count = (<a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>) (balance_count * <a class="code" href="a01155.html#a4947d03ccf04e88e01e038f5549e37de">textord_balance_factor</a></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;          / projection_scale);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      r_index = segpt-&gt;region_index + 1;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      total = segpt-&gt;mean_sum + dist;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      balance_count += offset;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      sq_dist =</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        dist * dist + segpt-&gt;sq_sum + balance_count * balance_count;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      mean = total / r_index;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      factor = mean - pitch;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      factor *= factor;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      factor += sq_dist / (r_index) - mean * mean;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      cost = factor;             <span class="comment">//find least cost</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;      pred = segpt;              <span class="comment">//save path</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      mean_sum = total;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      sq_sum = sq_dist;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> = segpt-&gt;<a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> + <a class="code" href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">faked</a>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      mid_cuts = segpt-&gt;mid_cuts + mid_cut;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      region_index = r_index;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
+<div class="ttc" id="a00398_html_a1aac5202730ed2f48d40d4b5d6a35543"><div class="ttname"><a href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">FPCUTPT::faked</a></div><div class="ttdeci">BOOL8 faked</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00091">pithsync.h:91</a></div></div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00835_html_a3905e54374e49708219791e7d59c60fb"><div class="ttname"><a href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></div><div class="ttdeci">#define MAX_INT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00119">host.h:119</a></div></div>
+<div class="ttc" id="a00835_html_a9adcee815220ec9db98062213806ed04"><div class="ttname"><a href="a00835.html#a9adcee815220ec9db98062213806ed04">MAX_FLOAT32</a></div><div class="ttdeci">#define MAX_FLOAT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00124">host.h:124</a></div></div>
+<div class="ttc" id="a00398_html_a4700de0507676a547b49f7b5b0414b1b"><div class="ttname"><a href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">FPCUTPT::fake_count</a></div><div class="ttdeci">inT16 fake_count</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00093">pithsync.h:93</a></div></div>
+<div class="ttc" id="a00560_html_a4a3a320660e2092eeaa605df70bea8ea"><div class="ttname"><a href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">STATS::pile_count</a></div><div class="ttdeci">inT32 pile_count(inT32 value) const </div><div class="ttdef"><b>Definition:</b> <a href="a00802_source.html#l00078">statistc.h:78</a></div></div>
+<div class="ttc" id="a00398_html_aad85bb77d2c329c43abd41e854183f1d"><div class="ttname"><a href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">FPCUTPT::terminal</a></div><div class="ttdeci">BOOL8 terminal</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00092">pithsync.h:92</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00398_html"><div class="ttname"><a href="a00398.html">FPCUTPT</a></div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00029">pithsync.h:29</a></div></div>
+<div class="ttc" id="a00835_html_afc8530b39ebe0b6df1e19159d2508d15"><div class="ttname"><a href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a></div><div class="ttdeci">unsigned int uinT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00103">host.h:103</a></div></div>
+<div class="ttc" id="a00398_html_a948343c0460bfe23f0e43c4ff3085813"><div class="ttname"><a href="a00398.html#a948343c0460bfe23f0e43c4ff3085813">FPCUTPT::index</a></div><div class="ttdeci">inT16 index() const </div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00087">pithsync.h:87</a></div></div>
+<div class="ttc" id="a01155_html_a4947d03ccf04e88e01e038f5549e37de"><div class="ttname"><a href="a01155.html#a4947d03ccf04e88e01e038f5549e37de">textord_balance_factor</a></div><div class="ttdeci">EXTERN double textord_balance_factor</div><div class="ttdef"><b>Definition:</b> <a href="a01155_source.html#l00059">topitch.cpp:59</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="abd4586d7d5bfcfc0d59c857c78bd1103"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> FPCUTPT::cheap_cuts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00772_source.html#l00100">100</a> of file <a class="el" href="a00772_source.html">imagedata.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keyword">const</span> FloatWordFeature* f1 = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>FloatWordFeature*<span class="keyword">&gt;</span>(v1);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">const</span> FloatWordFeature* f2 = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>FloatWordFeature*<span class="keyword">&gt;</span>(v2);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">int</span> x_diff = f1-&gt;x_bucket - f2-&gt;x_bucket;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">if</span> (x_diff == 0) <span class="keywordflow">return</span> f1-&gt;y - f2-&gt;y;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">return</span> x_diff;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<p>Definition at line <a class="el" href="a01134_source.html#l00084">84</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                             {  <span class="comment">//no of mi cuts</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordflow">return</span> mid_cuts;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a754e205021f03c913ca0aa5b277b1aac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double FPCUTPT::cost_function </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01134_source.html#l00072">72</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                           {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordflow">return</span> cost;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a948343c0460bfe23f0e43c4ff3085813"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> FPCUTPT::index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01134_source.html#l00087">87</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keywordflow">return</span> region_index;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4bd6376f9b5ec6825df3fdb5a7db3d6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> FPCUTPT::position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01134_source.html#l00069">69</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                     {  <span class="comment">//acces func</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">return</span> xpos;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af9b9cd3fd3e437486e6020d16580fe9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00398.html">FPCUTPT</a>* FPCUTPT::previous </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01134_source.html#l00081">81</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordflow">return</span> pred;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5d31eb6ddd33791a8d52cd25791bdc8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FPCUTPT::setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00398.html">FPCUTPT</a>&#160;</td>
+          <td class="paramname"><em>cutpts</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>array_origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00560.html">STATS</a> *&#160;</td>
+          <td class="paramname"><em>projection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>zero_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>pitch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01133_source.html#l00041">41</a> of file <a class="el" href="a01133_source.html">pithsync.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                     {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                 <span class="comment">//half of pitch</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> half_pitch = pitch / 2 - 1;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a> lead_flag;              <span class="comment">//new flag</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> ind;                     <span class="comment">//current position</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (half_pitch &gt; 31)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    half_pitch = 31;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (half_pitch &lt; 0)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    half_pitch = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  lead_flag = 1 &lt;&lt; half_pitch;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  pred = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  mean_sum = 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  sq_sum = offset * offset;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  cost = sq_sum;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">faked</a> = <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">terminal</a> = <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">fake_count</a> = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  xpos = x;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  region_index = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  mid_cuts = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> (x == array_origin) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    back_balance = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    fwd_balance = 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (ind = 0; ind &lt;= half_pitch; ind++) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      fwd_balance &gt;&gt;= 1;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">if</span> (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (ind) &gt; zero_count)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        fwd_balance |= lead_flag;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    back_balance = cutpts[x - 1 - array_origin].back_balance &lt;&lt; 1;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    back_balance &amp;= lead_flag + lead_flag - 1;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (x) &gt; zero_count)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      back_balance |= 1;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    fwd_balance = cutpts[x - 1 - array_origin].fwd_balance &gt;&gt; 1;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (projection-&gt;<a class="code" href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">pile_count</a> (x + half_pitch) &gt; zero_count)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      fwd_balance |= lead_flag;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="ttc" id="a00398_html_a1aac5202730ed2f48d40d4b5d6a35543"><div class="ttname"><a href="a00398.html#a1aac5202730ed2f48d40d4b5d6a35543">FPCUTPT::faked</a></div><div class="ttdeci">BOOL8 faked</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00091">pithsync.h:91</a></div></div>
+<div class="ttc" id="a00835_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00835.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00102">host.h:102</a></div></div>
+<div class="ttc" id="a00398_html_a4700de0507676a547b49f7b5b0414b1b"><div class="ttname"><a href="a00398.html#a4700de0507676a547b49f7b5b0414b1b">FPCUTPT::fake_count</a></div><div class="ttdeci">inT16 fake_count</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00093">pithsync.h:93</a></div></div>
+<div class="ttc" id="a00560_html_a4a3a320660e2092eeaa605df70bea8ea"><div class="ttname"><a href="a00560.html#a4a3a320660e2092eeaa605df70bea8ea">STATS::pile_count</a></div><div class="ttdeci">inT32 pile_count(inT32 value) const </div><div class="ttdef"><b>Definition:</b> <a href="a00802_source.html#l00078">statistc.h:78</a></div></div>
+<div class="ttc" id="a00398_html_aad85bb77d2c329c43abd41e854183f1d"><div class="ttname"><a href="a00398.html#aad85bb77d2c329c43abd41e854183f1d">FPCUTPT::terminal</a></div><div class="ttdeci">BOOL8 terminal</div><div class="ttdef"><b>Definition:</b> <a href="a01134_source.html#l00092">pithsync.h:92</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00835_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00100">host.h:100</a></div></div>
+<div class="ttc" id="a00835_html_afc8530b39ebe0b6df1e19159d2508d15"><div class="ttname"><a href="a00835.html#afc8530b39ebe0b6df1e19159d2508d15">uinT32</a></div><div class="ttdeci">unsigned int uinT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00103">host.h:103</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a14707a25df4ff0c1a5f4a1149d676c18"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double FPCUTPT::squares </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01134_source.html#l00075">75</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                     {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">return</span> sq_sum;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa458ef97a2dfab2d805c5c58acbc2459"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double FPCUTPT::sum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01134_source.html#l00078">78</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                 {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">return</span> mean_sum;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a712ac6a0a88d39821dddfa96c4579c61"></a>
+<a class="anchor" id="a4700de0507676a547b49f7b5b0414b1b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float tesseract::FloatWordFeature::dir</td>
+          <td class="memname"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> FPCUTPT::fake_count</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00773_source.html#l00079">79</a> of file <a class="el" href="a00773_source.html">imagedata.h</a>.</p>
+<p>Definition at line <a class="el" href="a01134_source.html#l00093">93</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab257660c024e63223d8bb28259877066"></a>
+<a class="anchor" id="a1aac5202730ed2f48d40d4b5d6a35543"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float tesseract::FloatWordFeature::x</td>
+          <td class="memname"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> FPCUTPT::faked</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00773_source.html#l00077">77</a> of file <a class="el" href="a00773_source.html">imagedata.h</a>.</p>
+<p>Definition at line <a class="el" href="a01134_source.html#l00091">91</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a34e91695be379e28273a23bc0a06b2e1"></a>
+<a class="anchor" id="aad85bb77d2c329c43abd41e854183f1d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int tesseract::FloatWordFeature::x_bucket</td>
+          <td class="memname"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> FPCUTPT::terminal</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00773_source.html#l00080">80</a> of file <a class="el" href="a00773_source.html">imagedata.h</a>.</p>
+<p>Definition at line <a class="el" href="a01134_source.html#l00092">92</a> of file <a class="el" href="a01134_source.html">pithsync.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a4cb4bc775b6f580aba236dfe812c12c1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float tesseract::FloatWordFeature::y</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00773_source.html#l00078">78</a> of file <a class="el" href="a00773_source.html">imagedata.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>ccstruct/<a class="el" href="a00773_source.html">imagedata.h</a></li>
-<li>ccstruct/<a class="el" href="a00772_source.html">imagedata.cpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>textord/<a class="el" href="a01134_source.html">pithsync.h</a></li>
+<li>textord/<a class="el" href="a01133_source.html">pithsync.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a01279.html">tesseract</a></li><li class="navelem"><a class="el" href="a00398.html">FloatWordFeature</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:52 for Tesseract by
+    <li class="navelem"><a class="el" href="a00398.html">FPCUTPT</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:20 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

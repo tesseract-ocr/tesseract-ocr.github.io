@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: api/apitypes.h File Reference</title>
+<title>Tesseract: ccmain/docqual.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,20 +104,138 @@ $(document).ready(function(){initNavTree('a00680.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">apitypes.h File Reference</div>  </div>
+<div class="title">docqual.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00804_source.html">publictypes.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00673_source.html">control.h</a>&quot;</code><br />
 </div>
 <p><a href="a00680_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac4a411895d63e3bb0bea788e92894d42"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42">GARBAGE_LEVEL</a> { <a class="el" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751">G_NEVER_CRUNCH</a>, 
+<a class="el" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3">G_OK</a>, 
+<a class="el" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a">G_DODGY</a>, 
+<a class="el" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad">G_TERRIBLE</a>
+ }</td></tr>
+<tr class="separator:ac4a411895d63e3bb0bea788e92894d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a12872e741b5d325f549aa9e65972bfdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00680.html#a12872e741b5d325f549aa9e65972bfdc">word_blob_quality</a> (<a class="el" href="a00651.html">WERD_RES</a> *word, <a class="el" href="a00525.html">ROW</a> *row)</td></tr>
+<tr class="separator:a12872e741b5d325f549aa9e65972bfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9934928e2b953ee5e91abb58cf043f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00680.html#a1b9934928e2b953ee5e91abb58cf043f">reject_whole_page</a> (<a class="el" href="a00486.html">PAGE_RES_IT</a> &amp;page_res_it)</td></tr>
+<tr class="separator:a1b9934928e2b953ee5e91abb58cf043f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ac4a411895d63e3bb0bea788e92894d42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42">GARBAGE_LEVEL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751"></a>G_NEVER_CRUNCH&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3"></a>G_OK&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a"></a>G_DODGY&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad"></a>G_TERRIBLE&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00680_source.html#l00025">25</a> of file <a class="el" href="a00680_source.html">docqual.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751">G_NEVER_CRUNCH</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3">G_OK</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a">G_DODGY</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad">G_TERRIBLE</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a">G_DODGY</a></div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00029">docqual.h:29</a></div></div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad">G_TERRIBLE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00030">docqual.h:30</a></div></div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751">G_NEVER_CRUNCH</a></div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00027">docqual.h:27</a></div></div>
+<div class="ttc" id="a00680_html_ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3"><div class="ttname"><a href="a00680.html#ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3">G_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="a00680_source.html#l00028">docqual.h:28</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a1b9934928e2b953ee5e91abb58cf043f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reject_whole_page </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00486.html">PAGE_RES_IT</a> &amp;&#160;</td>
+          <td class="paramname"><em>page_res_it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00679_source.html#l00410">410</a> of file <a class="el" href="a00679_source.html">docqual.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                                 {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  page_res_it.<a class="code" href="a00486.html#a15febd45d0904bb3c5f7d506368177f0">restart_page</a> ();</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  <span class="keywordflow">while</span> (page_res_it.<a class="code" href="a00486.html#ab84b4850200ba8802791c6197c113fd0">word</a> () != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    page_res_it.<a class="code" href="a00486.html#ab84b4850200ba8802791c6197c113fd0">word</a> ()-&gt;<a class="code" href="a00651.html#ae24eb58be06cf275aee411d947fd31ef">reject_map</a>.<a class="code" href="a00521.html#a9fb4a691f24ea06370b55650c197db8b">rej_word_doc_rej</a> ();</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    page_res_it.<a class="code" href="a00486.html#ab29005f235cc738eebafb7d9ed6fe70b">forward</a> ();</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                 <span class="comment">//whole page is rejected</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  page_res_it.<a class="code" href="a00486.html#aab221a373111c4be685444b5633e22a5">page_res</a>-&gt;<a class="code" href="a00485.html#a65ed9c199c2ef8b3dc464225ad893e7d">rejected</a> = <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+<div class="ttc" id="a00521_html_a9fb4a691f24ea06370b55650c197db8b"><div class="ttname"><a href="a00521.html#a9fb4a691f24ea06370b55650c197db8b">REJMAP::rej_word_doc_rej</a></div><div class="ttdeci">void rej_word_doc_rej()</div><div class="ttdef"><b>Definition:</b> <a href="a00795_source.html#l00497">rejctmap.cpp:497</a></div></div>
+<div class="ttc" id="a00486_html_ab29005f235cc738eebafb7d9ed6fe70b"><div class="ttname"><a href="a00486.html#ab29005f235cc738eebafb7d9ed6fe70b">PAGE_RES_IT::forward</a></div><div class="ttdeci">WERD_RES * forward()</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00710">pageres.h:710</a></div></div>
+<div class="ttc" id="a00486_html_a15febd45d0904bb3c5f7d506368177f0"><div class="ttname"><a href="a00486.html#a15febd45d0904bb3c5f7d506368177f0">PAGE_RES_IT::restart_page</a></div><div class="ttdeci">WERD_RES * restart_page()</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00681">pageres.h:681</a></div></div>
+<div class="ttc" id="a00486_html_aab221a373111c4be685444b5633e22a5"><div class="ttname"><a href="a00486.html#aab221a373111c4be685444b5633e22a5">PAGE_RES_IT::page_res</a></div><div class="ttdeci">PAGE_RES * page_res</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00659">pageres.h:659</a></div></div>
+<div class="ttc" id="a00486_html_ab84b4850200ba8802791c6197c113fd0"><div class="ttname"><a href="a00486.html#ab84b4850200ba8802791c6197c113fd0">PAGE_RES_IT::word</a></div><div class="ttdeci">WERD_RES * word() const </div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00730">pageres.h:730</a></div></div>
+<div class="ttc" id="a00651_html_ae24eb58be06cf275aee411d947fd31ef"><div class="ttname"><a href="a00651.html#ae24eb58be06cf275aee411d947fd31ef">WERD_RES::reject_map</a></div><div class="ttdeci">REJMAP reject_map</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00271">pageres.h:271</a></div></div>
+<div class="ttc" id="a00665_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00028">capi.h:28</a></div></div>
+<div class="ttc" id="a00485_html_a65ed9c199c2ef8b3dc464225ad893e7d"><div class="ttname"><a href="a00485.html#a65ed9c199c2ef8b3dc464225ad893e7d">PAGE_RES::rejected</a></div><div class="ttdeci">BOOL8 rejected</div><div class="ttdef"><b>Definition:</b> <a href="a00773_source.html#l00063">pageres.h:63</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a12872e741b5d325f549aa9e65972bfdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> word_blob_quality </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00651.html">WERD_RES</a> *&#160;</td>
+          <td class="paramname"><em>word</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00525.html">ROW</a> *&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_0188a3e6da905bc60aceb35bf790b8c9.html">api</a></li><li class="navelem"><a class="el" href="a00680.html">apitypes.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:32 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00680.html">docqual.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

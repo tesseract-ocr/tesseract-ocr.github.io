@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: classify/classify.h File Reference</title>
+<title>Tesseract: classify/fpoint.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,54 +106,325 @@ $(document).ready(function(){initNavTree('a00901.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">classify.h File Reference</div>  </div>
+<div class="title">fpoint.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00896_source.html">adaptive.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00759_source.html">ccstruct.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00901_source.html">classify.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01065_source.html">dict.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00911_source.html">featdefs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00768_source.html">fontinfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00773_source.html">imagedata.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00923_source.html">intfx.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00925_source.html">intmatcher.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00782_source.html">normalis.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00811_source.html">ratngs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00945_source.html">ocrfeatures.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00890_source.html">unicity_table.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00835_source.html">host.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 </div>
 <p><a href="a00901_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00319.html">tesseract::Classify</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00399.html">FPOINT</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3882f9c0c6c99c9bf796113a1524cba1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00901.html#a3882f9c0c6c99c9bf796113a1524cba1">XDelta</a>(A, B)&#160;&#160;&#160;( (B).x - (A).x )</td></tr>
+<tr class="separator:a3882f9c0c6c99c9bf796113a1524cba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeec3d0313052da8c1e239e64acaf5cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00901.html#abeec3d0313052da8c1e239e64acaf5cd">YDelta</a>(A, B)&#160;&#160;&#160;( (B).y - (A).y )</td></tr>
+<tr class="separator:abeec3d0313052da8c1e239e64acaf5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ad172446a82a07957b8178462b04ba8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00901.html#a6ad172446a82a07957b8178462b04ba8">SlopeFrom</a>(A, B)&#160;&#160;&#160;( <a class="el" href="a00901.html#abeec3d0313052da8c1e239e64acaf5cd">YDelta</a>(A,B) / <a class="el" href="a00901.html#a3882f9c0c6c99c9bf796113a1524cba1">XDelta</a>(A,B) )</td></tr>
+<tr class="separator:a6ad172446a82a07957b8178462b04ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2882d6616a94607705192ca8c484764"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00901.html#ab2882d6616a94607705192ca8c484764">AngleFrom</a>(A, B)</td></tr>
+<tr class="separator:ab2882d6616a94607705192ca8c484764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf93aa070cb235911892bf5e1b60195d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00901.html#aaf93aa070cb235911892bf5e1b60195d">XIntersectionOf</a>(A, B, X)&#160;&#160;&#160;( <a class="el" href="a00901.html#a6ad172446a82a07957b8178462b04ba8">SlopeFrom</a>(A,B) * ((X) - A.x) + A.y)</td></tr>
+<tr class="separator:aaf93aa070cb235911892bf5e1b60195d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:afe12112c1ca56d41c919d0f18dfdf240"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#afe12112c1ca56d41c919d0f18dfdf240">tesseract::CharSegmentationType</a> { <a class="el" href="a01279.html#afe12112c1ca56d41c919d0f18dfdf240af7f038dab34772b9ddb631d46aa4126a">tesseract::CST_FRAGMENT</a>, 
-<a class="el" href="a01279.html#afe12112c1ca56d41c919d0f18dfdf240ab74e41d8efe1a9beae832eb1652096f5">tesseract::CST_WHOLE</a>, 
-<a class="el" href="a01279.html#afe12112c1ca56d41c919d0f18dfdf240a9395c1832262d72b28dd6461c334f207">tesseract::CST_IMPROPER</a>, 
-<a class="el" href="a01279.html#afe12112c1ca56d41c919d0f18dfdf240a9757169f767169fe9fea1f62ab9ba17b">tesseract::CST_NGRAM</a>
- }</td></tr>
-<tr class="separator:afe12112c1ca56d41c919d0f18dfdf240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a3d398dd5922881df2b8e277a72dbd4fd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00399.html">FPOINT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00901.html#a3d398dd5922881df2b8e277a72dbd4fd">FVECTOR</a></td></tr>
+<tr class="separator:a3d398dd5922881df2b8e277a72dbd4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a415c805f668844bd4e652968a7978c41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00901.html#a415c805f668844bd4e652968a7978c41">DistanceBetween</a> (<a class="el" href="a00399.html">FPOINT</a> A, <a class="el" href="a00399.html">FPOINT</a> B)</td></tr>
+<tr class="separator:a415c805f668844bd4e652968a7978c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d002c6db7589a73c3fcc0f2e80ad80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00901.html#a64d002c6db7589a73c3fcc0f2e80ad80">NormalizedAngleFrom</a> (<a class="el" href="a00399.html">FPOINT</a> *Point1, <a class="el" href="a00399.html">FPOINT</a> *Point2, <a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> FullScale)</td></tr>
+<tr class="separator:a64d002c6db7589a73c3fcc0f2e80ad80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ab2882d6616a94607705192ca8c484764"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AngleFrom</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">( atan2((<span class="keywordtype">double</span>) <a class="code" href="a00901.html#abeec3d0313052da8c1e239e64acaf5cd">YDelta</a>(A,B),           \</div>
+<div class="line">                                        (<span class="keywordtype">double</span>) <a class="code" href="a00901.html#a3882f9c0c6c99c9bf796113a1524cba1">XDelta</a>(A,B) ) )</div>
+<div class="ttc" id="a00901_html_a3882f9c0c6c99c9bf796113a1524cba1"><div class="ttname"><a href="a00901.html#a3882f9c0c6c99c9bf796113a1524cba1">XDelta</a></div><div class="ttdeci">#define XDelta(A, B)</div><div class="ttdef"><b>Definition:</b> <a href="a00901_source.html#l00039">fpoint.h:39</a></div></div>
+<div class="ttc" id="a00901_html_abeec3d0313052da8c1e239e64acaf5cd"><div class="ttname"><a href="a00901.html#abeec3d0313052da8c1e239e64acaf5cd">YDelta</a></div><div class="ttdeci">#define YDelta(A, B)</div><div class="ttdef"><b>Definition:</b> <a href="a00901_source.html#l00040">fpoint.h:40</a></div></div>
+</div><!-- fragment -->
+<p>Definition at line <a class="el" href="a00901_source.html#l00042">42</a> of file <a class="el" href="a00901_source.html">fpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ad172446a82a07957b8178462b04ba8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SlopeFrom</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="a00901.html#abeec3d0313052da8c1e239e64acaf5cd">YDelta</a>(A,B) / <a class="el" href="a00901.html#a3882f9c0c6c99c9bf796113a1524cba1">XDelta</a>(A,B) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00901_source.html#l00041">41</a> of file <a class="el" href="a00901_source.html">fpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3882f9c0c6c99c9bf796113a1524cba1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XDelta</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( (B).x - (A).x )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<hr/>
+ <h2>Macros </h2>
+
+<p>Definition at line <a class="el" href="a00901_source.html#l00039">39</a> of file <a class="el" href="a00901_source.html">fpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf93aa070cb235911892bf5e1b60195d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XIntersectionOf</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">X&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="a00901.html#a6ad172446a82a07957b8178462b04ba8">SlopeFrom</a>(A,B) * ((X) - A.x) + A.y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00901_source.html#l00045">45</a> of file <a class="el" href="a00901_source.html">fpoint.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abeec3d0313052da8c1e239e64acaf5cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define YDelta</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">B&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( (B).y - (A).y )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00901_source.html#l00040">40</a> of file <a class="el" href="a00901_source.html">fpoint.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="a3d398dd5922881df2b8e277a72dbd4fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="a00399.html">FPOINT</a> <a class="el" href="a00901.html#a3d398dd5922881df2b8e277a72dbd4fd">FVECTOR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00901_source.html#l00033">33</a> of file <a class="el" href="a00901_source.html">fpoint.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a415c805f668844bd4e652968a7978c41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> DistanceBetween </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00399.html">FPOINT</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00399.html">FPOINT</a>&#160;</td>
+          <td class="paramname"><em>B</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<hr/>
+ <h2>Include Files and Type Defines </h2>
+<h2>Public Code </h2>
+
+<p>Definition at line <a class="el" href="a00900_source.html#l00031">31</a> of file <a class="el" href="a00900_source.html">fpoint.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                            {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">double</span> xd = <a class="code" href="a00901.html#a3882f9c0c6c99c9bf796113a1524cba1">XDelta</a>(A, B);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">double</span> yd = <a class="code" href="a00901.html#abeec3d0313052da8c1e239e64acaf5cd">YDelta</a>(A, B);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">return</span> sqrt(static_cast&lt;double&gt;(xd * xd + yd * yd));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="ttc" id="a00901_html_a3882f9c0c6c99c9bf796113a1524cba1"><div class="ttname"><a href="a00901.html#a3882f9c0c6c99c9bf796113a1524cba1">XDelta</a></div><div class="ttdeci">#define XDelta(A, B)</div><div class="ttdef"><b>Definition:</b> <a href="a00901_source.html#l00039">fpoint.h:39</a></div></div>
+<div class="ttc" id="a00901_html_abeec3d0313052da8c1e239e64acaf5cd"><div class="ttname"><a href="a00901.html#abeec3d0313052da8c1e239e64acaf5cd">YDelta</a></div><div class="ttdeci">#define YDelta(A, B)</div><div class="ttdef"><b>Definition:</b> <a href="a00901_source.html#l00040">fpoint.h:40</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a64d002c6db7589a73c3fcc0f2e80ad80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> NormalizedAngleFrom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00399.html">FPOINT</a> *&#160;</td>
+          <td class="paramname"><em>Point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00399.html">FPOINT</a> *&#160;</td>
+          <td class="paramname"><em>Point2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a>&#160;</td>
+          <td class="paramname"><em>FullScale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00900_source.html#l00039">39</a> of file <a class="el" href="a00900_source.html">fpoint.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                               {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **     Parameters:</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **             Point1, Point2  points to compute angle between</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **             FullScale       value to associate with 2*pi</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> **     Globals: none</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> **     Operation: Return the angle from Point1 to Point2 normalized to</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> **             lie in the range 0 to FullScale (where FullScale corresponds</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> **             to 2*pi or 360 degrees).</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> **     Return: none</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> **     Exceptions: none</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> **     History: Wed Mar 28 14:27:25 1990, DSJ, Created.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> Angle;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> NumRadsInCircle = 2.0 * <a class="code" href="a01029.html#a598a3330b3c21701223ee0ca14316eca">PI</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  Angle = <a class="code" href="a00901.html#ab2882d6616a94607705192ca8c484764">AngleFrom</a> (*Point1, *Point2);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (Angle &lt; 0.0)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Angle += NumRadsInCircle;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  Angle *= FullScale / NumRadsInCircle;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">if</span> (Angle &lt; 0.0 || Angle &gt;= FullScale)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    Angle = 0.0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">return</span> (Angle);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}                                <span class="comment">/* NormalizedAngleFrom */</span></div>
+<div class="ttc" id="a01029_html_a598a3330b3c21701223ee0ca14316eca"><div class="ttname"><a href="a01029.html#a598a3330b3c21701223ee0ca14316eca">PI</a></div><div class="ttdeci">#define PI</div><div class="ttdef"><b>Definition:</b> <a href="a01029_source.html#l00019">const.h:19</a></div></div>
+<div class="ttc" id="a00901_html_ab2882d6616a94607705192ca8c484764"><div class="ttname"><a href="a00901.html#ab2882d6616a94607705192ca8c484764">AngleFrom</a></div><div class="ttdeci">#define AngleFrom(A, B)</div><div class="ttdef"><b>Definition:</b> <a href="a00901_source.html#l00042">fpoint.h:42</a></div></div>
+<div class="ttc" id="a00835_html_a6a3da5f1db8d485c0d2f5a7ba526c4a0"><div class="ttname"><a href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a></div><div class="ttdeci">float FLOAT32</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00111">host.h:111</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00901.html">classify.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:34 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00901.html">fpoint.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:09 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

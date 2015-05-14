@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccutil/strngs.h File Reference</title>
+<title>Tesseract: classify/adaptmatch.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,47 +107,469 @@ $(document).ready(function(){initNavTree('a00878.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">strngs.h File Reference</div>  </div>
+<div class="title">adaptmatch.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00810_source.html">ambigs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00880_source.html">blobclass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00834_source.html">helpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00929_source.html">normfeat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00925_source.html">mfoutline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00937_source.html">picofeat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00899_source.html">float2int.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00935_source.html">outfeat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01039_source.html">emalloc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00911_source.html">intfx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01037_source.html">efio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00931_source.html">normmatch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00843_source.html">ndminx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00915_source.html">intproto.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01029_source.html">const.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01042_source.html">globals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00808_source.html">werd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01028_source.html">callcpp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00773_source.html">pageres.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00848_source.html">params.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00882_source.html">classify.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00945_source.html">shapetable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00947_source.html">tessclassifier.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00949_source.html">trainingsample.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00870_source.html">unicharset.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01055_source.html">dict.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00895_source.html">featdefs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00868_source.html">platform.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00861_source.html">memry.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
 </div>
 <p><a href="a00878_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">singleton &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00416.html">GenericVector&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00532.html">ScoredClass</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00578.html">STRING</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00254.html">ADAPT_RESULTS</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00510.html">PROTO_KEY</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ae34f333b4c79f6aab173f8f78cc1d64b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#ae34f333b4c79f6aab173f8f78cc1d64b">STRING_IS_PROTECTED</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ae34f333b4c79f6aab173f8f78cc1d64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a788df8e37c3d6f36e3d18a7bb7a603f0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a788df8e37c3d6f36e3d18a7bb7a603f0">ADAPT_TEMPLATE_SUFFIX</a>&#160;&#160;&#160;&quot;.a&quot;</td></tr>
+<tr class="separator:a788df8e37c3d6f36e3d18a7bb7a603f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae731492acc3b2e54043c2dfbf1338be6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#ae731492acc3b2e54043c2dfbf1338be6">MAX_MATCHES</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ae731492acc3b2e54043c2dfbf1338be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b4f36c5132ab55beb280e0cc233228"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a17b4f36c5132ab55beb280e0cc233228">UNLIKELY_NUM_FEAT</a>&#160;&#160;&#160;200</td></tr>
+<tr class="separator:a17b4f36c5132ab55beb280e0cc233228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a424f1b989129c5519f4df8f61ad6dcaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a424f1b989129c5519f4df8f61ad6dcaf">NO_DEBUG</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a424f1b989129c5519f4df8f61ad6dcaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1243706f4507cae308afd38f4481e919"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a1243706f4507cae308afd38f4481e919">MAX_ADAPTABLE_WERD_SIZE</a>&#160;&#160;&#160;40</td></tr>
+<tr class="separator:a1243706f4507cae308afd38f4481e919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60c940a7a2c296b84d3cc915267c83c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a60c940a7a2c296b84d3cc915267c83c1">ADAPTABLE_WERD_ADJUSTMENT</a>&#160;&#160;&#160;(0.05)</td></tr>
+<tr class="separator:a60c940a7a2c296b84d3cc915267c83c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5fe456fd5a30097c95a104b29c45cc3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#ac5fe456fd5a30097c95a104b29c45cc3">Y_DIM_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="a00915.html#abd4c49783ccd23c297ef5650ccce9c9c">Y_SHIFT</a> - <a class="el" href="a00899.html#a0cd5a36a70bcf28d6727fe56e419b5a2">BASELINE_Y_SHIFT</a>)</td></tr>
+<tr class="separator:ac5fe456fd5a30097c95a104b29c45cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93902888a2216c8e4a03ddc10aed7f41"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a93902888a2216c8e4a03ddc10aed7f41">WORST_POSSIBLE_RATING</a>&#160;&#160;&#160;(1.0)</td></tr>
+<tr class="separator:a93902888a2216c8e4a03ddc10aed7f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212c1ba628a1cd30b51a902c35fb23eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a212c1ba628a1cd30b51a902c35fb23eb">MarginalMatch</a>(Rating)&#160;&#160;&#160;((Rating) &gt; matcher_great_threshold)</td></tr>
+<tr class="separator:a212c1ba628a1cd30b51a902c35fb23eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a82aaab0580160422d3587ca9cc533e60"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a82aaab0580160422d3587ca9cc533e60">CompareByRating</a> (const void *arg1, const void *arg2)</td></tr>
+<tr class="separator:a82aaab0580160422d3587ca9cc533e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cedbdc7ad221f31895c55506410fd98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00532.html">ScoredClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#a3cedbdc7ad221f31895c55506410fd98">FindScoredUnichar</a> (<a class="el" href="a00254.html">ADAPT_RESULTS</a> *results, <a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> id)</td></tr>
+<tr class="separator:a3cedbdc7ad221f31895c55506410fd98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41bdc1f072e458bb14d644c1106b56a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00532.html">ScoredClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#ab41bdc1f072e458bb14d644c1106b56a">ScoredUnichar</a> (<a class="el" href="a00254.html">ADAPT_RESULTS</a> *results, <a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a> id)</td></tr>
+<tr class="separator:ab41bdc1f072e458bb14d644c1106b56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f03ffe26b93db83b553de0d0be54f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#af1f03ffe26b93db83b553de0d0be54f1">InitMatcherRatings</a> (register <a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> *Rating)</td></tr>
+<tr class="separator:af1f03ffe26b93db83b553de0d0be54f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb798d8e9e1be9d25261b8a604910d0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#aeb798d8e9e1be9d25261b8a604910d0d">MakeTempProtoPerm</a> (void *item1, void *item2)</td></tr>
+<tr class="separator:aeb798d8e9e1be9d25261b8a604910d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af465486d57190cd17155ecc52186dadc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00878.html#af465486d57190cd17155ecc52186dadc">SetAdaptiveThreshold</a> (<a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> Threshold)</td></tr>
+<tr class="separator:af465486d57190cd17155ecc52186dadc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ae34f333b4c79f6aab173f8f78cc1d64b"></a>
+<a class="anchor" id="a788df8e37c3d6f36e3d18a7bb7a603f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define STRING_IS_PROTECTED&#160;&#160;&#160;0</td>
+          <td class="memname">#define ADAPT_TEMPLATE_SUFFIX&#160;&#160;&#160;&quot;.a&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00878_source.html#l00040">40</a> of file <a class="el" href="a00878_source.html">strngs.h</a>.</p>
+<p>Definition at line <a class="el" href="a00878_source.html#l00065">65</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a60c940a7a2c296b84d3cc915267c83c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADAPTABLE_WERD_ADJUSTMENT&#160;&#160;&#160;(0.05)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l00072">72</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a212c1ba628a1cd30b51a902c35fb23eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MarginalMatch</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Rating</td><td>)</td>
+          <td>&#160;&#160;&#160;((Rating) &gt; matcher_great_threshold)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l00119">119</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1243706f4507cae308afd38f4481e919"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_ADAPTABLE_WERD_SIZE&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l00070">70</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae731492acc3b2e54043c2dfbf1338be6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_MATCHES&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l00067">67</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a424f1b989129c5519f4df8f61ad6dcaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NO_DEBUG&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l00069">69</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a17b4f36c5132ab55beb280e0cc233228"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNLIKELY_NUM_FEAT&#160;&#160;&#160;200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l00068">68</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93902888a2216c8e4a03ddc10aed7f41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WORST_POSSIBLE_RATING&#160;&#160;&#160;(1.0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l00076">76</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5fe456fd5a30097c95a104b29c45cc3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Y_DIM_OFFSET&#160;&#160;&#160;(<a class="el" href="a00915.html#abd4c49783ccd23c297ef5650ccce9c9c">Y_SHIFT</a> - <a class="el" href="a00899.html#a0cd5a36a70bcf28d6727fe56e419b5a2">BASELINE_Y_SHIFT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l00074">74</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a82aaab0580160422d3587ca9cc533e60"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CompareByRating </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>arg1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>arg2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l01450">1450</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;                                      {  <span class="comment">// ScoredClass *class2</span></div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00532.html">ScoredClass</a> *class1 = (<span class="keyword">const</span> <a class="code" href="a00532.html">ScoredClass</a> *)arg1;</div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00532.html">ScoredClass</a> *class2 = (<span class="keyword">const</span> <a class="code" href="a00532.html">ScoredClass</a> *)arg2;</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;  <span class="keywordflow">if</span> (class1-&gt;<a class="code" href="a00532.html#aa410f972971cfb2df154972833783f72">rating</a> &lt; class2-&gt;<a class="code" href="a00532.html#aa410f972971cfb2df154972833783f72">rating</a>)</div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (class1-&gt;<a class="code" href="a00532.html#aa410f972971cfb2df154972833783f72">rating</a> &gt; class2-&gt;<a class="code" href="a00532.html#aa410f972971cfb2df154972833783f72">rating</a>)</div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;</div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;  <span class="keywordflow">if</span> (class1-&gt;<a class="code" href="a00532.html#ac067f8f00b90b65e9e8348355a771736">unichar_id</a> &lt; class2-&gt;<a class="code" href="a00532.html#ac067f8f00b90b65e9e8348355a771736">unichar_id</a>)</div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (class1-&gt;<a class="code" href="a00532.html#ac067f8f00b90b65e9e8348355a771736">unichar_id</a> &gt; class2-&gt;<a class="code" href="a00532.html#ac067f8f00b90b65e9e8348355a771736">unichar_id</a>)</div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;}</div>
+<div class="ttc" id="a00532_html"><div class="ttname"><a href="a00532.html">ScoredClass</a></div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00078">adaptmatch.cpp:78</a></div></div>
+<div class="ttc" id="a00532_html_ac067f8f00b90b65e9e8348355a771736"><div class="ttname"><a href="a00532.html#ac067f8f00b90b65e9e8348355a771736">ScoredClass::unichar_id</a></div><div class="ttdeci">CLASS_ID unichar_id</div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00079">adaptmatch.cpp:79</a></div></div>
+<div class="ttc" id="a00532_html_aa410f972971cfb2df154972833783f72"><div class="ttname"><a href="a00532.html#aa410f972971cfb2df154972833783f72">ScoredClass::rating</a></div><div class="ttdeci">FLOAT32 rating</div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00081">adaptmatch.cpp:81</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3cedbdc7ad221f31895c55506410fd98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00532.html">ScoredClass</a> * FindScoredUnichar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00254.html">ADAPT_RESULTS</a> *&#160;</td>
+          <td class="paramname"><em>results</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a>&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l01430">1430</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;                                                                      {</div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; results-&gt;<a class="code" href="a00254.html#aba3ddf391f4a6e17170987f385e6ace5">match</a>.<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); i++) {</div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;    <span class="keywordflow">if</span> (results-&gt;<a class="code" href="a00254.html#aba3ddf391f4a6e17170987f385e6ace5">match</a>[i].unichar_id == <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;      <span class="keywordflow">return</span> &amp;results-&gt;<a class="code" href="a00254.html#aba3ddf391f4a6e17170987f385e6ace5">match</a>[i];</div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;  }</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;}</div>
+<div class="ttc" id="a00254_html_aba3ddf391f4a6e17170987f385e6ace5"><div class="ttname"><a href="a00254.html#aba3ddf391f4a6e17170987f385e6ace5">ADAPT_RESULTS::match</a></div><div class="ttdeci">GenericVector&lt; ScoredClass &gt; match</div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00091">adaptmatch.cpp:91</a></div></div>
+<div class="ttc" id="a00406_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00072">genericvector.h:72</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af1f03ffe26b93db83b553de0d0be54f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InitMatcherRatings </td>
+          <td>(</td>
+          <td class="paramtype">register <a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a> *&#160;</td>
+          <td class="paramname"><em>Rating</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aeb798d8e9e1be9d25261b8a604910d0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MakeTempProtoPerm </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>item2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This routine converts TempProto to be permanent if its proto id is used by the configuration specified in ProtoKey.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item1</td><td>(TEMP_PROTO) temporary proto to compare to key </td></tr>
+    <tr><td class="paramname">item2</td><td>(<a class="el" href="a00510.html">PROTO_KEY</a>) defines which protos to make permanent</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Globals: none</p>
+<dl class="section return"><dt>Returns</dt><dd>TRUE if TempProto is converted, FALSE otherwise </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Exceptions: none </dd>
+<dd>
+History: Thu Mar 14 18:49:54 1991, DSJ, Created. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00878_source.html#l02060">2060</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l02060"></a><span class="lineno"> 2060</span>&#160;                                                {</div>
+<div class="line"><a name="l02061"></a><span class="lineno"> 2061</span>&#160;  <a class="code" href="a00253.html">ADAPT_CLASS</a> Class;</div>
+<div class="line"><a name="l02062"></a><span class="lineno"> 2062</span>&#160;  <a class="code" href="a00592.html">TEMP_CONFIG</a> <a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a>;</div>
+<div class="line"><a name="l02063"></a><span class="lineno"> 2063</span>&#160;  <a class="code" href="a00593.html">TEMP_PROTO</a> TempProto;</div>
+<div class="line"><a name="l02064"></a><span class="lineno"> 2064</span>&#160;  <a class="code" href="a00510.html">PROTO_KEY</a> *ProtoKey;</div>
+<div class="line"><a name="l02065"></a><span class="lineno"> 2065</span>&#160;</div>
+<div class="line"><a name="l02066"></a><span class="lineno"> 2066</span>&#160;  TempProto = (<a class="code" href="a00877.html#a03dc56d9af9a82277b248c3b58267c25">TEMP_PROTO</a>) item1;</div>
+<div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160;  ProtoKey = (<a class="code" href="a00510.html">PROTO_KEY</a> *) item2;</div>
+<div class="line"><a name="l02068"></a><span class="lineno"> 2068</span>&#160;</div>
+<div class="line"><a name="l02069"></a><span class="lineno"> 2069</span>&#160;  Class = ProtoKey-&gt;<a class="code" href="a00510.html#a88e8ec3116b1ca5e8c0a57a2236f83ed">Templates</a>-&gt;<a class="code" href="a00255.html#a0256081fa31eb38b52b19788ca62e327">Class</a>[ProtoKey-&gt;<a class="code" href="a00510.html#a45ade2ad8d07fe98968e6a6795680f0a">ClassId</a>];</div>
+<div class="line"><a name="l02070"></a><span class="lineno"> 2070</span>&#160;  Config = <a class="code" href="a00877.html#aebe34b43b3fd192fbde7130fa0c62933">TempConfigFor</a>(Class, ProtoKey-&gt;<a class="code" href="a00510.html#ab4a673ae9bd6272302ea460d336bc80e">ConfigId</a>);</div>
+<div class="line"><a name="l02071"></a><span class="lineno"> 2071</span>&#160;</div>
+<div class="line"><a name="l02072"></a><span class="lineno"> 2072</span>&#160;  <span class="keywordflow">if</span> (TempProto-&gt;<a class="code" href="a00593.html#a93992200ebfddd13e25d0e9122af9b5b">ProtoId</a> &gt; Config-&gt;<a class="code" href="a00592.html#a973aee4e62bf2e6f6949b13020c984d8">MaxProtoId</a> ||</div>
+<div class="line"><a name="l02073"></a><span class="lineno"> 2073</span>&#160;      !<a class="code" href="a01026.html#a76a50c5a99dea7be5315fe76246036ce">test_bit</a> (Config-&gt;<a class="code" href="a00592.html#a2ea5edb90b556766fce2105dcdfe3141">Protos</a>, TempProto-&gt;<a class="code" href="a00593.html#a93992200ebfddd13e25d0e9122af9b5b">ProtoId</a>))</div>
+<div class="line"><a name="l02074"></a><span class="lineno"> 2074</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l02075"></a><span class="lineno"> 2075</span>&#160;</div>
+<div class="line"><a name="l02076"></a><span class="lineno"> 2076</span>&#160;  <a class="code" href="a00877.html#a2fb3ad8812835e60ee6e429be4a7e949">MakeProtoPermanent</a>(Class, TempProto-&gt;<a class="code" href="a00593.html#a93992200ebfddd13e25d0e9122af9b5b">ProtoId</a>);</div>
+<div class="line"><a name="l02077"></a><span class="lineno"> 2077</span>&#160;  <a class="code" href="a00914.html#a117c6df38172671a3f3fce9cdb4f3299">AddProtoToClassPruner</a>(&amp;(TempProto-&gt;<a class="code" href="a00593.html#acf720eb61d4a91e84d949a6f772ea7c5">Proto</a>), ProtoKey-&gt;<a class="code" href="a00510.html#a45ade2ad8d07fe98968e6a6795680f0a">ClassId</a>,</div>
+<div class="line"><a name="l02078"></a><span class="lineno"> 2078</span>&#160;                         ProtoKey-&gt;<a class="code" href="a00510.html#a88e8ec3116b1ca5e8c0a57a2236f83ed">Templates</a>-&gt;<a class="code" href="a00255.html#a592229e83546c1b6840e7862b92a0629">Templates</a>);</div>
+<div class="line"><a name="l02079"></a><span class="lineno"> 2079</span>&#160;  <a class="code" href="a00876.html#a6dd6f2bb609ab699a22ea1df6a7f67cd">FreeTempProto</a>(TempProto);</div>
+<div class="line"><a name="l02080"></a><span class="lineno"> 2080</span>&#160;</div>
+<div class="line"><a name="l02081"></a><span class="lineno"> 2081</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l02082"></a><span class="lineno"> 2082</span>&#160;}                              <span class="comment">/* MakeTempProtoPerm */</span></div>
+<div class="ttc" id="a00877_html_a2fb3ad8812835e60ee6e429be4a7e949"><div class="ttname"><a href="a00877.html#a2fb3ad8812835e60ee6e429be4a7e949">MakeProtoPermanent</a></div><div class="ttdeci">#define MakeProtoPermanent(Class, ProtoId)</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00099">adaptive.h:99</a></div></div>
+<div class="ttc" id="a00592_html_a2ea5edb90b556766fce2105dcdfe3141"><div class="ttname"><a href="a00592.html#a2ea5edb90b556766fce2105dcdfe3141">TEMP_CONFIG_STRUCT::Protos</a></div><div class="ttdeci">BIT_VECTOR Protos</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00045">adaptive.h:45</a></div></div>
+<div class="ttc" id="a00510_html"><div class="ttname"><a href="a00510.html">PROTO_KEY</a></div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00110">adaptmatch.cpp:110</a></div></div>
+<div class="ttc" id="a00593_html"><div class="ttname"><a href="a00593.html">TEMP_PROTO_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00028">adaptive.h:28</a></div></div>
+<div class="ttc" id="a00255_html_a592229e83546c1b6840e7862b92a0629"><div class="ttname"><a href="a00255.html#a592229e83546c1b6840e7862b92a0629">ADAPT_TEMPLATES_STRUCT::Templates</a></div><div class="ttdeci">INT_TEMPLATES Templates</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00077">adaptive.h:77</a></div></div>
+<div class="ttc" id="a01176_html_a1630a3dc82a9a7cef07bb6153df9eb9c"><div class="ttname"><a href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a></div><div class="ttdeci">CLUSTERCONFIG Config</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00051">commontraining.cpp:51</a></div></div>
+<div class="ttc" id="a00877_html_a03dc56d9af9a82277b248c3b58267c25"><div class="ttname"><a href="a00877.html#a03dc56d9af9a82277b248c3b58267c25">TEMP_PROTO</a></div><div class="ttdeci">TEMP_PROTO_STRUCT * TEMP_PROTO</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00037">adaptive.h:37</a></div></div>
+<div class="ttc" id="a00510_html_ab4a673ae9bd6272302ea460d336bc80e"><div class="ttname"><a href="a00510.html#ab4a673ae9bd6272302ea460d336bc80e">PROTO_KEY::ConfigId</a></div><div class="ttdeci">int ConfigId</div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00113">adaptmatch.cpp:113</a></div></div>
+<div class="ttc" id="a00510_html_a45ade2ad8d07fe98968e6a6795680f0a"><div class="ttname"><a href="a00510.html#a45ade2ad8d07fe98968e6a6795680f0a">PROTO_KEY::ClassId</a></div><div class="ttdeci">CLASS_ID ClassId</div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00112">adaptmatch.cpp:112</a></div></div>
+<div class="ttc" id="a00593_html_acf720eb61d4a91e84d949a6f772ea7c5"><div class="ttname"><a href="a00593.html#acf720eb61d4a91e84d949a6f772ea7c5">TEMP_PROTO_STRUCT::Proto</a></div><div class="ttdeci">PROTO_STRUCT Proto</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00032">adaptive.h:32</a></div></div>
+<div class="ttc" id="a00592_html_a973aee4e62bf2e6f6949b13020c984d8"><div class="ttname"><a href="a00592.html#a973aee4e62bf2e6f6949b13020c984d8">TEMP_CONFIG_STRUCT::MaxProtoId</a></div><div class="ttdeci">PROTO_ID MaxProtoId</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00043">adaptive.h:43</a></div></div>
+<div class="ttc" id="a01026_html_a76a50c5a99dea7be5315fe76246036ce"><div class="ttname"><a href="a01026.html#a76a50c5a99dea7be5315fe76246036ce">test_bit</a></div><div class="ttdeci">#define test_bit(array, bit)</div><div class="ttdef"><b>Definition:</b> <a href="a01026_source.html#l00061">bitvec.h:61</a></div></div>
+<div class="ttc" id="a00510_html_a88e8ec3116b1ca5e8c0a57a2236f83ed"><div class="ttname"><a href="a00510.html#a88e8ec3116b1ca5e8c0a57a2236f83ed">PROTO_KEY::Templates</a></div><div class="ttdeci">ADAPT_TEMPLATES Templates</div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00111">adaptmatch.cpp:111</a></div></div>
+<div class="ttc" id="a00877_html_aebe34b43b3fd192fbde7130fa0c62933"><div class="ttname"><a href="a00877.html#aebe34b43b3fd192fbde7130fa0c62933">TempConfigFor</a></div><div class="ttdeci">#define TempConfigFor(Class, ConfigId)</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00102">adaptive.h:102</a></div></div>
+<div class="ttc" id="a00665_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="a00665.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00029">capi.h:29</a></div></div>
+<div class="ttc" id="a00876_html_a6dd6f2bb609ab699a22ea1df6a7f67cd"><div class="ttname"><a href="a00876.html#a6dd6f2bb609ab699a22ea1df6a7f67cd">FreeTempProto</a></div><div class="ttdeci">void FreeTempProto(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="a00876_source.html#l00090">adaptive.cpp:90</a></div></div>
+<div class="ttc" id="a00914_html_a117c6df38172671a3f3fce9cdb4f3299"><div class="ttname"><a href="a00914.html#a117c6df38172671a3f3fce9cdb4f3299">AddProtoToClassPruner</a></div><div class="ttdeci">void AddProtoToClassPruner(PROTO Proto, CLASS_ID ClassId, INT_TEMPLATES Templates)</div><div class="ttdef"><b>Definition:</b> <a href="a00914_source.html#l00337">intproto.cpp:337</a></div></div>
+<div class="ttc" id="a00593_html_a93992200ebfddd13e25d0e9122af9b5b"><div class="ttname"><a href="a00593.html#a93992200ebfddd13e25d0e9122af9b5b">TEMP_PROTO_STRUCT::ProtoId</a></div><div class="ttdeci">uinT16 ProtoId</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00030">adaptive.h:30</a></div></div>
+<div class="ttc" id="a00255_html_a0256081fa31eb38b52b19788ca62e327"><div class="ttname"><a href="a00255.html#a0256081fa31eb38b52b19788ca62e327">ADAPT_TEMPLATES_STRUCT::Class</a></div><div class="ttdeci">ADAPT_CLASS Class[MAX_NUM_CLASSES]</div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00081">adaptive.h:81</a></div></div>
+<div class="ttc" id="a00253_html"><div class="ttname"><a href="a00253.html">ADAPT_CLASS_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00063">adaptive.h:63</a></div></div>
+<div class="ttc" id="a00592_html"><div class="ttname"><a href="a00592.html">TEMP_CONFIG_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00877_source.html#l00039">adaptive.h:39</a></div></div>
+<div class="ttc" id="a00665_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="a00665.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00028">capi.h:28</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab41bdc1f072e458bb14d644c1106b56a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00532.html">ScoredClass</a> ScoredUnichar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00254.html">ADAPT_RESULTS</a> *&#160;</td>
+          <td class="paramname"><em>results</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00866.html#a8578b19fa1ff5ca75080db1a18ecc32e">UNICHAR_ID</a>&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00878_source.html#l01440">1440</a> of file <a class="el" href="a00878_source.html">adaptmatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;                                                                 {</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;  <a class="code" href="a00532.html">ScoredClass</a> poor_result =</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;      {id, -1, <a class="code" href="a00878.html#a93902888a2216c8e4a03ddc10aed7f41">WORST_POSSIBLE_RATING</a>, <span class="keyword">false</span>, -1,</div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;          kBlankFontinfoId, kBlankFontinfoId};</div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;  <a class="code" href="a00532.html">ScoredClass</a> *entry = <a class="code" href="a00878.html#a3cedbdc7ad221f31895c55506410fd98">FindScoredUnichar</a>(results, <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;  <span class="keywordflow">return</span> (entry == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) ? poor_result : *entry;</div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;}</div>
+<div class="ttc" id="a00878_html_a93902888a2216c8e4a03ddc10aed7f41"><div class="ttname"><a href="a00878.html#a93902888a2216c8e4a03ddc10aed7f41">WORST_POSSIBLE_RATING</a></div><div class="ttdeci">#define WORST_POSSIBLE_RATING</div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00076">adaptmatch.cpp:76</a></div></div>
+<div class="ttc" id="a00532_html"><div class="ttname"><a href="a00532.html">ScoredClass</a></div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l00078">adaptmatch.cpp:78</a></div></div>
+<div class="ttc" id="a00878_html_a3cedbdc7ad221f31895c55506410fd98"><div class="ttname"><a href="a00878.html#a3cedbdc7ad221f31895c55506410fd98">FindScoredUnichar</a></div><div class="ttdeci">ScoredClass * FindScoredUnichar(ADAPT_RESULTS *results, UNICHAR_ID id)</div><div class="ttdef"><b>Definition:</b> <a href="a00878_source.html#l01430">adaptmatch.cpp:1430</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af465486d57190cd17155ecc52186dadc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetAdaptiveThreshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00835.html#a6a3da5f1db8d485c0d2f5a7ba526c4a0">FLOAT32</a>&#160;</td>
+          <td class="paramname"><em>Threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -156,8 +578,8 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_c912ed9abd7a6639fbb8ce2a4e4e80ae.html">ccutil</a></li><li class="navelem"><a class="el" href="a00878.html">strngs.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_31c6146c13abcc5d811ec2a212816f48.html">classify</a></li><li class="navelem"><a class="el" href="a00878.html">adaptmatch.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:09 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

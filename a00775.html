@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/linlsq.cpp File Reference</title>
+<title>Tesseract: ccstruct/params_training_featdef.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,45 +105,88 @@ $(document).ready(function(){initNavTree('a00775.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">linlsq.cpp File Reference</div>  </div>
+<div class="title">params_training_featdef.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00846_source.html">errcode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00776_source.html">linlsq.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00830_source.html">genericvector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00859_source.html">strngs.h</a>&quot;</code><br />
 </div>
 <p><a href="a00775_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a39d4e21e57d29d2cbd0031886ba5822a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00382.html">ERRCODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00775.html#a39d4e21e57d29d2cbd0031886ba5822a">EMPTY_LLSQ</a> = &quot;Can't delete from an empty <a class="el" href="a00470.html">LLSQ</a>&quot;</td></tr>
-<tr class="separator:a39d4e21e57d29d2cbd0031886ba5822a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00500.html">tesseract::ParamsTrainingHypothesis</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00499.html">tesseract::ParamsTrainingBundle</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ac276fef8cf1673fac0a8759dcbb0ec4d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00406.html">GenericVector</a><br class="typebreak" />
+&lt; ParamsTrainingHypothesis &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#ac276fef8cf1673fac0a8759dcbb0ec4d">tesseract::ParamsTrainingHypothesisList</a></td></tr>
+<tr class="separator:ac276fef8cf1673fac0a8759dcbb0ec4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a996f57000ba7e945e304ca3a5268b467"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467">tesseract::kParamsTrainingFeatureType</a> { <br />
+&#160;&#160;<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1500cece41ad4b1311e252f2b84d2650">tesseract::PTRAIN_DIGITS_SHORT</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a8e5df70e0a4feb520442eea38ad42581">tesseract::PTRAIN_DIGITS_MED</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ae94102012c081e339674591a1ea39423">tesseract::PTRAIN_DIGITS_LONG</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a9993582b2b81198845d05ba22a9bdb34">tesseract::PTRAIN_NUM_SHORT</a>, 
+<br />
+&#160;&#160;<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a70e53977ac4926e96923c104e4da104e">tesseract::PTRAIN_NUM_MED</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a4e3a359d1accb5c88630a86193085b30">tesseract::PTRAIN_NUM_LONG</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467abb1f75943b9c111831107bd17c327062">tesseract::PTRAIN_DOC_SHORT</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a073cad7d2dddd23f878513b197f70836">tesseract::PTRAIN_DOC_MED</a>, 
+<br />
+&#160;&#160;<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a28c22a50dfa668c9d74a39cfab211b10">tesseract::PTRAIN_DOC_LONG</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a4ed49f4fd757ded1bf8eca9aecdbeab7">tesseract::PTRAIN_DICT_SHORT</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467aae16de223a8d019d2847a7bdae6c8d5d">tesseract::PTRAIN_DICT_MED</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a70a08810d2d0222f222ce03f5ad0efa8">tesseract::PTRAIN_DICT_LONG</a>, 
+<br />
+&#160;&#160;<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a5d90fce75b366d7e15fa7a69d83357c2">tesseract::PTRAIN_FREQ_SHORT</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a695424d03a50adf3fe6a1998acbe3f87">tesseract::PTRAIN_FREQ_MED</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467aea70fe3d96122e670ec9e5a4152d93d9">tesseract::PTRAIN_FREQ_LONG</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a8a4552af7b096cd4e07365b0142b39b2">tesseract::PTRAIN_SHAPE_COST_PER_CHAR</a>, 
+<br />
+&#160;&#160;<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a232084d7e65391f3c7e6b5709a989aa9">tesseract::PTRAIN_NGRAM_COST_PER_CHAR</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ac5449fec1bf1e8ce13f0c4b534aa9081">tesseract::PTRAIN_NUM_BAD_PUNC</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a9638fa9da907b679b1ec6ceacc49a625">tesseract::PTRAIN_NUM_BAD_CASE</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467ac1573ea4f6bb4964d253022e801a214e">tesseract::PTRAIN_XHEIGHT_CONSISTENCY</a>, 
+<br />
+&#160;&#160;<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a2b5b59226e9e2688f6d620a551cc14c9">tesseract::PTRAIN_NUM_BAD_CHAR_TYPE</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467abf6ca295b288dca43c10b9022372a1db">tesseract::PTRAIN_NUM_BAD_SPACING</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467adb38a8f09fbe5d6515936780e6cc2561">tesseract::PTRAIN_NUM_BAD_FONT</a>, 
+<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a0f4d3799e004120bbaeaf1b6194264a8">tesseract::PTRAIN_RATING_PER_CHAR</a>, 
+<br />
+&#160;&#160;<a class="el" href="a01267.html#a996f57000ba7e945e304ca3a5268b467a1f9a0441244ce25f22a62f3b17cf9d2e">tesseract::PTRAIN_NUM_FEATURE_TYPES</a>
+<br />
+ }</td></tr>
+<tr class="separator:a996f57000ba7e945e304ca3a5268b467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a12cc58bffc8cbb802685ce4cb25aff37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html#a12cc58bffc8cbb802685ce4cb25aff37">tesseract::ParamsTrainingFeatureByName</a> (const char *name)</td></tr>
+<tr class="separator:a12cc58bffc8cbb802685ce4cb25aff37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a39d4e21e57d29d2cbd0031886ba5822a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="a00382.html">ERRCODE</a> EMPTY_LLSQ = &quot;Can't delete from an empty <a class="el" href="a00470.html">LLSQ</a>&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a00775_source.html#l00025">25</a> of file <a class="el" href="a00775_source.html">linlsq.cpp</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00775.html">linlsq.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00775.html">params_training_featdef.h</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:07 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

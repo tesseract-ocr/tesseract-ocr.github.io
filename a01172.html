@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: textord/underlin.cpp File Reference</title>
+<title>Tesseract: training/cntraining.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,101 +109,97 @@ $(document).ready(function(){initNavTree('a01172.html','');});
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">underlin.cpp File Reference</div>  </div>
+<div class="title">cntraining.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01173_source.html">underlin.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01046_source.html">oldlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01037_source.html">efio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01039_source.html">emalloc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00895_source.html">featdefs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01198_source.html">tessopt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00933_source.html">ocrfeatures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00886_source.html">clusttool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00884_source.html">cluster.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00866_source.html">unichar.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01177_source.html">commontraining.h</a>&quot;</code><br />
 </div>
 <p><a href="a01172_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a01dbc51856714fc0f1871d2eb3c03a5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a01dbc51856714fc0f1871d2eb3c03a5e">PROJECTION_MARGIN</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:a01dbc51856714fc0f1871d2eb3c03a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77366c1bd428629dc898e188bfd182a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a></td></tr>
-<tr class="separator:a77366c1bd428629dc898e188bfd182a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f1cc39e4f40922426135364cb7c3c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a13f1cc39e4f40922426135364cb7c3c2">PROGRAM_FEATURE_TYPE</a>&#160;&#160;&#160;&quot;cn&quot;</td></tr>
+<tr class="separator:a13f1cc39e4f40922426135364cb7c3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2118358b0e0f62667f62a0aaf2fb2ae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a2118358b0e0f62667f62a0aaf2fb2ae8">restore_underlined_blobs</a> (<a class="el" href="a00645.html">TO_BLOCK</a> *block)</td></tr>
-<tr class="separator:a2118358b0e0f62667f62a0aaf2fb2ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dd8a5ba42169e80f12ce943084cb307"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00646.html">TO_ROW</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a0dd8a5ba42169e80f12ce943084cb307">most_overlapping_row</a> (TO_ROW_LIST *rows, <a class="el" href="a00282.html">BLOBNBOX</a> *blob)</td></tr>
-<tr class="separator:a0dd8a5ba42169e80f12ce943084cb307"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc00f3a1057255657116acf952f3d7a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#afc00f3a1057255657116acf952f3d7a4">find_underlined_blobs</a> (<a class="el" href="a00282.html">BLOBNBOX</a> *u_line, <a class="el" href="a00534.html">QSPLINE</a> *<a class="el" href="a00937.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>, float xheight, float baseline_offset, ICOORDELT_LIST *chop_cells)</td></tr>
-<tr class="separator:afc00f3a1057255657116acf952f3d7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c1248a073d641cea7a9fec3e563dfc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a8c1248a073d641cea7a9fec3e563dfc5">vertical_cunderline_projection</a> (<a class="el" href="a00295.html">C_OUTLINE</a> *outline, <a class="el" href="a00534.html">QSPLINE</a> *<a class="el" href="a00937.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>, float xheight, float baseline_offset, <a class="el" href="a00577.html">STATS</a> *lower_proj, <a class="el" href="a00577.html">STATS</a> *middle_proj, <a class="el" href="a00577.html">STATS</a> *upper_proj)</td></tr>
-<tr class="separator:a8c1248a073d641cea7a9fec3e563dfc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29834ed66efca59d89938ee1ddeb922"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#ae29834ed66efca59d89938ee1ddeb922">DECLARE_STRING_PARAM_FLAG</a> (D)</td></tr>
+<tr class="separator:ae29834ed66efca59d89938ee1ddeb922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c8c93ebadfa96fb7adeeb5ace122e9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a6c8c93ebadfa96fb7adeeb5ace122e9c">WriteNormProtos</a> (const char *Directory, <a class="el" href="a01046.html#aa200acf94add0e61783bfcd5965bb645">LIST</a> LabeledProtoList, <a class="el" href="a00321.html">CLUSTERER</a> *Clusterer)</td></tr>
+<tr class="separator:a6c8c93ebadfa96fb7adeeb5ace122e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0603890697f92689a2c54d135ddaf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a3b0603890697f92689a2c54d135ddaf4">WriteProtos</a> (FILE *File, <a class="el" href="a00835.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a> N, <a class="el" href="a01046.html#aa200acf94add0e61783bfcd5965bb645">LIST</a> ProtoList, <a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> WriteSigProtos, <a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a> WriteInsigProtos)</td></tr>
+<tr class="separator:a3b0603890697f92689a2c54d135ddaf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a58d10b85902de6aee9f8b6befb411e32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01243.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a58d10b85902de6aee9f8b6befb411e32">textord_underline_offset</a> = 0.1</td></tr>
-<tr class="separator:a58d10b85902de6aee9f8b6befb411e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b7ff031211912735f61bd0dc97c6f2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01243.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a3b7ff031211912735f61bd0dc97c6f2b">textord_restore_underlines</a> = <a class="el" href="a01041.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td></tr>
-<tr class="separator:a3b7ff031211912735f61bd0dc97c6f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9243fe96ef4ae297e9fa0aab69416195"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00320.html">CLUSTERCONFIG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01172.html#a9243fe96ef4ae297e9fa0aab69416195">CNConfig</a></td></tr>
+<tr class="separator:a9243fe96ef4ae297e9fa0aab69416195"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a77366c1bd428629dc898e188bfd182a3"></a>
+<a class="anchor" id="a13f1cc39e4f40922426135364cb7c3c2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EXTERN</td>
+          <td class="memname">#define PROGRAM_FEATURE_TYPE&#160;&#160;&#160;&quot;cn&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<hr/>
+ <h2>Include Files and Type Defines </h2>
 
-<p>Definition at line <a class="el" href="a01172_source.html#l00026">26</a> of file <a class="el" href="a01172_source.html">underlin.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a01dbc51856714fc0f1871d2eb3c03a5e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PROJECTION_MARGIN&#160;&#160;&#160;10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01172_source.html#l00025">25</a> of file <a class="el" href="a01172_source.html">underlin.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a01172_source.html#l00041">41</a> of file <a class="el" href="a01172_source.html">cntraining.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="afc00f3a1057255657116acf952f3d7a4"></a>
+<a class="anchor" id="ae29834ed66efca59d89938ee1ddeb922"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void find_underlined_blobs </td>
+          <td class="memname">DECLARE_STRING_PARAM_FLAG </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00282.html">BLOBNBOX</a> *&#160;</td>
-          <td class="paramname"><em>u_line</em>, </td>
+          <td class="paramtype">D&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00534.html">QSPLINE</a> *&#160;</td>
-          <td class="paramname"><em>baseline</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>xheight</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>baseline_offset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ICOORDELT_LIST *&#160;</td>
-          <td class="paramname"><em>chop_cells</em>&#160;</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -212,293 +208,582 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<hr/>
+ <h2>Public Function Prototypes </h2>
 
-<p>Definition at line <a class="el" href="a01172_source.html#l00173">173</a> of file <a class="el" href="a01172_source.html">underlin.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                            {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> x, y;                    <span class="comment">//sides of blob</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <a class="code" href="a00425.html">ICOORD</a> blob_chop;              <span class="comment">//sides of blob</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <a class="code" href="a00609.html">TBOX</a> blob_box = u_line-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                 <span class="comment">//cell iterator</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  ICOORDELT_IT cell_it = chop_cells;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="a00577.html">STATS</a> upper_proj (blob_box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a> (), blob_box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () + 1);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <a class="code" href="a00577.html">STATS</a> middle_proj (blob_box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a> (), blob_box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () + 1);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="a00577.html">STATS</a> lower_proj (blob_box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a> (), blob_box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () + 1);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  C_OUTLINE_IT out_it;           <span class="comment">//outlines of blob</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <a class="code" href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a> (u_line-&gt;<a class="code" href="a00282.html#a483f44541a4dd818f02225c92f030e07">cblob</a> () != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  out_it.set_to_list (u_line-&gt;<a class="code" href="a00282.html#a483f44541a4dd818f02225c92f030e07">cblob</a> ()-&gt;<a class="code" href="a00294.html#ae510f3d0e7398fbb46608082429eac89">out_list</a> ());</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">for</span> (out_it.mark_cycle_pt (); !out_it.cycled_list (); out_it.forward ()) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="a01172.html#a8c1248a073d641cea7a9fec3e563dfc5">vertical_cunderline_projection</a> (out_it.data (),</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      <a class="code" href="a00937.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>, xheight, baseline_offset,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      &amp;lower_proj, &amp;middle_proj, &amp;upper_proj);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">for</span> (x = blob_box.<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a> (); x &lt; blob_box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> (); x++) {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (middle_proj.pile_count (x) &gt; 0) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">for</span> (y = x + 1;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        y &lt; blob_box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> () &amp;&amp; middle_proj.pile_count (y) &gt; 0; y++);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      blob_chop = <a class="code" href="a00425.html">ICOORD</a> (x, y);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      cell_it.add_after_then_move (<span class="keyword">new</span> <a class="code" href="a00426.html">ICOORDELT</a> (blob_chop));</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      x = y;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00609_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00609.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00068">rect.h:68</a></div></div>
-<div class="ttc" id="a00609_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00075">rect.h:75</a></div></div>
-<div class="ttc" id="a00294_html_ae510f3d0e7398fbb46608082429eac89"><div class="ttname"><a href="a00294.html#ae510f3d0e7398fbb46608082429eac89">C_BLOB::out_list</a></div><div class="ttdeci">C_OUTLINE_LIST * out_list()</div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00064">stepblob.h:64</a></div></div>
-<div class="ttc" id="a00609_html"><div class="ttname"><a href="a00609.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00030">rect.h:30</a></div></div>
-<div class="ttc" id="a00426_html"><div class="ttname"><a href="a00426.html">ICOORDELT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00161">points.h:161</a></div></div>
-<div class="ttc" id="a00937_html_a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23"><div class="ttname"><a href="a00937.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a></div><div class="ttdef"><b>Definition:</b> <a href="a00937_source.html#l00062">mfoutline.h:62</a></div></div>
-<div class="ttc" id="a00282_html_a483f44541a4dd818f02225c92f030e07"><div class="ttname"><a href="a00282.html#a483f44541a4dd818f02225c92f030e07">BLOBNBOX::cblob</a></div><div class="ttdeci">C_BLOB * cblob() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00253">blobbox.h:253</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a00425_html"><div class="ttname"><a href="a00425.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00030">points.h:30</a></div></div>
-<div class="ttc" id="a01172_html_a8c1248a073d641cea7a9fec3e563dfc5"><div class="ttname"><a href="a01172.html#a8c1248a073d641cea7a9fec3e563dfc5">vertical_cunderline_projection</a></div><div class="ttdeci">void vertical_cunderline_projection(C_OUTLINE *outline, QSPLINE *baseline, float xheight, float baseline_offset, STATS *lower_proj, STATS *middle_proj, STATS *upper_proj)</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00218">underlin.cpp:218</a></div></div>
-<div class="ttc" id="a00577_html"><div class="ttname"><a href="a00577.html">STATS</a></div><div class="ttdef"><b>Definition:</b> <a href="a00821_source.html#l00033">statistc.h:33</a></div></div>
-<div class="ttc" id="a00282_html_a7b97b8bc16b1473a28f9c44011522f4e"><div class="ttname"><a href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">BLOBNBOX::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00215">blobbox.h:215</a></div></div>
-<div class="ttc" id="a00846_html_a93a603f4063a6b9403d81caa245a583b"><div class="ttname"><a href="a00846.html#a93a603f4063a6b9403d81caa245a583b">ASSERT_HOST</a></div><div class="ttdeci">#define ASSERT_HOST(x)</div><div class="ttdef"><b>Definition:</b> <a href="a00846_source.html#l00084">errcode.h:84</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a0dd8a5ba42169e80f12ce943084cb307"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00646.html">TO_ROW</a>* most_overlapping_row </td>
-          <td>(</td>
-          <td class="paramtype">TO_ROW_LIST *&#160;</td>
-          <td class="paramname"><em>rows</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00282.html">BLOBNBOX</a> *&#160;</td>
-          <td class="paramname"><em>blob</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="a01172_source.html#l00116">116</a> of file <a class="el" href="a01172_source.html">underlin.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                              {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> x = (blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#a724fabf566586b663577dfa944ffbc61">left</a> ()</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    + blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a> ()) / 2;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  TO_ROW_IT row_it = rows;       <span class="comment">//row iterator</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <a class="code" href="a00646.html">TO_ROW</a> *row;                   <span class="comment">//current row</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <a class="code" href="a00646.html">TO_ROW</a> *best_row;              <span class="comment">//output row</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">float</span> overlap;                 <span class="comment">//of blob &amp; row</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">float</span> bestover;                <span class="comment">//best overlap</span></div>
+<p>Definition at line <a class="el" href="a00669_source.html#l00041">41</a> of file <a class="el" href="a00669_source.html">tesseractmain.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> ((argc == 2 &amp;&amp; strcmp(argv[1], <span class="stringliteral">&quot;-v&quot;</span>) == 0) ||</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      (argc == 2 &amp;&amp; strcmp(argv[1], <span class="stringliteral">&quot;--version&quot;</span>) == 0)) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">char</span> *versionStrP;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;tesseract %s\n&quot;</span>, <a class="code" href="a00596.html#a3785779c909fcdd77e24b340f5913e4b">tesseract::TessBaseAPI::Version</a>());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    versionStrP = getLeptonicaVersion();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot; %s\n&quot;</span>, versionStrP);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    lept_free(versionStrP);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    versionStrP = getImagelibVersions();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  %s\n&quot;</span>, versionStrP);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    lept_free(versionStrP);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifdef USE_OPENCL</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    cl_platform_id platform;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    cl_uint num_platforms;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    cl_device_id devices[2];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    cl_uint num_devices;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">char</span> info[256];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot; OpenCL info:\n&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    clGetPlatformIDs(1, &amp;platform, &amp;num_platforms);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  Found %d platforms.\n&quot;</span>, num_platforms);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    clGetPlatformInfo(platform, CL_PLATFORM_NAME, 256, info, 0);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  Platform name: %s.\n&quot;</span>, info);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    clGetPlatformInfo(platform, CL_PLATFORM_VERSION, 256, info, 0);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  Version: %s.\n&quot;</span>, info);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    clGetDeviceIDs(platform, CL_DEVICE_TYPE_ALL, 2, devices, &amp;num_devices);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  Found %d devices.\n&quot;</span>, num_devices);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; num_devices; ++i) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      clGetDeviceInfo(devices[i], CL_DEVICE_NAME, 256, info, 0);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      fprintf(stderr, <span class="stringliteral">&quot;    Device %d name: %s.\n&quot;</span>, i+1, info);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    exit(0);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// Make the order of args a bit more forgiving than it used to be.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="a01268.html#a5f5eb917f55d9d6ccaa95131ae5d171c">lang</a> = <span class="stringliteral">&quot;eng&quot;</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* image = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* outputbase = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* datapath = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">bool</span> noocr = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">bool</span> list_langs = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordtype">bool</span> print_parameters = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <a class="code" href="a00406.html">GenericVector&lt;STRING&gt;</a> vars_vec, vars_values;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66a">tesseract::PageSegMode</a> pagesegmode = <a class="code" href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa759fdd456efbe83648acd54f0a9263cb">tesseract::PSM_AUTO</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordtype">int</span> arg = 1;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">while</span> (arg &lt; argc &amp;&amp; (outputbase == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> || argv[arg][0] == <span class="charliteral">&#39;-&#39;</span>)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;-l&quot;</span>) == 0 &amp;&amp; arg + 1 &lt; argc) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      lang = argv[arg + 1];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      ++arg;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;--tessdata-dir&quot;</span>) == 0 &amp;&amp; arg + 1 &lt; argc) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      datapath = argv[arg + 1];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      ++arg;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;--user-words&quot;</span>) == 0 &amp;&amp; arg + 1 &lt; argc) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      vars_vec.<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(<span class="stringliteral">&quot;user_words_file&quot;</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      vars_values.<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(argv[arg + 1]);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      ++arg;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;--user-patterns&quot;</span>) == 0 &amp;&amp; arg + 1 &lt; argc) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      vars_vec.<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(<span class="stringliteral">&quot;user_patterns_file&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      vars_values.<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(argv[arg + 1]);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      ++arg;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;--list-langs&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      noocr = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      list_langs = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;-psm&quot;</span>) == 0 &amp;&amp; arg + 1 &lt; argc) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      pagesegmode = <span class="keyword">static_cast&lt;</span><a class="code" href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66a">tesseract::PageSegMode</a><span class="keyword">&gt;</span>(atoi(argv[arg + 1]));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      ++arg;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;--print-parameters&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      noocr = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      print_parameters = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;-c&quot;</span>) == 0 &amp;&amp; arg + 1 &lt; argc) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="comment">// handled properly after api init</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      ++arg;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (image == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      image = argv[arg];</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (outputbase == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      outputbase = argv[arg];</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    ++arg;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  best_row = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  bestover = (float) -<a class="code" href="a00854.html#aac62d87844689a18b6f5339a89ed6e7f">MAX_INT32</a>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordflow">if</span> (row_it.empty ())</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  row = row_it.data ();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  row_it.mark_cycle_pt ();</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordflow">while</span> (row-&gt;<a class="code" href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a>.<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (x) + row-&gt;<a class="code" href="a00646.html#acc50308b9a0cd5c73184de33971c55a8">descdrop</a> &gt; blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a> ()</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  &amp;&amp; !row_it.cycled_list ()) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    best_row = row;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    bestover =</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a> () - row-&gt;<a class="code" href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a>.<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (x) + row-&gt;<a class="code" href="a00646.html#acc50308b9a0cd5c73184de33971c55a8">descdrop</a>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    row_it.forward ();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    row = row_it.data ();</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">while</span> (row-&gt;<a class="code" href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a>.<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (x) + row-&gt;<a class="code" href="a00646.html#a819d94a95b9aab802acbcba097c67b2b">xheight</a> + row-&gt;<a class="code" href="a00646.html#acf8bf7f0f335788e106955b8142f832a">ascrise</a></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  &gt;= blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> () &amp;&amp; !row_it.cycled_list ()) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    overlap = row-&gt;<a class="code" href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a>.<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (x) + row-&gt;<a class="code" href="a00646.html#a819d94a95b9aab802acbcba097c67b2b">xheight</a> + row-&gt;<a class="code" href="a00646.html#acf8bf7f0f335788e106955b8142f832a">ascrise</a>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">if</span> (blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a> () &lt; overlap)</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      overlap = blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a> ();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> () &gt;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      row-&gt;<a class="code" href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a>.<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (x) + row-&gt;<a class="code" href="a00646.html#acc50308b9a0cd5c73184de33971c55a8">descdrop</a>)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      overlap -= blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> ();</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      overlap -= row-&gt;<a class="code" href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a>.<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (x) + row-&gt;<a class="code" href="a00646.html#acc50308b9a0cd5c73184de33971c55a8">descdrop</a>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (overlap &gt; bestover) {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      bestover = overlap;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      best_row = row;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    row_it.forward ();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    row = row_it.data ();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordflow">if</span> (bestover &lt; 0</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    &amp;&amp; row-&gt;<a class="code" href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a>.<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (x) + row-&gt;<a class="code" href="a00646.html#a819d94a95b9aab802acbcba097c67b2b">xheight</a> + row-&gt;<a class="code" href="a00646.html#acf8bf7f0f335788e106955b8142f832a">ascrise</a></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    - blob-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ().<a class="code" href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a> () &gt; bestover)</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    best_row = row;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">return</span> best_row;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
-<div class="ttc" id="a00646_html_acf8bf7f0f335788e106955b8142f832a"><div class="ttname"><a href="a00646.html#acf8bf7f0f335788e106955b8142f832a">TO_ROW::ascrise</a></div><div class="ttdeci">float ascrise</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00655">blobbox.h:655</a></div></div>
-<div class="ttc" id="a00646_html_acc50308b9a0cd5c73184de33971c55a8"><div class="ttname"><a href="a00646.html#acc50308b9a0cd5c73184de33971c55a8">TO_ROW::descdrop</a></div><div class="ttdeci">float descdrop</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00656">blobbox.h:656</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00609_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00609.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00068">rect.h:68</a></div></div>
-<div class="ttc" id="a00609_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00075">rect.h:75</a></div></div>
-<div class="ttc" id="a00646_html_a819d94a95b9aab802acbcba097c67b2b"><div class="ttname"><a href="a00646.html#a819d94a95b9aab802acbcba097c67b2b">TO_ROW::xheight</a></div><div class="ttdeci">float xheight</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00653">blobbox.h:653</a></div></div>
-<div class="ttc" id="a00646_html"><div class="ttname"><a href="a00646.html">TO_ROW</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00539">blobbox.h:539</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a00854_html_aac62d87844689a18b6f5339a89ed6e7f"><div class="ttname"><a href="a00854.html#aac62d87844689a18b6f5339a89ed6e7f">MAX_INT32</a></div><div class="ttdeci">#define MAX_INT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00120">host.h:120</a></div></div>
-<div class="ttc" id="a00609_html_a4451d237f1cd18c4982d63fe36a11fc3"><div class="ttname"><a href="a00609.html#a4451d237f1cd18c4982d63fe36a11fc3">TBOX::bottom</a></div><div class="ttdeci">inT16 bottom() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00061">rect.h:61</a></div></div>
-<div class="ttc" id="a00534_html_ab9f77ca80057e3844e880a1bf003beca"><div class="ttname"><a href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">QSPLINE::y</a></div><div class="ttdeci">double y(double x) const </div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00217">quspline.cpp:217</a></div></div>
-<div class="ttc" id="a00282_html_a7b97b8bc16b1473a28f9c44011522f4e"><div class="ttname"><a href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">BLOBNBOX::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00215">blobbox.h:215</a></div></div>
-<div class="ttc" id="a00646_html_a611050c4612df0ccd0f2d64ca0005b9b"><div class="ttname"><a href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">TO_ROW::baseline</a></div><div class="ttdeci">QSPLINE baseline</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00666">blobbox.h:666</a></div></div>
-<div class="ttc" id="a00609_html_adf92e9fdac1bdf11c10d1c4d1178791a"><div class="ttname"><a href="a00609.html#adf92e9fdac1bdf11c10d1c4d1178791a">TBOX::top</a></div><div class="ttdeci">inT16 top() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00054">rect.h:54</a></div></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordflow">if</span> (argc == 2 &amp;&amp; strcmp(argv[1], <span class="stringliteral">&quot;--list-langs&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    list_langs = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    noocr = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordflow">if</span> (outputbase == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; noocr == <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Usage:\n  %s imagename|stdin outputbase|stdout &quot;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="stringliteral">&quot;[options...] [configfile...]\n\n&quot;</span>, argv[0]);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;OCR options:\n&quot;</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  --tessdata-dir /path\tspecify the location of tessdata&quot;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                      <span class="stringliteral">&quot; path\n&quot;</span>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  --user-words /path/to/file\tspecify the location of user&quot;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="stringliteral">&quot; words file\n&quot;</span>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  --user-patterns /path/to/file\tspecify the location of&quot;</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="stringliteral">&quot; user patterns file\n&quot;</span>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  -l lang[+lang]\tspecify language(s) used for OCR\n&quot;</span>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  -c configvar=value\tset value for control parameter.\n&quot;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                      <span class="stringliteral">&quot;\t\t\tMultiple -c arguments are allowed.\n&quot;</span>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  -psm pagesegmode\tspecify page segmentation mode.\n&quot;</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;These options must occur before any configfile.\n\n&quot;</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    fprintf(stderr,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="stringliteral">&quot;pagesegmode values are:\n&quot;</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="stringliteral">&quot;  0 = Orientation and script detection (OSD) only.\n&quot;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="stringliteral">&quot;  1 = Automatic page segmentation with OSD.\n&quot;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="stringliteral">&quot;  2 = Automatic page segmentation, but no OSD, or OCR\n&quot;</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="stringliteral">&quot;  3 = Fully automatic page segmentation, but no OSD. (Default)\n&quot;</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="stringliteral">&quot;  4 = Assume a single column of text of variable sizes.\n&quot;</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="stringliteral">&quot;  5 = Assume a single uniform block of vertically aligned text.\n&quot;</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="stringliteral">&quot;  6 = Assume a single uniform block of text.\n&quot;</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="stringliteral">&quot;  7 = Treat the image as a single text line.\n&quot;</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="stringliteral">&quot;  8 = Treat the image as a single word.\n&quot;</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="stringliteral">&quot;  9 = Treat the image as a single word in a circle.\n&quot;</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="stringliteral">&quot;  10 = Treat the image as a single character.\n\n&quot;</span>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Single options:\n&quot;</span>);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  -v --version: version info\n&quot;</span>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  --list-langs: list available languages for tesseract &quot;</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                      <span class="stringliteral">&quot;engine. Can be used with --tessdata-dir.\n&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;  --print-parameters: print tesseract parameters to the &quot;</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                      <span class="stringliteral">&quot;stdout.\n&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    exit(1);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordflow">if</span> (outputbase != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; strcmp(outputbase, <span class="stringliteral">&quot;-&quot;</span>) &amp;&amp;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      strcmp(outputbase, <span class="stringliteral">&quot;stdout&quot;</span>)) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Tesseract Open Source OCR Engine v%s with Leptonica\n&quot;</span>,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;           <a class="code" href="a00596.html#a3785779c909fcdd77e24b340f5913e4b">tesseract::TessBaseAPI::Version</a>());</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <a class="code" href="a01086.html#a7b1e67112c5c3cc13ba8f90c8b60f05e">PERF_COUNT_START</a>(<span class="stringliteral">&quot;Tesseract:main&quot;</span>)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <a class="code" href="a01267.html">tesseract</a>::<a class="code" href="a00665.html#a47436d31525552f08492b8dcdfc12755">TessBaseAPI</a> <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  api.SetOutputName(outputbase);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a01268.html#a42e422a84ae8cc850bac5f48b7b6c5ef">rc</a> = api.Init(datapath, lang, <a class="code" href="a01267.html">tesseract</a>::<a class="code" href="a00665.html#ae3f1ba7cb9eefb2195a5df6fdf86010aa4d28a7cfa53d9d712954e99159afda48">OEM_DEFAULT</a>,</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                &amp;(argv[arg]), argc - arg, &amp;vars_vec, &amp;vars_values, false);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  if (<a class="code" href="a01268.html#a42e422a84ae8cc850bac5f48b7b6c5ef">rc</a>) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Could not initialize tesseract.\n&quot;</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    exit(1);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordtype">char</span> opt1[255], opt2[255];</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordflow">for</span> (arg = 0; arg &lt; argc; arg++) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (strcmp(argv[arg], <span class="stringliteral">&quot;-c&quot;</span>) == 0 &amp;&amp; arg + 1 &lt; argc) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      strncpy(opt1, argv[arg + 1], 255);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      <span class="keywordtype">char</span> *p = strchr(opt1, <span class="charliteral">&#39;=&#39;</span>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">if</span> (!p) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;Missing = in configvar assignment\n&quot;</span>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      *p = 0;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      strncpy(opt2, strchr(argv[arg + 1], <span class="charliteral">&#39;=&#39;</span>) + 1, 255);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      opt2[254] = 0;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      ++arg;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">if</span> (!<a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.SetVariable(opt1, opt2)) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;Could not set option: %s=%s\n&quot;</span>, opt1, opt2);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="keywordflow">if</span> (list_langs) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;     <a class="code" href="a00406.html">GenericVector&lt;STRING&gt;</a> languages;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;     <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.GetAvailableLanguagesAsVector(&amp;languages);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;     fprintf(stderr, <span class="stringliteral">&quot;List of available languages (%d):\n&quot;</span>,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;             languages.<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>());</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt; languages.<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); ++index) {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;       <a class="code" href="a00561.html">STRING</a>&amp; <span class="keywordtype">string</span> = languages[index];</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;       fprintf(stderr, <span class="stringliteral">&quot;%s\n&quot;</span>, <span class="keywordtype">string</span>.<span class="keywordtype">string</span>());</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;     }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;     <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.End();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;     exit(0);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">if</span> (print_parameters) {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;     FILE* fout = stdout;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;     fprintf(stdout, <span class="stringliteral">&quot;Tesseract parameters:\n&quot;</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;     <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.PrintVariables(fout);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;     <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.End();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;     exit(0);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="comment">// We have 2 possible sources of pagesegmode: a config file and</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="comment">// the command line. For backwards compatability reasons, the</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="comment">// default in tesseract is tesseract::PSM_SINGLE_BLOCK, but the</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="comment">// default for this program is tesseract::PSM_AUTO. We will let</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="comment">// the config file take priority, so the command-line default</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="comment">// can take priority over the tesseract default, so we use the</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="comment">// value from the command line only if the retrieved mode</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="comment">// is still tesseract::PSM_SINGLE_BLOCK, indicating no change</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="comment">// in any config file. Therefore the only way to force</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="comment">// tesseract::PSM_SINGLE_BLOCK is from the command line.</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="comment">// It would be simpler if we could set the value before Init,</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="comment">// but that doesn&#39;t work.</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.GetPageSegMode() == <a class="code" href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aab76fe3ca390d99e070ea60b892ee18ef">tesseract::PSM_SINGLE_BLOCK</a>)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;     <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.SetPageSegMode(pagesegmode);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordflow">if</span> (pagesegmode == <a class="code" href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa6c70374f53473ba410723e32b12f3f01">tesseract::PSM_AUTO_ONLY</a> ||</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      pagesegmode == <a class="code" href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa319d6168eaa4b2002ac84c0558ba947d">tesseract::PSM_OSD_ONLY</a>) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">int</span> ret_val = 0;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    Pix* pixs = pixRead(image);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (!pixs) {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      fprintf(stderr, <span class="stringliteral">&quot;Cannot open input file: %s\n&quot;</span>, image);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      exit(2);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.SetImage(pixs);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">if</span> (pagesegmode == <a class="code" href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa319d6168eaa4b2002ac84c0558ba947d">tesseract::PSM_OSD_ONLY</a>) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;       <a class="code" href="a00482.html">OSResults</a> osr;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;       <span class="keywordflow">if</span> (<a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.DetectOS(&amp;osr)) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;         <span class="keywordtype">int</span> orient = osr.<a class="code" href="a00482.html#a25f64011ea65c038c1ef1a6cedd10f1c">best_result</a>.<a class="code" href="a00481.html#a6dfb6826b41a81524ce867b005ba5641">orientation_id</a>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;         <span class="keywordtype">int</span> script_id = osr.<a class="code" href="a00482.html#a9dcb5250ae2466116c33f5d220223296">get_best_script</a>(orient);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;         <span class="keywordtype">float</span> orient_oco = osr.<a class="code" href="a00482.html#a25f64011ea65c038c1ef1a6cedd10f1c">best_result</a>.<a class="code" href="a00481.html#a67e009467e4db6c40777548ffdfe464e">oconfidence</a>;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;         <span class="keywordtype">float</span> orient_sco = osr.<a class="code" href="a00482.html#a25f64011ea65c038c1ef1a6cedd10f1c">best_result</a>.<a class="code" href="a00481.html#ae39a2c718b010ed27eb7f820546da6d6">sconfidence</a>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;         <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Orientation: %d\nOrientation in degrees: %d\n&quot;</span> \</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                 <span class="stringliteral">&quot;Orientation confidence: %.2f\n&quot;</span> \</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                 <span class="stringliteral">&quot;Script: %d\nScript confidence: %.2f\n&quot;</span>,</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                 orient, <a class="code" href="a00689.html#a94d19668c76dab0d8ab3832c765303da">OrientationIdToValue</a>(orient), orient_oco,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                 script_id, orient_sco);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;       } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;         ret_val = 1;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;       }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;       <a class="code" href="a01267.html#a76ce0248fd3ba576ca053e9bb82e492f">tesseract::Orientation</a> orientation;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;       <a class="code" href="a01267.html#acac5bfbc6e9f8ca26f42ea3bad95d84e">tesseract::WritingDirection</a> <a class="code" href="a00805.html#a57d4a186a22b01e2110793bc22a5d8f0">direction</a>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;       <a class="code" href="a01267.html#a28b14f9ab9d686fb45e130abc15c1781">tesseract::TextlineOrder</a> order;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;       <span class="keywordtype">float</span> deskew_angle;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;       <a class="code" href="a00487.html">tesseract::PageIterator</a>* it =  <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.AnalyseLayout();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;       <span class="keywordflow">if</span> (it) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;         it-&gt;<a class="code" href="a00487.html#a4e7bfaa12388753931a788ef688cc958">Orientation</a>(&amp;orientation, &amp;direction, &amp;order, &amp;deskew_angle);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;         <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Orientation: %d\nWritingDirection: %d\nTextlineOrder: %d\n&quot;</span> \</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                 <span class="stringliteral">&quot;Deskew angle: %.4f\n&quot;</span>,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                 orientation, direction, order, deskew_angle);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;       } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;         ret_val = 1;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;       }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;       <span class="keyword">delete</span> it;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    pixDestroy(&amp;pixs);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    exit(ret_val);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <a class="code" href="a00621.html">tesseract::TessResultRenderer</a>* renderer = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="keywordtype">bool</span> b;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.GetBoolVariable(<span class="stringliteral">&quot;tessedit_create_hocr&quot;</span>, &amp;b);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <span class="keywordflow">if</span> (b) {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordtype">bool</span> font_info;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.GetBoolVariable(<span class="stringliteral">&quot;hocr_font_info&quot;</span>, &amp;font_info);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    renderer = <span class="keyword">new</span> <a class="code" href="a00665.html#af1b3b93f62e68981a0be10bf67ce641a">tesseract::TessHOcrRenderer</a>(outputbase, font_info);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.GetBoolVariable(<span class="stringliteral">&quot;tessedit_create_pdf&quot;</span>, &amp;b);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  <span class="keywordflow">if</span> (b &amp;&amp; renderer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    renderer = <span class="keyword">new</span> <a class="code" href="a00665.html#a31717883a37a7332c296efcd04a08963">tesseract::TessPDFRenderer</a>(outputbase, <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.GetDatapath());</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.GetBoolVariable(<span class="stringliteral">&quot;tessedit_write_unlv&quot;</span>, &amp;b);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <span class="keywordflow">if</span> (b &amp;&amp; renderer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    renderer = <span class="keyword">new</span> <a class="code" href="a00665.html#ac9242125c22e99e11c97021e7d68cc38">tesseract::TessUnlvRenderer</a>(outputbase);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.GetBoolVariable(<span class="stringliteral">&quot;tessedit_create_boxfile&quot;</span>, &amp;b);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  <span class="keywordflow">if</span> (b &amp;&amp; renderer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    renderer = <span class="keyword">new</span> <a class="code" href="a00665.html#ac1e76e08a467d79ae8d359ba56906d5c">tesseract::TessBoxTextRenderer</a>(outputbase);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="keywordflow">if</span> (renderer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    renderer = <span class="keyword">new</span> <a class="code" href="a00665.html#a872e38dd847848a617d771dd3adce886">tesseract::TessTextRenderer</a>(outputbase);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">api</a>.ProcessPages(image, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 0, renderer)) {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keyword">delete</span> renderer;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Error during processing.\n&quot;</span>);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    exit(1);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <span class="keyword">delete</span> renderer;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  <a class="code" href="a01086.html#a0a1c82e812e15164718039c84cd9e97b">PERF_COUNT_END</a></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  <span class="keywordflow">return</span> 0;                      <span class="comment">// Normal exit</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<div class="ttc" id="a00487_html_a4e7bfaa12388753931a788ef688cc958"><div class="ttname"><a href="a00487.html#a4e7bfaa12388753931a788ef688cc958">tesseract::PageIterator::Orientation</a></div><div class="ttdeci">void Orientation(tesseract::Orientation *orientation, tesseract::WritingDirection *writing_direction, tesseract::TextlineOrder *textline_order, float *deskew_angle) const </div><div class="ttdef"><b>Definition:</b> <a href="a00693_source.html#l00497">pageiterator.cpp:497</a></div></div>
+<div class="ttc" id="a00665_html_a872e38dd847848a617d771dd3adce886"><div class="ttname"><a href="a00665.html#a872e38dd847848a617d771dd3adce886">TessTextRenderer</a></div><div class="ttdeci">struct TessTextRenderer TessTextRenderer</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00061">capi.h:61</a></div></div>
+<div class="ttc" id="a01267_html_a338d4c8b5d497b5ec3e6e4269d8ac66aa319d6168eaa4b2002ac84c0558ba947d"><div class="ttname"><a href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa319d6168eaa4b2002ac84c0558ba947d">tesseract::PSM_OSD_ONLY</a></div><div class="ttdoc">Orientation and script detection only. </div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00152">publictypes.h:152</a></div></div>
+<div class="ttc" id="a01267_html_a76ce0248fd3ba576ca053e9bb82e492f"><div class="ttname"><a href="a01267.html#a76ce0248fd3ba576ca053e9bb82e492f">tesseract::Orientation</a></div><div class="ttdeci">Orientation</div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00108">publictypes.h:108</a></div></div>
+<div class="ttc" id="a01267_html_acac5bfbc6e9f8ca26f42ea3bad95d84e"><div class="ttname"><a href="a01267.html#acac5bfbc6e9f8ca26f42ea3bad95d84e">tesseract::WritingDirection</a></div><div class="ttdeci">WritingDirection</div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00123">publictypes.h:123</a></div></div>
+<div class="ttc" id="a00689_html_a94d19668c76dab0d8ab3832c765303da"><div class="ttname"><a href="a00689.html#a94d19668c76dab0d8ab3832c765303da">OrientationIdToValue</a></div><div class="ttdeci">const int OrientationIdToValue(const int &amp;id)</div><div class="ttdef"><b>Definition:</b> <a href="a00689_source.html#l00563">osdetect.cpp:563</a></div></div>
+<div class="ttc" id="a01267_html_a338d4c8b5d497b5ec3e6e4269d8ac66aab76fe3ca390d99e070ea60b892ee18ef"><div class="ttname"><a href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aab76fe3ca390d99e070ea60b892ee18ef">tesseract::PSM_SINGLE_BLOCK</a></div><div class="ttdoc">Assume a single uniform block of text. (Default.) </div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00160">publictypes.h:160</a></div></div>
+<div class="ttc" id="a01086_html_a7b1e67112c5c3cc13ba8f90c8b60f05e"><div class="ttname"><a href="a01086.html#a7b1e67112c5c3cc13ba8f90c8b60f05e">PERF_COUNT_START</a></div><div class="ttdeci">#define PERF_COUNT_START(FUNCT_NAME)</div><div class="ttdef"><b>Definition:</b> <a href="a01086_source.html#l00127">openclwrapper.h:127</a></div></div>
+<div class="ttc" id="a00596_html_a3785779c909fcdd77e24b340f5913e4b"><div class="ttname"><a href="a00596.html#a3785779c909fcdd77e24b340f5913e4b">tesseract::TessBaseAPI::Version</a></div><div class="ttdeci">static const char * Version()</div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00140">baseapi.cpp:140</a></div></div>
+<div class="ttc" id="a01267_html_a28b14f9ab9d686fb45e130abc15c1781"><div class="ttname"><a href="a01267.html#a28b14f9ab9d686fb45e130abc15c1781">tesseract::TextlineOrder</a></div><div class="ttdeci">TextlineOrder</div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00140">publictypes.h:140</a></div></div>
+<div class="ttc" id="a00665_html_ac9242125c22e99e11c97021e7d68cc38"><div class="ttname"><a href="a00665.html#ac9242125c22e99e11c97021e7d68cc38">TessUnlvRenderer</a></div><div class="ttdeci">struct TessUnlvRenderer TessUnlvRenderer</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00064">capi.h:64</a></div></div>
+<div class="ttc" id="a00481_html_a67e009467e4db6c40777548ffdfe464e"><div class="ttname"><a href="a00481.html#a67e009467e4db6c40777548ffdfe464e">OSBestResult::oconfidence</a></div><div class="ttdeci">float oconfidence</div><div class="ttdef"><b>Definition:</b> <a href="a00690_source.html#l00044">osdetect.h:44</a></div></div>
+<div class="ttc" id="a01268_html_a5f5eb917f55d9d6ccaa95131ae5d171c"><div class="ttname"><a href="a01268.html#a5f5eb917f55d9d6ccaa95131ae5d171c">tesseract-c_api-demo.lang</a></div><div class="ttdeci">string lang</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00028">tesseract-c_api-demo.py:28</a></div></div>
+<div class="ttc" id="a00621_html"><div class="ttname"><a href="a00621.html">tesseract::TessResultRenderer</a></div><div class="ttdef"><b>Definition:</b> <a href="a00668_source.html#l00045">renderer.h:45</a></div></div>
+<div class="ttc" id="a00482_html"><div class="ttname"><a href="a00482.html">OSResults</a></div><div class="ttdef"><b>Definition:</b> <a href="a00690_source.html#l00047">osdetect.h:47</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector&lt; STRING &gt;</a></div></div>
+<div class="ttc" id="a01268_html_a42e422a84ae8cc850bac5f48b7b6c5ef"><div class="ttname"><a href="a01268.html#a42e422a84ae8cc850bac5f48b7b6c5ef">tesseract-c_api-demo.rc</a></div><div class="ttdeci">tuple rc</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00066">tesseract-c_api-demo.py:66</a></div></div>
+<div class="ttc" id="a00487_html"><div class="ttname"><a href="a00487.html">tesseract::PageIterator</a></div><div class="ttdef"><b>Definition:</b> <a href="a00694_source.html#l00052">pageiterator.h:52</a></div></div>
+<div class="ttc" id="a00406_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00072">genericvector.h:72</a></div></div>
+<div class="ttc" id="a01267_html"><div class="ttname"><a href="a01267.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00662_source.html#l00081">baseapi.cpp:81</a></div></div>
+<div class="ttc" id="a00665_html_ae3f1ba7cb9eefb2195a5df6fdf86010aa4d28a7cfa53d9d712954e99159afda48"><div class="ttname"><a href="a00665.html#ae3f1ba7cb9eefb2195a5df6fdf86010aa4d28a7cfa53d9d712954e99159afda48">OEM_DEFAULT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00071">capi.h:71</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a00665_html_a31717883a37a7332c296efcd04a08963"><div class="ttname"><a href="a00665.html#a31717883a37a7332c296efcd04a08963">TessPDFRenderer</a></div><div class="ttdeci">struct TessPDFRenderer TessPDFRenderer</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00063">capi.h:63</a></div></div>
+<div class="ttc" id="a00481_html_ae39a2c718b010ed27eb7f820546da6d6"><div class="ttname"><a href="a00481.html#ae39a2c718b010ed27eb7f820546da6d6">OSBestResult::sconfidence</a></div><div class="ttdeci">float sconfidence</div><div class="ttdef"><b>Definition:</b> <a href="a00690_source.html#l00043">osdetect.h:43</a></div></div>
+<div class="ttc" id="a01267_html_a338d4c8b5d497b5ec3e6e4269d8ac66a"><div class="ttname"><a href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66a">tesseract::PageSegMode</a></div><div class="ttdeci">PageSegMode</div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00151">publictypes.h:151</a></div></div>
+<div class="ttc" id="a00482_html_a9dcb5250ae2466116c33f5d220223296"><div class="ttname"><a href="a00482.html#a9dcb5250ae2466116c33f5d220223296">OSResults::get_best_script</a></div><div class="ttdeci">TESS_API int get_best_script(int orientation_id) const </div><div class="ttdef"><b>Definition:</b> <a href="a00689_source.html#l00117">osdetect.cpp:117</a></div></div>
+<div class="ttc" id="a00481_html_a6dfb6826b41a81524ce867b005ba5641"><div class="ttname"><a href="a00481.html#a6dfb6826b41a81524ce867b005ba5641">OSBestResult::orientation_id</a></div><div class="ttdeci">int orientation_id</div><div class="ttdef"><b>Definition:</b> <a href="a00690_source.html#l00041">osdetect.h:41</a></div></div>
+<div class="ttc" id="a00665_html_a47436d31525552f08492b8dcdfc12755"><div class="ttname"><a href="a00665.html#a47436d31525552f08492b8dcdfc12755">TessBaseAPI</a></div><div class="ttdeci">struct TessBaseAPI TessBaseAPI</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00066">capi.h:66</a></div></div>
+<div class="ttc" id="a01267_html_a338d4c8b5d497b5ec3e6e4269d8ac66aa6c70374f53473ba410723e32b12f3f01"><div class="ttname"><a href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa6c70374f53473ba410723e32b12f3f01">tesseract::PSM_AUTO_ONLY</a></div><div class="ttdoc">Automatic page segmentation, but no OSD, or OCR. </div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00155">publictypes.h:155</a></div></div>
+<div class="ttc" id="a00665_html_ac1e76e08a467d79ae8d359ba56906d5c"><div class="ttname"><a href="a00665.html#ac1e76e08a467d79ae8d359ba56906d5c">TessBoxTextRenderer</a></div><div class="ttdeci">struct TessBoxTextRenderer TessBoxTextRenderer</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00065">capi.h:65</a></div></div>
+<div class="ttc" id="a00665_html_af1b3b93f62e68981a0be10bf67ce641a"><div class="ttname"><a href="a00665.html#af1b3b93f62e68981a0be10bf67ce641a">TessHOcrRenderer</a></div><div class="ttdeci">struct TessHOcrRenderer TessHOcrRenderer</div><div class="ttdef"><b>Definition:</b> <a href="a00665_source.html#l00062">capi.h:62</a></div></div>
+<div class="ttc" id="a00482_html_a25f64011ea65c038c1ef1a6cedd10f1c"><div class="ttname"><a href="a00482.html#a25f64011ea65c038c1ef1a6cedd10f1c">OSResults::best_result</a></div><div class="ttdeci">OSBestResult best_result</div><div class="ttdef"><b>Definition:</b> <a href="a00690_source.html#l00079">osdetect.h:79</a></div></div>
+<div class="ttc" id="a00406_html_a0dc89fe2a365b04a61017f9d78c1a303"><div class="ttname"><a href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">GenericVector::push_back</a></div><div class="ttdeci">int push_back(T object)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00735">genericvector.h:735</a></div></div>
+<div class="ttc" id="a01086_html_a0a1c82e812e15164718039c84cd9e97b"><div class="ttname"><a href="a01086.html#a0a1c82e812e15164718039c84cd9e97b">PERF_COUNT_END</a></div><div class="ttdeci">#define PERF_COUNT_END</div><div class="ttdef"><b>Definition:</b> <a href="a01086_source.html#l00128">openclwrapper.h:128</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a01268_html_a6e5e62fdd18584223572e5cbaa9a1d1d"><div class="ttname"><a href="a01268.html#a6e5e62fdd18584223572e5cbaa9a1d1d">tesseract-c_api-demo.api</a></div><div class="ttdeci">tuple api</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00065">tesseract-c_api-demo.py:65</a></div></div>
+<div class="ttc" id="a00805_html_a57d4a186a22b01e2110793bc22a5d8f0"><div class="ttname"><a href="a00805.html#a57d4a186a22b01e2110793bc22a5d8f0">direction</a></div><div class="ttdeci">int direction(EDGEPT *point)</div><div class="ttdef"><b>Definition:</b> <a href="a00805_source.html#l00042">vecfuncs.cpp:42</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a01267_html_a338d4c8b5d497b5ec3e6e4269d8ac66aa759fdd456efbe83648acd54f0a9263cb"><div class="ttname"><a href="a01267.html#a338d4c8b5d497b5ec3e6e4269d8ac66aa759fdd456efbe83648acd54f0a9263cb">tesseract::PSM_AUTO</a></div><div class="ttdoc">Fully automatic page segmentation, but no OSD. </div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00156">publictypes.h:156</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a2118358b0e0f62667f62a0aaf2fb2ae8"></a>
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void restore_underlined_blobs </td>
+          <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00645.html">TO_BLOCK</a> *&#160;</td>
-          <td class="paramname"><em>block</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<hr/>
+ <h2>Public Code </h2>
 
-<p>Definition at line <a class="el" href="a01172_source.html#l00038">38</a> of file <a class="el" href="a01172_source.html">underlin.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                               {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> chop_coord;              <span class="comment">//chop boundary</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="a00609.html">TBOX</a> blob_box;                  <span class="comment">//of underline</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="a00282.html">BLOBNBOX</a> *u_line;              <span class="comment">//underline bit</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="a00646.html">TO_ROW</a> *row;                   <span class="comment">//best row for blob</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  ICOORDELT_LIST chop_cells;     <span class="comment">//blobs to cut out</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                 <span class="comment">//real underlines</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  BLOBNBOX_LIST residual_underlines;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  C_OUTLINE_LIST left_coutlines;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  C_OUTLINE_LIST right_coutlines;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  ICOORDELT_IT cell_it = &amp;chop_cells;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                 <span class="comment">//under lines</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  BLOBNBOX_IT under_it = &amp;block-&gt;<a class="code" href="a00645.html#abe8092e46729fbddf38f16ad7ca07318">underlines</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  BLOBNBOX_IT ru_it = &amp;residual_underlines;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (block-&gt;<a class="code" href="a00645.html#a4846ebdcc832b4b0a762d87c0d83a056">get_rows</a>()-&gt;empty())</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span>;  <span class="comment">// Don&#39;t crash if there are no rows.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">for</span> (under_it.mark_cycle_pt (); !under_it.cycled_list ();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  under_it.forward ()) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    u_line = under_it.extract ();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    blob_box = u_line-&gt;<a class="code" href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">bounding_box</a> ();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    row = <a class="code" href="a01172.html#a0dd8a5ba42169e80f12ce943084cb307">most_overlapping_row</a> (block-&gt;<a class="code" href="a00645.html#a4846ebdcc832b4b0a762d87c0d83a056">get_rows</a> (), u_line);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (row == <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">return</span>;  <span class="comment">// Don&#39;t crash if there is no row.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="a01172.html#afc00f3a1057255657116acf952f3d7a4">find_underlined_blobs</a> (u_line, &amp;row-&gt;<a class="code" href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">baseline</a>, row-&gt;<a class="code" href="a00646.html#a819d94a95b9aab802acbcba097c67b2b">xheight</a>,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      row-&gt;<a class="code" href="a00646.html#a819d94a95b9aab802acbcba097c67b2b">xheight</a> * <a class="code" href="a01172.html#a58d10b85902de6aee9f8b6befb411e32">textord_underline_offset</a>,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      &amp;chop_cells);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    cell_it.set_to_list (&amp;chop_cells);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> (cell_it.mark_cycle_pt (); !cell_it.cycled_list ();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    cell_it.forward ()) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      chop_coord = cell_it.data ()-&gt;x ();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keywordflow">if</span> (cell_it.data ()-&gt;y () - chop_coord &gt; <a class="code" href="a01131.html#a3a42cc68fcf01c0535132af2f2337b3d">textord_fp_chop_error</a> + 1) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="a01131.html#a9fd0a4200a7f9548505d80456ea3f9e9">split_to_blob</a> (u_line, chop_coord,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;          <a class="code" href="a01131.html#a3a42cc68fcf01c0535132af2f2337b3d">textord_fp_chop_error</a> + 0.5,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          &amp;left_coutlines,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;          &amp;right_coutlines);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (!left_coutlines.empty()) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          ru_it.add_after_then_move(<span class="keyword">new</span> <a class="code" href="a00282.html">BLOBNBOX</a>(<span class="keyword">new</span> <a class="code" href="a00294.html">C_BLOB</a>(&amp;left_coutlines)));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        chop_coord = cell_it.data ()-&gt;y ();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="a01131.html#a9fd0a4200a7f9548505d80456ea3f9e9">split_to_blob</a>(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, chop_coord, <a class="code" href="a01131.html#a3a42cc68fcf01c0535132af2f2337b3d">textord_fp_chop_error</a> + 0.5,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                      &amp;left_coutlines, &amp;right_coutlines);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (!left_coutlines.empty()) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;          row-&gt;<a class="code" href="a00646.html#a342f76a0a1b31c8964b170a3faba25e8">insert_blob</a>(<span class="keyword">new</span> <a class="code" href="a00282.html">BLOBNBOX</a>(<span class="keyword">new</span> <a class="code" href="a00294.html">C_BLOB</a>(&amp;left_coutlines)));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        u_line = <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;           <span class="comment">//no more blobs to add</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keyword">delete</span> cell_it.extract();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (!right_coutlines.empty ()) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <a class="code" href="a01131.html#a9fd0a4200a7f9548505d80456ea3f9e9">split_to_blob</a>(<a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, blob_box.<a class="code" href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>(), <a class="code" href="a01131.html#a3a42cc68fcf01c0535132af2f2337b3d">textord_fp_chop_error</a> + 0.5,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    &amp;left_coutlines, &amp;right_coutlines);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">if</span> (!left_coutlines.empty())</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        ru_it.add_after_then_move(<span class="keyword">new</span> <a class="code" href="a00282.html">BLOBNBOX</a>(<span class="keyword">new</span> <a class="code" href="a00294.html">C_BLOB</a>(&amp;left_coutlines)));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (u_line != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="keywordflow">if</span> (u_line-&gt;<a class="code" href="a00282.html#a483f44541a4dd818f02225c92f030e07">cblob</a>() != <a class="code" href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">delete</span> u_line-&gt;<a class="code" href="a00282.html#a483f44541a4dd818f02225c92f030e07">cblob</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keyword">delete</span> u_line;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">if</span> (!ru_it.empty()) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ru_it.move_to_first();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (ru_it.mark_cycle_pt(); !ru_it.cycled_list(); ru_it.forward()) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      under_it.add_after_then_move(ru_it.extract());</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="ttc" id="a01172_html_a0dd8a5ba42169e80f12ce943084cb307"><div class="ttname"><a href="a01172.html#a0dd8a5ba42169e80f12ce943084cb307">most_overlapping_row</a></div><div class="ttdeci">TO_ROW * most_overlapping_row(TO_ROW_LIST *rows, BLOBNBOX *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00116">underlin.cpp:116</a></div></div>
-<div class="ttc" id="a01172_html_afc00f3a1057255657116acf952f3d7a4"><div class="ttname"><a href="a01172.html#afc00f3a1057255657116acf952f3d7a4">find_underlined_blobs</a></div><div class="ttdeci">void find_underlined_blobs(BLOBNBOX *u_line, QSPLINE *baseline, float xheight, float baseline_offset, ICOORDELT_LIST *chop_cells)</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00173">underlin.cpp:173</a></div></div>
-<div class="ttc" id="a00645_html_a4846ebdcc832b4b0a762d87c0d83a056"><div class="ttname"><a href="a00645.html#a4846ebdcc832b4b0a762d87c0d83a056">TO_BLOCK::get_rows</a></div><div class="ttdeci">TO_ROW_LIST * get_rows()</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00700">blobbox.h:700</a></div></div>
-<div class="ttc" id="a00854_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00854.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00144">host.h:144</a></div></div>
-<div class="ttc" id="a00609_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00609.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00075">rect.h:75</a></div></div>
-<div class="ttc" id="a00282_html"><div class="ttname"><a href="a00282.html">BLOBNBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00128">blobbox.h:128</a></div></div>
-<div class="ttc" id="a00609_html"><div class="ttname"><a href="a00609.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00813_source.html#l00030">rect.h:30</a></div></div>
-<div class="ttc" id="a00646_html_a819d94a95b9aab802acbcba097c67b2b"><div class="ttname"><a href="a00646.html#a819d94a95b9aab802acbcba097c67b2b">TO_ROW::xheight</a></div><div class="ttdeci">float xheight</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00653">blobbox.h:653</a></div></div>
-<div class="ttc" id="a00282_html_a483f44541a4dd818f02225c92f030e07"><div class="ttname"><a href="a00282.html#a483f44541a4dd818f02225c92f030e07">BLOBNBOX::cblob</a></div><div class="ttdeci">C_BLOB * cblob() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00253">blobbox.h:253</a></div></div>
-<div class="ttc" id="a00646_html"><div class="ttname"><a href="a00646.html">TO_ROW</a></div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00539">blobbox.h:539</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a01131_html_a3a42cc68fcf01c0535132af2f2337b3d"><div class="ttname"><a href="a01131.html#a3a42cc68fcf01c0535132af2f2337b3d">textord_fp_chop_error</a></div><div class="ttdeci">EXTERN int textord_fp_chop_error</div><div class="ttdef"><b>Definition:</b> <a href="a01131_source.html#l00039">fpchop.cpp:39</a></div></div>
-<div class="ttc" id="a00646_html_a342f76a0a1b31c8964b170a3faba25e8"><div class="ttname"><a href="a00646.html#a342f76a0a1b31c8964b170a3faba25e8">TO_ROW::insert_blob</a></div><div class="ttdeci">void insert_blob(BLOBNBOX *blob)</div><div class="ttdef"><b>Definition:</b> <a href="a00748_source.html#l00762">blobbox.cpp:762</a></div></div>
-<div class="ttc" id="a01172_html_a58d10b85902de6aee9f8b6befb411e32"><div class="ttname"><a href="a01172.html#a58d10b85902de6aee9f8b6befb411e32">textord_underline_offset</a></div><div class="ttdeci">EXTERN double textord_underline_offset</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00028">underlin.cpp:28</a></div></div>
-<div class="ttc" id="a00645_html_abe8092e46729fbddf38f16ad7ca07318"><div class="ttname"><a href="a00645.html#abe8092e46729fbddf38f16ad7ca07318">TO_BLOCK::underlines</a></div><div class="ttdeci">BLOBNBOX_LIST underlines</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00769">blobbox.h:769</a></div></div>
-<div class="ttc" id="a00294_html"><div class="ttname"><a href="a00294.html">C_BLOB</a></div><div class="ttdef"><b>Definition:</b> <a href="a00823_source.html#l00030">stepblob.h:30</a></div></div>
-<div class="ttc" id="a00282_html_a7b97b8bc16b1473a28f9c44011522f4e"><div class="ttname"><a href="a00282.html#a7b97b8bc16b1473a28f9c44011522f4e">BLOBNBOX::bounding_box</a></div><div class="ttdeci">const TBOX &amp; bounding_box() const </div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00215">blobbox.h:215</a></div></div>
-<div class="ttc" id="a00646_html_a611050c4612df0ccd0f2d64ca0005b9b"><div class="ttname"><a href="a00646.html#a611050c4612df0ccd0f2d64ca0005b9b">TO_ROW::baseline</a></div><div class="ttdeci">QSPLINE baseline</div><div class="ttdef"><b>Definition:</b> <a href="a00749_source.html#l00666">blobbox.h:666</a></div></div>
-<div class="ttc" id="a01131_html_a9fd0a4200a7f9548505d80456ea3f9e9"><div class="ttname"><a href="a01131.html#a9fd0a4200a7f9548505d80456ea3f9e9">split_to_blob</a></div><div class="ttdeci">void split_to_blob(BLOBNBOX *blob, inT16 chop_coord, float pitch_error, C_OUTLINE_LIST *left_coutlines, C_OUTLINE_LIST *right_coutlines)</div><div class="ttdef"><b>Definition:</b> <a href="a01131_source.html#l00243">fpchop.cpp:243</a></div></div>
+<p>Definition at line <a class="el" href="a01172_source.html#l00089">89</a> of file <a class="el" href="a01172_source.html">cntraining.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="comment">// Set the global Config parameters before parsing the command line.</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a> = <a class="code" href="a01172.html#a9243fe96ef4ae297e9fa0aab69416195">CNConfig</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>  *PageName;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  FILE  *TrainingPage;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="a00457.html">LIST</a>  CharList = <a class="code" href="a01046.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="a00321.html">CLUSTERER</a>  *Clusterer = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="a00457.html">LIST</a>    ProtoList = <a class="code" href="a01046.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="a00457.html">LIST</a>    NormProtoList = <a class="code" href="a01046.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="a00457.html">LIST</a> pCharList;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="a00447.html">LABELEDLIST</a> CharSample;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <a class="code" href="a00378.html">FEATURE_DEFS_STRUCT</a> FeatureDefs;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="a00894.html#a6e4c84ab01e39577e4a74d9ab1eff68b">InitFeatureDefs</a>(&amp;FeatureDefs);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <a class="code" href="a01176.html#a5177d61ebf73a60571198cb6eaa753ac">ParseArguments</a>(&amp;argc, &amp;argv);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">int</span> num_fonts = 0;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordflow">while</span> ((PageName = <a class="code" href="a01176.html#acc69f64ead8e1c64560ef259e5d87b5b">GetNextFilename</a>(argc, argv)) != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    printf(<span class="stringliteral">&quot;Reading %s ...\n&quot;</span>, PageName);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    TrainingPage = <a class="code" href="a01036.html#a1a07e904724c29e89b04235a34ded950">Efopen</a>(PageName, <span class="stringliteral">&quot;rb&quot;</span>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="a01176.html#a858311d0ef1820c6e83cc15ecc0e0e28">ReadTrainingSamples</a>(FeatureDefs, <a class="code" href="a01172.html#a13f1cc39e4f40922426135364cb7c3c2">PROGRAM_FEATURE_TYPE</a>,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        100, <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, TrainingPage, &amp;CharList);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    fclose(TrainingPage);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    ++num_fonts;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  printf(<span class="stringliteral">&quot;Clustering ...\n&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="comment">// To allow an individual font to form a separate cluster,</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="comment">// reduce the min samples:</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="comment">// Config.MinSamples = 0.5 / num_fonts;</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  pCharList = CharList;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <a class="code" href="a01046.html#a2cf19ba78be6b54f66823d58f34f2a53">iterate</a>(pCharList) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">//Cluster</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    CharSample = (<a class="code" href="a01177.html#af49d04c90ffcf9376c7a1e1db99182cb">LABELEDLIST</a>)<a class="code" href="a01046.html#a69547be764424f18b0be535400747978">first_node</a>(pCharList);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    Clusterer =</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      <a class="code" href="a01176.html#aeec0a66901e2f5ba2fba6c5023a6734e">SetUpForClustering</a>(FeatureDefs, CharSample, <a class="code" href="a01172.html#a13f1cc39e4f40922426135364cb7c3c2">PROGRAM_FEATURE_TYPE</a>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">float</span> SavedMinSamples = <a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a>.<a class="code" href="a00320.html#a30f3f6f54aa8e9371a0398f04bca0de3">MinSamples</a>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// To disable the tendency to produce a single cluster for all fonts,</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">// make MagicSamples an impossible to achieve number:</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// Config.MagicSamples = CharSample-&gt;SampleCount * 10;</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a>.<a class="code" href="a00320.html#a3578d77905f03b8d4321568be8f030c2">MagicSamples</a> = CharSample-&gt;<a class="code" href="a00447.html#aab481329945e65c4aeee79b145e4de51">SampleCount</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a>.<a class="code" href="a00320.html#a30f3f6f54aa8e9371a0398f04bca0de3">MinSamples</a> &gt; 0.001) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      ProtoList = <a class="code" href="a00883.html#ac7c6943d214b9c60e0f37cbb1a2111b4">ClusterSamples</a>(Clusterer, &amp;<a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="a01176.html#abeba7db95e0009664b96ac0441e7dc16">NumberOfProtos</a>(ProtoList, 1, 0) &gt; 0) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a>.<a class="code" href="a00320.html#a30f3f6f54aa8e9371a0398f04bca0de3">MinSamples</a> *= 0.95;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        printf(<span class="stringliteral">&quot;0 significant protos for %s.&quot;</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;               <span class="stringliteral">&quot; Retrying clustering with MinSamples = %f%%\n&quot;</span>,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;               CharSample-&gt;<a class="code" href="a00447.html#ad4701118c2e75f005c1f7e4c53abb35d">Label</a>, <a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a>.<a class="code" href="a00320.html#a30f3f6f54aa8e9371a0398f04bca0de3">MinSamples</a>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a>.<a class="code" href="a00320.html#a30f3f6f54aa8e9371a0398f04bca0de3">MinSamples</a> = SavedMinSamples;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="a01176.html#a19e1f0ede9842599275a9d0ffc67ef4a">AddToNormProtosList</a>(&amp;NormProtoList, ProtoList, CharSample-&gt;<a class="code" href="a00447.html#ad4701118c2e75f005c1f7e4c53abb35d">Label</a>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <a class="code" href="a01176.html#a2eb4d580c0984a25fea59c6ec1196cec">FreeTrainingSamples</a>(CharList);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">if</span> (Clusterer == <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) { <span class="comment">// To avoid a SIGSEGV</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    fprintf(stderr, <span class="stringliteral">&quot;Error: NULL clusterer!\n&quot;</span>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <a class="code" href="a01172.html#a6c8c93ebadfa96fb7adeeb5ace122e9c">WriteNormProtos</a>(FLAGS_D.c_str(), NormProtoList, Clusterer);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <a class="code" href="a01176.html#a7a389fb9515f5942d514995b3dfb904c">FreeNormProtoList</a>(NormProtoList);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <a class="code" href="a00883.html#a7e5357920f0bded023b15d29ddf15ebf">FreeProtoList</a>(&amp;ProtoList);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  <a class="code" href="a00883.html#aa5b6309260cd2d1acac25bd9cc9e9a66">FreeClusterer</a>(Clusterer);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  printf (<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}  <span class="comment">// main</span></div>
+<div class="ttc" id="a01176_html_a1630a3dc82a9a7cef07bb6153df9eb9c"><div class="ttname"><a href="a01176.html#a1630a3dc82a9a7cef07bb6153df9eb9c">Config</a></div><div class="ttdeci">CLUSTERCONFIG Config</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00051">commontraining.cpp:51</a></div></div>
+<div class="ttc" id="a00447_html_aab481329945e65c4aeee79b145e4de51"><div class="ttname"><a href="a00447.html#aab481329945e65c4aeee79b145e4de51">LABELEDLISTNODE::SampleCount</a></div><div class="ttdeci">int SampleCount</div><div class="ttdef"><b>Definition:</b> <a href="a01177_source.html#l00044">commontraining.h:44</a></div></div>
+<div class="ttc" id="a01172_html_a9243fe96ef4ae297e9fa0aab69416195"><div class="ttname"><a href="a01172.html#a9243fe96ef4ae297e9fa0aab69416195">CNConfig</a></div><div class="ttdeci">CLUSTERCONFIG CNConfig</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00079">cntraining.cpp:79</a></div></div>
+<div class="ttc" id="a00447_html"><div class="ttname"><a href="a00447.html">LABELEDLISTNODE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01177_source.html#l00041">commontraining.h:41</a></div></div>
+<div class="ttc" id="a00883_html_ac7c6943d214b9c60e0f37cbb1a2111b4"><div class="ttname"><a href="a00883.html#ac7c6943d214b9c60e0f37cbb1a2111b4">ClusterSamples</a></div><div class="ttdeci">LIST ClusterSamples(CLUSTERER *Clusterer, CLUSTERCONFIG *Config)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00508">cluster.cpp:508</a></div></div>
+<div class="ttc" id="a00321_html"><div class="ttname"><a href="a00321.html">CLUSTERER</a></div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00086">cluster.h:86</a></div></div>
+<div class="ttc" id="a00883_html_a7e5357920f0bded023b15d29ddf15ebf"><div class="ttname"><a href="a00883.html#a7e5357920f0bded023b15d29ddf15ebf">FreeProtoList</a></div><div class="ttdeci">void FreeProtoList(LIST *ProtoList)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00564">cluster.cpp:564</a></div></div>
+<div class="ttc" id="a01176_html_abeba7db95e0009664b96ac0441e7dc16"><div class="ttname"><a href="a01176.html#abeba7db95e0009664b96ac0441e7dc16">NumberOfProtos</a></div><div class="ttdeci">int NumberOfProtos(LIST ProtoList, BOOL8 CountSigProtos, BOOL8 CountInsigProtos)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00888">commontraining.cpp:888</a></div></div>
+<div class="ttc" id="a01046_html_a2cf19ba78be6b54f66823d58f34f2a53"><div class="ttname"><a href="a01046.html#a2cf19ba78be6b54f66823d58f34f2a53">iterate</a></div><div class="ttdeci">#define iterate(l)</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00159">oldlist.h:159</a></div></div>
+<div class="ttc" id="a00883_html_aa5b6309260cd2d1acac25bd9cc9e9a66"><div class="ttname"><a href="a00883.html#aa5b6309260cd2d1acac25bd9cc9e9a66">FreeClusterer</a></div><div class="ttdeci">void FreeClusterer(CLUSTERER *Clusterer)</div><div class="ttdef"><b>Definition:</b> <a href="a00883_source.html#l00536">cluster.cpp:536</a></div></div>
+<div class="ttc" id="a01046_html_ae212530ca629c67513698e988c705a5a"><div class="ttname"><a href="a01046.html#ae212530ca629c67513698e988c705a5a">NIL_LIST</a></div><div class="ttdeci">#define NIL_LIST</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00126">oldlist.h:126</a></div></div>
+<div class="ttc" id="a01177_html_af49d04c90ffcf9376c7a1e1db99182cb"><div class="ttname"><a href="a01177.html#af49d04c90ffcf9376c7a1e1db99182cb">LABELEDLIST</a></div><div class="ttdeci">struct LABELEDLISTNODE * LABELEDLIST</div></div>
+<div class="ttc" id="a00447_html_ad4701118c2e75f005c1f7e4c53abb35d"><div class="ttname"><a href="a00447.html#ad4701118c2e75f005c1f7e4c53abb35d">LABELEDLISTNODE::Label</a></div><div class="ttdeci">char * Label</div><div class="ttdef"><b>Definition:</b> <a href="a01177_source.html#l00043">commontraining.h:43</a></div></div>
+<div class="ttc" id="a00378_html"><div class="ttname"><a href="a00378.html">FEATURE_DEFS_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00895_source.html#l00048">featdefs.h:48</a></div></div>
+<div class="ttc" id="a01176_html_a5177d61ebf73a60571198cb6eaa753ac"><div class="ttname"><a href="a01176.html#a5177d61ebf73a60571198cb6eaa753ac">ParseArguments</a></div><div class="ttdeci">void ParseArguments(int *argc, char ***argv)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00089">commontraining.cpp:89</a></div></div>
+<div class="ttc" id="a01176_html_acc69f64ead8e1c64560ef259e5d87b5b"><div class="ttname"><a href="a01176.html#acc69f64ead8e1c64560ef259e5d87b5b">GetNextFilename</a></div><div class="ttdeci">const char * GetNextFilename(int argc, const char *const *argv)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00297">commontraining.cpp:297</a></div></div>
+<div class="ttc" id="a01176_html_a7a389fb9515f5942d514995b3dfb904c"><div class="ttname"><a href="a01176.html#a7a389fb9515f5942d514995b3dfb904c">FreeNormProtoList</a></div><div class="ttdeci">void FreeNormProtoList(LIST CharList)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00854">commontraining.cpp:854</a></div></div>
+<div class="ttc" id="a01172_html_a6c8c93ebadfa96fb7adeeb5ace122e9c"><div class="ttname"><a href="a01172.html#a6c8c93ebadfa96fb7adeeb5ace122e9c">WriteNormProtos</a></div><div class="ttdeci">void WriteNormProtos(const char *Directory, LIST LabeledProtoList, CLUSTERER *Clusterer)</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00215">cntraining.cpp:215</a></div></div>
+<div class="ttc" id="a01046_html_a69547be764424f18b0be535400747978"><div class="ttname"><a href="a01046.html#a69547be764424f18b0be535400747978">first_node</a></div><div class="ttdeci">#define first_node(l)</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00139">oldlist.h:139</a></div></div>
+<div class="ttc" id="a00457_html"><div class="ttname"><a href="a00457.html">list_rec</a></div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00127">oldlist.h:127</a></div></div>
+<div class="ttc" id="a01172_html_a13f1cc39e4f40922426135364cb7c3c2"><div class="ttname"><a href="a01172.html#a13f1cc39e4f40922426135364cb7c3c2">PROGRAM_FEATURE_TYPE</a></div><div class="ttdeci">#define PROGRAM_FEATURE_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00041">cntraining.cpp:41</a></div></div>
+<div class="ttc" id="a01176_html_a858311d0ef1820c6e83cc15ecc0e0e28"><div class="ttname"><a href="a01176.html#a858311d0ef1820c6e83cc15ecc0e0e28">ReadTrainingSamples</a></div><div class="ttdeci">void ReadTrainingSamples(const FEATURE_DEFS_STRUCT &amp;feature_defs, const char *feature_name, int max_samples, UNICHARSET *unicharset, FILE *file, LIST *training_samples)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00383">commontraining.cpp:383</a></div></div>
+<div class="ttc" id="a00320_html_a3578d77905f03b8d4321568be8f030c2"><div class="ttname"><a href="a00320.html#a3578d77905f03b8d4321568be8f030c2">CLUSTERCONFIG::MagicSamples</a></div><div class="ttdeci">int MagicSamples</div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00055">cluster.h:55</a></div></div>
+<div class="ttc" id="a01176_html_a19e1f0ede9842599275a9d0ffc67ef4a"><div class="ttname"><a href="a01176.html#a19e1f0ede9842599275a9d0ffc67ef4a">AddToNormProtosList</a></div><div class="ttdeci">void AddToNormProtosList(LIST *NormProtoList, LIST ProtoList, char *CharName)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00870">commontraining.cpp:870</a></div></div>
+<div class="ttc" id="a00894_html_a6e4c84ab01e39577e4a74d9ab1eff68b"><div class="ttname"><a href="a00894.html#a6e4c84ab01e39577e4a74d9ab1eff68b">InitFeatureDefs</a></div><div class="ttdeci">void InitFeatureDefs(FEATURE_DEFS_STRUCT *featuredefs)</div><div class="ttdef"><b>Definition:</b> <a href="a00894_source.html#l00121">featdefs.cpp:121</a></div></div>
+<div class="ttc" id="a01176_html_aeec0a66901e2f5ba2fba6c5023a6734e"><div class="ttname"><a href="a01176.html#aeec0a66901e2f5ba2fba6c5023a6734e">SetUpForClustering</a></div><div class="ttdeci">CLUSTERER * SetUpForClustering(const FEATURE_DEFS_STRUCT &amp;FeatureDefs, LABELEDLIST char_sample, const char *program_feature_type)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00502">commontraining.cpp:502</a></div></div>
+<div class="ttc" id="a01036_html_a1a07e904724c29e89b04235a34ded950"><div class="ttname"><a href="a01036.html#a1a07e904724c29e89b04235a34ded950">Efopen</a></div><div class="ttdeci">FILE * Efopen(const char *Name, const char *Mode)</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00032">efio.cpp:32</a></div></div>
+<div class="ttc" id="a01176_html_a2eb4d580c0984a25fea59c6ec1196cec"><div class="ttname"><a href="a01176.html#a2eb4d580c0984a25fea59c6ec1196cec">FreeTrainingSamples</a></div><div class="ttdeci">void FreeTrainingSamples(LIST CharList)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00453">commontraining.cpp:453</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00320_html_a30f3f6f54aa8e9371a0398f04bca0de3"><div class="ttname"><a href="a00320.html#a30f3f6f54aa8e9371a0398f04bca0de3">CLUSTERCONFIG::MinSamples</a></div><div class="ttdeci">FLOAT32 MinSamples</div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00050">cluster.h:50</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a8c1248a073d641cea7a9fec3e563dfc5"></a>
+<a class="anchor" id="a6c8c93ebadfa96fb7adeeb5ace122e9c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void vertical_cunderline_projection </td>
+          <td class="memname">void WriteNormProtos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00295.html">C_OUTLINE</a> *&#160;</td>
-          <td class="paramname"><em>outline</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>Directory</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00534.html">QSPLINE</a> *&#160;</td>
-          <td class="paramname"><em>baseline</em>, </td>
+          <td class="paramtype"><a class="el" href="a01046.html#aa200acf94add0e61783bfcd5965bb645">LIST</a>&#160;</td>
+          <td class="paramname"><em>LabeledProtoList</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>xheight</em>, </td>
+          <td class="paramtype"><a class="el" href="a00321.html">CLUSTERER</a> *&#160;</td>
+          <td class="paramname"><em>Clusterer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<hr/>
+ <h2>Private Function Prototypes </h2>
+<hr/>
+ <h2>Private Code </h2>
+
+<p>Definition at line <a class="el" href="a01172_source.html#l00215">215</a> of file <a class="el" href="a01172_source.html">cntraining.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  FILE    *File;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <a class="code" href="a00561.html">STRING</a> Filename;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <a class="code" href="a00447.html">LABELEDLIST</a> LabeledProto;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordtype">int</span> N;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  Filename = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">if</span> (Directory != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; Directory[0] != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    Filename += Directory;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    Filename += <span class="stringliteral">&quot;/&quot;</span>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  Filename += <span class="stringliteral">&quot;normproto&quot;</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  printf (<span class="stringliteral">&quot;\nWriting %s ...&quot;</span>, Filename.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  File = <a class="code" href="a01036.html#a1a07e904724c29e89b04235a34ded950">Efopen</a> (Filename.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), <span class="stringliteral">&quot;wb&quot;</span>);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  fprintf(File,<span class="stringliteral">&quot;%0d\n&quot;</span>,Clusterer-&gt;<a class="code" href="a00321.html#ac78a1d40ce4bac0a156a21e2d987f394">SampleSize</a>);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <a class="code" href="a00885.html#a889ad8a8f7e5c6652ba059206b5a0aa8">WriteParamDesc</a>(File,Clusterer-&gt;<a class="code" href="a00321.html#ac78a1d40ce4bac0a156a21e2d987f394">SampleSize</a>,Clusterer-&gt;<a class="code" href="a00321.html#af44850047e9f5b3648871d7517c04316">ParamDesc</a>);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <a class="code" href="a01046.html#a2cf19ba78be6b54f66823d58f34f2a53">iterate</a>(LabeledProtoList)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    LabeledProto = (<a class="code" href="a01177.html#af49d04c90ffcf9376c7a1e1db99182cb">LABELEDLIST</a>) <a class="code" href="a01046.html#a69547be764424f18b0be535400747978">first_node</a> (LabeledProtoList);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    N = <a class="code" href="a01176.html#abeba7db95e0009664b96ac0441e7dc16">NumberOfProtos</a>(LabeledProto-&gt;<a class="code" href="a00447.html#a848ab6ee611dbc860f80a47ecef2faa7">List</a>, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">if</span> (N &lt; 1) {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      printf (<span class="stringliteral">&quot;\nError! Not enough protos for %s: %d protos&quot;</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;              <span class="stringliteral">&quot; (%d significant protos&quot;</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;              <span class="stringliteral">&quot;, %d insignificant protos)\n&quot;</span>,</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;              LabeledProto-&gt;<a class="code" href="a00447.html#ad4701118c2e75f005c1f7e4c53abb35d">Label</a>, N,</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;              <a class="code" href="a01176.html#abeba7db95e0009664b96ac0441e7dc16">NumberOfProtos</a>(LabeledProto-&gt;<a class="code" href="a00447.html#a848ab6ee611dbc860f80a47ecef2faa7">List</a>, 1, 0),</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;              <a class="code" href="a01176.html#abeba7db95e0009664b96ac0441e7dc16">NumberOfProtos</a>(LabeledProto-&gt;<a class="code" href="a00447.html#a848ab6ee611dbc860f80a47ecef2faa7">List</a>, 0, 1));</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      exit(1);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    fprintf(File, <span class="stringliteral">&quot;\n%s %d\n&quot;</span>, LabeledProto-&gt;<a class="code" href="a00447.html#ad4701118c2e75f005c1f7e4c53abb35d">Label</a>, N);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="a01172.html#a3b0603890697f92689a2c54d135ddaf4">WriteProtos</a>(File, Clusterer-&gt;<a class="code" href="a00321.html#ac78a1d40ce4bac0a156a21e2d987f394">SampleSize</a>, LabeledProto-&gt;<a class="code" href="a00447.html#a848ab6ee611dbc860f80a47ecef2faa7">List</a>, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  fclose (File);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}  <span class="comment">// WriteNormProtos</span></div>
+<div class="ttc" id="a00561_html_a32beee43ecab1bed8bebc3466896ad6e"><div class="ttname"><a href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">STRING::string</a></div><div class="ttdeci">const char * string() const </div><div class="ttdef"><b>Definition:</b> <a href="a00858_source.html#l00193">strngs.cpp:193</a></div></div>
+<div class="ttc" id="a00447_html"><div class="ttname"><a href="a00447.html">LABELEDLISTNODE</a></div><div class="ttdef"><b>Definition:</b> <a href="a01177_source.html#l00041">commontraining.h:41</a></div></div>
+<div class="ttc" id="a01176_html_abeba7db95e0009664b96ac0441e7dc16"><div class="ttname"><a href="a01176.html#abeba7db95e0009664b96ac0441e7dc16">NumberOfProtos</a></div><div class="ttdeci">int NumberOfProtos(LIST ProtoList, BOOL8 CountSigProtos, BOOL8 CountInsigProtos)</div><div class="ttdef"><b>Definition:</b> <a href="a01176_source.html#l00888">commontraining.cpp:888</a></div></div>
+<div class="ttc" id="a01046_html_a2cf19ba78be6b54f66823d58f34f2a53"><div class="ttname"><a href="a01046.html#a2cf19ba78be6b54f66823d58f34f2a53">iterate</a></div><div class="ttdeci">#define iterate(l)</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00159">oldlist.h:159</a></div></div>
+<div class="ttc" id="a01172_html_a3b0603890697f92689a2c54d135ddaf4"><div class="ttname"><a href="a01172.html#a3b0603890697f92689a2c54d135ddaf4">WriteProtos</a></div><div class="ttdeci">void WriteProtos(FILE *File, uinT16 N, LIST ProtoList, BOOL8 WriteSigProtos, BOOL8 WriteInsigProtos)</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00270">cntraining.cpp:270</a></div></div>
+<div class="ttc" id="a01177_html_af49d04c90ffcf9376c7a1e1db99182cb"><div class="ttname"><a href="a01177.html#af49d04c90ffcf9376c7a1e1db99182cb">LABELEDLIST</a></div><div class="ttdeci">struct LABELEDLISTNODE * LABELEDLIST</div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a00447_html_ad4701118c2e75f005c1f7e4c53abb35d"><div class="ttname"><a href="a00447.html#ad4701118c2e75f005c1f7e4c53abb35d">LABELEDLISTNODE::Label</a></div><div class="ttdeci">char * Label</div><div class="ttdef"><b>Definition:</b> <a href="a01177_source.html#l00043">commontraining.h:43</a></div></div>
+<div class="ttc" id="a00447_html_a848ab6ee611dbc860f80a47ecef2faa7"><div class="ttname"><a href="a00447.html#a848ab6ee611dbc860f80a47ecef2faa7">LABELEDLISTNODE::List</a></div><div class="ttdeci">LIST List</div><div class="ttdef"><b>Definition:</b> <a href="a01177_source.html#l00046">commontraining.h:46</a></div></div>
+<div class="ttc" id="a00321_html_ac78a1d40ce4bac0a156a21e2d987f394"><div class="ttname"><a href="a00321.html#ac78a1d40ce4bac0a156a21e2d987f394">CLUSTERER::SampleSize</a></div><div class="ttdeci">inT16 SampleSize</div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00087">cluster.h:87</a></div></div>
+<div class="ttc" id="a00885_html_a889ad8a8f7e5c6652ba059206b5a0aa8"><div class="ttname"><a href="a00885.html#a889ad8a8f7e5c6652ba059206b5a0aa8">WriteParamDesc</a></div><div class="ttdeci">void WriteParamDesc(FILE *File, uinT16 N, PARAM_DESC ParamDesc[])</div><div class="ttdef"><b>Definition:</b> <a href="a00885_source.html#l00318">clusttool.cpp:318</a></div></div>
+<div class="ttc" id="a01046_html_a69547be764424f18b0be535400747978"><div class="ttname"><a href="a01046.html#a69547be764424f18b0be535400747978">first_node</a></div><div class="ttdeci">#define first_node(l)</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00139">oldlist.h:139</a></div></div>
+<div class="ttc" id="a01036_html_a1a07e904724c29e89b04235a34ded950"><div class="ttname"><a href="a01036.html#a1a07e904724c29e89b04235a34ded950">Efopen</a></div><div class="ttdeci">FILE * Efopen(const char *Name, const char *Mode)</div><div class="ttdef"><b>Definition:</b> <a href="a01036_source.html#l00032">efio.cpp:32</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00321_html_af44850047e9f5b3648871d7517c04316"><div class="ttname"><a href="a00321.html#af44850047e9f5b3648871d7517c04316">CLUSTERER::ParamDesc</a></div><div class="ttdeci">PARAM_DESC * ParamDesc</div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00088">cluster.h:88</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3b0603890697f92689a2c54d135ddaf4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WriteProtos </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>File</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>baseline_offset</em>, </td>
+          <td class="paramtype"><a class="el" href="a00835.html#acb2dfad543247740dab87d31bb49dfff">uinT16</a>&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00577.html">STATS</a> *&#160;</td>
-          <td class="paramname"><em>lower_proj</em>, </td>
+          <td class="paramtype"><a class="el" href="a01046.html#aa200acf94add0e61783bfcd5965bb645">LIST</a>&#160;</td>
+          <td class="paramname"><em>ProtoList</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00577.html">STATS</a> *&#160;</td>
-          <td class="paramname"><em>middle_proj</em>, </td>
+          <td class="paramtype"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td>
+          <td class="paramname"><em>WriteSigProtos</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00577.html">STATS</a> *&#160;</td>
-          <td class="paramname"><em>upper_proj</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00835.html#a7712a7e28433d0ade59219a129549b6f">BOOL8</a>&#160;</td>
+          <td class="paramname"><em>WriteInsigProtos</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -508,109 +793,46 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a01172_source.html#l00218">218</a> of file <a class="el" href="a01172_source.html">underlin.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                     {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <a class="code" href="a00425.html">ICOORD</a> pos;                    <span class="comment">//current point</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <a class="code" href="a00425.html">ICOORD</a> step;                   <span class="comment">//edge step</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> lower_y, upper_y;        <span class="comment">//region limits</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <a class="code" href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a> length;                  <span class="comment">//of outline</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a> stepindex;               <span class="comment">//current step</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  C_OUTLINE_IT out_it = outline-&gt;<a class="code" href="a00295.html#a87880b33bc69fa17ab37a93706ae8d84">child</a> ();</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  pos = outline-&gt;<a class="code" href="a00295.html#a0f9fef7d74691bbcf45faa2272600500">start_pos</a> ();</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  length = outline-&gt;<a class="code" href="a00295.html#afb87d87d3d48e964937b068f55f3ca3a">pathlength</a> ();</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordflow">for</span> (stepindex = 0; stepindex &lt; length; stepindex++) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    step = outline-&gt;<a class="code" href="a00295.html#aea43094f29c8fc05632b449b45b66072">step</a> (stepindex);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">if</span> (step.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () &gt; 0) {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      lower_y =</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        (<a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>) floor (baseline-&gt;<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> ()) + baseline_offset + 0.5);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      upper_y =</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        (<a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>) floor (baseline-&gt;<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> ()) + baseline_offset +</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        xheight + 0.5);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <span class="keywordflow">if</span> (pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> () &gt;= lower_y) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        lower_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> (), -lower_y);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">if</span> (pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> () &gt;= upper_y) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;          middle_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> (), lower_y - upper_y);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;          upper_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> (), upper_y - pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ());</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;          middle_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> (), lower_y - pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ());</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        lower_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> (), -pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ());</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (step.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () &lt; 0) {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      lower_y =</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        (<a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>) floor (baseline-&gt;<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () - 1) + baseline_offset +</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        0.5);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      upper_y =</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        (<a class="code" href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a>) floor (baseline-&gt;<a class="code" href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">y</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () - 1) + baseline_offset +</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        xheight + 0.5);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      <span class="keywordflow">if</span> (pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> () &gt;= lower_y) {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        lower_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () - 1, lower_y);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">if</span> (pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> () &gt;= upper_y) {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;          middle_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () - 1, upper_y - lower_y);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;          upper_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () - 1, pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> () - upper_y);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        }</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;          middle_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () - 1, pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> () - lower_y);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        lower_proj-&gt;<a class="code" href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">add</a> (pos.<a class="code" href="a00425.html#a59722a47c540007c58a539f0e35b3f33">x</a> () - 1, pos.<a class="code" href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">y</a> ());</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    pos += step;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordflow">for</span> (out_it.mark_cycle_pt (); !out_it.cycled_list (); out_it.forward ()) {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="a01172.html#a8c1248a073d641cea7a9fec3e563dfc5">vertical_cunderline_projection</a> (out_it.data (),</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      <a class="code" href="a00937.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a>, xheight, baseline_offset,</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      lower_proj, middle_proj, upper_proj);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
-<div class="ttc" id="a00577_html_ab8cacba14df28eed1bffc4cea0b2f87f"><div class="ttname"><a href="a00577.html#ab8cacba14df28eed1bffc4cea0b2f87f">STATS::add</a></div><div class="ttdeci">void add(inT32 value, inT32 count)</div><div class="ttdef"><b>Definition:</b> <a href="a00820_source.html#l00104">statistc.cpp:104</a></div></div>
-<div class="ttc" id="a00854_html_aba1f582fd0168f3ff9225d8c90fa9eb8"><div class="ttname"><a href="a00854.html#aba1f582fd0168f3ff9225d8c90fa9eb8">inT32</a></div><div class="ttdeci">int inT32</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00102">host.h:102</a></div></div>
-<div class="ttc" id="a00295_html_a0f9fef7d74691bbcf45faa2272600500"><div class="ttname"><a href="a00295.html#a0f9fef7d74691bbcf45faa2272600500">C_OUTLINE::start_pos</a></div><div class="ttdeci">const ICOORD &amp; start_pos() const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00146">coutln.h:146</a></div></div>
-<div class="ttc" id="a00295_html_afb87d87d3d48e964937b068f55f3ca3a"><div class="ttname"><a href="a00295.html#afb87d87d3d48e964937b068f55f3ca3a">C_OUTLINE::pathlength</a></div><div class="ttdeci">inT32 pathlength() const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00133">coutln.h:133</a></div></div>
-<div class="ttc" id="a00937_html_a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23"><div class="ttname"><a href="a00937.html#a2a4b69f9a2827dc98bc4cbc233118865a83297de004f4e58b9be2108c6cd08a23">baseline</a></div><div class="ttdef"><b>Definition:</b> <a href="a00937_source.html#l00062">mfoutline.h:62</a></div></div>
-<div class="ttc" id="a00425_html_a66bba6ff8a5f060775e1c2ca511f7f29"><div class="ttname"><a href="a00425.html#a66bba6ff8a5f060775e1c2ca511f7f29">ICOORD::y</a></div><div class="ttdeci">inT16 y() const </div><div class="ttdoc">access_function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00056">points.h:56</a></div></div>
-<div class="ttc" id="a00854_html_a8d41499d38c24d39b221ab0c158fe5a8"><div class="ttname"><a href="a00854.html#a8d41499d38c24d39b221ab0c158fe5a8">inT16</a></div><div class="ttdeci">short inT16</div><div class="ttdef"><b>Definition:</b> <a href="a00854_source.html#l00100">host.h:100</a></div></div>
-<div class="ttc" id="a00425_html"><div class="ttname"><a href="a00425.html">ICOORD</a></div><div class="ttdoc">integer coordinate </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00030">points.h:30</a></div></div>
-<div class="ttc" id="a01172_html_a8c1248a073d641cea7a9fec3e563dfc5"><div class="ttname"><a href="a01172.html#a8c1248a073d641cea7a9fec3e563dfc5">vertical_cunderline_projection</a></div><div class="ttdeci">void vertical_cunderline_projection(C_OUTLINE *outline, QSPLINE *baseline, float xheight, float baseline_offset, STATS *lower_proj, STATS *middle_proj, STATS *upper_proj)</div><div class="ttdef"><b>Definition:</b> <a href="a01172_source.html#l00218">underlin.cpp:218</a></div></div>
-<div class="ttc" id="a00534_html_ab9f77ca80057e3844e880a1bf003beca"><div class="ttname"><a href="a00534.html#ab9f77ca80057e3844e880a1bf003beca">QSPLINE::y</a></div><div class="ttdeci">double y(double x) const </div><div class="ttdef"><b>Definition:</b> <a href="a00808_source.html#l00217">quspline.cpp:217</a></div></div>
-<div class="ttc" id="a00425_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00425.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00798_source.html#l00052">points.h:52</a></div></div>
-<div class="ttc" id="a00295_html_aea43094f29c8fc05632b449b45b66072"><div class="ttname"><a href="a00295.html#aea43094f29c8fc05632b449b45b66072">C_OUTLINE::step</a></div><div class="ttdeci">ICOORD step(int index) const </div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00142">coutln.h:142</a></div></div>
-<div class="ttc" id="a00295_html_a87880b33bc69fa17ab37a93706ae8d84"><div class="ttname"><a href="a00295.html#a87880b33bc69fa17ab37a93706ae8d84">C_OUTLINE::child</a></div><div class="ttdeci">C_OUTLINE_LIST * child()</div><div class="ttdef"><b>Definition:</b> <a href="a00761_source.html#l00106">coutln.h:106</a></div></div>
+<p>Definition at line <a class="el" href="a01172_source.html#l00270">270</a> of file <a class="el" href="a01172_source.html">cntraining.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <a class="code" href="a00513.html">PROTOTYPE</a>  *Proto;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="comment">// write prototypes</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="a01046.html#a2cf19ba78be6b54f66823d58f34f2a53">iterate</a>(ProtoList)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    Proto = (<a class="code" href="a00513.html">PROTOTYPE</a> *) <a class="code" href="a01046.html#a69547be764424f18b0be535400747978">first_node</a> ( ProtoList );</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> (( Proto-&gt;<a class="code" href="a00513.html#a5d94887aaa0acd7e4a0c04c420af5670">Significant</a> &amp;&amp; WriteSigProtos )  ||</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      ( ! Proto-&gt;<a class="code" href="a00513.html#a5d94887aaa0acd7e4a0c04c420af5670">Significant</a> &amp;&amp; WriteInsigProtos ) )</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      <a class="code" href="a00885.html#a6f0ccfd7c117c2006796af1d3b19f110">WritePrototype</a>( File, N, Proto );</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}  <span class="comment">// WriteProtos</span></div>
+<div class="ttc" id="a00513_html_a5d94887aaa0acd7e4a0c04c420af5670"><div class="ttname"><a href="a00513.html#a5d94887aaa0acd7e4a0c04c420af5670">PROTOTYPE::Significant</a></div><div class="ttdeci">unsigned Significant</div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00068">cluster.h:68</a></div></div>
+<div class="ttc" id="a01046_html_a2cf19ba78be6b54f66823d58f34f2a53"><div class="ttname"><a href="a01046.html#a2cf19ba78be6b54f66823d58f34f2a53">iterate</a></div><div class="ttdeci">#define iterate(l)</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00159">oldlist.h:159</a></div></div>
+<div class="ttc" id="a00513_html"><div class="ttname"><a href="a00513.html">PROTOTYPE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00067">cluster.h:67</a></div></div>
+<div class="ttc" id="a01046_html_a69547be764424f18b0be535400747978"><div class="ttname"><a href="a01046.html#a69547be764424f18b0be535400747978">first_node</a></div><div class="ttdeci">#define first_node(l)</div><div class="ttdef"><b>Definition:</b> <a href="a01046_source.html#l00139">oldlist.h:139</a></div></div>
+<div class="ttc" id="a00885_html_a6f0ccfd7c117c2006796af1d3b19f110"><div class="ttname"><a href="a00885.html#a6f0ccfd7c117c2006796af1d3b19f110">WritePrototype</a></div><div class="ttdeci">void WritePrototype(FILE *File, uinT16 N, PROTOTYPE *Proto)</div><div class="ttdef"><b>Definition:</b> <a href="a00885_source.html#l00348">clusttool.cpp:348</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a3b7ff031211912735f61bd0dc97c6f2b"></a>
+<a class="anchor" id="a9243fe96ef4ae297e9fa0aab69416195"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a01243.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> bool textord_restore_underlines = <a class="el" href="a01041.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td>
+          <td class="memname"><a class="el" href="a00320.html">CLUSTERCONFIG</a> CNConfig</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>"Chop underlines &amp; put back" </p>
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">{</div>
+<div class="line">  <a class="code" href="a00884.html#a2bf647f23b4a059a559e4d991437c9eaa39d32ff639641ca169c9729c58614459">elliptical</a>, 0.025, 0.05, 0.8, 1e-3, 0</div>
+<div class="line">}</div>
+<div class="ttc" id="a00884_html_a2bf647f23b4a059a559e4d991437c9eaa39d32ff639641ca169c9729c58614459"><div class="ttname"><a href="a00884.html#a2bf647f23b4a059a559e4d991437c9eaa39d32ff639641ca169c9729c58614459">elliptical</a></div><div class="ttdef"><b>Definition:</b> <a href="a00884_source.html#l00045">cluster.h:45</a></div></div>
+</div><!-- fragment --><hr/>
+ <h2>Global Data Definitions and Declarations </h2>
 
-<p>Definition at line <a class="el" href="a01172_source.html#l00030">30</a> of file <a class="el" href="a01172_source.html">underlin.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a58d10b85902de6aee9f8b6befb411e32"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a01243.html#a77366c1bd428629dc898e188bfd182a3">EXTERN</a> double textord_underline_offset = 0.1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>"Fraction of x to ignore" </p>
-
-<p>Definition at line <a class="el" href="a01172_source.html#l00028">28</a> of file <a class="el" href="a01172_source.html">underlin.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a01172_source.html#l00079">79</a> of file <a class="el" href="a01172_source.html">cntraining.cpp</a>.</p>
 
 </div>
 </div>
@@ -619,8 +841,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01172.html">underlin.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:37 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_3f6e8af9f0f503b702a1e3dd8236253a.html">training</a></li><li class="navelem"><a class="el" href="a01172.html">cntraining.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:12 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

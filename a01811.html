@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00356.html','');});
+$(document).ready(function(){initNavTree('a00409.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -106,21 +106,35 @@ $(document).ready(function(){initNavTree('a00356.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract::DawgCache Member List</div>  </div>
+<div class="title">tesseract::GridBase Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00356.html">tesseract::DawgCache</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00409.html">tesseract::GridBase</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00356.html#a2754644a4f3ae4937961dd5ea915637f">DeleteUnusedDawgs</a>()</td><td class="entry"><a class="el" href="a00356.html">tesseract::DawgCache</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00356.html#ada92463fe773f4482dbdaff203caa2b0">FreeDawg</a>(Dawg *dawg)</td><td class="entry"><a class="el" href="a00356.html">tesseract::DawgCache</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00356.html#affeb7f29f3662300e89a034f41ca0af2">GetSquishedDawg</a>(const STRING &amp;lang, const char *data_file_name, TessdataType tessdata_dawg_type, int debug_level)</td><td class="entry"><a class="el" href="a00356.html">tesseract::DawgCache</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#ad20b2cb8eb2bf52871d5260c04949cce">bleft</a>() const </td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00409.html#a5f09e93ec22c3f7a245eb6611309d8d6">bleft_</a></td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#a6349387c9d98fae34cf247b12cdc5a00">ClipGridCoords</a>(int *x, int *y) const </td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00409.html#ac1ea91a905041f0fa896bec740903a77">GridBase</a>()</td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#a52bfcebedaa848425b8e2d228df559b6">GridBase</a>(int gridsize, const ICOORD &amp;bleft, const ICOORD &amp;tright)</td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00409.html#adcda3a0efeed2a95fc777fc7127898a6">gridbuckets_</a></td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#a9cb158bba184d657c51257b98eea9f8f">GridCoords</a>(int x, int y, int *grid_x, int *grid_y) const </td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00409.html#a07e6b230c150180d009ef1f317e642f2">gridheight</a>() const </td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#ae70ca33c0676a296720fea5ddc0aa5cc">gridheight_</a></td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00409.html#afff2cee730084711205977b5fcb4901e">gridsize</a>() const </td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#a0758dd90d5ce47e504a4148f4cda33f3">gridsize_</a></td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00409.html#a0a38ea995b9d65f8b67d66d5501a5b80">gridwidth</a>() const </td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#a429c00f7b3ea66cfd63a75cfa2c1b43d">gridwidth_</a></td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00409.html#a9e23ba0f9d310510c9a2b3a38f11e683">Init</a>(int gridsize, const ICOORD &amp;bleft, const ICOORD &amp;tright)</td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#aa94e147841b6a4fae0b28e7e872685a5">tright</a>() const </td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00409.html#ac348165d112922b3d956f924405012cd">tright_</a></td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00409.html#a7ee16480a8ca444d7847850ac0115813">~GridBase</a>()</td><td class="entry"><a class="el" href="a00409.html">tesseract::GridBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2015 13:46:51 for Tesseract by
+    <li class="footer">Generated on Thu May 14 2015 14:54:27 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

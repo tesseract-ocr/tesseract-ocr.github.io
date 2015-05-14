@@ -1,8 +1,9 @@
 var a01245 =
 [
-    [ "BAD_PRIORITY", "a01245.html#a3fd320d93290a64ff24687ec596f1f61", null ],
-    [ "MAX_NUM_SEAMS", "a01245.html#aec46796fda71456341a9591d1b42b5f8", null ],
-    [ "MAX_OLD_SEAMS", "a01245.html#a5ea8c0b3acc90ffdddd848229167cc01", null ],
-    [ "NO_FULL_PRIORITY", "a01245.html#a149d8b9e54f546955de3fa68bf5bf521", null ],
-    [ "SPLIT_CLOSENESS", "a01245.html#a137ecd53cc1a098b2943e48aff99c6b6", null ]
+    [ "is_inside_angle", "a01245.html#a2ed4acccf540054febe7403a827ebbac", null ],
+    [ "same_outline_bounds", "a01245.html#a4bc2f1c0c8896eb6273a1e213280a446", null ],
+    [ "weighted_edgept_dist", "a01245.html#a4df928397c7bcfee5373a86d6f2f46da", null ],
+    [ "correct_blob_order", "a01245.html#ac29e40d2a6a1a8a7a1eb317324262d86", null ],
+    [ "eliminate_duplicate_outlines", "a01245.html#a1d3c90a38ea91d7baf73af2c77b03d7f", null ],
+    [ "setup_blob_outlines", "a01245.html#ad4f4e346c4650affddae46c8df8299ce", null ]
 ];

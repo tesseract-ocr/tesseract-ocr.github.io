@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccstruct/normalis.h File Reference</title>
+<title>Tesseract: ccstruct/polyblk.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,88 +105,103 @@ $(document).ready(function(){initNavTree('a00782.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">normalis.h File Reference</div>  </div>
+<div class="title">polyblk.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00849_source.html">genericvector.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00854_source.html">host.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00823_source.html">elst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00783_source.html">polyblk.h</a>&quot;</code><br />
 </div>
 <p><a href="a00782_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00360.html">DENORM</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac7fc412ab6ad488cb3a5e37e03ab9aef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#ac7fc412ab6ad488cb3a5e37e03ab9aef">PBLOCK_LABEL_SIZE</a>&#160;&#160;&#160;150</td></tr>
+<tr class="separator:ac7fc412ab6ad488cb3a5e37e03ab9aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d14ec91d9d1960d7c43d6b7df9afca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#a19d14ec91d9d1960d7c43d6b7df9afca">INTERSECTING</a>&#160;&#160;&#160;<a class="el" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></td></tr>
+<tr class="separator:a19d14ec91d9d1960d7c43d6b7df9afca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ad3e7916f0120e26e7b4e0f830784194a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#ad3e7916f0120e26e7b4e0f830784194a">tesseract::NormalizationMode</a> { <a class="el" href="a01279.html#ad3e7916f0120e26e7b4e0f830784194aa643bd757ce3d9647d68aae97256d0233">tesseract::NM_BASELINE</a> = -3, 
-<a class="el" href="a01279.html#ad3e7916f0120e26e7b4e0f830784194aa856806160022221f012f954a60601b74">tesseract::NM_CHAR_ISOTROPIC</a> = -2, 
-<a class="el" href="a01279.html#ad3e7916f0120e26e7b4e0f830784194aa81bec0cd85211e03befb611fa7003180">tesseract::NM_CHAR_ANISOTROPIC</a> = -1
- }</td></tr>
-<tr class="separator:ad3e7916f0120e26e7b4e0f830784194a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:af0751b110da1f0bbd3068aa0d7eac955"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#af0751b110da1f0bbd3068aa0d7eac955">kBlnCellHeight</a> = 256</td></tr>
-<tr class="separator:af0751b110da1f0bbd3068aa0d7eac955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af974e6755e636c8bc7cbe57e3bcbdd73"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#af974e6755e636c8bc7cbe57e3bcbdd73">kBlnXHeight</a> = 128</td></tr>
-<tr class="separator:af974e6755e636c8bc7cbe57e3bcbdd73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe10ce41bf7240ae8a053dea471d6ed5"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#abe10ce41bf7240ae8a053dea471d6ed5">kBlnBaselineOffset</a> = 64</td></tr>
-<tr class="separator:abe10ce41bf7240ae8a053dea471d6ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">POLY_BLOCK::reflect_in_y_axis</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Reflect the coords of the polygon in the y-axis. (Flip the sign of x.) </p>
+</div></td></tr>
+<tr class="memitem:ae2ec3e961690fb921eeb5e3c606fb7a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00782.html#ae2ec3e961690fb921eeb5e3c606fb7a3">lessthan</a> (const void *first, const void *second)</td></tr>
+<tr class="separator:ae2ec3e961690fb921eeb5e3c606fb7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="abe10ce41bf7240ae8a053dea471d6ed5"></a>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a19d14ec91d9d1960d7c43d6b7df9afca"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int kBlnBaselineOffset = 64</td>
+          <td class="memname">#define INTERSECTING&#160;&#160;&#160;<a class="el" href="a00835.html#a3905e54374e49708219791e7d59c60fb">MAX_INT16</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00782_source.html#l00029">29</a> of file <a class="el" href="a00782_source.html">normalis.h</a>.</p>
+<p>Definition at line <a class="el" href="a00782_source.html#l00032">32</a> of file <a class="el" href="a00782_source.html">polyblk.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af0751b110da1f0bbd3068aa0d7eac955"></a>
+<a class="anchor" id="ac7fc412ab6ad488cb3a5e37e03ab9aef"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int kBlnCellHeight = 256</td>
+          <td class="memname">#define PBLOCK_LABEL_SIZE&#160;&#160;&#160;150</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00782_source.html#l00027">27</a> of file <a class="el" href="a00782_source.html">normalis.h</a>.</p>
+<p>Definition at line <a class="el" href="a00782_source.html#l00031">31</a> of file <a class="el" href="a00782_source.html">polyblk.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af974e6755e636c8bc7cbe57e3bcbdd73"></a>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ae2ec3e961690fb921eeb5e3c606fb7a3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int kBlnXHeight = 128</td>
+          <td class="memname">int lessthan </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00782_source.html#l00028">28</a> of file <a class="el" href="a00782_source.html">normalis.h</a>.</p>
-
+<p>Definition at line <a class="el" href="a00782_source.html#l00381">381</a> of file <a class="el" href="a00782_source.html">polyblk.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                                    {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <a class="code" href="a00413.html">ICOORDELT</a> *p1 = (*(<a class="code" href="a00413.html">ICOORDELT</a> **) first);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  <a class="code" href="a00413.html">ICOORDELT</a> *p2 = (*(<a class="code" href="a00413.html">ICOORDELT</a> **) second);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  <span class="keywordflow">if</span> (p1-&gt;<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () &lt; p2-&gt;<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> ())</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p1-&gt;<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> () &gt; p2-&gt;<a class="code" href="a00412.html#a59722a47c540007c58a539f0e35b3f33">x</a> ())</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">return</span> (1);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
+<div class="ttc" id="a00412_html_a59722a47c540007c58a539f0e35b3f33"><div class="ttname"><a href="a00412.html#a59722a47c540007c58a539f0e35b3f33">ICOORD::x</a></div><div class="ttdeci">inT16 x() const </div><div class="ttdoc">access function </div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00052">points.h:52</a></div></div>
+<div class="ttc" id="a00413_html"><div class="ttname"><a href="a00413.html">ICOORDELT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00779_source.html#l00161">points.h:161</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -194,8 +209,8 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00782.html">normalis.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:33 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00782.html">polyblk.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:08 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

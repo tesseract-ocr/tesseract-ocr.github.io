@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: NORM_PROTOS Struct Reference</title>
+<title>Tesseract: ParagraphModel Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,96 +106,504 @@ $(document).ready(function(){initNavTree('a00491.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="a01645.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a01629.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">NORM_PROTOS Struct Reference</div>  </div>
+<div class="title">ParagraphModel Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="a00767_source.html">ocrpara.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ac21f8ddf002a7453a011d2993b48aed8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#ac21f8ddf002a7453a011d2993b48aed8">NumParams</a></td></tr>
-<tr class="separator:ac21f8ddf002a7453a011d2993b48aed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57382d35825f360d88f32032e05239f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00511.html">PARAM_DESC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a57382d35825f360d88f32032e05239f3">ParamDesc</a></td></tr>
-<tr class="separator:a57382d35825f360d88f32032e05239f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada1e6e21410af2577e978c63d0517f26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01056.html#aa200acf94add0e61783bfcd5965bb645">LIST</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#ada1e6e21410af2577e978c63d0517f26">Protos</a></td></tr>
-<tr class="separator:ada1e6e21410af2577e978c63d0517f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fb6b18adc50b9ab250cad15f26450b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a5fb6b18adc50b9ab250cad15f26450b2">NumProtos</a></td></tr>
-<tr class="separator:a5fb6b18adc50b9ab250cad15f26450b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab1f81be6e22e055efdbbc4bb2aa5add3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#ab1f81be6e22e055efdbbc4bb2aa5add3">ParagraphModel</a> (<a class="el" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1">tesseract::ParagraphJustification</a> <a class="el" href="a00491.html#ad5c1367f22a798e616c64248ed50509e">justification</a>, int <a class="el" href="a00491.html#a34c9b49f071bd5416bd88adc84eebd43">margin</a>, int <a class="el" href="a00491.html#a2c03df657560f6dfcf2ef4305def8745">first_indent</a>, int <a class="el" href="a00491.html#a52304ed69b5fce47200c80cb81baeb92">body_indent</a>, int <a class="el" href="a00491.html#a5b8f05844a3320fb2a6ac0efd5b24045">tolerance</a>)</td></tr>
+<tr class="separator:ab1f81be6e22e055efdbbc4bb2aa5add3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d3987b6187377c046e2bd19a269f90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a95d3987b6187377c046e2bd19a269f90">ParagraphModel</a> ()</td></tr>
+<tr class="separator:a95d3987b6187377c046e2bd19a269f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac83726f552a7058fc552bac776fffd5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#aac83726f552a7058fc552bac776fffd5">ValidFirstLine</a> (int lmargin, int lindent, int rindent, int rmargin) const </td></tr>
+<tr class="separator:aac83726f552a7058fc552bac776fffd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1711b2d86cc61b7913d01e7a383209b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#af1711b2d86cc61b7913d01e7a383209b">ValidBodyLine</a> (int lmargin, int lindent, int rindent, int rmargin) const </td></tr>
+<tr class="separator:af1711b2d86cc61b7913d01e7a383209b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c1367f22a798e616c64248ed50509e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1">tesseract::ParagraphJustification</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#ad5c1367f22a798e616c64248ed50509e">justification</a> () const </td></tr>
+<tr class="separator:ad5c1367f22a798e616c64248ed50509e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c9b49f071bd5416bd88adc84eebd43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a34c9b49f071bd5416bd88adc84eebd43">margin</a> () const </td></tr>
+<tr class="separator:a34c9b49f071bd5416bd88adc84eebd43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c03df657560f6dfcf2ef4305def8745"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a2c03df657560f6dfcf2ef4305def8745">first_indent</a> () const </td></tr>
+<tr class="separator:a2c03df657560f6dfcf2ef4305def8745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52304ed69b5fce47200c80cb81baeb92"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a52304ed69b5fce47200c80cb81baeb92">body_indent</a> () const </td></tr>
+<tr class="separator:a52304ed69b5fce47200c80cb81baeb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8f05844a3320fb2a6ac0efd5b24045"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a5b8f05844a3320fb2a6ac0efd5b24045">tolerance</a> () const </td></tr>
+<tr class="separator:a5b8f05844a3320fb2a6ac0efd5b24045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01060b765512c91bda1f7c18744e71c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a01060b765512c91bda1f7c18744e71c3">is_flush</a> () const </td></tr>
+<tr class="separator:a01060b765512c91bda1f7c18744e71c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8329ca5408cc3636258390e80277f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#aac8329ca5408cc3636258390e80277f5">Comparable</a> (const <a class="el" href="a00491.html">ParagraphModel</a> &amp;other) const </td></tr>
+<tr class="separator:aac8329ca5408cc3636258390e80277f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602f01af8ff434945dc2a952aa874271"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00561.html">STRING</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00491.html#a602f01af8ff434945dc2a952aa874271">ToString</a> () const </td></tr>
+<tr class="separator:a602f01af8ff434945dc2a952aa874271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><hr/>
- <h2>Include Files and Type Defines </h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="a00767_source.html#l00114">114</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab1f81be6e22e055efdbbc4bb2aa5add3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParagraphModel::ParagraphModel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1">tesseract::ParagraphJustification</a>&#160;</td>
+          <td class="paramname"><em>justification</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>margin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>first_indent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>body_indent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tolerance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00942_source.html#l00038">38</a> of file <a class="el" href="a00942_source.html">normmatch.cpp</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ac21f8ddf002a7453a011d2993b48aed8"></a>
+<p>Definition at line <a class="el" href="a00767_source.html#l00116">116</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      : justification_(<a class="code" href="a00491.html#ad5c1367f22a798e616c64248ed50509e">justification</a>),</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        margin_(<a class="code" href="a00491.html#a34c9b49f071bd5416bd88adc84eebd43">margin</a>),</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        first_indent_(<a class="code" href="a00491.html#a2c03df657560f6dfcf2ef4305def8745">first_indent</a>),</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        body_indent_(<a class="code" href="a00491.html#a52304ed69b5fce47200c80cb81baeb92">body_indent</a>),</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        tolerance_(<a class="code" href="a00491.html#a5b8f05844a3320fb2a6ac0efd5b24045">tolerance</a>) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// Make one of {first_indent, body_indent} is 0.</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">int</span> added_margin = <a class="code" href="a00491.html#a2c03df657560f6dfcf2ef4305def8745">first_indent</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="a00491.html#a52304ed69b5fce47200c80cb81baeb92">body_indent</a> &lt; added_margin)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      added_margin = <a class="code" href="a00491.html#a52304ed69b5fce47200c80cb81baeb92">body_indent</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    margin_ += added_margin;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    first_indent_ -= added_margin;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    body_indent_ -= added_margin;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  }</div>
+<div class="ttc" id="a00491_html_a52304ed69b5fce47200c80cb81baeb92"><div class="ttname"><a href="a00491.html#a52304ed69b5fce47200c80cb81baeb92">ParagraphModel::body_indent</a></div><div class="ttdeci">int body_indent() const </div><div class="ttdef"><b>Definition:</b> <a href="a00767_source.html#l00169">ocrpara.h:169</a></div></div>
+<div class="ttc" id="a00491_html_a34c9b49f071bd5416bd88adc84eebd43"><div class="ttname"><a href="a00491.html#a34c9b49f071bd5416bd88adc84eebd43">ParagraphModel::margin</a></div><div class="ttdeci">int margin() const </div><div class="ttdef"><b>Definition:</b> <a href="a00767_source.html#l00167">ocrpara.h:167</a></div></div>
+<div class="ttc" id="a00491_html_a2c03df657560f6dfcf2ef4305def8745"><div class="ttname"><a href="a00491.html#a2c03df657560f6dfcf2ef4305def8745">ParagraphModel::first_indent</a></div><div class="ttdeci">int first_indent() const </div><div class="ttdef"><b>Definition:</b> <a href="a00767_source.html#l00168">ocrpara.h:168</a></div></div>
+<div class="ttc" id="a00491_html_ad5c1367f22a798e616c64248ed50509e"><div class="ttname"><a href="a00491.html#ad5c1367f22a798e616c64248ed50509e">ParagraphModel::justification</a></div><div class="ttdeci">tesseract::ParagraphJustification justification() const </div><div class="ttdef"><b>Definition:</b> <a href="a00767_source.html#l00164">ocrpara.h:164</a></div></div>
+<div class="ttc" id="a00491_html_a5b8f05844a3320fb2a6ac0efd5b24045"><div class="ttname"><a href="a00491.html#a5b8f05844a3320fb2a6ac0efd5b24045">ParagraphModel::tolerance</a></div><div class="ttdeci">int tolerance() const </div><div class="ttdef"><b>Definition:</b> <a href="a00767_source.html#l00170">ocrpara.h:170</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a95d3987b6187377c046e2bd19a269f90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParagraphModel::ParagraphModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00767_source.html#l00135">135</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      : justification_(<a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a90150303905fef6037adc10dc2aa3689">tesseract::JUSTIFICATION_UNKNOWN</a>),</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;         margin_(0),</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;         first_indent_(0),</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;         body_indent_(0),</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;         tolerance_(0) { }</div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a90150303905fef6037adc10dc2aa3689"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a90150303905fef6037adc10dc2aa3689">tesseract::JUSTIFICATION_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00237">publictypes.h:237</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a52304ed69b5fce47200c80cb81baeb92"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ParagraphModel::body_indent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00767_source.html#l00169">169</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{ <span class="keywordflow">return</span> body_indent_; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aac8329ca5408cc3636258390e80277f5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int NORM_PROTOS::NumParams</td>
+          <td class="memname">bool ParagraphModel::Comparable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00491.html">ParagraphModel</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00942_source.html#l00040">40</a> of file <a class="el" href="a00942_source.html">normmatch.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a00766_source.html#l00080">80</a> of file <a class="el" href="a00766_source.html">ocrpara.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">if</span> (justification_ != other.justification_)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">if</span> (justification_ == <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838">JUSTIFICATION_CENTER</a> ||</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      justification_ == <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a90150303905fef6037adc10dc2aa3689">JUSTIFICATION_UNKNOWN</a>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a00491.html#a5b8f05844a3320fb2a6ac0efd5b24045">tolerance</a> = (tolerance_ + other.tolerance_) / 4;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(margin_ + first_indent_,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                     other.margin_ + other.first_indent_, tolerance) &amp;&amp;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;         <a class="code" href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(margin_ + body_indent_,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                     other.margin_ + other.body_indent_, tolerance);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a90150303905fef6037adc10dc2aa3689"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a90150303905fef6037adc10dc2aa3689">tesseract::JUSTIFICATION_UNKNOWN</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00237">publictypes.h:237</a></div></div>
+<div class="ttc" id="a00835_html_a80998b3d098c50b53b1f275adeafe267"><div class="ttname"><a href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a></div><div class="ttdeci">bool NearlyEqual(T x, T y, T tolerance)</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00148">host.h:148</a></div></div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838">tesseract::JUSTIFICATION_CENTER</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00239">publictypes.h:239</a></div></div>
+<div class="ttc" id="a00491_html_a5b8f05844a3320fb2a6ac0efd5b24045"><div class="ttname"><a href="a00491.html#a5b8f05844a3320fb2a6ac0efd5b24045">ParagraphModel::tolerance</a></div><div class="ttdeci">int tolerance() const </div><div class="ttdef"><b>Definition:</b> <a href="a00767_source.html#l00170">ocrpara.h:170</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a2c03df657560f6dfcf2ef4305def8745"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ParagraphModel::first_indent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="a00767_source.html#l00168">168</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{ <span class="keywordflow">return</span> first_indent_; }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a5fb6b18adc50b9ab250cad15f26450b2"></a>
+<a class="anchor" id="a01060b765512c91bda1f7c18744e71c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ParagraphModel::is_flush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00767_source.html#l00171">171</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> (justification_ == <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">tesseract::JUSTIFICATION_LEFT</a> ||</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            justification_ == <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">tesseract::JUSTIFICATION_RIGHT</a>) &amp;&amp;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        abs(first_indent_ - body_indent_) &lt;= tolerance_;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  }</div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">tesseract::JUSTIFICATION_RIGHT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00240">publictypes.h:240</a></div></div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">tesseract::JUSTIFICATION_LEFT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00238">publictypes.h:238</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ad5c1367f22a798e616c64248ed50509e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1">tesseract::ParagraphJustification</a> ParagraphModel::justification </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00767_source.html#l00164">164</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                                        {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> justification_;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a34c9b49f071bd5416bd88adc84eebd43"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ParagraphModel::margin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00767_source.html#l00167">167</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{ <span class="keywordflow">return</span> margin_; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5b8f05844a3320fb2a6ac0efd5b24045"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ParagraphModel::tolerance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a00767_source.html#l00170">170</a> of file <a class="el" href="a00767_source.html">ocrpara.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{ <span class="keywordflow">return</span> tolerance_; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a602f01af8ff434945dc2a952aa874271"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int NORM_PROTOS::NumProtos</td>
+          <td class="memname"><a class="el" href="a00561.html">STRING</a> ParagraphModel::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00942_source.html#l00043">43</a> of file <a class="el" href="a00942_source.html">normmatch.cpp</a>.</p>
-
+<p>Definition at line <a class="el" href="a00766_source.html#l00093">93</a> of file <a class="el" href="a00766_source.html">ocrpara.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                      {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">char</span> buffer[200];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">const</span> <a class="code" href="a00561.html">STRING</a> &amp;alignment = ParagraphJustificationToString(justification_);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  snprintf(buffer, <span class="keyword">sizeof</span>(buffer),</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;           <span class="stringliteral">&quot;margin: %d, first_indent: %d, body_indent: %d, alignment: %s&quot;</span>,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;           margin_, first_indent_, body_indent_, alignment.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00561.html">STRING</a>(buffer);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="ttc" id="a00561_html_a32beee43ecab1bed8bebc3466896ad6e"><div class="ttname"><a href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">STRING::string</a></div><div class="ttdeci">const char * string() const </div><div class="ttdef"><b>Definition:</b> <a href="a00858_source.html#l00193">strngs.cpp:193</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a57382d35825f360d88f32032e05239f3"></a>
+<a class="anchor" id="af1711b2d86cc61b7913d01e7a383209b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00511.html">PARAM_DESC</a>* NORM_PROTOS::ParamDesc</td>
+          <td class="memname">bool ParagraphModel::ValidBodyLine </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lmargin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lindent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rindent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rmargin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00942_source.html#l00041">41</a> of file <a class="el" href="a00942_source.html">normmatch.cpp</a>.</p>
-
+<p>Definition at line <a class="el" href="a00766_source.html#l00063">63</a> of file <a class="el" href="a00766_source.html">ocrpara.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                                   {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">switch</span> (justification_) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">JUSTIFICATION_LEFT</a>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(lmargin + lindent, margin_ + body_indent_,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                         tolerance_);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">JUSTIFICATION_RIGHT</a>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(rmargin + rindent, margin_ + body_indent_,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                         tolerance_);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838">JUSTIFICATION_CENTER</a>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(lindent, rindent, tolerance_ * 2);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="comment">// shouldn&#39;t happen</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">tesseract::JUSTIFICATION_RIGHT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00240">publictypes.h:240</a></div></div>
+<div class="ttc" id="a00835_html_a80998b3d098c50b53b1f275adeafe267"><div class="ttname"><a href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a></div><div class="ttdeci">bool NearlyEqual(T x, T y, T tolerance)</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00148">host.h:148</a></div></div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">tesseract::JUSTIFICATION_LEFT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00238">publictypes.h:238</a></div></div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838">tesseract::JUSTIFICATION_CENTER</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00239">publictypes.h:239</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="ada1e6e21410af2577e978c63d0517f26"></a>
+<a class="anchor" id="aac83726f552a7058fc552bac776fffd5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a01056.html#aa200acf94add0e61783bfcd5965bb645">LIST</a>* NORM_PROTOS::Protos</td>
+          <td class="memname">bool ParagraphModel::ValidFirstLine </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lmargin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lindent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rindent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rmargin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="a00942_source.html#l00042">42</a> of file <a class="el" href="a00942_source.html">normmatch.cpp</a>.</p>
-
+<p>Definition at line <a class="el" href="a00766_source.html#l00046">46</a> of file <a class="el" href="a00766_source.html">ocrpara.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                                    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">switch</span> (justification_) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">JUSTIFICATION_LEFT</a>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(lmargin + lindent, margin_ + first_indent_,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                         tolerance_);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">JUSTIFICATION_RIGHT</a>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(rmargin + rindent, margin_ + first_indent_,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                         tolerance_);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a01267.html#a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838">JUSTIFICATION_CENTER</a>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a>(lindent, rindent, tolerance_ * 2);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="comment">// shouldn&#39;t happen</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a93a23b19fec3ebdb587df6e0aa9e9fce">tesseract::JUSTIFICATION_RIGHT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00240">publictypes.h:240</a></div></div>
+<div class="ttc" id="a00835_html_a80998b3d098c50b53b1f275adeafe267"><div class="ttname"><a href="a00835.html#a80998b3d098c50b53b1f275adeafe267">NearlyEqual</a></div><div class="ttdeci">bool NearlyEqual(T x, T y, T tolerance)</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00148">host.h:148</a></div></div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1a0141f695e0959de2dc43e0eb94023ff6">tesseract::JUSTIFICATION_LEFT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00238">publictypes.h:238</a></div></div>
+<div class="ttc" id="a01267_html_a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838"><div class="ttname"><a href="a01267.html#a550970d1662b3ac5830c6a28dba676b1aa9a39d3bca308f650f8c75b0c14f6838">tesseract::JUSTIFICATION_CENTER</a></div><div class="ttdef"><b>Definition:</b> <a href="a00785_source.html#l00239">publictypes.h:239</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>classify/<a class="el" href="a00942_source.html">normmatch.cpp</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ccstruct/<a class="el" href="a00767_source.html">ocrpara.h</a></li>
+<li>ccstruct/<a class="el" href="a00766_source.html">ocrpara.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00491.html">NORM_PROTOS</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:45 for Tesseract by
+    <li class="navelem"><a class="el" href="a00491.html">ParagraphModel</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:20 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

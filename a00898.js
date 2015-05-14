@@ -1,5 +1,4 @@
 var a00898 =
 [
-    [ "ExtractFontName", "a00898.html#aa011b40b5e90b4087d0e42ea5fcce12c", null ],
-    [ "classify_font_name", "a00898.html#aa9bc8ba4ba34ad675c28584c68838003", null ]
+    [ "MAX_INT_CHAR_NORM", "a00898.html#a507d2964a00ad9a1d82e6c5ae21720be", null ]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: ccmain/tesseract_cube_combiner.h Source File</title>
+<title>Tesseract: ccstruct/boxread.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,16 +105,16 @@ $(document).ready(function(){initNavTree('a00735_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">tesseract_cube_combiner.h</div>  </div>
+<div class="title">boxread.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a00735.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**********************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        tesseract_cube_combiner.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Declaration of the Tesseract &amp; Cube results combiner Class</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:    Ahmad Abdulkader</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:   2008</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * File:        boxread.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Description: Read data from a box file.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author:      Ray Smith</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Created:     Fri Aug 24 17:47:23 PDT 2007</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2008, Google Inc.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * (C) Copyright 2007, Google Inc.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> ** Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> ** you may not use this file except in compliance with the License.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> ** You may obtain a copy of the License at</span></div>
@@ -127,106 +127,269 @@ $(document).ready(function(){initNavTree('a00735_source.html','');});
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **********************************************************************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// The TesseractCubeCombiner class provides the functionality of combining</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// the recognition results of Tesseract and Cube at the word level</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00736.html">boxread.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef TESSERACT_CCMAIN_TESSERACT_CUBE_COMBINER_H</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define TESSERACT_CCMAIN_TESSERACT_CUBE_COMBINER_H</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00792.html">pageres.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using namespace </span><a class="code" href="a01278.html">std</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifdef USE_STD_NAMESPACE</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">using</span> std::string;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">using</span> std::vector;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="a01279.html">tesseract</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">class </span>CubeObject;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">class </span>NeuralNet;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span>CubeRecoContext;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">class </span>WordAltList;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="a00626.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00626.html">TesseractCubeCombiner</a> {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="a00626.html">TesseractCubeCombiner</a>(<a class="code" href="a00347.html">CubeRecoContext</a> *cube_cntxt);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="a00626.html">TesseractCubeCombiner</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// There are 2 public methods for combining the results of tesseract</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// and cube. Both return the probability that the Tesseract result is</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// correct. The difference between the two interfaces is in how the</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// passed-in CubeObject is used.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// The CubeObject parameter is used for 2 purposes: 1) to retrieve</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// cube&#39;s alt list, and 2) to compute cube&#39;s word cost for the</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// tesseract result. Both uses may modify the state of the</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// CubeObject (including the BeamSearch state) with a call to</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// RecognizeWord().</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">float</span> CombineResults(<a class="code" href="a00669.html">WERD_RES</a> *tess_res, <a class="code" href="a00346.html">CubeObject</a> *cube_obj);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// The alt_list parameter is expected to have been extracted from the</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// CubeObject that recognized the word to be combined. The cube_obj</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// parameter passed in is a separate instance to be used only by</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// the combiner.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">float</span> CombineResults(<a class="code" href="a00669.html">WERD_RES</a> *tess_res, <a class="code" href="a00346.html">CubeObject</a> *cube_obj,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                       <a class="code" href="a00670.html">WordAltList</a> *alt_list);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// Public method for computing the combiner features. The agreement</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// output parameter will be true if both answers are identical,</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// false otherwise. Modifies the cube_alt_list, so no assumptions</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// should be made about its state upon return.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> ComputeCombinerFeatures(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;tess_res,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                               <span class="keywordtype">int</span> tess_confidence,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                               <a class="code" href="a00346.html">CubeObject</a> *cube_obj,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                               <a class="code" href="a00670.html">WordAltList</a> *cube_alt_list,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                               vector&lt;double&gt; *features,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                               <span class="keywordtype">bool</span> *agreement);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="comment">// Is the word valid according to Tesseract&#39;s language model</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">bool</span> ValidWord(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// Loads the combiner neural network from file, using cube_cntxt_</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// to find path.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">bool</span> LoadCombinerNet();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// Normalize a UTF-8 string. Converts the UTF-8 string to UTF32 and optionally</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">// strips punc and/or normalizes case and then converts back</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">string</span> NormalizeString(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str, <span class="keywordtype">bool</span> remove_punc, <span class="keywordtype">bool</span> norm_case);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// Compares 2 strings after optionally normalizing them and or stripping</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">// punctuation</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">int</span> CompareStrings(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str1, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;str2, <span class="keywordtype">bool</span> ignore_punc,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                     <span class="keywordtype">bool</span> norm_case);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="a00487.html">NeuralNet</a> *combiner_net_;  <span class="comment">// pointer to the combiner NeuralNet object</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="a00347.html">CubeRecoContext</a> *cube_cntxt_;  <span class="comment">// used for language ID and data paths</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00828.html">fileerr.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00794.html">rect.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00859.html">strngs.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00864.html">tprintf.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00866.html">unichar.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Special char code used to identify multi-blob labels.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kMultiBlobLabelCode = <span class="stringliteral">&quot;WordStr&quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// Open the boxfile based on the given image filename.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="a00736.html#af8f00c0aa1951fff65cff5802879a91d">   33</a></span>&#160;FILE* <a class="code" href="a00735.html#af8f00c0aa1951fff65cff5802879a91d">OpenBoxFile</a>(<span class="keyword">const</span> <a class="code" href="a00561.html">STRING</a>&amp; fname) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="a00561.html">STRING</a> <a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a> = <a class="code" href="a00735.html#af8465e130ce34e31d743881d41ecba78">BoxFileName</a>(fname);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  FILE* box_file = <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (!(box_file = fopen(filename.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), <span class="stringliteral">&quot;rb&quot;</span>))) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="a00828.html#a33ffba120713106d14f1e425559ac571">CANTOPENFILE</a>.<a class="code" href="a00374.html#abc4cc64aad0ddb74c02523b69c95a1c1">error</a>(<span class="stringliteral">&quot;read_next_box&quot;</span>, <a class="code" href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a5e74e236a50519c41cbbcecea29add63">TESSEXIT</a>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                       <span class="stringliteral">&quot;Cant open box file %s&quot;</span>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                       filename.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">return</span> box_file;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// Reads all boxes from the given filename.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Reads a specific target_page number if &gt;= 0, or all pages otherwise.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Skips blanks if skip_blanks is true.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// The UTF-8 label of the box is put in texts, and the full box definition as</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// a string is put in box_texts, with the corresponding page number in pages.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Each of the output vectors is optional (may be NULL).</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Returns false if no boxes are found.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00736.html#ab3161d7c887ead295045650e34d690fc">   51</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00735.html#ab3161d7c887ead295045650e34d690fc">ReadAllBoxes</a>(<span class="keywordtype">int</span> target_page, <span class="keywordtype">bool</span> skip_blanks, <span class="keyword">const</span> <a class="code" href="a00561.html">STRING</a>&amp; <a class="code" href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">filename</a>,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                  <a class="code" href="a00406.html">GenericVector&lt;TBOX&gt;</a>* boxes,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                  <a class="code" href="a00406.html">GenericVector&lt;STRING&gt;</a>* texts,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                  <a class="code" href="a00406.html">GenericVector&lt;STRING&gt;</a>* box_texts,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                  <a class="code" href="a00406.html">GenericVector&lt;int&gt;</a>* pages) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="a00406.html">GenericVector&lt;char&gt;</a> box_data;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="a01267.html#a3a2334d9500f5b9f41f2f33f106f4171">tesseract::LoadDataFromFile</a>(<a class="code" href="a00735.html#af8465e130ce34e31d743881d41ecba78">BoxFileName</a>(filename), &amp;box_data))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00735.html#ae4e029cbe1a7c0f7902eae69bfc729e0">ReadMemBoxes</a>(target_page, skip_blanks, &amp;box_data[0], boxes, texts,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                      box_texts, pages);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// Reads all boxes from the string. Otherwise, as ReadAllBoxes.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="a00736.html#ae4e029cbe1a7c0f7902eae69bfc729e0">   64</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00735.html#ae4e029cbe1a7c0f7902eae69bfc729e0">ReadMemBoxes</a>(<span class="keywordtype">int</span> target_page, <span class="keywordtype">bool</span> skip_blanks, <span class="keyword">const</span> <span class="keywordtype">char</span>* box_data,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                  <a class="code" href="a00406.html">GenericVector&lt;TBOX&gt;</a>* boxes,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                  <a class="code" href="a00406.html">GenericVector&lt;STRING&gt;</a>* texts,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                  <a class="code" href="a00406.html">GenericVector&lt;STRING&gt;</a>* box_texts,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                  <a class="code" href="a00406.html">GenericVector&lt;int&gt;</a>* pages) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="a00561.html">STRING</a> box_str(box_data);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="a00406.html">GenericVector&lt;STRING&gt;</a> lines;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  box_str.<a class="code" href="a00561.html#a70cb880f818d4af4a4f4036032c3e9dc">split</a>(<span class="charliteral">&#39;\n&#39;</span>, &amp;lines);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">if</span> (lines.<a class="code" href="a00406.html#afb0d8c52a603b6aa965d63bbf06a27dd">empty</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> num_boxes = 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; lines.<a class="code" href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">size</a>(); ++i) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> page = 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="a00561.html">STRING</a> utf8_str;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="a00591.html">TBOX</a> box;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="a00735.html#acd464bb54397318c2f6fb8db9e644fd0">ParseBoxFileStr</a>(lines[i].<span class="keywordtype">string</span>(), &amp;page, &amp;utf8_str, &amp;box)) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (skip_blanks &amp;&amp; utf8_str == <span class="stringliteral">&quot; &quot;</span>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (target_page &gt;= 0 &amp;&amp; page != target_page) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (boxes != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) boxes-&gt;<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(box);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (texts != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) texts-&gt;<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(utf8_str);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (box_texts != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="a00561.html">STRING</a> full_text;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <a class="code" href="a00735.html#a12d56f93e661ff006a382fb8d7314898">MakeBoxFileStr</a>(utf8_str.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), box, target_page, &amp;full_text);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      box_texts-&gt;<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(full_text);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (pages != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) pages-&gt;<a class="code" href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">push_back</a>(page);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ++num_boxes;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">return</span> num_boxes &gt; 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// Returns the box file name corresponding to the given image_filename.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="a00736.html#af8465e130ce34e31d743881d41ecba78">   97</a></span>&#160;<a class="code" href="a00561.html">STRING</a> <a class="code" href="a00735.html#af8465e130ce34e31d743881d41ecba78">BoxFileName</a>(<span class="keyword">const</span> <a class="code" href="a00561.html">STRING</a>&amp; image_filename) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="a00561.html">STRING</a> box_filename = image_filename;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *lastdot = strrchr(box_filename.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>(), <span class="charliteral">&#39;.&#39;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">if</span> (lastdot != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    box_filename.<a class="code" href="a00561.html#a0d5a6c456f8e3ef4b4a5077031573df8">truncate_at</a>(lastdot - box_filename.<a class="code" href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">string</a>());</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif  // TESSERACT_CCMAIN_TESSERACT_CUBE_COMBINER_H</span></div>
-<div class="ttc" id="a00347_html"><div class="ttname"><a href="a00347.html">tesseract::CubeRecoContext</a></div><div class="ttdef"><b>Definition:</b> <a href="a00695_source.html#l00043">cube_reco_context.h:43</a></div></div>
-<div class="ttc" id="a00670_html"><div class="ttname"><a href="a00670.html">tesseract::WordAltList</a></div><div class="ttdef"><b>Definition:</b> <a href="a01028_source.html#l00032">word_altlist.h:32</a></div></div>
-<div class="ttc" id="a00487_html"><div class="ttname"><a href="a00487.html">tesseract::NeuralNet</a></div><div class="ttdef"><b>Definition:</b> <a href="a01089_source.html#l00022">neural_net.h:22</a></div></div>
-<div class="ttc" id="a01279_html"><div class="ttname"><a href="a01279.html">tesseract</a></div><div class="ttdef"><b>Definition:</b> <a href="a00681_source.html#l00083">baseapi.cpp:83</a></div></div>
-<div class="ttc" id="a00626_html"><div class="ttname"><a href="a00626.html">tesseract::TesseractCubeCombiner</a></div><div class="ttdef"><b>Definition:</b> <a href="a00735_source.html#l00047">tesseract_cube_combiner.h:47</a></div></div>
-<div class="ttc" id="a00346_html"><div class="ttname"><a href="a00346.html">tesseract::CubeObject</a></div><div class="ttdef"><b>Definition:</b> <a href="a00998_source.html#l00090">cube_object.h:90</a></div></div>
-<div class="ttc" id="a00669_html"><div class="ttname"><a href="a00669.html">WERD_RES</a></div><div class="ttdef"><b>Definition:</b> <a href="a00792_source.html#l00155">pageres.h:155</a></div></div>
-<div class="ttc" id="a01278_html"><div class="ttname"><a href="a01278.html">std</a></div><div class="ttdoc">STL namespace. </div></div>
-<div class="ttc" id="a00792_html"><div class="ttname"><a href="a00792.html">pageres.h</a></div></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  box_filename += <span class="stringliteral">&quot;.box&quot;</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">return</span> box_filename;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// TODO(rays) convert all uses of ReadNextBox to use the new ReadAllBoxes.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">// Box files are used ONLY DURING TRAINING, but by both processes of</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">// creating tr files with tesseract, and unicharset_extractor.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">// ReadNextBox factors out the code to interpret a line of a box</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// file so that applybox and unicharset_extractor interpret the same way.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// This function returns the next valid box file utf8 string and coords</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">// and returns true, or false on eof (and closes the file).</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">// It ignores the utf8 file signature ByteOrderMark (U+FEFF=EF BB BF), checks</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// for valid utf-8 and allows space or tab between fields.</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">// utf8_str is set with the unichar string, and bounding box with the box.</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">// If there are page numbers in the file, it reads them all.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="a00736.html#a8236e051549f8174e263196602edadc5">  118</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00735.html#a8236e051549f8174e263196602edadc5">ReadNextBox</a>(<span class="keywordtype">int</span> *line_number, FILE* box_file,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                 <a class="code" href="a00561.html">STRING</a>* utf8_str, <a class="code" href="a00591.html">TBOX</a>* bounding_box) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="a00735.html#a8236e051549f8174e263196602edadc5">ReadNextBox</a>(-1, line_number, box_file, utf8_str, bounding_box);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">// As ReadNextBox above, but get a specific page number. (0-based)</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// Use -1 to read any page number. Files without page number all</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// read as if they are page 0.</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="a00736.html#a566c682100d2b5f0a20f39bf99ad2d30">  126</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00735.html#a8236e051549f8174e263196602edadc5">ReadNextBox</a>(<span class="keywordtype">int</span> target_page, <span class="keywordtype">int</span> *line_number, FILE* box_file,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                 <a class="code" href="a00561.html">STRING</a>* utf8_str, <a class="code" href="a00591.html">TBOX</a>* bounding_box) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keywordtype">int</span> page = 0;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordtype">char</span> buff[<a class="code" href="a00736.html#a6a24b858ccf4e9eb9e163b5bcc04b682">kBoxReadBufSize</a>];   <span class="comment">// boxfile read buffer</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <span class="keywordtype">char</span> *buffptr = buff;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordflow">while</span> (fgets(buff, <span class="keyword">sizeof</span>(buff) - 1, box_file)) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    (*line_number)++;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    buffptr = buff;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ubuf = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(buffptr);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (ubuf[0] == 0xef &amp;&amp; ubuf[1] == 0xbb &amp;&amp; ubuf[2] == 0xbf)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      buffptr += 3;  <span class="comment">// Skip unicode file designation.</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">// Check for blank lines in box file</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (*buffptr == <span class="charliteral">&#39;\n&#39;</span> || *buffptr == <span class="charliteral">&#39;\0&#39;</span>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// Skip blank boxes.</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (*buffptr == <span class="charliteral">&#39; &#39;</span> || *buffptr == <span class="charliteral">&#39;\t&#39;</span>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span> (*buffptr != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      <span class="keywordflow">if</span> (!<a class="code" href="a00735.html#acd464bb54397318c2f6fb8db9e644fd0">ParseBoxFileStr</a>(buffptr, &amp;page, utf8_str, bounding_box)) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Box file format error on line %i; ignored\n&quot;</span>, *line_number);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">if</span> (target_page &gt;= 0 &amp;&amp; target_page != page)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">continue</span>;  <span class="comment">// Not on the appropriate page.</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// Successfully read a box.</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  fclose(box_file);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;  <span class="comment">// EOF</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">// Parses the given box file string into a page_number, utf8_str, and</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">// bounding_box. Returns true on a successful parse.</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">// The box file is assumed to contain box definitions, one per line, of the</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">// following format for blob-level boxes:</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">//   &lt;UTF8 str&gt; &lt;left&gt; &lt;bottom&gt; &lt;right&gt; &lt;top&gt; &lt;page id&gt;</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">// and for word/line-level boxes:</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">//   WordStr &lt;left&gt; &lt;bottom&gt; &lt;right&gt; &lt;top&gt; &lt;page id&gt; #&lt;space-delimited word str&gt;</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">// See applyybox.cpp for more information.</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="a00736.html#acd464bb54397318c2f6fb8db9e644fd0">  165</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="a00735.html#acd464bb54397318c2f6fb8db9e644fd0">ParseBoxFileStr</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* boxfile_str, <span class="keywordtype">int</span>* page_number,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                     <a class="code" href="a00561.html">STRING</a>* utf8_str, <a class="code" href="a00591.html">TBOX</a>* bounding_box) {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  *bounding_box = <a class="code" href="a00591.html">TBOX</a>();       <span class="comment">// Initialize it to empty.</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  *utf8_str = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">char</span> uch[<a class="code" href="a00736.html#a6a24b858ccf4e9eb9e163b5bcc04b682">kBoxReadBufSize</a>];</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *buffptr = boxfile_str;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="comment">// Read the unichar without messing up on Tibetan.</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="comment">// According to issue 253 the utf-8 surrogates 85 and A0 are treated</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="comment">// as whitespace by sscanf, so it is more reliable to just find</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="comment">// ascii space and tab.</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">int</span> uch_len = 0;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="comment">// Skip unicode file designation, if present.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ubuf = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(buffptr);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keywordflow">if</span> (ubuf[0] == 0xef &amp;&amp; ubuf[1] == 0xbb &amp;&amp; ubuf[2] == 0xbf)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      buffptr += 3;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="comment">// Allow a single blank as the UTF-8 string. Check for empty string and</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="comment">// then blindly eat the first character.</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordflow">if</span> (*buffptr == <span class="charliteral">&#39;\0&#39;</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    uch[uch_len++] = *buffptr++;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  } <span class="keywordflow">while</span> (*buffptr != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; *buffptr != <span class="charliteral">&#39; &#39;</span> &amp;&amp; *buffptr != <span class="charliteral">&#39;\t&#39;</span> &amp;&amp;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;           uch_len &lt; <a class="code" href="a00736.html#a6a24b858ccf4e9eb9e163b5bcc04b682">kBoxReadBufSize</a> - 1);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  uch[uch_len] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordflow">if</span> (*buffptr != <span class="charliteral">&#39;\0&#39;</span>) ++buffptr;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordtype">int</span> x_min, y_min, x_max, y_max;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  *page_number = 0;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a> = sscanf(buffptr, <span class="stringliteral">&quot;%d %d %d %d %d&quot;</span>,</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                 &amp;x_min, &amp;y_min, &amp;x_max, &amp;y_max, page_number);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">if</span> (count != 5 &amp;&amp; count != 4) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Bad box coordinates in boxfile string! %s\n&quot;</span>, ubuf);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">// Test for long space-delimited string label.</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">if</span> (strcmp(uch, kMultiBlobLabelCode) == 0 &amp;&amp;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      (buffptr = strchr(buffptr, <span class="charliteral">&#39;#&#39;</span>)) != <a class="code" href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    strncpy(uch, buffptr + 1, <a class="code" href="a00736.html#a6a24b858ccf4e9eb9e163b5bcc04b682">kBoxReadBufSize</a> - 1);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    uch[<a class="code" href="a00736.html#a6a24b858ccf4e9eb9e163b5bcc04b682">kBoxReadBufSize</a> - 1] = <span class="charliteral">&#39;\0&#39;</span>;  <span class="comment">// Prevent buffer overrun.</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="a00834.html#a31bec0ef73dd383e256fa462e9fa7e1f">chomp_string</a>(uch);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    uch_len = strlen(uch);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  <span class="comment">// Validate UTF8 by making unichars with it.</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordtype">int</span> used = 0;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  <span class="keywordflow">while</span> (used &lt; uch_len) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="a00637.html">UNICHAR</a> ch(uch + used, uch_len - used);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">int</span> new_used = ch.<a class="code" href="a00637.html#a7726199d64a4f8afa0aa5c831bbcf155">utf8_len</a>();</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (new_used == 0) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      <a class="code" href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a>(<span class="stringliteral">&quot;Bad UTF-8 str %s starts with 0x%02x at col %d\n&quot;</span>,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;              uch + used, uch[used], used + 1);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    used += new_used;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  *utf8_str = uch;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="keywordflow">if</span> (x_min &gt; x_max) <a class="code" href="a00834.html#ae8b7e3bea137bea50dc1ceb158ddf0ac">Swap</a>(&amp;x_min, &amp;x_max);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  <span class="keywordflow">if</span> (y_min &gt; y_max) <a class="code" href="a00834.html#ae8b7e3bea137bea50dc1ceb158ddf0ac">Swap</a>(&amp;y_min, &amp;y_max);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  bounding_box-&gt;<a class="code" href="a00591.html#ad61db4030d2a99fb107bb9679a055bed">set_to_given_coords</a>(x_min, y_min, x_max, y_max);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// Successfully read a box.</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">// Creates a box file string from a unichar string, TBOX and page number.</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="a00736.html#a12d56f93e661ff006a382fb8d7314898">  225</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00735.html#a12d56f93e661ff006a382fb8d7314898">MakeBoxFileStr</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* unichar_str, <span class="keyword">const</span> <a class="code" href="a00591.html">TBOX</a>&amp; box, <span class="keywordtype">int</span> page_num,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    <a class="code" href="a00561.html">STRING</a>* box_str) {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  *box_str = unichar_str;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  box_str-&gt;<a class="code" href="a00561.html#a779cd637dd42d58d5500a3a657077e84">add_str_int</a>(<span class="stringliteral">&quot; &quot;</span>, box.<a class="code" href="a00591.html#a724fabf566586b663577dfa944ffbc61">left</a>());</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  box_str-&gt;<a class="code" href="a00561.html#a779cd637dd42d58d5500a3a657077e84">add_str_int</a>(<span class="stringliteral">&quot; &quot;</span>, box.<a class="code" href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">bottom</a>());</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  box_str-&gt;<a class="code" href="a00561.html#a779cd637dd42d58d5500a3a657077e84">add_str_int</a>(<span class="stringliteral">&quot; &quot;</span>, box.<a class="code" href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">right</a>());</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  box_str-&gt;<a class="code" href="a00561.html#a779cd637dd42d58d5500a3a657077e84">add_str_int</a>(<span class="stringliteral">&quot; &quot;</span>, box.<a class="code" href="a00591.html#adf92e9fdac1bdf11c10d1c4d1178791a">top</a>());</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  box_str-&gt;<a class="code" href="a00561.html#a779cd637dd42d58d5500a3a657077e84">add_str_int</a>(<span class="stringliteral">&quot; &quot;</span>, page_num);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="ttc" id="a00828_html_a33ffba120713106d14f1e425559ac571"><div class="ttname"><a href="a00828.html#a33ffba120713106d14f1e425559ac571">CANTOPENFILE</a></div><div class="ttdeci">const ERRCODE CANTOPENFILE</div><div class="ttdef"><b>Definition:</b> <a href="a00828_source.html#l00025">fileerr.h:25</a></div></div>
+<div class="ttc" id="a00561_html_a0d5a6c456f8e3ef4b4a5077031573df8"><div class="ttname"><a href="a00561.html#a0d5a6c456f8e3ef4b4a5077031573df8">STRING::truncate_at</a></div><div class="ttdeci">void truncate_at(inT32 index)</div><div class="ttdef"><b>Definition:</b> <a href="a00858_source.html#l00264">strngs.cpp:264</a></div></div>
+<div class="ttc" id="a01045_html_acd4ea858d7133e40518e0832ff9d94b2"><div class="ttname"><a href="a01045.html#acd4ea858d7133e40518e0832ff9d94b2">count</a></div><div class="ttdeci">int count(LIST var_list)</div><div class="ttdef"><b>Definition:</b> <a href="a01045_source.html#l00108">oldlist.cpp:108</a></div></div>
+<div class="ttc" id="a00561_html_a32beee43ecab1bed8bebc3466896ad6e"><div class="ttname"><a href="a00561.html#a32beee43ecab1bed8bebc3466896ad6e">STRING::string</a></div><div class="ttdeci">const char * string() const </div><div class="ttdef"><b>Definition:</b> <a href="a00858_source.html#l00193">strngs.cpp:193</a></div></div>
+<div class="ttc" id="a00591_html"><div class="ttname"><a href="a00591.html">TBOX</a></div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00030">rect.h:30</a></div></div>
+<div class="ttc" id="a00591_html_ad61db4030d2a99fb107bb9679a055bed"><div class="ttname"><a href="a00591.html#ad61db4030d2a99fb107bb9679a055bed">TBOX::set_to_given_coords</a></div><div class="ttdeci">void set_to_given_coords(int x_min, int y_min, int x_max, int y_max)</div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00263">rect.h:263</a></div></div>
+<div class="ttc" id="a00591_html_a4451d237f1cd18c4982d63fe36a11fc3"><div class="ttname"><a href="a00591.html#a4451d237f1cd18c4982d63fe36a11fc3">TBOX::bottom</a></div><div class="ttdeci">inT16 bottom() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00061">rect.h:61</a></div></div>
+<div class="ttc" id="a00859_html"><div class="ttname"><a href="a00859.html">strngs.h</a></div></div>
+<div class="ttc" id="a00735_html_af8f00c0aa1951fff65cff5802879a91d"><div class="ttname"><a href="a00735.html#af8f00c0aa1951fff65cff5802879a91d">OpenBoxFile</a></div><div class="ttdeci">FILE * OpenBoxFile(const STRING &amp;fname)</div><div class="ttdef"><b>Definition:</b> <a href="a00735_source.html#l00033">boxread.cpp:33</a></div></div>
+<div class="ttc" id="a00864_html"><div class="ttname"><a href="a00864.html">tprintf.h</a></div></div>
+<div class="ttc" id="a00735_html_ab3161d7c887ead295045650e34d690fc"><div class="ttname"><a href="a00735.html#ab3161d7c887ead295045650e34d690fc">ReadAllBoxes</a></div><div class="ttdeci">bool ReadAllBoxes(int target_page, bool skip_blanks, const STRING &amp;filename, GenericVector&lt; TBOX &gt; *boxes, GenericVector&lt; STRING &gt; *texts, GenericVector&lt; STRING &gt; *box_texts, GenericVector&lt; int &gt; *pages)</div><div class="ttdef"><b>Definition:</b> <a href="a00735_source.html#l00051">boxread.cpp:51</a></div></div>
+<div class="ttc" id="a00735_html_af8465e130ce34e31d743881d41ecba78"><div class="ttname"><a href="a00735.html#af8465e130ce34e31d743881d41ecba78">BoxFileName</a></div><div class="ttdeci">STRING BoxFileName(const STRING &amp;image_filename)</div><div class="ttdef"><b>Definition:</b> <a href="a00735_source.html#l00097">boxread.cpp:97</a></div></div>
+<div class="ttc" id="a00406_html_afb0d8c52a603b6aa965d63bbf06a27dd"><div class="ttname"><a href="a00406.html#afb0d8c52a603b6aa965d63bbf06a27dd">GenericVector::empty</a></div><div class="ttdeci">bool empty() const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00084">genericvector.h:84</a></div></div>
+<div class="ttc" id="a00406_html"><div class="ttname"><a href="a00406.html">GenericVector&lt; TBOX &gt;</a></div></div>
+<div class="ttc" id="a00591_html_a724fabf566586b663577dfa944ffbc61"><div class="ttname"><a href="a00591.html#a724fabf566586b663577dfa944ffbc61">TBOX::left</a></div><div class="ttdeci">inT16 left() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00068">rect.h:68</a></div></div>
+<div class="ttc" id="a01268_html_ab85cc7ce156038d7a91fc6b51085c72e"><div class="ttname"><a href="a01268.html#ab85cc7ce156038d7a91fc6b51085c72e">tesseract-c_api-demo.filename</a></div><div class="ttdeci">string filename</div><div class="ttdef"><b>Definition:</b> <a href="a00954_source.html#l00029">tesseract-c_api-demo.py:29</a></div></div>
+<div class="ttc" id="a00406_html_a111b51dd0bf1324cfb69ef70703d8e70"><div class="ttname"><a href="a00406.html#a111b51dd0bf1324cfb69ef70703d8e70">GenericVector::size</a></div><div class="ttdeci">int size() const </div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00072">genericvector.h:72</a></div></div>
+<div class="ttc" id="a00834_html_ae8b7e3bea137bea50dc1ceb158ddf0ac"><div class="ttname"><a href="a00834.html#ae8b7e3bea137bea50dc1ceb158ddf0ac">Swap</a></div><div class="ttdeci">void Swap(T *p1, T *p2)</div><div class="ttdef"><b>Definition:</b> <a href="a00834_source.html#l00090">helpers.h:90</a></div></div>
+<div class="ttc" id="a00374_html_abc4cc64aad0ddb74c02523b69c95a1c1"><div class="ttname"><a href="a00374.html#abc4cc64aad0ddb74c02523b69c95a1c1">ERRCODE::error</a></div><div class="ttdeci">void error(const char *caller, TessErrorLogCode action, const char *format,...) const </div><div class="ttdef"><b>Definition:</b> <a href="a00826_source.html#l00040">errcode.cpp:40</a></div></div>
+<div class="ttc" id="a00561_html"><div class="ttname"><a href="a00561.html">STRING</a></div><div class="ttdef"><b>Definition:</b> <a href="a00859_source.html#l00044">strngs.h:44</a></div></div>
+<div class="ttc" id="a00591_html_a8703081c1a1c26db3a4dddaca1028e34"><div class="ttname"><a href="a00591.html#a8703081c1a1c26db3a4dddaca1028e34">TBOX::right</a></div><div class="ttdeci">inT16 right() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00075">rect.h:75</a></div></div>
+<div class="ttc" id="a00735_html_a8236e051549f8174e263196602edadc5"><div class="ttname"><a href="a00735.html#a8236e051549f8174e263196602edadc5">ReadNextBox</a></div><div class="ttdeci">bool ReadNextBox(int *line_number, FILE *box_file, STRING *utf8_str, TBOX *bounding_box)</div><div class="ttdef"><b>Definition:</b> <a href="a00735_source.html#l00118">boxread.cpp:118</a></div></div>
+<div class="ttc" id="a00735_html_a12d56f93e661ff006a382fb8d7314898"><div class="ttname"><a href="a00735.html#a12d56f93e661ff006a382fb8d7314898">MakeBoxFileStr</a></div><div class="ttdeci">void MakeBoxFileStr(const char *unichar_str, const TBOX &amp;box, int page_num, STRING *box_str)</div><div class="ttdef"><b>Definition:</b> <a href="a00735_source.html#l00225">boxread.cpp:225</a></div></div>
+<div class="ttc" id="a00735_html_ae4e029cbe1a7c0f7902eae69bfc729e0"><div class="ttname"><a href="a00735.html#ae4e029cbe1a7c0f7902eae69bfc729e0">ReadMemBoxes</a></div><div class="ttdeci">bool ReadMemBoxes(int target_page, bool skip_blanks, const char *box_data, GenericVector&lt; TBOX &gt; *boxes, GenericVector&lt; STRING &gt; *texts, GenericVector&lt; STRING &gt; *box_texts, GenericVector&lt; int &gt; *pages)</div><div class="ttdef"><b>Definition:</b> <a href="a00735_source.html#l00064">boxread.cpp:64</a></div></div>
+<div class="ttc" id="a01267_html_a3a2334d9500f5b9f41f2f33f106f4171"><div class="ttname"><a href="a01267.html#a3a2334d9500f5b9f41f2f33f106f4171">tesseract::LoadDataFromFile</a></div><div class="ttdeci">bool LoadDataFromFile(const STRING &amp;filename, GenericVector&lt; char &gt; *data)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00356">genericvector.h:356</a></div></div>
+<div class="ttc" id="a00866_html"><div class="ttname"><a href="a00866.html">unichar.h</a></div></div>
+<div class="ttc" id="a00637_html"><div class="ttname"><a href="a00637.html">UNICHAR</a></div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00052">unichar.h:52</a></div></div>
+<div class="ttc" id="a00834_html_a31bec0ef73dd383e256fa462e9fa7e1f"><div class="ttname"><a href="a00834.html#a31bec0ef73dd383e256fa462e9fa7e1f">chomp_string</a></div><div class="ttdeci">void chomp_string(char *str)</div><div class="ttdef"><b>Definition:</b> <a href="a00834_source.html#l00075">helpers.h:75</a></div></div>
+<div class="ttc" id="a00827_html_a8a3a2e51383909b357fcdf8eda803637a5e74e236a50519c41cbbcecea29add63"><div class="ttname"><a href="a00827.html#a8a3a2e51383909b357fcdf8eda803637a5e74e236a50519c41cbbcecea29add63">TESSEXIT</a></div><div class="ttdef"><b>Definition:</b> <a href="a00827_source.html#l00029">errcode.h:29</a></div></div>
+<div class="ttc" id="a00406_html_a0dc89fe2a365b04a61017f9d78c1a303"><div class="ttname"><a href="a00406.html#a0dc89fe2a365b04a61017f9d78c1a303">GenericVector::push_back</a></div><div class="ttdeci">int push_back(T object)</div><div class="ttdef"><b>Definition:</b> <a href="a00830_source.html#l00735">genericvector.h:735</a></div></div>
+<div class="ttc" id="a00591_html_adf92e9fdac1bdf11c10d1c4d1178791a"><div class="ttname"><a href="a00591.html#adf92e9fdac1bdf11c10d1c4d1178791a">TBOX::top</a></div><div class="ttdeci">inT16 top() const </div><div class="ttdef"><b>Definition:</b> <a href="a00794_source.html#l00054">rect.h:54</a></div></div>
+<div class="ttc" id="a00864_html_a02aa7cca2c3857c14716e8cca96ace6c"><div class="ttname"><a href="a00864.html#a02aa7cca2c3857c14716e8cca96ace6c">tprintf</a></div><div class="ttdeci">#define tprintf(...)</div><div class="ttdef"><b>Definition:</b> <a href="a00864_source.html#l00031">tprintf.h:31</a></div></div>
+<div class="ttc" id="a00736_html_a6a24b858ccf4e9eb9e163b5bcc04b682"><div class="ttname"><a href="a00736.html#a6a24b858ccf4e9eb9e163b5bcc04b682">kBoxReadBufSize</a></div><div class="ttdeci">const int kBoxReadBufSize</div><div class="ttdef"><b>Definition:</b> <a href="a00736_source.html#l00031">boxread.h:31</a></div></div>
+<div class="ttc" id="a00794_html"><div class="ttname"><a href="a00794.html">rect.h</a></div></div>
+<div class="ttc" id="a00561_html_a70cb880f818d4af4a4f4036032c3e9dc"><div class="ttname"><a href="a00561.html#a70cb880f818d4af4a4f4036032c3e9dc">STRING::split</a></div><div class="ttdeci">void split(const char c, GenericVector&lt; STRING &gt; *splited)</div><div class="ttdef"><b>Definition:</b> <a href="a00858_source.html#l00281">strngs.cpp:281</a></div></div>
+<div class="ttc" id="a00828_html"><div class="ttname"><a href="a00828.html">fileerr.h</a></div></div>
+<div class="ttc" id="a00835_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="a00835.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="a00835_source.html#l00144">host.h:144</a></div></div>
+<div class="ttc" id="a00637_html_a7726199d64a4f8afa0aa5c831bbcf155"><div class="ttname"><a href="a00637.html#a7726199d64a4f8afa0aa5c831bbcf155">UNICHAR::utf8_len</a></div><div class="ttdeci">int utf8_len() const </div><div class="ttdef"><b>Definition:</b> <a href="a00866_source.html#l00072">unichar.h:72</a></div></div>
+<div class="ttc" id="a00735_html_acd464bb54397318c2f6fb8db9e644fd0"><div class="ttname"><a href="a00735.html#acd464bb54397318c2f6fb8db9e644fd0">ParseBoxFileStr</a></div><div class="ttdeci">bool ParseBoxFileStr(const char *boxfile_str, int *page_number, STRING *utf8_str, TBOX *bounding_box)</div><div class="ttdef"><b>Definition:</b> <a href="a00735_source.html#l00165">boxread.cpp:165</a></div></div>
+<div class="ttc" id="a00561_html_a779cd637dd42d58d5500a3a657077e84"><div class="ttname"><a href="a00561.html#a779cd637dd42d58d5500a3a657077e84">STRING::add_str_int</a></div><div class="ttdeci">void add_str_int(const char *str, int number)</div><div class="ttdef"><b>Definition:</b> <a href="a00858_source.html#l00376">strngs.cpp:376</a></div></div>
+<div class="ttc" id="a00736_html"><div class="ttname"><a href="a00736.html">boxread.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a1bed42364588c3c9f4f22437dc6089e.html">ccmain</a></li><li class="navelem"><a class="el" href="a00735.html">tesseract_cube_combiner.h</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:19 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_1ed6c82765748b8cdb8405b19ff0bfcb.html">ccstruct</a></li><li class="navelem"><a class="el" href="a00735.html">boxread.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:53:53 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -1,7 +1,7 @@
 var a00771 =
 [
-    [ "MAXLENGTH", "a00771.html#a1dbd686f69551b83691025eaae058539", null ],
-    [ "NUM_BACKGROUNDS", "a00771.html#aa412e22bbe6c542df7c783ac4874ffba", null ],
-    [ "NUM_BLOCK_ATTR", "a00771.html#ae63b350898e30562a82a0a3c6759f6df", null ],
-    [ "NUM_TEXT_ATTR", "a00771.html#ad2a9f3c9c3e8d7f948f90eb1b1273566", null ]
+    [ "HistogramRect", "a00771.html#a6601a260946a730407fc6ef4f69d8725", null ],
+    [ "OtsuStats", "a00771.html#aa38847c682089329f7cec83a5bcb714b", null ],
+    [ "OtsuThreshold", "a00771.html#a865a6eb28d729e208b513acbe716f22d", null ],
+    [ "kHistogramSize", "a00771.html#a30cac105cb2746dccb9a2e6334a0209b", null ]
 ];

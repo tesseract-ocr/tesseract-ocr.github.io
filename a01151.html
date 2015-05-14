@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Tesseract: textord/strokewidth.cpp File Reference</title>
+<title>Tesseract: textord/textlineprojection.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,98 +108,131 @@ $(document).ready(function(){initNavTree('a01151.html','');});
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">strokewidth.cpp File Reference</div>  </div>
+<div class="title">textlineprojection.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a01152_source.html">strokewidth.h</a>&quot;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00749_source.html">blobbox.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01114_source.html">colpartition.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01116_source.html">colpartitiongrid.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01136_source.html">imagefind.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00776_source.html">linlsq.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00821_source.html">statistc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01154_source.html">tabfind.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01162_source.html">textlineprojection.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a01168_source.html">tordmain.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a01152_source.html">textlineprojection.h</a>&quot;</code><br />
+<code>#include &quot;allheaders.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01092_source.html">bbgrid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00730_source.html">blobbox.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00732_source.html">blobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a01104_source.html">colpartition.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00763_source.html">normalis.h</a>&quot;</code><br />
 </div>
 <p><a href="a01151_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:a01279"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html">tesseract</a></td></tr>
+<tr class="memitem:a01267"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01267.html">tesseract</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a69ff5305c7423c6a1e1e7a873aea09a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a69ff5305c7423c6a1e1e7a873aea09a4">tesseract::textord_tabfind_show_strokewidths</a> = 0</td></tr>
-<tr class="separator:a69ff5305c7423c6a1e1e7a873aea09a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5822b437edf16b39ca18cec5515d8bcf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a5822b437edf16b39ca18cec5515d8bcf">tesseract::textord_tabfind_only_strokewidths</a> = false</td></tr>
-<tr class="separator:a5822b437edf16b39ca18cec5515d8bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d1f89502955a97f3986e480f45d11ac"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a5d1f89502955a97f3986e480f45d11ac">tesseract::kStrokeWidthTolerance</a> = 1.5</td></tr>
-<tr class="separator:a5d1f89502955a97f3986e480f45d11ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd67e80f3588f9bbf627ae8b21494513"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#abd67e80f3588f9bbf627ae8b21494513">tesseract::kStrokeWidthFractionCJK</a> = 0.25</td></tr>
-<tr class="separator:abd67e80f3588f9bbf627ae8b21494513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4cf0379178f03e5f1fc982c6e12a7a3"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#ad4cf0379178f03e5f1fc982c6e12a7a3">tesseract::kStrokeWidthCJK</a> = 2.0</td></tr>
-<tr class="separator:ad4cf0379178f03e5f1fc982c6e12a7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73ac9428eb90511e5627135347d561e2"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a73ac9428eb90511e5627135347d561e2">tesseract::kCJKRadius</a> = 2</td></tr>
-<tr class="separator:a73ac9428eb90511e5627135347d561e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39569c92bdfdb4178deaac42d588f830"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a39569c92bdfdb4178deaac42d588f830">tesseract::kCJKBrokenDistanceFraction</a> = 0.25</td></tr>
-<tr class="separator:a39569c92bdfdb4178deaac42d588f830"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a308c19587dfea876b3291916f10443ec"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a308c19587dfea876b3291916f10443ec">tesseract::kCJKMaxComponents</a> = 8</td></tr>
-<tr class="separator:a308c19587dfea876b3291916f10443ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4569b4a16846b1c45945534463a09e75"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a4569b4a16846b1c45945534463a09e75">tesseract::kCJKAspectRatio</a> = 1.25</td></tr>
-<tr class="separator:a4569b4a16846b1c45945534463a09e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62516d3e478bcfb239d046da287150b3"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a62516d3e478bcfb239d046da287150b3">tesseract::kCJKAspectRatioIncrease</a> = 1.0625</td></tr>
-<tr class="separator:a62516d3e478bcfb239d046da287150b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa44aa93b17b5967315a229c1b1ed1f31"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aa44aa93b17b5967315a229c1b1ed1f31">tesseract::kMaxCJKSizeRatio</a> = 5</td></tr>
-<tr class="separator:aa44aa93b17b5967315a229c1b1ed1f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93725c4be688b102564ecc9ef6642366"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a93725c4be688b102564ecc9ef6642366">tesseract::kBrokenCJKIterationFraction</a> = 0.125</td></tr>
-<tr class="separator:a93725c4be688b102564ecc9ef6642366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabf5756c7e5d355517dc1af5df71e750"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aabf5756c7e5d355517dc1af5df71e750">tesseract::kDiacriticXPadRatio</a> = 7.0</td></tr>
-<tr class="separator:aabf5756c7e5d355517dc1af5df71e750"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfd3b22e2049d8d544208834da403031"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#adfd3b22e2049d8d544208834da403031">tesseract::kDiacriticYPadRatio</a> = 1.75</td></tr>
-<tr class="separator:adfd3b22e2049d8d544208834da403031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3883c045452c59e5a80bd9ed73cd9e6f"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a3883c045452c59e5a80bd9ed73cd9e6f">tesseract::kMinDiacriticSizeRatio</a> = 1.0625</td></tr>
-<tr class="separator:a3883c045452c59e5a80bd9ed73cd9e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a140f97b7a02095877cba6ffaf66edc32"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a140f97b7a02095877cba6ffaf66edc32">tesseract::kMaxDiacriticDistanceRatio</a> = 1.25</td></tr>
-<tr class="separator:a140f97b7a02095877cba6ffaf66edc32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf71279184a5815428ada7f1b3fa5d5c"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aaf71279184a5815428ada7f1b3fa5d5c">tesseract::kMaxDiacriticGapToBaseCharHeight</a> = 1.0</td></tr>
-<tr class="separator:aaf71279184a5815428ada7f1b3fa5d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa272bbcbb5d0b8dad555f86a29a1a133"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aa272bbcbb5d0b8dad555f86a29a1a133">tesseract::kSearchRadius</a> = 2</td></tr>
-<tr class="separator:aa272bbcbb5d0b8dad555f86a29a1a133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d9a4df05c442729540b7459fbec462c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a3d9a4df05c442729540b7459fbec462c">tesseract::kLineTrapLongest</a> = 4</td></tr>
-<tr class="separator:a3d9a4df05c442729540b7459fbec462c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab34b32a5ea90db86801786f0f8a83997"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#ab34b32a5ea90db86801786f0f8a83997">tesseract::kLineTrapShortest</a> = 2</td></tr>
-<tr class="separator:ab34b32a5ea90db86801786f0f8a83997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afba5db6e43d5f018b1c6bb6dfa43e488"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#afba5db6e43d5f018b1c6bb6dfa43e488">tesseract::kMostlyOneDirRatio</a> = 3</td></tr>
-<tr class="separator:afba5db6e43d5f018b1c6bb6dfa43e488"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84872b3032afddbed37888802b109b56"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a84872b3032afddbed37888802b109b56">tesseract::kLineResidueAspectRatio</a> = 8.0</td></tr>
-<tr class="separator:a84872b3032afddbed37888802b109b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a706351c04a309beaf8be435136baac"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a1a706351c04a309beaf8be435136baac">tesseract::kLineResiduePadRatio</a> = 3</td></tr>
-<tr class="separator:a1a706351c04a309beaf8be435136baac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad875f37920782a2a2e7acedceefb20f"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#aad875f37920782a2a2e7acedceefb20f">tesseract::kLineResidueSizeRatio</a> = 1.75</td></tr>
-<tr class="separator:aad875f37920782a2a2e7acedceefb20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af750de0df296b9b48c485e2ec4bb283c"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#af750de0df296b9b48c485e2ec4bb283c">tesseract::kSizeRatioToReject</a> = 2.0</td></tr>
-<tr class="separator:af750de0df296b9b48c485e2ec4bb283c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349538464d5316e5854eee5dba4bf38e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a349538464d5316e5854eee5dba4bf38e">tesseract::kMaxLargeOverlaps</a> = 3</td></tr>
-<tr class="separator:a349538464d5316e5854eee5dba4bf38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a746b69b4c2ec2f296100ebfaf15b2e2b"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a746b69b4c2ec2f296100ebfaf15b2e2b">tesseract::kNeighbourSearchFactor</a> = 2.5</td></tr>
-<tr class="separator:a746b69b4c2ec2f296100ebfaf15b2e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f199b4daa4604a364901dff58a9e069"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a5f199b4daa4604a364901dff58a9e069">tesseract::kNoiseOverlapGrowthFactor</a> = 4.0</td></tr>
-<tr class="separator:a5f199b4daa4604a364901dff58a9e069"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d4a8be52694e4289e4df57a7ae29d42"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#a2d4a8be52694e4289e4df57a7ae29d42">tesseract::kNoiseOverlapAreaFactor</a> = 1.0 / 512</td></tr>
-<tr class="separator:a2d4a8be52694e4289e4df57a7ae29d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9a5ef2bd0dd511b2d5fd97f7127199c"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01279.html#ad9a5ef2bd0dd511b2d5fd97f7127199c">tesseract::kShapePerimeterRatio</a> = 3.0</td></tr>
-<tr class="separator:ad9a5ef2bd0dd511b2d5fd97f7127199c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad44742ad860d606b8afb227717532d73"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01151.html#ad44742ad860d606b8afb227717532d73">kOrientedPadFactor</a> = 8</td></tr>
+<tr class="separator:ad44742ad860d606b8afb227717532d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4596a15ea8f66612a71bec5254c0462"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01151.html#ae4596a15ea8f66612a71bec5254c0462">kDefaultPadFactor</a> = 2</td></tr>
+<tr class="separator:ae4596a15ea8f66612a71bec5254c0462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092bd18070934c5079ce09f4cf3cf403"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01151.html#a092bd18070934c5079ce09f4cf3cf403">kWrongWayPenalty</a> = 4</td></tr>
+<tr class="separator:a092bd18070934c5079ce09f4cf3cf403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bff85a79d3b0f4a9f27b9e290b5cd68"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01151.html#a6bff85a79d3b0f4a9f27b9e290b5cd68">kParaPerpDistRatio</a> = 4</td></tr>
+<tr class="separator:a6bff85a79d3b0f4a9f27b9e290b5cd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace97a5f2c6d12302036b0ae9630a5bcb"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01151.html#ace97a5f2c6d12302036b0ae9630a5bcb">kMinLineSpacingFactor</a> = 4</td></tr>
+<tr class="separator:ace97a5f2c6d12302036b0ae9630a5bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d2e9156d75dc23cf000d5a51a87e8a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a01151.html#a64d2e9156d75dc23cf000d5a51a87e8a">kMaxTabStopOverrun</a> = 6</td></tr>
+<tr class="separator:a64d2e9156d75dc23cf000d5a51a87e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="ae4596a15ea8f66612a71bec5254c0462"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kDefaultPadFactor = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01151_source.html#l00029">29</a> of file <a class="el" href="a01151_source.html">textlineprojection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a64d2e9156d75dc23cf000d5a51a87e8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kMaxTabStopOverrun = 6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01151_source.html#l00041">41</a> of file <a class="el" href="a01151_source.html">textlineprojection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace97a5f2c6d12302036b0ae9630a5bcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kMinLineSpacingFactor = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01151_source.html#l00039">39</a> of file <a class="el" href="a01151_source.html">textlineprojection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad44742ad860d606b8afb227717532d73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kOrientedPadFactor = 8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01151_source.html#l00027">27</a> of file <a class="el" href="a01151_source.html">textlineprojection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6bff85a79d3b0f4a9f27b9e290b5cd68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kParaPerpDistRatio = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01151_source.html#l00036">36</a> of file <a class="el" href="a01151_source.html">textlineprojection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a092bd18070934c5079ce09f4cf3cf403"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int kWrongWayPenalty = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="a01151_source.html#l00031">31</a> of file <a class="el" href="a01151_source.html">textlineprojection.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01151.html">strokewidth.cpp</a></li>
-    <li class="footer">Generated on Thu May 14 2015 13:46:37 for Tesseract by
+    <li class="navelem"><a class="el" href="dir_9755ee342a92885af0731133719bff63.html">textord</a></li><li class="navelem"><a class="el" href="a01151.html">textlineprojection.cpp</a></li>
+    <li class="footer">Generated on Thu May 14 2015 14:54:11 for Tesseract by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
