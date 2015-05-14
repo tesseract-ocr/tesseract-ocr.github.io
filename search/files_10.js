@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['ratngs_2ecpp',['ratngs.cpp',['../a00810.html',1,'']]],
+  ['ratngs_2eh',['ratngs.h',['../a00811.html',1,'']]],
+  ['recogtraining_2ecpp',['recogtraining.cpp',['../a00724.html',1,'']]],
+  ['rect_2ecpp',['rect.cpp',['../a00812.html',1,'']]],
+  ['rect_2eh',['rect.h',['../a00813.html',1,'']]],
+  ['rejctmap_2ecpp',['rejctmap.cpp',['../a00814.html',1,'']]],
+  ['rejctmap_2eh',['rejctmap.h',['../a00815.html',1,'']]],
+  ['reject_2ecpp',['reject.cpp',['../a00725.html',1,'']]],
+  ['reject_2eh',['reject.h',['../a00726.html',1,'']]],
+  ['render_2ecpp',['render.cpp',['../a01265.html',1,'']]],
+  ['render_2eh',['render.h',['../a01266.html',1,'']]],
+  ['renderer_2ecpp',['renderer.cpp',['../a00686.html',1,'']]],
+  ['renderer_2eh',['renderer.h',['../a00687.html',1,'']]],
+  ['resource_2eh',['resource.h',['../a01227.html',1,'']]],
+  ['resource_2eh',['resource.h',['../a01226.html',1,'']]],
+  ['resultiterator_2ecpp',['resultiterator.cpp',['../a00727.html',1,'']]],
+  ['resultiterator_2eh',['resultiterator.h',['../a00728.html',1,'']]]
+];
