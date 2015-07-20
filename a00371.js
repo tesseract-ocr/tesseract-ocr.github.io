@@ -1,8 +1,6 @@
 var a00371 =
 [
-    [ "ELIST_LINK", "a00371.html#ab3cdce5789339d12de62e18fdfb52974", null ],
-    [ "ELIST_LINK", "a00371.html#a30be968896fac3d1c88d127213aa03f7", null ],
-    [ "operator=", "a00371.html#a949f5dfcc3c145a19f2d61ee3461701e", null ],
-    [ "ELIST", "a00371.html#a5371c8af1a72e2dc487a561b24f7e1e4", null ],
-    [ "ELIST_ITERATOR", "a00371.html#a4aec179a718fd9e202aa2075bfaa5709", null ]
+    [ "direction", "a00371.html#a0fdfea2264e164be61236ae6e7d74717", null ],
+    [ "offset_numerator", "a00371.html#adef90a7e51a6ba7753ff828120cf3955", null ],
+    [ "pixel_diff", "a00371.html#a80d6034815dbfd56756dd21520e3f252", null ]
 ];

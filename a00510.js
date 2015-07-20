@@ -1,6 +1,10 @@
 var a00510 =
 [
-    [ "ClassId", "a00510.html#a45ade2ad8d07fe98968e6a6795680f0a", null ],
-    [ "ConfigId", "a00510.html#ab4a673ae9bd6272302ea460d336bc80e", null ],
-    [ "Templates", "a00510.html#a88e8ec3116b1ca5e8c0a57a2236f83ed", null ]
+    [ "Circular", "a00510.html#a55807f1e0be0daba2a33380ea29b2f1d", null ],
+    [ "HalfRange", "a00510.html#a1df92d879d7ec8ea6662e956d27154b5", null ],
+    [ "Max", "a00510.html#a73e76f946bbd324e60914a991d3343d1", null ],
+    [ "MidRange", "a00510.html#a7c7bec15766be3633c649a0a9409b512", null ],
+    [ "Min", "a00510.html#a6445e8e433a99239e56c3218437f2695", null ],
+    [ "NonEssential", "a00510.html#a6b9843466a3ddf33bfab18f85ca06501", null ],
+    [ "Range", "a00510.html#a031dddcdc1744e777435f8ceea197448", null ]
 ];

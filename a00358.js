@@ -1,14 +1,11 @@
 var a00358 =
 [
-    [ "DocumentData", "a00358.html#ae638d1d532fd4ee3f8b7dbe5bc8ea237", null ],
-    [ "~DocumentData", "a00358.html#ad7437d2923827a0de2cad3b8deecf165", null ],
-    [ "AddPageToDocument", "a00358.html#ada76a50aea1ae1ed649feb8800a329d4", null ],
-    [ "document_name", "a00358.html#a7597e9c4f5392c10107393f3eb122676", null ],
-    [ "GetPage", "a00358.html#ac3dc8258624a6ce236575bb88de75691", null ],
-    [ "LoadDocument", "a00358.html#a3a8ca21ffe1f92f9842254c3bb77d8f6", null ],
-    [ "memory_used", "a00358.html#ae42401618602081c5211a85c030cb34e", null ],
-    [ "NumPages", "a00358.html#aebcd8657595d7080dfb16e7fae30fb28", null ],
-    [ "SaveDocument", "a00358.html#a452b71108949a0b6051dce51a344e8fc", null ],
-    [ "SaveToBuffer", "a00358.html#a2e19b480154814320f94d22bc04ec293", null ],
-    [ "TakePage", "a00358.html#a7912827934547587ba1a38c9c02afc1e", null ]
+    [ "DawgPosition", "a00358.html#aa0ca9370e621cf3c920f0974a59b6f3a", null ],
+    [ "DawgPosition", "a00358.html#aabc8aa77b0d8972701fd7545217892cc", null ],
+    [ "operator==", "a00358.html#aae18f1eaad30ca8eb205ec35aa68d96c", null ],
+    [ "back_to_punc", "a00358.html#a5e2ec5c5bef69faeaabcdfbe2af2130d", null ],
+    [ "dawg_index", "a00358.html#ad71eb68611dbc059ecd56f1fe17ae2b3", null ],
+    [ "dawg_ref", "a00358.html#acccf37b66d8fc27a4dddf561cefbf388", null ],
+    [ "punc_index", "a00358.html#a859d720332f8dd37fe2f52cfa63aacfb", null ],
+    [ "punc_ref", "a00358.html#a88b4f8768d887ce2e8e4ff79f1b23972", null ]
 ];

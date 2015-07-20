@@ -1,10 +1,7 @@
 var a00260 =
 [
-    [ "AmbigSpec", "a00260.html#aaa3a04113f5db03951771afa6423e7f4", null ],
-    [ "~AmbigSpec", "a00260.html#a5283933a9e7267b3505f5f18cf289f3e", null ],
-    [ "correct_fragments", "a00260.html#ad3a4b121b26cf829422700494aed91e4", null ],
-    [ "correct_ngram_id", "a00260.html#a879c6167dbfc54980bfeb5a15b32bf73", null ],
-    [ "type", "a00260.html#ae29644f82c6feac4df14b22368fa0873", null ],
-    [ "wrong_ngram", "a00260.html#a9d7f07e5b038c6d61acc9bb75ba7ef1b", null ],
-    [ "wrong_ngram_size", "a00260.html#a4cfb10d18b7c636f3afa5f223afa445e", null ]
+    [ "AlignedBlob", "a00260.html#a055f4537191b2fbbd69c8f1629237372", null ],
+    [ "~AlignedBlob", "a00260.html#aa695efbfce803437711ca69c165588c9", null ],
+    [ "DisplayTabs", "a00260.html#ae8e6c33de7a8a40bbb66c312ab9cc899", null ],
+    [ "FindVerticalAlignment", "a00260.html#ae8acdd97fe77a8af9b71a9078e324e3c", null ]
 ];

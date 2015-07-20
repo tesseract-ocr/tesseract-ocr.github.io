@@ -1,6 +1,6 @@
 var a00858 =
 [
-    [ "kMaxDoubleSize", "a00858.html#af3b99544fb662fce123799a16b6050b5", null ],
-    [ "kMaxIntSize", "a00858.html#a98ff26a02a0502569b1676ed30fb1b40", null ],
-    [ "kMinCapacity", "a00858.html#a927f7d5b361de249344c06b29aa6ca27", null ]
+    [ "EXTERN", "a00858.html#a77366c1bd428629dc898e188bfd182a3", null ],
+    [ "VARDIR", "a00858.html#a885bbceac3da2daacf10048f43cc015f", null ],
+    [ "NO_PATH", "a00858.html#aa0543e0dd21b2e52395d15ed50cb9865", null ]
 ];

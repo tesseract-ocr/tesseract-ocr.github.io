@@ -1,9 +1,10 @@
 var a00545 =
 [
-    [ "ShapeDist", "a00545.html#ac9e645213094ff2ec4e778a756d497af", null ],
-    [ "ShapeDist", "a00545.html#a72eec14cc782c126741346bb3b0682fe", null ],
-    [ "operator<", "a00545.html#ada43245e7f7326c8ace4ccc4ffec7726", null ],
-    [ "distance", "a00545.html#ab3cd14877e43630a5bec53198c2ded9d", null ],
-    [ "shape1", "a00545.html#a1d5a17739850a65f1c9367eeb3878a98", null ],
-    [ "shape2", "a00545.html#ad73ba476dc29d61c40a08512f9698138", null ]
+    [ "CharID", "a00545.html#a564df9059b85a37e9f4e69843eec3e20", null ],
+    [ "Clustered", "a00545.html#aa6b39588394fbede2bdcac083bf3832d", null ],
+    [ "Left", "a00545.html#ae6abb40063761a77d4275c79c5c0bb49", null ],
+    [ "Mean", "a00545.html#ac4a33bc0bdd82dd732bbb2f7c593ec78", null ],
+    [ "Prototype", "a00545.html#af0c82e552c662971cf574f9ee8bcb40f", null ],
+    [ "Right", "a00545.html#a2d66168da8fd6b92aed011277f54843a", null ],
+    [ "SampleCount", "a00545.html#a71cac0608666e1abfdfb3ab40e26b249", null ]
 ];

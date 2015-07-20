@@ -1,6 +1,7 @@
 var a00403 =
 [
-    [ "GAPMAP", "a00403.html#a81bd55fa87cfc5e74784ba3de5528766", null ],
-    [ "~GAPMAP", "a00403.html#a5c9bc0fba372a1fd51fa8c6919afa363", null ],
-    [ "table_gap", "a00403.html#a4e9ecf4f9ab09454c84474ef21e06e89", null ]
+    [ "kerned_unichar_ids", "a00403.html#a0e42f25977778ec8265baf3d2464ee83", null ],
+    [ "kerned_x_gaps", "a00403.html#a1fe009a61bebff9d2aedd0fe3bae87bf", null ],
+    [ "x_gap_after", "a00403.html#a015b36bdb4c3d99db56030879c610243", null ],
+    [ "x_gap_before", "a00403.html#ae6736366be0567a50def8284e9d8f8ca", null ]
 ];

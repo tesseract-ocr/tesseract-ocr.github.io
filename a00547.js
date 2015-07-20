@@ -1,11 +1,6 @@
 var a00547 =
 [
-    [ "ShapeRating", "a00547.html#aa4fdeaa6ecd92883a6657cfd4e477435", null ],
-    [ "ShapeRating", "a00547.html#a0a3e81db5638853ea9af1df54cd83e17", null ],
-    [ "broken", "a00547.html#aa0659dec5528a9d1b92b9188d9805c4d", null ],
-    [ "font", "a00547.html#a77578c64b592de4b8cfabcebc2fa2e58", null ],
-    [ "joined", "a00547.html#aad5139ffe6fca8f2ead7b2e0d37f7459", null ],
-    [ "rating", "a00547.html#aa15fe25d5c41ccf5ff1c198eb627b2ce", null ],
-    [ "raw", "a00547.html#a53f0b9442ef699d05f08641242b68980", null ],
-    [ "shape_id", "a00547.html#a988673a089e6c60dfe067c3626437ebd", null ]
+    [ "MaxNumSamples", "a00547.html#a2d52a197ab5cacdecef8ae9748834eb4", null ],
+    [ "NumSamples", "a00547.html#a5f1cc4fb9ec4f7fb4955eb90e83ba182", null ],
+    [ "Sample", "a00547.html#aee7b23bef7e0cdd87974d3c9d36e9d73", null ]
 ];

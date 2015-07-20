@@ -1,9 +1,10 @@
 var a00678 =
 [
-    [ "WordWithBox", "a00678.html#aaefd6c0c2da3eea49d3e00b64fd35f95", null ],
-    [ "WordWithBox", "a00678.html#a505edbf7f96e77e135bb59e2b3a634ab", null ],
-    [ "bounding_box", "a00678.html#a7806fe38f903666daefd87abf00ac719", null ],
-    [ "RejBlobs", "a00678.html#a7d32f94cbb40945ab0a6c38e9262bdab", null ],
-    [ "true_bounding_box", "a00678.html#a10717118f01ba05585966c92b4a1c4c4", null ],
-    [ "word", "a00678.html#a6ca31ff6e5a6b273c11984ee2aa026e8", null ]
+    [ "WorkingPartSet", "a00678.html#a0aa24dd46fc273b8de872c89f7ba80f3", null ],
+    [ "WorkingPartSet", "a00678.html#ac843f6de08574fe243f2004df91dfc24", null ],
+    [ "AddPartition", "a00678.html#a75288f5609d5095cee47ac92e3475608", null ],
+    [ "column", "a00678.html#ab0ea1a567feaf0f69bb350724e6a78a0", null ],
+    [ "ExtractCompletedBlocks", "a00678.html#aa7b37ef0a112ab667c351e3a7d51436d", null ],
+    [ "InsertCompletedBlocks", "a00678.html#ab20df443f0ff6df6f2ba83e31454433c", null ],
+    [ "set_column", "a00678.html#a29052afe85bbf3982f772536504b1e31", null ]
 ];

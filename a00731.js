@@ -1,9 +1,12 @@
 var a00731 =
 [
-    [ "blob_origin", "a00731.html#a0464f690c04a9aeb7710a6df1c0ba1fb", null ],
-    [ "CLISTIZE", "a00731.html#a86c2c9fb0d486d81debb51af2a19c955", null ],
-    [ "divide_blobs", "a00731.html#a2ab5e3b619507b26900a73919b165970", null ],
-    [ "divisible_blob", "a00731.html#aa87284f5696fb5dd745dafa85539d760", null ],
-    [ "kDivisibleVerticalItalic", "a00731.html#a0ce92f82149c2659d55bdb1d2687c8da", null ],
-    [ "kDivisibleVerticalUpright", "a00731.html#a08e47d4b90d71096bdc2508f601ed5d0", null ]
+    [ "API_CONFIG", "a00731.html#ad8f94588e59ba48628105c68f681a21a", null ],
+    [ "VARDIR", "a00731.html#a885bbceac3da2daacf10048f43cc015f", null ],
+    [ "CMD_EVENTS", "a00731.html#a158666bdc32b1dce84c368c24cbc4108", [
+      [ "ACTION_1_CMD_EVENT", "a00731.html#a158666bdc32b1dce84c368c24cbc4108ad5393026a89cc45e229dc1cceca208cd", null ],
+      [ "RECOG_WERDS", "a00731.html#a158666bdc32b1dce84c368c24cbc4108a73be97af434dae7d485282b3a24e766f", null ],
+      [ "RECOG_PSEUDO", "a00731.html#a158666bdc32b1dce84c368c24cbc4108a5ff116d52a6fb93880f2501ee7f7cd64", null ],
+      [ "ACTION_2_CMD_EVENT", "a00731.html#a158666bdc32b1dce84c368c24cbc4108a5e902f0d506a3c3d51b2e5ebcc0ad603", null ]
+    ] ],
+    [ "global_monitor", "a00731.html#ace69a2060bddda087f147f5555fd400c", null ]
 ];

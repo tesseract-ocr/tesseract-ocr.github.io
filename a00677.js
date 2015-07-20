@@ -1,7 +1,9 @@
 var a00677 =
 [
-    [ "WordUnigrams", "a00677.html#afd00490f957dd1842384c372a2949141", null ],
-    [ "~WordUnigrams", "a00677.html#a60f14b6354f60c7411695103bc422601", null ],
-    [ "Cost", "a00677.html#a298b0661e1327c8dcb27bfdd790d92d3", null ],
-    [ "CostInternal", "a00677.html#a14623fdba39beee456c834cdc6a8976f", null ]
+    [ "WordWithBox", "a00677.html#aaefd6c0c2da3eea49d3e00b64fd35f95", null ],
+    [ "WordWithBox", "a00677.html#a505edbf7f96e77e135bb59e2b3a634ab", null ],
+    [ "bounding_box", "a00677.html#a7806fe38f903666daefd87abf00ac719", null ],
+    [ "RejBlobs", "a00677.html#a7d32f94cbb40945ab0a6c38e9262bdab", null ],
+    [ "true_bounding_box", "a00677.html#a10717118f01ba05585966c92b4a1c4c4", null ],
+    [ "word", "a00677.html#a6ca31ff6e5a6b273c11984ee2aa026e8", null ]
 ];

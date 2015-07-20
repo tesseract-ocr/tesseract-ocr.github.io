@@ -1,13 +1,18 @@
 var a00638 =
 [
-    [ "UnicharAmbigs", "a00638.html#a37e6d2803684d852fd78c63abffe1e11", null ],
-    [ "~UnicharAmbigs", "a00638.html#a992ef5355edd9ca799f6256840ae6f6e", null ],
-    [ "AmbigsForAdaption", "a00638.html#a8317225de11350fec1efb6e78297c964", null ],
-    [ "dang_ambigs", "a00638.html#a9726c0e6bec2390404360c51c9bbfbbb", null ],
-    [ "InitUnicharAmbigs", "a00638.html#a5e99a53476bc9ebafc29c4b56871e940", null ],
-    [ "LoadUnicharAmbigs", "a00638.html#ae60a591694971d660585dc01570b6f35", null ],
-    [ "LoadUniversal", "a00638.html#a28f5d8845696a576caebce3d615d486e", null ],
-    [ "OneToOneDefiniteAmbigs", "a00638.html#a812cfe8814d7da766b139d8c40fcde9a", null ],
-    [ "replace_ambigs", "a00638.html#a60150fd403b100937f42a9c24be35523", null ],
-    [ "ReverseAmbigsForAdaption", "a00638.html#a7270fb01b0ebbda292a577397fedc124", null ]
+    [ "~TessResultRenderer", "a00638.html#ab54195c235a6c1639253a778c6cc2944", null ],
+    [ "TessResultRenderer", "a00638.html#af05c5f7be48946d521660f05323417e7", null ],
+    [ "AddImage", "a00638.html#a48121964cc38c7b33bc7e555a7b41423", null ],
+    [ "AddImageHandler", "a00638.html#a3e49719af05d5681bfa19755a8ef4909", null ],
+    [ "AppendData", "a00638.html#adfd158aaf385d1410d65ec01d1a62145", null ],
+    [ "AppendString", "a00638.html#a9d903a379bfc1467618b8ee616ba64b6", null ],
+    [ "BeginDocument", "a00638.html#a8f910e5251ee7ebd65f69072b358b445", null ],
+    [ "BeginDocumentHandler", "a00638.html#a2a48aa4490470f080289215d885458d8", null ],
+    [ "EndDocument", "a00638.html#a64def5e1f46676190e5af46f23adab88", null ],
+    [ "EndDocumentHandler", "a00638.html#adf36cb4fc4481e35e5d114e7673aff88", null ],
+    [ "file_extension", "a00638.html#a1cdb745d5ebc40448f41e426c086f278", null ],
+    [ "imagenum", "a00638.html#a349cd9f8e3f298f2fb67055d39bde954", null ],
+    [ "insert", "a00638.html#af2af504390bed60b8b8041a978cf6962", null ],
+    [ "next", "a00638.html#a8b986f7eee3c6892faa6f070a102b0b1", null ],
+    [ "title", "a00638.html#abc6c2169b2c37d5963163cdd0a21df77", null ]
 ];

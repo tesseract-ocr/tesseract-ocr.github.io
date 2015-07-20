@@ -1,6 +1,8 @@
 var a00379 =
 [
-    [ "NumParams", "a00379.html#a0edbab02900ae01549f742582236eb6d", null ],
-    [ "ParamDesc", "a00379.html#acc46f9f5b3cded3ca8e7de3e94407c58", null ],
-    [ "ShortName", "a00379.html#a11853141d8e7d72bdb9bc320001fa3d0", null ]
+    [ "ELIST_LINK", "a00379.html#ab3cdce5789339d12de62e18fdfb52974", null ],
+    [ "ELIST_LINK", "a00379.html#a30be968896fac3d1c88d127213aa03f7", null ],
+    [ "operator=", "a00379.html#a949f5dfcc3c145a19f2d61ee3461701e", null ],
+    [ "ELIST", "a00379.html#a5371c8af1a72e2dc487a561b24f7e1e4", null ],
+    [ "ELIST_ITERATOR", "a00379.html#a4aec179a718fd9e202aa2075bfaa5709", null ]
 ];

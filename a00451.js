@@ -1,7 +1,6 @@
 var a00451 =
 [
-    [ "LanguageModelDawgInfo", "a00451.html#ab996e3c6b178cbcde84f81f6844c8e43", null ],
-    [ "~LanguageModelDawgInfo", "a00451.html#ab38535ca6bf27b8b01b385cb3a977179", null ],
-    [ "active_dawgs", "a00451.html#a071ab5ab50d94c3b6f1f4181f5aabf1a", null ],
-    [ "permuter", "a00451.html#a172ed1149f12df85de309b228715a002", null ]
+    [ "KDPairDec", "a00451.html#a864222bb4fb2182bdbf27d6ce27721f1", null ],
+    [ "KDPairDec", "a00451.html#a10ca5a57df855e898889c9f318df915b", null ],
+    [ "operator<", "a00451.html#a842e8f8a05cb9367a4f63a20b42a1340", null ]
 ];

@@ -1,9 +1,7 @@
 var a00516 =
 [
-    [ "QRSequenceGenerator", "a00516.html#a5a059ef6ea8b396ad0569e7e948609f8", null ],
-    [ "GetBinaryReversedInteger", "a00516.html#a76df4c96183f70454be79371ad16ba62", null ],
-    [ "GetVal", "a00516.html#a28c125707aded762182e647e0ec91900", null ],
-    [ "N_", "a00516.html#a7c5369f6274a766bd8fa27c73def6821", null ],
-    [ "next_num_", "a00516.html#ab764a4da80a6383e730def95256987e7", null ],
-    [ "num_bits_", "a00516.html#abc925af9d97d630cd000a20c719c8c60", null ]
+    [ "bool_params", "a00516.html#a6bb13133287d8d8d18c81bb974b1b54f", null ],
+    [ "double_params", "a00516.html#a83a1b9a0571c97380bdf3a32591cf196", null ],
+    [ "int_params", "a00516.html#a22c42b48d2c626d2f3f3b0abd21bc902", null ],
+    [ "string_params", "a00516.html#a446a70d7d7c85af255d053ae54c5df8a", null ]
 ];

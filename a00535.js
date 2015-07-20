@@ -1,10 +1,8 @@
 var a00535 =
 [
-    [ "QUAD_COEFFS", "a00535.html#adfd89b047e8a606f35bcf0bbed6965f5", null ],
-    [ "QUAD_COEFFS", "a00535.html#a9138ca9f5cd4c0e913672016bf665290", null ],
-    [ "move", "a00535.html#a76a67699d3fe976ba0e6ea72f5c395a5", null ],
-    [ "y", "a00535.html#af7c4d23ebf42e6b74528204d1497d191", null ],
-    [ "a", "a00535.html#aa9ab5e8947242fa1de50d9863165e032", null ],
-    [ "b", "a00535.html#a58eae9f9c9aa7b738c5493b8da560747", null ],
-    [ "c", "a00535.html#a7f5483bdd3103b7f4a732c8fbc0faa91", null ]
+    [ "REGION_OCC", "a00535.html#ac9e5bc827de2270dbe87a73c5b71d70c", null ],
+    [ "REGION_OCC", "a00535.html#ae817f329738ff4c463297e57b0b1ee4b", null ],
+    [ "max_x", "a00535.html#af5b7d7cf34f63d5cac326d669d036593", null ],
+    [ "min_x", "a00535.html#a38b33f8f218366f5c9e5b2bf3b3164c6", null ],
+    [ "region_type", "a00535.html#a51e3124e0f3c997b4d8bb5bc3bd0fdd2", null ]
 ];

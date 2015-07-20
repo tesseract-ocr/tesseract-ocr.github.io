@@ -1,10 +1,7 @@
 var a00595 =
 [
-    [ "TESS_CHAR", "a00595.html#ad9c35da31a6b36d0cf1dd9dce0572da4", null ],
-    [ "TESS_CHAR", "a00595.html#a790acae1a0c7dcd6bf9622ee384d3e3c", null ],
-    [ "~TESS_CHAR", "a00595.html#afe67e07224557403466b301b29acb124", null ],
-    [ "box", "a00595.html#a1ca1136f40f70eb41350f7cd5d65a244", null ],
-    [ "cost", "a00595.html#a59dbd81cf9a36e402f6bbecee62c1bb3", null ],
-    [ "length", "a00595.html#addc50bcc00bf59b95831fe5c7a8de558", null ],
-    [ "unicode_repr", "a00595.html#a26571c64aee9fc53688c36e7b636f442", null ]
+    [ "actionPerformed", "a00595.html#a761f1a7c68a013d7ac617ecf3dc550ca", null ],
+    [ "add", "a00595.html#aab6cd8f94f4fef10391dd62950a0e1c7", null ],
+    [ "add", "a00595.html#ac7f02fd5355b5e7afecc1c2b2a2df7a6", null ],
+    [ "show", "a00595.html#adc9edb26ea3b0c492f9d6cad0895eccc", null ]
 ];

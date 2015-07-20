@@ -1,10 +1,10 @@
 var a01144 =
 [
-    [ "TabFind", "a00585.html", "a00585" ],
-    [ "WidthCallback", "a01144.html#add06f170e88dcbac90a80ff20c42cc0a", null ],
-    [ "kColumnWidthFactor", "a01144.html#a09df286c02619a6b22c2cd6f89e42267", null ],
-    [ "textord_tabfind_aligned_gap_fraction", "a01144.html#a50dbf7054511cc7fb39d49cd57175210", null ],
-    [ "textord_tabfind_force_vertical_text", "a01144.html#a54accb7683d31dc6fb1631f43e8b2427", null ],
-    [ "textord_tabfind_vertical_horizontal_mix", "a01144.html#ab94d05aebeb31ddad734796ad579ef90", null ],
-    [ "textord_tabfind_vertical_text_ratio", "a01144.html#aa451cc391fb6a33a85e142221438254f", null ]
+    [ "EXTERN", "a01144.html#a77366c1bd428629dc898e188bfd182a3", null ],
+    [ "check_pitch_sync", "a01144.html#a91659398c9bdb3c1c6067f4e4da6a2ef", null ],
+    [ "ELISTIZE", "a01144.html#a26975786a1392176204c4e32c9f03f76", null ],
+    [ "make_illegal_segment", "a01144.html#aff9ef2e9550a83b95b85a9a8791231f6", null ],
+    [ "pitsync_fake_depth", "a01144.html#a7907a67f9518caf8fce64037817b9aa7", null ],
+    [ "pitsync_joined_edge", "a01144.html#a0d941a59238ff3b7bcca1077af788d43", null ],
+    [ "pitsync_offset_freecut_fraction", "a01144.html#a201f09b12d0d0715ec71b1f198126156", null ]
 ];

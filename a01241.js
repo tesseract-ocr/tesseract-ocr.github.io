@@ -1,11 +1,10 @@
 var a01241 =
 [
-    [ "apply_seam", "a01241.html#a0ead1c1a4df9b2c0861e9da84f4c3079", null ],
-    [ "form_two_blobs", "a01241.html#a407d2116f0a53e5d7cb11d4dcdc489a0", null ],
-    [ "make_double_split", "a01241.html#a4ed0ab664f9d3f136e7aa438ab6c4db5", null ],
-    [ "make_single_split", "a01241.html#a503883850fa5d77ae8b47baf76c541ae", null ],
-    [ "make_split_blobs", "a01241.html#a96dc4a90b556cbe0dab2eceb5ae65ffd", null ],
-    [ "make_triple_split", "a01241.html#afd14bd93bb49f7ab009cb45665b4dc43", null ],
-    [ "undo_seam", "a01241.html#aa6a78540c9d1b2be89f28016c2aa408f", null ],
-    [ "undo_single_split", "a01241.html#aac5cbbe57b200218a324936bd098f948", null ]
+    [ "any_shared_split_points", "a01241.html#a9a0430f1c62268bf762a58a97c56acd7", null ],
+    [ "check_blob", "a01241.html#adde6889c67dfb8661a9911b56bc05c96", null ],
+    [ "preserve_outline", "a01241.html#a0a3b9f61e193c679c40344dad4267e3d", null ],
+    [ "preserve_outline_tree", "a01241.html#af2a51913c75408354ffd6e5344c30389", null ],
+    [ "restore_outline", "a01241.html#aca09efda43c5297643be6ba8706ceb83", null ],
+    [ "restore_outline_tree", "a01241.html#a426bc9c96107b36d173f86d8a74f9e8c", null ],
+    [ "total_containment", "a01241.html#a8e8e9f6cb587b621054e6ff626a46a23", null ]
 ];

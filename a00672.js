@@ -1,8 +1,13 @@
 var a00672 =
 [
-    [ "MAX_XHEIGHT_DIFF", "a00672.html#aa8d754cedd7892fe25f2035441f3f6b6", null ],
-    [ "MIN_FONT_ROW_COUNT", "a00672.html#aca24741a901aa8187e889f1ef122f701", null ],
-    [ "kBackUpConfigFile", "a00672.html#a4976a2b3ea53d82ffdb2767bba98aa80", null ],
-    [ "kMinRefitXHeightFraction", "a00672.html#a91ae9908e7c8f49bf292bbdd6678230e", null ],
-    [ "kRepcharGapThreshold", "a00672.html#a321d48155cfbd3e9673c2436c1a72870", null ]
+    [ "WordListLangModel", "a00672.html#a555aa61eb20325586260257dce8605ed", null ],
+    [ "~WordListLangModel", "a00672.html#ac844e1a86d6899330c722dc6983f5cd8", null ],
+    [ "AddString", "a00672.html#a924a9ca1a4d5ad4ac51e62bf8f17e340", null ],
+    [ "AddString32", "a00672.html#a377a15d1f95c5766bc1af48180491d66", null ],
+    [ "GetEdges", "a00672.html#abe363ed3ef497bbbbf7a985d8f07be2f", null ],
+    [ "IsDigit", "a00672.html#a43bb8e1972be27eac8870df64720b77b", null ],
+    [ "IsLeadingPunc", "a00672.html#abc0adc44077a4e1ed691bcd8b478cfb6", null ],
+    [ "IsTrailingPunc", "a00672.html#a5afdc764c2aeca6646beb04a1a511bf5", null ],
+    [ "IsValidSequence", "a00672.html#a3466190b26c1ecf2c0ddaf5cc39fe203", null ],
+    [ "Root", "a00672.html#a773e0620380b5416098db0b86dce5ad8", null ]
 ];

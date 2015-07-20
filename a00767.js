@@ -1,5 +1,11 @@
 var a00767 =
 [
+    [ "UnicityTable", "a00661.html", "a00661" ],
+    [ "ScoredFont", "a00548.html", "a00548" ],
+    [ "FontSpacingInfo", "a00403.html", "a00403" ],
+    [ "FontInfo", "a00399.html", "a00399" ],
+    [ "FontSet", "a00402.html", "a00402" ],
+    [ "FontInfoTable", "a00400.html", "a00400" ],
     [ "CompareFontInfo", "a00767.html#a050fbf6fe3d3cb63b62efbff771495ba", null ],
     [ "CompareFontSet", "a00767.html#a2d183ded4bf706476f186ff0b2d14ba1", null ],
     [ "FontInfoDeleteCallback", "a00767.html#a1eb40be391904d34559ee7fc06b321f4", null ],

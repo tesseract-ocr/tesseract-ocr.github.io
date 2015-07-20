@@ -1,16 +1,12 @@
 var a00338 =
 [
-    [ "CubeObject", "a00338.html#a89b0aff8c824fc507400648fcfbfde8a", null ],
-    [ "CubeObject", "a00338.html#ac59b3f43f1e73ae4e322ae890760a913", null ],
-    [ "~CubeObject", "a00338.html#a5817550d8ae8b003eb66e3caf1681936", null ],
-    [ "AlternateList", "a00338.html#a25575431067c7b13880772c0d6e5061b", null ],
-    [ "BeamObj", "a00338.html#a26496fcab290ab89fc22173cea84c881", null ],
-    [ "CharSample", "a00338.html#adcaa18b8dcbc72c7f5c54061a3e5671c", null ],
-    [ "Normalize", "a00338.html#ae22cb0e4b62800ad7dbb62c3f4ec4453", null ],
-    [ "RecognizeChar", "a00338.html#a81f6bbfded6ee56256213ea3711ec5a5", null ],
-    [ "RecognizePhrase", "a00338.html#a4f10da7950214b56885db746b31b17e2", null ],
-    [ "RecognizeWord", "a00338.html#ab6d0a0e600df7283105d9aace07bb35f", null ],
-    [ "SetCharSampOwnership", "a00338.html#a30b2460908222500b428d02035cc1cbe", null ],
-    [ "SrchObj", "a00338.html#ad7160b69b2316a07a545ca972136ef89", null ],
-    [ "WordCost", "a00338.html#ac323f039f5255f195a4c69b08f5259a1", null ]
+    [ "get_utf8", "a00338.html#aaf36b10de41ea4fd8759caf356a3422c", null ],
+    [ "is_legal", "a00338.html#aba11b7c888fede9c97bb57af5c5894a7", null ],
+    [ "operator*", "a00338.html#aa0d9fefe785dbf4bd2cdd0f3f236b6ee", null ],
+    [ "operator++", "a00338.html#a68562bd8791cff39f9c582b92ee46faa", null ],
+    [ "utf8_data", "a00338.html#a4b3a14e5a20e5dc90f71a49ab6a47ece", null ],
+    [ "utf8_len", "a00338.html#ac9bd20b668eee7a0eaaa53ea8b07cb74", null ],
+    [ "operator!=", "a00338.html#ae9378c0da555cd681c15943b2aa4e10a", null ],
+    [ "operator==", "a00338.html#af6b1615999d88d4ce7a36de6f84ed51c", null ],
+    [ "UNICHAR", "a00338.html#aea7b9130961fcd26705a742a11634606", null ]
 ];

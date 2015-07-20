@@ -1,9 +1,23 @@
 var a00604 =
 [
-    [ "TessClassifier", "a00604.html#a136f93886e941ec3ca91862b0017c502", null ],
-    [ "~TessClassifier", "a00604.html#a823c6f710c5845dd9bb08e8efd73bf1a", null ],
-    [ "DisplayClassifyAs", "a00604.html#a592970c9ad21ab0c6e5cdc46581eaa67", null ],
-    [ "GetShapeTable", "a00604.html#a5afc5fa9f61af8d6fdecb1edd225c033", null ],
-    [ "GetUnicharset", "a00604.html#a3eb47dedcbda5b5a33b53170a3cf17ea", null ],
-    [ "UnicharClassifySample", "a00604.html#ae183fc5b349b67327e66b7accd7ae2c4", null ]
+    [ "TableRecognizer", "a00604.html#af82ad8abb0e3f94edb554594b9e41b55", null ],
+    [ "~TableRecognizer", "a00604.html#a5a661cb9168813a34fe23af441958bb2", null ],
+    [ "FindLinesBoundingBox", "a00604.html#a1976dd404a086faf445085759cc3024c", null ],
+    [ "FindLinesBoundingBoxIteration", "a00604.html#a0e3b073b746ba18778b10413fe16f4e0", null ],
+    [ "HasSignificantLines", "a00604.html#a9d994f1b39135c0a95e558e8bc0489ec", null ],
+    [ "Init", "a00604.html#aca159b4dcd53ac99591aff44ce50a015", null ],
+    [ "NextHorizontalSplit", "a00604.html#a6852b6aaf9df0c7085a644b7696ff881", null ],
+    [ "RecognizeLinedTable", "a00604.html#a09c44b26f6ef2bf6308b669031cc00f1", null ],
+    [ "RecognizeTable", "a00604.html#adc08877ea279ece9d88e2e69cd00b2b4", null ],
+    [ "RecognizeWhitespacedTable", "a00604.html#ad40e89784fedeaa63f2b8e6088e9b270", null ],
+    [ "set_line_grid", "a00604.html#a969a85b74ae52c0fc72da54e66ed93a6", null ],
+    [ "set_max_text_height", "a00604.html#a5c4fca3ea6f9452c7ec5a76f2e085a0c", null ],
+    [ "set_min_height", "a00604.html#ad24b027f3a4261cf7cb25f03646e58de", null ],
+    [ "set_min_width", "a00604.html#a394e60c5a4a61f8572ae33d2fade3ee3", null ],
+    [ "set_text_grid", "a00604.html#abdb2fec4ac7970b190ceaaf4bfb4368f", null ],
+    [ "line_grid_", "a00604.html#acef775b055806466bf907b9008a9f705", null ],
+    [ "max_text_height_", "a00604.html#a2d6b6326270fc127b50a497e4d0c6c7c", null ],
+    [ "min_height_", "a00604.html#a4a0cb917deb38c9cd761390e2e89967b", null ],
+    [ "min_width_", "a00604.html#a99ef7bab6b09c69357a69f440235d83c", null ],
+    [ "text_grid_", "a00604.html#a1ec03b4d8e7b7cd1361d23be47d5d81a", null ]
 ];

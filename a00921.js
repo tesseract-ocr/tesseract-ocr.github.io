@@ -1,14 +1,9 @@
 var a00921 =
 [
-    [ "MicroFeature", "a00921.html#a29d1eef9328292867329303f9f60c5cb", null ],
-    [ "MF_PARAM_NAME", "a00921.html#a0ae9eb66d190c70000f710f7c11977af", [
-      [ "MFXPosition", "a00921.html#a0ae9eb66d190c70000f710f7c11977afa6e5b6d39513820252795a81c22a85094", null ],
-      [ "MFYPosition", "a00921.html#a0ae9eb66d190c70000f710f7c11977afa86c3fede274bd6e6fad789032ba86695", null ],
-      [ "MFLength", "a00921.html#a0ae9eb66d190c70000f710f7c11977afa29b85f8df2366e185699f12117ed1b54", null ],
-      [ "MFDirection", "a00921.html#a0ae9eb66d190c70000f710f7c11977afa6bbdda7793b58667c8ffbf57a38e7436", null ],
-      [ "MFBulge1", "a00921.html#a0ae9eb66d190c70000f710f7c11977afa84f738cc38f82afce789bb6e9908a2cd", null ],
-      [ "MFBulge2", "a00921.html#a0ae9eb66d190c70000f710f7c11977afa11c81e882c3753f597780e69582c06b1", null ],
-      [ "MFCount", "a00921.html#a0ae9eb66d190c70000f710f7c11977afa1c44793580a78fadeffdefc28065e682", null ]
-    ] ],
-    [ "ExtractMicros", "a00921.html#a418517259c5559725ce54e1f6aea0a66", null ]
+    [ "BlobToTrainingSample", "a00921.html#aec054a83368226096efc7b63c67749b5", null ],
+    [ "ExtractIntFeat", "a00921.html#a208ebfc9989e1837d334418d3b93bb5f", null ],
+    [ "FeatureDirection", "a00921.html#a31bfe591242811378902d7342621a59b", null ],
+    [ "InitIntegerFX", "a00921.html#a1281b17b87e56c99d53fe6bb1f7c2d55", null ],
+    [ "NormalizeDirection", "a00921.html#abf01c360f73cc6614bdf2bb9c0728b27", null ],
+    [ "atan_table_mutex", "a00921.html#ac4a1776ca13b7a287e68b1dcd590a240", null ]
 ];

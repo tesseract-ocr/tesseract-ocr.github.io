@@ -1,9 +1,6 @@
 var a00359 =
 [
-    [ "DoubleParam", "a00359.html#af4464cf6564465114c5da137ff7529b2", null ],
-    [ "~DoubleParam", "a00359.html#a00f5ad90e3361cd448f8da6c40d8beb5", null ],
-    [ "operator double", "a00359.html#a0f5ce305bf1194a917e436a055593912", null ],
-    [ "operator=", "a00359.html#a3f51b3d01143ea5f47cb3ae06250c5d6", null ],
-    [ "ResetToDefault", "a00359.html#ad35235e3e9a8d7c31bd1ab243c47c62d", null ],
-    [ "set_value", "a00359.html#ab90748e34aa51a57e642c305306f7d5b", null ]
+    [ "~DawgPositionVector", "a00359.html#aaea033b85651c1e68a4947bf9275238d", null ],
+    [ "add_unique", "a00359.html#a2ee8fd1c42204db7513e0c040868ce7c", null ],
+    [ "clear", "a00359.html#a9a3da3d468cd8cc03f2a56ac9fe65ea0", null ]
 ];

@@ -1,10 +1,11 @@
 var a00849 =
 [
-    [ "__UNIX__", "a00849.html#a868a8b6c7a11be9786388176d32b2828", null ],
-    [ "_TESS_FILE_BASENAME_", "a00849.html#abe32abab3724b9bc0204e8abf1208358", null ],
-    [ "DLLSYM", "a00849.html#ab90d161af4ce92c48d61bb06c325308f", null ],
-    [ "MAX_PATH", "a00849.html#ab99ded389af74001a6298fc9e44e74e5", null ],
-    [ "SIGNED", "a00849.html#a4dec4d9b2bace4f5bc6e6337f4086837", null ],
-    [ "TESS_API", "a00849.html#a86e51270628c53ce7e2c23b1c2b4490e", null ],
-    [ "TESS_LOCAL", "a00849.html#aefcd819eeed9085ef0eeeff0f4cac64f", null ]
+    [ "err_exit", "a00849.html#a7da97df8ad833cd9bbae484fa4fc4f9a", null ],
+    [ "SavePixForCrash", "a00849.html#a372e5d26e8b39261140556e2b7e479d8", null ],
+    [ "set_global_loc_code", "a00849.html#ae281080023125653d85cd946e95f626c", null ],
+    [ "set_global_subloc_code", "a00849.html#a87d586caeb936d763514af2bbba8cab6", null ],
+    [ "set_global_subsubloc_code", "a00849.html#a683cb64eb69da4200257e0468b4347a0", null ],
+    [ "signal_exit", "a00849.html#a5bc45d1c7b7602898f2c7edc72cbcd37", null ],
+    [ "global_crash_pixes", "a00849.html#af3f7f916e4b3d4c42757d05c8b21647d", null ],
+    [ "kMaxNumThreadPixes", "a00849.html#a7cee35bb97ed614515b3bb6372080d4c", null ]
 ];

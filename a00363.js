@@ -1,6 +1,12 @@
 var a00363 =
 [
-    [ "direction", "a00363.html#a0fdfea2264e164be61236ae6e7d74717", null ],
-    [ "offset_numerator", "a00363.html#adef90a7e51a6ba7753ff828120cf3955", null ],
-    [ "pixel_diff", "a00363.html#a80d6034815dbfd56756dd21520e3f252", null ]
+    [ "DIR128", "a00363.html#a28b0ddf2d5d91eec6939c6a243b5e466", null ],
+    [ "DIR128", "a00363.html#a2b4cb07b98110d5d8b46dd9581c571e5", null ],
+    [ "DIR128", "a00363.html#a3205d8518dd0ffd6df641a910d979774", null ],
+    [ "get_dir", "a00363.html#a20420b3fa5c0968a2ebb0763c7e43c2f", null ],
+    [ "operator+", "a00363.html#a88ad5868d31e3769802964a2b2c618e2", null ],
+    [ "operator+=", "a00363.html#ad438ee7fc1e5b9e4b76c83cdeabf61f6", null ],
+    [ "operator-", "a00363.html#aec5839707c95489e991d4a8d2d96a6ed", null ],
+    [ "operator=", "a00363.html#ae2d7d5b99f4dede0045c8a7e2b9f221b", null ],
+    [ "vector", "a00363.html#aeec6816172c9e7491ff2788ad5cf0337", null ]
 ];

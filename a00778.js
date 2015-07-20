@@ -1,4 +1,5 @@
 var a00778 =
 [
-    [ "ELISTIZE", "a00778.html#a53f643f86d802fc4b65b8cbb73f21622", null ]
+    [ "dirtab", "a00778.html#a7a7e1c74bf8c2afcfedc71df593e8d39", null ],
+    [ "idirtab", "a00778.html#a233dd708a8628b58eaecb444154ef6c4", null ]
 ];

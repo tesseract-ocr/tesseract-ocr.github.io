@@ -1,10 +1,7 @@
 var a01126 =
 [
-    [ "OL_BUCKETS", "a00494.html", "a00494" ],
-    [ "BUCKETSIZE", "a01126.html#a1697ba8bc67aab0eb972da5596ee5cc9", null ],
-    [ "capture_children", "a01126.html#a099676098c0d1c86ca9a2d1a479ad27d", null ],
-    [ "empty_buckets", "a01126.html#a448e1f9764807e5383235b51b2984ae1", null ],
-    [ "extract_edges", "a01126.html#a16ca13da58e65267e7e34355091ca891", null ],
-    [ "fill_buckets", "a01126.html#ad9597834f89a0acb1b78514a7a3feb6d", null ],
-    [ "outlines_to_blobs", "a01126.html#ae0cc26838f9973f097882b899b69b249", null ]
+    [ "MINEDGELENGTH", "a01126.html#ac4de85ebe649ec1bd29042d93ec87019", null ],
+    [ "check_path_legal", "a01126.html#adeed8a1cb243009aa6867ff637eb8677", null ],
+    [ "complete_edge", "a01126.html#affa66849c6f718f217c84b000407944b", null ],
+    [ "loop_bounding_box", "a01126.html#a47f9609e31d14519392c829137d72d8a", null ]
 ];

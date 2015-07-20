@@ -1,5 +1,5 @@
 var a00618 =
 [
-    [ "~TessResultCallback3", "a00618.html#a923e02264c9d99f9c656d7978883b76d", null ],
-    [ "Run", "a00618.html#ae717c653a51e735080121a2f6fb0b4d3", null ]
+    [ "~TessCallback4", "a00618.html#ad0a1f72825ee0e22fc8c28f02e924321", null ],
+    [ "Run", "a00618.html#a36fb0a456ac52e8d8bdbc8f2488333ad", null ]
 ];

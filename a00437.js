@@ -1,10 +1,10 @@
 var a00437 =
 [
-    [ "BranchPoint", "a00437.html#aba5d7ca0a419ab7ad6a7cbcdb79add07", null ],
-    [ "Data", "a00437.html#afd5eeb76bcf3d1ba9b387e0cd4e9ce16", null ],
-    [ "Key", "a00437.html#a977838423c3b5e17ecfd0242c39a8202", null ],
-    [ "Left", "a00437.html#a66ffa1cc4e73e45599978f8f6416e350", null ],
-    [ "LeftBranch", "a00437.html#a448480738475fb5bdb2e35b51f40f1d1", null ],
-    [ "Right", "a00437.html#a699e9e67472e12f86bbb5c1effdb4fa3", null ],
-    [ "RightBranch", "a00437.html#a1c8fd73abb446c3ceaea4cb29ef60b2c", null ]
+    [ "ConfigLengths", "a00437.html#a86454e5d855825a4b2b370038598e88c", null ],
+    [ "font_set_id", "a00437.html#af0d8fa528ac2dd07fe4f39ef84a6fd7c", null ],
+    [ "NumConfigs", "a00437.html#abb9c509f11364b949fe9764bc122938c", null ],
+    [ "NumProtos", "a00437.html#ab81b4bb4bddc50d49d1a66b809d9f629", null ],
+    [ "NumProtoSets", "a00437.html#a92a0b5397c2b6f3cc0346a72ce3595bd", null ],
+    [ "ProtoLengths", "a00437.html#a9b4f333b97970433f1c34d45103281d3", null ],
+    [ "ProtoSets", "a00437.html#ac11726dfb0e9ac06fd00351082ca7888", null ]
 ];

@@ -1,11 +1,9 @@
 var a00357 =
 [
-    [ "DocumentCache", "a00357.html#aeacbdfc2e662e7825702a3482ba791a1", null ],
-    [ "~DocumentCache", "a00357.html#a408e589b674fa49cc0d3adb8fd5d718a", null ],
-    [ "AddToCache", "a00357.html#a0d133cc7af8ac08ed1c67735fdbe2b60", null ],
-    [ "documents", "a00357.html#a48e6e80d0d9cbd20219af768e2e87310", null ],
-    [ "FindDocument", "a00357.html#aa724057e0d5951685726f94fcae7b643", null ],
-    [ "GetPageBySerial", "a00357.html#a127c376af7b4d300507d928c70c06bdf", null ],
-    [ "LoadDocuments", "a00357.html#ad632fa4a7925c8ca3b4437f8000866ca", null ],
-    [ "total_pages", "a00357.html#ac7b04d49d78e6da2bb89d0439cd71303", null ]
+    [ "DawgLoader", "a00357.html#a593f60d2a31555c1d744608ae640bb03", null ],
+    [ "Load", "a00357.html#ab9d5a2706698c85c54efae6a450b837a", null ],
+    [ "data_file_name_", "a00357.html#a1a7f75a48a4cf837a79f6f003e43b973", null ],
+    [ "dawg_debug_level_", "a00357.html#abf2c9a98cba7a471c20f6d31e0c962e9", null ],
+    [ "lang_", "a00357.html#adf032ee75b64291977e54e0aa9a0e207", null ],
+    [ "tessdata_dawg_type_", "a00357.html#a30df24a0c9027faf87d44fca4efc580e", null ]
 ];

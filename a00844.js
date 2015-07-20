@@ -1,6 +1,5 @@
 var a00844 =
 [
-    [ "DECLARE_MAIN", "a00844.html#a599a97a750a6cce889edbdf248dd057c", null ],
-    [ "DECLARE_MAIN_CONFIG", "a00844.html#ad67f21790d2680ad7893162f7c00f98f", null ],
-    [ "REALLY_DECLARE_MAIN", "a00844.html#a8d7d179eb9320d0e113df1b82220c942", null ]
+    [ "MAX_MSG", "a00844.html#aa24597a54a085c6c2c33b64138f09eff", null ],
+    [ "BADERRACTION", "a00844.html#a7e1ef09aa091c698c9fe7e38cae89a1c", null ]
 ];

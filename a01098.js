@@ -1,9 +1,11 @@
 var a01098 =
 [
-    [ "AlignedBlobParams", "a00261.html", "a00261" ],
-    [ "AlignedBlob", "a00260.html", "a00260" ],
-    [ "textord_debug_bugs", "a01098.html#a3d35a4bb514fd5c966f5df17196bdb71", null ],
-    [ "textord_debug_images", "a01098.html#aa41ec04738a4db16aac9b42faff5b857", null ],
-    [ "textord_debug_printable", "a01098.html#acbc402f58f1dd3b0eee25a5d3e3cf2d6", null ],
-    [ "textord_debug_tabfind", "a01098.html#ace3f88c2ebef0843236018cd170eea14", null ]
+    [ "kFitHalfrangeFactor", "a01098.html#a5acb8f8490c1a3b68684d10c460e1e96", null ],
+    [ "kMaxBaselineError", "a01098.html#a31cf284314686a893cae2fc26c503f0c", null ],
+    [ "kMaxBlobSizeMultiple", "a01098.html#a46b90f606788891fac29c14f20f39b27", null ],
+    [ "kMaxDisplacementsModes", "a01098.html#a764108909ac86000da00e33ae249ff17", null ],
+    [ "kMaxSkewDeviation", "a01098.html#aa447e3d51461981e8e7c5450e57d9300", null ],
+    [ "kMinFittingLinespacings", "a01098.html#aa61dc7df62ef6cd14f8f4a9e6b3003c9", null ],
+    [ "kNumSkipPoints", "a01098.html#adaf423fe42f3ca4b3343020dc41c376b", null ],
+    [ "kOffsetQuantizationFactor", "a01098.html#a5c9c93517d2f2243b2b265cb1e3b03db", null ]
 ];

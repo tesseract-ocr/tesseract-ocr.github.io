@@ -1,9 +1,8 @@
 var a00436 =
 [
-    [ "IntParam", "a00436.html#a592336f7308bece05ace46b6c791637c", null ],
-    [ "~IntParam", "a00436.html#a0f4f9aac376c17d43c2656558e4168af", null ],
-    [ "operator inT32", "a00436.html#aad2337b5e4227af23fcb9ddc554faa15", null ],
-    [ "operator=", "a00436.html#a8471820a2d5ec9fed122ea5cee56d89a", null ],
-    [ "ResetToDefault", "a00436.html#a6e1063b5fc04b28043c416263053bf9b", null ],
-    [ "set_value", "a00436.html#a0e01c6f94727a60ccebd322637b7f883", null ]
+    [ "InputFileBuffer", "a00436.html#aed86a5afb385810d1d0da8e437fc68f9", null ],
+    [ "~InputFileBuffer", "a00436.html#a111129fbf564c909312d69593b5c4b67", null ],
+    [ "Read", "a00436.html#abcb0987952457dda43b6234a598e0f49", null ],
+    [ "file_name_", "a00436.html#a9003010ef2e0de7572e35b30a0b492b2", null ],
+    [ "fp_", "a00436.html#a5fb7e7fd1323146252c8cb33c2cc2090", null ]
 ];

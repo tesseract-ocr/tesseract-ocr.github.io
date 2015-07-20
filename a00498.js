@@ -1,22 +1,15 @@
 var a00498 =
 [
-    [ "PassEnum", "a00498.html#af1ac568aa510bbcd30ff34da3d0037f2", [
-      [ "PTRAIN_PASS1", "a00498.html#af1ac568aa510bbcd30ff34da3d0037f2a5931b6d2adc45720602cb1d3a42a0a28", null ],
-      [ "PTRAIN_PASS2", "a00498.html#af1ac568aa510bbcd30ff34da3d0037f2abfb2f56c5a42f83aa4afc26d19ec9d24", null ],
-      [ "PTRAIN_NUM_PASSES", "a00498.html#af1ac568aa510bbcd30ff34da3d0037f2a09645783fadb30ad8a72455b4d0c5496", null ]
-    ] ],
-    [ "ParamsModel", "a00498.html#aafeab9959cac899236b065d390965662", null ],
-    [ "ParamsModel", "a00498.html#a6aada97119632e8272d3c84c017fcd11", null ],
-    [ "Clear", "a00498.html#aa98a7e6d4ad2a2c0320a0715c6d290da", null ],
-    [ "ComputeCost", "a00498.html#a8d8f2b67c1f8b67b2f13f20935228f1f", null ],
-    [ "Copy", "a00498.html#ae78fb426936c3ec0a6b5d902edce465a", null ],
-    [ "Equivalent", "a00498.html#ab404a31546495d21a397e696183174b4", null ],
-    [ "Initialized", "a00498.html#ac036ef2452f225ed63806e24f34cc6c3", null ],
-    [ "LoadFromFile", "a00498.html#a9d4d6a2ca0128c9739da3d187be48b7a", null ],
-    [ "LoadFromFp", "a00498.html#a49d9cc088b6fb406378c87096b48d3a4", null ],
-    [ "Print", "a00498.html#ae4572db84f4263b4e7111fc17e7d1726", null ],
-    [ "SaveToFile", "a00498.html#a0822ace3b8588e2d0b3ea52f42523648", null ],
-    [ "SetPass", "a00498.html#a3bbd9220cc12e682d17f557956d070d0", null ],
-    [ "weights", "a00498.html#a23556883822163a48f255d69834a59f4", null ],
-    [ "weights_for_pass", "a00498.html#a2795e7847290629b99104135ba6ae0f5", null ]
+    [ "OSResults", "a00498.html#a08aa76cac72da5479bf32789dcc511dc", null ],
+    [ "accumulate", "a00498.html#a25b4edef21699b3a367d7978733595be", null ],
+    [ "get_best_script", "a00498.html#a9dcb5250ae2466116c33f5d220223296", null ],
+    [ "print_scores", "a00498.html#a4425aefc39fde345cea1288d95691bed", null ],
+    [ "print_scores", "a00498.html#a4c4c5d0fce6889edeea358f755f7e378", null ],
+    [ "set_best_orientation", "a00498.html#aa13f0e8c136d10e0af341f163951ed3d", null ],
+    [ "update_best_orientation", "a00498.html#af7b5cea89a2bdace52ad5825d6d5d4e6", null ],
+    [ "update_best_script", "a00498.html#ab796da60cc16d39f464c03fe4047c358", null ],
+    [ "best_result", "a00498.html#a25f64011ea65c038c1ef1a6cedd10f1c", null ],
+    [ "orientations", "a00498.html#a5fe9fa97000f89cd6f4392b55638e882", null ],
+    [ "scripts_na", "a00498.html#af612cc25d8432678d5b87a5911544792", null ],
+    [ "unicharset", "a00498.html#a78ebdae52f3c685095b56790598ad97c", null ]
 ];

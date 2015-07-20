@@ -1,16 +1,8 @@
 var a00454 =
 [
-    [ "LigatureTable", "a00454.html#af898d1f98a23a8d9dc67f69d214546f3", null ],
-    [ "AddLigatures", "a00454.html#ac04805404bf1e75b60159964c890a752", null ],
-    [ "Init", "a00454.html#a4b8c8b0c869b143ecfa0eea892ffdf8f", null ],
-    [ "lig_to_norm_table", "a00454.html#a75f7170e0782d9dc8ae7ee94af995b7b", null ],
-    [ "norm_to_lig_table", "a00454.html#a74a91138230b499fd2f40e2930d79d19", null ],
-    [ "RemoveCustomLigatures", "a00454.html#a17305abf0bfa2bba6fd7027f428ded7c", null ],
-    [ "RemoveLigatures", "a00454.html#a7fd8d51b443628c2c620d79f7a42a0de", null ],
-    [ "lig_to_norm_table_", "a00454.html#ac2bbda92d0e7c5e07e11dc028423220f", null ],
-    [ "max_lig_length_", "a00454.html#a7ebf0d92cf6632ed160a8967530ee27e", null ],
-    [ "max_norm_length_", "a00454.html#aa8585a5f8ba698854023d2cf7b32b0fb", null ],
-    [ "min_lig_length_", "a00454.html#af5e58c8e852e6cf6421179792e133ac6", null ],
-    [ "min_norm_length_", "a00454.html#a89afe461e33f3a06cf61ab64de13778e", null ],
-    [ "norm_to_lig_table_", "a00454.html#a89607ae8cabe9cff8bddb99ff57f8ff9", null ]
+    [ "KDPtrPairDec", "a00454.html#a88576381c9b70ceba4588c15afe87ba6", null ],
+    [ "KDPtrPairDec", "a00454.html#afd878d7982c9034e7f74ccc25afa3a06", null ],
+    [ "KDPtrPairDec", "a00454.html#a9e37786e520622d6f83af69ee0e23626", null ],
+    [ "operator<", "a00454.html#a8268bac47ce802114ec9a1dfa5939ad8", null ],
+    [ "operator=", "a00454.html#adf0d49eaa0bcecc420df97ca60203513", null ]
 ];

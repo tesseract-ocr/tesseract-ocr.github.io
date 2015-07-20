@@ -1,9 +1,15 @@
 var a01158 =
 [
-    [ "assign_blobs_to_blocks2", "a01158.html#a24f7c51950d2ac0dd9968df80de0a577", null ],
-    [ "blob_y_order", "a01158.html#a468e4fe0f28b1a8c1ac7162bf83f1a91", null ],
-    [ "make_blocks_from_blobs", "a01158.html#ae3f42ba83c3fdc41b4efb434b075dece", null ],
-    [ "SetBlobStrokeWidth", "a01158.html#a741e546e0ade9bf78395d663731a4b64", null ],
-    [ "textord_page", "a01158.html#ab5e965c0f16e32fa7bc0f1e33d412ca5", null ],
-    [ "tweak_row_baseline", "a01158.html#a76e9891e741722335a7a19c561f5580f", null ]
+    [ "kAlignmentNames", "a01158.html#af634680a235b3605fbe0ff57bbdcc971", null ],
+    [ "kGutterMultiple", "a01158.html#a5e5c88d73de712626bb45049f05bf935", null ],
+    [ "kGutterToNeighbourRatio", "a01158.html#ae01d1c3ecd3191b3fd9b5df6fc7329c1", null ],
+    [ "kLineCountReciprocal", "a01158.html#aaa71fcc94da61f06092ac41c1000092b", null ],
+    [ "kMaxFillinMultiple", "a01158.html#ac71cf6db3acc20786941d1146f15bf2b", null ],
+    [ "kMinAlignedGutter", "a01158.html#a1e54ca6764ad8a50cdbc42ebe335784e", null ],
+    [ "kMinGutterFraction", "a01158.html#adde25237f36db6088af89a6a01a903df", null ],
+    [ "kMinRaggedGutter", "a01158.html#a8a2e596e8a74bfa615969413f2059244", null ],
+    [ "kSimilarRaggedDist", "a01158.html#afe209ead2031e46e5acc7e412edbb078", null ],
+    [ "kSimilarVectorDist", "a01158.html#a70fef17dce833d756ce25024339559ab", null ],
+    [ "textord_tabvector_vertical_box_ratio", "a01158.html#affa406b99ade671948f293ba7d274184", null ],
+    [ "textord_tabvector_vertical_gap_fraction", "a01158.html#a16144e0f0ec50aeee39322c29e5ef4c7", null ]
 ];

@@ -1,16 +1,10 @@
 var a00923 =
 [
-    [ "FIRSTBULGE", "a00923.html#ad1464eb110ea01416a6590990ef70292", null ],
-    [ "MFLENGTH", "a00923.html#aab9af949da5ae4ae116df014c0d22d1e", null ],
-    [ "MFSIZE", "a00923.html#a91b4d8b8bc76e243410f648f487b9a1a", null ],
-    [ "NextFeatureOf", "a00923.html#a73241e8fe18f28077a7158303e7a126f", null ],
-    [ "ORIENTATION", "a00923.html#ac815b03ec48abf99301f44140ff0b0a9", null ],
-    [ "SECONDBULGE", "a00923.html#af4886ef7009ef75f6e3a13ff562feb27", null ],
-    [ "XPOSITION", "a00923.html#aa14d8a5c035963734f527261a209c402", null ],
-    [ "YPOSITION", "a00923.html#ab4a43f7e9f215f0fb311fdb0f54fe1bf", null ],
-    [ "MFBLOCK", "a00923.html#a6aff904923717a4c878871a7b3c51f59", null ],
-    [ "MICROFEATURE", "a00923.html#acf6b2e47a8872409e85b7bfeee9961dc", null ],
-    [ "MICROFEATURES", "a00923.html#a3fdd61e86cfc2b48248239e49fd1befe", null ],
-    [ "FreeMicroFeatures", "a00923.html#afd75dd0b29a6b9bf0c5a31b3484bd0d9", null ],
-    [ "NewMicroFeature", "a00923.html#a10606897d42fff8ca71fb36795bd581e", null ]
+    [ "ClassPruner", "a00320.html", "a00320" ],
+    [ "INTMATCHER_OFFSET_TABLE_SIZE", "a00923.html#a4d5e60a0dcf6b847d0ebda3ad2fcb6ec", null ],
+    [ "next_table_entries", "a00923.html#a1bfa601bd8b46c544de1e1a91a22c828", null ],
+    [ "offset_table_entries", "a00923.html#abcc36c4c5b44ef98c6520709c5fd60f0", null ],
+    [ "HeapSort", "a00923.html#a11a05eae2b34aea059f9d8c0d2a94484", null ],
+    [ "IMDebugConfiguration", "a00923.html#aa8704170048a3260adca8e8f78eaeb61", null ],
+    [ "IMDebugConfigurationSum", "a00923.html#aae66a3365e5ba8921d8bfdddaf9f55e5", null ]
 ];

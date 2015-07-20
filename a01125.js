@@ -1,10 +1,10 @@
 var a01125 =
 [
-    [ "kMaxRectangularFraction", "a01125.html#ae6dc7638052b18db703d824259f9d39e", null ],
-    [ "kMaxRectangularGradient", "a01125.html#ac980c05231fe3f7a8cb4c7ed7f9b6516", null ],
-    [ "kMinColorDifference", "a01125.html#aa76be4c175875d95748cec9f9d5467e3", null ],
-    [ "kMinImageFindSize", "a01125.html#ad923bf9132f3e7cfd57199a3190c446c", null ],
-    [ "kMinRectangularFraction", "a01125.html#a1f21fe8acb13b4e1904e1d1157183d0d", null ],
-    [ "kRMSFitScaling", "a01125.html#a351af5b8ad4d2b3fd95e59d758f13e7a", null ],
-    [ "textord_tabfind_show_images", "a01125.html#a25f853a0cc782510d9943b1a3be4327d", null ]
+    [ "OL_BUCKETS", "a00494.html", "a00494" ],
+    [ "BUCKETSIZE", "a01125.html#a1697ba8bc67aab0eb972da5596ee5cc9", null ],
+    [ "capture_children", "a01125.html#a099676098c0d1c86ca9a2d1a479ad27d", null ],
+    [ "empty_buckets", "a01125.html#a448e1f9764807e5383235b51b2984ae1", null ],
+    [ "extract_edges", "a01125.html#a16ca13da58e65267e7e34355091ca891", null ],
+    [ "fill_buckets", "a01125.html#ad9597834f89a0acb1b78514a7a3feb6d", null ],
+    [ "outlines_to_blobs", "a01125.html#ae0cc26838f9973f097882b899b69b249", null ]
 ];

@@ -1,6 +1,7 @@
 var a01276 =
 [
-    [ "SVEvent", "a00585.html", "a00585" ],
-    [ "SVEventHandler", "a00587.html", "a00587" ],
-    [ "SVEventType", "a00588.html", "a00588" ]
+    [ "SVImageHandler", "a00588.html", null ],
+    [ "SVMenuBar", "a00589.html", "a00589" ],
+    [ "SVPopupMenu", "a00595.html", "a00595" ],
+    [ "SVWindow", "a00598.html", "a00598" ]
 ];

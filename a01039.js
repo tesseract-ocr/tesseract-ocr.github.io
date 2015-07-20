@@ -1,8 +1,7 @@
 var a01039 =
 [
-    [ "ILLEGALMALLOCREQUEST", "a01039.html#af4b3c6a2833ca7c3f531746c2937e3a8", null ],
-    [ "NOTENOUGHMEMORY", "a01039.html#a33c9be2e27c6832c275df3c2745e039b", null ],
-    [ "Efree", "a01039.html#af846576ae65dc13e49ddc616e17baa27", null ],
-    [ "Emalloc", "a01039.html#a9bdc0885c33bbb5b062c77b1d90e2305", null ],
-    [ "Erealloc", "a01039.html#a2bd9b4f7899f8798018497faa3b12eed", null ]
+    [ "RESET_COUNT", "a01039.html#a6f918b4c4fd78a6a98a73d38d327f160", null ],
+    [ "exists_file", "a01039.html#ae742eac688a0941097b28b88dd0f201b", null ],
+    [ "long_rand", "a01039.html#a33d2b2e66e43c48ac087a3e89f783f85", null ],
+    [ "open_file", "a01039.html#ae3226f9d05617de0b7174bc7b7fce5b6", null ]
 ];

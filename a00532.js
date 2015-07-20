@@ -1,10 +1,9 @@
 var a00532 =
 [
-    [ "adapted", "a00532.html#a090f44ac2eedadd72c93fb628dfaf167", null ],
-    [ "config", "a00532.html#aa8ff624b603b87dd4cc41304e1e72b05", null ],
-    [ "fontinfo_id", "a00532.html#aef50f14f803115ac96f57bf3d7e519f9", null ],
-    [ "fontinfo_id2", "a00532.html#ac30be99b1e1ac98855c624896f9f0389", null ],
-    [ "rating", "a00532.html#aa410f972971cfb2df154972833783f72", null ],
-    [ "shape_id", "a00532.html#ab3db24ffe2690f52d86053ba1f631520", null ],
-    [ "unichar_id", "a00532.html#ac067f8f00b90b65e9e8348355a771736", null ]
+    [ "QRSequenceGenerator", "a00532.html#a5a059ef6ea8b396ad0569e7e948609f8", null ],
+    [ "GetBinaryReversedInteger", "a00532.html#a76df4c96183f70454be79371ad16ba62", null ],
+    [ "GetVal", "a00532.html#a28c125707aded762182e647e0ec91900", null ],
+    [ "N_", "a00532.html#a7c5369f6274a766bd8fa27c73def6821", null ],
+    [ "next_num_", "a00532.html#ab764a4da80a6383e730def95256987e7", null ],
+    [ "num_bits_", "a00532.html#abc925af9d97d630cd000a20c719c8c60", null ]
 ];

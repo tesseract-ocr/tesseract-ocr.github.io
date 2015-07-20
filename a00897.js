@@ -1,4 +1,5 @@
 var a00897 =
 [
-    [ "ExtractFlexFeatures", "a00897.html#a0da09852d315a6ea73501ce417a52d6e", null ]
+    [ "ExtractFontName", "a00897.html#aa011b40b5e90b4087d0e42ea5fcce12c", null ],
+    [ "classify_font_name", "a00897.html#aa9bc8ba4ba34ad675c28584c68838003", null ]
 ];

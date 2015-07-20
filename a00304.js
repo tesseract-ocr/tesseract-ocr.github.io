@@ -1,23 +1,8 @@
 var a00304 =
 [
-    [ "CharClassifier", "a00304.html#a08c3672c2062828c840d830c7a16639b", null ],
-    [ "~CharClassifier", "a00304.html#afac874bedbc52b288b5e064bed170dce", null ],
-    [ "CaseSensitive", "a00304.html#ac985e2cf1310211262590b0952ab2fa9", null ],
-    [ "CharCost", "a00304.html#aa447f4775f256d36dab382f1bbb7b56c", null ],
-    [ "Classify", "a00304.html#ae133c2172d9bc6ae1726ae9a436755f1", null ],
-    [ "FeatureExtractor", "a00304.html#ae68e84dfd759cb08e82d2cee97abd3b2", null ],
-    [ "Fold", "a00304.html#a38059a0e194a7e1ab1099f15bb0c4a87", null ],
-    [ "Init", "a00304.html#a64532c78a06560da1fb9ed7d54d9309f", null ],
-    [ "LoadFoldingSets", "a00304.html#ada1bba5a3763258805be98302083eb8e", null ],
-    [ "SetCaseSensitive", "a00304.html#a5480d01debdf57b4d2d2189c2c499e2d", null ],
-    [ "SetLearnParam", "a00304.html#ab2c1ff04d245d64d7900afefae9ef842", null ],
-    [ "Train", "a00304.html#a3ee7b00c9999051a92426b6de0bc7e5d", null ],
-    [ "case_sensitive_", "a00304.html#aaabb1acf1d7ebcd2b66e1f9796cc49dc", null ],
-    [ "char_set_", "a00304.html#afbe25062436573d4a3b8c9e9936f6013", null ],
-    [ "feat_extract_", "a00304.html#ab8e30443f3f9a1d1e9ca5640608a47a8", null ],
-    [ "fold_set_cnt_", "a00304.html#aa00adf41e98123f259e463b037908db7", null ],
-    [ "fold_set_len_", "a00304.html#a883ce8cb0ee930611abcd061153a3be2", null ],
-    [ "fold_sets_", "a00304.html#ad7acb8330f63320bb636c66d31b815dc", null ],
-    [ "init_", "a00304.html#ac5b9df929e2570650b263f0a1504125b", null ],
-    [ "params_", "a00304.html#af2e7491d921d252957ae0ea4cdaf9aff", null ]
+    [ "certainty", "a00304.html#ae6d64915bd517270e523ffb8684b984b", null ],
+    [ "fragment", "a00304.html#a100f7283db6a6078cba9b526cfe71045", null ],
+    [ "num_fragments", "a00304.html#ac5d1359d9ae58c6fc68180aa0d0ec95d", null ],
+    [ "rating", "a00304.html#ac843ec4aa587f6a77ce573bb199997e9", null ],
+    [ "unichar_id", "a00304.html#a24af551ad80e76f6f7d504caced974d4", null ]
 ];

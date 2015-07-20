@@ -1,6 +1,8 @@
 var a00503 =
 [
-    [ "PB_LINE_IT", "a00503.html#af16844a810674c1c47bb40dc421699e0", null ],
-    [ "get_line", "a00503.html#a951f496eedaed0deb3e61946f7444122", null ],
-    [ "set_to_block", "a00503.html#ad6a9527a4f5875609c1b1d10a58ce92d", null ]
+    [ "delta_top", "a00503.html#a19b5a431d0b51319b85a9ce691092c6d", null ],
+    [ "hgt_0", "a00503.html#a50cde66f171e13e739725bb239d8104f", null ],
+    [ "hgt_1", "a00503.html#a2fce382d6b1eb846c3de4dadb5b3d004", null ],
+    [ "wid_0", "a00503.html#a22c098207846124d7d0691661a425ca3", null ],
+    [ "wid_1", "a00503.html#a0ef779ce2adf46c32c6eae3d93a49cd9", null ]
 ];

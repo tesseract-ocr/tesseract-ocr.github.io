@@ -1,16 +1,15 @@
 var a00681 =
 [
-    [ "IsLeftIndented", "a00681.html#afe260b66ccf11a3f3346ba282f315c49", null ],
-    [ "IsRightIndented", "a00681.html#a8a161b61eb46383ddad93473fb3d8749", null ],
-    [ "IsTextOrEquationType", "a00681.html#a1aff6897e170c358d7672413b3c221de", null ],
-    [ "equationdetect_save_bi_image", "a00681.html#ab3821a15abf7ddbf050f01af5138a7ec", null ],
-    [ "equationdetect_save_merged_image", "a00681.html#ad6fcc8bf72a1d8f1162e2dfb30d30d2f", null ],
-    [ "equationdetect_save_seed_image", "a00681.html#a5c4a2fdf13d6975e77cffaa102f74b37", null ],
-    [ "equationdetect_save_spt_image", "a00681.html#a6a58c01b3dc1775eb9566e7151be8389", null ],
-    [ "kLeftIndentAlignmentCountTh", "a00681.html#a1a5ac6fad51e61e88df309fb704d8ebc", null ],
-    [ "kMathDigitDensityTh1", "a00681.html#ad996502770c51cc260e4d66db9543bcc", null ],
-    [ "kMathDigitDensityTh2", "a00681.html#a2a82022958d051af0fb624095c3ada00", null ],
-    [ "kMathItalicDensityTh", "a00681.html#ad64e658be002902d7a5b0dd98ab0fe35", null ],
-    [ "kSeedBlobsCountTh", "a00681.html#a113f000461790e1cd1c397f382814da5", null ],
-    [ "kUnclearDensityTh", "a00681.html#a07a51423879204a025d373c6ae40fba5", null ]
+    [ "GenericVector", "a00416.html", "a00416" ],
+    [ "TessBaseAPI", "a00613.html", "a00613" ],
+    [ "MAKE_VERSION", "a00681.html#aedb42f7681d2a954c9ada2752b362544", null ],
+    [ "TESSERACT_VERSION", "a00681.html#ace63270f1461eeffa475ad7bc8934329", null ],
+    [ "TESSERACT_VERSION_STR", "a00681.html#a1010f99edacb96c8fe0dbcb59c37978c", null ],
+    [ "DictFunc", "a00681.html#a8405c121c1d39fbfff2ee0318496d5f6", null ],
+    [ "FillLatticeFunc", "a00681.html#a50f02681b4ae62e5c4f79173561971d5", null ],
+    [ "INT_FEATURE", "a00681.html#af803a54b0e7e7985ebd5bdf9d54424e0", null ],
+    [ "ParamsModelClassifyFunc", "a00681.html#a12a2114943b9b18dd45d3d40df7b6977", null ],
+    [ "ProbabilityInContextFunc", "a00681.html#acff22894b78fa786f06840a81caf7650", null ],
+    [ "TruthCallback", "a00681.html#a2b782734f04c669f264e8675aad68d9c", null ],
+    [ "HOcrEscape", "a00681.html#a91558c5771a593a5c2e3e62e9ad8e822", null ]
 ];

@@ -1,9 +1,7 @@
 var a01245 =
 [
-    [ "is_inside_angle", "a01245.html#a2ed4acccf540054febe7403a827ebbac", null ],
-    [ "same_outline_bounds", "a01245.html#a4bc2f1c0c8896eb6273a1e213280a446", null ],
-    [ "weighted_edgept_dist", "a01245.html#a4df928397c7bcfee5373a86d6f2f46da", null ],
-    [ "correct_blob_order", "a01245.html#ac29e40d2a6a1a8a7a1eb317324262d86", null ],
-    [ "eliminate_duplicate_outlines", "a01245.html#a1d3c90a38ea91d7baf73af2c77b03d7f", null ],
-    [ "setup_blob_outlines", "a01245.html#ad4f4e346c4650affddae46c8df8299ce", null ]
+    [ "SeamDecPair", "a01245.html#a5294a4d0e0796a8ad92fa3bf63a3561a", null ],
+    [ "SeamPair", "a01245.html#ad968f53798533f756579c5cd1fc1a980", null ],
+    [ "SeamPile", "a01245.html#adaa99d84dea709fbf9c90de4c65e23f1", null ],
+    [ "SeamQueue", "a01245.html#ad75f559fa2ad0d090f83138d36e057cc", null ]
 ];

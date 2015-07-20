@@ -1,8 +1,6 @@
 var a00481 =
 [
-    [ "OSBestResult", "a00481.html#a516db80da6727056f92664053e6d34af", null ],
-    [ "oconfidence", "a00481.html#a67e009467e4db6c40777548ffdfe464e", null ],
-    [ "orientation_id", "a00481.html#a6dfb6826b41a81524ce867b005ba5641", null ],
-    [ "sconfidence", "a00481.html#ae39a2c718b010ed27eb7f820546da6d6", null ],
-    [ "script_id", "a00481.html#a0647ea3dc4a399a472c48ab1eacd31e1", null ]
+    [ "Class", "a00481.html#a1c7b735de8e1caa16763adf0cfc95593", null ],
+    [ "Label", "a00481.html#a748285b0d7014218f0b335dcb0513168", null ],
+    [ "NumMerged", "a00481.html#a66ece12653cd86542d9c9c461a256f8a", null ]
 ];

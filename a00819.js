@@ -1,7 +1,6 @@
 var a00819 =
 [
-    [ "SPLIT", "a00574.html", "a00574" ],
-    [ "make_edgept", "a00819.html#abe45460790758fd43e35acbad4eed1c5", null ],
-    [ "remove_edgept", "a00819.html#ada6ba0f2954768ab4b7d9d2cf165dee0", null ],
-    [ "wordrec_display_splits", "a00819.html#ac251ee3f4ff4145a52a8ba54a1b26743", null ]
+    [ "choose_nth_item", "a00819.html#ab531cf8bc727a6e03af3a6cc10b4cd7a", null ],
+    [ "choose_nth_item", "a00819.html#a71a0ba1133f24e41c7123bc460798744", null ],
+    [ "swap_entries", "a00819.html#ab483724220813ab89951f7c264dcdd26", null ]
 ];

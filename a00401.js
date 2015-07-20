@@ -1,9 +1,5 @@
 var a00401 =
 [
-    [ "FRAGMENT", "a00401.html#ad92817a034efcb39085d32c28f4388c7", null ],
-    [ "FRAGMENT", "a00401.html#aacaf9db93ac23c277117978192554a35", null ],
-    [ "head", "a00401.html#a478d7c1b752caca70a20bee30bfeedb7", null ],
-    [ "headpt", "a00401.html#a34eb3fd9b4cd674029930225914abfe2", null ],
-    [ "tail", "a00401.html#a8526d72041f8fd3fc5c0954b2bd23ca0", null ],
-    [ "tailpt", "a00401.html#a5d8660627c2f55ce4c8ad14f1b5813d4", null ]
+    [ "font_name", "a00401.html#abe6f3df57e3c8544d3a62483a766441c", null ],
+    [ "pair_size_info", "a00401.html#acf8ff058874cefc533e62f057c9b9f60", null ]
 ];

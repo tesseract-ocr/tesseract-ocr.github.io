@@ -1,10 +1,7 @@
 var a00882 =
 [
-    [ "Classify", "a00314.html", "a00314" ],
-    [ "CharSegmentationType", "a00882.html#afe12112c1ca56d41c919d0f18dfdf240", [
-      [ "CST_FRAGMENT", "a00882.html#afe12112c1ca56d41c919d0f18dfdf240af7f038dab34772b9ddb631d46aa4126a", null ],
-      [ "CST_WHOLE", "a00882.html#afe12112c1ca56d41c919d0f18dfdf240ab74e41d8efe1a9beae832eb1652096f5", null ],
-      [ "CST_IMPROPER", "a00882.html#afe12112c1ca56d41c919d0f18dfdf240a9395c1832262d72b28dd6461c334f207", null ],
-      [ "CST_NGRAM", "a00882.html#afe12112c1ca56d41c919d0f18dfdf240a9757169f767169fe9fea1f62ab9ba17b", null ]
-    ] ]
+    [ "tprintf", "a00882.html#a02aa7cca2c3857c14716e8cca96ace6c", null ],
+    [ "tprintf_internal", "a00882.html#ad6e08b17847943f1d6a71e48a8a72788", null ],
+    [ "debug_file", "a00882.html#aa8ce7e96765d92da2430b440edb0724a", null ],
+    [ "debug_window_on", "a00882.html#ad5435036c899888a0937ad51feae5124", null ]
 ];

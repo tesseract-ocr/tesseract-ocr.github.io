@@ -1,13 +1,11 @@
 var a00563 =
 [
-    [ "StringParam", "a00563.html#a40a11080380d683951aa43c8205bca29", null ],
-    [ "~StringParam", "a00563.html#a5b9b4f87236422c6389e66dcc4d08583", null ],
-    [ "c_str", "a00563.html#aee5d9da59188242b7a2135039d35d40c", null ],
-    [ "empty", "a00563.html#a0ec3e515e2623176386ec2582381a573", null ],
-    [ "operator STRING &", "a00563.html#a1f25dd680a927ea639dbe98b5f62d2d0", null ],
-    [ "operator=", "a00563.html#a2b6cff9842475b308d88471ce362c998", null ],
-    [ "operator==", "a00563.html#a015e950a25b3f10e48c769159e404297", null ],
-    [ "ResetToDefault", "a00563.html#ac6307a498e62ff3cefc853838d87b2a0", null ],
-    [ "set_value", "a00563.html#a12824dcbc4500b02020b58e76ae4d8cd", null ],
-    [ "string", "a00563.html#a722ffc30ba31e0993847178593eca10b", null ]
+    [ "ShapeRating", "a00563.html#aa4fdeaa6ecd92883a6657cfd4e477435", null ],
+    [ "ShapeRating", "a00563.html#a0a3e81db5638853ea9af1df54cd83e17", null ],
+    [ "broken", "a00563.html#aa0659dec5528a9d1b92b9188d9805c4d", null ],
+    [ "font", "a00563.html#a77578c64b592de4b8cfabcebc2fa2e58", null ],
+    [ "joined", "a00563.html#aad5139ffe6fca8f2ead7b2e0d37f7459", null ],
+    [ "rating", "a00563.html#aa15fe25d5c41ccf5ff1c198eb627b2ce", null ],
+    [ "raw", "a00563.html#a53f0b9442ef699d05f08641242b68980", null ],
+    [ "shape_id", "a00563.html#a988673a089e6c60dfe067c3626437ebd", null ]
 ];

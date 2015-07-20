@@ -1,16 +1,7 @@
 var a00405 =
 [
-    [ "GenericHeap", "a00405.html#ac4b6c9557d8b690b259ba4eb237b5039", null ],
-    [ "GenericHeap", "a00405.html#aebf8c4bcec1bc5ed513bbe7ff3e9aeb7", null ],
-    [ "clear", "a00405.html#a2c5a4c1e7f01939794be6e154acafc1b", null ],
-    [ "empty", "a00405.html#a48753055b0ea31ed1563f9df636a1e68", null ],
-    [ "get", "a00405.html#ac6cc8f9375826366bb429567c19827fc", null ],
-    [ "heap", "a00405.html#a6570d94d65a47a6aeeaf1f9f8e426e26", null ],
-    [ "PeekTop", "a00405.html#a721e4a556b84fa8076f7da5b942120aa", null ],
-    [ "Pop", "a00405.html#a65f73703e294dddf82497c483584f5f9", null ],
-    [ "PopWorst", "a00405.html#a2c7c50a73339f8093d05c30817ebf9a7", null ],
-    [ "Push", "a00405.html#af0fc3154029c1c8d584f0e26d55fe03b", null ],
-    [ "Reshuffle", "a00405.html#a94b6f7ac281a115a153cfca6cee61639", null ],
-    [ "size", "a00405.html#adb74d460785877666ddefa41dbb670c4", null ],
-    [ "size_reserved", "a00405.html#af3ae2695c5da1d439bee1a3885f91bf5", null ]
+    [ "format", "a00405.html#a1ed57d324b8dd1be25ce123388445f2b", null ],
+    [ "glyphIDArray", "a00405.html#a7beee6499225c316c20050d8f02a7d6a", null ],
+    [ "language", "a00405.html#a38da79a275b5fc946adb8f73e684557a", null ],
+    [ "length", "a00405.html#a04e0ebf555c60e8c5dc43269931c1eb7", null ]
 ];

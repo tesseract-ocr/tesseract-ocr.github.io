@@ -1,6 +1,7 @@
 var a00575 =
 [
-    [ "SVMutex", "a00575.html#a89972af36deeecb0eef35ce4b27a8a0d", null ],
-    [ "Lock", "a00575.html#ac2a19e2b7ce47e75ee1f72870574e41f", null ],
-    [ "Unlock", "a00575.html#aa70f2446491c0de56b69eba6dd877f31", null ]
+    [ "AvgVariance", "a00575.html#aec33c119c63aad5cd1c4e75c6afe2968", null ],
+    [ "CoVariance", "a00575.html#a1a87c66cfa2a256ff9b13d5858bf9650", null ],
+    [ "Max", "a00575.html#a6f553b49759c072107a7c1c5606bbc72", null ],
+    [ "Min", "a00575.html#ae03871d16f8d02e97e24401324565ab5", null ]
 ];

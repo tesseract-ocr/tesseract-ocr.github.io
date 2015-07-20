@@ -1,7 +1,8 @@
 var a00396 =
 [
-    [ "kerned_unichar_ids", "a00396.html#a0e42f25977778ec8265baf3d2464ee83", null ],
-    [ "kerned_x_gaps", "a00396.html#a1fe009a61bebff9d2aedd0fe3bae87bf", null ],
-    [ "x_gap_after", "a00396.html#a015b36bdb4c3d99db56030879c610243", null ],
-    [ "x_gap_before", "a00396.html#ae6736366be0567a50def8284e9d8f8ca", null ]
+    [ "Delta", "a00396.html#a6aab71c8cc5076d6299ac5153cc01ad8", null ],
+    [ "Type", "a00396.html#ab50007d49ca8aa85354f1cbdf186c52b", null ],
+    [ "X", "a00396.html#aea6de45e16cbf7f43d1de6cf549bcc5b", null ],
+    [ "Y", "a00396.html#afbfda1b2e13254c26369bb792b0edbaf", null ],
+    [ "YInit", "a00396.html#aecb5907178fad1760c3ba1911295f0e8", null ]
 ];

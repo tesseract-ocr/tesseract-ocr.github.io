@@ -1,8 +1,7 @@
 var a00308 =
 [
-    [ "CharSampSet", "a00308.html#a86ed83f376692acdde8eb3a80eb96d70", null ],
-    [ "~CharSampSet", "a00308.html#a068ef020d9868f214c4feda160f0828d", null ],
-    [ "Add", "a00308.html#ab43b1f39a5db126d4e554f43e858353d", null ],
-    [ "SampleCount", "a00308.html#a462d6d9f406445d88eacf08a2564a94c", null ],
-    [ "Samples", "a00308.html#aa63a4baf00b2ed6523ffc8c6cfc5a8ca", null ]
+    [ "char_bigram", "a00308.html#aae8c431003254c08e6ec02d1309e2d65", null ],
+    [ "max_char", "a00308.html#adcb5fea862baff3582bcf5223218026d", null ],
+    [ "total_cnt", "a00308.html#ae5fc0fd5c907a7d871c08bffa7a08716", null ],
+    [ "worst_cost", "a00308.html#ac0c678c3fe7bd24f65b706e3fab1957b", null ]
 ];

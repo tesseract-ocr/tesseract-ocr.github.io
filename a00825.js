@@ -1,12 +1,8 @@
 var a00825 =
 [
-    [ "ELIST2_LINK", "a00369.html", "a00369" ],
-    [ "ELIST2", "a00367.html", "a00367" ],
-    [ "ELIST2_ITERATOR", "a00368.html", "a00368" ],
-    [ "ELIST2IZE", "a00825.html#a574b9d080e6a413d915407cea6ac0243", null ],
-    [ "ELIST2IZEH", "a00825.html#a790562c8bc97eb7c596d2388a3b2918c", null ],
-    [ "ELIST2IZEH_A", "a00825.html#afe9bc96f0255f620d7eb93aa9ad921e1", null ],
-    [ "ELIST2IZEH_B", "a00825.html#a61d7ced1948543bdac72c2ae9d92cc7a", null ],
-    [ "ELIST2IZEH_C", "a00825.html#a580e2302bf687d2a94a171a32e609997", null ],
-    [ "QUOTE_IT", "a00825.html#adc858fd865cb4f529784fbc52d4d2b87", null ]
+    [ "CHILD_COLOUR", "a00825.html#a7c40159b1166c369b1307ac9257f1405", null ],
+    [ "FIRST_COLOUR", "a00825.html#a70083999d911cb1aa3ed0580bc66fd22", null ],
+    [ "LAST_COLOUR", "a00825.html#aaa8f711f73dfdf579c53b00dbc721966", null ],
+    [ "word_comparator", "a00825.html#a8a8c04307eb98f244554d5b2eb97ec56", null ],
+    [ "CANT_SCALE_EDGESTEPS", "a00825.html#ad8da5b5584b304c496fe8cf4b4a1b65f", null ]
 ];

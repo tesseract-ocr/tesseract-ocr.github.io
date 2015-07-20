@@ -1,7 +1,16 @@
 var a00904 =
 [
-    [ "MAXSAMPLESIZE", "a00904.html#a6265459411ad3caa42ad4d1d54616034", null ],
-    [ "TOKENSIZE", "a00904.html#ae17edeefd22ae590b356bd24f8f61d11", null ],
+    [ "ILLEGALCIRCULARSPEC", "a00904.html#a3c4a4b251aa42c2c882ae83c65dfb980", null ],
+    [ "ILLEGALDISTRIBUTION", "a00904.html#a391d78630134eb691596568d73fe04ad", null ],
+    [ "ILLEGALESSENTIALSPEC", "a00904.html#a9807f33462886db66ed9570245a27fee", null ],
+    [ "ILLEGALFLOAT", "a00904.html#a0a3d9acba9eecd1e86cf3ec41183c05b", null ],
+    [ "ILLEGALMEANSPEC", "a00904.html#a47a6e5abffe00553f5984cc4079f32d7", null ],
+    [ "ILLEGALMINMAXSPEC", "a00904.html#a4bde310182c9d51b6b017c981958db65", null ],
+    [ "ILLEGALSAMPLECOUNT", "a00904.html#ac956d1ac7852ec521cc3faa1aef5be0c", null ],
+    [ "ILLEGALSAMPLESIZE", "a00904.html#af974dbd1cdd902e8d6885578ee9fe515", null ],
+    [ "ILLEGALSIGNIFICANCESPEC", "a00904.html#a4b3703ca46e25a96d58a2196b80aa7bc", null ],
+    [ "ILLEGALSTYLESPEC", "a00904.html#ad5af9ed421659ab0896a2abca0883d1a", null ],
+    [ "ILLEGALVARIANCESPEC", "a00904.html#af4a945e424295913c8a3539f1a2b166d", null ],
     [ "ReadNFloats", "a00904.html#ac8403bb0db7b53dcd96435b6ff2ececb", null ],
     [ "ReadParamDesc", "a00904.html#ae37f86e537cc934a27b5cb8c3dfd3173", null ],
     [ "ReadProtoStyle", "a00904.html#a8e0a4d7e3f0a938673a40b82a5199b2b", null ],

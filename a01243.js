@@ -1,11 +1,9 @@
 var a01243 =
 [
-    [ "MEASUREMENT", "a00468.html", "a00468" ],
-    [ "ADD_SAMPLE", "a01243.html#acc2a20480b12cd0baa7b972014621c43", null ],
-    [ "MEAN", "a01243.html#a4dc0d2c69c4196c34103fb377cf89a55", null ],
-    [ "new_measurement", "a01243.html#af841ea538d8134f398f1c69553fd9c9a", null ],
-    [ "number_of_samples", "a01243.html#a06fc1a60cd4129ce1f5b5341f29ab58c", null ],
-    [ "print_summary", "a01243.html#ad4c2ed3ea71f5c47ed1aa55b7a324040", null ],
-    [ "standard_deviation", "a01243.html#a1190781e21c3d5e4a12bcd24d779f3ec", null ],
-    [ "VARIANCE", "a01243.html#ae3c1a512eadd10f473675cfc6450e6dc", null ]
+    [ "clear_fx_win", "a01243.html#aa3294a99fe8ad4b74a1e8577b89e3eff", null ],
+    [ "create_fx_win", "a01243.html#ae31e31904810bc4e3407c2f324cf7edb", null ],
+    [ "create_fxdebug_win", "a01243.html#acb1c409d6a6de9cd0988e873ff68fd70", null ],
+    [ "fx_debug", "a01243.html#a914f797563b0dc5f5d3f13f521e307a5", null ],
+    [ "fx_debugfile", "a01243.html#aafd93dea58b33bc6c4245aaa39e8e9ee", null ],
+    [ "fx_win", "a01243.html#a32821715e23d2e2666ba66b2a9d2ee8b", null ]
 ];

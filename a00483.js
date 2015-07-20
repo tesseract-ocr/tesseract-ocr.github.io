@@ -1,12 +1,10 @@
 var a00483 =
 [
-    [ "Ix", "a00483.html#a6af6966cfc75974663f3746d8a490a34", null ],
-    [ "Iy", "a00483.html#af32048351768bcc8ad6566dcb452090d", null ],
-    [ "L", "a00483.html#a91a6aea2761ea0e675b1e47c87da2509", null ],
-    [ "Mx", "a00483.html#a48dcb42e547f23fbf75a53f396c2d020", null ],
-    [ "My", "a00483.html#a19fd6ebb6e878a2f2df7c168edd7ed81", null ],
-    [ "Rx", "a00483.html#a44df0e96a471cc5e0380b52d04eec549", null ],
-    [ "Ry", "a00483.html#afb6d2229fa00b3a255aa11efa7894527", null ],
-    [ "x", "a00483.html#a2e72d57afc14290aef97b17bba52cd98", null ],
-    [ "y", "a00483.html#a27f428c88f5d21ad9125a93c30d73699", null ]
+    [ "Element", "a00373.html", "a00373" ],
+    [ "MinK", "a00483.html#aed8f58e958aa7f55998ce1283da2ec7c", null ],
+    [ "~MinK", "a00483.html#a62a791208da213b31a4f1058481eac6f", null ],
+    [ "elements", "a00483.html#ac45bba01f3e5ea642f99b462b345f976", null ],
+    [ "elements_count", "a00483.html#a09234dac642fad372ea6fefe360f1e85", null ],
+    [ "insert", "a00483.html#a885e251124b47ef6d2ae3388572305f8", null ],
+    [ "max_insertable_key", "a00483.html#a62ae0a6c821b62d98c6bde038e2b80a2", null ]
 ];

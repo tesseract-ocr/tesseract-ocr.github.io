@@ -1,5 +1,6 @@
 var a00594 =
 [
-    [ "Cluster", "a00594.html#adfa4721271456305d40524737800bb2e", null ],
-    [ "Neighbor", "a00594.html#abc9f805357e72eae3febb1dbd4c412ac", null ]
+    [ "empty", "a00594.html#a4845d1075be2adfc225ad2f084967c0d", null ],
+    [ "xcoords", "a00594.html#a173b50f037a7dd74903dc2a90f6f6c35", null ],
+    [ "ycoords", "a00594.html#a6c1e6afb4e159c283f9a4cde91457960", null ]
 ];

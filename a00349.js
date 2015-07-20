@@ -1,9 +1,7 @@
 var a00349 =
 [
-    [ "DawgLoader", "a00349.html#a593f60d2a31555c1d744608ae640bb03", null ],
-    [ "Load", "a00349.html#ab9d5a2706698c85c54efae6a450b837a", null ],
-    [ "data_file_name_", "a00349.html#a1a7f75a48a4cf837a79f6f003e43b973", null ],
-    [ "dawg_debug_level_", "a00349.html#abf2c9a98cba7a471c20f6d31e0c962e9", null ],
-    [ "lang_", "a00349.html#adf032ee75b64291977e54e0aa9a0e207", null ],
-    [ "tessdata_dawg_type_", "a00349.html#a30df24a0c9027faf87d44fca4efc580e", null ]
+    [ "CubeTessClassifier", "a00349.html#acf075cad0e846d0b42fbd4ec18c2302b", null ],
+    [ "~CubeTessClassifier", "a00349.html#afb2c06bd98d5b60ff859b509391f26bd", null ],
+    [ "GetShapeTable", "a00349.html#aa13fedc67d477fa8383043f92cd91b26", null ],
+    [ "UnicharClassifySample", "a00349.html#a9b6c7f41e292256dd332e5adf0c8897b", null ]
 ];

@@ -1,8 +1,7 @@
 var a00556 =
 [
-    [ "SpacingProperties", "a00556.html#a2f6032294c3de9d78acadd6b01c2679f", null ],
-    [ "SpacingProperties", "a00556.html#a5dabc5c3bb2bb88bfd2d738bee32762d", null ],
-    [ "kerned_x_gaps", "a00556.html#ab1b0b77f9f598c674e7409bedab7618e", null ],
-    [ "x_gap_after", "a00556.html#af306c57d4c86a21a2c377a506cafd548", null ],
-    [ "x_gap_before", "a00556.html#abddc3822da890db3e84d10b4432519d1", null ]
+    [ "SearchNodeHashTable", "a00556.html#a562bdd5876b9292deb9584e8c4ad4ab4", null ],
+    [ "~SearchNodeHashTable", "a00556.html#a6101916ebcbb560f6f2f2382aa9dab6d", null ],
+    [ "Insert", "a00556.html#aae7833296f799fb4577fe1d25ee76f28", null ],
+    [ "Lookup", "a00556.html#a2f437ed6409f38572913c64bf45b1249", null ]
 ];

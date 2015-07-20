@@ -1,9 +1,14 @@
 var a00432 =
 [
-    [ "IntFeatureDist", "a00432.html#a37ccde2ed9866ff8405218388758d61a", null ],
-    [ "~IntFeatureDist", "a00432.html#a43fdddb44a0a46067926c7036a983a1e", null ],
-    [ "DebugFeatureDistance", "a00432.html#ae37c94972dec97dcae90ae7576b951ad", null ],
-    [ "FeatureDistance", "a00432.html#ae9e18970c99df4646691f92641453d4d", null ],
-    [ "Init", "a00432.html#ac455ebc0bb3c38597a368519a06d8bae", null ],
-    [ "Set", "a00432.html#ad06a9d5e512345ba58942d4b9fcfdd88", null ]
+    [ "~IndexMap", "a00432.html#a0ed244a46cf41eaee538f917605a9c8c", null ],
+    [ "CompactSize", "a00432.html#ab2904b1640580ad7ba6b2c14522dc3e8", null ],
+    [ "CompactToSparse", "a00432.html#ad9e50b500bcbadf8f3be98cd672f0c4a", null ],
+    [ "CopyFrom", "a00432.html#a838d73d3bb8c7e8a1b43761cf99f337d", null ],
+    [ "CopyFrom", "a00432.html#a6547a318de4fb3ca1422ba6c2c91b233", null ],
+    [ "DeSerialize", "a00432.html#a74a60120500f7ced59f2cea3bc42138f", null ],
+    [ "Serialize", "a00432.html#a067894b455dcd2e3d013a9449e1aae7d", null ],
+    [ "SparseSize", "a00432.html#a25dc97e755104bf3e58a8a9f0a254d18", null ],
+    [ "SparseToCompact", "a00432.html#af6d980041372e85befb238aae69192c0", null ],
+    [ "compact_map_", "a00432.html#a5089b80f1c2f365c07dc075da232aa89", null ],
+    [ "sparse_size_", "a00432.html#ae3ff257a84297cf8c67ee4bb27e54194", null ]
 ];

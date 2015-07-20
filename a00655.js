@@ -1,13 +1,13 @@
 var a00655 =
 [
-    [ "WordListLangModel", "a00655.html#a555aa61eb20325586260257dce8605ed", null ],
-    [ "~WordListLangModel", "a00655.html#ac844e1a86d6899330c722dc6983f5cd8", null ],
-    [ "AddString", "a00655.html#a924a9ca1a4d5ad4ac51e62bf8f17e340", null ],
-    [ "AddString32", "a00655.html#a377a15d1f95c5766bc1af48180491d66", null ],
-    [ "GetEdges", "a00655.html#abe363ed3ef497bbbbf7a985d8f07be2f", null ],
-    [ "IsDigit", "a00655.html#a43bb8e1972be27eac8870df64720b77b", null ],
-    [ "IsLeadingPunc", "a00655.html#abc0adc44077a4e1ed691bcd8b478cfb6", null ],
-    [ "IsTrailingPunc", "a00655.html#a5afdc764c2aeca6646beb04a1a511bf5", null ],
-    [ "IsValidSequence", "a00655.html#a3466190b26c1ecf2c0ddaf5cc39fe203", null ],
-    [ "Root", "a00655.html#a773e0620380b5416098db0b86dce5ad8", null ]
+    [ "UnicharAmbigs", "a00655.html#a37e6d2803684d852fd78c63abffe1e11", null ],
+    [ "~UnicharAmbigs", "a00655.html#a992ef5355edd9ca799f6256840ae6f6e", null ],
+    [ "AmbigsForAdaption", "a00655.html#a8317225de11350fec1efb6e78297c964", null ],
+    [ "dang_ambigs", "a00655.html#a9726c0e6bec2390404360c51c9bbfbbb", null ],
+    [ "InitUnicharAmbigs", "a00655.html#a5e99a53476bc9ebafc29c4b56871e940", null ],
+    [ "LoadUnicharAmbigs", "a00655.html#ae60a591694971d660585dc01570b6f35", null ],
+    [ "LoadUniversal", "a00655.html#a28f5d8845696a576caebce3d615d486e", null ],
+    [ "OneToOneDefiniteAmbigs", "a00655.html#a812cfe8814d7da766b139d8c40fcde9a", null ],
+    [ "replace_ambigs", "a00655.html#a60150fd403b100937f42a9c24be35523", null ],
+    [ "ReverseAmbigsForAdaption", "a00655.html#a7270fb01b0ebbda292a577397fedc124", null ]
 ];

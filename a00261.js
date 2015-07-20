@@ -1,14 +1,18 @@
 var a00261 =
 [
-    [ "AssociateStats", "a00261.html#a7e4bb306e11013394ac1d302260d1574", null ],
-    [ "Clear", "a00261.html#a94932d58d48ea9317ce3d813d63079ec", null ],
-    [ "Print", "a00261.html#a3f7be6507f48cb03151615b750579af8", null ],
-    [ "bad_fixed_pitch_right_gap", "a00261.html#aef322d855f9233bee2fc73f5420c054f", null ],
-    [ "bad_fixed_pitch_wh_ratio", "a00261.html#aa481c463d4d14928cd59615464581412", null ],
-    [ "bad_shape", "a00261.html#a477458043cffc5f8f1387b53616e1148", null ],
-    [ "full_wh_ratio", "a00261.html#aedfc7bb8a188b3d07506787d1c873120", null ],
-    [ "full_wh_ratio_total", "a00261.html#a6ecdf1e1853a6a488ce7b6c997355fde", null ],
-    [ "full_wh_ratio_var", "a00261.html#a898cad6cb2de906d3d179efe2411c7a6", null ],
-    [ "gap_sum", "a00261.html#a9350993c1c0e901679569dcc1c7a2027", null ],
-    [ "shape_cost", "a00261.html#a0185040dea9a2fadac41feb45729e444", null ]
+    [ "AlignedBlobParams", "a00261.html#aac285afe5a09388331a6dc25f4fef615", null ],
+    [ "AlignedBlobParams", "a00261.html#a575b3a2cf7713d3168753cd78354966f", null ],
+    [ "set_vertical", "a00261.html#a83e44cae379b6731699515fb80f5be33", null ],
+    [ "alignment", "a00261.html#a77bb80612aed62986d8dab3508a2a6b4", null ],
+    [ "confirmed_type", "a00261.html#a86260944382d57f10f5f6a3718318b6d", null ],
+    [ "gutter_fraction", "a00261.html#afe400c5d4ef1bfe294a4baf45812ef01", null ],
+    [ "l_align_tolerance", "a00261.html#a2eab7048a1f698433d9d0dc5fccd8fed", null ],
+    [ "max_v_gap", "a00261.html#a70e2ffc29607853e0453d98bc146034c", null ],
+    [ "min_gutter", "a00261.html#a4bbdae9960d3343725a77f92cf61f639", null ],
+    [ "min_length", "a00261.html#a156cc5a176a7753c680415f035aa55fd", null ],
+    [ "min_points", "a00261.html#ad95c5a1a4612b1182d2460a9b02f77dc", null ],
+    [ "r_align_tolerance", "a00261.html#ab8ae6a57a362fea6e62386a2d086202f", null ],
+    [ "ragged", "a00261.html#ac80a942a45ca308b6db82c52672f2441", null ],
+    [ "right_tab", "a00261.html#af5be29a0f0602a9cee85ea55cc72ce82", null ],
+    [ "vertical", "a00261.html#acdc3b3bc6a750096da1641b343517ace", null ]
 ];

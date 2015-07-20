@@ -1,12 +1,10 @@
 var a00612 =
 [
-    [ "TessLangModel", "a00612.html#a23d5290b102bb43428957c4c4a96e6d6", null ],
-    [ "~TessLangModel", "a00612.html#a3976ab4c324b005b9165609e3b077dbc", null ],
-    [ "GetEdges", "a00612.html#abd9a2fc77fe18caeb4a8f17020b460a4", null ],
-    [ "IsDigit", "a00612.html#a69d61128a73ddf1e9ce709a3808c6530", null ],
-    [ "IsLeadingPunc", "a00612.html#ae012b6f6dec52e66ccc7b78fa8975b10", null ],
-    [ "IsTrailingPunc", "a00612.html#aed986e1547e8faf18a522ef074e0413a", null ],
-    [ "IsValidSequence", "a00612.html#a2c303d6052f7b99c6b65a497592e5e2e", null ],
-    [ "RemoveInvalidCharacters", "a00612.html#a1fc3e4c81803a84dba0ff7dd1e0ec936", null ],
-    [ "Root", "a00612.html#a939ea7ad8b064d8167b3c7019bf82d9f", null ]
+    [ "TESS_CHAR", "a00612.html#ad9c35da31a6b36d0cf1dd9dce0572da4", null ],
+    [ "TESS_CHAR", "a00612.html#a790acae1a0c7dcd6bf9622ee384d3e3c", null ],
+    [ "~TESS_CHAR", "a00612.html#afe67e07224557403466b301b29acb124", null ],
+    [ "box", "a00612.html#a1ca1136f40f70eb41350f7cd5d65a244", null ],
+    [ "cost", "a00612.html#a59dbd81cf9a36e402f6bbecee62c1bb3", null ],
+    [ "length", "a00612.html#addc50bcc00bf59b95831fe5c7a8de558", null ],
+    [ "unicode_repr", "a00612.html#a26571c64aee9fc53688c36e7b636f442", null ]
 ];

@@ -1,7 +1,6 @@
 var a00550 =
 [
-    [ "SimpleClusterer", "a00550.html#afc5f3dd986096b36f59d2cc09972d1ea", null ],
-    [ "Add", "a00550.html#ae36fdd8d4995529380462e7f9ce58caa", null ],
-    [ "GetClusters", "a00550.html#afc17914736fbde1378a9bf9358100491", null ],
-    [ "size", "a00550.html#adc5a7f3cac5009aa69f2831b98a6e189", null ]
+    [ "ScriptDetector", "a00550.html#a79efaad57044bbfcd391efc5eb4e9fc8", null ],
+    [ "detect_blob", "a00550.html#aa1626a91138960515d479a781a6b97ca", null ],
+    [ "must_stop", "a00550.html#a951bd4d3f5b14ee234d20afc91d44585", null ]
 ];

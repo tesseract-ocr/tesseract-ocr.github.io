@@ -1,12 +1,8 @@
 var a00515 =
 [
-    [ "QLSQ", "a00515.html#a397f12ae540c919ecd64f4fc17427501", null ],
-    [ "add", "a00515.html#adbbaa8f4d49392cc26b46fabc476cc88", null ],
-    [ "clear", "a00515.html#a9f6ee88370df57093e248a2918ab20b2", null ],
-    [ "count", "a00515.html#a3ba6a079e2f2cea8c434393cfb0fcc61", null ],
-    [ "fit", "a00515.html#a847b2fa0f918e971a56e8db0ce8ed18f", null ],
-    [ "get_a", "a00515.html#a748cebc68a35dcb80970e2cfc1cace2d", null ],
-    [ "get_b", "a00515.html#ab8de83e0968609f28aa83854431e2593", null ],
-    [ "get_c", "a00515.html#aeeedb9b168cef907167e4530dd4bf68a", null ],
-    [ "remove", "a00515.html#a504bacca02e1204111ae32d152e95a70", null ]
+    [ "ParamsTrainingHypothesis", "a00515.html#a1c30109a96767c1ee27c0b00065ad205", null ],
+    [ "ParamsTrainingHypothesis", "a00515.html#a00f8e977a94665eefcee06d769a28331", null ],
+    [ "cost", "a00515.html#ae7ed45d7e6b6631cf3eec38f4dc0fb35", null ],
+    [ "features", "a00515.html#a20dd3bf8dc6796b69178d3fe350aef99", null ],
+    [ "str", "a00515.html#a5dee966c19cad16f4eba3efc879f51b3", null ]
 ];

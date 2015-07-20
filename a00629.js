@@ -1,10 +1,12 @@
 var a00629 =
 [
-    [ "TPOINT", "a00629.html#ae904cdd453d9303892c367c8f358c028", null ],
-    [ "TPOINT", "a00629.html#a16bd52027648e2b99bcfb2fba652c63a", null ],
-    [ "TPOINT", "a00629.html#ac733ed1df90b1f9e1d30175ee580d039", null ],
-    [ "operator+=", "a00629.html#a693993c398a5095f45776ccc41fd629b", null ],
-    [ "operator/=", "a00629.html#a627d77cda5c1a93bd9a79b089b2e1550", null ],
-    [ "x", "a00629.html#aa9c98655c3a2a0437821e5a3d3418b0f", null ],
-    [ "y", "a00629.html#a6d62f015b74612e43975e439a096039c", null ]
+    [ "TessLangModel", "a00629.html#a23d5290b102bb43428957c4c4a96e6d6", null ],
+    [ "~TessLangModel", "a00629.html#a3976ab4c324b005b9165609e3b077dbc", null ],
+    [ "GetEdges", "a00629.html#abd9a2fc77fe18caeb4a8f17020b460a4", null ],
+    [ "IsDigit", "a00629.html#a69d61128a73ddf1e9ce709a3808c6530", null ],
+    [ "IsLeadingPunc", "a00629.html#ae012b6f6dec52e66ccc7b78fa8975b10", null ],
+    [ "IsTrailingPunc", "a00629.html#aed986e1547e8faf18a522ef074e0413a", null ],
+    [ "IsValidSequence", "a00629.html#a2c303d6052f7b99c6b65a497592e5e2e", null ],
+    [ "RemoveInvalidCharacters", "a00629.html#a1fc3e4c81803a84dba0ff7dd1e0ec936", null ],
+    [ "Root", "a00629.html#a939ea7ad8b064d8167b3c7019bf82d9f", null ]
 ];

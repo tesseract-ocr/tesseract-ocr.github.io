@@ -1,14 +1,17 @@
 var a00626 =
 [
-    [ "TFile", "a00626.html#ae3a7067d085e6cddc50d56b692d6b878", null ],
-    [ "~TFile", "a00626.html#afe782f50bac840f49c13d1a6119ca16c", null ],
-    [ "CloseWrite", "a00626.html#ad2dad347ebd0b7fc48c15dc20edbf77f", null ],
-    [ "FGets", "a00626.html#a9fecebb73dded838a8160b29066c3394", null ],
-    [ "FRead", "a00626.html#a3979cde747d25d7590d9e89ec5c81b68", null ],
-    [ "FWrite", "a00626.html#ab6a5213231ecf64e7b585dbb37d9faf3", null ],
-    [ "Open", "a00626.html#aa8cddbeec3274ac9e8417de368fe5ecc", null ],
-    [ "Open", "a00626.html#ab00caa26509b182f9c4ec603d48f5882", null ],
-    [ "Open", "a00626.html#ae03ccaf8e407f79fdc9c577151355b35", null ],
-    [ "OpenWrite", "a00626.html#a2eac843874713c6b3660a70126377cd9", null ],
-    [ "Rewind", "a00626.html#a1c0ba65762bfcdee6e7348294a617079", null ]
+    [ "TesseractStats", "a00626.html#a438204777e63cb7db6536ceef2e2231e", null ],
+    [ "adaption_word_number", "a00626.html#adbffac81aa5b93d7140647ef81da65a1", null ],
+    [ "dict_words", "a00626.html#aba1a9bdebab5ad1a76d6cd8b591d5098", null ],
+    [ "doc_blob_quality", "a00626.html#a71caa259350aee48a61969f7f18c3b60", null ],
+    [ "doc_char_quality", "a00626.html#a762069f1f24c9d978f85d781975ab117", null ],
+    [ "doc_good_char_quality", "a00626.html#a40d82eb257c5f8f05f6a9574484fa829", null ],
+    [ "doc_outline_errs", "a00626.html#a8f275adb3ab5438e3fe4f21d0064d418", null ],
+    [ "dump_words_str", "a00626.html#aaddff0b5e3101637acc25da59fe97065", null ],
+    [ "good_char_count", "a00626.html#a224558592b8ea117ec56304371694070", null ],
+    [ "last_char_was_newline", "a00626.html#a9eb6e1883cd21dc6d291e6980d90b010", null ],
+    [ "last_char_was_tilde", "a00626.html#a724558abf3996a9529e5386d170b940b", null ],
+    [ "tilde_crunch_written", "a00626.html#a08884722496e22d93cfd282a2360360e", null ],
+    [ "word_count", "a00626.html#a340107d62db2b1f3fb8ea51902136ba2", null ],
+    [ "write_results_empty_block", "a00626.html#a64017d0caaa93d199f7718329d08a417", null ]
 ];

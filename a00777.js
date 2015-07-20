@@ -1,8 +1,9 @@
 var a00777 =
 [
-    [ "PDBLK", "a00504.html", "a00504" ],
-    [ "BLOCK_RECT_IT", "a00282.html", "a00282" ],
-    [ "BLOCK_LINE_IT", "a00281.html", "a00281" ],
-    [ "decreasing_top_order", "a00777.html#a653fb765bd7b90bf65d53f6ffe356955", null ],
-    [ "PDBLK", "a00777.html#aedc6a690b03da0d4f84ba90a25b287ab", null ]
+    [ "GENERIC_2D_ARRAY", "a00414.html", "a00414" ],
+    [ "BandTriMatrix", "a00267.html", "a00267" ],
+    [ "MATRIX", "a00477.html", "a00477" ],
+    [ "MATRIX_COORD", "a00478.html", "a00478" ],
+    [ "NOT_CLASSIFIED", "a00777.html#a5c21a86b19e78482e6c7384c47c2457d", null ],
+    [ "MatrixCoordPair", "a00777.html#ab367f917ba6bf928cb3ed9fd46c98739", null ]
 ];

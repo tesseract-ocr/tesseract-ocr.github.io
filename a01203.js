@@ -1,5 +1,6 @@
 var a01203 =
 [
-    [ "StringHash", "a00562.html", "a00562" ],
-    [ "DISABLE_HEAP_LEAK_CHECK", "a01203.html#ab76994b521ea427a7405c67abb7eba0e", null ]
+    [ "PangoFontInfo", "a00504.html", "a00504" ],
+    [ "FontUtils", "a00404.html", null ],
+    [ "char32", "a01203.html#a328af63b24a185a6916faebb5b85aa84", null ]
 ];

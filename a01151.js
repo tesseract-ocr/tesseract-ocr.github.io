@@ -1,9 +1,13 @@
 var a01151 =
 [
-    [ "kDefaultPadFactor", "a01151.html#ae4596a15ea8f66612a71bec5254c0462", null ],
-    [ "kMaxTabStopOverrun", "a01151.html#a64d2e9156d75dc23cf000d5a51a87e8a", null ],
-    [ "kMinLineSpacingFactor", "a01151.html#ace97a5f2c6d12302036b0ae9630a5bcb", null ],
-    [ "kOrientedPadFactor", "a01151.html#ad44742ad860d606b8afb227717532d73", null ],
-    [ "kParaPerpDistRatio", "a01151.html#a6bff85a79d3b0f4a9f27b9e290b5cd68", null ],
-    [ "kWrongWayPenalty", "a01151.html#a092bd18070934c5079ce09f4cf3cf403", null ]
+    [ "StrokeWidth", "a00581.html", "a00581" ],
+    [ "LeftOrRight", "a01151.html#acd121b57d321ca8511db069f603d071f", [
+      [ "LR_LEFT", "a01151.html#acd121b57d321ca8511db069f603d071fa83d27ea7b63eb91b9feed005a2f46ec9", null ],
+      [ "LR_RIGHT", "a01151.html#acd121b57d321ca8511db069f603d071facb1914d58c6a7acb6ddb9563a46a1046", null ]
+    ] ],
+    [ "PartitionFindResult", "a01151.html#a2987d37792e5b3297193091de3911634", [
+      [ "PFR_OK", "a01151.html#a2987d37792e5b3297193091de3911634a0a35bbb694c579efc7e7ded8a8a63e73", null ],
+      [ "PFR_SKEW", "a01151.html#a2987d37792e5b3297193091de3911634a60a7950f62d772f395a6f1a404f4b8b6", null ],
+      [ "PFR_NOISE", "a01151.html#a2987d37792e5b3297193091de3911634af5682e259ea2132d1705be1dc1ddebe1", null ]
+    ] ]
 ];

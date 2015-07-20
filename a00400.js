@@ -1,16 +1,11 @@
 var a00400 =
 [
-    [ "FPSEGPT", "a00400.html#a088aff5c1071d1ee5b4ecea021f8e733", null ],
-    [ "FPSEGPT", "a00400.html#a5ffecee179a3483cbc9fe4953dc5a4bf", null ],
-    [ "FPSEGPT", "a00400.html#a8205f3429c45672f6b8e380f5b100d89", null ],
-    [ "FPSEGPT", "a00400.html#aecaefcc18a32620ca9092d6045190a91", null ],
-    [ "cheap_cuts", "a00400.html#a00c3a543c45c04991a3bc167e1cfd4f2", null ],
-    [ "cost_function", "a00400.html#a2d099c15bf06dc51039f45eb81927de3", null ],
-    [ "position", "a00400.html#a1a63caa9483f9b0ea37ec8fda2e8fa5b", null ],
-    [ "previous", "a00400.html#a4386c87b640304091479028601b74ff9", null ],
-    [ "squares", "a00400.html#ac7534344b8a1c731292c295606a5ec06", null ],
-    [ "sum", "a00400.html#acfb4b892f4ee3cdfd1bbd8916ac5f002", null ],
-    [ "fake_count", "a00400.html#a3174c1dbd5dde6b07482fa5c9d1e1900", null ],
-    [ "faked", "a00400.html#aad5db657759063c17115abfdd74c0689", null ],
-    [ "terminal", "a00400.html#a5e21f19a9e0d86f3009dc96a776f0199", null ]
+    [ "FontInfoTable", "a00400.html#a3df681dea842d8dd4ecdcc37241b7c1e", null ],
+    [ "~FontInfoTable", "a00400.html#a7d099578578e47489043402fa95d9f25", null ],
+    [ "DeSerialize", "a00400.html#a6093ad5b0183a0049ac3dd3e9c3cce19", null ],
+    [ "MoveSpacingInfoFrom", "a00400.html#a7a714512e38a295f7be3c6bdfd207012", null ],
+    [ "MoveTo", "a00400.html#ac5ce6f32cfeaa6a85940c04629d03048", null ],
+    [ "Serialize", "a00400.html#a6185a1ecad3597547cf82115c9b9abec", null ],
+    [ "SetContainsFontProperties", "a00400.html#ae76c27c56844b90e41725cc61734876d", null ],
+    [ "SetContainsMultipleFontProperties", "a00400.html#a0064a4403a88b9f862529068f368855e", null ]
 ];

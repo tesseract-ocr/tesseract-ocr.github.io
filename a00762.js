@@ -1,5 +1,6 @@
 var a00762 =
 [
-    [ "kFinalPixelTolerance", "a00762.html#a469d4482aa2984d424e5a245d79959ae", null ],
-    [ "kSloppyTolerance", "a00762.html#a4af5e4f6d83235f5b9ed8ec5ba7ad6f0", null ]
+    [ "kMaxRealDistance", "a00762.html#a0ba0e3d5b910c72cb63e939e6cb426d3", null ],
+    [ "kMinPointsForErrorCount", "a00762.html#a57f300af8f4caf9869661dcb82500c27", null ],
+    [ "kNumEndPoints", "a00762.html#acd4677fe72e83fad95bf289ca8b832b6", null ]
 ];

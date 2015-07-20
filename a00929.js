@@ -1,12 +1,7 @@
 var a00929 =
 [
-    [ "LENGTH_COMPRESSION", "a00929.html#a528f356e3cb082911b33645da06ccf04", null ],
-    [ "NORM_PARAM_NAME", "a00929.html#ab5ff0a2380362fa488e17c0c1b858506", [
-      [ "CharNormY", "a00929.html#ab5ff0a2380362fa488e17c0c1b858506a9309b18966f93d05a857e8ee0f81c557", null ],
-      [ "CharNormLength", "a00929.html#ab5ff0a2380362fa488e17c0c1b858506af859d8f455da531fb41201c80187dccf", null ],
-      [ "CharNormRx", "a00929.html#ab5ff0a2380362fa488e17c0c1b858506a5a6745d4958b44c8c3481742021428f9", null ],
-      [ "CharNormRy", "a00929.html#ab5ff0a2380362fa488e17c0c1b858506ac21a54078a6ec6e1470a21d65feb58d5", null ]
-    ] ],
-    [ "ActualOutlineLength", "a00929.html#a42d064127b80043f5af5a4e77305d412", null ],
-    [ "ExtractCharNormFeatures", "a00929.html#ab6cef8a645e3dd0dedc58ce8319f3a1d", null ]
+    [ "kFontMergeDistance", "a00929.html#a5a80aa3c385749b5df58ac015ba00e9f", null ],
+    [ "kInfiniteDist", "a00929.html#a765cba391d1d3fc666802038fce31c85", null ],
+    [ "kMaxUnicharsPerCluster", "a00929.html#a93d3ba882abd48b578f7db93e8a4e6e9", null ],
+    [ "kMinClusteredShapes", "a00929.html#a6dc1c791f04726f9cc345b54b85222b9", null ]
 ];

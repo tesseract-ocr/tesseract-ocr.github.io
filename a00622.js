@@ -1,5 +1,5 @@
 var a00622 =
 [
-    [ "TessTextRenderer", "a00622.html#aa6c433dfda1a340c0c38d8537123222b", null ],
-    [ "AddImageHandler", "a00622.html#ae07de77861dfd67133cf8fe42478b790", null ]
+    [ "~TessClosure", "a00622.html#ac5ed723f7db3eadb023898a9343b8d16", null ],
+    [ "Run", "a00622.html#a71de156dcb5860a8c56d2ad9dd4c4529", null ]
 ];

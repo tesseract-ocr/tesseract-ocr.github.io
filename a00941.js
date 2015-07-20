@@ -1,12 +1,10 @@
 var a00941 =
 [
-    [ "LENGTH_COMPRESSION", "a00941.html#a528f356e3cb082911b33645da06ccf04", null ],
-    [ "NORM_PARAM_NAME", "a00941.html#ab5ff0a2380362fa488e17c0c1b858506", [
-      [ "CharNormY", "a00941.html#ab5ff0a2380362fa488e17c0c1b858506a9309b18966f93d05a857e8ee0f81c557", null ],
-      [ "CharNormLength", "a00941.html#ab5ff0a2380362fa488e17c0c1b858506af859d8f455da531fb41201c80187dccf", null ],
-      [ "CharNormRx", "a00941.html#ab5ff0a2380362fa488e17c0c1b858506a5a6745d4958b44c8c3481742021428f9", null ],
-      [ "CharNormRy", "a00941.html#ab5ff0a2380362fa488e17c0c1b858506ac21a54078a6ec6e1470a21d65feb58d5", null ]
-    ] ],
-    [ "ActualOutlineLength", "a00941.html#a42d064127b80043f5af5a4e77305d412", null ],
-    [ "ExtractCharNormFeatures", "a00941.html#a809c040b2d2dbb0ce82c124e0787e06c", null ]
+    [ "NORM_PROTOS", "a00491.html", "a00491" ],
+    [ "NormEvidenceOf", "a00941.html#aabdd8bad43c2e04682813cb96494d5bb", null ],
+    [ "PrintNormMatch", "a00941.html#a2a041eb1273bd7e18bcb663d2106ac15", null ],
+    [ "ReadNormProtos", "a00941.html#ab61ebd7d4a40677a7cd70a298d0b3ca6", null ],
+    [ "classify_norm_adj_curl", "a00941.html#ae9f63df566aa3f4d4405918d1b1af0b3", null ],
+    [ "classify_norm_adj_midpoint", "a00941.html#a5b39e06af338d5d0623762a84246e7a6", null ],
+    [ "kWidthErrorWeighting", "a00941.html#a3882ddbdbe2c0e1c7f84ef7f01aae0a2", null ]
 ];

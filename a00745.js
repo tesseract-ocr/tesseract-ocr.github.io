@@ -1,16 +1,19 @@
 var a00745 =
 [
-    [ "kBlameAdaption", "a00745.html#afbe9ed9b199de04329403be78d43a20e", null ],
-    [ "kBlameChopper", "a00745.html#a4db1a8ed37b0eff0d2e038ff2a107c2c", null ],
-    [ "kBlameClassifier", "a00745.html#a0691e45d7e7b5e6e0671f5167e4a0e71", null ],
-    [ "kBlameClassLMTradeoff", "a00745.html#a5c0e7d2e8cba382e6de905c1612dad3b", null ],
-    [ "kBlameClassOldLMTradeoff", "a00745.html#aa05d635a577a5fafa7fd3b2a3ef0c17d", null ],
-    [ "kBlameCorrect", "a00745.html#a939a828ea97a292eed52468bfc886f5f", null ],
-    [ "kBlameNoTruth", "a00745.html#acbc066860637c1eb6ba9777ec6914020", null ],
-    [ "kBlameNoTruthSplit", "a00745.html#af5f1678db33a085c6a72c606584c8f6f", null ],
-    [ "kBlamePageLayout", "a00745.html#ad7fc57611e72df3bbe8a760f7d9a8bf1", null ],
-    [ "kBlameSegsearchHeur", "a00745.html#a89e8d8eda8453e09c7b0c95d60a57f7c", null ],
-    [ "kBlameSegsearchPP", "a00745.html#a5dc22321ca86643deb20076a2198c8cf", null ],
-    [ "kBlameUnknown", "a00745.html#a5c9260acc89f21815ea4f8c8fc12e473", null ],
-    [ "kIncorrectResultReasonNames", "a00745.html#a85fc3ba2e9db3adeb717fbdba6f9481f", null ]
+    [ "BlamerBundle", "a00277.html", "a00277" ],
+    [ "IncorrectResultReason", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1", [
+      [ "IRR_CORRECT", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a4f5ff200b61e6226eb6d74aec188e769", null ],
+      [ "IRR_CLASSIFIER", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a9b70b64836694fc6dc4a7a6035b2dad8", null ],
+      [ "IRR_CHOPPER", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a4c27b1a4f36ac4410ec500e4c7a1561c", null ],
+      [ "IRR_CLASS_LM_TRADEOFF", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a77542e0fa096277d7e600582d9b295d9", null ],
+      [ "IRR_PAGE_LAYOUT", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a04a64916350490fd4e5044e0387691ae", null ],
+      [ "IRR_SEGSEARCH_HEUR", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1ae6c5b07f9dc57fa9513f706cba5df27e", null ],
+      [ "IRR_SEGSEARCH_PP", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a7c78c60fb2b9b0c1f2d5737883b07cf2", null ],
+      [ "IRR_CLASS_OLD_LM_TRADEOFF", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1aec8f086813191f1f038ad3a6e6aa1d04", null ],
+      [ "IRR_ADAPTION", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a4779671dba2b7a68bfc0a4ca7e16a56b", null ],
+      [ "IRR_NO_TRUTH_SPLIT", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1ac05a52dad11e648af550df6dfcb7670c", null ],
+      [ "IRR_NO_TRUTH", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a25d5b9457d6a31e2e1114c0bf8d0a795", null ],
+      [ "IRR_UNKNOWN", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1abf247997ab473968746db80274036078", null ],
+      [ "IRR_NUM_REASONS", "a00745.html#a8faf52e106c04bfdc9898ffa90b821e1a5b7e21438ec02ceeba07bf96049d84d5", null ]
+    ] ]
 ];

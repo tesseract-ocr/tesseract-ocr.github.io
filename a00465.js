@@ -1,9 +1,11 @@
 var a00465 =
 [
-    [ "MATRIX", "a00465.html#a7601db01acf62a95923bb0765bda67e4", null ],
-    [ "Classified", "a00465.html#a6dcff68b7afd745d2380d2f9be0cec85", null ],
-    [ "ConsumeAndMakeBigger", "a00465.html#adbd8b24d516966e65a9a7621e132f3cf", null ],
-    [ "DeepCopy", "a00465.html#a890210c4e71e9e6c6459462f6a8c8d81", null ],
-    [ "IncreaseBandSize", "a00465.html#a8d472c8b388a9d1d0518259a7e002dba", null ],
-    [ "print", "a00465.html#ae0f2489acb8b15666cb306f82ad2c6de", null ]
+    [ "LanguageModelState", "a00465.html#a405ebc7fa9e2f3e6d611ac5b836fc3e2", null ],
+    [ "~LanguageModelState", "a00465.html#ae476235a5d5baead15402cbcb53c4f81", null ],
+    [ "Clear", "a00465.html#afd6ce4923e5b4f011ad370d29da22d84", null ],
+    [ "Print", "a00465.html#a1ac5f824607fbc600f076afe0edc8f77", null ],
+    [ "viterbi_state_entries", "a00465.html#af29da94ee5bcd913aabf1135c7907a57", null ],
+    [ "viterbi_state_entries_length", "a00465.html#a5b44d715b203bdeb5a495a29361eb0ec", null ],
+    [ "viterbi_state_entries_prunable_length", "a00465.html#abaf36a1c562fde2146b8e3057ca8d82a", null ],
+    [ "viterbi_state_entries_prunable_max_cost", "a00465.html#a15228989c31caf6a0acb2cfddc91b036", null ]
 ];

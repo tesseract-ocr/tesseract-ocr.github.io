@@ -1,7 +1,8 @@
 var a01133 =
 [
-    [ "EXTERN", "a01133.html#a77366c1bd428629dc898e188bfd182a3", null ],
-    [ "PROJECTION_MARGIN", "a01133.html#a01dbc51856714fc0f1871d2eb3c03a5e", null ],
-    [ "check_pitch_sync2", "a01133.html#a3e20de9a4ced394798b92a2edcba2313", null ],
-    [ "check_pitch_sync3", "a01133.html#a40cc2d2a65d895b7ea644c293605ffb2", null ]
+    [ "GAPMAP", "a00413.html", "a00413" ],
+    [ "gapmap_big_gaps", "a01133.html#a1c7263c53035c8c49430590764e30a4a", null ],
+    [ "gapmap_debug", "a01133.html#af720b5cfe44125a48dd3048c5aa0dd32", null ],
+    [ "gapmap_no_isolated_quanta", "a01133.html#a1ac2a0845f4d95719172970fcc1c2237", null ],
+    [ "gapmap_use_ends", "a01133.html#ad3f62bb2f522988ffb694c7fa03f34e9", null ]
 ];

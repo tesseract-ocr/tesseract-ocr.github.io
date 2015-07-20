@@ -1,7 +1,6 @@
 var a01213 =
 [
-    [ "tlog", "a01213.html#adef45c0cb7d54999abcf14ce2741d59b", null ],
-    [ "TLOG_FATAL", "a01213.html#a674cae8a13f09379902ff614b7019f22", null ],
-    [ "TLOG_IS_ON", "a01213.html#a49f5c062187b5f41f68e02021a3e2960", null ],
-    [ "DECLARE_INT_PARAM_FLAG", "a01213.html#a51de2c0227d339d607dabd566919db01", null ]
+    [ "main", "a01213.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
+    [ "set_properties", "a01213.html#ad36022bdde1b95df7c9794a4adf186b6", null ],
+    [ "wc_to_unichar_id", "a01213.html#aaac7331cd26b1b0a5de3a5c5cbf507b7", null ]
 ];

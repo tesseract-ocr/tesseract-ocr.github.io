@@ -1,6 +1,7 @@
 var namespaces =
 [
-    [ "com", "a01261.html", "a01261" ],
-    [ "tesseract", "a01267.html", null ],
-    [ "tesseract-c_api-demo", "a01268.html", null ]
+    [ "com", "a01272.html", "a01272" ],
+    [ "tesseract", "a01278.html", null ],
+    [ "tesseract-c_api-demo", "a01279.html", null ],
+    [ "tesshelper", "a01280.html", null ]
 ];

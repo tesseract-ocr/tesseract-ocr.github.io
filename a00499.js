@@ -1,7 +1,8 @@
 var a00499 =
 [
-    [ "ParamsTrainingBundle", "a00499.html#a5baad028035af666ec532a5743adfce5", null ],
-    [ "AddHypothesis", "a00499.html#a8bec5bb8047ba4d2676072ea0deab1ca", null ],
-    [ "StartHypothesisList", "a00499.html#a60a524854331fa85661fd74f0350b193", null ],
-    [ "hyp_list_vec", "a00499.html#ab1fe926bbbf3808ca874c57a7d7070c9", null ]
+    [ "OutputBuffer", "a00499.html#af3bfbb2ecc084138ddb36d8f1d781323", null ],
+    [ "OutputBuffer", "a00499.html#a69aa56d60fee2d3d1f06fa03c2adb0f5", null ],
+    [ "~OutputBuffer", "a00499.html#a7b0c9f9ea7c448db7711893799410988", null ],
+    [ "CloseFile", "a00499.html#a05b5465b1c270f9caa4ac2caee5aed4d", null ],
+    [ "WriteString", "a00499.html#a95174ff7c876620fe0dcdef61654bcf5", null ]
 ];

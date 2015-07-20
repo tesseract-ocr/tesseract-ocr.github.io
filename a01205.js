@@ -1,8 +1,8 @@
 var a01205 =
 [
-    [ "SVPolyLineBuffer", "a00578.html", "a00578" ],
-    [ "kMaxIntPairSize", "a01205.html#ae89c23582ae7fd97e4884a7402d8959c", null ],
-    [ "kMaxMsgSize", "a01205.html#a4a4ce82f9687ca37d149b0a62c5ed379", null ],
-    [ "kSvPort", "a01205.html#a79eb5da6093373f064e897ad5aedc18c", null ],
-    [ "table_colors", "a01205.html#a56b146063453a9e06f0edb8dc5ee6b3a", null ]
+    [ "INT_PARAM_FLAG", "a01205.html#ae24295f85aeea378392cf4b34b8d90d2", null ],
+    [ "INT_PARAM_FLAG", "a01205.html#aaf92142160a0e7086e8cd2fedf16023b", null ],
+    [ "main", "a01205.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
+    [ "STRING_PARAM_FLAG", "a01205.html#a4ff524054cac371250f62ac657a8b28f", null ],
+    [ "STRING_PARAM_FLAG", "a01205.html#a272d69bc9bee998ba0fab285bfbb6697", null ]
 ];

@@ -1,30 +1,6 @@
 var a00284 =
 [
-    [ "Bmp8", "a00284.html#a5814f6e19d868ea36dc646aa645ec9ae", null ],
-    [ "~Bmp8", "a00284.html#ac8420ca04c29c12a26361a71e18498ac", null ],
-    [ "Clear", "a00284.html#a377aa1f6a7ca95f2ba41b5a84cefd3ef", null ],
-    [ "Copy", "a00284.html#aef4e553b550e2fc133fda73ce36a82bd", null ],
-    [ "Crop", "a00284.html#a4ef0548a67b31f5622082cd40288605d", null ],
-    [ "Deslant", "a00284.html#aa859d63ba3f0f585b017cc2bbd4e5830", null ],
-    [ "FindConComps", "a00284.html#ab1da709401133a6b0d058d33c0108eae", null ],
-    [ "ForegroundRatio", "a00284.html#a783aab8dee964121060434dd8294cd07", null ],
-    [ "Height", "a00284.html#ae9591eae7d79b924bfcac728cced4ff1", null ],
-    [ "HorizontalDeslant", "a00284.html#acbbb2c61a691e004340c790adca5bbb9", null ],
-    [ "HorizontalHistogram", "a00284.html#a5c8e40f95581cc9815d71ffcca505d16", null ],
-    [ "IsBlankColumn", "a00284.html#a3f231aca9ca706bfd103816ae87c8384", null ],
-    [ "IsBlankRow", "a00284.html#ac89e42a0a730263363cdce4db5e4ad49", null ],
-    [ "IsIdentical", "a00284.html#ad1394c7b0ea19e6ba5955ba8893181a7", null ],
-    [ "LoadFromCharDumpFile", "a00284.html#a79ac4073704c055974128fb067085f8f", null ],
-    [ "LoadFromCharDumpFile", "a00284.html#a64a3315b11244bd6e171493a7fe9c22e", null ],
-    [ "LoadFromCharDumpFile", "a00284.html#a6ee69e7650e2ea06cdf16980009125ec", null ],
-    [ "LoadFromRawData", "a00284.html#a5a19cafa82855eb401a2433071e418be", null ],
-    [ "MeanHorizontalHistogramEntropy", "a00284.html#a7f7236eeda12a9ff3db9cedafcdb3786", null ],
-    [ "RawData", "a00284.html#aaf3e6d9b474c1f964d99565fd7afaeae", null ],
-    [ "SaveBmp2CharDumpFile", "a00284.html#acb33243c84fea596c9abf8aa3ee18825", null ],
-    [ "ScaleFrom", "a00284.html#ad978f83061e3785d9d3ce1031283e73b", null ],
-    [ "Stride", "a00284.html#a3858bc18b43667e4b985f154fc139def", null ],
-    [ "Width", "a00284.html#a4a21ea5a104d8c37e22c94b4cde2d462", null ],
-    [ "hgt_", "a00284.html#a62d633750ad515b99eda172efccc7b55", null ],
-    [ "line_buff_", "a00284.html#a66763262f6d74a8d10ffdc83a73bb451", null ],
-    [ "wid_", "a00284.html#aefc333b9afa85c20f0daed573021fedf", null ]
+    [ "BLOCK_LINE_IT", "a00284.html#a3314287e5dfe49ed7087a4a59a5bd3d1", null ],
+    [ "get_line", "a00284.html#acb41ad4c1ece0af796b3551d5ad6dd8c", null ],
+    [ "set_to_block", "a00284.html#ab2f0345eb6609b6a2c429342ca6ac60c", null ]
 ];

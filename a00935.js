@@ -1,13 +1,17 @@
 var a00935 =
 [
-    [ "MAX_OUTLINE_FEATURES", "a00935.html#ac29e72cf5bfbadc9a7b2490ffdda297f", null ],
-    [ "OUTLINE_FEAT_PARAM_NAME", "a00935.html#ab73697b859e4921472c6cf1de43267a1", [
-      [ "OutlineFeatX", "a00935.html#ab73697b859e4921472c6cf1de43267a1ab72d959dbf0e92bfdb6f3ebf9d0b35e6", null ],
-      [ "OutlineFeatY", "a00935.html#ab73697b859e4921472c6cf1de43267a1ae64bdd03ed6e7dd59482f7e2d8054379", null ],
-      [ "OutlineFeatLength", "a00935.html#ab73697b859e4921472c6cf1de43267a1afc77106ded4ebd69ae6c596a2536e741", null ],
-      [ "OutlineFeatDir", "a00935.html#ab73697b859e4921472c6cf1de43267a1a0bb02f3ddb0f407e51cbf8967c3d78cb", null ]
-    ] ],
-    [ "AddOutlineFeatureToSet", "a00935.html#a7a23f0f713121c5a61e7f96df94d6ced", null ],
-    [ "ConvertToOutlineFeatures", "a00935.html#a46e551093fc5d100adbb071067948bd9", null ],
-    [ "NormalizeOutlineX", "a00935.html#a31e740a46d077ad41735bbd17b0bef34", null ]
+    [ "ChangeDirection", "a00935.html#abd95d6d2be6406aea26fbf0f0bf157ae", null ],
+    [ "CharNormalizeOutline", "a00935.html#af5936ef194bb508756e2b1b891c31ece", null ],
+    [ "ComputeDirection", "a00935.html#a97334eef13fe16a7e0ce178f905d2c39", null ],
+    [ "ConvertBlob", "a00935.html#a4acb6328d74e385e88c02c45e1306b97", null ],
+    [ "ConvertOutline", "a00935.html#a8ddc957cfa64a7dc50f9a3836319e766", null ],
+    [ "ConvertOutlines", "a00935.html#a4d507cbf8bfa947b364ed74f5cb160cd", null ],
+    [ "FindDirectionChanges", "a00935.html#ac2b870343576dd24d1c4871f5988d556", null ],
+    [ "FreeMFOutline", "a00935.html#a4633687049466a4f28d70775b0481431", null ],
+    [ "FreeOutlines", "a00935.html#a553352ad44661adad2a80a24ac78aeaf", null ],
+    [ "MarkDirectionChanges", "a00935.html#afa2531f8656ba496465bc23ff1a2f99c", null ],
+    [ "NewEdgePoint", "a00935.html#a917b406f8854b822d8cf2eb2480e6684", null ],
+    [ "NextDirectionChange", "a00935.html#a224d838335416038dcb0348f665f5a05", null ],
+    [ "NextExtremity", "a00935.html#af520bd5bba313216d0b6fb9e58041266", null ],
+    [ "NormalizeOutline", "a00935.html#a30b1492f0756c31499da0157ecba50ff", null ]
 ];

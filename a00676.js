@@ -1,9 +1,7 @@
 var a00676 =
 [
-    [ "WordSizeModel", "a00676.html#a9b75f5ba542fe0c5db1d717fa927dfb2", null ],
-    [ "~WordSizeModel", "a00676.html#a41c3ffbdf981d72c0295c79030709c26", null ],
-    [ "Cost", "a00676.html#a1f1f51e3710b170b0f011a2e5256738f", null ],
-    [ "FontCount", "a00676.html#a6f3ded9607bdd2d6919ce6cc192f7cdc", null ],
-    [ "FontInfo", "a00676.html#a3c25501e446587259a47f4a0300ad3c0", null ],
-    [ "Save", "a00676.html#a12c9929faae2c4a6440f4cbc472ad17e", null ]
+    [ "WordUnigrams", "a00676.html#afd00490f957dd1842384c372a2949141", null ],
+    [ "~WordUnigrams", "a00676.html#a60f14b6354f60c7411695103bc422601", null ],
+    [ "Cost", "a00676.html#a298b0661e1327c8dcb27bfdd790d92d3", null ],
+    [ "CostInternal", "a00676.html#a14623fdba39beee456c834cdc6a8976f", null ]
 ];

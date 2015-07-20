@@ -1,9 +1,9 @@
 var a01283 =
 [
-    [ "AdaptToCharacter", "a01283.html#gaf62a3be9f3b8ca4f8260ec2cc1628ecc", null ],
-    [ "DetectParagraphs", "a01283.html#ga33cf8d85c3714857bc8753fef035ea95", null ],
-    [ "GetPageRes", "a01283.html#ga4bf81423a0eff353a6bf5d7cc098e2d2", null ],
-    [ "RecognitionPass1", "a01283.html#ga0384f67e497ea3e81436d09da0ad7270", null ],
-    [ "RecognitionPass2", "a01283.html#ga158cc2af7170f3efa8cb140f2745d9b8", null ],
-    [ "TesseractExtractResult", "a01283.html#ga554e33b4a8fa10ccd2200698ded6753d", null ]
+    [ "image_height_", "a01283.html#gab7d24a78f3565c5bfb42b2592b9e8df0", null ],
+    [ "image_width_", "a01283.html#gaf3238cd7ff2c0995e647c8c7846bdba3", null ],
+    [ "rect_height_", "a01283.html#ga978edc537da096ec07d4bb8e4ae5332d", null ],
+    [ "rect_left_", "a01283.html#gab3c90d43a3628dc7abeb93e9ca01bc97", null ],
+    [ "rect_top_", "a01283.html#gac71648cd860510ca65b94d87d7d9bb1f", null ],
+    [ "rect_width_", "a01283.html#ga31dbaec91a5dd8ee7d399786a4bd5ef8", null ]
 ];

@@ -1,12 +1,7 @@
 var a00355 =
 [
-    [ "DIR128", "a00355.html#a28b0ddf2d5d91eec6939c6a243b5e466", null ],
-    [ "DIR128", "a00355.html#a2b4cb07b98110d5d8b46dd9581c571e5", null ],
-    [ "DIR128", "a00355.html#a3205d8518dd0ffd6df641a910d979774", null ],
-    [ "get_dir", "a00355.html#a20420b3fa5c0968a2ebb0763c7e43c2f", null ],
-    [ "operator+", "a00355.html#a88ad5868d31e3769802964a2b2c618e2", null ],
-    [ "operator+=", "a00355.html#ad438ee7fc1e5b9e4b76c83cdeabf61f6", null ],
-    [ "operator-", "a00355.html#aec5839707c95489e991d4a8d2d96a6ed", null ],
-    [ "operator=", "a00355.html#ae2d7d5b99f4dede0045c8a7e2b9f221b", null ],
-    [ "vector", "a00355.html#aeec6816172c9e7491ff2788ad5cf0337", null ]
+    [ "DawgArgs", "a00355.html#a32dedf4bcf034fa2ae28d19d645160a9", null ],
+    [ "active_dawgs", "a00355.html#abe4f6043296478c11a7e9b6f070dd822", null ],
+    [ "permuter", "a00355.html#ac6d1140877409a292367493620fd8b9b", null ],
+    [ "updated_dawgs", "a00355.html#aa0618a8307e4a124c7c743887437f7db", null ]
 ];

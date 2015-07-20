@@ -1,5 +1,5 @@
 var a00600 =
 [
-    [ "~TessCallback3", "a00600.html#aa10c0f6b548ed8a5a3d3fc7585ab95e1", null ],
-    [ "Run", "a00600.html#ac5973fd77da4c98d0fc240427ecc923d", null ]
+    [ "TabEventHandler", "a00600.html#a2fd63782d8b8a3832c1d6ffe0225eb9d", null ],
+    [ "Notify", "a00600.html#a0342ce480bd648a8b1e87827edfc0a3a", null ]
 ];

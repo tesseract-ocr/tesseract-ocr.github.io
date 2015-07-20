@@ -1,20 +1,13 @@
 var a01113 =
 [
-    [ "EXTERN", "a01113.html#a77366c1bd428629dc898e188bfd182a3", null ],
-    [ "TO_WIN_NAME", "a01113.html#af3b219266ea571b81fb923668b0bbc0d", null ],
-    [ "TO_WIN_XPOS", "a01113.html#af5acc5f9e437fd008dbb946933679887", null ],
-    [ "TO_WIN_YPOS", "a01113.html#a3cce4573a3647db0298f2e591224604f", null ],
-    [ "close_to_win", "a01113.html#ad291cb9a7dce4bf45ccdbbdfaf26777d", null ],
-    [ "create_to_win", "a01113.html#afd5bee79bdf1ea9c211c3a3519d25251", null ],
-    [ "draw_meanlines", "a01113.html#af8aae7bd42a61b839e724a34c07b42ab", null ],
-    [ "draw_occupation", "a01113.html#a6abaa0ee0ca8c43467bff43bd25db8a7", null ],
-    [ "plot_box_list", "a01113.html#a5408725b0921a22271363f8c1adc293e", null ],
-    [ "plot_fp_cells", "a01113.html#a67cd00c58d9bf34468d3fac196726999", null ],
-    [ "plot_fp_cells2", "a01113.html#a00892e8dcc8d387749ad7e0a8b0b5f8c", null ],
-    [ "plot_parallel_row", "a01113.html#afb1c1fd2d6af3a9851ab98454356c3cf", null ],
-    [ "plot_row_cells", "a01113.html#a0e989a3f79b110a1bcd477561de37207", null ],
-    [ "plot_to_row", "a01113.html#ac61d56bb753572e573a45e56823b92c0", null ],
-    [ "plot_word_decisions", "a01113.html#acd118b7bee855305fd4c0f934ea2ac11", null ],
-    [ "textord_show_fixed_cuts", "a01113.html#a7f9762e924351e4a7e7142f22667d2e3", null ],
-    [ "to_win", "a01113.html#a65aeba67da16b0fd87082f9966362f0e", null ]
+    [ "ColPartition", "a00331.html", "a00331" ],
+    [ "ColPartitionGridSearch", "a01113.html#a990e3f25988f7d70c40a13225e645492", null ],
+    [ "ColumnSpanningType", "a01113.html#a1c442f32007891bd4ea6e885b34cc06a", [
+      [ "CST_NOISE", "a01113.html#a1c442f32007891bd4ea6e885b34cc06aad17bb659c6735f37306a6161f4013416", null ],
+      [ "CST_FLOWING", "a01113.html#a1c442f32007891bd4ea6e885b34cc06aa53dd9af51c333b786fe51bd5f01543d6", null ],
+      [ "CST_HEADING", "a01113.html#a1c442f32007891bd4ea6e885b34cc06aacf3616b52ca15a43ddfd40b9c91c9cd5", null ],
+      [ "CST_PULLOUT", "a01113.html#a1c442f32007891bd4ea6e885b34cc06aa8c1a2f43d95cbf09416204e1f5e04163", null ],
+      [ "CST_COUNT", "a01113.html#a1c442f32007891bd4ea6e885b34cc06aa9f98f32893c3f27ef2373aec2d9f7205", null ]
+    ] ],
+    [ "kRGBRMSColors", "a01113.html#abd090245debb6dcc506aba8f62da938b", null ]
 ];

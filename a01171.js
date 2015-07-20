@@ -1,17 +1,11 @@
 var a01171 =
 [
-    [ "ClassifierName", "a01171.html#a87c21c76ec4382d7198af1742eef44f6", [
-      [ "CN_PRUNER", "a01171.html#a87c21c76ec4382d7198af1742eef44f6a31b46596c5b8ddd5c28b43d3164b6430", null ],
-      [ "CN_FULL", "a01171.html#a87c21c76ec4382d7198af1742eef44f6a1e554cbfcb457dd689fed35534aabb5b", null ],
-      [ "CN_CUBE", "a01171.html#a87c21c76ec4382d7198af1742eef44f6a25cd551a280d65b955fd9971c19945c8", null ],
-      [ "CN_CUBETESS", "a01171.html#a87c21c76ec4382d7198af1742eef44f6acf36cec1055b939edb2a883252be2011", null ],
-      [ "CN_COUNT", "a01171.html#a87c21c76ec4382d7198af1742eef44f6a7ff10b528f0218e5f5a6e09119423563", null ]
-    ] ],
-    [ "DECLARE_INT_PARAM_FLAG", "a01171.html#a569fec4a675c52515bf46d268671c822", null ],
-    [ "DECLARE_STRING_PARAM_FLAG", "a01171.html#a154d4659cb81a75a71b56f21e419d386", null ],
-    [ "main", "a01171.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
-    [ "STRING_PARAM_FLAG", "a01171.html#a74b5c288a9dd1ea5d05da7cfdd2dd98c", null ],
-    [ "STRING_PARAM_FLAG", "a01171.html#ac5b4cc16aa5b3fc6cde38603e6e1e8ea", null ],
-    [ "STRING_PARAM_FLAG", "a01171.html#a079056d8c9946b86fa7e5879698f4b1b", null ],
-    [ "names", "a01171.html#a0737f2a8dd8fbaf9c6608f85e2b79778", null ]
+    [ "EXTERN", "a01171.html#a77366c1bd428629dc898e188bfd182a3", null ],
+    [ "PROJECTION_MARGIN", "a01171.html#a01dbc51856714fc0f1871d2eb3c03a5e", null ],
+    [ "find_underlined_blobs", "a01171.html#afc00f3a1057255657116acf952f3d7a4", null ],
+    [ "most_overlapping_row", "a01171.html#a0dd8a5ba42169e80f12ce943084cb307", null ],
+    [ "restore_underlined_blobs", "a01171.html#a2118358b0e0f62667f62a0aaf2fb2ae8", null ],
+    [ "vertical_cunderline_projection", "a01171.html#a8c1248a073d641cea7a9fec3e563dfc5", null ],
+    [ "textord_restore_underlines", "a01171.html#a3b7ff031211912735f61bd0dc97c6f2b", null ],
+    [ "textord_underline_offset", "a01171.html#a58d10b85902de6aee9f8b6befb411e32", null ]
 ];

@@ -1,13 +1,13 @@
 var a01136 =
 [
-    [ "FPSEGPT", "a00400.html", "a00400" ],
-    [ "check_pitch_sync", "a01136.html#a91659398c9bdb3c1c6067f4e4da6a2ef", null ],
-    [ "ELISTIZEH", "a01136.html#a6dd44845d7d5d4eff57571538cfc1996", null ],
-    [ "make_illegal_segment", "a01136.html#aff9ef2e9550a83b95b85a9a8791231f6", null ],
-    [ "vertical_cblob_projection", "a01136.html#a127cbd896383554910521dc8e03fd9ef", null ],
-    [ "vertical_coutline_projection", "a01136.html#a48333b2ce7f8f0d732fc47a82e57911c", null ],
-    [ "vertical_torow_projection", "a01136.html#a1181ba5a621d25372406b76b930fe36d", null ],
-    [ "pitsync_fake_depth", "a01136.html#a017f9254f6b703215cfe5940a67d52f2", null ],
-    [ "pitsync_joined_edge", "a01136.html#a06bb83057da5b8bc252bac729baa0a65", null ],
-    [ "pitsync_offset_freecut_fraction", "a01136.html#a676189661b13473a99c0242726cdc08a", null ]
+    [ "kCrackSpacing", "a01136.html#a67e1606288499ff9e08833b9c2a1ded8", null ],
+    [ "kLineFindGridSize", "a01136.html#acbcf973384ce439c1b3ab4decf0c383c", null ],
+    [ "kMaxLineResidue", "a01136.html#ab97d7447e46667c618a568b97b96bb3c", null ],
+    [ "kMaxNonLineDensity", "a01136.html#a88f852ceee95241622ec0f837dbfeff8", null ],
+    [ "kMaxStaveHeight", "a01136.html#a40e2e4747be3bc8a6358a023e2e3a001", null ],
+    [ "kMinLineLengthFraction", "a01136.html#ab1ecce6329628c52853d15330697b9a5", null ],
+    [ "kMinMusicPixelFraction", "a01136.html#a064746ea8b34175e6f12ce364c8d6414", null ],
+    [ "kMinThickLineWidth", "a01136.html#a8109c0293738c5b8a499baf96e6191e2", null ],
+    [ "kThickLengthMultiple", "a01136.html#a6978c95cbd05d6aef11ca4b7850a1a6b", null ],
+    [ "kThinLineFraction", "a01136.html#af5a3375be81da4b1d09d654fed77617a", null ]
 ];

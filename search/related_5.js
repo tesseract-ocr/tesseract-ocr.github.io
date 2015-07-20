@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['make_5ffirst_5fbaseline',['make_first_baseline',['../a00517.html#a278b4eb02ff4e584c479bf528b2430ae',1,'QSPLINE']]],
-  ['make_5fholed_5fbaseline',['make_holed_baseline',['../a00517.html#abbfbb7d09880e7770be0fa99282a70c6',1,'QSPLINE']]]
+  ['make_5ffirst_5fbaseline',['make_first_baseline',['../a00533.html#a278b4eb02ff4e584c479bf528b2430ae',1,'QSPLINE']]],
+  ['make_5fholed_5fbaseline',['make_holed_baseline',['../a00533.html#abbfbb7d09880e7770be0fa99282a70c6',1,'QSPLINE']]]
 ];
