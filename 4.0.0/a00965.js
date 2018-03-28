@@ -1,0 +1,25 @@
+var a00965 =
+[
+    [ "MATCH_RESULT", "a04407.html", "a04407" ],
+    [ "_ARGS", "a00965.html#a70aff9e178598a98a6e55ddea8afaf7f", null ],
+    [ "IsValidFeature", "a00965.html#a06a82dd2546f48366a5f71bf0b674796", null ],
+    [ "IsValidProto", "a00965.html#a7eaf755e09d4823be796e6182de9f91f", null ],
+    [ "MAX_CLASS_ID", "a00965.html#abeed7f9ea594424952e1aff62c92785f", null ],
+    [ "MAX_FEATURE_ID", "a00965.html#a6c2c61828f696b97a0baeeb686e32391", null ],
+    [ "MAX_NUM_CLASSES", "a00965.html#adcc52d7d059a8ca452172df64faa231c", null ],
+    [ "MAX_NUM_FEAT", "a00965.html#a27ed53dd35ec0e83f258b44e5f1e47b9", null ],
+    [ "MISSING_PROTO", "a00965.html#a19edd80fad2a9f92f9612768580296c3", null ],
+    [ "NO_CLASS", "a00965.html#a6ce548e51895ce0226ee145753a9c815", null ],
+    [ "NO_FEATURE", "a00965.html#a1e14273afc10cd1678ce7e4647c63ea3", null ],
+    [ "NO_PROTO", "a00965.html#a4d2ae3978d57e3b05f984a0fedc51812", null ],
+    [ "NOISE_FEATURE", "a00965.html#ac29bfc3ef5ffbe1783010d97ba8ce8ca", null ],
+    [ "CERTAINTY", "a00965.html#a2fbe3ff3e1feb2e3cbb9f2523249e125", null ],
+    [ "CLASS_ID", "a00965.html#afdabe64d68192a21409dd58c119709f8", null ],
+    [ "FEATURE_ID", "a00965.html#ac7c1cd140d05b87f9f3091d3b7b297ac", null ],
+    [ "PROTO_ID", "a00965.html#a8a5c39a8213f46751c2b227c2235e9b1", null ],
+    [ "RATING", "a00965.html#a909658b0609ea401112d3091d6137e92", null ],
+    [ "SORTED_CLASSES", "a00965.html#a4472d64885d04ade2d47273d677123f4", null ],
+    [ "_ARGS", "a00965.html#af550d9f4eda16cfd0fbce28bab1b592b", null ],
+    [ "_ARGS", "a00965.html#a1b7bb9c3da4cfd66401e54922efc14f8", null ],
+    [ "_ARGS", "a00965.html#ad7436ff9e9c8ded790312d3c8e71e975", null ]
+];

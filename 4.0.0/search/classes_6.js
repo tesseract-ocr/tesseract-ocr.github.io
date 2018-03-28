@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['fcoord',['FCOORD',['../a02695.html',1,'']]],
+  ['feature_5fdefs_5fstruct',['FEATURE_DEFS_STRUCT',['../a04171.html',1,'']]],
+  ['feature_5fdesc_5fstruct',['FEATURE_DESC_STRUCT',['../a04287.html',1,'']]],
+  ['feature_5fset_5fstruct',['FEATURE_SET_STRUCT',['../a04295.html',1,'']]],
+  ['feature_5fstruct',['FEATURE_STRUCT',['../a04291.html',1,'']]],
+  ['ffunc',['FFunc',['../a04487.html',1,'tesseract']]],
+  ['file',['File',['../a04871.html',1,'tesseract']]],
+  ['fill_5fspec',['FILL_SPEC',['../a04219.html',1,'']]],
+  ['fill_5fswitch',['FILL_SWITCH',['../a04211.html',1,'']]],
+  ['floatunion',['FLOATUNION',['../a04143.html',1,'']]],
+  ['floatvec',['FloatVec',['../a04583.html',1,'tesseract::NetworkScratch']]],
+  ['floatwordfeature',['FloatWordFeature',['../a02587.html',1,'tesseract']]],
+  ['fontinfo',['FontInfo',['../a02571.html',1,'tesseract']]],
+  ['fontinfotable',['FontInfoTable',['../a02579.html',1,'tesseract']]],
+  ['fontset',['FontSet',['../a02575.html',1,'tesseract']]],
+  ['fontspacinginfo',['FontSpacingInfo',['../a02567.html',1,'tesseract']]],
+  ['fontutils',['FontUtils',['../a04903.html',1,'tesseract']]],
+  ['fpcutpt',['FPCUTPT',['../a04779.html',1,'']]],
+  ['fpoint',['FPOINT',['../a04175.html',1,'']]],
+  ['fprime',['FPrime',['../a04491.html',1,'tesseract']]],
+  ['fpsegpt',['FPSEGPT',['../a04783.html',1,'']]],
+  ['fragment',['FRAGMENT',['../a05071.html',1,'tesseract']]],
+  ['frect',['FRECT',['../a04895.html',1,'']]],
+  ['fullyconnected',['FullyConnected',['../a04483.html',1,'tesseract']]]
+];

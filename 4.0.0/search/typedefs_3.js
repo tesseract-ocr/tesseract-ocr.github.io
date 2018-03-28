@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['cancel_5ffunc',['CANCEL_FUNC',['../a00578.html#a1ad46b343f1959dc06fdc39b3dca210a',1,'ocrclass.h']]],
+  ['certainty',['CERTAINTY',['../a00965.html#a2fbe3ff3e1feb2e3cbb9f2523249e125',1,'matchdefs.h']]],
+  ['char32',['char32',['../a01743.html#ab016265d4fc913185f4fa399c8b52504',1,'tesseract::char32()'],['../a01508.html#a328af63b24a185a6916faebb5b85aa84',1,'char32():&#160;pango_font_info.h']]],
+  ['char_5fdesc',['CHAR_DESC',['../a00719.html#a41cfd9e7d2129a4e068683b2bafab0ee',1,'featdefs.h']]],
+  ['char_5ffeatures',['CHAR_FEATURES',['../a00821.html#a4e78d165adc7a1b8c5bf790563265d97',1,'ocrfeatures.h']]],
+  ['checkpointreader',['CheckPointReader',['../a01743.html#a195b25820b9dc027741149dc8bb00a42',1,'tesseract']]],
+  ['checkpointwriter',['CheckPointWriter',['../a01743.html#a4588ae186b0df19e23a7fcda84f363cf',1,'tesseract']]],
+  ['class_5fcutoff_5farray',['CLASS_CUTOFF_ARRAY',['../a00707.html#a7e0c7261529ae9fec46c7714c8654e46',1,'cutoffs.h']]],
+  ['class_5fid',['CLASS_ID',['../a00965.html#afdabe64d68192a21409dd58c119709f8',1,'matchdefs.h']]],
+  ['class_5ftype',['CLASS_TYPE',['../a00839.html#ac6dd4312d295c65a9165f4a5401c75f7',1,'protos.h']]],
+  ['classes',['CLASSES',['../a00839.html#ad299b5cb6e6ab5713fce00dbd6a787ed',1,'protos.h']]],
+  ['cluster',['CLUSTER',['../a00695.html#a883b4f4e7113af06f96a7b11492256d1',1,'cluster.h']]],
+  ['clusterheap',['ClusterHeap',['../a00692.html#a1d595a21d45173eb03ebfa37e6997324',1,'cluster.cpp']]],
+  ['clusterpair',['ClusterPair',['../a00692.html#a076c605aa917ac4dae9bc86414e084e6',1,'cluster.cpp']]],
+  ['colpartitiongridsearch',['ColPartitionGridSearch',['../a01743.html#a990e3f25988f7d70c40a13225e645492',1,'tesseract']]],
+  ['colsegmentgrid',['ColSegmentGrid',['../a01743.html#a80cfbd9a83df02629e2afd48c16880f0',1,'tesseract']]],
+  ['colsegmentgridsearch',['ColSegmentGridSearch',['../a01743.html#ac7f2f25bfb4914e691db80a6b523c703',1,'tesseract']]],
+  ['config_5fpruner',['CONFIG_PRUNER',['../a00767.html#a3d1c4dd90ce53a3b88357123cff86113',1,'intproto.h']]],
+  ['configs',['CONFIGS',['../a00839.html#a01152c0aa1c2675252db86b6790a0b6e',1,'protos.h']]],
+  ['costfunc',['CostFunc',['../a02555.html#a885e82a0bb8e48a7d1afc953804b91e7',1,'tesseract::DPPoint']]]
+];
