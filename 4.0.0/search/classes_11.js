@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['recodebeamsearch',['RecodeBeamSearch',['../a04607.html',1,'tesseract']]],
+  ['recodedcharid',['RecodedCharID',['../a04031.html',1,'tesseract']]],
+  ['recodedcharidhash',['RecodedCharIDHash',['../a04035.html',1,'tesseract::RecodedCharID']]],
+  ['recodenode',['RecodeNode',['../a04603.html',1,'tesseract']]],
+  ['reconfig',['Reconfig',['../a04615.html',1,'tesseract']]],
+  ['region_5focc',['REGION_OCC',['../a04691.html',1,'']]],
+  ['rej',['REJ',['../a02731.html',1,'']]],
+  ['rejmap',['REJMAP',['../a02735.html',1,'']]],
+  ['relu',['Relu',['../a04503.html',1,'tesseract']]],
+  ['reluprime',['ReluPrime',['../a04507.html',1,'tesseract']]],
+  ['remove_5freference',['remove_reference',['../a02983.html',1,'']]],
+  ['remove_5freference_3c_20p1_20_3e',['remove_reference&lt; P1 &gt;',['../a02983.html',1,'']]],
+  ['remove_5freference_3c_20p2_20_3e',['remove_reference&lt; P2 &gt;',['../a02983.html',1,'']]],
+  ['remove_5freference_3c_20p3_20_3e',['remove_reference&lt; P3 &gt;',['../a02983.html',1,'']]],
+  ['remove_5freference_3c_20p4_20_3e',['remove_reference&lt; P4 &gt;',['../a02983.html',1,'']]],
+  ['remove_5freference_3c_20p5_20_3e',['remove_reference&lt; P5 &gt;',['../a02983.html',1,'']]],
+  ['remove_5freference_3c_20p6_20_3e',['remove_reference&lt; P6 &gt;',['../a02983.html',1,'']]],
+  ['remove_5freference_3c_20t_20_26_20_3e',['remove_reference&lt; T &amp; &gt;',['../a02987.html',1,'']]],
+  ['resultiterator',['ResultIterator',['../a02467.html',1,'tesseract']]],
+  ['reversed',['Reversed',['../a04619.html',1,'tesseract']]],
+  ['row',['ROW',['../a02643.html',1,'']]],
+  ['row_5fres',['ROW_RES',['../a02655.html',1,'']]],
+  ['rowinfo',['RowInfo',['../a02427.html',1,'tesseract']]],
+  ['rowscratchregisters',['RowScratchRegisters',['../a02435.html',1,'tesseract']]]
+];
