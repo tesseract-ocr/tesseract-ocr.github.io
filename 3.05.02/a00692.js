@@ -1,0 +1,26 @@
+var a00692 =
+[
+    [ "CHAR_DESC_STRUCT", "a04145.html", "a04145" ],
+    [ "FEATURE_DEFS_STRUCT", "a04149.html", "a04149" ],
+    [ "ILLEGAL_SHORT_NAME", "a00692.html#a868936345759056133e0fbbc97d1a656", null ],
+    [ "NUM_FEATURE_TYPES", "a00692.html#aff5d3186888ac3dbd87adcc54b7f2ecf", null ],
+    [ "CHAR_DESC", "a00692.html#a41cfd9e7d2129a4e068683b2bafab0ee", null ],
+    [ "FEATURE_DEFS", "a00692.html#aaa26e5f6ab091c5aca4a4e1f9744d26c", null ],
+    [ "FreeCharDescription", "a00692.html#ae2a92eefc3755300284119692527e3b9", null ],
+    [ "InitFeatureDefs", "a00692.html#ae5a09486a1d013c6417d9e9c0b3e8091", null ],
+    [ "NewCharDescription", "a00692.html#a860f7517bac9477e79551e501df549ed", null ],
+    [ "ReadCharDescription", "a00692.html#ab2a19fbe954d854b9cf6ebade47800e1", null ],
+    [ "ShortNameToFeatureType", "a00692.html#a8c78e3a11f9a0a9d742af3dd7591330a", null ],
+    [ "ValidCharDescription", "a00692.html#af8fa799b7b0c0c8e18648a521ef2775f", null ],
+    [ "WriteCharDescription", "a00692.html#a7ec256eeb477e0fd9bb2124e54c13f34", null ],
+    [ "CharNormDesc", "a00692.html#aeaae0c3ba332fe6addd19ed202a3ecb7", null ],
+    [ "GeoFeatDesc", "a00692.html#ad083578933c187809f33f7e7cb6aac48", null ],
+    [ "IntFeatDesc", "a00692.html#abcae860ec494b3a15b6db31638a1d2f2", null ],
+    [ "kCNFeatureType", "a00692.html#aba437789a6614f23dc6d18a5a803ccc8", null ],
+    [ "kGeoFeatureType", "a00692.html#abada1502d146a88fadcc73af54ae7540", null ],
+    [ "kIntFeatureType", "a00692.html#abf5c61b4ecdfe9301e0f998156474c6b", null ],
+    [ "kMicroFeatureType", "a00692.html#af83d597eb1e077f4ad2b082be6698d20", null ],
+    [ "MicroFeatureDesc", "a00692.html#aa889ab53df925b2ccc5a2871eca3eff7", null ],
+    [ "OutlineFeatDesc", "a00692.html#a72a26e08f0fd9771c2b6af211bb1a6c3", null ],
+    [ "PicoFeatDesc", "a00692.html#a41e8458def8175ed44c412097f8c4099", null ]
+];

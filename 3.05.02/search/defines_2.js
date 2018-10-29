@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['backward_5fedge',['BACKWARD_EDGE',['../a01139.html#a1b595d17c69b114ee1042e96e51a19bd',1,'dawg.h']]],
+  ['bad_5fpriority',['BAD_PRIORITY',['../a01652.html#a3fd320d93290a64ff24687ec596f1f61',1,'findseam.cpp']]],
+  ['baseline_5fy_5fshift',['BASELINE_Y_SHIFT',['../a00698.html#a0cd5a36a70bcf28d6727fe56e419b5a2',1,'float2int.h']]],
+  ['bits_5fper_5fcp_5fvector',['BITS_PER_CP_VECTOR',['../a00740.html#a0f9366ce0f73b02b2e9bc07a42cb0a00',1,'intproto.h']]],
+  ['bits_5fper_5fwerd',['BITS_PER_WERD',['../a00740.html#a65e33e9e10361d8dc9c7760ee256beac',1,'intproto.h']]],
+  ['bitsinlong',['BITSINLONG',['../a01070.html#a0bb2f0d77b12e8c8061c18e0edac99ca',1,'bitvec.h']]],
+  ['bl_5fheight',['BL_HEIGHT',['../a00128.html#a24bb9e6799f5155d10acaa8709630526',1,'pgedit.cpp']]],
+  ['black_5fpix',['BLACK_PIX',['../a01397.html#a31503e4b0f23137edefe782ad5632878',1,'scanedg.cpp']]],
+  ['bln_5fmax',['BLN_MAX',['../a01646.html#acaf0299e0b31c57e0dd971319b31bb81',1,'drawfx.cpp']]],
+  ['block_5flabel_5fheight',['BLOCK_LABEL_HEIGHT',['../a00311.html#ad0e3ca9368f7687b1a72cf083cad3033',1,'BLOCK_LABEL_HEIGHT():&#160;ocrblock.cpp'],['../a00347.html#ad0e3ca9368f7687b1a72cf083cad3033',1,'BLOCK_LABEL_HEIGHT():&#160;pdblock.cpp']]],
+  ['block_5fstats_5fclusters',['BLOCK_STATS_CLUSTERS',['../a01451.html#aa7d31b20094e2e66f0049b58e67012c0',1,'BLOCK_STATS_CLUSTERS():&#160;topitch.cpp'],['../a01478.html#aa7d31b20094e2e66f0049b58e67012c0',1,'BLOCK_STATS_CLUSTERS():&#160;wordseg.cpp']]],
+  ['bool',['BOOL',['../a00014.html#ae4cc35dcc70810fa972cc8a5185a28fa',1,'capi.h']]],
+  ['bool_5finit_5fmember',['BOOL_INIT_MEMBER',['../a00563.html#a94f2ea32cb5774190157d971d56734df',1,'params.h']]],
+  ['bool_5finit_5fvar',['BOOL_INIT_VAR',['../a00563.html#a6e3622f5a0cb0c49341bc28253d2f9ae',1,'params.h']]],
+  ['bool_5fmember',['BOOL_MEMBER',['../a00563.html#afe1760253f2b6e3b14c1bf275d8531d4',1,'params.h']]],
+  ['bool_5fparam_5fflag',['BOOL_PARAM_FLAG',['../a01511.html#a84d5923c9e3581b99db3cacbfee2467a',1,'commandlineflags.h']]],
+  ['bool_5fvar',['BOOL_VAR',['../a00563.html#a442e7f541a050acf5ebda026db177877',1,'params.h']]],
+  ['bool_5fvar_5fh',['BOOL_VAR_H',['../a00563.html#a2d4425c5a3f3c3eeeed987128d4cd419',1,'params.h']]],
+  ['bucketsize',['BUCKETSIZE',['../a01334.html#a1697ba8bc67aab0eb972da5596ee5cc9',1,'BUCKETSIZE():&#160;edgblob.h'],['../a01340.html#a1697ba8bc67aab0eb972da5596ee5cc9',1,'BUCKETSIZE():&#160;edgloop.h']]],
+  ['buckettablesize',['BUCKETTABLESIZE',['../a00665.html#a0b0900161a8584a70a474237621ce953',1,'cluster.cpp']]]
+];

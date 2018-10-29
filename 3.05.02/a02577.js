@@ -1,0 +1,25 @@
+var a02577 =
+[
+    [ "ImageData", "a02577.html#ab91bcf0680077ab063a4b855ebd630fb", null ],
+    [ "ImageData", "a02577.html#ab8cd1665c5813054acf8881f4c08dcab", null ],
+    [ "~ImageData", "a02577.html#a1341614f1b9190dd3321f362a9145f82", null ],
+    [ "AddBoxes", "a02577.html#a387904554f2d0210737bf03bbcfd2d63", null ],
+    [ "box_text", "a02577.html#acf993c53851f209642799354f1b86b9f", null ],
+    [ "box_texts", "a02577.html#a504c44f169cf90b18b4cbecb833dd6fd", null ],
+    [ "boxes", "a02577.html#a560b3e60e747750a39b09ad3779b9000", null ],
+    [ "DeSerialize", "a02577.html#ac58c528c8000e0cdb07250d85c7f2019", null ],
+    [ "Display", "a02577.html#a8f63c0328735515c5f6e35caa9d4be01", null ],
+    [ "GetPix", "a02577.html#a985e841a8efb843ef5d3b6749fa7a107", null ],
+    [ "image_data", "a02577.html#a551544d88dc10091123a5611775ab1b0", null ],
+    [ "imagefilename", "a02577.html#a9eeec471debabbc8a287a81e495508aa", null ],
+    [ "language", "a02577.html#a08241da4e97480b2f192e90c7b813cf1", null ],
+    [ "MemoryUsed", "a02577.html#ae165220e33c65d8b567e91d1c6f96957", null ],
+    [ "page_number", "a02577.html#a06a5a05171b87d5bd8bfa3be6ab1ec17", null ],
+    [ "PreScale", "a02577.html#a516d8b162fb672b7bc5dc583ca4265f9", null ],
+    [ "Serialize", "a02577.html#aa4ba16a9d6a238355be9c0986fe1cc97", null ],
+    [ "set_imagefilename", "a02577.html#ac4443dd011c34118953247e79323df58", null ],
+    [ "set_language", "a02577.html#a3dca11055aa01f7ba5e25783471a5771", null ],
+    [ "set_page_number", "a02577.html#a23bf9150f8a133df27bafac013b7da28", null ],
+    [ "SetPix", "a02577.html#a1da2c74bd94b54f4351f1d123b186db8", null ],
+    [ "transcription", "a02577.html#a4fbbd821c0bed8cc3265eec41420dded", null ]
+];

@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['h_5fmargin_5f',['h_margin_',['../a04905.html#a0f73085488d73cba2cf836affeb3478a',1,'tesseract::StringRenderer']]],
+  ['halfrange',['HalfRange',['../a04261.html#a1df92d879d7ec8ea6662e956d27154b5',1,'PARAM_DESC']]],
+  ['hamming_5ftable_5f',['hamming_table_',['../a02761.html#a4360aed565993c4c52ed8694f2c15036',1,'tesseract::BitVector']]],
+  ['hand_5fpoly',['hand_poly',['../a02661.html#a4c1b3a88242771bf55372f44c0d4ca88',1,'PDBLK']]],
+  ['has_5fdrop_5fcap',['has_drop_cap',['../a02413.html#a304e4f2139927cd23363d483aaaecd32',1,'tesseract::RowInfo::has_drop_cap()'],['../a02621.html#a9db0b924d40e467a375844c2e7f5ace1',1,'PARA::has_drop_cap()']]],
+  ['has_5fleaders',['has_leaders',['../a02413.html#ab5996d31d2a816707aa7640b4d19e7b1',1,'tesseract::RowInfo']]],
+  ['hash',['hash',['../a04625.html#aea901b0201b39bf786b849dfa6fbf7f1',1,'com::google::scrollview::ui::SVWindow']]],
+  ['hasnonfragment',['HasNonfragment',['../a04081.html#ab6a520c3c59a1f1a3f4d1c27bf5d3000',1,'ADAPT_RESULTS']]],
+  ['head',['head',['../a05013.html#a478d7c1b752caca70a20bee30bfeedb7',1,'tesseract::FRAGMENT']]],
+  ['headpt',['headpt',['../a05013.html#a34eb3fd9b4cd674029930225914abfe2',1,'tesseract::FRAGMENT']]],
+  ['heap',['heap',['../a04109.html#a579735e4bec46c1fa47d85c04fd07d91',1,'ClusteringContext']]],
+  ['heuristic_5fmax_5fchar_5fwh_5fratio',['heuristic_max_char_wh_ratio',['../a02469.html#aac98272423bc0adaff7dfbdbb9c14732',1,'tesseract::Tesseract']]],
+  ['heuristic_5fsegcost_5frating_5fbase',['heuristic_segcost_rating_base',['../a02469.html#ae0500d370e5f596f6f20a6f3c46d3f89',1,'tesseract::Tesseract']]],
+  ['heuristic_5fweight_5frating',['heuristic_weight_rating',['../a02469.html#a7f37ac70adbbb991ce12d6c1cffe9841',1,'tesseract::Tesseract']]],
+  ['heuristic_5fweight_5fseamcut',['heuristic_weight_seamcut',['../a02469.html#a20d1e6220c7426afa005353a833b53de',1,'tesseract::Tesseract']]],
+  ['heuristic_5fweight_5fwidth',['heuristic_weight_width',['../a02469.html#a4f525f60e63a3048db7c49ee1c0048a4',1,'tesseract::Tesseract']]],
+  ['hgt_5f',['hgt_',['../a04345.html#a62d633750ad515b99eda172efccc7b55',1,'tesseract::Bmp8']]],
+  ['hgt_5f0',['hgt_0',['../a04497.html#a50cde66f171e13e739725bb239d8104f',1,'tesseract::PairSizeInfo']]],
+  ['hgt_5f1',['hgt_1',['../a04497.html#a2fce382d6b1eb846c3de4dadb5b3d004',1,'tesseract::PairSizeInfo']]],
+  ['hidden',['Hidden',['../a04253.html#a6c6f4bc040c7147dce9a63516758ad5d',1,'MFEDGEPT']]],
+  ['hist_5fwind_5fwid_5f',['hist_wind_wid_',['../a04485.html#aec68d6f0467185de5c759e41822e6f1a',1,'tesseract::TuningParams']]],
+  ['hocr_5ffont_5finfo',['hocr_font_info',['../a02469.html#af1efde9e19b7dd0e2f0aecce0bfbae2f',1,'tesseract::Tesseract']]],
+  ['hyp_5flist_5fvec',['hyp_list_vec',['../a02657.html#ab1fe926bbbf3808ca874c57a7d7070c9',1,'tesseract::ParamsTrainingBundle']]],
+  ['hyphen_5fdebug_5flevel',['hyphen_debug_level',['../a04557.html#add6604e6b4ce6ffd77c78d58b8a3244a',1,'tesseract::Dict']]]
+];
