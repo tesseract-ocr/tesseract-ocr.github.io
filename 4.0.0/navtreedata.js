@@ -1,9 +1,32 @@
+/*
+@ @licstart  The following is the entire license notice for the
+JavaScript code in this file.
+
+Copyright (C) 1997-2017 by Dimitri van Heesch
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+@licend  The above is the entire license notice
+for the JavaScript code in this file
+*/
 var NAVTREE =
 [
   [ "tesseract", "index.html", [
     [ "Modules", "modules.html", "modules" ],
-    [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.html", "namespaces" ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
         [ "Functions", "namespacemembers_func.html", null ],
@@ -26,8 +49,8 @@ var NAVTREE =
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", "globals_func" ],
@@ -44,61 +67,59 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "a00002.html",
-"a00014.html#a4d1f965486ce272064ffdbd7a618234cae8b2319ceb988d8cd52de990507b968a",
-"a00116.html#a2a5f7b79012274ece9289a2bb72979c7",
-"a00164.html",
-"a00278.html",
-"a00398_source.html",
-"a00470.html#ad6968adbf8f2cc44adf333ec96efb0bea8c3664a200b620de34a3cb691cb1e71c",
-"a00584.html#a0fc9989588ecf8f236da49b58f96a6c5",
-"a00617.html#aad6f30d6799e5f9933e0f0bcbbe70fb7",
-"a00680.html",
-"a00719_source.html",
-"a00770.html#a37e4019555a2b5284b17237373913346",
-"a00836.html#a070f62ac01ae76642e6793410da68770",
-"a00929.html#a185e827874145ed10ce9db702a34f671",
-"a01067.html",
-"a01190.html#ada8d1c0efad4385c9f31c20b3469b660",
-"a01283.html#a25f853a0cc782510d9943b1a3be4327d",
-"a01301.html#a9af9cfbc0c19dbe46551c127ed70e6e4",
-"a01364.html",
-"a01424.html#a9243fe96ef4ae297e9fa0aab69416195",
-"a01493.html#ab51cc9a0af3a57f032ba52fd54e63b64",
-"a01610_source.html",
-"a01739.html#ga4ded6137507a4e8eb6ed4bea0b9648f4",
-"a02315.html#ae902177e443fa16cd93047dfeb50152b",
-"a02419.html#a292c290c01db9335deda110f79b4951b",
-"a02479.html#a4300f82c6f42a0bd5eb5b7d7d79dd4c0",
-"a02479.html#aeed33f786b5c71bf0b47452c76bf0c8a",
-"a02499.html#a6a76a4282791ee8f215c0e8b8dd7db16",
-"a02571.html#a32425f25da06fd353479d9406c0b969a",
-"a02631.html#ac7c7e1c504a24275c04b27366f94618e",
-"a02675.html#a59ff88ca1db21b00c42c4e2a47700c74",
-"a02723.html#ae3f6c6d111b2d43512bb485fb0aa74f9",
-"a02755.html#ac6f328d2ebd8c59f38ac1c15f53073d4",
-"a02835.html#a0f7d2c77e518b310316338049986d0f3",
-"a02967.html#a4c972946337ec459dcadcb4271529771",
-"a03187.html#a171e7f2ec1e8abda274ac3ae2c4f4833",
-"a03387.html#a3fb857746d36e7c7b77ff4c134dfb30f",
-"a03587.html#a4e0d77e7dcfebfd606605266891af276",
-"a03787.html#aa05c7563ebc68164629c748df1c570cc",
-"a03991.html#a084262e0a973ac51b5f0e39f72c9132f",
-"a04063.html#aba87ec0e057ba5195b84da5baa8531f4",
-"a04131.html#ab626378f823a04ba697ac2529847646c",
-"a04271.html#a63483c1b31f5e409ade222901a153830",
-"a04347.html#a47c3aa8097eda2d0ce6eb67ef8d29555",
-"a04411.html",
-"a04547.html#aec1fe13e5f5290764b635dbe7b921941af7038e877122a0f21ac871891205d900",
-"a04571.html#a6432c332545b499c7ed687847740c649",
-"a04651.html",
-"a04735.html#ab4ec7202d19f98517fd32bce150ebbb0",
-"a04803.html#aedfe0f86dd7916bf5c6dfc2e2b4dbe22",
-"a04839.html#a079197bd07b3dca0a941ce27988747f5",
-"a04907.html#a9a72cdd7071d68e0862945c469756c92",
-"a05019.html#aa481c463d4d14928cd59615464581412",
-"a05075.html#a693996c539a439e2dfc792687c367b63",
-"dir_cf685fadab1287a5a401bfd99a9057c0.html",
-"namespacemembers_eval_s.html"
+"a00014.html#a4d1f965486ce272064ffdbd7a618234ca3f99557b7b3e149c07821e9ee4de99c5",
+"a00101.html",
+"a00182.html#ad8f94588e59ba48628105c68f681a21a",
+"a00293.html#a39d4e21e57d29d2cbd0031886ba5822a",
+"a00380.html#aa26c22b65cc9765a0e747120f4287fd7",
+"a00497.html#a790562c8bc97eb7c596d2388a3b2918c",
+"a00575.html#ab68469a4d20e3b91ad2c822b6ba2bd34",
+"a00587.html#aeeca495e2f056b8b082e5959c2f8b7e1",
+"a00662.html#aae98a9b3af55c696e0f302b1bd367a62",
+"a00734.html#a493a912edd6934f6b4accd6ee19918fd",
+"a00767.html#a36feb3bd4df38dbd78e7153278a08b10",
+"a00854.html#a95354c25cd275636280a1dc4af21bc0b",
+"a00944_source.html",
+"a01076.html#a4e46e9a76747314d18c6db272345a9c9",
+"a01169.html#a7bc38b7811b5f9857fbabb4482235845",
+"a01205.html#aed72a4cf1cf5709c096540587eacffbc",
+"a01253.html#a25254b3df45454565d58a62480d3a6cbaf626b1b46e354d9f577495c7de9ece2a",
+"a01307.html#a77366c1bd428629dc898e188bfd182a3",
+"a01394.html#a1d5c536e89d2c8814a6324cc185e2d9d",
+"a01496.html#a3688a0cf2f95d10a57e095222ccfe9a0aa6ad86c5e515ba703a7cfb545a7ae8e9",
+"a01625.html#ga43810a084b5482d0731611513c0a9e16",
+"a02198.html#a3c6a1ec7ca443265eb0f9f899a3222b6",
+"a02278.html#a60494e90122337da8440e48ad4fa23fc",
+"a02358.html#a25b9d2e69623b7abd26993cce6b3a6fc",
+"a02358.html#acf30e84d821dad180e2e3c752bf5af28",
+"a02378.html#a37b9bbaeccfe47e4403bd3ed320983de",
+"a02426.html#ae7bcdb1f6f28f612a0ff4ace03b38165",
+"a02514.html#aa35e87420154d9fd935a2df0610b7ab4",
+"a02554.html#a8bec5bb8047ba4d2676072ea0deab1ca",
+"a02606.html#aca0ce8c3551445893cc75af824fa67bc",
+"a02638.html#a5decd0b33533bf908c26ad4b10336fb0",
+"a02722.html#a7b0c9f9ea7c448db7711893799410988",
+"a02834.html#a21efec4fdaf6c7bc96be3c634b4f6b7f",
+"a03034.html",
+"a03242.html#a4f7f1fa96fa8036921324f18149f1d99",
+"a03442.html#a385aaf5fa31ee3bb408bd608d823df3e",
+"a03642.html#a60308f9626ceec9b721a25dff34ff2ab",
+"a03846.html#a1cf25f35fa0cf3699933f625a9d06d3c",
+"a03950.html#a75a347ebcd7fb83bd64e082e0b2b4d8c",
+"a03998.html#ae924b92f39320ed6529e082b24a38666",
+"a04138.html#ad552c8989a8556000930a28b3d2b61d0",
+"a04230.html#a746ed1e28ceac5a69411c451ac2882f0",
+"a04290.html#ab375bc2c9356d602366a0af9b6bf9415",
+"a04386.html#ab7e1aaf697d6e40f71fd3c6899501471",
+"a04406.html#afc38414e2f7f4c91ccfd9bf85ef314d0",
+"a04502.html#a2c170fae34250472834f9ed50cfb83db",
+"a04570.html#aeaca5832aa38dbc254a4b1c29407a13d",
+"a04646.html#a322091ba66023c746c6a7e9e7a494238",
+"a04674.html#a732a4cb816df9d6529d0e44ef22fa21e",
+"a04750.html",
+"a04818.html#a97f70b05e97cec59b6f24cbd6870d4e7",
+"a04866.html#ae44c5dc9bd69b43bf7f1a740eb900724",
+"hierarchy.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

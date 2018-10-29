@@ -1,22 +1,13 @@
 var a01223 =
 [
-    [ "NeighbourPartitionType", "a01223.html#ac6b87c14191b9d8faad9933a7334d20f", [
-      [ "NPT_HTEXT", "a01223.html#ac6b87c14191b9d8faad9933a7334d20faf11849d4adc5e8047d5d66a4b4bbcb0f", null ],
-      [ "NPT_VTEXT", "a01223.html#ac6b87c14191b9d8faad9933a7334d20fa27c8da6ed042fcd7739cc43deb47d877", null ],
-      [ "NPT_WEAK_HTEXT", "a01223.html#ac6b87c14191b9d8faad9933a7334d20fa4fb3395899c584480e12d1e5f57013cc", null ],
-      [ "NPT_WEAK_VTEXT", "a01223.html#ac6b87c14191b9d8faad9933a7334d20fa4af22b9c01e35695839b9cb11c0be594", null ],
-      [ "NPT_IMAGE", "a01223.html#ac6b87c14191b9d8faad9933a7334d20fa5ed965ae2d40e930c7cda6c0797c6626", null ],
-      [ "NPT_COUNT", "a01223.html#ac6b87c14191b9d8faad9933a7334d20fa962f103650d31bd5ec341006e04ec61b", null ]
-    ] ],
-    [ "kBigPartSizeRatio", "a01223.html#a45530b4b5280b8d2f185a531cab4169b", null ],
-    [ "kMarginOverlapFraction", "a01223.html#acea5cf3f3fc7999a57079cc1bb4104f7", null ],
-    [ "kMaxCaptionLines", "a01223.html#a0c0112882a0fd4d5db231341b276748f", null ],
-    [ "kMaxNeighbourDistFactor", "a01223.html#ae4ffbfaa120044bd1f22b6f95ead9dce", null ],
-    [ "kMaxPadFactor", "a01223.html#aae8f2f2cc0e41a6cc4a6d1bf322f4b2a", null ],
-    [ "kMaxPartitionSpacing", "a01223.html#a03ac774c4cfbfe5f2b611e59b1e3f74b", null ],
-    [ "kMinCaptionGapHeightRatio", "a01223.html#a3edae94975001932766025af12aa9615", null ],
-    [ "kMinCaptionGapRatio", "a01223.html#aede50c5fa6fdad612c08e73757501178", null ],
-    [ "kSmoothDecisionMargin", "a01223.html#a0683cf2a8cb220b4bf8f5719b4846b09", null ],
-    [ "kTinyEnoughTextlineOverlapFraction", "a01223.html#a1fa28613a5db6fb9d0c7fdef0f151872", null ],
-    [ "textord_tabfind_show_color_fit", "a01223.html#a93b5f759bbf4ffd7d98bca6a31391235", null ]
+    [ "FPSEGPT", "a04618.html", "a04618" ],
+    [ "check_pitch_sync", "a01223.html#a321a8bfc3b9248bd4ec353aa9d5f1831", null ],
+    [ "ELISTIZEH", "a01223.html#a6dd44845d7d5d4eff57571538cfc1996", null ],
+    [ "make_illegal_segment", "a01223.html#aeb1a310c897473e865cbd6529041f7b6", null ],
+    [ "vertical_cblob_projection", "a01223.html#a127cbd896383554910521dc8e03fd9ef", null ],
+    [ "vertical_coutline_projection", "a01223.html#a48333b2ce7f8f0d732fc47a82e57911c", null ],
+    [ "vertical_torow_projection", "a01223.html#a6d96486c4e0a56a2fbe2ec4f9fad2207", null ],
+    [ "pitsync_fake_depth", "a01223.html#a017f9254f6b703215cfe5940a67d52f2", null ],
+    [ "pitsync_joined_edge", "a01223.html#a06bb83057da5b8bc252bac729baa0a65", null ],
+    [ "pitsync_offset_freecut_fraction", "a01223.html#a676189661b13473a99c0242726cdc08a", null ]
 ];

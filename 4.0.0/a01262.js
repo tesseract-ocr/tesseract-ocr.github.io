@@ -1,11 +1,15 @@
 var a01262 =
 [
-    [ "BUCKETSIZE", "a01262.html#a1697ba8bc67aab0eb972da5596ee5cc9", null ],
-    [ "check_path_legal", "a01262.html#adeed8a1cb243009aa6867ff637eb8677", null ],
-    [ "complete_edge", "a01262.html#affa66849c6f718f217c84b000407944b", null ],
-    [ "loop_bounding_box", "a01262.html#a95a3931e026bf45ab32e1e17ca45398c", null ],
-    [ "edges_boxarea", "a01262.html#ad30979c58febad737e03a9579878984e", null ],
-    [ "edges_childarea", "a01262.html#a6bec46124eb6e3708d4ce26342aeabfb", null ],
-    [ "edges_children_count_limit", "a01262.html#a0ce8a59242ea9168619c6a73210fe871", null ],
-    [ "edges_children_per_grandchild", "a01262.html#a7bc38b7811b5f9857fbabb4482235845", null ]
+    [ "kAlignmentNames", "a01262.html#af634680a235b3605fbe0ff57bbdcc971", null ],
+    [ "kGutterMultiple", "a01262.html#a5e5c88d73de712626bb45049f05bf935", null ],
+    [ "kGutterToNeighbourRatio", "a01262.html#ae01d1c3ecd3191b3fd9b5df6fc7329c1", null ],
+    [ "kLineCountReciprocal", "a01262.html#aaa71fcc94da61f06092ac41c1000092b", null ],
+    [ "kMaxFillinMultiple", "a01262.html#ac71cf6db3acc20786941d1146f15bf2b", null ],
+    [ "kMinAlignedGutter", "a01262.html#a1e54ca6764ad8a50cdbc42ebe335784e", null ],
+    [ "kMinGutterFraction", "a01262.html#adde25237f36db6088af89a6a01a903df", null ],
+    [ "kMinRaggedGutter", "a01262.html#a8a2e596e8a74bfa615969413f2059244", null ],
+    [ "kSimilarRaggedDist", "a01262.html#afe209ead2031e46e5acc7e412edbb078", null ],
+    [ "kSimilarVectorDist", "a01262.html#a70fef17dce833d756ce25024339559ab", null ],
+    [ "textord_tabvector_vertical_box_ratio", "a01262.html#affa406b99ade671948f293ba7d274184", null ],
+    [ "textord_tabvector_vertical_gap_fraction", "a01262.html#a16144e0f0ec50aeee39322c29e5ef4c7", null ]
 ];

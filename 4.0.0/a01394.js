@@ -1,11 +1,18 @@
 var a01394 =
 [
-    [ "EXTERN", "a01394.html#a77366c1bd428629dc898e188bfd182a3", null ],
-    [ "PROJECTION_MARGIN", "a01394.html#a01dbc51856714fc0f1871d2eb3c03a5e", null ],
-    [ "find_underlined_blobs", "a01394.html#afc00f3a1057255657116acf952f3d7a4", null ],
-    [ "most_overlapping_row", "a01394.html#a0dd8a5ba42169e80f12ce943084cb307", null ],
-    [ "restore_underlined_blobs", "a01394.html#a2118358b0e0f62667f62a0aaf2fb2ae8", null ],
-    [ "vertical_cunderline_projection", "a01394.html#a8c1248a073d641cea7a9fec3e563dfc5", null ],
-    [ "textord_restore_underlines", "a01394.html#a3b7ff031211912735f61bd0dc97c6f2b", null ],
-    [ "textord_underline_offset", "a01394.html#a58d10b85902de6aee9f8b6befb411e32", null ]
+    [ "CompareProtos", "a01394.html#a4a56f3fb24df3405e2baa99998b3f541", null ],
+    [ "ComputeMergedProto", "a01394.html#a40328cceddce8d064344d6996159a1f7", null ],
+    [ "ComputePaddedBoundingBox", "a01394.html#aa035bee65dc62461d0f0726799936fb7", null ],
+    [ "DummyFastMatch", "a01394.html#a3d149fd9b704e639b17edca068580c3f", null ],
+    [ "EvidenceOf", "a01394.html#a7f02eafd94a0bc60d12e0acfb3955a42", null ],
+    [ "FindClosestExistingProto", "a01394.html#ab51cc9a0af3a57f032ba52fd54e63b64", null ],
+    [ "MakeNewFromOld", "a01394.html#a49e44db121ae7c194e8e806fd8eec532", null ],
+    [ "PointInside", "a01394.html#a1d5c536e89d2c8814a6324cc185e2d9d", null ],
+    [ "SubfeatureEvidence", "a01394.html#a89a6f1b1fbe6e110fb03d9387cc61dc3", null ],
+    [ "training_angle_match_scale", "a01394.html#a6ab3ea6cb4f958e5eaffe5f01428c1e4", null ],
+    [ "training_angle_pad", "a01394.html#ae17b00cafc96bf46a224d12fba4a2ffb", null ],
+    [ "training_orthogonal_bbox_pad", "a01394.html#a13f347d8004acdbcd265d092740c2bfe", null ],
+    [ "training_similarity_curl", "a01394.html#a14a4d7cf8b387ec98200d010b327ef22", null ],
+    [ "training_similarity_midpoint", "a01394.html#a48441921f382af1727ab51e846ee5c83", null ],
+    [ "training_tangent_bbox_pad", "a01394.html#a8c84d5c981e2a3447203bdc89022e44c", null ]
 ];

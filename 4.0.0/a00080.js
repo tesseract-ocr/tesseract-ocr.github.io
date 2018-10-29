@@ -1,11 +1,11 @@
 var a00080 =
 [
-    [ "ACCEPTABLE_WERD_TYPE", "a00080.html#af9ff5a7d7a1b9eeea7ce4106bffa7eee", [
-      [ "AC_UNACCEPTABLE", "a00080.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeeaab0741a5a5ff9757ca343af255353ba0", null ],
-      [ "AC_LOWER_CASE", "a00080.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeeaf8e947b78fa9ddbd1172c0157a3516ff", null ],
-      [ "AC_UPPER_CASE", "a00080.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeead58aa8857ae2a3ec6a90b29a849700d7", null ],
-      [ "AC_INITIAL_CAP", "a00080.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea71786bea8ae4bacc2670610dde24e707", null ],
-      [ "AC_LC_ABBREV", "a00080.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea7bae128b501c1b34213e7ce6b17f7988", null ],
-      [ "AC_UC_ABBREV", "a00080.html#af9ff5a7d7a1b9eeea7ce4106bffa7eeea6d37e3775faa628c72b7953f89caeb22", null ]
-    ] ]
+    [ "GARBAGE_LEVEL", "a00080.html#ac4a411895d63e3bb0bea788e92894d42", [
+      [ "G_NEVER_CRUNCH", "a00080.html#ac4a411895d63e3bb0bea788e92894d42ac744add072d392855d098a995acb3751", null ],
+      [ "G_OK", "a00080.html#ac4a411895d63e3bb0bea788e92894d42a46d03f2b7d080cc8319a43ef4bad82b3", null ],
+      [ "G_DODGY", "a00080.html#ac4a411895d63e3bb0bea788e92894d42a17acba0fc01478524c8214f0da82815a", null ],
+      [ "G_TERRIBLE", "a00080.html#ac4a411895d63e3bb0bea788e92894d42a2400fb7991d9c94896464522e10c49ad", null ]
+    ] ],
+    [ "reject_whole_page", "a00080.html#a1b9934928e2b953ee5e91abb58cf043f", null ],
+    [ "word_blob_quality", "a00080.html#aca07ed1ebafb5cf8c9c3d2e9dd2fb673", null ]
 ];

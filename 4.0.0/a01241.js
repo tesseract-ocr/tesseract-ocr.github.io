@@ -1,9 +1,13 @@
 var a01241 =
 [
-    [ "EXTERN", "a01241.html#a77366c1bd428629dc898e188bfd182a3", null ],
-    [ "IMAGE_WIN_NAME", "a01241.html#a7b5f2b5b9b1b1478a6f5fb9023dc8b70", null ],
-    [ "IMAGE_XPOS", "a01241.html#aeea7f900b4a1f399ebb9eab80a50bf6e", null ],
-    [ "IMAGE_YPOS", "a01241.html#a7440cf700084d356d42ddbc650f5d479", null ],
-    [ "create_edges_window", "a01241.html#afcd23447e659c1d86b6b97b43db81bd3", null ],
-    [ "draw_raw_edge", "a01241.html#ad9f6bfa06fa02b79185604744debbaeb", null ]
+    [ "StrokeWidth", "a04634.html", "a04634" ],
+    [ "LeftOrRight", "a01241.html#acd121b57d321ca8511db069f603d071f", [
+      [ "LR_LEFT", "a01241.html#acd121b57d321ca8511db069f603d071fa83d27ea7b63eb91b9feed005a2f46ec9", null ],
+      [ "LR_RIGHT", "a01241.html#acd121b57d321ca8511db069f603d071facb1914d58c6a7acb6ddb9563a46a1046", null ]
+    ] ],
+    [ "PartitionFindResult", "a01241.html#a2987d37792e5b3297193091de3911634", [
+      [ "PFR_OK", "a01241.html#a2987d37792e5b3297193091de3911634a0a35bbb694c579efc7e7ded8a8a63e73", null ],
+      [ "PFR_SKEW", "a01241.html#a2987d37792e5b3297193091de3911634a60a7950f62d772f395a6f1a404f4b8b6", null ],
+      [ "PFR_NOISE", "a01241.html#a2987d37792e5b3297193091de3911634af5682e259ea2132d1705be1dc1ddebe1", null ]
+    ] ]
 ];

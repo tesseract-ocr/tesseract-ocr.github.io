@@ -1,9 +1,8 @@
 var a01148 =
 [
-    [ "kAdamCorrectionIterations", "a01148.html#ad058bab9a666cc278dadbf50fbe41824", null ],
-    [ "kAdamEpsilon", "a01148.html#acf8fe1e99e5303d6feac4e287825b792", null ],
-    [ "kAdamFlag", "a01148.html#a9d359ec0024ee3b851b63bba49a52735", null ],
-    [ "kDoubleFlag", "a01148.html#a5fa5691399a8b1111d5a0ec150f453d3", null ],
-    [ "kHistogramBuckets", "a01148.html#aa19df110fc9e4d5052b3397dd1cc267a", null ],
-    [ "kInt8Flag", "a01148.html#a0ccfc788b23411d605379600cce3e18a", null ]
+    [ "IMAGE_WIN_NAME", "a01148.html#a7b5f2b5b9b1b1478a6f5fb9023dc8b70", null ],
+    [ "IMAGE_XPOS", "a01148.html#aeea7f900b4a1f399ebb9eab80a50bf6e", null ],
+    [ "IMAGE_YPOS", "a01148.html#a7440cf700084d356d42ddbc650f5d479", null ],
+    [ "create_edges_window", "a01148.html#afcd23447e659c1d86b6b97b43db81bd3", null ],
+    [ "draw_raw_edge", "a01148.html#ad9f6bfa06fa02b79185604744debbaeb", null ]
 ];

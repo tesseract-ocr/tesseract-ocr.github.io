@@ -1,8 +1,8 @@
 var a00443 =
 [
-    [ "make_edgept", "a00443.html#abe45460790758fd43e35acbad4eed1c5", null ],
-    [ "remove_edgept", "a00443.html#ada6ba0f2954768ab4b7d9d2cf165dee0", null ],
-    [ "kBadPriority", "a00443.html#a1195d73629ff14a75d2513447da55632", null ],
-    [ "kCenterGradeCap", "a00443.html#a75bb4b4b833dbf69f48dc02206efa14b", null ],
-    [ "wordrec_display_splits", "a00443.html#ac251ee3f4ff4145a52a8ba54a1b26743", null ]
+    [ "CROSS", "a00443.html#aec4dedcf89534ed10f6107bf9c6418f3", null ],
+    [ "LENGTH", "a00443.html#ad0e13d94164219be2d5bbd4d65e71d1e", null ],
+    [ "point_diff", "a00443.html#adc5b1f2b1c3f7afb5b0b035449f5e2ec", null ],
+    [ "SCALAR", "a00443.html#aa9c4c0cbfeda43da7c0c28c7a8e836ed", null ],
+    [ "direction", "a00443.html#a57d4a186a22b01e2110793bc22a5d8f0", null ]
 ];

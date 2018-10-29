@@ -1,4 +1,5 @@
 var a00596 =
 [
-    [ "tfscanf", "a00596.html#aa11dd049f17d50a5af65fbd245e705d0", null ]
+    [ "MAX_MSG_LEN", "a00596.html#a51d90ea93d4b55e086cb490f7478e684", null ],
+    [ "tprintf", "a00596.html#a0c2bcd4462ec67ab0971b34a0f610f55", null ]
 ];

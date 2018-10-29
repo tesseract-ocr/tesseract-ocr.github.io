@@ -1,4 +1,4 @@
 var a00461 =
 [
-    [ "direction", "a00461.html#a57d4a186a22b01e2110793bc22a5d8f0", null ]
+    [ "truncate_path", "a00461.html#a98c50826f82a92d70cfd56e74b43d95f", null ]
 ];

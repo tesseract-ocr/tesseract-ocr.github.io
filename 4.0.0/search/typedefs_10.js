@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['vector',['VECTOR',['../a00239.html#a20dca3a49be1567ebfce5c31374c500b',1,'blobs.h']]],
-  ['void_5fdest',['void_dest',['../a00899.html#aef314cd9c40362bc3c0658d1e4ac86fd',1,'cutil.h']]],
-  ['void_5fproc',['void_proc',['../a00899.html#ac0ed86cb959133f5c061bdcd49ef713c',1,'void_proc():&#160;cutil.h'],['../a00911.html#af619f08c319fdcc9aeba966458d3c2c5',1,'VOID_PROC():&#160;danerror.h']]],
-  ['void_5fvoid',['void_void',['../a00899.html#ad4618e31a7954dc2fbf9eaeb2e37e144',1,'cutil.h']]]
+  ['widthcallback',['WidthCallback',['../a01629.html#aeca975d69a18ad78c1978b112b5084ea',1,'tesseract']]],
+  ['wordgrid',['WordGrid',['../a01629.html#a31fbe34a4156601f59e4a38c9ffb17bd',1,'tesseract']]],
+  ['wordrecognizer',['WordRecognizer',['../a01629.html#ac50ad7dad904ed14e81cd29a3bfdb82d',1,'tesseract']]],
+  ['wordsearch',['WordSearch',['../a01629.html#afb579fb147022de61399306507e3412d',1,'tesseract']]]
 ];

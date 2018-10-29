@@ -1,7 +1,9 @@
 var a00302 =
 [
-    [ "MAXLENGTH", "a00302.html#a1dbd686f69551b83691025eaae058539", null ],
-    [ "NUM_BACKGROUNDS", "a00302.html#aa412e22bbe6c542df7c783ac4874ffba", null ],
-    [ "NUM_BLOCK_ATTR", "a00302.html#ae63b350898e30562a82a0a3c6759f6df", null ],
-    [ "NUM_TEXT_ATTR", "a00302.html#ad2a9f3c9c3e8d7f948f90eb1b1273566", null ]
+    [ "GENERIC_2D_ARRAY", "a02222.html", "a02222" ],
+    [ "BandTriMatrix", "a02494.html", "a02494" ],
+    [ "MATRIX", "a02498.html", "a02498" ],
+    [ "MATRIX_COORD", "a02502.html", "a02502" ],
+    [ "NOT_CLASSIFIED", "a00302.html#a5c21a86b19e78482e6c7384c47c2457d", null ],
+    [ "MatrixCoordPair", "a00302.html#afd2ffe68a8eaf0886767e8a3a76268f9", null ]
 ];

@@ -1,0 +1,26 @@
+var a04578 =
+[
+    [ "ColPartitionSet", "a04578.html#ab477d7a812b0350cfb8de11ab8248d21", null ],
+    [ "ColPartitionSet", "a04578.html#a56d9224144d2911b2c631c078a2d0a76", null ],
+    [ "ColPartitionSet", "a04578.html#a9a2e5194a5ad227e5a3fa389766acc6d", null ],
+    [ "~ColPartitionSet", "a04578.html#a6253bbd9af516564872910e43f74bd63", null ],
+    [ "AccumulateColumnWidthsAndGaps", "a04578.html#a2269c86ba6ee44b5be119493e7b2246e", null ],
+    [ "AddToColumnSetsIfUnique", "a04578.html#a2bc71914f948cda279ea34f6d34a5cbe", null ],
+    [ "bounding_box", "a04578.html#acae625b72f6bbdb91601d319ddf9e7f4", null ],
+    [ "ChangeWorkColumns", "a04578.html#a77f3363ca10aa193d51e1f8f45ceb41e", null ],
+    [ "ColumnContaining", "a04578.html#a9a65bec02d946f263f18aa86a186c91c", null ],
+    [ "ColumnCount", "a04578.html#a4d11b475669c67e4c6064404e7179b2e", null ],
+    [ "CompatibleColumns", "a04578.html#a473a52c7a5b02694be17c9864d61ada0", null ],
+    [ "Copy", "a04578.html#a99232d52ed5fd8b56f165923562a9cab", null ],
+    [ "DisplayColumnEdges", "a04578.html#a36859fa1a9497c3b0e52834a90d0acd5", null ],
+    [ "Empty", "a04578.html#a9abbcce96963d80bf31e18faee8456e7", null ],
+    [ "GetColumnBoxes", "a04578.html#ae48258575cffe3725081778e493cfa04", null ],
+    [ "GetColumnByIndex", "a04578.html#a4e4928726f63e6d53e67dc82007703e1", null ],
+    [ "GoodColumnCount", "a04578.html#a1496e66b78c747d600fa74b1d5407be1", null ],
+    [ "ImproveColumnCandidate", "a04578.html#a772763e56afc044cc330bae623bc117a", null ],
+    [ "LegalColumnCandidate", "a04578.html#a9d821d919ed86c9e7eafeda711c2e33d", null ],
+    [ "Print", "a04578.html#a51f3aa3845b8ea00943fac4ca72e905f", null ],
+    [ "RelinquishParts", "a04578.html#ae221122d16d0eb0233029e524de378d6", null ],
+    [ "SpanningType", "a04578.html#a3b307795f81e6f0d120cf75c72fe42c6", null ],
+    [ "UnmatchedWidth", "a04578.html#ae2ac889a0a2b3d8297a7c52667f5d6f4", null ]
+];

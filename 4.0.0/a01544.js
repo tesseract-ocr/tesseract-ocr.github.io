@@ -1,8 +1,9 @@
 var a01544 =
 [
-    [ "GetXheightString", "a01544.html#a1408bd0535c3f01773abf6912e77cf3e", null ],
-    [ "SetPropertiesForInputFile", "a01544.html#af459f4a873eb9b97b498d27f6e59b583", null ],
-    [ "SetScriptProperties", "a01544.html#a94833720955083038d6395dc5ca10559", null ],
-    [ "SetupBasicProperties", "a01544.html#a49e6f022ec033530161447502965fa3b", null ],
-    [ "SetupBasicProperties", "a01544.html#ab00e04cc76f353812c8afed7117b7834", null ]
+    [ "clear_fx_win", "a01544.html#aa3294a99fe8ad4b74a1e8577b89e3eff", null ],
+    [ "create_fx_win", "a01544.html#ae31e31904810bc4e3407c2f324cf7edb", null ],
+    [ "create_fxdebug_win", "a01544.html#acb1c409d6a6de9cd0988e873ff68fd70", null ],
+    [ "fx_debug", "a01544.html#a914f797563b0dc5f5d3f13f521e307a5", null ],
+    [ "fx_debugfile", "a01544.html#aafd93dea58b33bc6c4245aaa39e8e9ee", null ],
+    [ "fx_win", "a01544.html#a32821715e23d2e2666ba66b2a9d2ee8b", null ]
 ];

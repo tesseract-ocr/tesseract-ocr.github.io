@@ -1,6 +1,7 @@
 var a00356 =
 [
-    [ "HistogramRect", "a00356.html#a6601a260946a730407fc6ef4f69d8725", null ],
-    [ "OtsuStats", "a00356.html#aa38847c682089329f7cec83a5bcb714b", null ],
-    [ "OtsuThreshold", "a00356.html#a865a6eb28d729e208b513acbe716f22d", null ]
+    [ "PDBLK", "a02558.html", "a02558" ],
+    [ "BLOCK_RECT_IT", "a02562.html", "a02562" ],
+    [ "BLOCK_LINE_IT", "a02566.html", "a02566" ],
+    [ "PDBLK", "a00356.html#aedc6a690b03da0d4f84ba90a25b287ab", null ]
 ];

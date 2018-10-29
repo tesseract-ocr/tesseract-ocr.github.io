@@ -1,8 +1,8 @@
 var a00008 =
 [
-    [ "GenericVector", "a02307.html", "a02307" ],
-    [ "TessBaseAPI", "a02311.html", "a02311" ],
-    [ "DictFunc", "a00008.html#a0c911e3e0ec9174a4def4a21721c0bce", null ],
+    [ "GenericVector", "a02182.html", "a02182" ],
+    [ "TessBaseAPI", "a02186.html", "a02186" ],
+    [ "DictFunc", "a00008.html#a75942705a59f93c72298f0c0444f9325", null ],
     [ "FillLatticeFunc", "a00008.html#a0c8529ffdf3ba5c8d219e377c13b1288", null ],
     [ "INT_FEATURE", "a00008.html#af803a54b0e7e7985ebd5bdf9d54424e0", null ],
     [ "ParamsModelClassifyFunc", "a00008.html#a57e9ea37415c443dc4f66d72b3a1d88b", null ],

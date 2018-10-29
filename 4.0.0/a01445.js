@@ -1,8 +1,7 @@
 var a01445 =
 [
-    [ "WordOutputter", "a04867.html", "a04867" ],
-    [ "LoadSquishedDawg", "a01445.html#a5b4bf0033d9904ad285f6adcb0cc4d0d", null ],
-    [ "main", "a01445.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
-    [ "WriteDawgAsWordlist", "a01445.html#a7ed4f2196ec2c0cc5e0999ad197c527c", null ],
-    [ "kDictDebugLevel", "a01445.html#aacd4a34e871006f4c22c0a3c1a8b9baa", null ]
+    [ "GetXheightString", "a01445.html#a1408bd0535c3f01773abf6912e77cf3e", null ],
+    [ "SetPropertiesForInputFile", "a01445.html#af459f4a873eb9b97b498d27f6e59b583", null ],
+    [ "SetScriptProperties", "a01445.html#a94833720955083038d6395dc5ca10559", null ],
+    [ "SetupBasicProperties", "a01445.html#ab00e04cc76f353812c8afed7117b7834", null ]
 ];

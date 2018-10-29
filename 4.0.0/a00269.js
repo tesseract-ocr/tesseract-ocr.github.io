@@ -1,11 +1,6 @@
 var a00269 =
 [
-    [ "EdgeOffset", "a02531.html", "a02531" ],
-    [ "C_OUTLINE", "a02535.html", "a02535" ],
-    [ "INTERSECTING", "a00269.html#a19d14ec91d9d1960d7c43d6b7df9afca", null ],
-    [ "STEP_MASK", "a00269.html#a1eb00979f787f2ee951889ea9ab8c772", null ],
-    [ "C_OUTLINE_FLAGS", "a00269.html#a2eecf9690392754a783bc842b1f45fd2", [
-      [ "COUT_INVERSE", "a00269.html#a2eecf9690392754a783bc842b1f45fd2a343d9e88b102ec4a2ee233445cb29f7a", null ]
-    ] ],
-    [ "C_OUTLINE", "a00269.html#a33c25172cfe8e7ec617eb16413b61294", null ]
+    [ "kMaxRealDistance", "a00269.html#a0ba0e3d5b910c72cb63e939e6cb426d3", null ],
+    [ "kMinPointsForErrorCount", "a00269.html#a57f300af8f4caf9869661dcb82500c27", null ],
+    [ "kNumEndPoints", "a00269.html#acd4677fe72e83fad95bf289ca8b832b6", null ]
 ];

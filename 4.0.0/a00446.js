@@ -1,7 +1,8 @@
 var a00446 =
 [
-    [ "SPLIT", "a02743.html", "a02743" ],
-    [ "make_edgept", "a00446.html#abe45460790758fd43e35acbad4eed1c5", null ],
-    [ "remove_edgept", "a00446.html#ada6ba0f2954768ab4b7d9d2cf165dee0", null ],
-    [ "wordrec_display_splits", "a00446.html#ac251ee3f4ff4145a52a8ba54a1b26743", null ]
+    [ "CHILD_COLOUR", "a00446.html#a7c40159b1166c369b1307ac9257f1405", null ],
+    [ "FIRST_COLOUR", "a00446.html#a70083999d911cb1aa3ed0580bc66fd22", null ],
+    [ "LAST_COLOUR", "a00446.html#aaa8f711f73dfdf579c53b00dbc721966", null ],
+    [ "word_comparator", "a00446.html#a8a8c04307eb98f244554d5b2eb97ec56", null ],
+    [ "CANT_SCALE_EDGESTEPS", "a00446.html#ad8da5b5584b304c496fe8cf4b4a1b65f", null ]
 ];

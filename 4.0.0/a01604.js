@@ -1,8 +1,12 @@
 var a01604 =
 [
-    [ "SVPolyLineBuffer", "a04975.html", "a04975" ],
-    [ "kMaxIntPairSize", "a01604.html#ae89c23582ae7fd97e4884a7402d8959c", null ],
-    [ "kMaxMsgSize", "a01604.html#a4a4ce82f9687ca37d149b0a62c5ed379", null ],
-    [ "kSvPort", "a01604.html#a79eb5da6093373f064e897ad5aedc18c", null ],
-    [ "table_colors", "a01604.html#a56b146063453a9e06f0edb8dc5ee6b3a", null ]
+    [ "display_blob", "a01604.html#a2b56bf58c648ddd5efa02b1be0438659", null ],
+    [ "render_blob", "a01604.html#aba71e35fe1f2af5d7c98479fb9866dbc", null ],
+    [ "render_edgepts", "a01604.html#a594cd620b80afd8116ac5388f0396a9e", null ],
+    [ "render_outline", "a01604.html#a7ee7085b157e15b1651947b1e121f9b5", null ],
+    [ "blob_window", "a01604.html#a062919012f2898b36333bae0c19fa89d", null ],
+    [ "color_list", "a01604.html#a6edf1001fd84878871c310d6a2a270d6", null ],
+    [ "wordrec_blob_pause", "a01604.html#a4abb79c2e47e2c18898d51c784b733de", null ],
+    [ "wordrec_display_all_blobs", "a01604.html#a12a5464318b34c3d019270c0954f85e0", null ],
+    [ "wordrec_display_all_words", "a01604.html#ac1ae32fe06996c084e54189cf7abbe8b", null ]
 ];

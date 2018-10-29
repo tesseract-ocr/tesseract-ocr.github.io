@@ -1,16 +1,18 @@
 var a00221 =
 [
-    [ "kBlameAdaption", "a00221.html#afbe9ed9b199de04329403be78d43a20e", null ],
-    [ "kBlameChopper", "a00221.html#a4db1a8ed37b0eff0d2e038ff2a107c2c", null ],
-    [ "kBlameClassifier", "a00221.html#a0691e45d7e7b5e6e0671f5167e4a0e71", null ],
-    [ "kBlameClassLMTradeoff", "a00221.html#a5c0e7d2e8cba382e6de905c1612dad3b", null ],
-    [ "kBlameClassOldLMTradeoff", "a00221.html#aa05d635a577a5fafa7fd3b2a3ef0c17d", null ],
-    [ "kBlameCorrect", "a00221.html#a939a828ea97a292eed52468bfc886f5f", null ],
-    [ "kBlameNoTruth", "a00221.html#acbc066860637c1eb6ba9777ec6914020", null ],
-    [ "kBlameNoTruthSplit", "a00221.html#af5f1678db33a085c6a72c606584c8f6f", null ],
-    [ "kBlamePageLayout", "a00221.html#ad7fc57611e72df3bbe8a760f7d9a8bf1", null ],
-    [ "kBlameSegsearchHeur", "a00221.html#a89e8d8eda8453e09c7b0c95d60a57f7c", null ],
-    [ "kBlameSegsearchPP", "a00221.html#a5dc22321ca86643deb20076a2198c8cf", null ],
-    [ "kBlameUnknown", "a00221.html#a5c9260acc89f21815ea4f8c8fc12e473", null ],
-    [ "kIncorrectResultReasonNames", "a00221.html#a85fc3ba2e9db3adeb717fbdba6f9481f", null ]
+    [ "PROJECTION_MARGIN", "a00221.html#a01dbc51856714fc0f1871d2eb3c03a5e", null ],
+    [ "box_next", "a00221.html#a343c30f9e935058965b844710a2e3180", null ],
+    [ "box_next_pre_chopped", "a00221.html#a3728c3433d1e8f6a2178bb796aa21fad", null ],
+    [ "crotate_cblob", "a00221.html#a4145a126880b1bd685f07c9499903b71", null ],
+    [ "find_cblob_hlimits", "a00221.html#a3a16fa420feca9ee9f2211e31de0f0dd", null ],
+    [ "find_cblob_limits", "a00221.html#a2ce6678ef43e0765b7af8c5611c4ebd9", null ],
+    [ "find_cblob_vlimits", "a00221.html#a57197f6f9deea830c41b3af8c9b8abb5", null ],
+    [ "plot_blob_list", "a00221.html#a331e6744e04cb0a2fb23c1465c82196c", null ],
+    [ "vertical_cblob_projection", "a00221.html#a127cbd896383554910521dc8e03fd9ef", null ],
+    [ "vertical_coutline_projection", "a00221.html#a48333b2ce7f8f0d732fc47a82e57911c", null ],
+    [ "kComplexShapePerimeterRatio", "a00221.html#aeb2725c521f482e88ed755f1323c192b", null ],
+    [ "kCosSmallAngle", "a00221.html#a0d8f9fe1ab0658d385ae28ec3955286b", null ],
+    [ "kDefiniteAspectRatio", "a00221.html#a43aa9cc9ddb58444cde748b228acf281", null ],
+    [ "kMaxMediumSizeRatio", "a00221.html#a0d87f01e29a3f7760d6423d98fd8fa34", null ],
+    [ "kMinMediumSizeRatio", "a00221.html#ac288f4cd6831a635cc0c279f9f9aaf7b", null ]
 ];

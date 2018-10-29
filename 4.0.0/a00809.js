@@ -1,12 +1,31 @@
 var a00809 =
 [
-    [ "LENGTH_COMPRESSION", "a00809.html#a528f356e3cb082911b33645da06ccf04", null ],
-    [ "NORM_PARAM_NAME", "a00809.html#ab5ff0a2380362fa488e17c0c1b858506", [
-      [ "CharNormY", "a00809.html#ab5ff0a2380362fa488e17c0c1b858506a9309b18966f93d05a857e8ee0f81c557", null ],
-      [ "CharNormLength", "a00809.html#ab5ff0a2380362fa488e17c0c1b858506af859d8f455da531fb41201c80187dccf", null ],
-      [ "CharNormRx", "a00809.html#ab5ff0a2380362fa488e17c0c1b858506a5a6745d4958b44c8c3481742021428f9", null ],
-      [ "CharNormRy", "a00809.html#ab5ff0a2380362fa488e17c0c1b858506ac21a54078a6ec6e1470a21d65feb58d5", null ]
-    ] ],
-    [ "ActualOutlineLength", "a00809.html#a42d064127b80043f5af5a4e77305d412", null ],
-    [ "ExtractCharNormFeatures", "a00809.html#a809c040b2d2dbb0ce82c124e0787e06c", null ]
+    [ "PROTO_STRUCT", "a04186.html", "a04186" ],
+    [ "CLASS_STRUCT", "a04190.html", "a04190" ],
+    [ "AddProtoToConfig", "a00809.html#a3a4b90c863b97c425d5fabd69ec186ac", null ],
+    [ "ClassOfChar", "a00809.html#a24c66a35a27cdccbc53333837431c03f", null ],
+    [ "FEATURE_SCALE", "a00809.html#af33a5e6026045a94e106df8b6dbe951e", null ],
+    [ "NUMBER_OF_CLASSES", "a00809.html#af1406da18bce098cdb14a2988d4ae5db", null ],
+    [ "PrintProto", "a00809.html#aa80649ea9aed0280b09677f2f6868b5c", null ],
+    [ "PrintProtoLine", "a00809.html#a2414185be2fdb0d265e6a37c223a4b7d", null ],
+    [ "ProtoIn", "a00809.html#a3def7bc87c3ad9ad793128f0dc5b8fce", null ],
+    [ "RemoveProtoFromConfig", "a00809.html#ac37b31041a54f0868ac12e46d2781123", null ],
+    [ "Y_OFFSET", "a00809.html#aff6396abd8dad0f793f1a4333682a2be", null ],
+    [ "CLASS_TYPE", "a00809.html#af4ecf114c1fbe27d0dd772f4257fcae9", null ],
+    [ "CLASSES", "a00809.html#a5360b3466ac8af2b430d271d08aca033", null ],
+    [ "CONFIGS", "a00809.html#acbfeb874fcf02ae70a262bd29a06275d", null ],
+    [ "PROTO", "a00809.html#a05167a61304b96dd0513e52743dbf45f", null ],
+    [ "AddConfigToClass", "a00809.html#a922ce6793eb82e1f8224ed372b75aa24", null ],
+    [ "AddProtoToClass", "a00809.html#a8a197adbd5718ec39c2b6a4a74694aa4", null ],
+    [ "ClassConfigLength", "a00809.html#a0e1999ae8893b6e366e1c19188939e88", null ],
+    [ "ClassProtoLength", "a00809.html#a80d397ee42bceea47d071cfbf59d14f4", null ],
+    [ "CopyProto", "a00809.html#a070f62ac01ae76642e6793410da68770", null ],
+    [ "FillABC", "a00809.html#ac0d58978bbcf0c732ae94fb554bccd3b", null ],
+    [ "FreeClass", "a00809.html#a751a34c0eb8b7dcba1439287dd3eb3d5", null ],
+    [ "FreeClassFields", "a00809.html#a8c42a896530af773ecb7de6ea5186b40", null ],
+    [ "InitPrototypes", "a00809.html#ad09ab70308b8f511fe2076d9e8784d6a", null ],
+    [ "NewClass", "a00809.html#ae1b779964924a618a307d8d6f0ec6dff", null ],
+    [ "PrintProtos", "a00809.html#a5c0c05c9986fd218a772e9acca9b02f6", null ],
+    [ "classify_training_file", "a00809.html#abdf276348661f25846b3638c463ca932", null ],
+    [ "TrainingData", "a00809.html#a334d53f31debfa16fad9a7857aed7f6d", null ]
 ];

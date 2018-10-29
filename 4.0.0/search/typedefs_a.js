@@ -1,7 +1,19 @@
 var searchData=
 [
-  ['node_5fmap',['NODE_MAP',['../a00947.html#a62f0e84ff219b74912d723e231fefd00',1,'dawg.h']]],
-  ['node_5fmarker',['NODE_MARKER',['../a00980.html#a48a570537b653a890670d576f8d314cf',1,'trie.h']]],
-  ['node_5fref',['NODE_REF',['../a00947.html#a1ddf9ade6178b5967acb824c8b712ceb',1,'dawg.h']]],
-  ['nodechildvector',['NodeChildVector',['../a01743.html#a5084886f7cd9adefa73d03111d92f593',1,'tesseract']]]
+  ['painpointheap',['PainPointHeap',['../a01629.html#adf882f4b951f52710bc921268afa8497',1,'tesseract']]],
+  ['paramsmodelclassifyfunc',['ParamsModelClassifyFunc',['../a01629.html#a57e9ea37415c443dc4f66d72b3a1d88b',1,'tesseract']]],
+  ['paramstraininghypothesislist',['ParamsTrainingHypothesisList',['../a01629.html#a008f78a2d77f64f92e6bd4329409f860',1,'tesseract']]],
+  ['partialfunc',['PartialFunc',['../a02226.html#ad2e7073d382c84f09f72621188e62456',1,'tesseract::IntSimdMatrix']]],
+  ['partsetvector',['PartSetVector',['../a01629.html#a6fb32beebbc5c707d14869180acab99c',1,'tesseract']]],
+  ['perm_5fconfig',['PERM_CONFIG',['../a00644.html#a461ee34b392d9264f8ff553d28029c52',1,'adaptive.h']]],
+  ['pointheap',['PointHeap',['../a01532.html#a6ea49e5c54f90d06755a9ad39bda3b1d',1,'chop.h']]],
+  ['pointpair',['PointPair',['../a01532.html#ab644b1a83b3ef5c62442fac3f0f67b12',1,'chop.h']]],
+  ['priority',['PRIORITY',['../a00419.html#a64c977704107e265e5997b915a83ccf2',1,'seam.h']]],
+  ['probabilityincontextfunc',['ProbabilityInContextFunc',['../a01629.html#ad7ebf88af7dcdd155deb8655ba5991ff',1,'tesseract']]],
+  ['progress_5ffunc',['PROGRESS_FUNC',['../a00551.html#acfa77e552598fd4cfe84b127de213faa',1,'ocrclass.h']]],
+  ['progress_5ffunc2',['PROGRESS_FUNC2',['../a00551.html#a06e088d4f8a2ab850fea9e40f55e7fab',1,'ocrclass.h']]],
+  ['proto',['PROTO',['../a00809.html#a05167a61304b96dd0513e52743dbf45f',1,'protos.h']]],
+  ['proto_5fid',['PROTO_ID',['../a00914.html#a7e3352f12ad03d1c7939d3e3d078930d',1,'matchdefs.h']]],
+  ['proto_5fpruner',['PROTO_PRUNER',['../a00737.html#adc4814efc53ffd530124ad72f03139dd',1,'intproto.h']]],
+  ['proto_5fset',['PROTO_SET',['../a00737.html#ad546501d14b3863823361c838ea469ec',1,'intproto.h']]]
 ];

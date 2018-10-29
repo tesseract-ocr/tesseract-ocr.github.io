@@ -1,7 +1,5 @@
 var a00776 =
 [
-    [ "kFontMergeDistance", "a00776.html#a5a80aa3c385749b5df58ac015ba00e9f", null ],
-    [ "kInfiniteDist", "a00776.html#a765cba391d1d3fc666802038fce31c85", null ],
-    [ "kMaxUnicharsPerCluster", "a00776.html#a93d3ba882abd48b578f7db93e8a4e6e9", null ],
-    [ "kMinClusteredShapes", "a00776.html#a6dc1c791f04726f9cc345b54b85222b9", null ]
+    [ "ActualOutlineLength", "a00776.html#ae041c2fcb5bad1199852858f38aaa17a", null ],
+    [ "ExtractCharNormFeatures", "a00776.html#a809c040b2d2dbb0ce82c124e0787e06c", null ]
 ];

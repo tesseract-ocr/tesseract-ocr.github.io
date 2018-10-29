@@ -1,11 +1,7 @@
 var a00338 =
 [
-    [ "BLOCK_LABEL_HEIGHT", "a00338.html#ad0e3ca9368f7687b1a72cf083cad3033", null ],
-    [ "ROW_SPACING", "a00338.html#a5dc7c010531abd2d115dac13c196eda3", null ],
-    [ "decreasing_top_order", "a00338.html#a653fb765bd7b90bf65d53f6ffe356955", null ],
-    [ "ExtractBlobsFromSegmentation", "a00338.html#a03fb1ef59c6b36c9c4658510f4694b52", null ],
-    [ "LeftMargin", "a00338.html#ae96294df3ba42a4344755ce6a7220652", null ],
-    [ "PrintSegmentationStats", "a00338.html#a7f48b20c8959347726c816b94b3c47f5", null ],
-    [ "RefreshWordBlobsFromNewBlobs", "a00338.html#af0a18fdb19dd9d4ebe9e73b864c2fad5", null ],
-    [ "RightMargin", "a00338.html#ae85a4fad06cd7308595bda498a8e78e2", null ]
+    [ "HistogramRect", "a00338.html#a6601a260946a730407fc6ef4f69d8725", null ],
+    [ "OtsuStats", "a00338.html#aa38847c682089329f7cec83a5bcb714b", null ],
+    [ "OtsuThreshold", "a00338.html#a865a6eb28d729e208b513acbe716f22d", null ],
+    [ "kHistogramSize", "a00338.html#a30cac105cb2746dccb9a2e6334a0209b", null ]
 ];

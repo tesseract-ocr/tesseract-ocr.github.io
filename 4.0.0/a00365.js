@@ -1,15 +1,20 @@
 var a00365 =
 [
-    [ "PAGE_RES", "a02647.html", "a02647" ],
-    [ "BLOCK_RES", "a02651.html", "a02651" ],
-    [ "ROW_RES", "a02655.html", "a02655" ],
-    [ "WERD_RES", "a02659.html", "a02659" ],
-    [ "PAGE_RES_IT", "a02663.html", "a02663" ],
-    [ "CRUNCH_MODE", "a00365.html#affc9a96d31e23e645355e534f11c40e9", [
-      [ "CR_NONE", "a00365.html#affc9a96d31e23e645355e534f11c40e9a1eac25752f2c55f1809d11d4ef917ff9", null ],
-      [ "CR_KEEP_SPACE", "a00365.html#affc9a96d31e23e645355e534f11c40e9ad0198ebd5b9e3299dd94f0c5f4d3e003", null ],
-      [ "CR_LOOSE_SPACE", "a00365.html#affc9a96d31e23e645355e534f11c40e9a223aec7f7b2d11193c90d04d8f589387", null ],
-      [ "CR_DELETE", "a00365.html#affc9a96d31e23e645355e534f11c40e9a1799c83261446306e1d1527f1779d6a4", null ]
-    ] ],
-    [ "ELISTIZEH", "a00365.html#a5e04440deecb14b35c5ba5ab85b8149d", null ]
+    [ "approx_dist", "a00365.html#afa413dfb9511b562aa24ab973dd539e9", null ],
+    [ "DIR", "a00365.html#a6c8de73bb604d91743c7f6f356eb171e", null ],
+    [ "EXTERN", "a00365.html#a77366c1bd428629dc898e188bfd182a3", null ],
+    [ "FASTEDGELENGTH", "a00365.html#af363537e00fa145a0f83685b7699843f", null ],
+    [ "FIXED", "a00365.html#a20207ffc8e6f0bdcefb5c42a5b5c3fb8", null ],
+    [ "fixed_dist", "a00365.html#ab32cccc51ac6f93001591f058666730b", null ],
+    [ "FLAGS", "a00365.html#a6ccad09b4a2a06ae178418fdccf5940d", null ],
+    [ "RUNLENGTH", "a00365.html#a0a5d3a40dd240416eac380c183d95419", null ],
+    [ "ApproximateOutline", "a00365.html#a95836c79b09910877bd1b39a59c7d5a0", null ],
+    [ "cutline", "a00365.html#aa0f03bd75099af8feca58259b9f3f48d", null ],
+    [ "edgesteps_to_edgepts", "a00365.html#aa63082dea164750c7abb7944becd6f5e", null ],
+    [ "fix2", "a00365.html#a90ebde0147c2a36a0b1a216645a4eed8", null ],
+    [ "poly2", "a00365.html#ab1a151f8dbd379f2ecf2d59f9ce2bc23", null ],
+    [ "par1", "a00365.html#af48d60ada722514c300ec13eb809b23c", null ],
+    [ "par2", "a00365.html#aa2560a18739e37081028f530cdd91caf", null ],
+    [ "poly_debug", "a00365.html#af4b004883139214414d5ed6f109bbd17", null ],
+    [ "poly_wide_objects_better", "a00365.html#ac0b10a62dff4fda6c92ebb536e387d21", null ]
 ];

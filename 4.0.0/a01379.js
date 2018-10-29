@@ -1,9 +1,9 @@
 var a01379 =
 [
-    [ "BlockGroup", "a04843.html", "a04843" ],
-    [ "EXTERN", "a01379.html#a77366c1bd428629dc898e188bfd182a3", null ],
-    [ "MAX_NEAREST_DIST", "a01379.html#a30f91f3d689a4e4bc4581c5146395219", null ],
-    [ "assign_blobs_to_blocks2", "a01379.html#a9338a9ed6cce7147ab8687c3efbd8079", null ],
-    [ "SetBlobStrokeWidth", "a01379.html#a89057dd1610400b14bf189ce520d275d", null ],
-    [ "tweak_row_baseline", "a01379.html#a76e9891e741722335a7a19c561f5580f", null ]
+    [ "INT_PARAM_FLAG", "a01379.html#a5c3906cbe8a865e296e864bb36217568", null ],
+    [ "INT_PARAM_FLAG", "a01379.html#a46938dae2498e8260e0dcc773ca3e0d7", null ],
+    [ "main", "a01379.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
+    [ "STRING_PARAM_FLAG", "a01379.html#a8d4d89c1599cf88cd96f07b185550cf5", null ],
+    [ "STRING_PARAM_FLAG", "a01379.html#a408df9e727027d7142b01b09554137cb", null ],
+    [ "STRING_PARAM_FLAG", "a01379.html#a5615b2f1c8bd0928effc6b37f07bf83c", null ]
 ];

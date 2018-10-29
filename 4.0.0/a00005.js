@@ -1,8 +1,7 @@
 var a00005 =
 [
-    [ "TESS_CHAR", "a02303.html", "a02303" ],
+    [ "TESS_CHAR", "a02178.html", "a02178" ],
     [ "HOcrEscape", "a00005.html#a91558c5771a593a5c2e3e62e9ad8e822", null ],
-    [ "make_tesseract_blob", "a00005.html#a920259f2171a834a4e379e8a6a8460c5", null ],
     [ "kBytesPer64BitNumber", "a00005.html#a6007ea2fe11067865156fb804c36079e", null ],
     [ "kBytesPerBoxFileLine", "a00005.html#a294e870871cf3fb0928cbd5686346b3d", null ],
     [ "kBytesPerNumber", "a00005.html#a929cce152875849d022496470235b437", null ],

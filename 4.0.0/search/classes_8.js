@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hfunc',['HFunc',['../a04527.html',1,'tesseract']]],
-  ['hprime',['HPrime',['../a04531.html',1,'tesseract']]]
+  ['hfunc',['HFunc',['../a04362.html',1,'tesseract']]],
+  ['hprime',['HPrime',['../a04366.html',1,'tesseract']]]
 ];

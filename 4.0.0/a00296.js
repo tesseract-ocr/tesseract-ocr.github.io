@@ -1,4 +1,6 @@
 var a00296 =
 [
-    [ "c_blob_comparator", "a00296.html#adf90dfe481e3980859ab92739b51caa6", null ]
+    [ "GenericVector", "a02182.html", "a02182" ],
+    [ "LLSQ", "a02490.html", "a02490" ],
+    [ "MedianOfCircularValues", "a00296.html#abde6267e843aeeea5089d458c465dee2", null ]
 ];

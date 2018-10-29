@@ -1,5 +1,7 @@
 var a00164 =
 [
-    [ "read_t", "a00164.html#ad7ffe56cad38dd6067797106e3d284d5", null ],
-    [ "kMaxBoxEdgeDiff", "a00164.html#a7bdc0f90142d4af69384bb20fcf7082f", null ]
+    [ "CLISTIZEH", "a00164.html#a1f7e3099e20129096036e0edad5592e9", null ],
+    [ "compute_reject_threshold", "a00164.html#a7769557523c23cea384f550ae030e5ba", null ],
+    [ "reject_blanks", "a00164.html#a38678800d902519bdb0b6dcff44e5ee8", null ],
+    [ "reject_poor_matches", "a00164.html#acda8fceb6df94a957f3a2380b944a09e", null ]
 ];

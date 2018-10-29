@@ -1,12 +1,11 @@
 var a00239 =
 [
-    [ "TPOINT", "a02503.html", "a02503" ],
-    [ "EDGEPT", "a02507.html", "a02507" ],
-    [ "TESSLINE", "a02511.html", "a02511" ],
-    [ "TBLOB", "a02515.html", "a02515" ],
-    [ "TWERD", "a02519.html", "a02519" ],
-    [ "EDGEPTFLAGS", "a00239.html#ad9af7050d913fcdd0b94253eccb4994a", null ],
-    [ "VECTOR", "a00239.html#a20dca3a49be1567ebfce5c31374c500b", null ],
-    [ "divide_blobs", "a00239.html#a2ab5e3b619507b26900a73919b165970", null ],
-    [ "divisible_blob", "a00239.html#aa87284f5696fb5dd745dafa85539d760", null ]
+    [ "BoxFileName", "a00239.html#af8465e130ce34e31d743881d41ecba78", null ],
+    [ "MakeBoxFileStr", "a00239.html#a12d56f93e661ff006a382fb8d7314898", null ],
+    [ "OpenBoxFile", "a00239.html#af8f00c0aa1951fff65cff5802879a91d", null ],
+    [ "ParseBoxFileStr", "a00239.html#acd464bb54397318c2f6fb8db9e644fd0", null ],
+    [ "ReadAllBoxes", "a00239.html#ab3161d7c887ead295045650e34d690fc", null ],
+    [ "ReadMemBoxes", "a00239.html#a166c16e9d8d3b3eda52ceb38c06dce64", null ],
+    [ "ReadNextBox", "a00239.html#a8236e051549f8174e263196602edadc5", null ],
+    [ "ReadNextBox", "a00239.html#a566c682100d2b5f0a20f39bf99ad2d30", null ]
 ];

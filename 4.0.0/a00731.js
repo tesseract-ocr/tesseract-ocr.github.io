@@ -1,12 +1,15 @@
 var a00731 =
 [
-    [ "FPOINT", "a04175.html", "a04175" ],
-    [ "AngleFrom", "a00731.html#ab2882d6616a94607705192ca8c484764", null ],
-    [ "SlopeFrom", "a00731.html#a6ad172446a82a07957b8178462b04ba8", null ],
-    [ "XDelta", "a00731.html#a3882f9c0c6c99c9bf796113a1524cba1", null ],
-    [ "XIntersectionOf", "a00731.html#aaf93aa070cb235911892bf5e1b60195d", null ],
-    [ "YDelta", "a00731.html#abeec3d0313052da8c1e239e64acaf5cd", null ],
-    [ "FVECTOR", "a00731.html#a3d398dd5922881df2b8e277a72dbd4fd", null ],
-    [ "DistanceBetween", "a00731.html#a415c805f668844bd4e652968a7978c41", null ],
-    [ "NormalizedAngleFrom", "a00731.html#a64d002c6db7589a73c3fcc0f2e80ad80", null ]
+    [ "CP_RESULT_STRUCT", "a04086.html", "a04086" ],
+    [ "ScratchEvidence", "a04090.html", "a04090" ],
+    [ "IntegerMatcher", "a04094.html", "a04094" ],
+    [ "SE_TABLE_BITS", "a00731.html#a3698359e38298fe5dce86d20443acd3f", null ],
+    [ "SE_TABLE_SIZE", "a00731.html#a1a81f6021dc96b06bb0683c605b77a1b", null ],
+    [ "HeapSort", "a00731.html#aa413baaa0a61f8e8c60257af07eaaa97", null ],
+    [ "IMDebugConfiguration", "a00731.html#a4a319a6588cdecce9884543ddd7789e9", null ],
+    [ "IMDebugConfigurationSum", "a00731.html#abab592abfc8412ad8aba533d72d600e7", null ],
+    [ "classify_adapt_feature_thresh", "a00731.html#a9435659b7bdcb14de3d911507fe5fcc8", null ],
+    [ "classify_adapt_proto_thresh", "a00731.html#a4a5a78c0745d38879256fbcc83b1842a", null ],
+    [ "classify_integer_matcher_multiplier", "a00731.html#afe4b8f9ecb4595e800850f646935045b", null ],
+    [ "disable_character_fragments", "a00731.html#a5e4352c88795fcbc3f1ae44e9d94490c", null ]
 ];

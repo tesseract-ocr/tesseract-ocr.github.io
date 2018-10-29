@@ -1,20 +1,13 @@
 var a01607 =
 [
-    [ "SVEvent", "a04979.html", "a04979" ],
-    [ "SVEventHandler", "a04983.html", "a04983" ],
-    [ "ScrollView", "a04987.html", "a04987" ],
-    [ "SVEventType", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0", [
-      [ "SVET_DESTROY", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0adbe9fb2ca110dbf1b838d845d32a89e7", null ],
-      [ "SVET_EXIT", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0a317899e24e3c2342d1dd2c6cdadde5d7", null ],
-      [ "SVET_CLICK", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0a2afe407abe8c055c45765b85d20e7946", null ],
-      [ "SVET_SELECTION", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0a9191b9a8fb723411f7fdce96dcd7d45c", null ],
-      [ "SVET_INPUT", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0aee5f6202613f111d11fc310ccba2fa25", null ],
-      [ "SVET_MOUSE", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0aa6ad86c5e515ba703a7cfb545a7ae8e9", null ],
-      [ "SVET_MOTION", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0a221f8efb0ef48fea7a72cddd1a2e0354", null ],
-      [ "SVET_HOVER", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0a098b1f97bb64f63aec2e149fdf316256", null ],
-      [ "SVET_POPUP", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0a3752863b11af097f289eb55405df8fa5", null ],
-      [ "SVET_MENU", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0aaf25c15351aa38a45513fe391dc73a11", null ],
-      [ "SVET_ANY", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0a6eec81ed585bda7ff47ec38918cb2a0e", null ],
-      [ "SVET_COUNT", "a01607.html#a3688a0cf2f95d10a57e095222ccfe9a0aeda6f98e68a05d6788490868c306ea7f", null ]
-    ] ]
+    [ "NUM_COLORS", "a01607.html#a49286c80a7005e4f2faf8f2c54005a54", null ],
+    [ "display_blob", "a01607.html#a2b56bf58c648ddd5efa02b1be0438659", null ],
+    [ "render_blob", "a01607.html#aba71e35fe1f2af5d7c98479fb9866dbc", null ],
+    [ "render_edgepts", "a01607.html#a594cd620b80afd8116ac5388f0396a9e", null ],
+    [ "render_outline", "a01607.html#a7ee7085b157e15b1651947b1e121f9b5", null ],
+    [ "blob_window", "a01607.html#a062919012f2898b36333bae0c19fa89d", null ],
+    [ "color_list", "a01607.html#a6edf1001fd84878871c310d6a2a270d6", null ],
+    [ "wordrec_blob_pause", "a01607.html#a4abb79c2e47e2c18898d51c784b733de", null ],
+    [ "wordrec_display_all_blobs", "a01607.html#a12a5464318b34c3d019270c0954f85e0", null ],
+    [ "wordrec_display_all_words", "a01607.html#ac1ae32fe06996c084e54189cf7abbe8b", null ]
 ];

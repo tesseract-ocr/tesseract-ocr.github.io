@@ -1,20 +1,14 @@
 var a01253 =
 [
-    [ "EXTERN", "a01253.html#a77366c1bd428629dc898e188bfd182a3", null ],
-    [ "capture_children", "a01253.html#a099676098c0d1c86ca9a2d1a479ad27d", null ],
-    [ "empty_buckets", "a01253.html#a448e1f9764807e5383235b51b2984ae1", null ],
-    [ "extract_edges", "a01253.html#a16ca13da58e65267e7e34355091ca891", null ],
-    [ "fill_buckets", "a01253.html#ad9597834f89a0acb1b78514a7a3feb6d", null ],
-    [ "outlines_to_blobs", "a01253.html#ae0cc26838f9973f097882b899b69b249", null ],
-    [ "edges_boxarea", "a01253.html#a5c8e12a7cab77678c5a40171e1ad7e40", null ],
-    [ "edges_childarea", "a01253.html#a1c3f12a33758ab5c83dde7fc3954ad06", null ],
-    [ "edges_children_count_limit", "a01253.html#a4411090594db829033b24025f4de29d9", null ],
-    [ "edges_children_fix", "a01253.html#a95fd6349e34702c3fcc3cd346c559d06", null ],
-    [ "edges_children_per_grandchild", "a01253.html#a283e485670cbdd564cbfffb1ff4cef2f", null ],
-    [ "edges_debug", "a01253.html#a4df127e52b28ef687af8128df96a54a7", null ],
-    [ "edges_max_children_layers", "a01253.html#a40dfeb7fc2006435e09a96fdda52a195", null ],
-    [ "edges_max_children_per_outline", "a01253.html#ab212bf226a60aa5a7737568cb9022b29", null ],
-    [ "edges_min_nonhole", "a01253.html#a9a6c4af6ab3a8a8ba517b15e2fa4311a", null ],
-    [ "edges_patharea_ratio", "a01253.html#ad9100fbb62368b53d9ab52a434378591", null ],
-    [ "edges_use_new_outline_complexity", "a01253.html#a5ee9ae16416593b6eae3ebcdfcf70fb1", null ]
+    [ "ColSegment", "a04642.html", "a04642" ],
+    [ "TableFinder", "a04646.html", "a04646" ],
+    [ "ColSegmentGrid", "a01253.html#a000d3ece04790938f61e040623938dfc", null ],
+    [ "ColSegmentGridSearch", "a01253.html#a80042a5d56f30b49f247f7dfe7da1f04", null ],
+    [ "ColSegType", "a01253.html#a25254b3df45454565d58a62480d3a6cb", [
+      [ "COL_UNKNOWN", "a01253.html#a25254b3df45454565d58a62480d3a6cbaee1976dbb59fbd65d366f0424759c729", null ],
+      [ "COL_TEXT", "a01253.html#a25254b3df45454565d58a62480d3a6cba05d5fe5bf814b3e82827a3a321d5b2ec", null ],
+      [ "COL_TABLE", "a01253.html#a25254b3df45454565d58a62480d3a6cba8943a61e53229e72f0f896ec8e415316", null ],
+      [ "COL_MIXED", "a01253.html#a25254b3df45454565d58a62480d3a6cba794ff16294744099e9bab9ecf2cabc11", null ],
+      [ "COL_COUNT", "a01253.html#a25254b3df45454565d58a62480d3a6cbaf626b1b46e354d9f577495c7de9ece2a", null ]
+    ] ]
 ];

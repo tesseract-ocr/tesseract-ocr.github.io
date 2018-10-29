@@ -1,10 +1,25 @@
 var a00689 =
 [
-    [ "Classify", "a04111.html", "a04111" ],
-    [ "CharSegmentationType", "a00689.html#afe12112c1ca56d41c919d0f18dfdf240", [
-      [ "CST_FRAGMENT", "a00689.html#afe12112c1ca56d41c919d0f18dfdf240af7f038dab34772b9ddb631d46aa4126a", null ],
-      [ "CST_WHOLE", "a00689.html#afe12112c1ca56d41c919d0f18dfdf240ab74e41d8efe1a9beae832eb1652096f5", null ],
-      [ "CST_IMPROPER", "a00689.html#afe12112c1ca56d41c919d0f18dfdf240a9395c1832262d72b28dd6461c334f207", null ],
-      [ "CST_NGRAM", "a00689.html#afe12112c1ca56d41c919d0f18dfdf240a9757169f767169fe9fea1f62ab9ba17b", null ]
-    ] ]
+    [ "CHAR_DESC_STRUCT", "a04054.html", "a04054" ],
+    [ "FEATURE_DEFS_STRUCT", "a04058.html", "a04058" ],
+    [ "NUM_FEATURE_TYPES", "a00689.html#aff5d3186888ac3dbd87adcc54b7f2ecf", null ],
+    [ "CHAR_DESC", "a00689.html#a328d8357302c5e1ee7f11f6ee34577f3", null ],
+    [ "FEATURE_DEFS", "a00689.html#a3d87491bc8c74401376efa5e1793e2a2", null ],
+    [ "FreeCharDescription", "a00689.html#ae2a92eefc3755300284119692527e3b9", null ],
+    [ "InitFeatureDefs", "a00689.html#a6e4c84ab01e39577e4a74d9ab1eff68b", null ],
+    [ "NewCharDescription", "a00689.html#a860f7517bac9477e79551e501df549ed", null ],
+    [ "ReadCharDescription", "a00689.html#ae1558f5d4119a9e651a85e10887be9f3", null ],
+    [ "ShortNameToFeatureType", "a00689.html#a96bfe8f02db0cc4dea42e9a9e9a98630", null ],
+    [ "ValidCharDescription", "a00689.html#af8fa799b7b0c0c8e18648a521ef2775f", null ],
+    [ "WriteCharDescription", "a00689.html#a7ec256eeb477e0fd9bb2124e54c13f34", null ],
+    [ "CharNormDesc", "a00689.html#aeaae0c3ba332fe6addd19ed202a3ecb7", null ],
+    [ "GeoFeatDesc", "a00689.html#ad083578933c187809f33f7e7cb6aac48", null ],
+    [ "IntFeatDesc", "a00689.html#abcae860ec494b3a15b6db31638a1d2f2", null ],
+    [ "kCNFeatureType", "a00689.html#aba437789a6614f23dc6d18a5a803ccc8", null ],
+    [ "kGeoFeatureType", "a00689.html#abada1502d146a88fadcc73af54ae7540", null ],
+    [ "kIntFeatureType", "a00689.html#abf5c61b4ecdfe9301e0f998156474c6b", null ],
+    [ "kMicroFeatureType", "a00689.html#af83d597eb1e077f4ad2b082be6698d20", null ],
+    [ "MicroFeatureDesc", "a00689.html#aa889ab53df925b2ccc5a2871eca3eff7", null ],
+    [ "OutlineFeatDesc", "a00689.html#a72a26e08f0fd9771c2b6af211bb1a6c3", null ],
+    [ "PicoFeatDesc", "a00689.html#a41e8458def8175ed44c412097f8c4099", null ]
 ];

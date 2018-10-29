@@ -1,13 +1,9 @@
 var a01220 =
 [
-    [ "ColPartition", "a04735.html", "a04735" ],
-    [ "ColPartitionGridSearch", "a01220.html#a990e3f25988f7d70c40a13225e645492", null ],
-    [ "ColumnSpanningType", "a01220.html#a1c442f32007891bd4ea6e885b34cc06a", [
-      [ "CST_NOISE", "a01220.html#a1c442f32007891bd4ea6e885b34cc06aad17bb659c6735f37306a6161f4013416", null ],
-      [ "CST_FLOWING", "a01220.html#a1c442f32007891bd4ea6e885b34cc06aa53dd9af51c333b786fe51bd5f01543d6", null ],
-      [ "CST_HEADING", "a01220.html#a1c442f32007891bd4ea6e885b34cc06aacf3616b52ca15a43ddfd40b9c91c9cd5", null ],
-      [ "CST_PULLOUT", "a01220.html#a1c442f32007891bd4ea6e885b34cc06aa8c1a2f43d95cbf09416204e1f5e04163", null ],
-      [ "CST_COUNT", "a01220.html#a1c442f32007891bd4ea6e885b34cc06aa9f98f32893c3f27ef2373aec2d9f7205", null ]
-    ] ],
-    [ "kRGBRMSColors", "a01220.html#abd090245debb6dcc506aba8f62da938b", null ]
+    [ "check_pitch_sync", "a01220.html#a321a8bfc3b9248bd4ec353aa9d5f1831", null ],
+    [ "ELISTIZE", "a01220.html#a4d39b973449f23a381e22fe1c1792af7", null ],
+    [ "make_illegal_segment", "a01220.html#aeb1a310c897473e865cbd6529041f7b6", null ],
+    [ "pitsync_fake_depth", "a01220.html#a017f9254f6b703215cfe5940a67d52f2", null ],
+    [ "pitsync_joined_edge", "a01220.html#a06bb83057da5b8bc252bac729baa0a65", null ],
+    [ "pitsync_offset_freecut_fraction", "a01220.html#a676189661b13473a99c0242726cdc08a", null ]
 ];

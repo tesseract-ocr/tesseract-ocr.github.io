@@ -1,4 +1,4 @@
 var a00710 =
 [
-    [ "kRatingEpsilon", "a00710.html#a392795332dc554d730c1fa30f8b52362", null ]
+    [ "kMaxOffsetDist", "a00710.html#a5ed5ea7e3054219b18144501c5ec3d1e", null ]
 ];

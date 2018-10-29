@@ -1,0 +1,28 @@
+var a02398 =
+[
+    [ "TBLOB", "a02398.html#aba17a476d90e090c542229a7930468ee", null ],
+    [ "TBLOB", "a02398.html#aeb2e182abaf10ee3dceed486878e3c72", null ],
+    [ "~TBLOB", "a02398.html#a6c0d7e46245cee1be0bb4410ff6f3542", null ],
+    [ "BBArea", "a02398.html#a4219e00a590d88759e3eda4bb4c9d9ec", null ],
+    [ "bounding_box", "a02398.html#a56599f0cc0c2eb73d9c5fd490f03fc56", null ],
+    [ "ClassifyNormalizeIfNeeded", "a02398.html#a97a982125328a7030486f57b8e027e42", null ],
+    [ "Clear", "a02398.html#a3027cf384580fa412270a37fb78395cd", null ],
+    [ "ComputeBoundingBoxes", "a02398.html#a7725f8aebcae59473e980b7e2aa5d0b0", null ],
+    [ "ComputeMoments", "a02398.html#a5cd46b06b52a4985d0f13251033b6373", null ],
+    [ "Contains", "a02398.html#a0ad6546b06755e52f64c47a62a335fcc", null ],
+    [ "CopyFrom", "a02398.html#a7ad2a4dac12684b1993868f88f77d200", null ],
+    [ "CorrectBlobOrder", "a02398.html#a15abbab259d431246662167086268e02", null ],
+    [ "denorm", "a02398.html#a6e4b6c2ac05353c905ff5b45be54d4ff", null ],
+    [ "EliminateDuplicateOutlines", "a02398.html#a75073cd060d05c660bfbe9250146db74", null ],
+    [ "GetEdgeCoords", "a02398.html#a5c7097bd1141b4d2c1a5dcdf4a1f34ec", null ],
+    [ "GetPreciseBoundingBox", "a02398.html#a8cea8c171be81f187f559a82141e373b", null ],
+    [ "Move", "a02398.html#a2791f69f39f81c9e350abca4bb3fa87d", null ],
+    [ "Normalize", "a02398.html#a6aef0201c756ed33e68a94abc8ac2b8e", null ],
+    [ "NumOutlines", "a02398.html#ae6866212174ebb7b1e3f11e1a516c8a2", null ],
+    [ "operator=", "a02398.html#af41de6d3763d2d894b9dd77bfce3f5af", null ],
+    [ "plot", "a02398.html#aea2abdf5701d97f2aece1a5fbabaf77e", null ],
+    [ "Rotate", "a02398.html#a6265072e245d6cc1ba1d03f1f1780145", null ],
+    [ "Scale", "a02398.html#ab4ca2b4e8d967347a522e77d27a7cda7", null ],
+    [ "SegmentCrossesOutline", "a02398.html#aa724cf44818fe4ba34e7ebe063fafab0", null ],
+    [ "outlines", "a02398.html#a3c9282cad4102157d214bcc6311cda07", null ]
+];

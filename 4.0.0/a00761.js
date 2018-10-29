@@ -1,15 +1,16 @@
 var a00761 =
 [
-    [ "CP_RESULT_STRUCT", "a04199.html", "a04199" ],
-    [ "ScratchEvidence", "a04203.html", "a04203" ],
-    [ "IntegerMatcher", "a04207.html", "a04207" ],
-    [ "SE_TABLE_BITS", "a00761.html#a3698359e38298fe5dce86d20443acd3f", null ],
-    [ "SE_TABLE_SIZE", "a00761.html#a1a81f6021dc96b06bb0683c605b77a1b", null ],
-    [ "HeapSort", "a00761.html#a11a05eae2b34aea059f9d8c0d2a94484", null ],
-    [ "IMDebugConfiguration", "a00761.html#a4a319a6588cdecce9884543ddd7789e9", null ],
-    [ "IMDebugConfigurationSum", "a00761.html#abab592abfc8412ad8aba533d72d600e7", null ],
-    [ "classify_adapt_feature_thresh", "a00761.html#a9435659b7bdcb14de3d911507fe5fcc8", null ],
-    [ "classify_adapt_proto_thresh", "a00761.html#a4a5a78c0745d38879256fbcc83b1842a", null ],
-    [ "classify_integer_matcher_multiplier", "a00761.html#afe4b8f9ecb4595e800850f646935045b", null ],
-    [ "disable_character_fragments", "a00761.html#a5e4352c88795fcbc3f1ae44e9d94490c", null ]
+    [ "FIRSTBULGE", "a00761.html#ad1464eb110ea01416a6590990ef70292", null ],
+    [ "MFLENGTH", "a00761.html#aab9af949da5ae4ae116df014c0d22d1e", null ],
+    [ "MFSIZE", "a00761.html#a91b4d8b8bc76e243410f648f487b9a1a", null ],
+    [ "NextFeatureOf", "a00761.html#a73241e8fe18f28077a7158303e7a126f", null ],
+    [ "ORIENTATION", "a00761.html#ac815b03ec48abf99301f44140ff0b0a9", null ],
+    [ "SECONDBULGE", "a00761.html#af4886ef7009ef75f6e3a13ff562feb27", null ],
+    [ "XPOSITION", "a00761.html#aa14d8a5c035963734f527261a209c402", null ],
+    [ "YPOSITION", "a00761.html#ab4a43f7e9f215f0fb311fdb0f54fe1bf", null ],
+    [ "MFBLOCK", "a00761.html#a982f5f0554d0580d6e919b346a5c0099", null ],
+    [ "MICROFEATURE", "a00761.html#afa69b9069f755412790b6b49b10d4ecf", null ],
+    [ "MICROFEATURES", "a00761.html#a3fdd61e86cfc2b48248239e49fd1befe", null ],
+    [ "FreeMicroFeatures", "a00761.html#afd75dd0b29a6b9bf0c5a31b3484bd0d9", null ],
+    [ "NewMicroFeature", "a00761.html#a10606897d42fff8ca71fb36795bd581e", null ]
 ];

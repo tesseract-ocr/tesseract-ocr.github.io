@@ -1,7 +1,7 @@
 var a00227 =
 [
-    [ "BADBLOCKLINE", "a00227.html#af0318512b6dce070a646cc45be3a827c", null ],
-    [ "ILLEGAL_GRADIENT", "a00227.html#a8735f0857768c8f46705766c7a26a2f2", null ],
-    [ "LOSTBLOCKLINE", "a00227.html#a4809e98d93f9af08fa256aa6dabaa03b", null ],
-    [ "WRONG_WORD", "a00227.html#a2f83754a667446619c90d0a0aec96e9a", null ]
+    [ "divide_blobs", "a00227.html#a2ab5e3b619507b26900a73919b165970", null ],
+    [ "divisible_blob", "a00227.html#aa87284f5696fb5dd745dafa85539d760", null ],
+    [ "kDivisibleVerticalItalic", "a00227.html#a0ce92f82149c2659d55bdb1d2687c8da", null ],
+    [ "kDivisibleVerticalUpright", "a00227.html#a08e47d4b90d71096bdc2508f601ed5d0", null ]
 ];

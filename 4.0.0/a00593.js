@@ -1,32 +1,31 @@
 var a00593 =
 [
-    [ "Bail", "a00593.html#a9bfb067b851f965ede4494192cdf2ca5", [
-      [ "BAIL_NONE", "a00593.html#a9bfb067b851f965ede4494192cdf2ca5aaae16b9445315ff94565daac7ade1257", null ],
-      [ "BAIL_EOF", "a00593.html#a9bfb067b851f965ede4494192cdf2ca5aff08dac6a5ac1b1769fe875641bd978f", null ],
-      [ "BAIL_ERR", "a00593.html#a9bfb067b851f965ede4494192cdf2ca5ae37148d3636a530accd287c945bfc931", null ]
-    ] ],
-    [ "Flags", "a00593.html#aa705cf7e79a21c2352b00ffe20cd295f", [
-      [ "FL_SPLAT", "a00593.html#aa705cf7e79a21c2352b00ffe20cd295fa16e2deec2ffcd10b35b25e98d31f31f3", null ],
-      [ "FL_INV", "a00593.html#aa705cf7e79a21c2352b00ffe20cd295fa25877a5731b46ebc3b2b7f4accc833b4", null ],
-      [ "FL_WIDTH", "a00593.html#aa705cf7e79a21c2352b00ffe20cd295fa2df3ca889266ab843730f4be43f97986", null ],
-      [ "FL_MINUS", "a00593.html#aa705cf7e79a21c2352b00ffe20cd295fa202578abbb960bdab4babbe68bf9390e", null ]
-    ] ],
-    [ "Ranks", "a00593.html#a0033f76204b45cfccb3fbeabbaa6211d", [
-      [ "RANK_CHAR", "a00593.html#a0033f76204b45cfccb3fbeabbaa6211da9633e1851b7b2c20ed420c923eb1d4c8", null ],
-      [ "RANK_SHORT", "a00593.html#a0033f76204b45cfccb3fbeabbaa6211da6037aa6e3c663441b93eebbdff8485aa", null ],
-      [ "RANK_INT", "a00593.html#a0033f76204b45cfccb3fbeabbaa6211dac79c6538c2a3099d763299ea26d6f20b", null ],
-      [ "RANK_LONG", "a00593.html#a0033f76204b45cfccb3fbeabbaa6211daa2af7c6e2cc94c7375a2f4eb9a60111b", null ],
-      [ "RANK_LONGLONG", "a00593.html#a0033f76204b45cfccb3fbeabbaa6211da51e64b627717b9a513e7ba4dadd0aeaf", null ],
-      [ "RANK_PTR", "a00593.html#a0033f76204b45cfccb3fbeabbaa6211dae37d10eaf799dffedbdf8153ef328c76", null ]
-    ] ],
-    [ "LongBit", "a00593.html#aee2a0965dece7158d9c1eec370bd3876", null ],
-    [ "streamtofloat", "a00593.html#a4c2b63d2610588502c0899cabf5a2a11", null ],
-    [ "streamtoumax", "a00593.html#a2922e98229892f94ff26cd8b8fdbd024", null ],
-    [ "strtofloat", "a00593.html#acd5da144b42854bfd07701ee9d5f8e3b", null ],
-    [ "tfscanf", "a00593.html#aa11dd049f17d50a5af65fbd245e705d0", null ],
-    [ "kIntMaxRank", "a00593.html#a00bbd60cd73376421df7a9a28f7ed53f", null ],
-    [ "kMaxRank", "a00593.html#aecc63800b2939a2f18c4bbac035a6b1e", null ],
-    [ "kMinRank", "a00593.html#a4ab151b94ade31b51e40dcca4bed9290", null ],
-    [ "kPtrDiffRank", "a00593.html#a78e27521afe59f87ae2214fefd11eb08", null ],
-    [ "kSizeTRank", "a00593.html#a10bf2de794b057958ab2c085ac7e70c0", null ]
+    [ "TessdataManager", "a03906.html", "a03906" ],
+    [ "TessdataType", "a00593.html#a5f278974ef80900b460194614d4f1899", [
+      [ "TESSDATA_LANG_CONFIG", "a00593.html#a5f278974ef80900b460194614d4f1899ab2c001209bd1c4dbd12856ba4db97854", null ],
+      [ "TESSDATA_UNICHARSET", "a00593.html#a5f278974ef80900b460194614d4f1899a54d433c57446ba87f95299d42d324a18", null ],
+      [ "TESSDATA_AMBIGS", "a00593.html#a5f278974ef80900b460194614d4f1899a62bf86d17ac77ffef850c49bea246f0c", null ],
+      [ "TESSDATA_INTTEMP", "a00593.html#a5f278974ef80900b460194614d4f1899adfd87e838c95bfbdab3d08399e36b362", null ],
+      [ "TESSDATA_PFFMTABLE", "a00593.html#a5f278974ef80900b460194614d4f1899afe6ffc645055800e632965abcbc9c501", null ],
+      [ "TESSDATA_NORMPROTO", "a00593.html#a5f278974ef80900b460194614d4f1899a54f23d768a3b4d9d8cfd2513f5101d66", null ],
+      [ "TESSDATA_PUNC_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899a041eff587bbc58c4c93e76facd593b56", null ],
+      [ "TESSDATA_SYSTEM_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899af89fe7138ea14ba1a31e8ddf53f2089f", null ],
+      [ "TESSDATA_NUMBER_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899a7bad9e33542e38f498f9c6672626ee04", null ],
+      [ "TESSDATA_FREQ_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899a041f1b2804fb7a000090908c979739ff", null ],
+      [ "TESSDATA_FIXED_LENGTH_DAWGS", "a00593.html#a5f278974ef80900b460194614d4f1899ae57ec423406725deceddd071fefb367c", null ],
+      [ "TESSDATA_CUBE_UNICHARSET", "a00593.html#a5f278974ef80900b460194614d4f1899a87310a274403592ee7b1bd07e8b29973", null ],
+      [ "TESSDATA_CUBE_SYSTEM_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899a445f2a31c9940f2027a67ba8f8630f9f", null ],
+      [ "TESSDATA_SHAPE_TABLE", "a00593.html#a5f278974ef80900b460194614d4f1899ae3c25bcbffa5055814464c04388a8035", null ],
+      [ "TESSDATA_BIGRAM_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899aa59c96914537bb9958be8fb3a96b2a85", null ],
+      [ "TESSDATA_UNAMBIG_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899a0f153618328153c350638138d2807d97", null ],
+      [ "TESSDATA_PARAMS_MODEL", "a00593.html#a5f278974ef80900b460194614d4f1899a6deb8b5d72b600b14ca9d79de9efeae2", null ],
+      [ "TESSDATA_LSTM", "a00593.html#a5f278974ef80900b460194614d4f1899a42b3faa90f5e5f117788cc38a7478521", null ],
+      [ "TESSDATA_LSTM_PUNC_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899a920f6be9b42cf019f467d7fdcdcc7026", null ],
+      [ "TESSDATA_LSTM_SYSTEM_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899a25203bff06e1c82dd174f24ca0b9865f", null ],
+      [ "TESSDATA_LSTM_NUMBER_DAWG", "a00593.html#a5f278974ef80900b460194614d4f1899ab7f3b06a7d05f3cf913a6fa41f81b974", null ],
+      [ "TESSDATA_LSTM_UNICHARSET", "a00593.html#a5f278974ef80900b460194614d4f1899a2e07431cf4cc5d64dc917752d52a77e0", null ],
+      [ "TESSDATA_LSTM_RECODER", "a00593.html#a5f278974ef80900b460194614d4f1899aadb790fade2d7436926badb6923423a6", null ],
+      [ "TESSDATA_VERSION", "a00593.html#a5f278974ef80900b460194614d4f1899a2d48e3db49e33025c931467f34554782", null ],
+      [ "TESSDATA_NUM_ENTRIES", "a00593.html#a5f278974ef80900b460194614d4f1899ae23733dd332d50ddb3b0be7990b1538c", null ]
+    ] ]
 ];

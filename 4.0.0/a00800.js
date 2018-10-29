@@ -1,10 +1,7 @@
 var a00800 =
 [
-    [ "NormalizeAngle", "a00800.html#a5418ed129c949071820a8d0c28093de1", null ],
-    [ "BlobMicroFeatures", "a00800.html#a807f06b47c5b936507ee2895e1452afa", null ],
-    [ "ComputeOrientation", "a00800.html#a06bc324f94765ef7be45570e5b419131", null ],
-    [ "ConvertToMicroFeatures", "a00800.html#ae9693813f30b3c834f46191be843b750", null ],
-    [ "ExtractMicroFeature", "a00800.html#aff6e1b00e3fdbcf73ecee608c906f6f8", null ],
-    [ "classify_max_slope", "a00800.html#a7a76f272add43800ab97ff8aeb0184a9", null ],
-    [ "classify_min_slope", "a00800.html#afc77a0a04110e77db4b31bb16800a207", null ]
+    [ "ConvertSegmentToPicoFeat", "a00800.html#a7846f8631b95d1162876b4a0b9c9d34c", null ],
+    [ "ConvertToPicoFeatures2", "a00800.html#a0ef34dbe10ce0b1c08b63a640c1f1009", null ],
+    [ "NormalizePicoX", "a00800.html#a0d34691eace89769641af5a13f448310", null ],
+    [ "classify_pico_feature_length", "a00800.html#ade0cbc6650cd99b83ecc2c1a828a4bee", null ]
 ];

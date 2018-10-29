@@ -1,0 +1,87 @@
+var dir_929c8236eaf048e93ed3bde2401b6b80 =
+[
+    [ "adaptive.cpp", "a00641.html", "a00641" ],
+    [ "adaptive.h", "a00644.html", "a00644" ],
+    [ "adaptmatch.cpp", "a00647.html", "a00647" ],
+    [ "blobclass.cpp", "a00650.html", "a00650" ],
+    [ "blobclass.h", "a00653.html", "a00653" ],
+    [ "classify.cpp", "a00656.html", null ],
+    [ "classify.h", "a00659.html", "a00659" ],
+    [ "cluster.cpp", "a00662.html", "a00662" ],
+    [ "cluster.h", "a00665.html", "a00665" ],
+    [ "clusttool.cpp", "a00668.html", "a00668" ],
+    [ "clusttool.h", "a00671.html", "a00671" ],
+    [ "cutoffs.cpp", "a00674.html", "a00674" ],
+    [ "cutoffs.h", "a00677.html", "a00677" ],
+    [ "errorcounter.cpp", "a00680.html", "a00680" ],
+    [ "errorcounter.h", "a00683.html", "a00683" ],
+    [ "featdefs.cpp", "a00686.html", "a00686" ],
+    [ "featdefs.h", "a00689.html", "a00689" ],
+    [ "float2int.cpp", "a00692.html", "a00692" ],
+    [ "float2int.h", "a00695.html", "a00695" ],
+    [ "fpoint.cpp", "a00698.html", "a00698" ],
+    [ "fpoint.h", "a00701.html", "a00701" ],
+    [ "intfeaturedist.cpp", "a00704.html", null ],
+    [ "intfeaturedist.h", "a00707.html", [
+      [ "IntFeatureDist", "a04066.html", "a04066" ]
+    ] ],
+    [ "intfeaturemap.cpp", "a00710.html", "a00710" ],
+    [ "intfeaturemap.h", "a00713.html", "a00713" ],
+    [ "intfeaturespace.cpp", "a00716.html", null ],
+    [ "intfeaturespace.h", "a00719.html", "a00719" ],
+    [ "intfx.cpp", "a00722.html", "a00722" ],
+    [ "intfx.h", "a00725.html", "a00725" ],
+    [ "intmatcher.cpp", "a00728.html", "a00728" ],
+    [ "intmatcher.h", "a00731.html", "a00731" ],
+    [ "intproto.cpp", "a00734.html", "a00734" ],
+    [ "intproto.h", "a00737.html", "a00737" ],
+    [ "kdtree.cpp", "a00740.html", "a00740" ],
+    [ "kdtree.h", "a00743.html", "a00743" ],
+    [ "mastertrainer.cpp", "a00746.html", "a00746" ],
+    [ "mastertrainer.h", "a00749.html", [
+      [ "ShapeDist", "a04154.html", "a04154" ],
+      [ "MasterTrainer", "a04158.html", "a04158" ]
+    ] ],
+    [ "mf.cpp", "a00752.html", "a00752" ],
+    [ "mf.h", "a00755.html", "a00755" ],
+    [ "mfdefs.cpp", "a00758.html", "a00758" ],
+    [ "mfdefs.h", "a00761.html", "a00761" ],
+    [ "mfoutline.cpp", "a00764.html", "a00764" ],
+    [ "mfoutline.h", "a00767.html", "a00767" ],
+    [ "mfx.cpp", "a00770.html", "a00770" ],
+    [ "mfx.h", "a00773.html", "a00773" ],
+    [ "normfeat.cpp", "a00776.html", "a00776" ],
+    [ "normfeat.h", "a00779.html", "a00779" ],
+    [ "normmatch.cpp", "a00782.html", "a00782" ],
+    [ "normmatch.h", "a00785.html", "a00785" ],
+    [ "ocrfeatures.cpp", "a00788.html", "a00788" ],
+    [ "ocrfeatures.h", "a00791.html", "a00791" ],
+    [ "outfeat.cpp", "a00794.html", "a00794" ],
+    [ "outfeat.h", "a00797.html", "a00797" ],
+    [ "picofeat.cpp", "a00800.html", "a00800" ],
+    [ "picofeat.h", "a00803.html", "a00803" ],
+    [ "protos.cpp", "a00806.html", "a00806" ],
+    [ "protos.h", "a00809.html", "a00809" ],
+    [ "sampleiterator.cpp", "a00812.html", null ],
+    [ "sampleiterator.h", "a00815.html", [
+      [ "SampleIterator", "a04194.html", "a04194" ]
+    ] ],
+    [ "shapeclassifier.cpp", "a00818.html", null ],
+    [ "shapeclassifier.h", "a00821.html", [
+      [ "GenericVector", "a02182.html", "a02182" ],
+      [ "PointerVector", "a02730.html", "a02730" ],
+      [ "ShapeClassifier", "a04198.html", "a04198" ]
+    ] ],
+    [ "shapetable.cpp", "a00824.html", null ],
+    [ "shapetable.h", "a00827.html", "a00827" ],
+    [ "tessclassifier.cpp", "a00830.html", null ],
+    [ "tessclassifier.h", "a00833.html", [
+      [ "TessClassifier", "a04226.html", "a04226" ]
+    ] ],
+    [ "trainingsample.cpp", "a00836.html", "a00836" ],
+    [ "trainingsample.h", "a00839.html", "a00839" ],
+    [ "trainingsampleset.cpp", "a00842.html", "a00842" ],
+    [ "trainingsampleset.h", "a00845.html", [
+      [ "TrainingSampleSet", "a04234.html", "a04234" ]
+    ] ]
+];

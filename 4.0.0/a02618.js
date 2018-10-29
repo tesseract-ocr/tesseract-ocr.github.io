@@ -1,0 +1,28 @@
+var a02618 =
+[
+    [ "REJMAP", "a02618.html#af262c00aa14528e97a2937bfb76bad9d", null ],
+    [ "REJMAP", "a02618.html#a69c3b87ae748d43477c8a83dc320d6e0", null ],
+    [ "accept_count", "a02618.html#a56942b5d4ddd0096c7624d382b1fef90", null ],
+    [ "full_print", "a02618.html#a476689acf6a0c07a0f09452ef5ff79e8", null ],
+    [ "initialise", "a02618.html#a798c11e002b9421b26a748f5186bdae9", null ],
+    [ "length", "a02618.html#adb462d55dc4b682e0a77090185a58011", null ],
+    [ "operator=", "a02618.html#a495e91f8ad6cee2217cb27b8367b6cd0", null ],
+    [ "operator[]", "a02618.html#a05950dc08ed4a98e4b326e8a6a294229", null ],
+    [ "print", "a02618.html#a124889539460b8c200b3186da4a692e0", null ],
+    [ "quality_recoverable_rejects", "a02618.html#ad48f4dc7ca8fb95f7d938d834f4cbb38", null ],
+    [ "recoverable_rejects", "a02618.html#a062da7b6d62e08ee44303bea1b214dc7", null ],
+    [ "rej_word_bad_permuter", "a02618.html#a36d38c0c25d9792a85b5cb4b01e251fa", null ],
+    [ "rej_word_bad_quality", "a02618.html#aa0e131c139fe56b044b20cc8fd2a645c", null ],
+    [ "rej_word_block_rej", "a02618.html#aa86752e4e9277f2a616df08459ea08e3", null ],
+    [ "rej_word_contains_blanks", "a02618.html#acb01c2a1d8d28ecffdb51c6a7c3d22da", null ],
+    [ "rej_word_doc_rej", "a02618.html#a9fb4a691f24ea06370b55650c197db8b", null ],
+    [ "rej_word_mostly_rej", "a02618.html#a10eb4f474df5983cdc0705f189c3f19b", null ],
+    [ "rej_word_no_alphanums", "a02618.html#a91ab357641e2a2a37aa98c2bacd03e2c", null ],
+    [ "rej_word_not_tess_accepted", "a02618.html#a776b94463f9c008020c8cdf69c89b8c4", null ],
+    [ "rej_word_row_rej", "a02618.html#a03037d4a12a4ea33a377cf21c9400139", null ],
+    [ "rej_word_small_xht", "a02618.html#a7f6528c1228002276d930ed9407c556b", null ],
+    [ "rej_word_tess_failure", "a02618.html#ac1d7e8e50b633e7c1b9e25904567f86b", null ],
+    [ "rej_word_xht_fixup", "a02618.html#a70c042d067a9901e39f11d40633eacce", null ],
+    [ "reject_count", "a02618.html#a2ddec73fd1a7288568496353d75a00e8", null ],
+    [ "remove_pos", "a02618.html#ac1dc2d51408f18105d663ccf86fedf8a", null ]
+];

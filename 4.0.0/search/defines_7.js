@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['getpicofeaturelength',['GetPicoFeatureLength',['../a00833.html#a35f5a174efc9c6197837aaf5544c78f2',1,'picofeat.h']]],
-  ['git_5frev',['GIT_REV',['../a06450.html#a477f6fdf385fb9f300e79489d6623118',1,'GIT_REV():&#160;config_auto.h'],['../a06459.html#a477f6fdf385fb9f300e79489d6623118',1,'GIT_REV():&#160;config_auto.h']]],
-  ['goodheight',['GOODHEIGHT',['../a01301.html#a7cfa5dee1fc7046cb35913d0d4f7a989',1,'oldbasel.cpp']]]
+  ['getpicofeaturelength',['GetPicoFeatureLength',['../a00803.html#a35f5a174efc9c6197837aaf5544c78f2',1,'picofeat.h']]],
+  ['goodheight',['GOODHEIGHT',['../a01208.html#a7cfa5dee1fc7046cb35913d0d4f7a989',1,'oldbasel.cpp']]]
 ];
