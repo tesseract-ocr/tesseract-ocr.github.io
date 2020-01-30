@@ -12,3 +12,7 @@ This documentation was build with Doxygen from the
 - [3.05.02](tessapi/3.05.02/)
 - [3.x](tessapi/3.x/)
 - [4.0.0](tessapi/4.0.0/)
+
+## Publications
+
+- [Various documents related to Tesseract OCR](http://tesseract-ocr.github.io/docs/)
