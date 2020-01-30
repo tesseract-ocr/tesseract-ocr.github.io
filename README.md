@@ -1,5 +1,9 @@
 # Tesseract documentation
 
+## Tesseract User Manual
+
+- [User Manual](tessdoc/)
+
 ## Tesseract Source Code Documentation
 
 This documentation was build with Doxygen from the
