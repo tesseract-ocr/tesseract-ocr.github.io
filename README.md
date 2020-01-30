@@ -1,6 +1,10 @@
-# Tesseract Source Code Documentation
+# Tesseract documentation
+
+## Tesseract Source Code Documentation
 
 This documentation was build with Doxygen from the
 [Tesseract source code](https://github.com/tesseract-ocr/tesseract).
 
-The current source code documentation is shown on https://tesseract-ocr.github.io/.
+- [3.05.02](tessapi/3.05.02/)
+- [3.x](tessapi/3.x/)
+- [4.0.0](tessapi/4.0.0/)
