@@ -2,7 +2,7 @@
 
 ## Tesseract User Manual
 
-- [User Manual](tessdoc/)
+- [User Manual](http://tesseract-ocr.github.io/tessdoc/)
 
 ## Tesseract Source Code Documentation
 
